@@ -50,17 +50,20 @@ export default function TripCalculator({ calendlyUrl }: { calendlyUrl?: string }
     const low = Math.round(mid * 0.7);
     const high = Math.round(mid * 1.35);
 
-    // Our fee: flat $200 for trips under $4k, 8% for $4k-$15k, 6% for $15k+
+    // Fee structure:
+    //   - trips under $5k: $450 flat itinerary
+    //   - $5k–$30k: 8% of trip total (signature service, min $800)
+    //   - groups $30k+: 12% of trip total (min $2,500)
     let ourFee: number;
     let feeType: 'flat' | 'percent';
-    if (mid < 4000) {
-      ourFee = 200;
+    if (mid < 5000) {
+      ourFee = 450;
       feeType = 'flat';
-    } else if (mid < 15000) {
-      ourFee = Math.round(mid * 0.08);
+    } else if (mid < 30000) {
+      ourFee = Math.max(800, Math.round(mid * 0.08));
       feeType = 'percent';
     } else {
-      ourFee = Math.round(mid * 0.06);
+      ourFee = Math.max(2500, Math.round(mid * 0.12));
       feeType = 'percent';
     }
 

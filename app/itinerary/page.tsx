@@ -133,17 +133,21 @@ export default function ItineraryPage() {
                 <span className="display-italic">directly.</span>
               </h3>
               <p className="mt-3 text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
-                For returning clients and referred guests. $200 flat itinerary
-                fee or $500 trip-planning deposit (applied to your final
-                invoice). Secure checkout powered by Stripe.
+                For returning clients and referred guests. $95 discovery
+                session (credited toward your itinerary), $450 flat itinerary,
+                or a $500 trip-planning deposit applied to your final invoice.
+                Secure checkout powered by Stripe.
               </p>
             </div>
             <div className="flex flex-col gap-3">
+              <CheckoutButton product="discovery_fee" variant="outline">
+                $95 discovery session
+              </CheckoutButton>
               <CheckoutButton product="itinerary_fee" variant="primary">
-                Pay $200 itinerary fee
+                $450 custom itinerary
               </CheckoutButton>
               <CheckoutButton product="trip_deposit_500" variant="outline">
-                Pay $500 trip deposit
+                $500 trip deposit
               </CheckoutButton>
             </div>
           </div>

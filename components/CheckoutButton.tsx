@@ -3,10 +3,13 @@
 import { useState } from 'react';
 
 type ProductKey =
+  | 'discovery_fee'
   | 'itinerary_fee'
   | 'trip_deposit_500'
   | 'group_retainer_2500'
-  | 'discovery_fee';
+  | 'partner_tier_1'
+  | 'partner_tier_2'
+  | 'partner_tier_3';
 
 interface Props {
   product: ProductKey;

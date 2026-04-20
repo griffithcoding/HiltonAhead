@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Fraunces, Instrument_Sans } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import { brand } from '@/data/brand'
 import './globals.css'
 
@@ -78,6 +79,15 @@ export const metadata: Metadata = {
     'geo.position': '32.2163;-80.7526',
     'ICBM': '32.2163, -80.7526',
   },
+  // Google Search Console verification. Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+  // in Vercel once you've added the domain in Search Console (HTML tag method).
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
 }
 
 export const viewport: Viewport = {
@@ -92,7 +102,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${fraunces.variable} ${instrumentSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans text-ink">{children}</body>
+      <body className="min-h-full flex flex-col font-sans text-ink">
+        {children}
+        {/* Vercel Analytics — zero-config, privacy-friendly pageview tracking.
+            Auto-enables on Vercel-hosted deploys; no-ops locally. */}
+        <Analytics />
+      </body>
     </html>
   )
 }

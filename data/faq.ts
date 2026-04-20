@@ -18,7 +18,7 @@ export const faq = {
     {
       question: 'What does it cost?',
       answer:
-        'Itineraries start at $200 flat. Full-service group trips are billed as a percentage of total spend. We quote every job up front — no surprise fees, no kickbacks baked into your rates.',
+        'Four tiers: a $95 discovery session (credited back if you book), $450 flat for a custom itinerary, 8% of trip total (minimum $800) for full signature service with on-island concierge, and 12% (minimum $2,500) for groups and weddings. Every engagement is quoted up front — no surprise fees, no kickbacks baked into your rates.',
     },
     {
       question: 'How far in advance should I book?',

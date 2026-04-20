@@ -19,39 +19,63 @@ import { brand } from '@/data/brand';
  */
 
 type ProductKey =
-  | 'itinerary_fee'       // $200 flat itinerary fee
-  | 'trip_deposit_500'    // $500 trip-planning deposit
-  | 'group_retainer_2500' // $2,500 group/wedding retainer
-  | 'discovery_fee'       // $50 priority discovery session
+  | 'discovery_fee'          // $95 discovery session (credited toward itinerary)
+  | 'itinerary_fee'          // $450 flat custom itinerary
+  | 'trip_deposit_500'       // $500 deposit applied to signature-service invoice
+  | 'group_retainer_2500'    // $2,500 group / wedding retainer minimum
+  | 'partner_tier_1'         // $1,200/yr — Featured Partner
+  | 'partner_tier_2'         // $4,800/yr — Curated Partner
+  | 'partner_tier_3'         // $12,000/yr — Signature Partner
   ;
 
 const PRODUCTS: Record<
   ProductKey,
   { name: string; description: string; amount: number /* cents */ }
 > = {
-  itinerary_fee: {
-    name: 'Custom Hilton Head Itinerary',
+  // ——— Client-facing travel consulting ———
+  discovery_fee: {
+    name: 'Hilton Ahead · Discovery Session',
     description:
-      'Flat-fee custom Hilton Head itinerary. One-page plan, villa pick, restaurant holds, and on-island support for the duration of your trip.',
-    amount: 20000,
+      '45-minute discovery call plus a 1-page written summary of recommendations. Credited in full toward a custom itinerary if you book within 30 days.',
+    amount: 9500,
+  },
+  itinerary_fee: {
+    name: 'Hilton Ahead · Custom Itinerary',
+    description:
+      'Flat-fee custom Hilton Head itinerary. One-page plan, villa pick, restaurant holds, and text-based on-island support for the duration of your trip.',
+    amount: 45000,
   },
   trip_deposit_500: {
-    name: 'Hilton Head Trip Planning Deposit',
+    name: 'Hilton Ahead · Signature Service Deposit',
     description:
-      'Applied to your final trip invoice. Locks in planning time and partner-rate holds on villas, tee times, and dinner reservations.',
+      'Applied to your final signature-service invoice. Locks in planning time and partner-rate holds on villas, tee times, and dinner reservations.',
     amount: 50000,
   },
   group_retainer_2500: {
-    name: 'Group / Wedding Retainer',
+    name: 'Hilton Ahead · Group / Wedding Retainer',
     description:
       'Retainer for weddings, reunions, corporate outings, and groups of 12+. Covers full planning through 30 days of on-island support.',
     amount: 250000,
   },
-  discovery_fee: {
-    name: 'Priority Discovery Session',
+
+  // ——— Partner / sponsorship tiers (annual) ———
+  partner_tier_1: {
+    name: 'Hilton Ahead · Featured Partner (annual)',
     description:
-      'Priority 30-minute call with follow-up written recommendations. Applied as credit if you book an itinerary.',
-    amount: 5000,
+      'One-year Featured Partner membership. Logo + blurb in the site footer on every page, named in one newsletter per quarter, one Instagram field tag per quarter.',
+    amount: 120000,
+  },
+  partner_tier_2: {
+    name: 'Hilton Ahead · Curated Partner (annual)',
+    description:
+      'One-year Curated Partner membership. Everything in Featured plus one honest mention in a tier-list post, monthly newsletter slot, and a co-branded 2-day itinerary template.',
+    amount: 480000,
+  },
+  partner_tier_3: {
+    name: 'Hilton Ahead · Signature Partner (annual)',
+    description:
+      'One-year Signature Partner membership. Everything in Curated plus a dedicated 1,500-word editorial post, featured newsletter placement, and co-branded referred-guest checkout.',
+    amount: 1200000,
   },
 };
 
