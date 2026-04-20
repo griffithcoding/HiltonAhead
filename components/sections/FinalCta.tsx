@@ -65,7 +65,7 @@ export default function FinalCta() {
         <div className="mt-10 flex flex-wrap items-center gap-5">
           <Link
             href={brand.cta.bookingPagePath}
-            className="group inline-flex items-center gap-2 bg-coral px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-sand hover:text-ocean-deep"
+            className="group inline-flex items-center gap-2 rounded-full bg-coral px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-sand hover:text-ocean-deep"
           >
             {brand.cta.label}
             <span

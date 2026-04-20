@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { brand } from '@/data/brand'
 import { services } from '@/data/services'
 import { posts } from '@/data/posts'
+import { neighborhoods } from '@/data/neighborhoods'
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
 
@@ -37,6 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: p.featuredOrder <= 3 ? 0.9 : 0.7,
   }))
 
+  const neighborhoodEntries: MetadataRoute.Sitemap = neighborhoods.map((n) => ({
+    url: `${BASE_URL}/hilton-head/${n.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.95, // high — these are conversion-focused SEO landing pages
+  }))
+
   const serviceEntries: MetadataRoute.Sitemap = services.items.map((s) => ({
     url: `${BASE_URL}/services#${s.slug}`,
     lastModified: now,
@@ -44,5 +52,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticEntries, ...postEntries, ...serviceEntries]
+  return [...staticEntries, ...postEntries, ...neighborhoodEntries, ...serviceEntries]
 }

@@ -1464,6 +1464,490 @@ const postGolfTrip: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 9) Best time to visit Hilton Head
+// ---------------------------------------------------------------------------
+
+const postBestTime: Post = {
+  slug: 'best-time-to-visit-hilton-head',
+  title: "The Best Time to Visit Hilton Head — Month by Month",
+  excerpt:
+    "The four travel windows locals actually use, ranked. Weather, crowds, rates, and the two weeks you should absolutely avoid.",
+  description:
+    "A month-by-month guide to when to visit Hilton Head Island — weather, hotel rates, crowd levels, and the best windows for families, golfers, and couples in 2026.",
+  category: 'Planning',
+  readTime: '8 min',
+  publishedAt: '2026-03-02',
+  updatedAt: '2026-04-18',
+  author: 'Hilton Ahead',
+  featuredOrder: 2.5,
+  keywords: [
+    'best time to visit Hilton Head',
+    'Hilton Head weather',
+    'Hilton Head off-season',
+    'Hilton Head hurricane season',
+    'when to visit Hilton Head',
+    'Hilton Head shoulder season',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "The standard advice \u2014 \"come in summer\" \u2014 is exactly wrong for most of our clients. The island has four genuinely different seasons, and picking the right one can cut your trip cost by 40% or add three hours of beach time per day. Here's how we think about it.",
+    },
+    {
+      kind: 'h2',
+      text: "The four real seasons",
+    },
+    {
+      kind: 'h3',
+      text: 'Spring \u2014 March through mid-May',
+    },
+    {
+      kind: 'p',
+      html: "<strong>Weather:</strong> 62\u201378\u00b0F. Water still cold (58\u201368\u00b0F) through April. <strong>Crowds:</strong> Low until spring break hits mid-March, then heavy the week of RBC Heritage (April 13\u201319, 2026). <strong>Rates:</strong> Moderate, except Heritage week doubles everything. <strong>Best for:</strong> golf trips, couples' getaways, serious cyclists.",
+    },
+    {
+      kind: 'p',
+      html: "This is our default recommendation for golf. Course conditioning is post-winter pristine, weather is ideal, and rates are 25\u201335% below summer peaks. Avoid the second week of April unless you're specifically coming for Heritage.",
+    },
+    {
+      kind: 'h3',
+      text: 'Summer \u2014 late May through August',
+    },
+    {
+      kind: 'p',
+      html: "<strong>Weather:</strong> 82\u201392\u00b0F, humid. Water 78\u201384\u00b0F (warmest of the year). <strong>Crowds:</strong> Peak. Coligny at capacity, villa inventory tight, traffic on 278 real. <strong>Rates:</strong> Highest of the year. <strong>Best for:</strong> families with school-age kids who have no other window.",
+    },
+    {
+      kind: 'p',
+      html: "If summer is your only option \u2014 book 5\u20136 months out for villa inventory, 3\u20134 for resorts. Rent bikes for the kids; the heat becomes tolerable on a shaded bike path. Dinner reservations require 2 weeks lead time at S-tier restaurants.",
+    },
+    {
+      kind: 'h3',
+      text: 'Fall \u2014 September through early November',
+    },
+    {
+      kind: 'p',
+      html: "<strong>Weather:</strong> 72\u201385\u00b0F through early October, 60\u201375\u00b0F through early November. Water stays 70\u00b0F+ through October. <strong>Crowds:</strong> Light after Labor Day (September 7, 2026), near-empty after mid-October. <strong>Rates:</strong> 30\u201340% below summer. <strong>Best for:</strong> couples, foodies, and serious golfers.",
+    },
+    {
+      kind: 'callout',
+      label: "Our favorite window",
+      html: "<strong>October is the best month to visit Hilton Head, full stop.</strong> Warm water, empty beaches, perfect golf weather, rates 35% below summer, and dinner reservations become walk-in-able at 70% of restaurants.",
+    },
+    {
+      kind: 'h3',
+      text: 'Winter \u2014 late November through February',
+    },
+    {
+      kind: 'p',
+      html: "<strong>Weather:</strong> 55\u201368\u00b0F days, 40\u201350\u00b0F nights. Occasional 45\u00b0F rainy day. Water too cold to swim. <strong>Crowds:</strong> Genuinely quiet \u2014 the island breathes out. <strong>Rates:</strong> Lowest of the year, 50% below summer. <strong>Best for:</strong> budget-conscious couples, writers' retreats, shoulder-season golfers.",
+    },
+    {
+      kind: 'p',
+      html: "The beach is empty and stunning. You'll wear a jacket at sunset. Many restaurants close one night a week, and some island programs pause \u2014 we plan around it. Genuinely underrated for older couples who don't care about beach swimming.",
+    },
+    {
+      kind: 'h2',
+      text: "Month by month",
+    },
+    {
+      kind: 'ol',
+      items: [
+        "<strong>January:</strong> Coldest, cheapest. 55\u00b0F beach walks, bonfires. Avoid if you need to swim.",
+        "<strong>February:</strong> Slight warm-up. Whale-watching windows off Savannah. Valentine's weekend is good value.",
+        "<strong>March:</strong> The turn. Weather improves rapidly. Second half = spring break surge.",
+        "<strong>April:</strong> Peak spring. Avoid week 2 (Heritage) unless tournament-attending. Otherwise perfect.",
+        "<strong>May:</strong> Last quiet month before summer. Water warms by mid-month. Our sleeper pick for couples.",
+        "<strong>June:</strong> Summer begins. Villa inventory gets tight by mid-month. Book by January.",
+        "<strong>July:</strong> Peak heat + peak crowds. Book 6 months out or forget oceanfront.",
+        "<strong>August:</strong> Still peak. Hurricane watch begins (low actual risk until late September).",
+        "<strong>September:</strong> Back-to-school exodus after Labor Day. Rates drop 25% overnight. Hurricane season peaks \u2014 have trip insurance.",
+        "<strong>October:</strong> <strong>The best month.</strong> Book now.",
+        "<strong>November:</strong> First two weeks excellent. Thanksgiving week is quieter than you'd expect.",
+        "<strong>December:</strong> Holiday lights at Harbour Town. Christmas week is surprisingly open and cheap.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "The two weeks to absolutely avoid",
+    },
+    {
+      kind: 'p',
+      html: "<strong>Week of RBC Heritage (April 13\u201319, 2026)</strong> \u2014 unless you're attending. Rates double, restaurants overwhelmed, villas booked a year out.",
+    },
+    {
+      kind: 'p',
+      html: "<strong>July 4th week</strong> \u2014 peak-on-peak. Fireworks at Shelter Cove are great, but the drive home is 90 min for a 15-min trip.",
+    },
+    {
+      kind: 'h2',
+      text: "Hurricane season \u2014 the honest talk",
+    },
+    {
+      kind: 'p',
+      html: "Atlantic hurricane season runs June 1\u2013November 30. Actual risk to Hilton Head is concentrated in <strong>late August through mid-October</strong>. In the last 10 years, only two hurricanes have caused island-wide closures. The probability of your specific week being affected is <strong>under 4%</strong>.",
+    },
+    {
+      kind: 'p',
+      html: "That said \u2014 we always recommend trip insurance for September bookings. Costs about 5% of trip total. Covers full refund if an evacuation order is issued.",
+    },
+    {
+      kind: 'callout',
+      label: "What we actually recommend",
+      html: "For most clients we plan <strong>October</strong> first. For families locked into school calendars, <strong>mid-June</strong>. For golf, <strong>early May or late October</strong>. For couples on budget, <strong>early December</strong>. These are the four windows we come back to over and over.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 10) RBC Heritage 2026 travel guide
+// ---------------------------------------------------------------------------
+
+const postRbcHeritage: Post = {
+  slug: 'rbc-heritage-2026-travel-guide',
+  title: "RBC Heritage 2026: The Local's Travel Guide",
+  excerpt:
+    "Tickets, hospitality, lodging, and the three things visitors always get wrong. Everything you need for Heritage week, April 13\u201319, 2026.",
+  description:
+    "A local travel guide to RBC Heritage 2026 at Harbour Town Golf Links \u2014 tickets, hospitality packages, where to stay, parking strategy, and insider logistics for the PGA Tour's only Lowcountry stop.",
+  category: 'Golf',
+  readTime: '9 min',
+  publishedAt: '2026-02-28',
+  updatedAt: '2026-04-18',
+  author: 'Hilton Ahead',
+  featuredOrder: 3.5,
+  keywords: [
+    'RBC Heritage 2026',
+    'RBC Heritage tickets',
+    'Harbour Town Golf Links',
+    'RBC Heritage hospitality',
+    'RBC Heritage lodging',
+    'Hilton Head PGA Tour',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "RBC Heritage is the only full-field PGA Tour event south of Augusta and the single most important week of the year on Hilton Head Island. April 13\u201319, 2026. Here's what first-timers consistently get wrong and how locals actually do it.",
+    },
+    {
+      kind: 'h2',
+      text: "The week at a glance",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Monday\u2013Wednesday:</strong> Practice rounds. Cheaper tickets, smaller crowds, photograph freely.",
+        "<strong>Thursday\u2013Sunday:</strong> Tournament rounds. Full PGA Tour field, packed grounds, leaderboard drama by Saturday back nine.",
+        "<strong>Sunday 5\u20137 p.m.:</strong> Winner dons the plaid jacket on 18. Stay for it.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "Tickets \u2014 buy these, skip those",
+    },
+    {
+      kind: 'ol',
+      items: [
+        "<strong>Grounds pass ($55\u2013$85/day):</strong> Full access to the course. What most visitors should buy. Best value Wednesday or Thursday.",
+        "<strong>Weekly grounds ($295):</strong> All seven days. Only if you're actually going three or more times.",
+        "<strong>Hospitality ($900\u20131,800/day):</strong> Upgraded food/drink, shaded seating, usually hole 18 or 17. Worth it for Saturday or Sunday.",
+        "<strong>18th Hole Hospitality ($2,200+):</strong> The premium experience. Book 4+ months out. Corporate-entertaining tier.",
+      ],
+    },
+    {
+      kind: 'callout',
+      label: "Our Heritage default",
+      html: "For first-timers who want one great day: <strong>Saturday grounds pass plus a morning spent at hole 17</strong>. The short par-3 with the water carry is the most photogenic hole on the Atlantic coast, and Saturday's leaderboard pressure makes it theater.",
+    },
+    {
+      kind: 'h2',
+      text: "Where to stay during Heritage week",
+    },
+    {
+      kind: 'p',
+      html: "Lodging doubles in price and books out 9\u201310 months ahead. Three strategies:",
+    },
+    {
+      kind: 'ol',
+      items: [
+        "<strong>Sea Pines (on-resort):</strong> Walk to the course. $800\u20131,500/night for a villa. Book by July 2025 for 2026.",
+        "<strong>Mid-island (Palmetto Dunes / Shipyard):</strong> 10\u201315 min drive. $500\u2013900/night. More inventory, often your best bet if you're booking inside 6 months.",
+        "<strong>Bluffton / off-island:</strong> 20\u201330 min drive. $300\u2013500/night. The stealth play. Traffic is manageable if you leave Bluffton by 8 a.m.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "Parking strategy \u2014 don't skip this",
+    },
+    {
+      kind: 'p',
+      html: "On-site Heritage parking is a multi-hour ordeal. The move: <strong>park at the Honey Horn / Coastal Discovery Museum lot on US-278</strong> and take the free shuttle in. Adds 25 min each way but cuts 90 min of traffic.",
+    },
+    {
+      kind: 'p',
+      html: "Better: have us arrange a private car or rideshare from your lodging. Total spend is $60\u201380 round trip; we recover that in Heritage-week time.",
+    },
+    {
+      kind: 'h2',
+      text: "Where to eat \u2014 Heritage-week adjusted",
+    },
+    {
+      kind: 'p',
+      html: "Every Hilton Head restaurant is at 130% capacity. Standard reservation rules change. Specifics:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Skull Creek Boathouse:</strong> Walk-ins dead. Book 3 weeks out.",
+        "<strong>Red Fish:</strong> 4 weeks out. Call directly \u2014 they hold Heritage tables for returning clients.",
+        "<strong>Michael Anthony's:</strong> 4 weeks out. Or the bar (5\u201310 p.m., walk-up).",
+        "<strong>FARM Bluffton:</strong> The stealth move. 20 min drive, 15% easier reservation.",
+        "<strong>On-course food at Heritage:</strong> Better than you think. The lobster roll at the 17th-hole tent is genuinely good.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "Three things visitors always get wrong",
+    },
+    {
+      kind: 'ol',
+      items: [
+        "<strong>Not buying Wednesday tickets:</strong> Practice rounds are 60% cheaper and you can walk inside the ropes at holes 15\u201318. First-timers underrate this.",
+        "<strong>Driving onto the property Saturday morning:</strong> Grid-lock from 9\u201311 a.m. Arrive before 8 a.m. or after 11:30.",
+        "<strong>Not staying for the plaid jacket:</strong> The winner is crowned at the 18th green around 6 p.m. Sunday. Tradition matters. Stay.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "The corporate / hospitality play",
+    },
+    {
+      kind: 'p',
+      html: "Groups of 6\u201320 use Heritage as an entertaining week. Our corporate Heritage package includes: 18th-hole hospitality passes, a villa base, private transport, three reserved dinners, and a round at Atlantic Dunes on Friday. Runs $6k\u20139k per person. We book these 8\u201312 months out.",
+    },
+    {
+      kind: 'callout',
+      label: "Price reality",
+      html: "A \"normal\" Heritage-week trip for 4 \u2014 Sea Pines villa, 3 nights, Thursday+Saturday grounds, 4 reserved dinners \u2014 runs $6,500\u20139,000 all in for the group. For context, the same trip the following week (week after Heritage) runs $3,800\u20134,600.",
+    },
+    {
+      kind: 'h2',
+      text: "If you've never been \u2014 go once",
+    },
+    {
+      kind: 'p',
+      html: "Heritage is one of the most walkable, well-run PGA Tour events. Course access is better than Augusta, the crowds more polite than Phoenix, the backdrop more photogenic than pretty much anywhere. Plaid jackets, lighthouse, Atlantic sunset on the 18th. Worth a bucket-list week.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 11) Hilton Head with kids
+// ---------------------------------------------------------------------------
+
+const postWithKids: Post = {
+  slug: 'hilton-head-with-kids',
+  title: "Hilton Head With Kids: The Honest 7-Day Plan",
+  excerpt:
+    "The twelve activities that work, the three tourist traps to skip, and how to pace a week so the kids don't melt down on day 3.",
+  description:
+    "A local's honest guide to Hilton Head with kids \u2014 best beaches for toddlers, the bike-path strategy, kid-friendly restaurants, and the one meltdown-proof daily rhythm that works for families.",
+  category: 'Planning',
+  readTime: '10 min',
+  publishedAt: '2026-03-18',
+  updatedAt: '2026-04-18',
+  author: 'Hilton Ahead',
+  featuredOrder: 4.5,
+  keywords: [
+    'Hilton Head with kids',
+    'Hilton Head family vacation',
+    'Hilton Head toddler friendly',
+    'Hilton Head kids activities',
+    'family beach vacation South Carolina',
+    'Hilton Head family resort',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Hilton Head is the rare American beach destination genuinely built for kids. 12 miles of gentle Atlantic coast, 60 miles of paved bike path, a lighthouse you can climb, and restaurants that don't pretend kids don't exist. Here's the plan we give families.",
+    },
+    {
+      kind: 'h2',
+      text: "Where to stay with kids, ranked",
+    },
+    {
+      kind: 'ol',
+      items: [
+        "<strong>Palmetto Dunes (Omni or Marriott Grande Ocean):</strong> Best kids' programming, lagoons for kayaking, shortest beach walks. Our #1 for families of 4\u20138.",
+        "<strong>Sea Pines (Beach Club villas):</strong> Gregg Russell nightly kids' concert, bike-path heaven, Lawton Stables for horseback. Best for multi-generational.",
+        "<strong>Forest Beach (Sea Crest / Villamare condos):</strong> Walk to Coligny, best for budget families. Direct beach access from back door.",
+        "<strong>Disney Hilton Head (Shelter Cove):</strong> Yes, really. Disney-level service, kids' programming, free shuttle to their private beach house.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "The daily rhythm that actually works",
+    },
+    {
+      kind: 'p',
+      html: "Families who melt down by day 3 are over-programming. The island rewards two-activity days, not five-activity ones. Our default rhythm:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Morning (7\u201310 a.m.):</strong> Active \u2014 bike ride, kayak, beach before heat. This is when kids are best.",
+        "<strong>Midday (11 a.m.\u20132 p.m.):</strong> Pool + lunch. Out of the sun. Short quiet time for little ones.",
+        "<strong>Afternoon (3\u20135 p.m.):</strong> Second beach session or activity. Water is warmest now.",
+        "<strong>Evening (6\u20138 p.m.):</strong> One dinner out OR grill at the villa. Not both. Not every night.",
+      ],
+    },
+    {
+      kind: 'callout',
+      label: "The one rule",
+      html: "Alternate villa-dinner nights with restaurant-dinner nights. Seven restaurant dinners in a row is the #1 source of family-trip burnout. Pick two nights for real restaurants, cook or pick-up the other five.",
+    },
+    {
+      kind: 'h2',
+      text: "Best beaches for kids by age",
+    },
+    {
+      kind: 'h3',
+      text: "Toddlers (0\u20134)",
+    },
+    {
+      kind: 'p',
+      html: "<strong>South Beach (Sea Pines):</strong> South-facing, protected from wind, smallest waves on the island. The shoreline is hard-packed \u2014 great for stroller walks. Bathrooms, snack bar, and lifeguards in summer.",
+    },
+    {
+      kind: 'h3',
+      text: "Kids 5\u201310",
+    },
+    {
+      kind: 'p',
+      html: "<strong>Coligny Beach Park (Forest Beach):</strong> The only beach with full amenities. Lifeguards, bathrooms, showers, food. Walk to ice cream after. Best single kid-beach on the island.",
+    },
+    {
+      kind: 'h3',
+      text: "Tweens & teens (11+)",
+    },
+    {
+      kind: 'p',
+      html: "<strong>Burkes Beach (mid-island):</strong> Wider waves, fewer families, good for boogie-boarding and learning to surf. Access from Folly Field. Fewer amenities \u2014 bring your own.",
+    },
+    {
+      kind: 'h2',
+      text: "Kid-friendly activities, ranked",
+    },
+    {
+      kind: 'tier',
+      label: 'S-Tier',
+      subtitle: "The ones kids remember forever.",
+      accent: 'gold',
+      items: [
+        {
+          name: 'Dolphin cruise with Captain Mark (Harbour Town)',
+          meta: '$85/adult · 90 min · All ages',
+          blurb:
+            "Small-group boat, guaranteed dolphin sightings, kids learn the names of local pods. Better than the big-boat operators by a mile.",
+        },
+        {
+          name: 'Bike the beach at low tide',
+          meta: 'Free w/ rental · Ages 5+',
+          blurb:
+            "Rent bikes at Hilton Head Bicycle, ride 4 miles of hard sand at low tide. No cars, no stoplights. Pack snacks and make it a morning.",
+        },
+        {
+          name: 'Gregg Russell kids\u2019 concert (Sea Pines Liberty Oak)',
+          meta: 'Free · Nightly in summer',
+          blurb:
+            "Under the 400-year-old oak in Harbour Town. Kids dance, parents rest. Bring chairs and bug spray. A genuine island tradition.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'A-Tier',
+      subtitle: "Strong additions.",
+      accent: 'primary',
+      items: [
+        {
+          name: 'Coastal Discovery Museum',
+          meta: 'Free · Ages 6+ · 1\u20132 hrs',
+          blurb:
+            "Butterfly garden in summer, marsh boardwalk, rainy-day lifesaver. Weekday mornings best.",
+        },
+        {
+          name: 'Lawton Stables horseback ride',
+          meta: '$95 · Ages 8+ · 1 hr',
+          blurb:
+            "Through the Sea Pines forest preserve. Beautiful, photogenic, kids love it.",
+        },
+        {
+          name: 'Sandbox Children\u2019s Museum (Coligny)',
+          meta: '$9/kid · Ages 1\u20138',
+          blurb:
+            "Best rainy-afternoon backup. 90 min of sensory play. Clean, well-staffed.",
+        },
+        {
+          name: 'Salty Dog T-shirt factory',
+          meta: 'Free · All ages · 30 min',
+          blurb:
+            "Watch the t-shirts being made. Buy one. It's a rite of passage. Skip the restaurant.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Skip with kids',
+      subtitle: "What tourism boards push that doesn't work.",
+      accent: 'rose',
+      items: [
+        {
+          name: 'Harbour Town Lighthouse climb',
+          meta: '$5 · 114 steps',
+          blurb:
+            "Under-5s can't do the stairs. 6+ are bored after 30 seconds. Pay for the photo, skip the climb.",
+        },
+        {
+          name: 'Pirate-themed dinner cruise',
+          meta: '$85/adult',
+          blurb:
+            "Loud, average food, over-long. The afternoon sightseeing version (no dinner) is fine.",
+        },
+        {
+          name: 'Any commercial \"seashell tour\"',
+          meta: '$60+/person',
+          blurb:
+            "Seashells are free at low tide. Just take them off the beach.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "Restaurants that welcome kids (and the ones that don't)",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Hudson\u2019s on the Docks:</strong> Casual, waterfront, fast. Kids eat, parents drink.",
+        "<strong>Skull Creek Boathouse (early seating):</strong> 5\u20135:30 p.m. is genuinely family-friendly. After 7 it's date-night territory.",
+        "<strong>Harbour Town Bakery:</strong> Breakfast. Ham biscuits. Eat outside near the lighthouse.",
+        "<strong>Skillets Caf\u00e9 (Coligny):</strong> Pancakes. Kids pancakes. Pancakes for dinner if you want.",
+        "<strong>Avoid for kids:</strong> Red Fish, Michael Anthony's, WiseGuys, Ela's. Adult restaurants doing adult things.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "What we actually book for families",
+    },
+    {
+      kind: 'p',
+      html: "A typical family-of-4 summer week through us: 3BR oceanfront villa in Palmetto Dunes, bikes delivered day 1, Captain Mark cruise pre-booked, Skull Creek 5:30 pm reservation for Tuesday, Gregg Russell Thursday night, kayak clinic Saturday morning. Total trip $6,200\u20138,500 all in. Our fee: $350 flat. Saves ~10 hrs of research and gets you the restaurant tables you can't get yourself.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -1477,6 +1961,9 @@ export const posts: Post[] = [
   postForestBeach,
   postShelterCove,
   postGolfTrip,
+  postBestTime,
+  postRbcHeritage,
+  postWithKids,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {

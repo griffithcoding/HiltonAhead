@@ -72,7 +72,7 @@ export default function Hero() {
           <div className="rise rise-delay-4 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href={brand.cta.bookingPagePath}
-              className="group inline-flex items-center justify-center gap-2 bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral"
             >
               {hero.primaryCtaLabel}
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
@@ -102,7 +102,7 @@ export default function Hero() {
         {/* ——— RIGHT: layered photo collage ——— */}
         <div className="relative min-h-[520px] md:min-h-[620px]">
           {/* Primary photograph — off-center main plate */}
-          <figure className="rise rise-delay-1 absolute left-[8%] top-0 h-[72%] w-[80%] overflow-hidden shadow-[0_30px_80px_-20px_rgba(10,41,48,0.4)]">
+          <figure className="rise rise-delay-1 absolute left-[8%] top-0 h-[72%] w-[80%] overflow-hidden rounded-md shadow-[0_30px_80px_-20px_rgba(10,41,48,0.4)]">
             <Image
               src={primary.src}
               alt={primary.alt}
@@ -118,7 +118,7 @@ export default function Hero() {
 
           {/* Top-right small accent — tilts slightly, overlaps primary */}
           <figure
-            className="rise rise-delay-3 absolute -right-2 top-[18%] aspect-[4/5] w-[42%] overflow-hidden shadow-[0_20px_50px_-15px_rgba(10,41,48,0.5)]"
+            className="rise rise-delay-3 absolute -right-2 top-[18%] aspect-[4/5] w-[42%] overflow-hidden rounded-md shadow-[0_20px_50px_-15px_rgba(10,41,48,0.5)]"
             style={{ transform: 'rotate(2deg)' }}
           >
             <Image
@@ -132,7 +132,7 @@ export default function Hero() {
 
           {/* Bottom-left small accent — the lighthouse / marsh mood */}
           <figure
-            className="rise rise-delay-4 absolute -left-2 bottom-2 aspect-[5/4] w-[48%] overflow-hidden shadow-[0_20px_50px_-15px_rgba(10,41,48,0.5)]"
+            className="rise rise-delay-4 absolute -left-2 bottom-2 aspect-[5/4] w-[48%] overflow-hidden rounded-md shadow-[0_20px_50px_-15px_rgba(10,41,48,0.5)]"
             style={{ transform: 'rotate(-2deg)' }}
           >
             <Image

@@ -56,7 +56,7 @@ export default function WhyIsland() {
         </div>
 
         <figure className="relative min-h-[380px] md:min-h-[520px]">
-          <div className="relative h-full w-full overflow-hidden">
+          <div className="relative h-full w-full overflow-hidden rounded-md">
             <Image
               src={photos.mossOak.src}
               alt={photos.mossOak.alt}

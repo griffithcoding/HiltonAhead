@@ -99,7 +99,7 @@ export default function ServicesPage() {
 
               <Link
                 href={brand.cta.bookingPagePath}
-                className="group inline-flex items-center gap-2 self-start whitespace-nowrap border border-ink px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-ink hover:text-cream md:self-center"
+                className="group inline-flex items-center gap-2 self-start whitespace-nowrap rounded-full border border-ink px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-ink hover:text-cream md:self-center"
               >
                 Request this
                 <span

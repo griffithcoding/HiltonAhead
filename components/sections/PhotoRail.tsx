@@ -30,7 +30,7 @@ export default function PhotoRail() {
           {photos.moods.map((m, i) => (
             <figure
               key={i}
-              className={`group relative overflow-hidden ${
+              className={`group relative overflow-hidden rounded-md ${
                 i % 2 === 0 ? 'aspect-[3/4]' : 'aspect-[4/5]'
               }`}
             >

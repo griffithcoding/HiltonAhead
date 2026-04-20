@@ -50,7 +50,7 @@ export default function LatestPosts() {
             href={`/blog/${lead.slug}`}
             className="group flex flex-col gap-5"
           >
-            <figure className="relative aspect-[4/3] overflow-hidden">
+            <figure className="relative aspect-[4/3] overflow-hidden rounded-md">
               <Image
                 src={photoFor(0).src}
                 alt={photoFor(0).alt}
@@ -89,7 +89,7 @@ export default function LatestPosts() {
               href={`/blog/${post.slug}`}
               className="group grid grid-cols-[96px_1fr] gap-5 py-7 md:grid-cols-[120px_1fr]"
             >
-              <figure className="relative aspect-square overflow-hidden">
+              <figure className="relative aspect-square overflow-hidden rounded-md">
                 <Image
                   src={photoFor(i + 1).src}
                   alt={photoFor(i + 1).alt}

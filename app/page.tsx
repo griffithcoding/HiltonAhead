@@ -6,6 +6,7 @@ import PhotoRail from '@/components/sections/PhotoRail';
 import Services from '@/components/sections/Services';
 import InsiderProof from '@/components/sections/InsiderProof';
 import LatestPosts from '@/components/sections/LatestPosts';
+import Testimonials from '@/components/sections/Testimonials';
 import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
 import Footer from '@/components/sections/Footer';
@@ -66,6 +67,7 @@ export default function Home() {
         <Services />
         <InsiderProof />
         <LatestPosts />
+        <Testimonials />
         <Faq />
       </div>
 

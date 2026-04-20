@@ -204,3 +204,197 @@ export function getItemListSchema(
     })),
   }
 }
+
+/**
+ * JSON-LD Organization — used site-wide (homepage + footer).
+ * Includes aggregateRating if available. Strengthens the Knowledge Graph.
+ */
+export function getOrganizationSchema(opts?: {
+  ratingValue?: number
+  reviewCount?: number
+}) {
+  const base: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${siteUrl}#organization`,
+    name: brand.name,
+    legalName: brand.legalName,
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    email: brand.contact.email,
+    foundingLocation: {
+      '@type': 'Place',
+      name: 'Hilton Head Island, SC',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Hilton Head Island',
+      addressRegion: 'SC',
+      addressCountry: 'US',
+    },
+    areaServed: [
+      { '@type': 'Place', name: 'Hilton Head Island' },
+      { '@type': 'Place', name: 'Bluffton, SC' },
+      { '@type': 'Place', name: 'Lowcountry' },
+    ],
+    knowsAbout: [
+      'Hilton Head Island travel',
+      'Sea Pines Resort',
+      'Palmetto Dunes',
+      'Harbour Town Golf Links',
+      'RBC Heritage',
+      'Lowcountry dining',
+    ],
+  }
+  if (opts?.ratingValue && opts?.reviewCount) {
+    base.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: opts.ratingValue,
+      reviewCount: opts.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    }
+  }
+  return base
+}
+
+/**
+ * JSON-LD Review — one per tier-list item. Wrapped inside an itemReviewed
+ * that describes what was reviewed (a restaurant, hotel, or attraction).
+ */
+export function getReviewSchema(review: {
+  itemName: string
+  itemType: 'Restaurant' | 'LodgingBusiness' | 'TouristAttraction' | 'LocalBusiness'
+  reviewBody: string
+  ratingValue: number // 1–5
+  authorName: string
+  datePublished: string
+  locationName?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': review.itemType,
+      name: review.itemName,
+      ...(review.locationName
+        ? {
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: review.locationName,
+              addressRegion: 'SC',
+              addressCountry: 'US',
+            },
+          }
+        : {}),
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: review.ratingValue,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    author: { '@type': 'Organization', name: review.authorName },
+    reviewBody: review.reviewBody,
+    datePublished: review.datePublished,
+    publisher: { '@type': 'Organization', name: brand.name, url: siteUrl },
+  }
+}
+
+/** JSON-LD Place — for neighborhood landing pages. */
+export function getPlaceSchema(place: {
+  name: string
+  description: string
+  url: string
+  latitude: number
+  longitude: number
+  containedIn?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TouristAttraction',
+    name: place.name,
+    description: place.description,
+    url: place.url,
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: place.latitude,
+      longitude: place.longitude,
+    },
+    containedInPlace: {
+      '@type': 'Place',
+      name: place.containedIn || 'Hilton Head Island, SC',
+    },
+    touristType: ['Couples', 'Families', 'Golfers', 'Groups'],
+  }
+}
+
+/**
+ * JSON-LD LodgingBusiness — for stays listed in the 2026 stays tier post.
+ * Wrapped inside an ItemList in the caller.
+ */
+export function getLodgingBusinessSchema(lodging: {
+  name: string
+  description: string
+  priceRange?: string
+  ratingValue?: number
+  reviewCount?: number
+  locationName: string
+}) {
+  return {
+    '@type': 'LodgingBusiness',
+    name: lodging.name,
+    description: lodging.description,
+    priceRange: lodging.priceRange || '$$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: lodging.locationName,
+      addressRegion: 'SC',
+      addressCountry: 'US',
+    },
+    ...(lodging.ratingValue && lodging.reviewCount
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: lodging.ratingValue,
+            reviewCount: lodging.reviewCount,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
+  }
+}
+
+/** JSON-LD Event — for RBC Heritage, festivals, concerts, etc. */
+export function getEventSchema(event: {
+  name: string
+  description: string
+  startDate: string // ISO
+  endDate: string
+  locationName: string
+  url?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: event.name,
+    description: event.description,
+    startDate: event.startDate,
+    endDate: event.endDate,
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    location: {
+      '@type': 'Place',
+      name: event.locationName,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Hilton Head Island',
+        addressRegion: 'SC',
+        addressCountry: 'US',
+      },
+    },
+    organizer: { '@type': 'Organization', name: brand.name, url: siteUrl },
+    ...(event.url ? { url: event.url } : {}),
+  }
+}

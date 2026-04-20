@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
+import CalendlyButton from '@/components/CalendlyButton';
 import { brand } from '@/data/brand';
 import { photos } from '@/data/photos';
 import { SectionHead } from '@/components/ui/Ornament';
@@ -53,7 +54,7 @@ export default function ContactPage() {
             <div className="mt-10 flex flex-wrap items-center gap-5">
               <Link
                 href={brand.cta.bookingPagePath}
-                className="group inline-flex items-center gap-2 bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset"
               >
                 {brand.cta.label}
                 <span
@@ -63,6 +64,12 @@ export default function ContactPage() {
                   →
                 </span>
               </Link>
+              <CalendlyButton
+                url={brand.scheduling.calendly.url}
+                variant="outline"
+              >
+                Book a call
+              </CalendlyButton>
               {brand.contact.email ? (
                 <a
                   href={`mailto:${brand.contact.email}`}
@@ -96,7 +103,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <figure className="relative aspect-[3/4] overflow-hidden">
+          <figure className="relative aspect-[3/4] overflow-hidden rounded-md">
             <Image
               src={photos.boardwalk.src}
               alt={photos.boardwalk.alt}

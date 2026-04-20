@@ -98,7 +98,7 @@ export default function AboutPage() {
           </div>
 
           <aside className="flex flex-col gap-10">
-            <figure className="relative aspect-[3/4] overflow-hidden">
+            <figure className="relative aspect-[3/4] overflow-hidden rounded-md">
               <Image
                 src={photos.villa.src}
                 alt={photos.villa.alt}

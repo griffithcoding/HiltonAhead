@@ -78,7 +78,7 @@ export default function BlogIndexPage() {
             href={`/blog/${featured.slug}`}
             className="group mt-16 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-14"
           >
-            <figure className="relative aspect-[5/4] overflow-hidden">
+            <figure className="relative aspect-[5/4] overflow-hidden rounded-md">
               <Image
                 src={photoFor(0).src}
                 alt={photoFor(0).alt}
@@ -120,7 +120,7 @@ export default function BlogIndexPage() {
               href={`/blog/${post.slug}`}
               className="group flex flex-col gap-4"
             >
-              <figure className="relative aspect-[4/3] overflow-hidden">
+              <figure className="relative aspect-[4/3] overflow-hidden rounded-md">
                 <Image
                   src={photoFor(i + 1).src}
                   alt={photoFor(i + 1).alt}

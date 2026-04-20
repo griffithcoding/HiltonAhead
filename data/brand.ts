@@ -38,6 +38,20 @@ export const brand = {
     location: 'Hilton Head Island, SC',
   },
 
+  /**
+   * Booking / scheduling URLs.
+   * Update `calendly.url` after creating the Calendly account with
+   * `hiltonahead@gmail.com`. The 20-min discovery call slug is a convention —
+   * use whatever path Calendly generates for the event type.
+   */
+  scheduling: {
+    calendly: {
+      /** Set to your full Calendly event URL once created. */
+      url: 'https://calendly.com/hiltonahead/discovery',
+      label: 'Book a 20-min discovery call',
+    },
+  },
+
   social: {
     instagram: '',
     facebook: '',

@@ -53,7 +53,7 @@ export default function Services() {
               }`}
             >
               {/* Photograph */}
-              <figure className="relative aspect-[4/5] overflow-hidden lg:aspect-[4/4.5]">
+              <figure className="relative aspect-[4/5] overflow-hidden rounded-md lg:aspect-[4/4.5]">
                 <Image
                   src={photo.src}
                   alt={photo.alt}

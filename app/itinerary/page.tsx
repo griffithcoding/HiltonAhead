@@ -2,8 +2,12 @@ import type { Metadata } from 'next';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import ItineraryForm from './ItineraryForm';
+import TripCalculator from '@/components/TripCalculator';
+import CalendlyButton from '@/components/CalendlyButton';
+import CheckoutButton from '@/components/CheckoutButton';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
+import { brand } from '@/data/brand';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Request an Itinerary — Hilton Head Travel',
@@ -96,6 +100,54 @@ export default function ItineraryPage() {
             <ItineraryForm />
           </div>
         </div>
+
+        {/* ——— Trip Calculator + Calendly ——— */}
+        <section className="mt-24 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-16">
+          <TripCalculator calendlyUrl={brand.scheduling.calendly.url} />
+          <aside className="flex flex-col justify-center gap-5 border-l border-ocean-deep/15 pl-0 md:pl-10">
+            <div className="eyebrow text-coral">Prefer to talk?</div>
+            <h3 className="display text-[26px] leading-[1.1] text-ink md:text-[34px]">
+              Book a 20-minute{' '}
+              <span className="display-italic">discovery call.</span>
+            </h3>
+            <p className="max-w-[420px] text-[14px] leading-[1.7] text-ink-soft">
+              Free, no pressure. Faster than the form if you want to think out
+              loud about your trip first.
+            </p>
+            <CalendlyButton
+              url={brand.scheduling.calendly.url}
+              variant="outline"
+            >
+              {brand.scheduling.calendly.label}
+            </CalendlyButton>
+          </aside>
+        </section>
+
+        {/* ——— Direct payment for repeat clients / referrals ——— */}
+        <section className="mt-20 border-y border-ocean-deep/15 py-14">
+          <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+            <div className="max-w-[560px]">
+              <div className="eyebrow text-coral">Already decided?</div>
+              <h3 className="display mt-3 text-[26px] leading-[1.1] text-ink md:text-[34px]">
+                Pay your itinerary fee{' '}
+                <span className="display-italic">directly.</span>
+              </h3>
+              <p className="mt-3 text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                For returning clients and referred guests. $200 flat itinerary
+                fee or $500 trip-planning deposit (applied to your final
+                invoice). Secure checkout powered by Stripe.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3">
+              <CheckoutButton product="itinerary_fee" variant="primary">
+                Pay $200 itinerary fee
+              </CheckoutButton>
+              <CheckoutButton product="trip_deposit_500" variant="outline">
+                Pay $500 trip deposit
+              </CheckoutButton>
+            </div>
+          </div>
+        </section>
       </div>
 
       <Footer />

@@ -25,10 +25,10 @@ export const footerLinks = {
     {
       label: 'Island',
       links: [
-        { href: '/blog/sea-pines-guide', label: 'Sea Pines Guide' },
-        { href: '/blog/palmetto-dunes-guide', label: 'Palmetto Dunes Guide' },
-        { href: '/blog/forest-beach-guide', label: 'Forest Beach Guide' },
-        { href: '/blog/shelter-cove-guide', label: 'Shelter Cove Guide' },
+        { href: '/hilton-head/sea-pines', label: 'Sea Pines' },
+        { href: '/hilton-head/palmetto-dunes', label: 'Palmetto Dunes' },
+        { href: '/hilton-head/forest-beach', label: 'Forest Beach' },
+        { href: '/hilton-head/shelter-cove', label: 'Shelter Cove' },
       ],
     },
   ],

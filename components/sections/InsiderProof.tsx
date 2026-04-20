@@ -57,7 +57,7 @@ export default function InsiderProof() {
           {neighborhoods.map((spot, i) => (
             <article
               key={spot.neighborhood}
-              className="group relative aspect-[5/6] overflow-hidden"
+              className="group relative aspect-[5/6] overflow-hidden rounded-md"
             >
               <Image
                 src={spot.photo.src}

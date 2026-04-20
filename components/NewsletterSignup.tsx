@@ -149,7 +149,7 @@ export default function NewsletterSignup({
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex items-center justify-center gap-1.5 bg-cream px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-sunset hover:text-cream disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-cream px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-sunset hover:text-cream disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting ? 'Sending…' : 'Subscribe'}
             <span aria-hidden="true">→</span>
@@ -194,7 +194,7 @@ export default function NewsletterSignup({
             <button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center justify-center gap-2 bg-ink px-6 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
             >
               {submitting ? 'Sending…' : 'Send me the letter'}
               <span aria-hidden="true">→</span>
@@ -274,7 +274,7 @@ export default function NewsletterSignup({
                     key={o}
                     type="button"
                     onClick={() => toggleInterest(o)}
-                    className={`px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.15em] transition ${
+                    className={`rounded-full px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.15em] transition ${
                       active
                         ? 'bg-ink text-cream'
                         : 'border border-ink/25 text-ink hover:border-ink'
@@ -301,7 +301,7 @@ export default function NewsletterSignup({
           <button
             type="submit"
             disabled={submitting}
-            className="mt-1 inline-flex items-center justify-center gap-2 bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting ? 'Sending…' : 'Get the insider letter'}
             <span aria-hidden="true">→</span>

@@ -71,6 +71,13 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // Geo-targeting signals for local SEO — Hilton Head Island, SC
+  other: {
+    'geo.region': 'US-SC',
+    'geo.placename': 'Hilton Head Island',
+    'geo.position': '32.2163;-80.7526',
+    'ICBM': '32.2163, -80.7526',
+  },
 }
 
 export const viewport: Viewport = {

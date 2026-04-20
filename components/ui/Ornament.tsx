@@ -243,7 +243,7 @@ export function Polaroid({
   return (
     <figure className={`polaroid ${tilt} ${className}`}>
       <div
-        className="relative overflow-hidden"
+        className="relative overflow-hidden rounded-md"
         style={{ width: width ? `${width}px` : '100%', aspectRatio: width && height ? `${width} / ${height}` : '4 / 5' }}
       >
         <Image

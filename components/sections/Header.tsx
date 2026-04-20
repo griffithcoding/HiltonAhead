@@ -50,7 +50,7 @@ export default function Header() {
           </nav>
           <Link
             href={brand.cta.bookingPagePath}
-            className="group inline-flex items-center gap-2 rounded-none border border-ink bg-ink px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-cream transition hover:bg-sunset hover:border-sunset"
+            className="group inline-flex items-center gap-2 rounded-full border border-ink bg-ink px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-cream transition hover:bg-sunset hover:border-sunset"
           >
             {brand.cta.label}
             <span

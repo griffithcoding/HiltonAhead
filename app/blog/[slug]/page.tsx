@@ -13,6 +13,11 @@ import {
   generatePageMetadata,
   getBlogPostingSchema,
   getBreadcrumbSchema,
+  getItemListSchema,
+  getReviewSchema,
+  getLodgingBusinessSchema,
+  getPlaceSchema,
+  getEventSchema,
 } from '@/app/lib/metadata';
 import {
   posts,
@@ -86,6 +91,91 @@ export default async function BlogPostPage({
     { name: post.title, path: `/blog/${post.slug}` },
   ]);
 
+  // ——— Extra schemas derived from the post's tier blocks ———
+  const tierBlocks = post.body.filter(
+    (b): b is Extract<typeof post.body[number], { kind: 'tier' }> =>
+      b.kind === 'tier',
+  );
+  const allTierItems = tierBlocks.flatMap((t) => t.items);
+
+  // ItemList schema for tier-list posts (restaurants, stays, activities)
+  const itemListSchema =
+    tierBlocks.length > 0
+      ? getItemListSchema(
+          post.title,
+          allTierItems.map((i) => ({ name: i.name, description: i.blurb })),
+        )
+      : null;
+
+  // Review schemas — category-specific rating (S=5, A=4.5, B=4, C=3, rose=2.5)
+  const tierRating: Record<string, number> = {
+    gold: 5,
+    primary: 4.5,
+    zinc: 4,
+    rose: 2.5,
+  };
+  const reviewItemType: 'Restaurant' | 'LodgingBusiness' | 'TouristAttraction' =
+    post.category === 'Dining'
+      ? 'Restaurant'
+      : post.category === 'Stays'
+        ? 'LodgingBusiness'
+        : 'TouristAttraction';
+
+  const reviewSchemas = tierBlocks.flatMap((tier) =>
+    tier.items.map((item) =>
+      getReviewSchema({
+        itemName: item.name,
+        itemType: reviewItemType,
+        reviewBody: item.blurb,
+        ratingValue: tierRating[tier.accent] ?? 4,
+        authorName: post.author,
+        datePublished: post.publishedAt,
+        locationName: item.meta?.includes('Bluffton')
+          ? 'Bluffton'
+          : 'Hilton Head Island',
+      }),
+    ),
+  );
+
+  // LodgingBusiness schemas for Stays posts (supplements Reviews with aggregate)
+  const lodgingSchemas =
+    post.category === 'Stays'
+      ? allTierItems.map((item) =>
+          getLodgingBusinessSchema({
+            name: item.name,
+            description: item.blurb,
+            priceRange: '$$$',
+            locationName: 'Hilton Head Island',
+          }),
+        )
+      : [];
+
+  // Place schema for Neighborhoods posts
+  const placeSchema =
+    post.category === 'Neighborhoods'
+      ? getPlaceSchema({
+          name: post.title.split(':')[0].replace(/ Guide$/, '').trim(),
+          description: post.excerpt,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/blog/${post.slug}`,
+          latitude: 32.2163,
+          longitude: -80.7526,
+        })
+      : null;
+
+  // Event schema for Golf / RBC Heritage post
+  const eventSchema =
+    post.slug.includes('golf') || post.slug.includes('heritage')
+      ? getEventSchema({
+          name: 'RBC Heritage 2026',
+          description:
+            'PGA Tour event at Harbour Town Golf Links, Hilton Head Island.',
+          startDate: '2026-04-13',
+          endDate: '2026-04-19',
+          locationName: 'Harbour Town Golf Links',
+          url: 'https://rbcheritage.com/',
+        })
+      : null;
+
   return (
     <>
       <script
@@ -96,6 +186,40 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
+      {itemListSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(itemListSchema),
+          }}
+        />
+      )}
+      {reviewSchemas.map((s, i) => (
+        <script
+          key={`rev-${i}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
+      {lodgingSchemas.map((s, i) => (
+        <script
+          key={`lodge-${i}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
+      {placeSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(placeSchema) }}
+        />
+      )}
+      {eventSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />
@@ -148,7 +272,7 @@ export default async function BlogPostPage({
               </p>
             </div>
 
-            <figure className="relative aspect-[4/5] overflow-hidden md:aspect-auto md:h-full md:min-h-[460px]">
+            <figure className="relative aspect-[4/5] overflow-hidden rounded-md md:aspect-auto md:h-full md:min-h-[460px]">
               <Image
                 src={heroPhoto.src}
                 alt={heroPhoto.alt}
@@ -182,7 +306,7 @@ export default async function BlogPostPage({
               </div>
               <Link
                 href="/itinerary"
-                className="group inline-flex shrink-0 items-center gap-2 self-start bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset"
+                className="group inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset"
               >
                 Request an itinerary
                 <span

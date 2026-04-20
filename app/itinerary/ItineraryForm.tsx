@@ -195,7 +195,7 @@ export default function ItineraryForm() {
                 key={interest}
                 type="button"
                 onClick={() => toggleInterest(interest)}
-                className={`px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
+                className={`rounded-full px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
                   active
                     ? 'bg-ink text-cream'
                     : 'border border-ink/25 text-ink hover:border-ink'
@@ -245,7 +245,7 @@ export default function ItineraryForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="mt-2 inline-flex items-center justify-center gap-2 bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
       >
         {submitting ? 'Sending…' : 'Send request'}
         <span aria-hidden="true">→</span>
