@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/utils/supabase/server';
+import { sendNewsletterWelcome } from '@/app/lib/email';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -24,6 +25,12 @@ function clampStringArray(
   return out.length > 0 ? out : undefined;
 }
 
+/**
+ * Newsletter subscribe handler.
+ *
+ * Same best-effort pattern as itinerary: Supabase if configured,
+ * Resend welcome email if configured, succeed if at least one works.
+ */
 export async function POST(req: NextRequest) {
   let body: unknown;
   try {
@@ -52,9 +59,8 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Lightweight honeypot: legit users won't fill this hidden field.
+  // Honeypot — pretend success but don't store.
   if (typeof input.website === 'string' && input.website.trim()) {
-    // Pretend success but don't store.
     return NextResponse.json({ ok: true });
   }
 
@@ -70,27 +76,46 @@ export async function POST(req: NextRequest) {
     user_agent: req.headers.get('user-agent')?.slice(0, 500) ?? null,
   };
 
-  try {
-    const supabase = await createClient();
-    // Upsert on email: re-subscribes update source/interests/updated_at.
-    const { error } = await supabase
-      .from('newsletter_subscribers')
-      .upsert(row, { onConflict: 'email', ignoreDuplicates: false });
+  let dbOk = false;
+  const hasSupabase =
+    !!process.env.NEXT_PUBLIC_SUPABASE_URL &&
+    !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-    if (error) {
-      console.error('[newsletter] supabase upsert error:', error);
-      return NextResponse.json(
-        { ok: false, error: 'Could not subscribe. Please try again.' },
-        { status: 500 },
-      );
+  if (hasSupabase) {
+    try {
+      const supabase = await createClient();
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .upsert(row, { onConflict: 'email', ignoreDuplicates: false });
+
+      if (error) {
+        console.error('[newsletter] supabase upsert error:', error);
+      } else {
+        dbOk = true;
+      }
+    } catch (err) {
+      console.error('[newsletter] supabase unexpected error:', err);
     }
-  } catch (err) {
-    console.error('[newsletter] unexpected error:', err);
-    return NextResponse.json(
-      { ok: false, error: 'Could not subscribe. Please try again.' },
-      { status: 500 },
+  }
+
+  // Welcome email (fire-and-forget success; doesn't block response if fails)
+  const welcomeResult = await sendNewsletterWelcome(row.email);
+  const welcomeOk = welcomeResult.ok === true;
+  const welcomeSkipped =
+    welcomeResult.ok === false && 'skipped' in welcomeResult && welcomeResult.skipped;
+
+  if (dbOk || welcomeOk) {
+    return NextResponse.json({ ok: true });
+  }
+
+  if (!hasSupabase && welcomeSkipped) {
+    console.error(
+      '[newsletter] neither Supabase nor Resend are configured. Subscriber was not stored.',
     );
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json(
+    { ok: false, error: 'Could not subscribe. Please try again.' },
+    { status: 500 },
+  );
 }
