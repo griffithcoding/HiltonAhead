@@ -61,7 +61,7 @@ export default async function NeighborhoodPage({
   const n = getNeighborhoodBySlug(slug);
   if (!n) notFound();
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hiltonahead.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hiltonahead.com';
 
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
