@@ -4,57 +4,65 @@ import { brand } from '@/data/brand';
 import { photos } from '@/data/photos';
 
 /**
- * Final CTA band. Ambient photo behind dark overlay.
+ * Final CTA — full-bleed cinematic photograph with a large serif
+ * headline. Ink overlay tuned low so the photograph breathes.
  */
 export default function FinalCta() {
   return (
     <section
       id="contact-cta"
       aria-labelledby="final-cta-heading"
-      className="relative mt-16 overflow-hidden rounded-[24px] border border-white/20 shadow-xl"
+      className="bleed relative mt-28 h-[72vh] min-h-[520px] overflow-hidden md:mt-36"
     >
       <Image
-        src={photos.cta.src}
+        src={photos.dock.src}
         alt=""
         fill
         aria-hidden="true"
-        className="object-cover opacity-25"
         sizes="100vw"
+        className="object-cover photo-warm"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-900/90 to-zinc-950/95" />
-      <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/35 to-ink/75" />
 
-      <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 p-7 text-[13px]">
-        <div>
-          <h2
-            id="final-cta-heading"
-            className="mb-1.5 text-[22px] font-medium tracking-tight text-zinc-50 md:text-[24px]"
-          >
-            Ready to plan your trip?
-          </h2>
-          <p className="max-w-[460px] leading-[1.5] text-zinc-400">
-            Tell us when you&apos;re coming, who&apos;s coming, and what you want out of the trip.
-            You&apos;ll hear back within one business day with a quote and next steps.
-          </p>
+      <div className="relative mx-auto flex h-full max-w-[1280px] flex-col justify-end px-5 pb-14 text-cream md:pb-20">
+        <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-cream/80">
+          <span className="h-px w-12 bg-cream/70" />
+          An invitation
         </div>
-        <div className="flex flex-wrap items-center gap-2.5">
+
+        <h2
+          id="final-cta-heading"
+          className="display mt-5 max-w-[820px] text-balance text-[44px] leading-[0.98] tracking-[-0.02em] text-cream md:text-[72px] lg:text-[88px]"
+        >
+          Tell us when you&apos;re coming.{' '}
+          <span className="display-italic">We&apos;ll handle the rest.</span>
+        </h2>
+
+        <p className="mt-6 max-w-[560px] text-[15px] leading-[1.7] text-cream/80 md:text-[17px]">
+          Three minutes of questions, one business day to a quote, zero sales
+          pitch. The trip gets built for you, not for the algorithm.
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
             href={brand.cta.bookingPagePath}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-[13px] font-medium text-black shadow-lg shadow-primary/25 transition hover:brightness-105 active:scale-[0.98]"
+            className="group inline-flex items-center gap-2 bg-cream px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-sunset hover:text-cream"
           >
             {brand.cta.label}
-            <span aria-hidden="true">→</span>
+            <span
+              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-0.5"
+            >
+              →
+            </span>
           </Link>
           {brand.contact.email ? (
-            <span className="rounded-full border border-white/25 bg-zinc-950/70 px-3.5 py-2 text-[12px] text-zinc-200 backdrop-blur-sm">
-              or email{' '}
-              <a
-                href={`mailto:${brand.contact.email}`}
-                className="font-medium underline decoration-white/40 underline-offset-2"
-              >
-                {brand.contact.email}
-              </a>
-            </span>
+            <a
+              href={`mailto:${brand.contact.email}`}
+              className="link-underline text-[12px] font-medium uppercase tracking-[0.18em] text-cream"
+            >
+              {brand.contact.email}
+            </a>
           ) : null}
         </div>
       </div>

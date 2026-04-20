@@ -23,6 +23,12 @@ interface Props {
   body?: string;
 }
 
+/**
+ * Editorial newsletter signup.
+ * `card`  — large homepage / blog-index panel on cream (dark sunset accent)
+ * `inline`— slim panel embedded in blog posts (cream field)
+ * `compact` — two-line footer treatment (designed to live on dark ink)
+ */
 export default function NewsletterSignup({
   source,
   variant = 'card',
@@ -37,7 +43,7 @@ export default function NewsletterSignup({
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
   const [interests, setInterests] = useState<string[]>([]);
-  const [website, setWebsite] = useState(''); // honeypot
+  const [website, setWebsite] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -45,7 +51,7 @@ export default function NewsletterSignup({
   const title = heading ?? 'The Insider Letter';
   const blurb =
     body ??
-    'One email a month. Villa deals the booking sites miss, restaurant openings, hurricane-season intel, and the tee times that just dropped.';
+    'One dispatch a month. Villas the booking sites miss, restaurant openings, hurricane-season intel, and the tee times that just dropped.';
 
   function toggleInterest(v: string) {
     setInterests((prev) =>
@@ -56,14 +62,11 @@ export default function NewsletterSignup({
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
-
     if (!email.trim()) {
       setError('Please enter an email address.');
       return;
     }
-
     setSubmitting(true);
-
     try {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
@@ -73,7 +76,7 @@ export default function NewsletterSignup({
           fullName: fullName.trim() || undefined,
           interests: interests.length > 0 ? interests : undefined,
           source,
-          website, // honeypot
+          website,
           pageUrl:
             typeof window !== 'undefined' ? window.location.href : undefined,
         }),
@@ -91,47 +94,46 @@ export default function NewsletterSignup({
     }
   }
 
+  // ===== SUBMITTED (shared across variants, palette-aware) =====
   if (submitted) {
+    const onDark = variant === 'compact';
     return (
       <div
         className={
-          variant === 'compact'
-            ? 'rounded-[12px] border border-primary/30 bg-primary/[0.08] px-4 py-3'
-            : 'rounded-[18px] border border-primary/30 bg-primary/[0.08] p-6'
+          onDark
+            ? 'border-l-2 border-sunset pl-4 py-2'
+            : 'border-l-2 border-sunset bg-cream-deep/40 px-5 py-4'
         }
       >
-        <div className="flex items-center gap-3">
-          <span
-            aria-hidden="true"
-            className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-[14px] font-bold text-black"
-          >
-            ✓
-          </span>
-          <div>
-            <div className="text-[14px] font-medium text-zinc-50">
-              You&apos;re on the list.
-            </div>
-            <div className="text-[12px] text-zinc-400">
-              First letter arrives in a week or two. Check spam the first time.
-            </div>
-          </div>
+        <div
+          className={`display-italic text-[18px] ${
+            onDark ? 'text-cream' : 'text-ink'
+          }`}
+        >
+          You&apos;re on the list.
+        </div>
+        <div
+          className={`mt-1 text-[12px] ${
+            onDark ? 'text-cream/70' : 'text-ink-soft'
+          }`}
+        >
+          First dispatch arrives in a week or two. Check spam the first time.
         </div>
       </div>
     );
   }
 
-  // Compact footer variant — email + button only, no interests, single line on md+.
+  // ===== COMPACT (footer, on dark ink) =====
   if (variant === 'compact') {
     return (
-      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-        <label
-          htmlFor={emailId}
-          className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-400"
-        >
-          {title}
-        </label>
-        <p className="text-[12px] leading-[1.55] text-zinc-500">{blurb}</p>
-        <div className="mt-1 flex flex-col gap-2 sm:flex-row">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <div>
+          <div className="eyebrow text-cream/60">{title}</div>
+          <p className="mt-2 text-[13px] leading-[1.65] text-cream/75">
+            {blurb}
+          </p>
+        </div>
+        <div className="flex flex-col gap-2 sm:flex-row">
           <input
             id={emailId}
             type="email"
@@ -140,20 +142,21 @@ export default function NewsletterSignup({
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@email.com"
             autoComplete="email"
-            className="flex-1 rounded-full border border-white/15 bg-zinc-950/60 px-3.5 py-2 text-[12px] text-zinc-100 outline-none transition focus:border-primary"
+            aria-label="Email address"
+            className="flex-1 border-b border-cream/30 bg-transparent px-1 py-2 text-[13px] text-cream placeholder:text-cream/40 outline-none transition focus:border-sunset"
           />
           <HoneypotField id={honeypotId} value={website} onChange={setWebsite} />
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2 text-[12px] font-medium text-black shadow-md shadow-primary/20 transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex items-center justify-center gap-1.5 bg-cream px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-sunset hover:text-cream disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {submitting ? 'Subscribing…' : 'Subscribe'}
+            {submitting ? 'Sending…' : 'Subscribe'}
             <span aria-hidden="true">→</span>
           </button>
         </div>
         {error && (
-          <div className="text-[11px] text-rose-300" role="alert">
+          <div className="text-[11px] text-sunset" role="alert">
             {error}
           </div>
         )}
@@ -161,21 +164,21 @@ export default function NewsletterSignup({
     );
   }
 
-  // Inline (used mid-blog-post): smaller, no interests picker by default.
+  // ===== INLINE (mid-blog-post, on cream) =====
   if (variant === 'inline') {
     return (
-      <div className="rounded-[18px] border border-white/10 bg-zinc-900/50 p-6 backdrop-blur-sm">
-        <div className="flex flex-col gap-1.5">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-primary">
-            {title}
-          </div>
-          <h3 className="text-[16px] font-semibold text-zinc-50">
-            Get the next one in your inbox.
+      <aside className="border-y border-ink/15 py-10">
+        <div className="flex flex-col gap-2">
+          <div className="eyebrow text-sunset">{title}</div>
+          <h3 className="display text-[24px] leading-[1.2] text-ink md:text-[28px]">
+            Get the next dispatch in your inbox.
           </h3>
-          <p className="text-[13px] leading-[1.6] text-zinc-400">{blurb}</p>
+          <p className="max-w-[560px] text-[14px] leading-[1.7] text-ink-soft">
+            {blurb}
+          </p>
         </div>
-        <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-2">
-          <div className="flex flex-col gap-2 sm:flex-row">
+        <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row">
             <input
               id={emailId}
               type="email"
@@ -184,64 +187,56 @@ export default function NewsletterSignup({
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@email.com"
               autoComplete="email"
-              className="flex-1 rounded-full border border-white/15 bg-zinc-950/70 px-4 py-2.5 text-[13px] text-zinc-100 outline-none transition focus:border-primary"
+              aria-label="Email address"
+              className="flex-1 border-b border-ink/40 bg-transparent px-1 py-2.5 text-[14px] text-ink outline-none transition focus:border-sunset"
             />
             <HoneypotField id={honeypotId} value={website} onChange={setWebsite} />
             <button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-[13px] font-medium text-black shadow-lg shadow-primary/25 transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
+              className="inline-flex items-center justify-center gap-2 bg-ink px-6 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {submitting ? 'Subscribing…' : 'Send me the letter'}
+              {submitting ? 'Sending…' : 'Send me the letter'}
               <span aria-hidden="true">→</span>
             </button>
           </div>
           {error && (
-            <div className="text-[12px] text-rose-300" role="alert">
+            <div className="text-[12px] text-sunset" role="alert">
               {error}
             </div>
           )}
-          <div className="text-[11px] text-zinc-500">
-            No spam. Unsubscribe in one click. We never share your email.
+          <div className="eyebrow text-ink-soft">
+            No spam. Unsubscribe in one click.
           </div>
         </form>
-      </div>
+      </aside>
     );
   }
 
-  // Card (default): homepage-style lead magnet with full fields + interests.
+  // ===== CARD (homepage / blog-index, full editorial lead magnet) =====
   return (
-    <div className="relative overflow-hidden rounded-[22px] border border-primary/25 bg-gradient-to-br from-primary/[0.1] via-zinc-900/60 to-zinc-950/80 p-7 shadow-xl shadow-primary/10 backdrop-blur-sm">
-      <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-
-      <div className="relative">
-        <div className="mb-1.5 flex items-center gap-2">
-          <span
-            aria-hidden="true"
-            className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[12px] font-bold text-black"
-          >
-            ✉
-          </span>
-          <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-primary">
-            {title}
-          </div>
+    <section className="border-y border-ink/15">
+      <div className="grid grid-cols-1 gap-12 py-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-20 md:py-20">
+        <div>
+          <div className="eyebrow text-sunset">{title}</div>
+          <h3 className="display mt-5 text-balance text-[34px] leading-[1.05] text-ink md:text-[48px]">
+            Intel you won&apos;t find on the{' '}
+            <span className="display-italic">first page of Google.</span>
+          </h3>
+          <p className="mt-5 max-w-[520px] text-[15px] leading-[1.7] text-ink-soft">
+            {blurb}
+          </p>
         </div>
-        <h3 className="mt-2 max-w-[520px] text-[22px] font-medium leading-[1.25] tracking-tight text-zinc-50 md:text-[24px]">
-          Intel you won&apos;t find on the first page of Google.
-        </h3>
-        <p className="mt-3 max-w-[520px] text-[13px] leading-[1.65] text-zinc-400">
-          {blurb}
-        </p>
 
         <form
           onSubmit={handleSubmit}
-          className="mt-6 flex flex-col gap-3"
+          className="flex flex-col gap-5"
           aria-describedby={`${formId}-disclaimer`}
         >
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <label htmlFor={emailId} className="flex flex-col gap-1.5">
-              <span className="text-[11px] font-medium text-zinc-300">
-                Email <span className="text-primary">*</span>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label htmlFor={emailId} className="flex flex-col gap-2">
+              <span className="eyebrow text-ink-soft">
+                Email <span className="text-sunset">*</span>
               </span>
               <input
                 id={emailId}
@@ -251,27 +246,25 @@ export default function NewsletterSignup({
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@email.com"
                 autoComplete="email"
-                className="rounded-[10px] border border-white/15 bg-zinc-950/70 px-3 py-2.5 text-[13px] text-zinc-100 outline-none transition focus:border-primary"
+                className="border-b border-ink/40 bg-transparent px-1 py-2.5 text-[14px] text-ink outline-none transition focus:border-sunset"
               />
             </label>
-            <label htmlFor={nameId} className="flex flex-col gap-1.5">
-              <span className="text-[11px] font-medium text-zinc-300">
-                First name (optional)
-              </span>
+            <label htmlFor={nameId} className="flex flex-col gap-2">
+              <span className="eyebrow text-ink-soft">First name</span>
               <input
                 id={nameId}
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 autoComplete="given-name"
-                className="rounded-[10px] border border-white/15 bg-zinc-950/70 px-3 py-2.5 text-[13px] text-zinc-100 outline-none transition focus:border-primary"
+                className="border-b border-ink/40 bg-transparent px-1 py-2.5 text-[14px] text-ink outline-none transition focus:border-sunset"
               />
             </label>
           </div>
 
-          <fieldset className="flex flex-col gap-2">
-            <legend className="text-[11px] font-medium text-zinc-300">
-              What do you want us to cover? (pick any)
+          <fieldset className="flex flex-col gap-3">
+            <legend className="eyebrow text-ink-soft">
+              What should we cover?
             </legend>
             <div className="flex flex-wrap gap-2">
               {INTEREST_OPTIONS.map((o) => {
@@ -281,10 +274,10 @@ export default function NewsletterSignup({
                     key={o}
                     type="button"
                     onClick={() => toggleInterest(o)}
-                    className={`rounded-full border px-3 py-1.5 text-[12px] transition ${
+                    className={`px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.15em] transition ${
                       active
-                        ? 'border-primary bg-primary text-black'
-                        : 'border-white/20 bg-zinc-950/40 text-zinc-300 hover:border-white/40'
+                        ? 'bg-ink text-cream'
+                        : 'border border-ink/25 text-ink hover:border-ink'
                     }`}
                   >
                     {o}
@@ -299,7 +292,7 @@ export default function NewsletterSignup({
           {error && (
             <div
               role="alert"
-              className="rounded-[10px] border border-rose-500/40 bg-rose-500/10 px-3.5 py-2.5 text-[12px] text-rose-200"
+              className="border-l-2 border-sunset bg-sunset/5 px-3.5 py-2.5 text-[12px] text-sunset"
             >
               {error}
             </div>
@@ -308,21 +301,21 @@ export default function NewsletterSignup({
           <button
             type="submit"
             disabled={submitting}
-            className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-[13px] font-medium text-black shadow-lg shadow-primary/25 transition hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-1 inline-flex items-center justify-center gap-2 bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {submitting ? 'Subscribing…' : 'Get the insider letter'}
+            {submitting ? 'Sending…' : 'Get the insider letter'}
             <span aria-hidden="true">→</span>
           </button>
 
           <div
             id={`${formId}-disclaimer`}
-            className="text-[11px] text-zinc-500"
+            className="eyebrow text-ink-soft"
           >
-            One email a month. No spam. Unsubscribe in one click.
+            One dispatch · Unsubscribe anytime
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -335,7 +328,6 @@ function HoneypotField({
   value: string;
   onChange: (v: string) => void;
 }) {
-  // Hidden from users + assistive tech; bots fill it.
   return (
     <div
       aria-hidden="true"

@@ -17,8 +17,8 @@ export const brand = {
     'Custom Hilton Head itineraries built by a local insider. Villa booking, tee times, dinner reservations, and on-island concierge. Skip the tourist traps.',
 
   colors: {
-    /** Coastal lagoon teal — evokes water + warmth without the generic navy. */
-    primary: '#2EBFA5',
+    /** Sunset coral — the one sharp accent in the Lowcountry palette. */
+    primary: '#C44A2B',
   },
 
   logo: {

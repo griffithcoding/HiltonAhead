@@ -5,6 +5,7 @@ import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import { brand } from '@/data/brand';
 import { services } from '@/data/services';
+import { SectionHead, Divider } from '@/components/ui/Ornament';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
@@ -41,7 +42,7 @@ export default function ServicesPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#0f2a2a_0,#081619_45%,#03090b_100%)] text-zinc-50">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
@@ -54,52 +55,67 @@ export default function ServicesPage() {
         />
       ))}
 
-      <div className="mx-auto max-w-[1120px] px-5 pt-8 pb-18">
+      <div className="mx-auto max-w-[1280px] px-5">
         <Header />
 
-        <header className="mt-6 mb-10 max-w-[680px]">
-          <div className="mb-3 text-sm uppercase tracking-[0.15em] text-zinc-400">
-            Services
-          </div>
-          <h1 className="text-[34px] leading-[1.05] tracking-[-0.02em] text-zinc-50 md:text-[44px]">
-            Everything we do for you, in <span className="text-primary">one place.</span>
-          </h1>
-          <p className="mt-5 text-[15px] leading-[1.6] text-zinc-400">
-            Hilton Head is deceptively big. Twelve square miles of neighborhoods, three
-            major resorts, five championship golf courses, and a hundred restaurants that
-            range from white-linen to barefoot-on-a-deck. Here&apos;s how we navigate it for you.
+        <section className="mt-16 md:mt-20">
+          <SectionHead
+            number="№ 01"
+            eyebrow="Services"
+            plain="Everything we do for you,"
+            italic="in one place."
+          />
+          <p className="mt-6 max-w-[620px] text-[15px] leading-[1.7] text-ink-soft md:text-[17px]">
+            Hilton Head is deceptively big. Twelve square miles of
+            neighborhoods, three major resorts, five championship golf courses,
+            and a hundred restaurants that range from white-linen to
+            barefoot-on-a-deck. Here&apos;s how we navigate it for you.
           </p>
-        </header>
+        </section>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {services.items.map((item) => (
+        <Divider ornament="compass" className="my-14 text-gold" />
+
+        <div className="divide-y divide-ink/15 border-y border-ink/15">
+          {services.items.map((item, i) => (
             <article
               key={item.slug}
               id={item.slug}
-              className="flex scroll-mt-24 flex-col gap-4 rounded-[20px] border border-white/10 bg-zinc-900/60 p-7 backdrop-blur-sm"
+              className="grid scroll-mt-24 grid-cols-1 gap-6 py-10 md:grid-cols-[120px_minmax(0,1fr)_auto] md:items-center md:gap-10 md:py-14"
             >
-              <div
-                aria-hidden="true"
-                className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-zinc-800/90 text-[24px]"
-              >
-                {item.icon}
+              <div className="flex items-baseline gap-4">
+                <span className="section-number text-[32px] text-gold md:text-[40px]">
+                  {`0${i + 1}`}
+                </span>
               </div>
-              <h2 className="text-[20px] font-semibold text-zinc-50">{item.title}</h2>
-              <p className="text-[14px] leading-[1.65] text-zinc-400">{item.body}</p>
+
+              <div>
+                <h2 className="display text-[28px] leading-[1.12] text-ink md:text-[36px]">
+                  {item.title}
+                </h2>
+                <p className="mt-3 max-w-[680px] text-[15px] leading-[1.7] text-ink-soft">
+                  {item.body}
+                </p>
+              </div>
+
               <Link
                 href={brand.cta.bookingPagePath}
-                className="mt-2 inline-flex items-center gap-2 self-start rounded-full border border-white/25 bg-zinc-950/70 px-4 py-2 text-[12px] text-zinc-200 transition hover:border-primary/60 hover:text-white"
+                className="group inline-flex items-center gap-2 self-start whitespace-nowrap border border-ink px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-ink hover:text-cream md:self-center"
               >
                 Request this
-                <span aria-hidden="true">→</span>
+                <span
+                  aria-hidden="true"
+                  className="transition-transform group-hover:translate-x-0.5"
+                >
+                  →
+                </span>
               </Link>
             </article>
           ))}
         </div>
-
-        <FinalCta />
-        <Footer />
       </div>
-    </div>
+
+      <FinalCta />
+      <Footer />
+    </>
   );
 }

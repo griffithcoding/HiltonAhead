@@ -1,69 +1,89 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { services } from '@/data/services';
-import { photos } from '@/data/photos';
+import { SectionHead, Divider } from '@/components/ui/Ornament';
 
 /**
- * Services grid — 5 offerings on the island.
- * Server component.
+ * Services — editorial asymmetric layout.
+ * The first service is rendered large (lead feature); the remaining four
+ * sit in a two-column grid. Hairline rules, no rounded cards, section
+ * numbers in italic gold.
  */
 export default function Services() {
+  const [lead, ...rest] = services.items;
+
   return (
-    <section id="services" className="mt-12">
-      <div className="mb-3.5 text-sm uppercase tracking-[0.15em] text-zinc-400">
-        {services.eyebrow}
-      </div>
-      <div className="mb-[18px] flex flex-col justify-between gap-4 md:flex-row md:items-end">
-        <h2 className="max-w-[620px] text-[22px] font-medium tracking-tight md:text-[26px]">
-          {services.heading.plain}{' '}
-          <span className="text-primary">{services.heading.accent}</span>
-        </h2>
-        {services.subheading && (
-          <p className="max-w-[360px] text-[13px] leading-[1.5] text-zinc-400">
-            {services.subheading}
-          </p>
-        )}
+    <section id="services" className="mt-28 md:mt-36">
+      <Divider ornament="palmetto" className="mb-16 text-gold" />
+
+      <SectionHead
+        number="№ 02"
+        eyebrow={services.eyebrow}
+        plain={services.heading.plain}
+        italic={services.heading.accent}
+      />
+
+      {services.subheading && (
+        <p className="mt-6 max-w-[520px] text-[15px] leading-[1.7] text-ink-soft">
+          {services.subheading}
+        </p>
+      )}
+
+      {/* Lead feature — larger typographic treatment */}
+      {lead && (
+        <article
+          id={lead.slug}
+          className="mt-14 grid grid-cols-1 gap-8 border-t border-ink/15 pt-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:gap-14"
+        >
+          <div className="flex items-start gap-6">
+            <span className="section-number text-[28px] text-gold">
+              01
+            </span>
+            <span className="eyebrow text-ink-soft">Signature service</span>
+          </div>
+          <div>
+            <h3 className="display text-[32px] leading-[1.1] text-ink md:text-[44px]">
+              {lead.title}
+            </h3>
+            <p className="mt-5 max-w-[620px] text-[16px] leading-[1.7] text-ink-soft md:text-[17px]">
+              {lead.body}
+            </p>
+          </div>
+        </article>
+      )}
+
+      {/* Remaining four — two-column editorial grid, hairline separators */}
+      <div className="mt-10 grid grid-cols-1 gap-10 border-t border-ink/15 pt-10 md:grid-cols-2 md:gap-x-14 md:gap-y-12">
+        {rest.map((item, i) => (
+          <article
+            key={item.slug}
+            id={item.slug}
+            className="flex flex-col gap-4"
+          >
+            <div className="flex items-baseline gap-4">
+              <span className="section-number text-[22px] text-gold">
+                {`0${i + 2}`}
+              </span>
+              <span className="eyebrow text-ink-soft">Service</span>
+            </div>
+            <h3 className="display text-[24px] leading-[1.15] text-ink md:text-[28px]">
+              {item.title}
+            </h3>
+            <p className="text-[14px] leading-[1.7] text-ink-soft">
+              {item.body}
+            </p>
+          </article>
+        ))}
       </div>
 
-      <div className="relative overflow-hidden rounded-[24px] border border-white/20 shadow-xl">
-        <Image
-          src={photos.cta.src}
-          alt=""
-          fill
-          aria-hidden="true"
-          className="object-cover opacity-20"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-900/90 to-zinc-950/95" />
-        <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-
-        <div className="relative z-10 grid grid-cols-1 gap-4 p-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.items.map((item) => (
-            <article
-              key={item.slug}
-              id={item.slug}
-              className="flex flex-col gap-3 rounded-[18px] border border-white/10 bg-zinc-900/60 p-5 backdrop-blur-sm"
-            >
-              <div
-                aria-hidden="true"
-                className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-zinc-800/90 text-[20px]"
-              >
-                {item.icon}
-              </div>
-              <h3 className="text-[15px] font-semibold text-zinc-50">{item.title}</h3>
-              <p className="text-[13px] leading-[1.6] text-zinc-400">{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-6 text-center">
+      <div className="mt-14 flex items-center justify-between border-t border-ink/15 pt-6">
+        <span className="eyebrow text-ink-soft">
+          Every trip is quoted up front
+        </span>
         <Link
           href="/services"
-          className="inline-flex items-center gap-2 text-[13px] text-zinc-300 transition-colors hover:text-white"
+          className="link-underline text-[13px] font-medium uppercase tracking-[0.15em] text-ink"
         >
-          See all services
-          <span aria-hidden="true">→</span>
+          See all services →
         </Link>
       </div>
     </section>

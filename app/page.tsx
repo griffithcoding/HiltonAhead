@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
+import WhyIsland from '@/components/sections/WhyIsland';
 import Services from '@/components/sections/Services';
 import InsiderProof from '@/components/sections/InsiderProof';
 import LatestPosts from '@/components/sections/LatestPosts';
@@ -37,7 +38,7 @@ export default function Home() {
   const faqSchema = getFaqSchema(faq.items);
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#0f2a2a_0,#081619_45%,#03090b_100%)] text-zinc-50">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(travelAgencySchema) }}
@@ -50,19 +51,24 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="mx-auto max-w-[1120px] px-5 pt-8 pb-18">
+
+      <div className="mx-auto max-w-[1280px] px-5 pb-0 pt-0">
         <Header />
         <Hero />
+        <WhyIsland />
         <Services />
         <InsiderProof />
         <LatestPosts />
         <Faq />
-        <section className="mt-16">
-          <NewsletterSignup variant="card" source="homepage" />
-        </section>
-        <FinalCta />
-        <Footer />
       </div>
-    </div>
+
+      {/* Newsletter card — breathing room before the final full-bleed CTA */}
+      <div className="mx-auto max-w-[1280px] px-5 mt-28 md:mt-36">
+        <NewsletterSignup variant="card" source="homepage" />
+      </div>
+
+      <FinalCta />
+      <Footer />
+    </>
   );
 }

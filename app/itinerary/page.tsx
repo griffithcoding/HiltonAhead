@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import ItineraryForm from './ItineraryForm';
+import { SectionHead, Divider } from '@/components/ui/Ornament';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -23,82 +24,81 @@ export default function ItineraryPage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#0f2a2a_0,#081619_45%,#03090b_100%)] text-zinc-50">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
-      <div className="mx-auto max-w-[1120px] px-5 pt-8 pb-18">
+
+      <div className="mx-auto max-w-[1280px] px-5">
         <Header />
 
-        <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
-          <div>
-            <div className="mb-3 text-sm uppercase tracking-[0.15em] text-zinc-400">
-              Request an Itinerary
-            </div>
-            <h1 className="mb-5 text-[32px] leading-[1.05] tracking-[-0.02em] text-zinc-50 md:text-[40px]">
-              Tell us about your <span className="text-primary">trip.</span>
-            </h1>
-            <p className="max-w-[460px] text-[14px] leading-[1.65] text-zinc-400">
-              This takes about three minutes. You&apos;ll hear back within one business day
-              with a quote and a suggested next step. No obligation, no sales pitch.
-            </p>
+        <section className="mt-16 md:mt-20">
+          <SectionHead
+            number="№ 01"
+            eyebrow="Request an Itinerary"
+            plain="Tell us about"
+            italic="your trip."
+          />
+          <p className="mt-6 max-w-[520px] text-[15px] leading-[1.7] text-ink-soft md:text-[17px]">
+            Three minutes of questions. One business day to a quote. No
+            obligation, no sales pitch.
+          </p>
+        </section>
 
-            <div className="mt-7 space-y-4 text-[13px] text-zinc-400">
-              <div className="flex gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/40 text-[11px] text-primary"
+        <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-20">
+          <aside>
+            <h2 className="eyebrow text-sunset">How it goes</h2>
+            <ol className="mt-6 flex flex-col gap-8">
+              {[
+                {
+                  title: 'You submit the form',
+                  body: 'Just the basics — when, who, what kind of trip.',
+                },
+                {
+                  title: 'We send a quote within one business day',
+                  body: 'Flat fee for itineraries, % of spend for full-service group trips.',
+                },
+                {
+                  title: 'You approve, we build',
+                  body: 'Full plan delivered within 5–7 days. Revisions included.',
+                },
+              ].map((step, i) => (
+                <li
+                  key={step.title}
+                  className="grid grid-cols-[56px_1fr] items-baseline gap-4"
                 >
-                  1
-                </span>
-                <div>
-                  <div className="font-medium text-zinc-200">You submit the form</div>
-                  <p className="mt-1 leading-[1.5]">
-                    Just the basics — when, who, what kind of trip.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/40 text-[11px] text-primary"
-                >
-                  2
-                </span>
-                <div>
-                  <div className="font-medium text-zinc-200">
-                    We send a quote within one business day
+                  <span className="section-number text-[28px] text-gold">
+                    {`0${i + 1}`}
+                  </span>
+                  <div>
+                    <div className="display text-[18px] leading-[1.2] text-ink md:text-[20px]">
+                      {step.title}
+                    </div>
+                    <p className="mt-1.5 text-[13px] leading-[1.6] text-ink-soft">
+                      {step.body}
+                    </p>
                   </div>
-                  <p className="mt-1 leading-[1.5]">
-                    Flat fee for itineraries, % of spend for full-service group trips.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/40 text-[11px] text-primary"
-                >
-                  3
-                </span>
-                <div>
-                  <div className="font-medium text-zinc-200">You approve, we build</div>
-                  <p className="mt-1 leading-[1.5]">
-                    Full plan delivered within 5–7 days. Revisions included.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+                </li>
+              ))}
+            </ol>
 
-          <div className="rounded-[20px] border border-white/10 bg-zinc-900/60 p-6 backdrop-blur-sm md:p-8">
+            <Divider ornament="palmetto" className="my-10 text-gold" />
+
+            <p className="max-w-[420px] text-[13px] leading-[1.7] text-ink-soft">
+              <span className="display-italic text-ink">A small note —</span>{' '}
+              every quote is flat or percentage-based, agreed up front. No
+              kickbacks baked into your rates.
+            </p>
+          </aside>
+
+          <div className="frame p-8 md:p-10">
             <ItineraryForm />
           </div>
         </div>
-
-        <Footer />
       </div>
-    </div>
+
+      <Footer />
+    </>
   );
 }

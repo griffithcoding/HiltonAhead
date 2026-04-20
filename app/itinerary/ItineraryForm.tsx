@@ -92,17 +92,15 @@ export default function ItineraryForm() {
 
   if (submitted) {
     return (
-      <div className="py-8 text-center">
-        <div
-          aria-hidden="true"
-          className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-[24px] text-black"
-        >
-          ✓
-        </div>
-        <h2 className="text-[20px] font-medium text-zinc-50">Got it — thanks.</h2>
-        <p className="mx-auto mt-3 max-w-[360px] text-[13px] leading-[1.6] text-zinc-400">
-          We&apos;ll review your request and get back to you within one business day with a quote
-          and a suggested next step. Check spam if you don&apos;t hear from us by then.
+      <div className="py-6">
+        <div className="eyebrow text-sunset">Received</div>
+        <h2 className="display mt-3 text-[30px] leading-[1.1] text-ink md:text-[36px]">
+          Got it — <span className="display-italic">thanks.</span>
+        </h2>
+        <p className="mt-4 max-w-[420px] text-[14px] leading-[1.7] text-ink-soft">
+          We&apos;ll review your request and get back to you within one business
+          day with a quote and a suggested next step. Check spam if you
+          don&apos;t hear from us by then.
         </p>
       </div>
     );
@@ -197,10 +195,10 @@ export default function ItineraryForm() {
                 key={interest}
                 type="button"
                 onClick={() => toggleInterest(interest)}
-                className={`rounded-full border px-3 py-1.5 text-[12px] transition ${
+                className={`px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
                   active
-                    ? 'border-primary bg-primary text-black'
-                    : 'border-white/25 bg-zinc-950/60 text-zinc-300 hover:border-white/50'
+                    ? 'bg-ink text-cream'
+                    : 'border border-ink/25 text-ink hover:border-ink'
                 }`}
               >
                 {interest}
@@ -238,7 +236,7 @@ export default function ItineraryForm() {
       {error && (
         <div
           role="alert"
-          className="rounded-[10px] border border-red-500/40 bg-red-500/10 px-3.5 py-2.5 text-[12px] text-red-200"
+          className="border-l-2 border-sunset bg-sunset/5 px-3.5 py-2.5 text-[12px] text-sunset"
         >
           {error}
         </div>
@@ -247,7 +245,7 @@ export default function ItineraryForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-[14px] font-medium text-black shadow-lg shadow-primary/25 transition hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-2 inline-flex items-center justify-center gap-2 bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset disabled:cursor-not-allowed disabled:opacity-60"
       >
         {submitting ? 'Sending…' : 'Send request'}
         <span aria-hidden="true">→</span>
@@ -256,20 +254,30 @@ export default function ItineraryForm() {
       <style>{`
         .input {
           width: 100%;
-          border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          background: rgba(9, 9, 11, 0.6);
-          padding: 0.625rem 0.75rem;
-          font-size: 13px;
-          color: #f4f4f5;
+          border: 0;
+          border-bottom: 1px solid rgba(26, 41, 35, 0.25);
+          background: transparent;
+          padding: 0.5rem 0.25rem;
+          font-size: 14px;
+          color: var(--ink);
           outline: none;
-          transition: border-color 0.15s ease;
+          transition: border-color 0.2s ease;
         }
         .input:focus {
-          border-color: var(--brand-primary);
+          border-color: var(--sunset);
         }
         .input::placeholder {
-          color: #71717a;
+          color: rgba(26, 41, 35, 0.4);
+        }
+        select.input {
+          appearance: none;
+          padding-right: 1.5rem;
+          background-image:
+            linear-gradient(45deg, transparent 50%, var(--ink) 50%),
+            linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+          background-position: calc(100% - 12px) 50%, calc(100% - 7px) 50%;
+          background-size: 5px 5px;
+          background-repeat: no-repeat;
         }
       `}</style>
     </form>
@@ -288,13 +296,13 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <label className="flex flex-col gap-1.5">
-      <span className="text-[12px] font-medium text-zinc-300">
+    <label className="flex flex-col gap-2">
+      <span className="eyebrow text-ink-soft">
         {label}
-        {required && <span className="text-primary"> *</span>}
+        {required && <span className="text-sunset"> *</span>}
       </span>
       {children}
-      {hint && <span className="text-[11px] text-zinc-500">{hint}</span>}
+      {hint && <span className="text-[11px] text-ink-soft/70">{hint}</span>}
     </label>
   );
 }

@@ -50,14 +50,12 @@ export default function PostBody({ blocks }: { blocks: PostBlock[] }) {
 
 function Callout({ label, html }: { label?: string; html: string }) {
   return (
-    <aside className="my-6 rounded-[16px] border border-primary/30 bg-primary/[0.06] p-5 not-prose">
+    <aside className="not-prose my-8 border-l-2 border-sunset bg-cream-deep/40 px-5 py-4 md:px-6 md:py-5">
       {label && (
-        <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
-          {label}
-        </div>
+        <div className="eyebrow mb-2 text-sunset">{label}</div>
       )}
       <p
-        className="text-[14px] leading-[1.65] text-zinc-200"
+        className="text-[14px] leading-[1.7] text-ink md:text-[15px]"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </aside>
@@ -66,13 +64,13 @@ function Callout({ label, html }: { label?: string; html: string }) {
 
 function Quote({ html, attribution }: { html: string; attribution?: string }) {
   return (
-    <blockquote className="my-6 border-l-2 border-primary/60 pl-5 not-prose">
+    <blockquote className="not-prose my-10 border-t border-b border-ink/15 py-6">
       <p
-        className="text-[15px] italic leading-[1.65] text-zinc-300"
+        className="display-italic max-w-[620px] text-[20px] leading-[1.4] text-ink md:text-[24px]"
         dangerouslySetInnerHTML={{ __html: html }}
       />
       {attribution && (
-        <cite className="mt-2 block text-[12px] not-italic text-zinc-500">
+        <cite className="eyebrow mt-4 block text-ink-soft">
           — {attribution}
         </cite>
       )}
@@ -82,24 +80,24 @@ function Quote({ html, attribution }: { html: string; attribution?: string }) {
 
 const TIER_STYLES = {
   gold: {
-    badge: 'bg-amber-400 text-black',
-    border: 'border-amber-400/40',
-    glow: 'shadow-amber-400/10',
+    badge: 'bg-gold text-cream',
+    accent: 'text-gold',
+    label: 'S-Tier',
   },
   primary: {
-    badge: 'bg-primary text-black',
-    border: 'border-primary/40',
-    glow: 'shadow-primary/10',
+    badge: 'bg-sunset text-cream',
+    accent: 'text-sunset',
+    label: 'A-Tier',
   },
   zinc: {
-    badge: 'bg-zinc-300 text-black',
-    border: 'border-white/15',
-    glow: 'shadow-white/5',
+    badge: 'bg-ink text-cream',
+    accent: 'text-ink',
+    label: 'B-Tier',
   },
   rose: {
-    badge: 'bg-rose-400 text-black',
-    border: 'border-rose-400/30',
-    glow: 'shadow-rose-400/10',
+    badge: 'bg-transparent text-ink border border-ink',
+    accent: 'text-ink-soft',
+    label: 'Skip',
   },
 } as const;
 
@@ -109,43 +107,56 @@ function TierBlock({
   block: Extract<PostBlock, { kind: 'tier' }>;
 }) {
   const s = TIER_STYLES[block.accent];
+
   return (
-    <section
-      className={`my-8 rounded-[20px] border ${s.border} bg-zinc-900/60 p-6 shadow-lg ${s.glow} backdrop-blur-sm not-prose`}
-    >
-      <header className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
-        <div className="flex items-center gap-3">
+    <section className="not-prose my-12 border-y border-ink/20 py-10">
+      <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div className="flex items-center gap-5">
           <span
-            className={`inline-flex items-center rounded-full px-3 py-1 text-[12px] font-bold tracking-wider ${s.badge}`}
+            className={`inline-flex items-center px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] ${s.badge}`}
           >
             {block.label}
           </span>
           {block.subtitle && (
-            <span className="text-[13px] text-zinc-400">{block.subtitle}</span>
+            <span className="display-italic text-[16px] leading-[1.25] text-ink-soft md:text-[18px]">
+              {block.subtitle}
+            </span>
           )}
         </div>
+        <span className={`eyebrow ${s.accent}`}>
+          {block.items.length} picks
+        </span>
       </header>
 
-      <ul className="flex flex-col gap-3">
+      <ol className="divide-y divide-ink/10">
         {block.items.map((item, i) => (
           <li
             key={i}
-            className="rounded-[14px] border border-white/10 bg-zinc-950/50 p-4"
+            className="grid grid-cols-[auto_1fr] gap-5 py-6 md:grid-cols-[64px_1fr] md:gap-8"
           >
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h4 className="text-[15px] font-semibold text-zinc-50">
-                {item.name}
-              </h4>
-              {item.meta && (
-                <span className="text-[11px] text-zinc-500">{item.meta}</span>
-              )}
+            <span
+              className={`section-number text-[24px] leading-none md:text-[32px] ${s.accent}`}
+            >
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div>
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h4 className="display text-[19px] leading-[1.2] text-ink md:text-[22px]">
+                  {item.name}
+                </h4>
+                {item.meta && (
+                  <span className="text-[11px] uppercase tracking-[0.15em] text-ink-soft">
+                    {item.meta}
+                  </span>
+                )}
+              </div>
+              <p className="mt-2 max-w-[620px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                {item.blurb}
+              </p>
             </div>
-            <p className="mt-2 text-[13px] leading-[1.6] text-zinc-400">
-              {item.blurb}
-            </p>
           </li>
         ))}
-      </ul>
+      </ol>
     </section>
   );
 }

@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import { photos } from '@/data/photos';
+import { SectionHead, Divider } from '@/components/ui/Ornament';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import { posts } from '@/data/posts';
 
@@ -23,6 +26,18 @@ export const metadata: Metadata = generatePageMetadata({
   ],
 });
 
+// Cycle through editorial photography for featured cards.
+const FEATURE_PHOTOS = [
+  photos.lighthouse,
+  photos.villa,
+  photos.boardwalk,
+  photos.marsh,
+  photos.dock,
+  photos.beachMorning,
+  photos.mossOak,
+  photos.hero,
+];
+
 export default function BlogIndexPage() {
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
@@ -30,97 +45,117 @@ export default function BlogIndexPage() {
   ]);
 
   const [featured, ...rest] = posts;
+  const photoFor = (idx: number) =>
+    FEATURE_PHOTOS[idx % FEATURE_PHOTOS.length];
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#0f2a2a_0,#081619_45%,#03090b_100%)] text-zinc-50">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
-      <div className="mx-auto max-w-[1120px] px-5 pt-8 pb-18">
+
+      <div className="mx-auto max-w-[1280px] px-5">
         <Header />
 
-        <header className="mt-6 mb-10 max-w-[680px]">
-          <div className="mb-3 text-sm uppercase tracking-[0.15em] text-zinc-400">
-            Local Guide
-          </div>
-          <h1 className="text-[34px] leading-[1.05] tracking-[-0.02em] text-zinc-50 md:text-[44px]">
-            Written by someone who{' '}
-            <span className="text-primary">actually lives here.</span>
-          </h1>
-          <p className="mt-5 text-[15px] leading-[1.65] text-zinc-400">
+        <section className="mt-16 md:mt-20">
+          <SectionHead
+            number="№ 01"
+            eyebrow="Local Guide"
+            plain="Written by someone who"
+            italic="actually lives here."
+          />
+          <p className="mt-6 max-w-[620px] text-[15px] leading-[1.7] text-ink-soft md:text-[17px]">
             No SEO-farm junk. No &ldquo;top 25&rdquo; lists copied from the
             Visitor&apos;s Bureau. Just the real island — neighborhood by
             neighborhood, season by season, ranked tier by tier.
           </p>
-        </header>
+        </section>
 
+        {/* ——— Featured feature ——— */}
         {featured && (
           <Link
             href={`/blog/${featured.slug}`}
-            className="group mb-10 block overflow-hidden rounded-[22px] border border-primary/30 bg-gradient-to-br from-primary/[0.12] via-zinc-900/60 to-zinc-950/80 p-8 shadow-xl shadow-primary/10 backdrop-blur-sm transition-all hover:border-primary/50 hover:shadow-primary/20"
+            className="group mt-16 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-14"
           >
-            <div className="flex flex-col gap-5">
-              <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.15em]">
-                <span className="rounded-full bg-primary px-2.5 py-0.5 font-semibold text-black">
-                  Featured · 2026
-                </span>
-                <span className="text-primary">{featured.category}</span>
-                <span className="text-zinc-600" aria-hidden>
-                  ·
-                </span>
-                <span className="text-zinc-500">
-                  {featured.readTime} read
-                </span>
+            <figure className="relative aspect-[5/4] overflow-hidden">
+              <Image
+                src={photoFor(0).src}
+                alt={photoFor(0).alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 55vw"
+                className="object-cover photo-warm"
+                priority
+              />
+              <span className="absolute left-4 top-4 bg-cream px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">
+                Featured · 2026
+              </span>
+            </figure>
+            <div className="flex flex-col justify-center">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.22em] text-ink-soft">
+                <span className="text-sunset">{featured.category}</span>
+                <span aria-hidden="true" className="h-px w-6 bg-ink/20" />
+                <span>{featured.readTime} read</span>
               </div>
-              <h2 className="max-w-[760px] text-[26px] leading-[1.2] tracking-[-0.01em] text-zinc-50 transition-colors group-hover:text-white md:text-[32px]">
+              <h2 className="display mt-5 text-balance text-[34px] leading-[1.05] text-ink md:text-[48px]">
                 {featured.title}
               </h2>
-              <p className="max-w-[720px] text-[14px] leading-[1.6] text-zinc-300">
+              <p className="mt-5 max-w-[560px] text-[16px] leading-[1.7] text-ink-soft">
                 {featured.excerpt}
               </p>
-              <div className="text-[13px] font-medium text-primary transition-colors group-hover:text-white">
-                Read the full ranking
-                <span aria-hidden="true" className="ml-1.5">
-                  →
-                </span>
-              </div>
+              <span className="link-underline mt-6 inline-block text-[12px] font-medium uppercase tracking-[0.18em] text-ink">
+                Read the full ranking →
+              </span>
             </div>
           </Link>
         )}
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {rest.map((post) => (
+        <Divider ornament="compass" className="my-20 text-gold" />
+
+        {/* ——— All dispatches grid ——— */}
+        <div className="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+          {rest.map((post, i) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col gap-3 rounded-[18px] border border-white/10 bg-zinc-900/60 p-6 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-zinc-900/80"
+              className="group flex flex-col gap-4"
             >
-              <div className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-primary">
-                <span>{post.category}</span>
-                <span aria-hidden="true" className="text-zinc-700">·</span>
-                <span className="text-zinc-500">{post.readTime}</span>
+              <figure className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={photoFor(i + 1).src}
+                  alt={photoFor(i + 1).alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover photo-warm"
+                />
+              </figure>
+              <div>
+                <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-ink-soft">
+                  <span className="text-sunset">{post.category}</span>
+                  <span aria-hidden="true" className="h-px w-4 bg-ink/20" />
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 className="display mt-3 text-[22px] leading-[1.15] text-ink md:text-[24px]">
+                  {post.title}
+                </h3>
+                <p className="mt-3 text-[14px] leading-[1.65] text-ink-soft">
+                  {post.excerpt}
+                </p>
+                <span className="mt-4 inline-block text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors group-hover:text-sunset">
+                  Read →
+                </span>
               </div>
-              <h3 className="text-[17px] font-semibold leading-[1.3] text-zinc-50 transition-colors group-hover:text-white">
-                {post.title}
-              </h3>
-              <p className="text-[13px] leading-[1.6] text-zinc-400">
-                {post.excerpt}
-              </p>
-              <span className="mt-auto pt-1 text-[12px] text-zinc-500 transition-colors group-hover:text-zinc-300">
-                /blog/{post.slug}
-              </span>
             </Link>
           ))}
         </div>
 
-        <div className="mt-12">
+        <div className="mt-20">
           <NewsletterSignup variant="card" source="blog_index" />
         </div>
-
-        <FinalCta />
-        <Footer />
       </div>
-    </div>
+
+      <FinalCta />
+      <Footer />
+    </>
   );
 }

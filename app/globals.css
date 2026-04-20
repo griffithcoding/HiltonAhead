@@ -1,62 +1,341 @@
 @import "tailwindcss";
 
+/*
+ * =========================================================================
+ *  HILTON AHEAD — Design System
+ *  Editorial Heritage · Lowcountry
+ *
+ *  The aesthetic: a travel editor's private dispatch from the island.
+ *  Cream paper, deep marsh ink, one sharp sunset accent. Fraunces display
+ *  serif paired with Instrument Sans for UI. Hairline rules instead of
+ *  boxes. Generous breathing room. Cinematic photography.
+ *
+ *  Fonts are loaded via next/font in app/layout.tsx → exposed here as
+ *  --font-display and --font-sans.
+ * =========================================================================
+ */
+
 :root {
-  --background: #0a0f14;
-  --foreground: #ededed;
+  /* ——— Palette ——— */
+  --cream:        #F5EDDC;   /* primary page bg — oyster-sand */
+  --cream-deep:   #ECE0C7;   /* secondary surfaces, card bg */
+  --cream-soft:   #FAF5EA;   /* lifted surface */
+  --ink:          #1A2923;   /* deep marsh — primary text */
+  --ink-soft:     #4A5751;   /* body text */
+  --moss:         #7A8971;   /* tertiary text, muted */
+  --sage:         #9BAB8E;   /* subtle accent */
+  --sunset:       #C44A2B;   /* signature — sparingly */
+  --sunset-soft:  #DB6A4C;   /* hover */
+  --gold:         #A8844A;   /* marsh gold — rules, ornaments */
+  --rule:         #2B332A;   /* hairlines on cream */
+  --rule-soft:    rgba(26, 41, 35, 0.14);
+  --shadow-ink:   rgba(26, 41, 35, 0.10);
+
+  /* ——— Legacy alias kept for existing color-class hooks ——— */
+  --background: var(--cream);
+  --foreground: var(--ink);
+  /* Legacy "primary" — now bound to sunset so existing bg-primary/text-primary
+     classes automatically pick up the new accent. */
+  --brand-primary: var(--sunset);
+
+  /* ——— Typographic scale ——— */
+  --lh-tight:   1.02;
+  --lh-snug:    1.15;
+  --lh-body:    1.65;
+  --track-wide: 0.22em;
+  --track-ui:   0.12em;
 }
 
-/*
- * --brand-primary is injected at runtime on <html> by app/layout.tsx,
- * reading from data/brand.ts. Single source of truth for the color hex.
- */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--brand-primary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-sunset: var(--sunset);
+  --color-gold: var(--gold);
+  --color-moss: var(--moss);
+  --color-sage: var(--sage);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-cream-soft: var(--cream-soft);
+
+  --font-sans: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-display), "Times New Roman", Times, serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ——— Base ——— */
+html, body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-feature-settings: "ss01", "cv11";
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  /* Subtle paper-grain atmosphere over the cream field. A little warmth. */
+  background-image:
+    radial-gradient(1200px 600px at 85% -10%, rgba(196, 74, 43, 0.06), transparent 60%),
+    radial-gradient(900px 500px at 0% 110%, rgba(168, 132, 74, 0.07), transparent 55%),
+    linear-gradient(180deg, var(--cream-soft) 0%, var(--cream) 40%, var(--cream) 100%);
 }
 
-/* Blog prose */
+::selection {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+/* ——— Display headings (Fraunces) ——— */
+.display, h1.display, h2.display, h3.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: var(--lh-tight);
+  color: var(--ink);
+  /* Fraunces variable axes: soft=50 warms the letterforms, opsz pulls
+     the optical size up so big headlines feel editorial. */
+  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0;
+}
+
+.display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
+}
+
+/* ——— Editorial primitives ——— */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.eyebrow-sunset { color: var(--sunset); }
+
+.section-number {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
+  color: var(--gold);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.rule-thin {
+  border: 0;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.rule-ink {
+  border: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+  color: var(--ink);
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(0.35);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.link-underline:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Drop cap — classic magazine first-paragraph treatment */
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-size: 4.25em;
+  line-height: 0.9;
+  float: left;
+  margin: 0.08em 0.12em 0 -0.02em;
+  color: var(--sunset);
+}
+
+/* Frame — hairline border card without plasticky box feel */
+.frame {
+  border: 1px solid var(--rule-soft);
+  background: var(--cream-soft);
+}
+
+.frame-dark {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+/* Masthead bar — editorial top strip */
+.masthead-rule {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+}
+
+/* Smooth appearance on load — editorial, not bouncy */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: riseIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.rise-delay-1 { animation-delay: 0.08s; }
+.rise-delay-2 { animation-delay: 0.16s; }
+.rise-delay-3 { animation-delay: 0.24s; }
+.rise-delay-4 { animation-delay: 0.32s; }
+.rise-delay-5 { animation-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .rise-delay-1,
+  .rise-delay-2,
+  .rise-delay-3,
+  .rise-delay-4,
+  .rise-delay-5 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Gentle image warm + saturate on hover — editorial feel */
+.photo-warm {
+  transition: filter 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+              transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  filter: saturate(0.92) contrast(1.02);
+}
+.photo-warm:hover {
+  filter: saturate(1.05) contrast(1.04);
+  transform: scale(1.015);
+}
+
+/* Full-bleed utility — breaks out of inner container constraints */
+.bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ========================================================================
+ * Blog prose (cream / ink edition)
+ * Used by components/PostBody.tsx via .prose-blog wrapper class.
+ * ======================================================================== */
+
 .prose-blog h2 {
-  font-size: 1.375rem;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2rem;
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 96, "SOFT" 50;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-top: 2.5rem;
   margin-bottom: 0.75rem;
 }
+
 .prose-blog h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #fff;
-  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
+  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
 }
+
 .prose-blog p {
-  color: #d4d4d8;
+  font-family: var(--font-sans);
+  color: var(--ink-soft);
   line-height: 1.75;
-  margin-bottom: 1rem;
+  font-size: 17px;
+  margin-bottom: 1.1rem;
 }
+
 .prose-blog ul, .prose-blog ol {
-  color: #d4d4d8;
+  color: var(--ink-soft);
   padding-left: 1.25rem;
-  margin-bottom: 1rem;
-}
-.prose-blog li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 16px;
   line-height: 1.7;
 }
-.prose-blog strong { color: #fff; }
+.prose-blog ul { list-style: none; }
+.prose-blog ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.55rem;
+}
+.prose-blog ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 0.6rem;
+  height: 1px;
+  background: var(--gold);
+}
+.prose-blog ol {
+  list-style: none;
+  counter-reset: step;
+}
+.prose-blog ol li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: 0.6rem;
+}
+.prose-blog ol li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9em;
+  color: var(--sunset);
+  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
+}
+
+.prose-blog strong { color: var(--ink); font-weight: 600; }
 .prose-blog em { font-style: italic; }
 .prose-blog a {
-  color: var(--brand-primary);
+  color: var(--ink);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration-color: var(--sunset);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.3s ease;
 }
-.prose-blog a:hover { opacity: 0.8; }
+.prose-blog a:hover { color: var(--sunset); }

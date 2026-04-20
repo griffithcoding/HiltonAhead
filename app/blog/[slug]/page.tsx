@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import PostBody from '@/components/PostBody';
+import { Divider } from '@/components/ui/Ornament';
+import { photos } from '@/data/photos';
 import {
   generatePageMetadata,
   getBlogPostingSchema,
@@ -20,6 +23,17 @@ import {
 
 type Params = { slug: string };
 
+// Category → hero photograph mapping. Choose an image that matches the
+// post's category so each article gets a contextual editorial plate.
+const CATEGORY_PHOTOS: Record<Post['category'], { src: string; alt: string }> = {
+  Stays: photos.villa,
+  Dining: photos.dock,
+  Activities: photos.boardwalk,
+  Neighborhoods: photos.mossOak,
+  Golf: photos.hero,
+  Planning: photos.marsh,
+};
+
 export function generateStaticParams(): Params[] {
   return posts.map((p) => ({ slug: p.slug }));
 }
@@ -31,11 +45,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return generatePageMetadata({
-    title: 'Not found',
-    description: 'Post not found.',
-    path: `/blog/${slug}`,
-  });
+  if (!post)
+    return generatePageMetadata({
+      title: 'Not found',
+      description: 'Post not found.',
+      path: `/blog/${slug}`,
+    });
   return generatePageMetadata({
     title: post.title,
     description: post.description,
@@ -54,6 +69,8 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const { prev, next } = getAdjacentPosts(slug);
+  const heroPhoto = CATEGORY_PHOTOS[post.category] ?? photos.hero;
+
   const postSchema = getBlogPostingSchema({
     slug: post.slug,
     title: post.title,
@@ -70,7 +87,7 @@ export default async function BlogPostPage({
   ]);
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#0f2a2a_0,#081619_45%,#03090b_100%)] text-zinc-50">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(postSchema) }}
@@ -80,113 +97,136 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
 
-      <div className="mx-auto max-w-[1120px] px-5 pt-8 pb-18">
+      <div className="mx-auto max-w-[1280px] px-5">
         <Header />
 
-        <article className="mt-6">
+        <article className="mt-10">
+          {/* ——— Breadcrumb ——— */}
           <nav
             aria-label="Breadcrumb"
-            className="mb-6 flex flex-wrap items-center gap-2 text-[12px] text-zinc-500"
+            className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-ink-soft"
           >
-            <Link href="/" className="transition-colors hover:text-zinc-300">
+            <Link href="/" className="transition-colors hover:text-sunset">
               Home
             </Link>
-            <span aria-hidden="true">/</span>
+            <span aria-hidden="true" className="h-px w-4 bg-ink/20" />
             <Link
               href="/blog"
-              className="transition-colors hover:text-zinc-300"
+              className="transition-colors hover:text-sunset"
             >
               Local Guide
             </Link>
-            <span aria-hidden="true">/</span>
-            <span className="text-zinc-300">{post.category}</span>
+            <span aria-hidden="true" className="h-px w-4 bg-ink/20" />
+            <span className="text-sunset">{post.category}</span>
           </nav>
 
-          <header className="mx-auto mb-10 max-w-[760px]">
-            <div className="mb-4 flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.15em] text-primary">
-              <span>{post.category}</span>
-              <span aria-hidden="true" className="text-zinc-700">·</span>
-              <span className="text-zinc-500">{post.readTime} read</span>
-              <span aria-hidden="true" className="text-zinc-700">·</span>
-              <time dateTime={post.publishedAt} className="text-zinc-500">
-                {formatDate(post.publishedAt)}
-              </time>
-              {post.updatedAt && post.updatedAt !== post.publishedAt && (
-                <>
-                  <span aria-hidden="true" className="text-zinc-700">·</span>
-                  <span className="text-zinc-500">
-                    Updated {formatDate(post.updatedAt)}
-                  </span>
-                </>
-              )}
+          {/* ——— Title block ——— */}
+          <header className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-16">
+            <div>
+              <div className="flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.22em] text-ink-soft">
+                <span className="text-sunset">{post.category}</span>
+                <span aria-hidden="true" className="h-px w-6 bg-ink/20" />
+                <span>{post.readTime} read</span>
+                <span aria-hidden="true" className="h-px w-6 bg-ink/20" />
+                <time dateTime={post.publishedAt}>
+                  {formatDate(post.publishedAt)}
+                </time>
+                {post.updatedAt && post.updatedAt !== post.publishedAt && (
+                  <>
+                    <span aria-hidden="true" className="h-px w-6 bg-ink/20" />
+                    <span>Updated {formatDate(post.updatedAt)}</span>
+                  </>
+                )}
+              </div>
+
+              <h1 className="display mt-6 text-balance text-[40px] leading-[1.02] tracking-[-0.02em] text-ink md:text-[60px] lg:text-[68px]">
+                {post.title}
+              </h1>
+
+              <p className="mt-7 max-w-[560px] text-[17px] leading-[1.7] text-ink-soft md:text-[19px]">
+                {post.excerpt}
+              </p>
             </div>
 
-            <h1 className="text-[32px] leading-[1.1] tracking-[-0.02em] text-zinc-50 md:text-[44px]">
-              {post.title}
-            </h1>
-
-            <p className="mt-5 text-[16px] leading-[1.6] text-zinc-400">
-              {post.excerpt}
-            </p>
+            <figure className="relative aspect-[4/5] overflow-hidden md:aspect-auto md:h-full md:min-h-[460px]">
+              <Image
+                src={heroPhoto.src}
+                alt={heroPhoto.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className="object-cover photo-warm"
+                priority
+              />
+            </figure>
           </header>
 
-          <div className="mx-auto max-w-[760px]">
+          <Divider ornament="compass" className="my-16 text-gold" />
+
+          {/* ——— Body ——— */}
+          <div className="mx-auto max-w-[720px]">
             <PostBody blocks={post.body} />
           </div>
 
-          <div className="mx-auto mt-12 max-w-[760px] rounded-[20px] border border-primary/25 bg-gradient-to-br from-primary/[0.08] to-transparent p-7">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          {/* ——— Inline CTA ——— */}
+          <div className="mx-auto mt-20 max-w-[720px] border-y border-ink/15 py-10">
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2 className="text-[18px] font-medium text-zinc-50">
-                  Want this applied to your trip?
+                <div className="eyebrow text-sunset">Want this applied?</div>
+                <h2 className="display mt-3 text-[24px] leading-[1.15] text-ink md:text-[28px]">
+                  Let us plan your trip around it.
                 </h2>
-                <p className="mt-1.5 max-w-[420px] text-[13px] leading-[1.6] text-zinc-400">
+                <p className="mt-2 max-w-[420px] text-[14px] leading-[1.65] text-ink-soft">
                   The guide is free. The custom itinerary is $200 flat and
                   takes the research off your plate entirely.
                 </p>
               </div>
               <Link
                 href="/itinerary"
-                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-[13px] font-medium text-black shadow-lg shadow-primary/25 transition hover:brightness-105"
+                className="group inline-flex shrink-0 items-center gap-2 self-start bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset"
               >
                 Request an itinerary
-                <span aria-hidden="true">→</span>
+                <span
+                  aria-hidden="true"
+                  className="transition-transform group-hover:translate-x-0.5"
+                >
+                  →
+                </span>
               </Link>
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-[760px]">
+          {/* ——— Newsletter inline ——— */}
+          <div className="mx-auto mt-12 max-w-[720px]">
             <NewsletterSignup
               variant="inline"
               source={`blog_post_${post.slug}`}
             />
           </div>
 
+          {/* ——— Prev / Next ——— */}
           {(prev || next) && (
             <nav
-              aria-label="More posts"
-              className="mx-auto mt-14 max-w-[760px] border-t border-white/10 pt-8"
+              aria-label="More dispatches"
+              className="mx-auto mt-16 grid max-w-[720px] grid-cols-1 gap-6 border-t border-ink/15 pt-10 sm:grid-cols-2 sm:gap-10"
             >
-              <div className="grid gap-4 sm:grid-cols-2">
-                {prev ? (
-                  <PostNavCard direction="prev" post={prev} />
-                ) : (
-                  <span />
-                )}
-                {next ? (
-                  <PostNavCard direction="next" post={next} />
-                ) : (
-                  <span />
-                )}
-              </div>
+              {prev ? (
+                <PostNavCard direction="prev" post={prev} />
+              ) : (
+                <span />
+              )}
+              {next ? (
+                <PostNavCard direction="next" post={next} />
+              ) : (
+                <span />
+              )}
             </nav>
           )}
         </article>
-
-        <FinalCta />
-        <Footer />
       </div>
-    </div>
+
+      <FinalCta />
+      <Footer />
+    </>
   );
 }
 
@@ -200,14 +240,14 @@ function PostNavCard({
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className={`group flex flex-col gap-2 rounded-[16px] border border-white/10 bg-zinc-900/40 p-5 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-zinc-900/70 ${
-        direction === 'next' ? 'sm:text-right' : ''
+      className={`group flex flex-col gap-3 ${
+        direction === 'next' ? 'sm:text-right sm:items-end' : ''
       }`}
     >
-      <div className="text-[11px] uppercase tracking-[0.12em] text-zinc-500">
-        {direction === 'prev' ? '← Previous' : 'Next →'}
+      <div className="eyebrow text-ink-soft">
+        {direction === 'prev' ? '← Previous dispatch' : 'Next dispatch →'}
       </div>
-      <div className="text-[14px] font-medium leading-[1.35] text-zinc-100 transition-colors group-hover:text-white">
+      <div className="display text-[20px] leading-[1.2] text-ink transition-colors group-hover:text-sunset md:text-[22px]">
         {post.title}
       </div>
     </Link>
