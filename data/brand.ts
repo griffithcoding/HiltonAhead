@@ -6,7 +6,7 @@ export const brand = {
   name: 'Hilton Ahead',
   legalName: 'Hilton Ahead Travel Co.',
   domain: 'hiltonahead.com',
-  url: 'https://hiltonahead.com',
+  url: 'https://www.hiltonahead.com',
 
   tagline: 'Your local insider for Hilton Head travel.',
   shortDescription:
