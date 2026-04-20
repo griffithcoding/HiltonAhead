@@ -1,85 +1,98 @@
 import Image from 'next/image';
 import { insiderProof } from '@/data/insiderProof';
 import { photos } from '@/data/photos';
-import { SectionHead, Divider } from '@/components/ui/Ornament';
+import { SectionHead, Divider, WaveLine, Ticket } from '@/components/ui/Ornament';
 
 /**
- * InsiderProof — editorial stats strip + neighborhoods as typeset plaques.
- * A single atmospheric marsh photograph anchors the section on the left.
+ * InsiderProof — editorial stats strip + a six-up neighborhood photo wall,
+ * each image overlaid with its neighborhood name as ticket-stub caption.
  */
 export default function InsiderProof() {
+  const neighborhoods = insiderProof.localSpots.map((spot, i) => ({
+    ...spot,
+    photo: photos.neighborhoods[i % photos.neighborhoods.length],
+  }));
+
   return (
     <section id="how-it-works" className="mt-28 md:mt-36">
-      <Divider ornament="compass" className="mb-16 text-gold" />
+      <Divider ornament="sailboat" className="mb-16" />
 
       <SectionHead
-        number="№ 03"
+        number="№ 04"
         eyebrow={insiderProof.eyebrow}
         plain={insiderProof.heading.plain}
         italic={insiderProof.heading.accent}
       />
 
-      <p className="mt-6 max-w-[560px] text-[15px] leading-[1.7] text-ink-soft">
+      <p className="mt-6 max-w-[580px] text-[15px] leading-[1.75] text-ink-soft md:text-[17px]">
         {insiderProof.subheading}
       </p>
 
-      {/* ——— Stats strip — editorial numerals, rule-separated ——— */}
-      <dl className="mt-14 grid grid-cols-2 divide-y divide-ink/15 border-y border-ink/15 md:grid-cols-4 md:divide-x md:divide-y-0">
+      {/* ——— Stats strip — oceanic numerals, rule-separated ——— */}
+      <dl className="mt-14 grid grid-cols-2 divide-y divide-ocean-deep/15 border-y border-ocean-deep/15 md:grid-cols-4 md:divide-x md:divide-y-0">
         {insiderProof.stats.map((stat) => (
           <div
             key={stat.label}
-            className="flex flex-col gap-2 px-0 py-7 md:px-8 md:py-8 first:md:pl-0 last:md:pr-0"
+            className="flex flex-col gap-3 px-0 py-8 md:px-8 md:py-10 first:md:pl-0 last:md:pr-0"
           >
             <dt className="eyebrow text-ink-soft">{stat.label}</dt>
-            <dd className="display text-[44px] leading-none text-ink md:text-[56px]">
+            <dd className="display text-[48px] leading-none text-ocean md:text-[64px] lg:text-[72px]">
               {stat.value}
             </dd>
           </div>
         ))}
       </dl>
 
-      {/* ——— Neighborhoods + ambient photograph ——— */}
-      <div className="mt-20 grid grid-cols-1 gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
-        <figure className="relative min-h-[420px] md:min-h-[560px]">
-          <div className="relative h-full w-full overflow-hidden">
-            <Image
-              src={photos.marsh.src}
-              alt={photos.marsh.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className="object-cover photo-warm"
-            />
-          </div>
-          <figcaption className="display-italic mt-3 text-[14px] text-ink-soft">
-            — creek marsh at sunset, north end
-          </figcaption>
-        </figure>
-
-        <div>
-          <h3 className="eyebrow text-sunset">
-            Neighborhoods we know cold
+      {/* ——— Neighborhood photo wall ——— */}
+      <div className="mt-24">
+        <div className="mb-10 flex flex-col items-center gap-3 text-center">
+          <span className="eyebrow eyebrow-coral">Neighborhoods we know cold</span>
+          <h3 className="display max-w-[620px] text-[28px] leading-[1.1] text-ink md:text-[40px]">
+            Six pockets. <span className="display-italic text-coral">Different island each time.</span>
           </h3>
+          <span className="mt-3 text-ocean-deep/40"><WaveLine width={80} /></span>
+        </div>
 
-          <ul className="mt-6 divide-y divide-ink/10 border-t border-ink/15">
-            {insiderProof.localSpots.map((spot, i) => (
-              <li
-                key={spot.neighborhood}
-                className="grid grid-cols-[auto_1fr] items-baseline gap-6 py-5 md:grid-cols-[72px_1fr_auto]"
-              >
-                <span className="section-number text-[18px] text-gold md:text-[20px]">
-                  {`№ ${String(i + 1).padStart(2, '0')}`}
-                </span>
-                <div>
-                  <div className="display text-[20px] leading-[1.2] text-ink md:text-[22px]">
-                    {spot.neighborhood}
-                  </div>
-                  <p className="mt-1 text-[13px] leading-[1.6] text-ink-soft">
-                    {spot.note}
-                  </p>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {neighborhoods.map((spot, i) => (
+            <article
+              key={spot.neighborhood}
+              className="group relative aspect-[5/6] overflow-hidden"
+            >
+              <Image
+                src={spot.photo.src}
+                alt={spot.photo.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover photo-warm"
+              />
+              {/* Gradient scrim for text legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/85 via-ocean-deep/25 to-transparent" />
+
+              {/* Numeral pinned top-left */}
+              <span className="absolute left-5 top-4 section-number text-[40px] text-sand/85 md:text-[54px]">
+                {`0${i + 1}`}
+              </span>
+
+              {/* Ticket stub with neighborhood name, top-right */}
+              <div className="absolute right-4 top-5">
+                <Ticket>{spot.neighborhood}</Ticket>
+              </div>
+
+              {/* Editorial copy pinned bottom */}
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                <div className="display text-[24px] leading-[1.1] text-sand md:text-[28px]">
+                  {spot.neighborhood}
                 </div>
-              </li>
-            ))}
-          </ul>
+                <p className="mt-2 max-w-[320px] text-[13px] leading-[1.6] text-sand/85">
+                  {spot.note}
+                </p>
+                <div className="display-italic mt-3 text-[12px] text-sand/65">
+                  — {spot.photo.caption}
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

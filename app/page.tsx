@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
 import WhyIsland from '@/components/sections/WhyIsland';
+import PhotoRail from '@/components/sections/PhotoRail';
 import Services from '@/components/sections/Services';
 import InsiderProof from '@/components/sections/InsiderProof';
 import LatestPosts from '@/components/sections/LatestPosts';
@@ -56,6 +57,12 @@ export default function Home() {
         <Header />
         <Hero />
         <WhyIsland />
+      </div>
+
+      {/* Full-bleed look-book photo rail on deep-ocean field */}
+      <PhotoRail />
+
+      <div className="mx-auto max-w-[1280px] px-5">
         <Services />
         <InsiderProof />
         <LatestPosts />
