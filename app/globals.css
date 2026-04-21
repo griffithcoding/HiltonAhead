@@ -2,11 +2,15 @@
 
 /*
  * =========================================================================
- *  HILTON AHEAD — Design System v2
- *  Saturated Lowcountry · Island-forward
+ *  HILTON AHEAD — Design System v3
+ *  Lowcountry Heritage · Refined Atlantic
  *
- *  A warm sand paper field anchored by deep Atlantic teal, with sunset
- *  coral as the signature accent and palm green + golden hour as support.
+ *  An oyster-shell cream field anchored by Atlantic slate (not tropical
+ *  teal), with sun-faded terracotta as signature accent and live-oak
+ *  green + burnished brass in support. The palette of The Cloister,
+ *  heritage Sea Pines, and 1930s Lowcountry travel posters — earned,
+ *  aged, and photographic rather than saturated or sweet.
+ *
  *  Photography-heavy, hand-crafted motifs (seals, stamps, polaroids),
  *  dramatic type scale. Fraunces display serif + Instrument Sans UI.
  *
@@ -15,23 +19,23 @@
  */
 
 :root {
-  /* ——— Palette (saturated, island-forward) ——— */
-  --sand:         #F5E8D0;   /* primary page bg — warm sand */
-  --sand-deep:    #ECD8B2;   /* secondary surfaces */
-  --sand-soft:    #FBF3E2;   /* lifted surface */
-  --ocean:        #0E6F7C;   /* deep Atlantic teal — dominant */
-  --ocean-deep:   #0A4B55;   /* shadow / text-on-sand */
-  --ocean-light:  #8FC3C8;   /* hover / atmospheric */
-  --coral:        #FF7A5C;   /* signature sunset accent */
-  --coral-deep:   #E8623F;   /* hover */
-  --palm:         #2F4A3A;   /* palm green / support */
-  --palm-light:   #6B8568;   /* muted support */
-  --gold:         #E8A74B;   /* golden hour */
-  --gold-deep:    #B8834A;   /* muted gold for rules */
-  --ink:          #0A2930;   /* deep ocean ink — primary text */
-  --ink-soft:     #3D5860;   /* body text */
-  --rule-soft:    rgba(10, 41, 48, 0.14);
-  --shadow-ink:   rgba(10, 41, 48, 0.12);
+  /* ——— Palette (Lowcountry heritage, photographic, restrained) ——— */
+  --sand:         #EEE2CC;   /* primary page bg — oyster-shell cream */
+  --sand-deep:    #DECCA6;   /* secondary surfaces — tabby shell */
+  --sand-soft:    #F6ECD6;   /* lifted surface — aged parchment */
+  --ocean:        #3D6B78;   /* Atlantic slate — dominant (not teal) */
+  --ocean-deep:   #1E4250;   /* deep water at dusk */
+  --ocean-light:  #8FA9B1;   /* atmospheric slate — sea fog */
+  --coral:        #C8694A;   /* fired terracotta — sun-faded, not neon */
+  --coral-deep:   #A8502F;   /* deep clay / shrimp-boat red */
+  --palm:         #3F5438;   /* live oak canopy */
+  --palm-light:   #74866A;   /* marsh grass */
+  --gold:         #C79A5C;   /* burnished brass / spanish moss sunset */
+  --gold-deep:    #9D7A40;   /* pluff mud gold */
+  --ink:          #152930;   /* tidal dark — primary text */
+  --ink-soft:     #435B63;   /* body text — atmospheric */
+  --rule-soft:    rgba(21, 41, 48, 0.14);
+  --shadow-ink:   rgba(21, 41, 48, 0.12);
 
   /* ——— Legacy aliases kept so existing hooks still resolve ——— */
   --background:   var(--sand);
@@ -98,11 +102,11 @@ html, body {
 }
 
 body {
-  /* Warm atmosphere — subtle coral and gold wash over sand paper */
+  /* Lowcountry atmosphere — sun-faded terracotta + Atlantic fog + brass wash */
   background-image:
-    radial-gradient(1000px 700px at 90% -10%, rgba(255, 122, 92, 0.12), transparent 60%),
-    radial-gradient(1200px 800px at -5% 105%, rgba(14, 111, 124, 0.10), transparent 55%),
-    radial-gradient(800px 500px at 50% 50%, rgba(232, 167, 75, 0.05), transparent 60%),
+    radial-gradient(1000px 700px at 90% -10%, rgba(200, 105, 74, 0.14), transparent 60%),
+    radial-gradient(1200px 800px at -5% 105%, rgba(61, 107, 120, 0.12), transparent 55%),
+    radial-gradient(800px 500px at 50% 50%, rgba(199, 154, 92, 0.06), transparent 60%),
     linear-gradient(180deg, var(--sand-soft) 0%, var(--sand) 30%, var(--sand) 100%);
 }
 
