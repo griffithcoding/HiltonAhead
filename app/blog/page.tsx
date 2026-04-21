@@ -11,7 +11,7 @@ import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import { posts } from '@/data/posts';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Local Guide — Hilton Head Island Travel Tips for 2026',
+  title: 'Local Guide: Hilton Head Island Travel Tips for 2026',
   description:
     'Local guides to Hilton Head neighborhoods, restaurants, golf, beaches, and 2026 travel tips. Ranked tier lists and honest reviews from someone who actually lives here.',
   path: '/blog',
@@ -67,7 +67,7 @@ export default function BlogIndexPage() {
           />
           <p className="mt-6 max-w-[620px] text-[15px] leading-[1.7] text-ink-soft md:text-[17px]">
             No SEO-farm junk. No &ldquo;top 25&rdquo; lists copied from the
-            Visitor&apos;s Bureau. Just the real island — neighborhood by
+            Visitor&apos;s Bureau. Just the real island, neighborhood by
             neighborhood, season by season, ranked tier by tier.
           </p>
         </section>

@@ -10,7 +10,7 @@ import { SectionHead } from '@/components/ui/Ornament';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Contact — Hilton Ahead Travel',
+  title: 'Contact Hilton Ahead Travel',
   description:
     'Get in touch with Hilton Ahead. Based on Hilton Head Island, SC. We respond within one business day.',
   path: '/contact',
@@ -46,7 +46,7 @@ export default function ContactPage() {
           <div>
             <p className="dropcap max-w-[560px] text-[17px] leading-[1.7] text-ink-soft md:text-[18px]">
               The fastest way to get a quote is to fill out the itinerary
-              request form — it takes about three minutes and gives us what we
+              request form. It takes about three minutes and gives us what we
               need to come back with a real plan. For everything else, email
               works.
             </p>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 <p className="mt-4 text-[14px] leading-[1.7] text-ink-soft">
                   One business day for new requests. Same-day for active
                   clients. If your trip is within a week, call it out in the
-                  message — we&apos;ll prioritize.
+                  message and we&apos;ll prioritize.
                 </p>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
               className="object-cover photo-warm"
             />
             <figcaption className="display-italic mt-3 text-[13px] text-ink-soft">
-              — boardwalk to the beach, south end
+              Boardwalk to the beach, south end
             </figcaption>
           </figure>
         </div>

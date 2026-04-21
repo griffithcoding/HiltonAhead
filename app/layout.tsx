@@ -30,7 +30,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${brand.name} — ${brand.seoTitle}`,
+    default: `${brand.name}: ${brand.seoTitle}`,
     template: `%s | ${brand.name}`,
   },
   description: brand.seoDescription,
@@ -57,12 +57,12 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: brand.name,
-    title: `${brand.name} — ${brand.seoTitle}`,
+    title: `${brand.name}: ${brand.seoTitle}`,
     description: brand.seoDescription,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${brand.name} — ${brand.seoTitle}`,
+    title: `${brand.name}: ${brand.seoTitle}`,
     description: brand.seoDescription,
   },
   robots: {

@@ -17,8 +17,8 @@ const INTERESTS = [
 ] as const;
 const BUDGET_BANDS = [
   'Under $5k',
-  '$5k–$15k',
-  '$15k–$40k',
+  '$5k to $15k',
+  '$15k to $40k',
   '$40k+',
   'Not sure yet',
 ] as const;
@@ -95,7 +95,7 @@ export default function ItineraryForm() {
       <div className="py-6">
         <div className="eyebrow text-sunset">Received</div>
         <h2 className="display mt-3 text-[30px] leading-[1.1] text-ink md:text-[36px]">
-          Got it — <span className="display-italic">thanks.</span>
+          Got it. <span className="display-italic">Thanks.</span>
         </h2>
         <p className="mt-4 max-w-[420px] text-[14px] leading-[1.7] text-ink-soft">
           We&apos;ll review your request and get back to you within one business

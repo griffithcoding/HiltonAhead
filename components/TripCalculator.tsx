@@ -14,10 +14,10 @@ const TRIP_TYPE_OPTIONS: Array<{ value: TripType; label: string }> = [
 ];
 
 const SEASON_OPTIONS: Array<{ value: Season; label: string; multiplier: number }> = [
-  { value: 'summer', label: 'Summer (Jun–Aug)', multiplier: 1.35 },
-  { value: 'spring', label: 'Spring (Mar–May)', multiplier: 1.1 },
-  { value: 'fall',   label: 'Fall (Sep–Nov)',   multiplier: 0.95 },
-  { value: 'winter', label: 'Winter (Dec–Feb)', multiplier: 0.7 },
+  { value: 'summer', label: 'Summer (Jun to Aug)', multiplier: 1.35 },
+  { value: 'spring', label: 'Spring (Mar to May)', multiplier: 1.1 },
+  { value: 'fall',   label: 'Fall (Sep to Nov)',   multiplier: 0.95 },
+  { value: 'winter', label: 'Winter (Dec to Feb)', multiplier: 0.7 },
 ];
 
 /**
@@ -86,7 +86,7 @@ export default function TripCalculator({ calendlyUrl }: { calendlyUrl?: string }
       </h3>
       <p className="mt-3 max-w-[520px] text-[13px] leading-[1.6] text-ink-soft">
         A starting-point range based on 400+ trips we&apos;ve booked. Not a
-        quote — the real one comes after you fill out the itinerary form.
+        quote. The real one comes after you fill out the itinerary form.
       </p>
 
       <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -147,7 +147,7 @@ export default function TripCalculator({ calendlyUrl }: { calendlyUrl?: string }
             {fmt(mid)}
           </span>
           <span className="text-[14px] text-ink-soft">
-            ({fmt(low)} – {fmt(high)})
+            ({fmt(low)} to {fmt(high)})
           </span>
         </div>
         <div className="mt-6 grid grid-cols-1 gap-4 border-t border-ocean-deep/10 pt-5 sm:grid-cols-2">

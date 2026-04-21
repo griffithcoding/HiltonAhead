@@ -13,7 +13,7 @@ import {
 } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Services — Hilton Head Travel Consulting',
+  title: 'Services: Hilton Head Travel Consulting',
   description:
     'Custom itineraries, villa booking, group trips, on-island concierge, and hard-to-get reservations for Hilton Head Island.',
   path: '/services',
@@ -69,7 +69,7 @@ export default function ServicesPage() {
             Hilton Head is deceptively big. Twelve square miles of
             neighborhoods, three major resorts, five championship golf courses,
             and a hundred restaurants that range from white-linen to
-            barefoot-on-a-deck. Here&apos;s how we navigate it for you.
+            barefoot-on-a-deck. Here&apos;s how we sort it for you.
           </p>
         </section>
 

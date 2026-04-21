@@ -66,7 +66,7 @@ export default function WhyIsland() {
             />
           </div>
           <figcaption className="display-italic mt-4 text-[15px] text-ink-soft">
-            — a live oak, mid-island, just before dusk
+            A live oak, mid-island, just before dusk
           </figcaption>
         </figure>
       </div>
@@ -115,7 +115,7 @@ export default function WhyIsland() {
             className="text-ocean-deep"
           />
           <span className="display-italic text-[14px] text-ink-soft">
-            — photographed on-island, every season
+            Photographed on-island, every season
           </span>
         </div>
       </div>

@@ -39,7 +39,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "I told them I wanted a quiet anniversary weekend, nothing touristy, and they nailed every detail \u2014 down to the marina sunset table and the breakfast spot that turned into our favorite morning.",
+      "I told them I wanted a quiet anniversary weekend, nothing touristy, and they nailed every detail. Down to the marina sunset table and the breakfast spot that turned into our favorite morning.",
     author: 'Elena & Tom K.',
     location: 'Boston, MA',
     tripType: 'Anniversary long weekend',

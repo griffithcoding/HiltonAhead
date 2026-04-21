@@ -71,7 +71,7 @@ function Quote({ html, attribution }: { html: string; attribution?: string }) {
       />
       {attribution && (
         <cite className="eyebrow mt-4 block text-ink-soft">
-          — {attribution}
+          {attribution}
         </cite>
       )}
     </blockquote>

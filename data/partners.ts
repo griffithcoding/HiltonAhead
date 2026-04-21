@@ -137,7 +137,7 @@ export const sponsorshipTiers: SponsorshipTier[] = [
       'Honest editorial mention in a tier list + monthly reach + co-branded travel assets.',
     benefits: [
       'Everything in Featured Partner',
-      'One mention in our restaurant / stays / activities tier list (placement stays merit-based — we never rank by payment)',
+      'One mention in our restaurant, stays, or activities tier list (placement stays merit-based; we never rank by payment)',
       'Featured in one monthly newsletter per month',
       'Co-branded "Insider\u2019s Weekend at [Partner]" 2-day itinerary template (yours to distribute)',
       'Priority Instagram + photography tagging',

@@ -19,7 +19,7 @@ export const services = {
       slug: 'villa-resort-booking',
       title: 'Villa & Resort Booking',
       body:
-        'From Sea Pines oceanfront villas to Palmetto Dunes and Forest Beach — we pick the right property for your group and negotiate the rate.',
+        'From Sea Pines oceanfront villas to Palmetto Dunes and Forest Beach. We pick the right property for your group and negotiate the rate.',
     },
     {
       icon: '👨‍👩‍👧‍👦',

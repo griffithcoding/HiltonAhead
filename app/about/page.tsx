@@ -9,7 +9,7 @@ import { SectionHead, Divider } from '@/components/ui/Ornament';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'About — Local Travel Consulting for Hilton Head',
+  title: 'About: Local Travel Consulting for Hilton Head',
   description:
     'Hilton Ahead is a locally-run travel consulting service on Hilton Head Island. Twelve years on the island, 400+ trips planned, real relationships with the properties and restaurants.',
   path: '/about',
@@ -76,7 +76,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
-              Every engagement starts with a 20-minute discovery call — free,
+              Every engagement starts with a 20-minute discovery call. Free,
               no pressure. We figure out your dates, your group, your budget,
               and the kind of trip you actually want (a real one, not the
               Pinterest version). From there, we send a flat-fee or
@@ -87,7 +87,7 @@ export default function AboutPage() {
               For a couple doing a long weekend, that&apos;s usually a one-page
               itinerary, three dinner reservations, and a villa pick. For a
               40-person wedding week, it&apos;s a full production plan: lodging
-              across 8–10 properties, group transportation, rehearsal dinner,
+              across 8 to 10 properties, group transportation, rehearsal dinner,
               welcome bags, and on-island support for the three days
               you&apos;re here.
             </p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 className="object-cover photo-warm"
               />
               <figcaption className="display-italic mt-3 text-[13px] text-ink-soft">
-                — a Sea Pines villa we book often
+                A Sea Pines villa we book often
               </figcaption>
             </figure>
 
@@ -117,7 +117,7 @@ export default function AboutPage() {
                 <li className="flex gap-3">
                   <span className="mt-2 h-px w-4 shrink-0 bg-gold" />
                   <span>
-                    A real human who answers texts — same-day, seven days a
+                    A real human who answers texts. Same-day, seven days a
                     week.
                   </span>
                 </li>
@@ -137,7 +137,7 @@ export default function AboutPage() {
                 <li className="flex gap-3">
                   <span className="mt-2 h-px w-4 shrink-0 bg-gold" />
                   <span>
-                    On-island support during your stay. Not a hotline — your
+                    On-island support during your stay. Not a hotline. Your
                     consultant.
                   </span>
                 </li>

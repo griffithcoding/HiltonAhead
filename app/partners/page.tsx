@@ -13,9 +13,9 @@ import {
 } from '@/data/partners';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Our Partners — Trusted Hilton Head Businesses',
+  title: 'Our Partners: Trusted Hilton Head Businesses',
   description:
-    'The Hilton Head businesses we work with every day — villa companies, restaurants, charters, and venues we\u2019d recommend whether they paid us or not.',
+    'The Hilton Head businesses we work with every day. Villa companies, restaurants, charters, and venues we\u2019d recommend whether they paid us or not.',
   path: '/partners',
   keywords: [
     'Hilton Head partners',
@@ -60,7 +60,7 @@ export default function PartnersPage() {
           <p className="mt-6 max-w-[640px] text-[17px] leading-[1.7] text-ink-soft md:text-[18px]">
             Every name on this page is a business we&apos;d point clients
             toward whether they paid us or not. Our partner program makes that
-            relationship formal \u2014 we earn a small sponsorship fee, they get
+            relationship formal. We earn a small sponsorship fee, they get
             access to our readers, and our tier-list rankings remain 100%
             merit-based regardless.
           </p>
@@ -141,7 +141,7 @@ export default function PartnersPage() {
               {
                 title: 'Not paid rankings',
                 body:
-                  'Our tier lists (restaurants, stays, activities) stay entirely merit-based. Paying us does not move a business up our rankings \u2014 ever. We disclose sponsorships; we don\u2019t hide them.',
+                  'Our tier lists (restaurants, stays, activities) stay entirely merit-based. Paying us does not move a business up our rankings, ever. We disclose sponsorships; we don\u2019t hide them.',
               },
               {
                 title: 'Not kickbacks on your trip',

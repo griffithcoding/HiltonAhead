@@ -18,6 +18,12 @@ interface Props {
   /** Visual variant. */
   variant?: 'primary' | 'outline' | 'link';
   className?: string;
+  /**
+   * Where to send the user after they successfully book a Calendly meeting.
+   * Defaults to the itinerary page payment section so they can pay directly.
+   * Pass `null` to disable the redirect entirely.
+   */
+  redirectAfterScheduled?: string | null;
 }
 
 /**
@@ -37,6 +43,7 @@ export default function CalendlyButton({
   children = 'Book a discovery call',
   variant = 'primary',
   className = '',
+  redirectAfterScheduled = '/itinerary?from=calendly#payment',
 }: Props) {
   const [loaded, setLoaded] = useState(false);
 
@@ -60,6 +67,28 @@ export default function CalendlyButton({
       l.remove();
     };
   }, [loaded]);
+
+  // Listen for Calendly's postMessage events. When a meeting is successfully
+  // scheduled, redirect the visitor to the Stripe checkout section so they
+  // can pay the itinerary or deposit fee while they\u2019re still warm.
+  useEffect(() => {
+    if (!redirectAfterScheduled) return;
+    function handleMessage(e: MessageEvent) {
+      // Only trust messages from Calendly's domain.
+      const fromCalendly =
+        typeof e.origin === 'string' && e.origin.includes('calendly.com');
+      if (!fromCalendly) return;
+      const payload = e.data as { event?: string } | undefined;
+      if (payload?.event === 'calendly.event_scheduled') {
+        // Small delay so the Calendly confirmation flashes before we redirect.
+        window.setTimeout(() => {
+          window.location.href = redirectAfterScheduled as string;
+        }, 600);
+      }
+    }
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [redirectAfterScheduled]);
 
   function handleClick(e: React.MouseEvent) {
     e.preventDefault();

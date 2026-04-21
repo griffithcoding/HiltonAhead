@@ -88,7 +88,7 @@ export default function InsiderProof() {
                   {spot.note}
                 </p>
                 <div className="display-italic mt-3 text-[12px] text-sand/65">
-                  — {spot.photo.caption}
+                  {spot.photo.caption}
                 </div>
               </div>
             </article>

@@ -10,7 +10,7 @@ import { sponsorshipTiers, partnersMeta } from '@/data/partners';
 import { brand } from '@/data/brand';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Partner With Us — Sponsor Hilton Ahead',
+  title: 'Partner With Us: Sponsor Hilton Ahead',
   description:
     'Three sponsorship tiers for Hilton Head businesses. Featured at $100/mo, Curated at $400/mo, Signature at $1,000/mo. Limited slots per year.',
   path: '/sponsorships',
@@ -56,9 +56,9 @@ export default function SponsorshipsPage() {
             italic="in their 30-to-180-day booking window."
           />
           <p className="mt-6 max-w-[640px] text-[17px] leading-[1.7] text-ink-soft md:text-[18px]">
-            We write for the people planning a Hilton Head trip \u2014 high
-            income, high intent, and not yet spent. Three partnership tiers,
-            limited slots per year, honest editorial.
+            We write for the people planning a Hilton Head trip: high income,
+            high intent, and not yet spent. Three partnership tiers, limited
+            slots per year, honest editorial.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <CalendlyButton
@@ -84,22 +84,22 @@ export default function SponsorshipsPage() {
           <h3 className="display mt-4 max-w-[760px] text-[32px] leading-[1.08] text-ink md:text-[44px]">
             Not a newsletter. Not a billboard.{' '}
             <span className="display-italic">
-              Qualified buyer attention in-frame with trip planning.
+              Qualified buyer attention while people plan their trip.
             </span>
           </h3>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
             {[
               {
-                stat: '30–180',
+                stat: '30 to 180',
                 unit: 'day booking window',
                 body:
-                  'Our readers land on the site already planning a trip. You\u2019re reaching them while the decision is open \u2014 not mid-scroll on Instagram.',
+                  'Our readers land on the site already planning a trip. You\u2019re reaching them while the decision is open, not mid-scroll on Instagram.',
               },
               {
                 stat: '$3,500+',
                 unit: 'median trip spend',
                 body:
-                  'Self-selected high-spend travelers. Typical reader drops $4k\u2013$15k in 5\u201310 days on lodging, dining, activities, and shopping.',
+                  'Self-selected high-spend travelers. Typical reader drops $4k to $15k in 5 to 10 days on lodging, dining, activities, and shopping.',
               },
               {
                 stat: '1 island',
@@ -249,11 +249,11 @@ export default function SponsorshipsPage() {
               },
               {
                 q: 'Will my sponsored links hurt your SEO?',
-                a: 'No \u2014 because we mark every sponsored outbound link with rel="sponsored nofollow" per Google\u2019s webmaster guidelines. That\u2019s industry standard and what every reputable publisher does.',
+                a: 'No. We mark every sponsored outbound link with rel="sponsored nofollow" per Google\u2019s webmaster guidelines. That\u2019s industry standard and what every reputable publisher does.',
               },
               {
                 q: 'Can I sponsor a specific blog post?',
-                a: 'For Signature Partners, yes \u2014 the dedicated editorial post in your year is effectively yours, written by our team in our voice, clearly labeled as sponsored content. We don\u2019t accept one-off sponsored posts from non-partners.',
+                a: 'For Signature Partners, yes. The dedicated editorial post in your year is effectively yours, written by our team in our voice, clearly labeled as sponsored content. We don\u2019t accept one-off sponsored posts from non-partners.',
               },
               {
                 q: 'How do you pick which tier-list item my business fits?',

@@ -300,7 +300,7 @@ export default async function BlogPostPage({
                   Let us plan your trip around it.
                 </h2>
                 <p className="mt-2 max-w-[420px] text-[14px] leading-[1.65] text-ink-soft">
-                  The guide is free. A custom itinerary is $450 flat — takes
+                  The guide is free. A custom itinerary is $450 flat. Takes
                   the research off your plate entirely.
                 </p>
               </div>

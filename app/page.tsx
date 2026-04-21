@@ -20,7 +20,7 @@ import {
 import { faq } from '@/data/faq';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Travel Consulting — Planned by a Local',
+  title: 'Hilton Head Travel Consulting, Planned by a Local',
   description:
     'Custom Hilton Head itineraries built by a local insider. Villa booking, tee times, dinner reservations, and on-island concierge. Skip the tourist traps.',
   path: '/',

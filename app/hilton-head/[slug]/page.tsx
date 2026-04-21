@@ -45,7 +45,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: `${n.name} Hilton Head — Villas, Stays & Planning`,
+    title: `${n.name} Hilton Head: Villas, Stays & Planning`,
     description: n.metaDescription,
     path: `/hilton-head/${n.slug}`,
     keywords: n.keywords,
@@ -307,7 +307,7 @@ export default async function NeighborhoodPage({
             href={`/blog/${n.blogPostSlug}`}
             className="mt-4 block text-[18px] italic leading-[1.4] text-ink transition-colors hover:text-coral md:text-[22px]"
           >
-            → Read the full {n.name} guide — neighborhoods, bike paths,
+            → Read the full {n.name} guide. Neighborhoods, bike paths,
             dining, and the three things we\u2019d add that no tourist list
             mentions.
           </Link>

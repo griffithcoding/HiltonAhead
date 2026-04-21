@@ -10,9 +10,9 @@ export const brand = {
 
   tagline: 'Your local insider for Hilton Head travel.',
   shortDescription:
-    'A locally-run travel consulting service that plans your Hilton Head trip end-to-end — villas, tee times, dinner reservations, and the 10 things only locals know about.',
+    'A locally-run travel consulting service for Hilton Head. Villas, tee times, dinner reservations, and the 10 things only locals know about.',
 
-  seoTitle: 'Hilton Head Travel Consulting — Planned by a Local',
+  seoTitle: 'Hilton Head Travel Consulting, Planned by a Local',
   seoDescription:
     'Custom Hilton Head itineraries built by a local insider. Villa booking, tee times, dinner reservations, and on-island concierge. Skip the tourist traps.',
 
@@ -47,8 +47,8 @@ export const brand = {
   scheduling: {
     calendly: {
       /** Set to your full Calendly event URL once created. */
-      url: 'https://calendly.com/hiltonahead/discovery',
-      label: 'Book a 20-min discovery call',
+      url: 'https://calendly.com/hiltonahead/30min',
+      label: 'Book a 30-min discovery call',
     },
   },
 

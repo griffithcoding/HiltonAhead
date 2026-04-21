@@ -10,7 +10,7 @@ import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import { brand } from '@/data/brand';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Request an Itinerary — Hilton Head Travel',
+  title: 'Request an Itinerary: Hilton Head Travel',
   description:
     'Tell us about your Hilton Head trip and get a custom itinerary within one business day. No obligation, no sales pitch.',
   path: '/itinerary',
@@ -21,7 +21,14 @@ export const metadata: Metadata = generatePageMetadata({
   ],
 });
 
-export default function ItineraryPage() {
+export default async function ItineraryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ from?: string; payment?: string }>;
+}) {
+  const params = await searchParams;
+  const fromCalendly = params.from === 'calendly';
+  const paymentStatus = params.payment;
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
     { name: 'Request Itinerary', path: '/itinerary' },
@@ -36,6 +43,44 @@ export default function ItineraryPage() {
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />
+
+        {fromCalendly && (
+          <div className="mt-10 border-l-2 border-coral bg-coral/5 px-5 py-4">
+            <div className="eyebrow text-coral">Call booked</div>
+            <p className="mt-2 max-w-[640px] text-[14px] leading-[1.65] text-ink">
+              Thanks. You&apos;ll get a Calendly confirmation in your inbox.
+              While you&apos;re here: lock in your planning slot with a deposit
+              or a flat-fee itinerary below, and we&apos;ll have the plan
+              waiting when we hop on the call.
+            </p>
+            <a
+              href="#payment"
+              className="mt-3 inline-flex items-center gap-2 text-[12px] font-medium uppercase tracking-[0.18em] text-ink underline underline-offset-4 hover:text-coral"
+            >
+              Jump to checkout ↓
+            </a>
+          </div>
+        )}
+
+        {paymentStatus === 'success' && (
+          <div className="mt-10 border-l-2 border-ocean bg-ocean/5 px-5 py-4">
+            <div className="eyebrow text-ocean">Payment received</div>
+            <p className="mt-2 max-w-[640px] text-[14px] leading-[1.65] text-ink">
+              Thanks. Your receipt is on the way from Stripe. We&apos;ll be in
+              touch within one business day to start planning.
+            </p>
+          </div>
+        )}
+
+        {paymentStatus === 'canceled' && (
+          <div className="mt-10 border-l-2 border-sunset bg-sunset/5 px-5 py-4">
+            <div className="eyebrow text-sunset">Payment canceled</div>
+            <p className="mt-2 max-w-[640px] text-[14px] leading-[1.65] text-ink">
+              No charge. Pick another option below or just submit the form and
+              we&apos;ll send you a quote first.
+            </p>
+          </div>
+        )}
 
         <section className="mt-16 md:mt-20">
           <SectionHead
@@ -57,7 +102,7 @@ export default function ItineraryPage() {
               {[
                 {
                   title: 'You submit the form',
-                  body: 'Just the basics — when, who, what kind of trip.',
+                  body: 'Just the basics. When, who, what kind of trip.',
                 },
                 {
                   title: 'We send a quote within one business day',
@@ -65,7 +110,7 @@ export default function ItineraryPage() {
                 },
                 {
                   title: 'You approve, we build',
-                  body: 'Full plan delivered within 5–7 days. Revisions included.',
+                  body: 'Full plan delivered within 5 to 7 days. Revisions included.',
                 },
               ].map((step, i) => (
                 <li
@@ -90,8 +135,8 @@ export default function ItineraryPage() {
             <Divider ornament="palmetto" className="my-10 text-gold" />
 
             <p className="max-w-[420px] text-[13px] leading-[1.7] text-ink-soft">
-              <span className="display-italic text-ink">A small note —</span>{' '}
-              every quote is flat or percentage-based, agreed up front. No
+              <span className="display-italic text-ink">A small note.</span>{' '}
+              Every quote is flat or percentage-based, agreed up front. No
               kickbacks baked into your rates.
             </p>
           </aside>
@@ -124,7 +169,10 @@ export default function ItineraryPage() {
         </section>
 
         {/* ——— Direct payment for repeat clients / referrals ——— */}
-        <section className="mt-20 border-y border-ocean-deep/15 py-14">
+        <section
+          id="payment"
+          className="scroll-mt-20 mt-20 border-y border-ocean-deep/15 py-14"
+        >
           <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
             <div className="max-w-[560px]">
               <div className="eyebrow text-coral">Already decided?</div>

@@ -15,7 +15,7 @@ export const hero = {
   },
   /** Classic magazine lede — long-ish, warm, confident. */
   lede:
-    "Villa picks. Tee times at Harbour Town. The 7 p.m. table at Skull Creek. The short list of things worth doing and the long list of things worth skipping. We plan Hilton Head the way we'd plan it for family \u2014 then hand it to you.",
+    "Villa picks. Tee times at Harbour Town. The 7 p.m. table at Skull Creek. The short list of things worth doing and the long list of things worth skipping. We plan Hilton Head the way we'd plan it for family, then hand it to you.",
   primaryCtaLabel: 'Plan my trip',
   secondaryCta: {
     href: '#why-hilton-head',
@@ -46,7 +46,7 @@ export const whyIsland = {
     {
       title: 'The beach, honestly',
       body:
-        "Twelve miles of hard-packed sand you can bike on at low tide. No rocks, no undertow, no condo towers. The Atlantic here is forgiving \u2014 shallow for fifty yards out, warm by mid-May, glassy most mornings.",
+        "Twelve miles of hard-packed sand you can bike on at low tide. No rocks, no undertow, no condo towers. The Atlantic here is forgiving. Shallow for fifty yards out, warm by mid-May, glassy most mornings.",
     },
     {
       title: 'A table of contents',

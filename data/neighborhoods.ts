@@ -43,7 +43,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
     slug: 'sea-pines',
     name: 'Sea Pines',
     tagline: {
-      plain: 'Sea Pines — the island',
+      plain: 'Sea Pines: the island',
       italic: 'as it was designed to be.',
     },
     metaDescription:
@@ -68,7 +68,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       {
         title: 'Best walkable oceanfront',
         body:
-          'South Beach Lane villas put you 90 seconds from the sand and 15 minutes on a bike to Harbour Town. Golf, dinner, sunset \u2014 all without the car.',
+          'South Beach Lane villas put you 90 seconds from the sand and 15 minutes on a bike to Harbour Town. Golf, dinner, sunset, all without the car.',
       },
       {
         title: 'Partner-rate advantage',
@@ -88,7 +88,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       'Anniversaries & proposals',
     ],
     tradeoffs:
-      'You\u2019ll pay a premium for the address. The entrance gate backs up 10 a.m.\u201312 p.m. in summer. And the best dinners are actually outside the plantation gates (we plan around this).',
+      'You\u2019ll pay a premium for the address. The entrance gate backs up 10 a.m. to 12 p.m. in summer. And the best dinners are actually outside the plantation gates (we plan around this).',
     properties: [
       { name: 'The Inn & Club at Harbour Town', note: 'Golf-first hotel; walk to first tee' },
       { name: 'South Beach Lane villas (private)', note: '4 buildings we book, 90 sec to sand' },
@@ -108,7 +108,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
     slug: 'palmetto-dunes',
     name: 'Palmetto Dunes',
     tagline: {
-      plain: 'Palmetto Dunes — three courses,',
+      plain: 'Palmetto Dunes: three courses,',
       italic: 'eleven miles of lagoon.',
     },
     metaDescription:
@@ -121,19 +121,19 @@ export const neighborhoods: NeighborhoodLanding[] = [
       'Palmetto Dunes golf',
     ],
     hook:
-      'Efficient, family-first, and genuinely world-class tennis. The mid-island answer to Sea Pines \u2014 three golf courses in one plantation, oceanfront villas, and the Omni\u2019s freshly-renovated resort spine.',
+      'Efficient, family-first, and genuinely well-run tennis. The mid-island answer to Sea Pines. Three golf courses in one plantation, oceanfront villas, and the Omni\u2019s freshly-renovated resort spine.',
     latitude: 32.19,
     longitude: -80.741,
     reasons: [
       {
         title: 'Three courses, one tee sheet',
         body:
-          'Robert Trent Jones Oceanfront, Fazio, and Arthur Hills \u2014 all walkable from most villas, all bookable through one system.',
+          'Robert Trent Jones Oceanfront, Fazio, and Arthur Hills. All walkable from most villas, all bookable through one system.',
       },
       {
         title: 'The 2026 Omni refresh',
         body:
-          'Lobby + pool deck fully renovated in early 2026. Best pool on the island now. Room renovation phased through 2027 \u2014 we know which floors.',
+          'Lobby and pool deck fully renovated in early 2026. Best pool on the island now. Room renovation phased through 2027. We know which floors.',
       },
       {
         title: 'US top-10 tennis program',
@@ -147,13 +147,13 @@ export const neighborhoods: NeighborhoodLanding[] = [
       },
     ],
     bestFor: [
-      'Golf trips (6\u20138 players)',
-      'Families with kids 6\u201314',
-      'Tennis + pickleball focused trips',
+      'Golf trips (6 to 8 players)',
+      'Families with kids 6 to 14',
+      'Tennis and pickleball focused trips',
       'Full-service resort travelers',
     ],
     tradeoffs:
-      'Not a dining destination on its own \u2014 the in-plantation restaurants are convenience-priced and just okay. You\u2019ll drive 8\u201312 minutes to the best dinners.',
+      'Not a dining destination on its own. The in-plantation restaurants are convenience-priced and just okay. You\u2019ll drive 8 to 12 minutes to the best dinners.',
     properties: [
       { name: 'Omni Hilton Head Oceanfront Resort', note: 'Ask us about floor 4+ renovated rooms' },
       { name: 'Marriott Grande Ocean', note: '2BR villas, shortest beach walk' },
@@ -173,11 +173,11 @@ export const neighborhoods: NeighborhoodLanding[] = [
     slug: 'forest-beach',
     name: 'Forest Beach',
     tagline: {
-      plain: 'Forest Beach —',
+      plain: 'Forest Beach:',
       italic: 'walkable and honest.',
     },
     metaDescription:
-      'Forest Beach Hilton Head \u2014 the best walkable neighborhood for 3\u20135 day trips. Direct beach access, Coligny plaza, no gate fees.',
+      'Forest Beach Hilton Head: the best walkable neighborhood for 3 to 5 day trips. Direct beach access, Coligny plaza, no gate fees.',
     keywords: [
       'Forest Beach Hilton Head',
       'Coligny Plaza',
@@ -198,7 +198,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       {
         title: 'Coligny Beach Park',
         body:
-          'The only beach on the island with full amenities \u2014 bathrooms, showers, food, lifeguards. Best single beach access on Hilton Head.',
+          'The only beach on the island with full amenities. Bathrooms, showers, food, lifeguards. Best single beach access on Hilton Head.',
       },
       {
         title: 'No gate tax',
@@ -212,15 +212,15 @@ export const neighborhoods: NeighborhoodLanding[] = [
       },
     ],
     bestFor: [
-      'Short trips (3\u20135 days)',
+      'Short trips (3 to 5 days)',
       'Budget-conscious families',
       'Couples who want to walk to dinner',
       'First-time island visitors',
     ],
     tradeoffs:
-      'Not quiet \u2014 Coligny stays active until 11 p.m. in summer. Not ideal for golfers (you\u2019ll drive to every course) or large groups (few single-family homes big enough).',
+      'Not quiet. Coligny stays active until 11 p.m. in summer. Not ideal for golfers (you\u2019ll drive to every course) or large groups (few single-family homes big enough).',
     properties: [
-      { name: 'Sea Crest & Villamare condos', note: 'Our default 2BR picks, $3,200\u20133,800/wk' },
+      { name: 'Sea Crest & Villamare condos', note: 'Our default 2BR picks, $3,200 to $3,800/wk' },
       { name: 'Beach House, a Holiday Inn Resort', note: 'Budget-friendly, direct beach' },
       { name: 'South Forest Beach single-family', note: 'Upgrade to standalone house' },
       { name: 'The Atrium', note: 'North Forest Beach, high-density condos' },
@@ -238,11 +238,11 @@ export const neighborhoods: NeighborhoodLanding[] = [
     slug: 'shelter-cove',
     name: 'Shelter Cove',
     tagline: {
-      plain: 'Shelter Cove — the',
+      plain: 'Shelter Cove: the',
       italic: 'adult pocket of the island.',
     },
     metaDescription:
-      'Shelter Cove Hilton Head \u2014 marina views, four of the island\u2019s best dinners, and a quieter base for couples\u2019 trips and date nights.',
+      'Shelter Cove Hilton Head: marina views, four of the island\u2019s best dinners, and a quieter base for couples\u2019 trips and date nights.',
     keywords: [
       'Shelter Cove Hilton Head',
       'Shelter Cove marina',
@@ -263,12 +263,12 @@ export const neighborhoods: NeighborhoodLanding[] = [
       {
         title: 'Sunset from your room',
         body:
-          'Shelter Cove Towers face west over Broad Creek. Floor-to-ceiling marina views \u2014 best sunset from any hotel room on Hilton Head.',
+          'Shelter Cove Towers face west over Broad Creek. Floor-to-ceiling marina views, and the best sunset from any hotel room on Hilton Head.',
       },
       {
         title: 'Free summer concerts',
         body:
-          'Free Tuesday + Thursday concerts on the marina lawn from June\u2013August. Bring a blanket and wine. One of the best low-key evenings on the island.',
+          'Free Tuesday and Thursday concerts on the marina lawn from June to August. Bring a blanket and wine. One of the best low-key evenings on the island.',
       },
       {
         title: 'Built for couples',
@@ -283,7 +283,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       'Milestone birthdays',
     ],
     tradeoffs:
-      'You\u2019re on a marina, not a beach. The ocean is a 6-minute drive \u2014 feature for adults, friction for kids. Not ideal for golf-first groups.',
+      'You\u2019re on a marina, not a beach. The ocean is a 6-minute drive. A feature for adults, friction for kids. Not ideal for golf-first groups.',
     properties: [
       { name: 'Shelter Cove Towers', note: 'Best marina-view condos on the island' },
       { name: 'Disney Hilton Head Island Resort', note: 'Open to non-members; free beach shuttle' },
