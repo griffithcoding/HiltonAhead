@@ -212,10 +212,10 @@ export async function sendNewsletterWelcome(to: string) {
     html,
     text:
       'You\u2019re on the list. First dispatch lands in a week or two. Reply anytime.',
-    // Replies route to the human inbox via the Bluehost forwarder
-    // (william@hiltonahead.com -> wgriffith1218@gmail.com); the
-    // send.hiltonahead.com subdomain itself has no inbox.
-    replyTo: 'william@hiltonahead.com',
+    // Replies go directly to the operator inbox. Reply-To can be any
+    // address; it does not need to be on the sending domain. The
+    // send.hiltonahead.com subdomain has no mailbox.
+    replyTo: 'hiltonahead@gmail.com',
     tags: [{ name: 'type', value: 'newsletter_welcome' }],
   });
 }
