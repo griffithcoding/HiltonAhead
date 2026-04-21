@@ -41,18 +41,42 @@ export function generatePageMetadata({
 }
 
 /**
+ * Opening-hours spec used by both TravelAgency and LocalBusiness schemas.
+ * Seven-day availability reflects the "text us anytime" service commitment
+ * documented on /about. Adjust here if that ever changes.
+ */
+const OPENING_HOURS = [
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
+    opens: '09:00',
+    closes: '19:00',
+  },
+]
+
+/**
  * JSON-LD TravelAgency schema for the homepage.
  * schema.org/TravelAgency inherits from LocalBusiness, so we include
  * address + geo so Google can attach us to the "Hilton Head, SC" map pack.
  */
 export function getTravelAgencySchema() {
-  return {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'TravelAgency',
+    '@id': `${siteUrl}#travelagency`,
     name: brand.name,
     legalName: brand.legalName,
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
+    image: `${siteUrl}/logo.png`,
     description: brand.shortDescription,
     priceRange: '$$',
     address: {
@@ -66,6 +90,7 @@ export function getTravelAgencySchema() {
       latitude: 32.2163,
       longitude: -80.7526,
     },
+    openingHoursSpecification: OPENING_HOURS,
     areaServed: [
       { '@type': 'Place', name: 'Hilton Head Island' },
       { '@type': 'Place', name: 'Bluffton' },
@@ -93,6 +118,71 @@ export function getTravelAgencySchema() {
       'South Carolina beach vacations',
     ],
   }
+  if (brand.contact.email) schema.email = brand.contact.email
+  if (brand.contact.phone) schema.telephone = brand.contact.phone
+  return schema
+}
+
+/**
+ * JSON-LD LocalBusiness — complementary to TravelAgency.
+ * Google's local-pack ranking weighs LocalBusiness distinctly from
+ * industry-specific subtypes like TravelAgency. Rendering both (with
+ * separate @id so they link-not-duplicate in the knowledge graph) gives
+ * us coverage in both map-pack surfaces and travel-vertical results.
+ *
+ * Accepts optional aggregate rating so we can fold real reviews in later
+ * without touching page-level code.
+ */
+export function getLocalBusinessSchema(opts?: {
+  ratingValue?: number
+  reviewCount?: number
+}) {
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${siteUrl}#localbusiness`,
+    name: brand.name,
+    legalName: brand.legalName,
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    image: `${siteUrl}/logo.png`,
+    description: brand.shortDescription,
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Hilton Head Island',
+      addressRegion: 'SC',
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 32.2163,
+      longitude: -80.7526,
+    },
+    openingHoursSpecification: OPENING_HOURS,
+    areaServed: [
+      { '@type': 'Place', name: 'Hilton Head Island, SC' },
+      { '@type': 'Place', name: 'Bluffton, SC' },
+      { '@type': 'Place', name: 'Daufuskie Island, SC' },
+      { '@type': 'Place', name: 'Savannah, GA' },
+    ],
+    sameAs: [] as string[],
+  }
+  if (brand.contact.email) schema.email = brand.contact.email
+  if (brand.contact.phone) schema.telephone = brand.contact.phone
+  if (brand.social?.instagram) (schema.sameAs as string[]).push(brand.social.instagram)
+  if (brand.social?.facebook) (schema.sameAs as string[]).push(brand.social.facebook)
+  if ((schema.sameAs as string[]).length === 0) delete schema.sameAs
+  if (opts?.ratingValue && opts?.reviewCount) {
+    schema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: opts.ratingValue,
+      reviewCount: opts.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    }
+  }
+  return schema
 }
 
 /** JSON-LD for FAQ page */

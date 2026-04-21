@@ -6,7 +6,12 @@ import FinalCta from '@/components/sections/FinalCta';
 import InsiderProof from '@/components/sections/InsiderProof';
 import { photos } from '@/data/photos';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
-import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
+import {
+  generatePageMetadata,
+  getBreadcrumbSchema,
+  getLocalBusinessSchema,
+} from '@/app/lib/metadata';
+import { testimonialsMeta } from '@/data/testimonials';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'About: Local Travel Consulting for Hilton Head',
@@ -25,12 +30,24 @@ export default function AboutPage() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
   ]);
+  const localBusiness = getLocalBusinessSchema(
+    testimonialsMeta.hasRealTestimonials
+      ? {
+          ratingValue: testimonialsMeta.ratingValue,
+          reviewCount: testimonialsMeta.reviewCount,
+        }
+      : undefined,
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
       />
 
       <div className="mx-auto max-w-[1280px] px-5">
@@ -76,7 +93,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
-              Every engagement starts with a 20-minute discovery call. Free,
+              Every engagement starts with a 30-minute discovery call. Free,
               no pressure. We figure out your dates, your group, your budget,
               and the kind of trip you actually want (a real one, not the
               Pinterest version). From there, we send a flat-fee or

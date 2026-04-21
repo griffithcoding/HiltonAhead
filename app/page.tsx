@@ -14,10 +14,12 @@ import NewsletterSignup from '@/components/NewsletterSignup';
 import {
   generatePageMetadata,
   getTravelAgencySchema,
+  getLocalBusinessSchema,
   getBreadcrumbSchema,
   getFaqSchema,
 } from '@/app/lib/metadata';
 import { faq } from '@/data/faq';
+import { testimonialsMeta } from '@/data/testimonials';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Hilton Head Travel Consulting, Planned by a Local',
@@ -36,6 +38,14 @@ export const metadata: Metadata = generatePageMetadata({
 
 export default function Home() {
   const travelAgencySchema = getTravelAgencySchema();
+  const localBusinessSchema = getLocalBusinessSchema(
+    testimonialsMeta.hasRealTestimonials
+      ? {
+          ratingValue: testimonialsMeta.ratingValue,
+          reviewCount: testimonialsMeta.reviewCount,
+        }
+      : undefined,
+  );
   const breadcrumbSchema = getBreadcrumbSchema([{ name: 'Home', path: '/' }]);
   const faqSchema = getFaqSchema(faq.items);
 
@@ -44,6 +54,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(travelAgencySchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"

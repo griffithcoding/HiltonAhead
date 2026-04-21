@@ -46,6 +46,16 @@ export type Post = {
   keywords: string[];
   /** Order of appearance on /blog (lower = earlier). */
   featuredOrder: number;
+  /**
+   * Neighborhood slugs this post meaningfully covers. Drives the
+   * bidirectional internal-link block at the bottom of the post (blog
+   * -> /hilton-head/[slug]), complementing the neighborhood -> blog
+   * link that already lives on the landing pages. Keep to 1-4 slugs;
+   * empty array = general-interest post with no direct neighborhood.
+   * Valid values match the slugs in data/neighborhoods.ts:
+   *   'sea-pines' | 'palmetto-dunes' | 'forest-beach' | 'shelter-cove'
+   */
+  relatedNeighborhoods?: string[];
   body: PostBlock[];
 };
 
@@ -67,6 +77,7 @@ const post2026Stays: Post = {
   updatedAt: '2026-04-18',
   author: 'Hilton Ahead',
   featuredOrder: 1,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
   keywords: [
     'best places to stay Hilton Head 2026',
     'Hilton Head resorts 2026',
@@ -286,6 +297,7 @@ const postRestaurantsRanked: Post = {
   updatedAt: '2026-04-10',
   author: 'Hilton Ahead',
   featuredOrder: 2,
+  relatedNeighborhoods: ['shelter-cove', 'sea-pines', 'forest-beach'],
   keywords: [
     'best restaurants Hilton Head',
     'Hilton Head restaurants',
@@ -489,6 +501,7 @@ const postThingsToDoRanked: Post = {
   updatedAt: '2026-04-15',
   author: 'Hilton Ahead',
   featuredOrder: 3,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
   keywords: [
     'things to do Hilton Head',
     'Hilton Head activities',
@@ -690,6 +703,7 @@ const postSeaPines: Post = {
   updatedAt: '2026-04-05',
   author: 'Hilton Ahead',
   featuredOrder: 4,
+  relatedNeighborhoods: ['sea-pines'],
   keywords: [
     'Sea Pines guide',
     'Sea Pines villas',
@@ -858,6 +872,7 @@ const postPalmettoDunes: Post = {
   updatedAt: '2026-04-08',
   author: 'Hilton Ahead',
   featuredOrder: 5,
+  relatedNeighborhoods: ['palmetto-dunes'],
   keywords: [
     'Palmetto Dunes guide',
     'Palmetto Dunes villas',
@@ -1019,6 +1034,7 @@ const postForestBeach: Post = {
   updatedAt: '2026-04-12',
   author: 'Hilton Ahead',
   featuredOrder: 6,
+  relatedNeighborhoods: ['forest-beach'],
   keywords: [
     'Forest Beach guide',
     'Coligny Plaza',
@@ -1174,6 +1190,7 @@ const postShelterCove: Post = {
   updatedAt: '2026-04-10',
   author: 'Hilton Ahead',
   featuredOrder: 7,
+  relatedNeighborhoods: ['shelter-cove'],
   keywords: [
     'Shelter Cove guide',
     'Shelter Cove marina',
@@ -1324,6 +1341,7 @@ const postGolfTrip: Post = {
   updatedAt: '2026-04-18',
   author: 'Hilton Ahead',
   featuredOrder: 8,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes'],
   keywords: [
     'Hilton Head golf trip',
     'Harbour Town golf',
@@ -1480,6 +1498,7 @@ const postBestTime: Post = {
   updatedAt: '2026-04-18',
   author: 'Hilton Ahead',
   featuredOrder: 2.5,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
   keywords: [
     'best time to visit Hilton Head',
     'Hilton Head weather',
@@ -1616,6 +1635,7 @@ const postRbcHeritage: Post = {
   updatedAt: '2026-04-18',
   author: 'Hilton Ahead',
   featuredOrder: 3.5,
+  relatedNeighborhoods: ['sea-pines'],
   keywords: [
     'RBC Heritage 2026',
     'RBC Heritage tickets',
@@ -1758,6 +1778,7 @@ const postWithKids: Post = {
   updatedAt: '2026-04-18',
   author: 'Hilton Ahead',
   featuredOrder: 4.5,
+  relatedNeighborhoods: ['palmetto-dunes', 'forest-beach'],
   keywords: [
     'Hilton Head with kids',
     'Hilton Head family vacation',

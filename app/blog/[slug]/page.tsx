@@ -25,6 +25,7 @@ import {
   getAdjacentPosts,
   type Post,
 } from '@/data/posts';
+import { getNeighborhoodBySlug } from '@/data/neighborhoods';
 
 type Params = { slug: string };
 
@@ -318,6 +319,46 @@ export default async function BlogPostPage({
               </Link>
             </div>
           </div>
+
+          {/* ——— Bidirectional internal links to neighborhood landing pages ——— */}
+          {post.relatedNeighborhoods && post.relatedNeighborhoods.length > 0 && (
+            <aside
+              aria-label="Neighborhoods featured in this post"
+              className="mx-auto mt-16 max-w-[720px]"
+            >
+              <div className="eyebrow text-sunset">Neighborhoods in this post</div>
+              <ul className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {post.relatedNeighborhoods
+                  .map((slug) => getNeighborhoodBySlug(slug))
+                  .filter(
+                    (n): n is NonNullable<typeof n> => n !== undefined,
+                  )
+                  .map((n) => (
+                    <li key={n.slug}>
+                      <Link
+                        href={`/hilton-head/${n.slug}`}
+                        className="group flex items-baseline justify-between gap-4 border-t border-ink/15 pt-4 transition-colors hover:border-coral"
+                      >
+                        <span>
+                          <span className="display text-[18px] leading-[1.2] text-ink group-hover:text-coral md:text-[20px]">
+                            {n.name}
+                          </span>
+                          <span className="mt-1 block max-w-[280px] text-[12px] leading-[1.5] text-ink-soft">
+                            {n.bestFor[0] ?? n.keywords[0]}
+                          </span>
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="shrink-0 text-[12px] uppercase tracking-[0.18em] text-ink-soft transition-colors group-hover:text-coral"
+                        >
+                          Visit →
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            </aside>
+          )}
 
           {/* ——— Newsletter inline ——— */}
           <div className="mx-auto mt-12 max-w-[720px]">
