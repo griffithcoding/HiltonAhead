@@ -303,7 +303,7 @@ export default function SponsorshipsPage() {
               />
               <div className="eyebrow text-coral">Ready to talk?</div>
               <h2 className="display mt-4 text-[34px] leading-[1.05] text-ink md:text-[52px]">
-                Book a 20-minute{' '}
+                Book a 30-minute{' '}
                 <span className="display-italic">partner call.</span>
               </h2>
               <p className="mt-5 max-w-[560px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">

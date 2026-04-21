@@ -41,7 +41,7 @@ export const brand = {
   /**
    * Booking / scheduling URLs.
    * Update `calendly.url` after creating the Calendly account with
-   * `hiltonahead@gmail.com`. The 20-min discovery call slug is a convention —
+   * `hiltonahead@gmail.com`. The 30-min discovery call slug is a convention —
    * use whatever path Calendly generates for the event type.
    */
   scheduling: {

@@ -35,7 +35,7 @@ interface Props {
  *
  * Usage:
  *   <CalendlyButton url="https://calendly.com/hiltonahead/discovery">
- *     Book a 20-min call
+ *     Book a 30-min call
  *   </CalendlyButton>
  */
 export default function CalendlyButton({

@@ -192,7 +192,7 @@ export default function TripCalculator({ calendlyUrl }: { calendlyUrl?: string }
             rel="noopener noreferrer"
             className="link-underline inline-flex items-center justify-center gap-2 px-2 py-3 text-[12px] font-medium uppercase tracking-[0.22em] text-ink"
           >
-            Or book a 20-min call ↗
+            Or book a 30-min call ↗
           </a>
         )}
       </div>

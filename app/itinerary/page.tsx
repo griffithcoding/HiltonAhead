@@ -90,8 +90,9 @@ export default async function ItineraryPage({
             italic="your trip."
           />
           <p className="mt-6 max-w-[520px] text-[15px] leading-[1.7] text-ink-soft md:text-[17px]">
-            Three minutes of questions. One business day to a quote. No
-            obligation, no sales pitch.
+            Three minutes of questions. One business day until we send back a
+            real quote. No obligation, no sales pitch, and we will tell you if
+            a consultant isn&apos;t worth it for your trip size.
           </p>
         </section>
 
@@ -152,7 +153,7 @@ export default async function ItineraryPage({
           <aside className="flex flex-col justify-center gap-5 border-l border-ocean-deep/15 pl-0 md:pl-10">
             <div className="eyebrow text-coral">Prefer to talk?</div>
             <h3 className="display text-[26px] leading-[1.1] text-ink md:text-[34px]">
-              Book a 20-minute{' '}
+              Book a 30-minute{' '}
               <span className="display-italic">discovery call.</span>
             </h3>
             <p className="max-w-[420px] text-[14px] leading-[1.7] text-ink-soft">
