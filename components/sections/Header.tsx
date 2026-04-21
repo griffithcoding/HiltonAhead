@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { brand } from '@/data/brand';
 import { nav } from '@/data/nav';
 import { hero } from '@/data/hero';
+import AdminNavLink from '@/components/AdminNavLink';
 
 /**
  * Editorial masthead header.
@@ -47,6 +48,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+            <AdminNavLink />
           </nav>
           <Link
             href={brand.cta.bookingPagePath}
