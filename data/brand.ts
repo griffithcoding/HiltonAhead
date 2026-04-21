@@ -17,8 +17,8 @@ export const brand = {
     'Custom Hilton Head itineraries built by a local insider. Villa booking, tee times, dinner reservations, and on-island concierge. Skip the tourist traps.',
 
   colors: {
-    /** Fired terracotta — the one accent in the Lowcountry heritage palette. */
-    primary: '#C8694A',
+    /** Sunset coral — the one sharp accent in the Lowcountry palette. */
+    primary: '#C44A2B',
   },
 
   logo: {

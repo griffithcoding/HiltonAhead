@@ -78,7 +78,7 @@ function fieldRow(label: string, value: string | number | null | undefined) {
   const v = String(value);
   return `<tr>
     <td style="padding:8px 12px 8px 0;color:#6B7280;font-size:13px;white-space:nowrap;vertical-align:top;">${esc(label)}</td>
-    <td style="padding:8px 0;color:#152930;font-size:14px;line-height:1.5;">${esc(v)}</td>
+    <td style="padding:8px 0;color:#0A2930;font-size:14px;line-height:1.5;">${esc(v)}</td>
   </tr>`;
 }
 
@@ -113,17 +113,17 @@ export async function sendItineraryNotification(req: ItineraryRequestEmail) {
 
   const html = `<!doctype html>
 <html>
-<body style="margin:0;padding:0;background:#EEE2CC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
   <div style="max-width:600px;margin:0 auto;padding:32px 24px;">
-    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C8694A;font-weight:600;margin-bottom:8px;">
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:8px;">
       New itinerary request · hiltonahead.com
     </div>
-    <h1 style="font-family:Georgia,serif;font-size:28px;line-height:1.15;color:#152930;margin:0 0 24px 0;letter-spacing:-0.02em;">
+    <h1 style="font-family:Georgia,serif;font-size:28px;line-height:1.15;color:#0A2930;margin:0 0 24px 0;letter-spacing:-0.02em;">
       ${esc(req.fullName || 'A traveler')}${
     req.partySize ? ` · party of ${req.partySize}` : ''
   }
     </h1>
-    <table style="width:100%;border-collapse:collapse;background:#F6ECD6;border:1px solid rgba(10,41,48,0.1);padding:16px;">
+    <table style="width:100%;border-collapse:collapse;background:#FBF3E2;border:1px solid rgba(10,41,48,0.1);padding:16px;">
       <tbody>
         ${fieldRow('Email', req.email)}
         ${fieldRow('Full name', req.fullName)}
@@ -185,21 +185,21 @@ export async function sendNewsletterWelcome(to: string) {
   const subject = 'You\u2019re on the list — Hilton Ahead';
   const html = `<!doctype html>
 <html>
-<body style="margin:0;padding:0;background:#EEE2CC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
   <div style="max-width:560px;margin:0 auto;padding:40px 24px;">
-    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C8694A;font-weight:600;margin-bottom:12px;">
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:12px;">
       The Insider Letter
     </div>
-    <h1 style="font-family:Georgia,serif;font-size:32px;line-height:1.12;color:#152930;margin:0 0 16px 0;letter-spacing:-0.02em;">
+    <h1 style="font-family:Georgia,serif;font-size:32px;line-height:1.12;color:#0A2930;margin:0 0 16px 0;letter-spacing:-0.02em;">
       You\u2019re on the list.
     </h1>
-    <p style="font-size:15px;line-height:1.7;color:#435B63;">
+    <p style="font-size:15px;line-height:1.7;color:#3D5860;">
       Thanks for subscribing. The first dispatch lands in a week or two \u2014
       villa deals, openings, seasonal intel, and the tee times that just
       dropped. No spam, no forwarding your email anywhere, one-click
       unsubscribe in every issue.
     </p>
-    <p style="font-size:14px;line-height:1.7;color:#435B63;margin-top:24px;">
+    <p style="font-size:14px;line-height:1.7;color:#3D5860;margin-top:24px;">
       \u2014 Hilton Ahead<br/>
       <span style="color:#9CA3AF;font-size:12px;">Hilton Head Island, SC</span>
     </p>

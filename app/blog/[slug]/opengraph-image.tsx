@@ -21,12 +21,12 @@ export default async function BlogOGImage({
   const category = post?.category || 'Local Guide';
   const readTime = post?.readTime || '';
 
-  // Palette — matches the site's Lowcountry heritage system
-  const sand = '#EEE2CC';
-  const sandDeep = '#DECCA6';
-  const ink = '#152930';
-  const coral = '#C8694A';
-  const gold = '#C79A5C';
+  // Palette — matches the site's sand/ink/coral system
+  const sand = '#F5E8D0';
+  const sandDeep = '#ECD8B2';
+  const ink = '#0A2930';
+  const coral = '#FF7A5C';
+  const gold = '#E8A74B';
 
   return new ImageResponse(
     (
