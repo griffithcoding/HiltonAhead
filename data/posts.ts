@@ -60,17 +60,17 @@ export type Post = {
 };
 
 // ---------------------------------------------------------------------------
-// 1) FLAGSHIP — 2026 exciting new places to stay
+// 1) FLAGSHIP. 2026 exciting new places to stay
 // ---------------------------------------------------------------------------
 
 const post2026Stays: Post = {
   slug: '2026-best-places-to-stay-hilton-head',
   title:
-    "2026's Most Exciting Places to Stay on Hilton Head — Ranked by a Local",
+    "2026's Most Exciting Places to Stay on Hilton Head. Ranked by a Local",
   excerpt:
     "The newly-renovated resorts, the villa buildings locals actually book, and the one property you should avoid in 2026. An insider's ranking.",
   description:
-    'The 15 best places to stay on Hilton Head Island in 2026 — ranked. Newly-renovated resorts, best villa buildings in Sea Pines and Palmetto Dunes, and the properties locals actually recommend.',
+    'The 15 best places to stay on Hilton Head Island in 2026. Ranked. Newly-renovated resorts, best villa buildings in Sea Pines and Palmetto Dunes, and the properties locals actually recommend.',
   category: 'Stays',
   readTime: '12 min',
   publishedAt: '2026-03-14',
@@ -93,7 +93,7 @@ const post2026Stays: Post = {
     },
     {
       kind: 'p',
-      html: "This is the list we actually send to clients in 2026 — updated after the slate of post-storm renovations, the new Omni refresh, and the quiet disappearance of two rental programs we used to trust. Ranked in four tiers. If a property isn't here, it's not an accident.",
+      html: "This is the list we actually send to clients in 2026. Updated after the slate of post-storm renovations, the new Omni refresh, and the quiet disappearance of two rental programs we used to trust. Ranked in four tiers. If a property isn't here, it's not an accident.",
     },
     {
       kind: 'callout',
@@ -107,10 +107,10 @@ const post2026Stays: Post = {
       accent: 'gold',
       items: [
         {
-          name: 'The Sea Pines Resort — Harbour Town Inn',
+          name: 'The Sea Pines Resort: Harbour Town Inn',
           meta: 'Sea Pines · Refreshed 2025',
           blurb:
-            "Finally renovated in 2025 after years of being almost-but-not-quite. The rooms now match the location, which has always been the best hotel address on the island — Harbour Town lighthouse out your window, Heritage-caliber golf a walk away. This is our default for couples and golfers who don't want to cook.",
+            "Finally renovated in 2025 after years of being almost-but-not-quite. The rooms now match the location, which has always been the best hotel address on the island. Harbour Town lighthouse out your window, Heritage-caliber golf a walk away. This is our default for couples and golfers who don't want to cook.",
         },
         {
           name: 'Montage Palmetto Bluff (Bluffton)',
@@ -120,9 +120,9 @@ const post2026Stays: Post = {
         },
         {
           name: 'Oceanfront villas on South Beach Lane (Sea Pines)',
-          meta: 'Sea Pines · Private rentals · 3–6 BR',
+          meta: 'Sea Pines · Private rentals · 3-6 BR',
           blurb:
-            "The quietest stretch of sand in Sea Pines, two minutes from the marina, ten from Harbour Town. We hand-pick four buildings on this lane. Book 6+ months out for June–August; these do not last.",
+            "The quietest stretch of sand in Sea Pines, two minutes from the marina, ten from Harbour Town. We hand-pick four buildings on this lane. Book 6+ months out for June-August; these do not last.",
         },
       ],
     },
@@ -142,7 +142,7 @@ const post2026Stays: Post = {
           name: 'Marriott Grande Ocean',
           meta: 'Palmetto Dunes · Villa resort · 2 BR standard',
           blurb:
-            "Timeshare-adjacent, but don't let that scare you off. Units are spacious, grounds are impeccable, and the beach access is the shortest walk on the island. We book it for families of 4–6 who want space without renting a standalone villa.",
+            "Timeshare-adjacent, but don't let that scare you off. Units are spacious, grounds are impeccable, and the beach access is the shortest walk on the island. We book it for families of 4-6 who want space without renting a standalone villa.",
         },
         {
           name: 'The Inn & Club at Harbour Town',
@@ -174,16 +174,16 @@ const post2026Stays: Post = {
           name: 'Beach House, a Holiday Inn Resort',
           meta: 'Coligny · Walk to everything',
           blurb:
-            "The location is unbeatable if you want to ditch the car. The rooms are what they are — a 2010-era renovation coasting a little too long. Works for weekend getaways and honest family-on-a-budget trips.",
+            "The location is unbeatable if you want to ditch the car. The rooms are what they are. A 2010-era renovation coasting a little too long. Works for weekend getaways and honest family-on-a-budget trips.",
         },
         {
           name: "Spinnaker Resorts (Egret Point, Waterside)",
           meta: 'Shipyard & Bluffton · Timeshare units rented nightly',
           blurb:
-            "Good units, honestly. The catch is the sales pressure if you engage with the front desk — skip the \"welcome briefing\" and you're fine. Strong value for families who want a kitchen.",
+            "Good units, honestly. The catch is the sales pressure if you engage with the front desk. Skip the \"welcome briefing\" and you're fine. Strong value for families who want a kitchen.",
         },
         {
-          name: 'Inn at Harbour Town — standard rooms (pre-renovation wings)',
+          name: 'Inn at Harbour Town: standard rooms (pre-renovation wings)',
           meta: 'Sea Pines · Specific room-block caution',
           blurb:
             "Blocks 300 and 400 are still pre-renovation. If you book this hotel, specifically request blocks 100 or 200. We tell every client the same thing, and the hotel will honor the request 90% of the time.",
@@ -197,10 +197,10 @@ const post2026Stays: Post = {
       accent: 'rose',
       items: [
         {
-          name: 'Redacted VRBO program — Forest Beach mid-rise',
+          name: 'Redacted VRBO program. Forest Beach mid-rise',
           meta: 'Management change Q4 2025',
           blurb:
-            "The previous manager sold to a larger operator late last year. Service quality has cratered since — we've pulled four clients out mid-trip. Happy to name it on a planning call; we won't put it in print.",
+            "The previous manager sold to a larger operator late last year. Service quality has cratered since. We've pulled four clients out mid-trip. Happy to name it on a planning call; we won't put it in print.",
         },
         {
           name: 'Any oceanfront condo building north of Folly Field',
@@ -224,7 +224,7 @@ const post2026Stays: Post = {
     },
     {
       kind: 'p',
-      html: "After years of the lobby feeling like a 2004 time capsule, the Omni Palmetto Dunes finished its common-area overhaul in early 2026. The new pool deck is genuinely the best on the island now — better than Sea Pines — with a swim-up bar that doesn't feel like a compromise. Rooms are phased through 2027, so ask which floor you're on.",
+      html: "After years of the lobby feeling like a 2004 time capsule, the Omni Palmetto Dunes finished its common-area overhaul in early 2026. The new pool deck is genuinely the best on the island now. Better than Sea Pines. With a swim-up bar that doesn't feel like a compromise. Rooms are phased through 2027, so ask which floor you're on.",
     },
     {
       kind: 'h3',
@@ -232,7 +232,7 @@ const post2026Stays: Post = {
     },
     {
       kind: 'p',
-      html: "The Sea Pines Resort finally addressed the Harbour Town Inn in 2025. Rooms went from \"oldest hotel product on the island\" to \"quietly the best small hotel we book.\" The location was always there; now the rooms match. Rates jumped 20% to match the quality — it's still worth it.",
+      html: "The Sea Pines Resort finally addressed the Harbour Town Inn in 2025. Rooms went from \"oldest hotel product on the island\" to \"quietly the best small hotel we book.\" The location was always there; now the rooms match. Rates jumped 20% to match the quality. It's still worth it.",
     },
     {
       kind: 'h3',
@@ -240,7 +240,7 @@ const post2026Stays: Post = {
     },
     {
       kind: 'p',
-      html: "We're sending more clients to Bluffton this year than ever. Montage Palmetto Bluff aside, the new boutique inventory in Old Town Bluffton — especially around Calhoun Street — offers a quieter, more adult trip at 60% of Sea Pines pricing. The drive onto Hilton Head is 18 minutes. Worth considering for couples and foodie trips.",
+      html: "We're sending more clients to Bluffton this year than ever. Montage Palmetto Bluff aside, the new boutique inventory in Old Town Bluffton, especially around Calhoun Street, offers a quieter, more adult trip at 60% of Sea Pines pricing. The drive onto Hilton Head is 18 minutes. Worth considering for couples and foodie trips.",
     },
     {
       kind: 'h2',
@@ -253,17 +253,17 @@ const post2026Stays: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Summer (June–August):</strong> 5–6 months out for villa inventory, 3–4 months for resorts. If you're reading this in May planning for July, call us immediately.",
-        "<strong>Fall golf (September–early November):</strong> 2–3 months out is fine for most resorts, but Harbour Town tee-time blocks lock 4 months ahead.",
+        "<strong>Summer (June-August):</strong> 5-6 months out for villa inventory, 3-4 months for resorts. If you're reading this in May planning for July, call us immediately.",
+        "<strong>Fall golf (September-early November):</strong> 2-3 months out is fine for most resorts, but Harbour Town tee-time blocks lock 4 months ahead.",
         "<strong>Heritage week (RBC Heritage, second week of April):</strong> Rates double. Worth it once in your life, but we'll quietly suggest the week before or after.",
-        "<strong>Thanksgiving & Christmas week:</strong> Surprisingly open and surprisingly cheap. The weather is genuinely pleasant (55–65°F). One of the best-value windows on the island.",
+        "<strong>Thanksgiving & Christmas week:</strong> Surprisingly open and surprisingly cheap. The weather is genuinely pleasant (55-65°F). One of the best-value windows on the island.",
         "<strong>Spring break (mid-March to mid-April):</strong> Book in November if you want anything oceanfront.",
       ],
     },
     {
       kind: 'callout',
       label: "When it's worth hiring us",
-      html: "If your trip is under $4k total, you don't need a consultant — use this list, book direct, and email us with specific questions. If your trip is $8k+ or involves a group of 8+, we probably save you more than our fee through vendor relationships and rate negotiation. Honest answer every time.",
+      html: "If your trip is under $4k total, you don't need a consultant. Use this list, book direct, and email us with specific questions. If your trip is $8k+ or involves a group of 8+, we probably save you more than our fee through vendor relationships and rate negotiation. Honest answer every time.",
     },
     {
       kind: 'h2',
@@ -271,7 +271,7 @@ const post2026Stays: Post = {
     },
     {
       kind: 'p',
-      html: "\"Should I book direct or through VRBO/Airbnb?\" The answer in 2026: <strong>book direct through the resort for resorts, and through a local rental company for villas — never through VRBO or Airbnb for a Hilton Head villa if you can avoid it.</strong>",
+      html: "\"Should I book direct or through VRBO/Airbnb?\" The answer in 2026: <strong>book direct through the resort for resorts, and through a local rental company for villas. Never through VRBO or Airbnb for a Hilton Head villa if you can avoid it.</strong>",
     },
     {
       kind: 'p',
@@ -281,16 +281,16 @@ const post2026Stays: Post = {
 };
 
 // ---------------------------------------------------------------------------
-// 2) TIER LIST — Restaurants
+// 2) TIER LIST. Restaurants
 // ---------------------------------------------------------------------------
 
 const postRestaurantsRanked: Post = {
   slug: 'hilton-head-restaurants-ranked-2026',
   title: 'Hilton Head Restaurants, Ranked: The 2026 Local Tier List',
   excerpt:
-    "Forget the TripAdvisor top 20. These are the restaurants locals actually eat at — ranked S through C with honest reviews and what to order.",
+    "Forget the TripAdvisor top 20. These are the restaurants locals actually eat at. Ranked S through C with honest reviews and what to order.",
   description:
-    "A locally-ranked tier list of the best restaurants on Hilton Head Island in 2026. Where to eat, what to order, and which spots to skip — honest reviews from someone who actually lives here.",
+    "A locally-ranked tier list of the best restaurants on Hilton Head Island in 2026. Where to eat, what to order, and which spots to skip. Honest reviews from someone who actually lives here.",
   category: 'Dining',
   readTime: '10 min',
   publishedAt: '2026-02-21',
@@ -313,7 +313,7 @@ const postRestaurantsRanked: Post = {
     },
     {
       kind: 'p',
-      html: "This is the tier list we actually keep in our heads when we plan a trip — the same one we'd text a friend. Ranked by the food first, then the experience, then how hard the reservation is. No kickbacks, no sponsored slots.",
+      html: "This is the tier list we actually keep in our heads when we plan a trip. The same one we'd text a friend. Ranked by the food first, then the experience, then how hard the reservation is. No kickbacks, no sponsored slots.",
     },
     {
       kind: 'tier',
@@ -337,7 +337,7 @@ const postRestaurantsRanked: Post = {
           name: "Michael Anthony's",
           meta: "Orleans Rd · Italian · $$$ · Tough reservation",
           blurb:
-            "Destination-level Italian that locals defend with religious intensity. The osso buco is a ten-year-consistent order. If the answer is yes to \"can we get Michael Anthony's tonight?\" — cancel your other plans.",
+            "Destination-level Italian that locals defend with religious intensity. The osso buco is a ten-year-consistent order. If the answer is yes to \"can we get Michael Anthony's tonight?\". Cancel your other plans.",
         },
       ],
     },
@@ -357,7 +357,7 @@ const postRestaurantsRanked: Post = {
           name: 'Ela\'s On The Water',
           meta: "Shelter Cove · Mediterranean · $$$ · Sunset views",
           blurb:
-            "Marina views, octopus done right, and a staff that will actually describe the fish instead of reading the menu at you. Request a patio table at sunset — it's why you came.",
+            "Marina views, octopus done right, and a staff that will actually describe the fish instead of reading the menu at you. Request a patio table at sunset. It's why you came.",
         },
         {
           name: 'Hudson\'s on the Docks',
@@ -401,13 +401,13 @@ const postRestaurantsRanked: Post = {
           name: "A Lowcountry Backyard",
           meta: "Pope Ave · Comfort food · $$",
           blurb:
-            "The \"shrimp and grits for people who don't know where else to get shrimp and grits.\" It's fine — actually more than fine — but not a destination. Great if you're three blocks away and hungry.",
+            "The \"shrimp and grits for people who don't know where else to get shrimp and grits.\" It's fine. Actually more than fine. But not a destination. Great if you're three blocks away and hungry.",
         },
         {
           name: "Ombra Cucina Italiana",
           meta: "Park Plaza · Italian · $$$",
           blurb:
-            "The second-best Italian on the island. Smaller, quieter, easier reservation than Michael Anthony's. Kitchen has range — order the risotto of the day.",
+            "The second-best Italian on the island. Smaller, quieter, easier reservation than Michael Anthony's. Kitchen has range. Order the risotto of the day.",
         },
         {
           name: "Lucky Rooster",
@@ -437,7 +437,7 @@ const postRestaurantsRanked: Post = {
         },
         {
           name: 'Any oceanfront hotel restaurant',
-          meta: "All resorts · $$$–$$$$",
+          meta: "All resorts · $$$-$$$$",
           blurb:
             "Convenience tax is 40%. Walk to a real restaurant instead. The island is small enough to justify it.",
         },
@@ -445,7 +445,7 @@ const postRestaurantsRanked: Post = {
     },
     {
       kind: 'h2',
-      text: "Reservations — the real game",
+      text: "Reservations. The real game",
     },
     {
       kind: 'p',
@@ -454,9 +454,9 @@ const postRestaurantsRanked: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Skull Creek:</strong> Resy releases at 30 days. Set an alarm. The 6:45–7:15pm window is what you want.",
+        "<strong>Skull Creek:</strong> Resy releases at 30 days. Set an alarm. The 6:45-7:15pm window is what you want.",
         "<strong>Red Fish:</strong> Call directly. The host is excellent at finding slots if you're flexible. Thursday and Sunday are easier than Friday/Saturday.",
-        "<strong>Michael Anthony's:</strong> 2 weeks out minimum. If it says \"fully booked\" online, call anyway — they hold tables.",
+        "<strong>Michael Anthony's:</strong> 2 weeks out minimum. If it says \"fully booked\" online, call anyway. They hold tables.",
         "<strong>FARM Bluffton:</strong> OpenTable, 3 weeks out for weekends. Weeknight walk-ins are sometimes possible at the bar.",
       ],
     },
@@ -471,7 +471,7 @@ const postRestaurantsRanked: Post = {
     },
     {
       kind: 'p',
-      html: "The best lunch values on the island are wildly under-appreciated. Skull Creek's grouper reuben, Hudson's fried shrimp basket, Harbour Town Bakery's ham biscuit — all three are better than 90% of the dinner scene, at a third the price. Budget more for lunch than you think you need to.",
+      html: "The best lunch values on the island are wildly under-appreciated. Skull Creek's grouper reuben, Hudson's fried shrimp basket, Harbour Town Bakery's ham biscuit. All three are better than 90% of the dinner scene, at a third the price. Budget more for lunch than you think you need to.",
     },
     {
       kind: 'h2',
@@ -485,7 +485,7 @@ const postRestaurantsRanked: Post = {
 };
 
 // ---------------------------------------------------------------------------
-// 3) TIER LIST — Things to do
+// 3) TIER LIST. Things to do
 // ---------------------------------------------------------------------------
 
 const postThingsToDoRanked: Post = {
@@ -494,7 +494,7 @@ const postThingsToDoRanked: Post = {
   excerpt:
     "The activities worth doing, the activities worth skipping, and the one tourist trap everyone falls for. A local's tier list for 2026.",
   description:
-    "Ranked list of the best things to do on Hilton Head Island in 2026 — beaches, boats, bikes, tours, and tourist traps. Honest tiers from a local travel consultant.",
+    "Ranked list of the best things to do on Hilton Head Island in 2026. Beaches, boats, bikes, tours, and tourist traps. Honest tiers from a local travel consultant.",
   category: 'Activities',
   readTime: '9 min',
   publishedAt: '2026-01-30',
@@ -513,7 +513,7 @@ const postThingsToDoRanked: Post = {
   body: [
     {
       kind: 'p',
-      html: "The \"Top 10 Things to Do on Hilton Head\" lists are stuffed with filler — they have to fill the list even if #8 is a waste of three hours. This one isn't. If an activity is in C-tier, we'll tell you why.",
+      html: "The \"Top 10 Things to Do on Hilton Head\" lists are stuffed with filler. They have to fill the list even if #8 is a waste of three hours. This one isn't. If an activity is in C-tier, we'll tell you why.",
     },
     {
       kind: 'tier',
@@ -551,29 +551,29 @@ const postThingsToDoRanked: Post = {
           name: 'Kayak or paddleboard Broad Creek (Outside Hilton Head)',
           meta: "$55/person · 2 hours · Calibogue Cue trip is the upgrade",
           blurb:
-            "Outside Hilton Head (the local outfitter) runs small-group creek tours. The 7am slot is magical — fog, herons, and zero boat traffic. Skip the bigger operators; they bunch groups of 20.",
+            "Outside Hilton Head (the local outfitter) runs small-group creek tours. The 7am slot is magical. Fog, herons, and zero boat traffic. Skip the bigger operators; they bunch groups of 20.",
         },
         {
           name: 'Sunset sail on a private charter',
-          meta: "$500–$1,200 · 2 hours · Calibogue Sound",
+          meta: "$500-$1,200 · 2 hours · Calibogue Sound",
           blurb:
             "A splurge that's worth it for couples and groups of 4. We book through two captains we trust. The public sunset cruises feel like a bus; a private sail feels like the Caribbean.",
         },
         {
           name: 'Coastal Discovery Museum',
-          meta: "Free · 1–2 hours · Indigo Run",
+          meta: "Free · 1-2 hours · Indigo Run",
           blurb:
             "Genuinely interesting for kids 8+. The butterfly garden in summer is underrated. Not a full-day activity, but a solid rainy-afternoon move.",
         },
         {
           name: 'Fishing charter (offshore half-day)',
-          meta: "$900–$1,400 · 4–6 hours · 4 person max typical",
+          meta: "$900-$1,400 · 4-6 hours · 4 person max typical",
           blurb:
-            "Worth it for the dads' trip or a father-daughter thing. We work with two captains — both have private docks and actually find fish. The marina-board operators are hit-or-miss.",
+            "Worth it for the dads' trip or a father-daughter thing. We work with two captains. Both have private docks and actually find fish. The marina-board operators are hit-or-miss.",
         },
         {
           name: 'Pinckney Island National Wildlife Refuge',
-          meta: "Free · 2–3 hours · Hike and birding",
+          meta: "Free · 2-3 hours · Hike and birding",
           blurb:
             "A 15-minute drive off-island for a genuinely wild experience. Alligators, egrets, no tourists. Weekday mornings only.",
         },
@@ -589,31 +589,31 @@ const postThingsToDoRanked: Post = {
           name: 'Gregg Russell kids concert (Harbour Town Liberty Oak)',
           meta: "Free · Nightly in summer · Bring bug spray",
           blurb:
-            "A genuine island institution. Kids love it; adults tolerate it. Worth one night if you have children under 10. Bring chairs — the oak gets crowded.",
+            "A genuine island institution. Kids love it; adults tolerate it. Worth one night if you have children under 10. Bring chairs. The oak gets crowded.",
         },
         {
           name: 'Harbour Town Lighthouse climb',
           meta: "$5 · 15 min · Spiral staircase, 114 steps",
           blurb:
-            "The view is real, the exhibits are dated. Go for the photo at the top, not the museum. Avoid on rainy afternoons — the line is brutal.",
+            "The view is real, the exhibits are dated. Go for the photo at the top, not the museum. Avoid on rainy afternoons. The line is brutal.",
         },
         {
           name: 'Tennis or pickleball clinics (Palmetto Dunes, Sea Pines)',
-          meta: "$60–$150/session · 1–2 hours",
+          meta: "$60-$150/session · 1-2 hours",
           blurb:
-            "Palmetto Dunes tennis is legitimately world-class. Sea Pines pickleball has exploded. Book a clinic with a named pro; the rec staff is a mixed bag.",
+            "Palmetto Dunes tennis is as good as any resort program in the country. Sea Pines pickleball has exploded. Book a clinic with a named pro; the rec staff is a mixed bag.",
         },
         {
           name: 'Horseback riding (Lawton Stables, Sea Pines)',
           meta: "$95/person · 1 hour · Ages 8+",
           blurb:
-            "Beautiful ride through the Sea Pines forest preserve. Not scenic enough for adults without kids. Kids love it — it's photographable.",
+            "Beautiful ride through the Sea Pines forest preserve. Not scenic enough for adults without kids. Kids love it. It's photographable.",
         },
       ],
     },
     {
       kind: 'tier',
-      label: 'C-Tier — Skip',
+      label: 'C-Tier. Skip',
       subtitle: "What you'll be tempted by and shouldn't do.",
       accent: 'rose',
       items: [
@@ -621,7 +621,7 @@ const postThingsToDoRanked: Post = {
           name: 'Pirate-themed dinner cruise',
           meta: "$85/adult · 90 min · Shelter Cove",
           blurb:
-            "The boat is fine. The food is not. The entertainment is loud. If you must, do the afternoon sightseeing version — no food, no theater, same boat.",
+            "The boat is fine. The food is not. The entertainment is loud. If you must, do the afternoon sightseeing version. No food, no theater, same boat.",
         },
         {
           name: 'Segway island tours',
@@ -659,14 +659,14 @@ const postThingsToDoRanked: Post = {
         "<strong>Day 3:</strong> Morning kayak or dolphin cruise. Lazy afternoon.",
         "<strong>Day 4:</strong> Golf or tennis morning (one member). Beach day for the rest. Dinner in Bluffton.",
         "<strong>Day 5:</strong> Sunrise walk to Dragon Tree. Coastal Discovery Museum if weather turns. Sunset sail.",
-        "<strong>Day 6:</strong> Flex day — fishing charter, pickleball clinic, or pool-and-book day.",
+        "<strong>Day 6:</strong> Flex day. Fishing charter, pickleball clinic, or pool-and-book day.",
         "<strong>Day 7:</strong> Harbour Town morning, ham biscuit, photo at the lighthouse, then fly home.",
       ],
     },
     {
       kind: 'callout',
       label: "What we actually do for you",
-      html: "We pre-book the activities that matter — Captain Mark's dolphin cruise, the 7am kayak slot, the good fishing captain — and leave the flex days flex. Nothing is worse than a five-activity day where the kids melt down by 2pm.",
+      html: "We pre-book the activities that matter (Captain Mark's dolphin cruise, the 7am kayak slot, the good fishing captain) and leave the flex days flex. Nothing is worse than a five-activity day where the kids melt down by 2pm.",
     },
     {
       kind: 'h2',
@@ -676,11 +676,11 @@ const postThingsToDoRanked: Post = {
       kind: 'ul',
       items: [
         "<strong>Beach:</strong> Late May through early October. Water is swimmable.",
-        "<strong>Golf:</strong> March–May and September–November. Perfect weather, course conditions.",
-        "<strong>Fishing:</strong> April–June for inshore, August–October for offshore.",
+        "<strong>Golf:</strong> March-May and September-November. Perfect weather, course conditions.",
+        "<strong>Fishing:</strong> April-June for inshore, August-October for offshore.",
         "<strong>Biking:</strong> Year-round. Shoulder seasons (April, October) are ideal.",
         "<strong>Dolphin cruises:</strong> Year-round. Summer is highest-density; fall trips are quieter and still productive.",
-        "<strong>Birding / Pinckney:</strong> October–March. Migration windows are spectacular.",
+        "<strong>Birding / Pinckney:</strong> October-March. Migration windows are spectacular.",
       ],
     },
   ],
@@ -696,7 +696,7 @@ const postSeaPines: Post = {
   excerpt:
     "Sea Pines is the largest and most famous neighborhood on Hilton Head. Here's how to pick the right pocket of it for your trip.",
   description:
-    "A local's complete guide to Sea Pines Resort on Hilton Head Island — how to pick the right villa area, where to eat, which bike paths to ride, and what the 2026 changes mean for travelers.",
+    "A local's complete guide to Sea Pines Resort on Hilton Head Island. How to pick the right villa area, where to eat, which bike paths to ride, and what the 2026 changes mean for travelers.",
   category: 'Neighborhoods',
   readTime: '11 min',
   publishedAt: '2026-01-15',
@@ -755,7 +755,7 @@ const postSeaPines: Post = {
     },
     {
       kind: 'p',
-      html: "The residential core. Big live oaks, winding roads, older single-family villas. Quiet. The beach access points are unmarked but excellent — Beach Cat 9, 10, and 11 are the locals' favorites. No commercial buildings; you drive to dinner.",
+      html: "The residential core. Big live oaks, winding roads, older single-family villas. Quiet. The beach access points are unmarked but excellent. Beach Cat 9, 10, and 11 are the locals' favorites. No commercial buildings; you drive to dinner.",
     },
     {
       kind: 'p',
@@ -771,7 +771,7 @@ const postSeaPines: Post = {
     },
     {
       kind: 'p',
-      html: "Book here if: you're a golf-first party of 4–6 looking to save 30% vs. oceanfront.",
+      html: "Book here if: you're a golf-first party of 4-6 looking to save 30% vs. oceanfront.",
     },
     {
       kind: 'h3',
@@ -791,11 +791,11 @@ const postSeaPines: Post = {
     },
     {
       kind: 'p',
-      html: "Sea Pines has a controlled entrance — $9 per car per visit, waived for overnight guests. The one gate backs up in July/August from 10am to 12pm. Enter before 9am or after 1pm if you can.",
+      html: "Sea Pines has a controlled entrance. $9 per car per visit, waived for overnight guests. The one gate backs up in July/August from 10am to 12pm. Enter before 9am or after 1pm if you can.",
     },
     {
       kind: 'p',
-      html: "Inside, everything connects by bike path — 17 miles of them. Renting bikes is a near-mandatory move. We use Hilton Head Bicycle (they'll deliver). You can bike from Harbour Town to South Beach in 18 minutes.",
+      html: "Inside, everything connects by bike path. 17 miles of them. Renting bikes is a near-mandatory move. We use Hilton Head Bicycle (they'll deliver). You can bike from Harbour Town to South Beach in 18 minutes.",
     },
     {
       kind: 'h2',
@@ -804,17 +804,17 @@ const postSeaPines: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Harbour Town Bakery</strong> — breakfast, $. The ham biscuit, always. Eat outside.",
-        "<strong>Quarterdeck</strong> — lunch or dinner, $$$. Marina view, tourist-friendly, predictable menu. Fine for groups.",
-        "<strong>CQ's</strong> — dinner, $$$. Restaurant Row-era chophouse feel. Holds up. Reservation required.",
-        "<strong>The Salty Dog Café</strong> — lunch, $$. Here for the t-shirts, not the food.",
-        "<strong>The Links, an American Grill</strong> — dinner, $$$$. At the Inn & Club at Harbour Town. Quiet upscale. Best for pre-round dinners.",
+        "<strong>Harbour Town Bakery</strong>. Breakfast, $. The ham biscuit, always. Eat outside.",
+        "<strong>Quarterdeck</strong>. Lunch or dinner, $$$. Marina view, tourist-friendly, predictable menu. Fine for groups.",
+        "<strong>CQ's</strong>. Dinner, $$$. Restaurant Row-era chophouse feel. Holds up. Reservation required.",
+        "<strong>The Salty Dog Café</strong>. Lunch, $$. Here for the t-shirts, not the food.",
+        "<strong>The Links, an American Grill</strong>. Dinner, $$$$. At the Inn & Club at Harbour Town. Quiet upscale. Best for pre-round dinners.",
       ],
     },
     {
       kind: 'callout',
       label: "Where we send clients for dinner",
-      html: "Sea Pines has solid in-plantation options but — honestly — the best dinners on the island are outside its gates. Skull Creek, Red Fish, and Michael Anthony's are all 12–18 minutes away. We plan trips where 2 of 7 nights are in-plantation and the rest are island-wide.",
+      html: "Sea Pines has solid in-plantation options but. Honestly. The best dinners on the island are outside its gates. Skull Creek, Red Fish, and Michael Anthony's are all 12-18 minutes away. We plan trips where 2 of 7 nights are in-plantation and the rest are island-wide.",
     },
     {
       kind: 'h2',
@@ -823,9 +823,9 @@ const postSeaPines: Post = {
     {
       kind: 'ol',
       items: [
-        "<strong>Harbour Town to South Beach Marina</strong> — 2.5 miles, one way. The signature ride. Do it at low tide, take the beach path the last half-mile.",
-        "<strong>The Forest Preserve loop</strong> — 4 miles. Spanish moss, zero traffic, actually quiet. Enter near Lawton Stables.",
-        "<strong>Ocean to Ocean loop</strong> — 6 miles. North beach to south beach via Sea Pines's interior. A half-day ride; pack water.",
+        "<strong>Harbour Town to South Beach Marina</strong>. 2.5 miles, one way. The signature ride. Do it at low tide, take the beach path the last half-mile.",
+        "<strong>The Forest Preserve loop</strong>. 4 miles. Spanish moss, zero traffic, actually quiet. Enter near Lawton Stables.",
+        "<strong>Ocean to Ocean loop</strong>. 6 miles. North beach to south beach via Sea Pines's interior. A half-day ride; pack water.",
       ],
     },
     {
@@ -842,7 +842,7 @@ const postSeaPines: Post = {
     },
     {
       kind: 'p',
-      html: "Two things changed for 2026 in Sea Pines. First, the Harbour Town Inn renovation finally wrapped — rooms are legitimately good now, rates jumped 20%. Second, the resort rolled out a new villa management portal that lets you pre-book tennis and beach chairs from your phone. Worth 10 minutes of your arrival day.",
+      html: "Two things changed for 2026 in Sea Pines. First, the Harbour Town Inn renovation finally wrapped. Rooms are legitimately good now, rates jumped 20%. Second, the resort rolled out a new villa management portal that lets you pre-book tennis and beach chairs from your phone. Worth 10 minutes of your arrival day.",
     },
     {
       kind: 'h2',
@@ -865,7 +865,7 @@ const postPalmettoDunes: Post = {
   excerpt:
     "Three championship courses, 11 miles of lagoons, and some of the island's most family-friendly rentals. Here's what to know before you book.",
   description:
-    "A local's guide to staying in Palmetto Dunes on Hilton Head — golf courses, villa selection, the Omni renovation, restaurants, and what makes it different from Sea Pines.",
+    "A local's guide to staying in Palmetto Dunes on Hilton Head. Golf courses, villa selection, the Omni renovation, restaurants, and what makes it different from Sea Pines.",
   category: 'Neighborhoods',
   readTime: '9 min',
   publishedAt: '2026-02-05',
@@ -897,8 +897,8 @@ const postPalmettoDunes: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>A world-class tennis center.</strong> Palmetto Dunes' tennis program is rated in the US top 10 for a resort. The pros are actual pros; the court count is the island's largest.",
-        "<strong>Three championship golf courses in one property.</strong> Robert Trent Jones, Fazio, and Arthur Hills — all walkable from most villas. The Fazio is the most challenging; the Hills is the most forgiving.",
+        "<strong>One of the country's best resort tennis programs.</strong> Palmetto Dunes' is rated in the US top 10 for a resort, and it earns it. The pros are actual pros; the court count is the island's largest.",
+        "<strong>Three championship golf courses in one property.</strong> Robert Trent Jones, Fazio, and Arthur Hills. All walkable from most villas. The Fazio is the most challenging; the Hills is the most forgiving.",
         "<strong>11 miles of lagoons.</strong> Kayakable, stand-up paddleboardable, great for kids. Alligators live here. Don't let the dog swim.",
       ],
     },
@@ -912,7 +912,7 @@ const postPalmettoDunes: Post = {
     },
     {
       kind: 'p',
-      html: "The flagship hotel. Just finished a lobby and pool-deck renovation in 2026 — genuinely one of the best pool decks on the island now. Room renovations are phased through 2027. Oceanfront rooms first, garden view second, pool view third in priority. If you're booking for 2026, request a floor 4+.",
+      html: "The flagship hotel. Just finished a lobby and pool-deck renovation in 2026. Genuinely one of the best pool decks on the island now. Room renovations are phased through 2027. Oceanfront rooms first, garden view second, pool view third in priority. If you're booking for 2026, request a floor 4+.",
     },
     {
       kind: 'h3',
@@ -920,7 +920,7 @@ const postPalmettoDunes: Post = {
     },
     {
       kind: 'p',
-      html: "Two-bedroom timeshare-style units, rentable nightly. Best beach-walk distance in Palmetto Dunes (closest of any building). The grounds are meticulously maintained. A staple for families of 4–6 who want space without going full villa.",
+      html: "Two-bedroom timeshare-style units, rentable nightly. Best beach-walk distance in Palmetto Dunes (closest of any building). The grounds crew clearly does not take a day off. A staple for families of 4-6 who want space without going full villa.",
     },
     {
       kind: 'h3',
@@ -928,7 +928,7 @@ const postPalmettoDunes: Post = {
     },
     {
       kind: 'p',
-      html: "The oceanfront villa lanes — Mooring Buoy, Sea Oaks, Shelter Cove Way — are where the serious bookings live. Five-bedroom houses with private pools, steps from the sand. These are rented through the resort's villa program and a small group of independent managers. Quality is high but variable; we stick to four buildings we've personally vetted.",
+      html: "The oceanfront villa lanes. Mooring Buoy, Sea Oaks, Shelter Cove Way. Are where the serious bookings live. Five-bedroom houses with private pools, steps from the sand. These are rented through the resort's villa program and a small group of independent managers. Quality is high but variable; we stick to four buildings we've personally vetted.",
     },
     {
       kind: 'h3',
@@ -936,7 +936,7 @@ const postPalmettoDunes: Post = {
     },
     {
       kind: 'p',
-      html: "Interior Palmetto Dunes — Queens Grant, Stoney Creek, the older condo buildings — drops the price by 40% for second-row lodging. Still walkable to the beach (10 min). Good for families who mostly use the lodging to sleep.",
+      html: "Interior Palmetto Dunes. Queens Grant, Stoney Creek, the older condo buildings. Drops the price by 40% for second-row lodging. Still walkable to the beach (10 min). Good for families who mostly use the lodging to sleep.",
     },
     {
       kind: 'h2',
@@ -949,14 +949,14 @@ const postPalmettoDunes: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Dunes House</strong> — beachfront bar & grill. Fine for a beach-day lunch. Don't go out of your way.",
-        "<strong>Alexander's</strong> — near the Omni. The best of the in-plantation options. Holds up for a casual dinner.",
-        "<strong>The Big Jim</strong> — Omni's main restaurant. Breakfast is solid; dinner is hit-or-miss.",
+        "<strong>Dunes House</strong>. Beachfront bar & grill. Fine for a beach-day lunch. Don't go out of your way.",
+        "<strong>Alexander's</strong>. Near the Omni. The best of the in-plantation options. Holds up for a casual dinner.",
+        "<strong>The Big Jim</strong>. Omni's main restaurant. Breakfast is solid; dinner is hit-or-miss.",
       ],
     },
     {
       kind: 'p',
-      html: "For anything better, you drive 8–12 minutes to Shelter Cove (Ela's, Jack's) or 15 minutes to the north-end (Skull Creek, Hudson's).",
+      html: "For anything better, you drive 8-12 minutes to Shelter Cove (Ela's, Jack's) or 15 minutes to the north-end (Skull Creek, Hudson's).",
     },
     {
       kind: 'h2',
@@ -969,9 +969,9 @@ const postPalmettoDunes: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Robert Trent Jones Oceanfront</strong> — the signature. Hole 10 plays to the beach. Book this first, 60+ days out.",
-        "<strong>Fazio</strong> — the toughest. Windy, water-in-play, not for beginners. Excellent conditioning.",
-        "<strong>Arthur Hills</strong> — the fun one. Shorter, more forgiving, still interesting. Good for mixed-handicap groups.",
+        "<strong>Robert Trent Jones Oceanfront</strong>. The signature. Hole 10 plays to the beach. Book this first, 60+ days out.",
+        "<strong>Fazio</strong>. The toughest. Windy, water-in-play, not for beginners. Excellent conditioning.",
+        "<strong>Arthur Hills</strong>. The fun one. Shorter, more forgiving, still interesting. Good for mixed-handicap groups.",
       ],
     },
     {
@@ -984,35 +984,35 @@ const postPalmettoDunes: Post = {
     },
     {
       kind: 'p',
-      html: "The Palmetto Dunes Tennis Center is a legitimate reason to choose this neighborhood. 23 clay courts, 8 pickleball courts, clinics twice daily. Family camps in summer — drop the kids for 2 hours, hit the beach. Book the daily camps 2 weeks out for July.",
+      html: "The Palmetto Dunes Tennis Center is a legitimate reason to choose this neighborhood. 23 clay courts, 8 pickleball courts, clinics twice daily. Family camps in summer. Drop the kids for 2 hours, hit the beach. Book the daily camps 2 weeks out for July.",
     },
     {
       kind: 'h2',
-      text: "Lagoons — the underrated move",
+      text: "Lagoons. The underrated move",
     },
     {
       kind: 'p',
-      html: "The Outside Hilton Head outfitter operates out of Shelter Cove next door. A 90-minute lagoon kayak at 7am is one of the most underrated activities on the island — mist, herons, occasional alligator sightings at a safe distance, and you're back in time for breakfast.",
+      html: "The Outside Hilton Head outfitter operates out of Shelter Cove next door. A 90-minute lagoon kayak at 7am is one of the most underrated activities on the island. Mist, herons, occasional alligator sightings at a safe distance, and you're back in time for breakfast.",
     },
     {
       kind: 'h2',
-      text: "Palmetto Dunes vs. Sea Pines — the honest comparison",
+      text: "Palmetto Dunes vs. Sea Pines. The honest comparison",
     },
     {
       kind: 'ul',
       items: [
-        "<strong>Stay in Palmetto Dunes if:</strong> golf or tennis is a real part of the trip, you have kids 6–14, you want a full-service resort option.",
+        "<strong>Stay in Palmetto Dunes if:</strong> golf or tennis is a real part of the trip, you have kids 6-14, you want a full-service resort option.",
         "<strong>Stay in Sea Pines if:</strong> you want the iconic Hilton Head experience, you care about walkability to dining, you want a more \"adult\" feel.",
       ],
     },
     {
       kind: 'p',
-      html: "It's very common for our repeat clients to alternate — Palmetto Dunes for the family summer week, Sea Pines for the couples' fall getaway.",
+      html: "It's very common for our repeat clients to alternate. Palmetto Dunes for the family summer week, Sea Pines for the couples' fall getaway.",
     },
     {
       kind: 'callout',
       label: "2026 specific",
-      html: "The Omni renovation is the biggest news. If your last stay was pre-2025, the pool deck is now worth staying at the Omni just to use. If you want a room that matches, book a renovated floor (4 and up as of spring 2026) — ask us which room numbers specifically.",
+      html: "The Omni renovation is the biggest news. If your last stay was pre-2025, the pool deck is now worth staying at the Omni just to use. If you want a room that matches, book a renovated floor (4 and up as of spring 2026). Ask us which room numbers specifically.",
     },
   ],
 };
@@ -1027,7 +1027,7 @@ const postForestBeach: Post = {
   excerpt:
     "The best base for a short trip. Walking distance to Coligny, real beach access, and the most value in mid-island rentals.",
   description:
-    "A local's guide to Forest Beach on Hilton Head — walkability to Coligny Plaza, mid-island villa rentals, beach access points, and why it's the best value neighborhood for 3–5 night trips.",
+    "A local's guide to Forest Beach on Hilton Head. Walkability to Coligny Plaza, mid-island villa rentals, beach access points, and why it's the best value neighborhood for 3-5 night trips.",
   category: 'Neighborhoods',
   readTime: '7 min',
   publishedAt: '2026-02-18',
@@ -1045,7 +1045,7 @@ const postForestBeach: Post = {
   body: [
     {
       kind: 'p',
-      html: "Forest Beach is the overlooked middle child of Hilton Head's neighborhoods. No gate, no resort fees, no 19-hole \"plantation\" branding. It's a dense, walkable mid-island stretch with direct beach access, a functioning commercial plaza (Coligny), and the best per-dollar value on the island for 3–5 day trips.",
+      html: "Forest Beach is the overlooked middle child of Hilton Head's neighborhoods. No gate, no resort fees, no 19-hole \"plantation\" branding. It's a dense, walkable mid-island stretch with direct beach access, a functioning commercial plaza (Coligny), and the best per-dollar value on the island for 3-5 day trips.",
     },
     {
       kind: 'h2',
@@ -1059,7 +1059,7 @@ const postForestBeach: Post = {
       kind: 'ol',
       items: [
         "<strong>You can ditch the car.</strong> Most Forest Beach condos are within a 10-minute walk of Coligny Plaza (restaurants, beach, shops). For a 3-night trip, you save $300 in rental-car-time-in-traffic.",
-        "<strong>Real beach access.</strong> Coligny Beach Park is the only beach on the island with full-service amenities — bathrooms, showers, food, lifeguards. Best single beach access on Hilton Head.",
+        "<strong>Real beach access.</strong> Coligny Beach Park is the only beach on the island with full-service amenities. Bathrooms, showers, food, lifeguards. Best single beach access on Hilton Head.",
         "<strong>Value.</strong> A 2BR oceanfront condo in Forest Beach in June runs $3,200/week. The equivalent in Sea Pines runs $5,500.",
         "<strong>No gate tax.</strong> Sea Pines charges $9 per car, per day, for guests. Forest Beach doesn't. Over a week, that's $63 per rental car.",
       ],
@@ -1074,7 +1074,7 @@ const postForestBeach: Post = {
     },
     {
       kind: 'p',
-      html: "Between the Marriott Beach Resort (Shipyard edge) and Coligny. High-density condo buildings — Sea Crest, The Atrium, Villamare. Walkable to Coligny. Beach access via your condo's private boardwalk. Best value pocket.",
+      html: "Between the Marriott Beach Resort (Shipyard edge) and Coligny. High-density condo buildings. Sea Crest, The Atrium, Villamare. Walkable to Coligny. Beach access via your condo's private boardwalk. Best value pocket.",
     },
     {
       kind: 'h3',
@@ -1094,7 +1094,7 @@ const postForestBeach: Post = {
     },
     {
       kind: 'h2',
-      text: "Coligny Plaza — what's actually there",
+      text: "Coligny Plaza. What's actually there",
     },
     {
       kind: 'p',
@@ -1103,20 +1103,20 @@ const postForestBeach: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Skillets Café</strong> — breakfast. Lines by 9am. Go at 7:30 or 10:30.",
-        "<strong>A Lowcountry Backyard</strong> — lunch. Shrimp & grits without the resort pricing.",
-        "<strong>Coligny Theatre</strong> — movies. Rainy day lifesaver.",
-        "<strong>The Sandbox children's museum</strong> — kids under 8. Worth 90 minutes.",
-        "<strong>Pretty much all the gift shops</strong> — skip, unless you need sunscreen or a phone charger.",
+        "<strong>Skillets Café</strong>. Breakfast. Lines by 9am. Go at 7:30 or 10:30.",
+        "<strong>A Lowcountry Backyard</strong>. Lunch. Shrimp & grits without the resort pricing.",
+        "<strong>Coligny Theatre</strong>. Movies. Rainy day lifesaver.",
+        "<strong>The Sandbox children's museum</strong>. Kids under 8. Worth 90 minutes.",
+        "<strong>Pretty much all the gift shops</strong>. Skip, unless you need sunscreen or a phone charger.",
       ],
     },
     {
       kind: 'h2',
-      text: "Beach access — the specifics",
+      text: "Beach access. The specifics",
     },
     {
       kind: 'p',
-      html: "Coligny Beach Park is the headline access. Free parking (though it fills by 9am in summer), full amenities. In addition, every condo in Forest Beach has a private boardwalk access — so if you're staying there, you walk out your back door to the sand.",
+      html: "Coligny Beach Park is the headline access. Free parking (though it fills by 9am in summer), full amenities. In addition, every condo in Forest Beach has a private boardwalk access. So if you're staying there, you walk out your back door to the sand.",
     },
     {
       kind: 'p',
@@ -1147,7 +1147,7 @@ const postForestBeach: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Short-trip travelers</strong> (3–5 days) who want walkable access and good value.",
+        "<strong>Short-trip travelers</strong> (3-5 days) who want walkable access and good value.",
         "<strong>Budget-conscious families</strong> who want beach-front without resort fees.",
         "<strong>Couples' getaways</strong> who want to walk to dinner and not drive.",
         "<strong>First-time visitors</strong> who want the island's most accessible neighborhood.",
@@ -1168,7 +1168,7 @@ const postForestBeach: Post = {
     {
       kind: 'callout',
       label: "Our Forest Beach default pick",
-      html: "For a couple or family of 4 on a 4-night summer trip, we default to a 2BR oceanfront condo in the Sea Crest or Villamare buildings. Walking distance to Coligny, private beach boardwalk, $3,200–$3,800/week, and we know the managers personally. If budget flexes up, we upgrade to single-family on South Forest Beach Lane.",
+      html: "For a couple or family of 4 on a 4-night summer trip, we default to a 2BR oceanfront condo in the Sea Crest or Villamare buildings. Walking distance to Coligny, private beach boardwalk, $3,200-$3,800/week, and we know the managers personally. If budget flexes up, we upgrade to single-family on South Forest Beach Lane.",
     },
   ],
 };
@@ -1183,7 +1183,7 @@ const postShelterCove: Post = {
   excerpt:
     "Quiet, elegant, and built for couples. Here's how to string together a Shelter Cove weekend without leaving the marina.",
   description:
-    "A local's guide to Shelter Cove on Hilton Head — marina lodging, the best dinners, sunset dolphin cruises, and why it's the most adult-friendly pocket of the island.",
+    "A local's guide to Shelter Cove on Hilton Head. Marina lodging, the best dinners, sunset dolphin cruises, and why it's the most adult-friendly pocket of the island.",
   category: 'Neighborhoods',
   readTime: '7 min',
   publishedAt: '2026-03-03',
@@ -1210,7 +1210,7 @@ const postShelterCove: Post = {
     },
     {
       kind: 'p',
-      html: "Shelter Cove is a 200-acre marina-centric development on the north side of the island, facing Broad Creek rather than the ocean. Calling it a \"neighborhood\" is a stretch — it's really one large marina with the buildings arranged around it. But for trip-planning purposes, it's a distinct place with a distinct feel.",
+      html: "Shelter Cove is a 200-acre marina-centric development on the north side of the island, facing Broad Creek rather than the ocean. Calling it a \"neighborhood\" is a stretch. It's really one large marina with the buildings arranged around it. But for trip-planning purposes, it's a distinct place with a distinct feel.",
     },
     {
       kind: 'h2',
@@ -1242,7 +1242,7 @@ const postShelterCove: Post = {
     },
     {
       kind: 'h2',
-      text: "Eating in Shelter Cove — the main event",
+      text: "Eating in Shelter Cove. The main event",
     },
     {
       kind: 'p',
@@ -1290,7 +1290,7 @@ const postShelterCove: Post = {
     },
     {
       kind: 'p',
-      html: "The marina is where most of the island's boat operators run from. Sunset sail on a 41-foot catamaran — the Vagabond Cruise — is the obvious move. 90 minutes, BYOB, typically 10–12 people.",
+      html: "The marina is where most of the island's boat operators run from. Sunset sail on a 41-foot catamaran. The Vagabond Cruise. Is the obvious move. 90 minutes, BYOB, typically 10-12 people.",
     },
     {
       kind: 'h3',
@@ -1302,7 +1302,7 @@ const postShelterCove: Post = {
     },
     {
       kind: 'h3',
-      text: 'Summer concert series (June–August)',
+      text: 'Summer concert series (June-August)',
     },
     {
       kind: 'p',
@@ -1310,16 +1310,16 @@ const postShelterCove: Post = {
     },
     {
       kind: 'h2',
-      text: "Shelter Cove as a base — the tradeoff",
+      text: "Shelter Cove as a base. The tradeoff",
     },
     {
       kind: 'p',
-      html: "You're staying on a marina, not a beach. The ocean is a 6-minute drive. For a couples' trip, that's a feature — you get beach days without the beach-side crowds. For a kids' trip, it's a friction — the hotel-to-sand routine adds 15 minutes each way.",
+      html: "You're staying on a marina, not a beach. The ocean is a 6-minute drive. For a couples' trip, that's a feature. You get beach days without the beach-side crowds. For a kids' trip, it's a friction. The hotel-to-sand routine adds 15 minutes each way.",
     },
     {
       kind: 'callout',
       label: "Our Shelter Cove play",
-      html: "For a 3–4 night couples' trip in fall, we often book Shelter Cove Towers for the marina view, plan a beach morning to Singleton Beach (5 min away), a sunset sail one night, and dinners at Ela's, FARM Bluffton (off-island), and Red Fish. Zero golf, zero resort program, zero kids. That's the Shelter Cove recipe.",
+      html: "For a 3-4 night couples' trip in fall, we often book Shelter Cove Towers for the marina view, plan a beach morning to Singleton Beach (5 min away), a sunset sail one night, and dinners at Ela's, FARM Bluffton (off-island), and Red Fish. Zero golf, zero resort program, zero kids. That's the Shelter Cove recipe.",
     },
   ],
 };
@@ -1334,7 +1334,7 @@ const postGolfTrip: Post = {
   excerpt:
     "Four-guy golf trips, ten-guy corporate outings, once-in-a-lifetime Harbour Town pilgrimages. Here's how to book each one.",
   description:
-    "A complete guide to planning a golf trip to Hilton Head Island — the best courses ranked, how to book Harbour Town, where to stay, and the corporate outings logistics most guides skip.",
+    "A complete guide to planning a golf trip to Hilton Head Island. The best courses ranked, how to book Harbour Town, where to stay, and the corporate outings logistics most guides skip.",
   category: 'Golf',
   readTime: '11 min',
   publishedAt: '2026-02-12',
@@ -1353,7 +1353,7 @@ const postGolfTrip: Post = {
   body: [
     {
       kind: 'p',
-      html: "Hilton Head has 24 golf courses across three clusters (Sea Pines, Palmetto Dunes, Bluffton). More golf per square mile than any resort island in America. The problem isn't finding a course — it's figuring out which four to play, which order, and how to sequence lodging so you're not driving across the island between rounds.",
+      html: "Hilton Head has 24 golf courses across three clusters (Sea Pines, Palmetto Dunes, Bluffton). More golf per square mile than any resort island in America. The problem isn't finding a course. It's figuring out which four to play, which order, and how to sequence lodging so you're not driving across the island between rounds.",
     },
     {
       kind: 'h2',
@@ -1362,10 +1362,10 @@ const postGolfTrip: Post = {
     {
       kind: 'ol',
       items: [
-        "<strong>Harbour Town Golf Links</strong> — Sea Pines. Host of the RBC Heritage. A pilgrimage. $480+ in season. Book first.",
-        "<strong>Robert Trent Jones Oceanfront</strong> — Palmetto Dunes. Hole 10 plays to the Atlantic. The other signature course on the island. $220.",
-        "<strong>Atlantic Dunes (formerly Ocean Course)</strong> — Sea Pines. Davis Love III redesign, opened 2016. Strong conditioning, underrated layout. $180.",
-        "<strong>May River Golf Club</strong> — Palmetto Bluff, Bluffton. 20 min drive. Jack Nicklaus design, one of the best private-quality experiences in the Southeast. Resort guests only. $275.",
+        "<strong>Harbour Town Golf Links</strong>. Sea Pines. Host of the RBC Heritage. A pilgrimage. $480+ in season. Book first.",
+        "<strong>Robert Trent Jones Oceanfront</strong>. Palmetto Dunes. Hole 10 plays to the Atlantic. The other signature course on the island. $220.",
+        "<strong>Atlantic Dunes (formerly Ocean Course)</strong>. Sea Pines. Davis Love III redesign, opened 2016. Strong conditioning, underrated layout. $180.",
+        "<strong>May River Golf Club</strong>. Palmetto Bluff, Bluffton. 20 min drive. Jack Nicklaus design, one of the best private-quality experiences in the Southeast. Resort guests only. $275.",
       ],
     },
     {
@@ -1374,7 +1374,7 @@ const postGolfTrip: Post = {
     },
     {
       kind: 'p',
-      html: "The mechanics matter. Harbour Town is bookable 90 days out. In peak season (March–May, September–early November), the 8am–10am slots go in the first hour. Three rules:",
+      html: "The mechanics matter. Harbour Town is bookable 90 days out. In peak season (March-May, September-early November), the 8am-10am slots go in the first hour. Three rules:",
     },
     {
       kind: 'ol',
@@ -1402,15 +1402,15 @@ const postGolfTrip: Post = {
     },
     {
       kind: 'p',
-      html: "Stay at the Omni or a Palmetto Dunes villa. Play RTJ Oceanfront, Fazio, Arthur Hills in-plantation, then drive to Harbour Town for the big day. Works for 6–8 person trips that need villa space. 10 min drive each way.",
+      html: "Stay at the Omni or a Palmetto Dunes villa. Play RTJ Oceanfront, Fazio, Arthur Hills in-plantation, then drive to Harbour Town for the big day. Works for 6-8 person trips that need villa space. 10 min drive each way.",
     },
     {
       kind: 'h3',
-      text: 'Strategy 3: The stealth move — Palmetto Bluff / Bluffton',
+      text: 'Strategy 3: The stealth move. Palmetto Bluff / Bluffton',
     },
     {
       kind: 'p',
-      html: "Stay at Montage Palmetto Bluff or an Old Town Bluffton boutique. Play May River, Old South, Belfair, and make Harbour Town a day trip. Best food, best service, lowest crowd density. 20 min drive to Sea Pines — a real consideration.",
+      html: "Stay at Montage Palmetto Bluff or an Old Town Bluffton boutique. Play May River, Old South, Belfair, and make Harbour Town a day trip. Best food, best service, lowest crowd density. 20 min drive to Sea Pines. A real consideration.",
     },
     {
       kind: 'h2',
@@ -1423,10 +1423,10 @@ const postGolfTrip: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Book tee-time blocks, not individual slots.</strong> Most courses will hold 3–5 foursomes at once for groups of 12–20 if you book 6 months out through the group desk.",
-        "<strong>Use a shotgun start where possible.</strong> RTJ and Atlantic Dunes will do shotguns for 20+ players, some Tuesday–Thursday mornings.",
+        "<strong>Book tee-time blocks, not individual slots.</strong> Most courses will hold 3-5 foursomes at once for groups of 12-20 if you book 6 months out through the group desk.",
+        "<strong>Use a shotgun start where possible.</strong> RTJ and Atlantic Dunes will do shotguns for 20+ players, some Tuesday-Thursday mornings.",
         "<strong>Book transportation.</strong> Charter buses from your lodging to each course. Nobody should be driving a group of 4 in a golf cart across the island.",
-        "<strong>Lock the dinner reservation the same day as the tee times.</strong> Skull Creek Boathouse can accommodate groups of 30 — we book those 4 months out.",
+        "<strong>Lock the dinner reservation the same day as the tee times.</strong> Skull Creek Boathouse can accommodate groups of 30. We book those 4 months out.",
       ],
     },
     {
@@ -1450,7 +1450,7 @@ const postGolfTrip: Post = {
     },
     {
       kind: 'p',
-      html: "Peak-season (April or July) versions of the same trip run 30–40% higher.",
+      html: "Peak-season (April or July) versions of the same trip run 30-40% higher.",
     },
     {
       kind: 'h2',
@@ -1468,7 +1468,7 @@ const postGolfTrip: Post = {
     {
       kind: 'callout',
       label: "When we step in",
-      html: "For golf trips, we add value in four specific ways: (1) we have tee-time holds at Harbour Town through a partnership, (2) we book the group-rate dinners before you arrive, (3) we handle the villa selection to match the golf schedule, (4) we manage transportation. A typical corporate outing saves $2k–$4k vs. retail through us, plus four hours of logistics.",
+      html: "For golf trips, we add value in four specific ways: (1) we have tee-time holds at Harbour Town through a partnership, (2) we book the group-rate dinners before you arrive, (3) we handle the villa selection to match the golf schedule, (4) we manage transportation. A typical corporate outing saves $2k-$4k vs. retail through us, plus four hours of logistics.",
     },
     {
       kind: 'h2',
@@ -1487,11 +1487,11 @@ const postGolfTrip: Post = {
 
 const postBestTime: Post = {
   slug: 'best-time-to-visit-hilton-head',
-  title: "The Best Time to Visit Hilton Head — Month by Month",
+  title: "The Best Time to Visit Hilton Head. Month by Month",
   excerpt:
     "The four travel windows locals actually use, ranked. Weather, crowds, rates, and the two weeks you should absolutely avoid.",
   description:
-    "A month-by-month guide to when to visit Hilton Head Island — weather, hotel rates, crowd levels, and the best windows for families, golfers, and couples in 2026.",
+    "A month-by-month guide to when to visit Hilton Head Island. Weather, hotel rates, crowd levels, and the best windows for families, golfers, and couples in 2026.",
   category: 'Planning',
   readTime: '8 min',
   publishedAt: '2026-03-02',
@@ -1510,7 +1510,7 @@ const postBestTime: Post = {
   body: [
     {
       kind: 'p',
-      html: "The standard advice \u2014 \"come in summer\" \u2014 is exactly wrong for most of our clients. The island has four genuinely different seasons, and picking the right one can cut your trip cost by 40% or add three hours of beach time per day. Here's how we think about it.",
+      html: "The standard advice. \"come in summer\". Is exactly wrong for most of our clients. The island has four genuinely different seasons, and picking the right one can cut your trip cost by 40% or add three hours of beach time per day. Here's how we think about it.",
     },
     {
       kind: 'h2',
@@ -1518,35 +1518,35 @@ const postBestTime: Post = {
     },
     {
       kind: 'h3',
-      text: 'Spring \u2014 March through mid-May',
+      text: 'Spring. March through mid-May',
     },
     {
       kind: 'p',
-      html: "<strong>Weather:</strong> 62\u201378\u00b0F. Water still cold (58\u201368\u00b0F) through April. <strong>Crowds:</strong> Low until spring break hits mid-March, then heavy the week of RBC Heritage (April 13\u201319, 2026). <strong>Rates:</strong> Moderate, except Heritage week doubles everything. <strong>Best for:</strong> golf trips, couples' getaways, serious cyclists.",
+      html: "<strong>Weather:</strong> 62-78\u00b0F. Water still cold (58-68\u00b0F) through April. <strong>Crowds:</strong> Low until spring break hits mid-March, then heavy the week of RBC Heritage (April 13-19, 2026). <strong>Rates:</strong> Moderate, except Heritage week doubles everything. <strong>Best for:</strong> golf trips, couples' getaways, serious cyclists.",
     },
     {
       kind: 'p',
-      html: "This is our default recommendation for golf. Course conditioning is post-winter pristine, weather is ideal, and rates are 25\u201335% below summer peaks. Avoid the second week of April unless you're specifically coming for Heritage.",
+      html: "This is our default recommendation for golf. Course conditioning is post-winter pristine, weather is ideal, and rates are 25-35% below summer peaks. Avoid the second week of April unless you're specifically coming for Heritage.",
     },
     {
       kind: 'h3',
-      text: 'Summer \u2014 late May through August',
+      text: 'Summer. Late May through August',
     },
     {
       kind: 'p',
-      html: "<strong>Weather:</strong> 82\u201392\u00b0F, humid. Water 78\u201384\u00b0F (warmest of the year). <strong>Crowds:</strong> Peak. Coligny at capacity, villa inventory tight, traffic on 278 real. <strong>Rates:</strong> Highest of the year. <strong>Best for:</strong> families with school-age kids who have no other window.",
+      html: "<strong>Weather:</strong> 82-92\u00b0F, humid. Water 78-84\u00b0F (warmest of the year). <strong>Crowds:</strong> Peak. Coligny at capacity, villa inventory tight, traffic on 278 real. <strong>Rates:</strong> Highest of the year. <strong>Best for:</strong> families with school-age kids who have no other window.",
     },
     {
       kind: 'p',
-      html: "If summer is your only option \u2014 book 5\u20136 months out for villa inventory, 3\u20134 for resorts. Rent bikes for the kids; the heat becomes tolerable on a shaded bike path. Dinner reservations require 2 weeks lead time at S-tier restaurants.",
+      html: "If summer is your only option. Book 5-6 months out for villa inventory, 3-4 for resorts. Rent bikes for the kids; the heat becomes tolerable on a shaded bike path. Dinner reservations require 2 weeks lead time at S-tier restaurants.",
     },
     {
       kind: 'h3',
-      text: 'Fall \u2014 September through early November',
+      text: 'Fall. September through early November',
     },
     {
       kind: 'p',
-      html: "<strong>Weather:</strong> 72\u201385\u00b0F through early October, 60\u201375\u00b0F through early November. Water stays 70\u00b0F+ through October. <strong>Crowds:</strong> Light after Labor Day (September 7, 2026), near-empty after mid-October. <strong>Rates:</strong> 30\u201340% below summer. <strong>Best for:</strong> couples, foodies, and serious golfers.",
+      html: "<strong>Weather:</strong> 72-85\u00b0F through early October, 60-75\u00b0F through early November. Water stays 70\u00b0F+ through October. <strong>Crowds:</strong> Light after Labor Day (September 7, 2026), near-empty after mid-October. <strong>Rates:</strong> 30-40% below summer. <strong>Best for:</strong> couples, foodies, and serious golfers.",
     },
     {
       kind: 'callout',
@@ -1555,15 +1555,15 @@ const postBestTime: Post = {
     },
     {
       kind: 'h3',
-      text: 'Winter \u2014 late November through February',
+      text: 'Winter. Late November through February',
     },
     {
       kind: 'p',
-      html: "<strong>Weather:</strong> 55\u201368\u00b0F days, 40\u201350\u00b0F nights. Occasional 45\u00b0F rainy day. Water too cold to swim. <strong>Crowds:</strong> Genuinely quiet \u2014 the island breathes out. <strong>Rates:</strong> Lowest of the year, 50% below summer. <strong>Best for:</strong> budget-conscious couples, writers' retreats, shoulder-season golfers.",
+      html: "<strong>Weather:</strong> 55-68\u00b0F days, 40-50\u00b0F nights. Occasional 45\u00b0F rainy day. Water too cold to swim. <strong>Crowds:</strong> Genuinely quiet. The island breathes out. <strong>Rates:</strong> Lowest of the year, 50% below summer. <strong>Best for:</strong> budget-conscious couples, writers' retreats, shoulder-season golfers.",
     },
     {
       kind: 'p',
-      html: "The beach is empty and stunning. You'll wear a jacket at sunset. Many restaurants close one night a week, and some island programs pause \u2014 we plan around it. Genuinely underrated for older couples who don't care about beach swimming.",
+      html: "The beach is empty and stunning. You'll wear a jacket at sunset. Many restaurants close one night a week, and some island programs pause. We plan around it. Genuinely underrated for older couples who don't care about beach swimming.",
     },
     {
       kind: 'h2',
@@ -1580,7 +1580,7 @@ const postBestTime: Post = {
         "<strong>June:</strong> Summer begins. Villa inventory gets tight by mid-month. Book by January.",
         "<strong>July:</strong> Peak heat + peak crowds. Book 6 months out or forget oceanfront.",
         "<strong>August:</strong> Still peak. Hurricane watch begins (low actual risk until late September).",
-        "<strong>September:</strong> Back-to-school exodus after Labor Day. Rates drop 25% overnight. Hurricane season peaks \u2014 have trip insurance.",
+        "<strong>September:</strong> Back-to-school exodus after Labor Day. Rates drop 25% overnight. Hurricane season peaks. Have trip insurance.",
         "<strong>October:</strong> <strong>The best month.</strong> Book now.",
         "<strong>November:</strong> First two weeks excellent. Thanksgiving week is quieter than you'd expect.",
         "<strong>December:</strong> Holiday lights at Harbour Town. Christmas week is surprisingly open and cheap.",
@@ -1592,23 +1592,23 @@ const postBestTime: Post = {
     },
     {
       kind: 'p',
-      html: "<strong>Week of RBC Heritage (April 13\u201319, 2026)</strong> \u2014 unless you're attending. Rates double, restaurants overwhelmed, villas booked a year out.",
+      html: "<strong>Week of RBC Heritage (April 13-19, 2026)</strong>. Unless you're attending. Rates double, restaurants overwhelmed, villas booked a year out.",
     },
     {
       kind: 'p',
-      html: "<strong>July 4th week</strong> \u2014 peak-on-peak. Fireworks at Shelter Cove are great, but the drive home is 90 min for a 15-min trip.",
+      html: "<strong>July 4th week</strong>. Peak-on-peak. Fireworks at Shelter Cove are great, but the drive home is 90 min for a 15-min trip.",
     },
     {
       kind: 'h2',
-      text: "Hurricane season \u2014 the honest talk",
+      text: "Hurricane season. The honest talk",
     },
     {
       kind: 'p',
-      html: "Atlantic hurricane season runs June 1\u2013November 30. Actual risk to Hilton Head is concentrated in <strong>late August through mid-October</strong>. In the last 10 years, only two hurricanes have caused island-wide closures. The probability of your specific week being affected is <strong>under 4%</strong>.",
+      html: "Atlantic hurricane season runs June 1-November 30. Actual risk to Hilton Head is concentrated in <strong>late August through mid-October</strong>. In the last 10 years, only two hurricanes have caused island-wide closures. The probability of your specific week being affected is <strong>under 4%</strong>.",
     },
     {
       kind: 'p',
-      html: "That said \u2014 we always recommend trip insurance for September bookings. Costs about 5% of trip total. Covers full refund if an evacuation order is issued.",
+      html: "That said. We always recommend trip insurance for September bookings. Costs about 5% of trip total. Covers full refund if an evacuation order is issued.",
     },
     {
       kind: 'callout',
@@ -1626,9 +1626,9 @@ const postRbcHeritage: Post = {
   slug: 'rbc-heritage-2026-travel-guide',
   title: "RBC Heritage 2026: The Local's Travel Guide",
   excerpt:
-    "Tickets, hospitality, lodging, and the three things visitors always get wrong. Everything you need for Heritage week, April 13\u201319, 2026.",
+    "Tickets, hospitality, lodging, and the three things visitors always get wrong. Everything you need for Heritage week, April 13-19, 2026.",
   description:
-    "A local travel guide to RBC Heritage 2026 at Harbour Town Golf Links \u2014 tickets, hospitality packages, where to stay, parking strategy, and insider logistics for the PGA Tour's only Lowcountry stop.",
+    "A local travel guide to RBC Heritage 2026 at Harbour Town Golf Links. Tickets, hospitality packages, where to stay, parking strategy, and insider logistics for the PGA Tour's only Lowcountry stop.",
   category: 'Golf',
   readTime: '9 min',
   publishedAt: '2026-02-28',
@@ -1647,7 +1647,7 @@ const postRbcHeritage: Post = {
   body: [
     {
       kind: 'p',
-      html: "RBC Heritage is the only full-field PGA Tour event south of Augusta and the single most important week of the year on Hilton Head Island. April 13\u201319, 2026. Here's what first-timers consistently get wrong and how locals actually do it.",
+      html: "RBC Heritage is the only full-field PGA Tour event south of Augusta and the single most important week of the year on Hilton Head Island. April 13-19, 2026. Here's what first-timers consistently get wrong and how locals actually do it.",
     },
     {
       kind: 'h2',
@@ -1656,21 +1656,21 @@ const postRbcHeritage: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Monday\u2013Wednesday:</strong> Practice rounds. Cheaper tickets, smaller crowds, photograph freely.",
-        "<strong>Thursday\u2013Sunday:</strong> Tournament rounds. Full PGA Tour field, packed grounds, leaderboard drama by Saturday back nine.",
-        "<strong>Sunday 5\u20137 p.m.:</strong> Winner dons the plaid jacket on 18. Stay for it.",
+        "<strong>Monday-Wednesday:</strong> Practice rounds. Cheaper tickets, smaller crowds, photograph freely.",
+        "<strong>Thursday-Sunday:</strong> Tournament rounds. Full PGA Tour field, packed grounds, leaderboard drama by Saturday back nine.",
+        "<strong>Sunday 5-7 p.m.:</strong> Winner dons the plaid jacket on 18. Stay for it.",
       ],
     },
     {
       kind: 'h2',
-      text: "Tickets \u2014 buy these, skip those",
+      text: "Tickets. Buy these, skip those",
     },
     {
       kind: 'ol',
       items: [
-        "<strong>Grounds pass ($55\u2013$85/day):</strong> Full access to the course. What most visitors should buy. Best value Wednesday or Thursday.",
+        "<strong>Grounds pass ($55-$85/day):</strong> Full access to the course. What most visitors should buy. Best value Wednesday or Thursday.",
         "<strong>Weekly grounds ($295):</strong> All seven days. Only if you're actually going three or more times.",
-        "<strong>Hospitality ($900\u20131,800/day):</strong> Upgraded food/drink, shaded seating, usually hole 18 or 17. Worth it for Saturday or Sunday.",
+        "<strong>Hospitality ($900-1,800/day):</strong> Upgraded food/drink, shaded seating, usually hole 18 or 17. Worth it for Saturday or Sunday.",
         "<strong>18th Hole Hospitality ($2,200+):</strong> The premium experience. Book 4+ months out. Corporate-entertaining tier.",
       ],
     },
@@ -1685,19 +1685,19 @@ const postRbcHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "Lodging doubles in price and books out 9\u201310 months ahead. Three strategies:",
+      html: "Lodging doubles in price and books out 9-10 months ahead. Three strategies:",
     },
     {
       kind: 'ol',
       items: [
-        "<strong>Sea Pines (on-resort):</strong> Walk to the course. $800\u20131,500/night for a villa. Book by July 2025 for 2026.",
-        "<strong>Mid-island (Palmetto Dunes / Shipyard):</strong> 10\u201315 min drive. $500\u2013900/night. More inventory, often your best bet if you're booking inside 6 months.",
-        "<strong>Bluffton / off-island:</strong> 20\u201330 min drive. $300\u2013500/night. The stealth play. Traffic is manageable if you leave Bluffton by 8 a.m.",
+        "<strong>Sea Pines (on-resort):</strong> Walk to the course. $800-1,500/night for a villa. Book by July 2025 for 2026.",
+        "<strong>Mid-island (Palmetto Dunes / Shipyard):</strong> 10-15 min drive. $500-900/night. More inventory, often your best bet if you're booking inside 6 months.",
+        "<strong>Bluffton / off-island:</strong> 20-30 min drive. $300-500/night. The stealth play. Traffic is manageable if you leave Bluffton by 8 a.m.",
       ],
     },
     {
       kind: 'h2',
-      text: "Parking strategy \u2014 don't skip this",
+      text: "Parking strategy. Don't skip this",
     },
     {
       kind: 'p',
@@ -1705,11 +1705,11 @@ const postRbcHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "Better: have us arrange a private car or rideshare from your lodging. Total spend is $60\u201380 round trip; we recover that in Heritage-week time.",
+      html: "Better: have us arrange a private car or rideshare from your lodging. Total spend is $60-80 round trip; we recover that in Heritage-week time.",
     },
     {
       kind: 'h2',
-      text: "Where to eat \u2014 Heritage-week adjusted",
+      text: "Where to eat. Heritage-week adjusted",
     },
     {
       kind: 'p',
@@ -1719,8 +1719,8 @@ const postRbcHeritage: Post = {
       kind: 'ul',
       items: [
         "<strong>Skull Creek Boathouse:</strong> Walk-ins dead. Book 3 weeks out.",
-        "<strong>Red Fish:</strong> 4 weeks out. Call directly \u2014 they hold Heritage tables for returning clients.",
-        "<strong>Michael Anthony's:</strong> 4 weeks out. Or the bar (5\u201310 p.m., walk-up).",
+        "<strong>Red Fish:</strong> 4 weeks out. Call directly. They hold Heritage tables for returning clients.",
+        "<strong>Michael Anthony's:</strong> 4 weeks out. Or the bar (5-10 p.m., walk-up).",
         "<strong>FARM Bluffton:</strong> The stealth move. 20 min drive, 15% easier reservation.",
         "<strong>On-course food at Heritage:</strong> Better than you think. The lobster roll at the 17th-hole tent is genuinely good.",
       ],
@@ -1732,8 +1732,8 @@ const postRbcHeritage: Post = {
     {
       kind: 'ol',
       items: [
-        "<strong>Not buying Wednesday tickets:</strong> Practice rounds are 60% cheaper and you can walk inside the ropes at holes 15\u201318. First-timers underrate this.",
-        "<strong>Driving onto the property Saturday morning:</strong> Grid-lock from 9\u201311 a.m. Arrive before 8 a.m. or after 11:30.",
+        "<strong>Not buying Wednesday tickets:</strong> Practice rounds are 60% cheaper and you can walk inside the ropes at holes 15-18. First-timers underrate this.",
+        "<strong>Driving onto the property Saturday morning:</strong> Grid-lock from 9-11 a.m. Arrive before 8 a.m. or after 11:30.",
         "<strong>Not staying for the plaid jacket:</strong> The winner is crowned at the 18th green around 6 p.m. Sunday. Tradition matters. Stay.",
       ],
     },
@@ -1743,16 +1743,16 @@ const postRbcHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "Groups of 6\u201320 use Heritage as an entertaining week. Our corporate Heritage package includes: 18th-hole hospitality passes, a villa base, private transport, three reserved dinners, and a round at Atlantic Dunes on Friday. Runs $6k\u20139k per person. We book these 8\u201312 months out.",
+      html: "Groups of 6-20 use Heritage as an entertaining week. Our corporate Heritage package includes: 18th-hole hospitality passes, a villa base, private transport, three reserved dinners, and a round at Atlantic Dunes on Friday. Runs $6k-9k per person. We book these 8-12 months out.",
     },
     {
       kind: 'callout',
       label: "Price reality",
-      html: "A \"normal\" Heritage-week trip for 4 \u2014 Sea Pines villa, 3 nights, Thursday+Saturday grounds, 4 reserved dinners \u2014 runs $6,500\u20139,000 all in for the group. For context, the same trip the following week (week after Heritage) runs $3,800\u20134,600.",
+      html: "A \"normal\" Heritage-week trip for 4. Sea Pines villa, 3 nights, Thursday+Saturday grounds, 4 reserved dinners. Runs $6,500-9,000 all in for the group. For context, the same trip the following week (week after Heritage) runs $3,800-4,600.",
     },
     {
       kind: 'h2',
-      text: "If you've never been \u2014 go once",
+      text: "If you've never been. Go once",
     },
     {
       kind: 'p',
@@ -1771,7 +1771,7 @@ const postWithKids: Post = {
   excerpt:
     "The twelve activities that work, the three tourist traps to skip, and how to pace a week so the kids don't melt down on day 3.",
   description:
-    "A local's honest guide to Hilton Head with kids \u2014 best beaches for toddlers, the bike-path strategy, kid-friendly restaurants, and the one meltdown-proof daily rhythm that works for families.",
+    "A local's honest guide to Hilton Head with kids. Best beaches for toddlers, the bike-path strategy, kid-friendly restaurants, and the one meltdown-proof daily rhythm that works for families.",
   category: 'Planning',
   readTime: '10 min',
   publishedAt: '2026-03-18',
@@ -1799,7 +1799,7 @@ const postWithKids: Post = {
     {
       kind: 'ol',
       items: [
-        "<strong>Palmetto Dunes (Omni or Marriott Grande Ocean):</strong> Best kids' programming, lagoons for kayaking, shortest beach walks. Our #1 for families of 4\u20138.",
+        "<strong>Palmetto Dunes (Omni or Marriott Grande Ocean):</strong> Best kids' programming, lagoons for kayaking, shortest beach walks. Our #1 for families of 4-8.",
         "<strong>Sea Pines (Beach Club villas):</strong> Gregg Russell nightly kids' concert, bike-path heaven, Lawton Stables for horseback. Best for multi-generational.",
         "<strong>Forest Beach (Sea Crest / Villamare condos):</strong> Walk to Coligny, best for budget families. Direct beach access from back door.",
         "<strong>Disney Hilton Head (Shelter Cove):</strong> Yes, really. Disney-level service, kids' programming, free shuttle to their private beach house.",
@@ -1816,10 +1816,10 @@ const postWithKids: Post = {
     {
       kind: 'ul',
       items: [
-        "<strong>Morning (7\u201310 a.m.):</strong> Active \u2014 bike ride, kayak, beach before heat. This is when kids are best.",
-        "<strong>Midday (11 a.m.\u20132 p.m.):</strong> Pool + lunch. Out of the sun. Short quiet time for little ones.",
-        "<strong>Afternoon (3\u20135 p.m.):</strong> Second beach session or activity. Water is warmest now.",
-        "<strong>Evening (6\u20138 p.m.):</strong> One dinner out OR grill at the villa. Not both. Not every night.",
+        "<strong>Morning (7-10 a.m.):</strong> Active. Bike ride, kayak, beach before heat. This is when kids are best.",
+        "<strong>Midday (11 a.m.-2 p.m.):</strong> Pool + lunch. Out of the sun. Short quiet time for little ones.",
+        "<strong>Afternoon (3-5 p.m.):</strong> Second beach session or activity. Water is warmest now.",
+        "<strong>Evening (6-8 p.m.):</strong> One dinner out OR grill at the villa. Not both. Not every night.",
       ],
     },
     {
@@ -1833,15 +1833,15 @@ const postWithKids: Post = {
     },
     {
       kind: 'h3',
-      text: "Toddlers (0\u20134)",
+      text: "Toddlers (0-4)",
     },
     {
       kind: 'p',
-      html: "<strong>South Beach (Sea Pines):</strong> South-facing, protected from wind, smallest waves on the island. The shoreline is hard-packed \u2014 great for stroller walks. Bathrooms, snack bar, and lifeguards in summer.",
+      html: "<strong>South Beach (Sea Pines):</strong> South-facing, protected from wind, smallest waves on the island. The shoreline is hard-packed. Great for stroller walks. Bathrooms, snack bar, and lifeguards in summer.",
     },
     {
       kind: 'h3',
-      text: "Kids 5\u201310",
+      text: "Kids 5-10",
     },
     {
       kind: 'p',
@@ -1853,7 +1853,7 @@ const postWithKids: Post = {
     },
     {
       kind: 'p',
-      html: "<strong>Burkes Beach (mid-island):</strong> Wider waves, fewer families, good for boogie-boarding and learning to surf. Access from Folly Field. Fewer amenities \u2014 bring your own.",
+      html: "<strong>Burkes Beach (mid-island):</strong> Wider waves, fewer families, good for boogie-boarding and learning to surf. Access from Folly Field. Fewer amenities. Bring your own.",
     },
     {
       kind: 'h2',
@@ -1893,7 +1893,7 @@ const postWithKids: Post = {
       items: [
         {
           name: 'Coastal Discovery Museum',
-          meta: 'Free · Ages 6+ · 1\u20132 hrs',
+          meta: 'Free · Ages 6+ · 1-2 hrs',
           blurb:
             "Butterfly garden in summer, marsh boardwalk, rainy-day lifesaver. Weekday mornings best.",
         },
@@ -1905,7 +1905,7 @@ const postWithKids: Post = {
         },
         {
           name: 'Sandbox Children\u2019s Museum (Coligny)',
-          meta: '$9/kid · Ages 1\u20138',
+          meta: '$9/kid · Ages 1-8',
           blurb:
             "Best rainy-afternoon backup. 90 min of sensory play. Clean, well-staffed.",
         },
@@ -1951,7 +1951,7 @@ const postWithKids: Post = {
       kind: 'ul',
       items: [
         "<strong>Hudson\u2019s on the Docks:</strong> Casual, waterfront, fast. Kids eat, parents drink.",
-        "<strong>Skull Creek Boathouse (early seating):</strong> 5\u20135:30 p.m. is genuinely family-friendly. After 7 it's date-night territory.",
+        "<strong>Skull Creek Boathouse (early seating):</strong> 5-5:30 p.m. is genuinely family-friendly. After 7 it's date-night territory.",
         "<strong>Harbour Town Bakery:</strong> Breakfast. Ham biscuits. Eat outside near the lighthouse.",
         "<strong>Skillets Caf\u00e9 (Coligny):</strong> Pancakes. Kids pancakes. Pancakes for dinner if you want.",
         "<strong>Avoid for kids:</strong> Red Fish, Michael Anthony's, WiseGuys, Ela's. Adult restaurants doing adult things.",
@@ -1963,7 +1963,7 @@ const postWithKids: Post = {
     },
     {
       kind: 'p',
-      html: "A typical family-of-4 summer week through us: 3BR oceanfront villa in Palmetto Dunes, bikes delivered day 1, Captain Mark cruise pre-booked, Skull Creek 5:30 pm reservation for Tuesday, Gregg Russell Thursday night, kayak clinic Saturday morning. Total trip $6,200\u20138,500 all in. Our fee: $450 flat for the itinerary, or 8% of trip total if you want us to book the villa and handle concierge. Saves ~10 hrs of research and gets you the restaurant tables you can't get yourself.",
+      html: "A typical family-of-4 summer week through us: 3BR oceanfront villa in Palmetto Dunes, bikes delivered day 1, Captain Mark cruise pre-booked, Skull Creek 5:30 pm reservation for Tuesday, Gregg Russell Thursday night, kayak clinic Saturday morning. Total trip $6,200-8,500 all in. Our fee: $450 flat for the itinerary, or 8% of trip total if you want us to book the villa and handle concierge. Saves ~10 hrs of research and gets you the restaurant tables you can't get yourself.",
     },
   ],
 };
