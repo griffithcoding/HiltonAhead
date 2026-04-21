@@ -58,8 +58,9 @@ export default function FinalCta() {
         </h2>
 
         <p className="mt-7 max-w-[560px] text-[15px] leading-[1.7] text-sand/80 md:text-[17px]">
-          Three minutes of questions. One business day to a quote. Zero sales
-          pitch. The trip gets built for you, not for the algorithm.
+          Three minutes of questions. One business day until we come back with
+          a quote. No sales pitch. The trip gets built for you, not for whatever
+          the algorithm happens to be boosting this week.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-5">

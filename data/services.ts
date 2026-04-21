@@ -12,7 +12,7 @@ export const services = {
       slug: 'custom-itineraries',
       title: 'Custom Itineraries',
       body:
-        'Day-by-day planning built around your group, your budget, and the vibe you actually want. Golf heavy, kid friendly, quiet beach days, or all three.',
+        'Day-by-day planning built around your group, your budget, and what you actually want out of the week. Golf heavy, kid friendly, quiet beach days, or some weird combination we figure out together.',
     },
     {
       icon: '🏝️',

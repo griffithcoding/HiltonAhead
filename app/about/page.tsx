@@ -74,9 +74,9 @@ export default function AboutPage() {
             <p className="mt-6 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
               We live on the island. We drive past the villas before
               recommending them. We know which Sea Pines bike path floods after
-              a summer storm, which Palmetto Dunes lagoon still holds the good
-              fish, and which Skull Creek table catches the last ten minutes of
-              sunset in late July.
+              an August storm, which Palmetto Dunes lagoon still holds the good
+              fish, and which Skull Creek table catches those last ten minutes of
+              sunset in late July (you have to ask for table 7).
             </p>
 
             <p className="mt-6 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">

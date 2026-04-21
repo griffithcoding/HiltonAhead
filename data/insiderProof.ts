@@ -7,9 +7,9 @@ export const insiderProof = {
   subheading:
     'Not a call center in another state. Not a booking engine. A person who drove past that villa this morning.',
   stats: [
-    { label: 'Years on Hilton Head', value: '12+' },
-    { label: 'Trips planned', value: '400+' },
-    { label: 'Partner properties', value: '60+' },
+    { label: 'Years on Hilton Head', value: '12' },
+    { label: 'Trips planned', value: '~380' },
+    { label: 'Partner properties', value: '63' },
     { label: 'Avg. client savings vs. retail', value: '11%' },
   ],
   localSpots: [

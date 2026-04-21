@@ -8,7 +8,7 @@ export const faq = {
     {
       question: 'Why hire a travel consultant for Hilton Head?',
       answer:
-        'Because the best of Hilton Head is never on the first page of Google. We know which oceanfront villa has the quiet pool, which Skull Creek table has the sunset view, and which tee time opens up two weeks out. You get a trip without the research tax.',
+        'Because the best of Hilton Head is never on the first page of Google. We know which oceanfront villa has the quiet pool (the one that fills up ten minutes after the cover comes off in March). We know which Skull Creek table gets the sunset view. And we know which Harbour Town tee time actually opens up two weeks out, even when the Resy page tells you otherwise. You get a trip without the research tax.',
     },
     {
       question: 'How is this different from Airbnb, Vrbo, or a resort concierge?',
