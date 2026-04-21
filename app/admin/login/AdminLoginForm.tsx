@@ -15,10 +15,18 @@ export default function AdminLoginForm() {
       provider: 'google',
       options: {
         redirectTo: `${window.location.origin}/auth/callback?next=/admin`,
-        // We want Gmail send permissions later (Phase 3). Requesting the
-        // scope up front saves a second consent screen, and Google will
-        // surface it during this flow so the user only consents once.
-        scopes: 'openid email profile',
+        // Phase 3 — Gmail read + send. Requested on every sign-in; Google
+        // only shows the incremental consent screen if the user hasn't
+        // already granted these scopes. prompt=consent forces a fresh
+        // refresh_token on each sign-in (Supabase passes it via
+        // provider_refresh_token on the initial session).
+        scopes: [
+          'openid',
+          'email',
+          'profile',
+          'https://www.googleapis.com/auth/gmail.readonly',
+          'https://www.googleapis.com/auth/gmail.send',
+        ].join(' '),
         queryParams: {
           access_type: 'offline',
           prompt: 'consent',

@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { createClient } from '@/utils/supabase/server';
+import { sendEmailFromAdmin } from '@/utils/gmail/client';
 
 type LeadTableKind = 'itinerary_requests' | 'newsletter_subscribers' | 'leads';
 
@@ -11,10 +12,15 @@ const TYPE_TO_TABLE: Record<string, LeadTableKind> = {
   lead: 'leads',
 };
 
-/**
- * Update the status column on itinerary_requests or leads.
- * Newsletter subscribers don't have a status — the UI won't call this for them.
- */
+function revalidateLead(type: string, id: string) {
+  revalidatePath(`/admin/leads/${type}/${id}`);
+  revalidatePath('/admin/leads');
+  revalidatePath('/admin');
+}
+
+// ============================================================================
+// Status
+// ============================================================================
 export async function updateLeadStatus(
   type: string,
   id: string,
@@ -36,15 +42,13 @@ export async function updateLeadStatus(
     return { ok: false, error: error.message };
   }
 
-  revalidatePath(`/admin/leads/${type}/${id}`);
-  revalidatePath('/admin/leads');
-  revalidatePath('/admin');
+  revalidateLead(type, id);
   return { ok: true };
 }
 
-/**
- * Append a note to the lead's activity timeline.
- */
+// ============================================================================
+// Notes
+// ============================================================================
 export async function addLeadNote(
   type: string,
   id: string,
@@ -75,6 +79,111 @@ export async function addLeadNote(
     return { ok: false, error: error.message };
   }
 
-  revalidatePath(`/admin/leads/${type}/${id}`);
+  revalidateLead(type, id);
+  return { ok: true };
+}
+
+// ============================================================================
+// Deal value (Phase 2)
+// ============================================================================
+export async function updateDealValue(
+  type: string,
+  id: string,
+  valueRaw: string,
+): Promise<{ ok: boolean; error?: string }> {
+  const table = TYPE_TO_TABLE[type];
+  if (!table || table === 'newsletter_subscribers') {
+    return { ok: false, error: 'Deal value not supported for this lead type.' };
+  }
+
+  // Empty string clears the value.
+  let value: number | null = null;
+  if (valueRaw.trim()) {
+    const parsed = Number(valueRaw.replace(/[$,\s]/g, ''));
+    if (!Number.isFinite(parsed) || parsed < 0) {
+      return { ok: false, error: 'Enter a positive number.' };
+    }
+    value = Math.round(parsed * 100) / 100;
+  }
+
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from(table)
+    .update({ deal_value: value })
+    .eq('id', id);
+
+  if (error) {
+    console.error('[admin] updateDealValue error:', error);
+    return { ok: false, error: error.message };
+  }
+
+  revalidateLead(type, id);
+  return { ok: true };
+}
+
+// ============================================================================
+// Gmail reply (Phase 3)
+// ============================================================================
+export async function sendGmailReply(
+  type: string,
+  id: string,
+  opts: {
+    to: string;
+    subject: string;
+    body: string;
+    threadId?: string;
+    inReplyTo?: string;
+  },
+): Promise<{ ok: boolean; error?: string }> {
+  const table = TYPE_TO_TABLE[type];
+  if (!table) return { ok: false, error: 'Invalid lead type.' };
+
+  const subject = opts.subject.trim().slice(0, 500);
+  const body = opts.body.trim().slice(0, 20_000);
+  const to = opts.to.trim();
+  if (!to || !subject || !body) {
+    return { ok: false, error: 'All fields are required.' };
+  }
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user?.email) {
+    return { ok: false, error: 'Not signed in.' };
+  }
+
+  const sendResult = await sendEmailFromAdmin(user.email, {
+    to,
+    subject,
+    body,
+    threadId: opts.threadId,
+    inReplyTo: opts.inReplyTo,
+  });
+
+  if (!sendResult.ok) {
+    return { ok: false, error: sendResult.error };
+  }
+
+  // Log to activity timeline.
+  const { error: logError } = await supabase.from('lead_activity').insert({
+    lead_table: table,
+    lead_id: id,
+    kind: 'email_sent',
+    actor_email: user.email,
+    body: subject,
+    metadata: {
+      to,
+      thread_id: sendResult.threadId,
+      message_id: sendResult.messageId,
+      body_preview: body.slice(0, 280),
+    },
+  });
+  if (logError) {
+    console.error('[admin] sendGmailReply log error:', logError);
+    // Don't fail — email went through.
+  }
+
+  revalidateLead(type, id);
   return { ok: true };
 }

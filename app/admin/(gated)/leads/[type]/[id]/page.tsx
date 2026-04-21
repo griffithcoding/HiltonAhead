@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { createClient } from '@/utils/supabase/server';
 import LeadStatusSelect from './LeadStatusSelect';
 import LeadNoteForm from './LeadNoteForm';
+import DealValueInput from './DealValueInput';
+import GmailPanel from './GmailPanel';
 
 export const dynamic = 'force-dynamic';
 
@@ -60,6 +62,15 @@ export default async function LeadDetailPage({
   const phone = (lead.phone as string | null) || null;
   const status = (lead.status as string | null) || null;
   const createdAt = (lead.created_at as string) || '';
+  const dealValue = (lead.deal_value as number | null) ?? null;
+  const firstContactedAt = (lead.first_contacted_at as string | null) || null;
+  const convertedAt = (lead.converted_at as string | null) || null;
+
+  // Admin email for Gmail panel queries. Guaranteed non-null by the layout.
+  const {
+    data: { user: authUser },
+  } = await supabase.auth.getUser();
+  const adminEmail = authUser?.email || '';
 
   return (
     <div className="mx-auto max-w-[980px]">
@@ -91,19 +102,45 @@ export default async function LeadDetailPage({
           </div>
         </div>
         {type !== 'newsletter' && status && (
-          <div className="flex shrink-0 items-center gap-3">
-            <span className="text-[11px] uppercase tracking-[0.22em] text-ink-soft">
-              Status
-            </span>
-            <LeadStatusSelect
-              type={type}
-              id={id}
-              current={status}
-              options={STATUS_OPTIONS}
-            />
+          <div className="flex shrink-0 flex-col items-end gap-4">
+            <div className="flex items-center gap-3">
+              <span className="text-[11px] uppercase tracking-[0.22em] text-ink-soft">
+                Status
+              </span>
+              <LeadStatusSelect
+                type={type}
+                id={id}
+                current={status}
+                options={STATUS_OPTIONS}
+              />
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[11px] uppercase tracking-[0.22em] text-ink-soft">
+                Deal value
+              </span>
+              <DealValueInput type={type} id={id} current={dealValue} />
+            </div>
           </div>
         )}
       </header>
+
+      {/* Lifecycle timestamps */}
+      {type !== 'newsletter' && (firstContactedAt || convertedAt) && (
+        <div className="mt-6 flex flex-wrap gap-6 text-[12px] text-ink-soft">
+          {firstContactedAt && (
+            <span>
+              <span className="font-semibold text-ink">First contact:</span>{' '}
+              {formatDateTime(firstContactedAt)}
+            </span>
+          )}
+          {convertedAt && (
+            <span>
+              <span className="font-semibold text-ink">Converted:</span>{' '}
+              {formatDateTime(convertedAt)}
+            </span>
+          )}
+        </div>
+      )}
 
       {/* Two columns — details + activity */}
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-14">
@@ -153,6 +190,16 @@ export default async function LeadDetailPage({
           )}
         </section>
       </div>
+
+      {/* Gmail panel — reads/sends via Google API */}
+      {email && adminEmail && (
+        <GmailPanel
+          adminEmail={adminEmail}
+          leadEmail={email}
+          leadId={id}
+          type={type}
+        />
+      )}
     </div>
   );
 }

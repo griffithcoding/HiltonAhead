@@ -22,6 +22,89 @@ function timeSince(iso: string): string {
   return `${Math.round(hours / 24)}d ago`;
 }
 
+function fmtDurationHours(hrs: number): string {
+  if (!Number.isFinite(hrs)) return '—';
+  if (hrs < 1) return `${Math.max(1, Math.round(hrs * 60))}m`;
+  if (hrs < 48) return `${hrs.toFixed(1)}h`;
+  return `${(hrs / 24).toFixed(1)}d`;
+}
+
+function percentile(sorted: number[], p: number): number {
+  if (sorted.length === 0) return NaN;
+  const idx = Math.floor((sorted.length - 1) * p);
+  return sorted[idx];
+}
+
+function fmtMoney(n: number): string {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
+  }).format(n);
+}
+
+// ============================================================================
+interface LeadRow {
+  status?: string | null;
+  created_at: string;
+  first_contacted_at?: string | null;
+  converted_at?: string | null;
+  deal_value?: number | null;
+  source?: string | null;
+}
+
+interface SourceStats {
+  source: string;
+  count: number;
+  contacted: number;
+  converted: number;
+  revenue: number;
+}
+
+function computeSourceStats(rows: LeadRow[]): SourceStats[] {
+  const grouped = new Map<string, SourceStats>();
+  for (const r of rows) {
+    const key = (r.source || 'unknown').toLowerCase();
+    const s = grouped.get(key) || {
+      source: key,
+      count: 0,
+      contacted: 0,
+      converted: 0,
+      revenue: 0,
+    };
+    s.count++;
+    if (r.first_contacted_at) s.contacted++;
+    if (r.converted_at) s.converted++;
+    if (r.deal_value) s.revenue += Number(r.deal_value);
+    grouped.set(key, s);
+  }
+  return Array.from(grouped.values()).sort((a, b) => b.count - a.count);
+}
+
+function computeResponseTime(rows: LeadRow[]): {
+  median: number;
+  p90: number;
+  sampleSize: number;
+} {
+  const durations: number[] = [];
+  for (const r of rows) {
+    if (r.first_contacted_at) {
+      const hrs =
+        (new Date(r.first_contacted_at).getTime() -
+          new Date(r.created_at).getTime()) /
+        3_600_000;
+      if (hrs >= 0 && Number.isFinite(hrs)) durations.push(hrs);
+    }
+  }
+  durations.sort((a, b) => a - b);
+  return {
+    median: percentile(durations, 0.5),
+    p90: percentile(durations, 0.9),
+    sampleSize: durations.length,
+  };
+}
+
+// ============================================================================
 export default async function AdminDashboard() {
   const supabase = await createClient();
 
@@ -29,29 +112,35 @@ export default async function AdminDashboard() {
     await Promise.all([
       supabase
         .from('itinerary_requests')
-        .select('id, email, status, created_at', { count: 'exact' })
+        .select(
+          'id, email, status, source, created_at, first_contacted_at, converted_at, deal_value',
+        )
         .order('created_at', { ascending: false })
-        .limit(200),
+        .limit(500),
       supabase
         .from('newsletter_subscribers')
-        .select('id, email, created_at', { count: 'exact' })
+        .select('id, email, source, created_at')
         .order('created_at', { ascending: false })
-        .limit(200),
+        .limit(500),
       supabase
         .from('leads')
-        .select('id, email, status, created_at', { count: 'exact' })
+        .select(
+          'id, email, status, source, created_at, first_contacted_at, converted_at, deal_value',
+        )
         .order('created_at', { ascending: false })
-        .limit(200),
+        .limit(500),
       supabase
         .from('lead_activity')
-        .select('id, lead_table, lead_id, kind, body, actor_email, created_at')
+        .select(
+          'id, lead_table, lead_id, kind, body, actor_email, created_at',
+        )
         .order('created_at', { ascending: false })
         .limit(10),
     ]);
 
-  const itineraries = itinerariesRes.data ?? [];
+  const itineraries: LeadRow[] = itinerariesRes.data ?? [];
   const newsletters = newslettersRes.data ?? [];
-  const leads = leadsRes.data ?? [];
+  const leads: LeadRow[] = leadsRes.data ?? [];
   const activity = activityRes.data ?? [];
 
   const itStatus = countByStatus(itineraries);
@@ -62,6 +151,28 @@ export default async function AdminDashboard() {
   const itLast7 = itineraries.filter((r) => last7(r.created_at)).length;
   const nlLast7 = newsletters.filter((r) => last7(r.created_at)).length;
   const leadsLast7 = leads.filter((r) => last7(r.created_at)).length;
+
+  // Combine itinerary + leads for response-time and source analysis
+  // (newsletters don't have status/lifecycle).
+  const priced: LeadRow[] = [...itineraries, ...leads];
+  const response = computeResponseTime(priced);
+  const sourceStats = computeSourceStats(priced);
+
+  const openPipeline =
+    (itStatus['new'] || 0) +
+    (itStatus['contacted'] || 0) +
+    (itStatus['quoted'] || 0);
+  const openPipelineValue = itineraries
+    .filter(
+      (r) =>
+        r.status &&
+        ['new', 'contacted', 'quoted'].includes(r.status.toLowerCase()),
+    )
+    .reduce((sum, r) => sum + (Number(r.deal_value) || 0), 0);
+
+  const convertedRevenue = priced
+    .filter((r) => r.converted_at)
+    .reduce((sum, r) => sum + (Number(r.deal_value) || 0), 0);
 
   return (
     <div className="mx-auto max-w-[1100px]">
@@ -80,14 +191,112 @@ export default async function AdminDashboard() {
 
       {/* ——— Top stats ——— */}
       <section className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-        <Stat label="Itinerary reqs" total={itineraries.length} delta7={itLast7} />
-        <Stat label="Newsletter subs" total={newsletters.length} delta7={nlLast7} />
+        <Stat
+          label="Itinerary reqs"
+          total={itineraries.length}
+          delta7={itLast7}
+        />
+        <Stat
+          label="Newsletter subs"
+          total={newsletters.length}
+          delta7={nlLast7}
+        />
         <Stat label="Other leads" total={leads.length} delta7={leadsLast7} />
         <Stat
           label="Open pipeline"
-          total={(itStatus['new'] || 0) + (itStatus['contacted'] || 0) + (itStatus['quoted'] || 0)}
-          sub="itinerary req."
+          total={openPipeline}
+          sub={openPipelineValue > 0 ? fmtMoney(openPipelineValue) : 'no value yet'}
         />
+      </section>
+
+      {/* ——— Performance — response time + booked revenue ——— */}
+      <section className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+        <PerfCard
+          label="Response time · median"
+          value={fmtDurationHours(response.median)}
+          hint={
+            response.sampleSize > 0
+              ? `n=${response.sampleSize} contacted leads`
+              : 'no contacted leads yet'
+          }
+        />
+        <PerfCard
+          label="Response time · p90"
+          value={fmtDurationHours(response.p90)}
+          hint="90% of leads contacted within"
+        />
+        <PerfCard
+          label="Booked revenue · lifetime"
+          value={convertedRevenue > 0 ? fmtMoney(convertedRevenue) : '—'}
+          hint={`from ${priced.filter((r) => r.converted_at).length} converted`}
+        />
+      </section>
+
+      {/* ——— Source attribution ——— */}
+      <section className="mt-14">
+        <div className="flex items-end justify-between">
+          <h2 className="display text-[24px] leading-[1.1] text-ink md:text-[30px]">
+            Where leads{' '}
+            <span className="display-italic text-coral">come from.</span>
+          </h2>
+          <span className="text-[11px] uppercase tracking-[0.22em] text-ink-soft">
+            All-time
+          </span>
+        </div>
+        {sourceStats.length === 0 ? (
+          <div className="mt-6 rounded-sm border border-dashed border-ocean-deep/20 bg-sand-soft p-8 text-center text-[13px] text-ink-soft">
+            No leads with tracked sources yet.
+          </div>
+        ) : (
+          <div className="mt-6 overflow-hidden rounded-sm ring-1 ring-ocean-deep/10">
+            <table className="w-full border-collapse text-[13px]">
+              <thead className="bg-sand-deep/40 text-left text-[10px] uppercase tracking-[0.18em] text-ink-soft">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Source</th>
+                  <th className="px-4 py-3 font-semibold text-right">Leads</th>
+                  <th className="px-4 py-3 font-semibold text-right">
+                    Contacted
+                  </th>
+                  <th className="px-4 py-3 font-semibold text-right">
+                    Converted
+                  </th>
+                  <th className="px-4 py-3 font-semibold text-right">
+                    Conv. %
+                  </th>
+                  <th className="px-4 py-3 font-semibold text-right">
+                    Revenue
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="[&_tr]:border-t [&_tr]:border-ocean-deep/10">
+                {sourceStats.map((s) => (
+                  <tr key={s.source}>
+                    <td className="px-4 py-3 font-mono text-[12px] text-ink">
+                      {s.source}
+                    </td>
+                    <td className="px-4 py-3 text-right text-ink">
+                      {s.count}
+                    </td>
+                    <td className="px-4 py-3 text-right text-ink-soft">
+                      {s.contacted}
+                    </td>
+                    <td className="px-4 py-3 text-right text-ink-soft">
+                      {s.converted}
+                    </td>
+                    <td className="px-4 py-3 text-right text-ink-soft">
+                      {s.count > 0
+                        ? `${Math.round((s.converted / s.count) * 100)}%`
+                        : '—'}
+                    </td>
+                    <td className="px-4 py-3 text-right font-mono text-[12px] text-ink">
+                      {s.revenue > 0 ? fmtMoney(s.revenue) : '—'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </section>
 
       {/* ——— Funnels ——— */}
@@ -117,14 +326,17 @@ export default async function AdminDashboard() {
         ) : (
           <ol className="mt-6 divide-y divide-ocean-deep/10 border-y border-ocean-deep/10">
             {activity.map((a) => (
-              <li key={a.id} className="grid grid-cols-[110px_100px_1fr_auto] gap-4 py-4 text-[13px]">
+              <li
+                key={a.id}
+                className="grid grid-cols-[110px_120px_1fr_auto] gap-4 py-4 text-[13px]"
+              >
                 <span className="text-ink-soft">{timeSince(a.created_at)}</span>
                 <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-coral">
                   {a.kind}
                 </span>
                 <span className="truncate text-ink">{a.body}</span>
                 <Link
-                  href={`/admin/leads/${a.lead_table.replace('_requests', '').replace('newsletter_subscribers', 'newsletter').replace('leads', 'lead')}/${a.lead_id}`}
+                  href={`/admin/leads/${leadTableToUrlSegment(a.lead_table)}/${a.lead_id}`}
                   className="text-[11px] uppercase tracking-[0.18em] text-ink-soft hover:text-coral"
                 >
                   View →
@@ -136,6 +348,12 @@ export default async function AdminDashboard() {
       </section>
     </div>
   );
+}
+
+function leadTableToUrlSegment(table: string): string {
+  if (table === 'itinerary_requests') return 'itinerary';
+  if (table === 'newsletter_subscribers') return 'newsletter';
+  return 'lead';
 }
 
 function Stat({
@@ -167,10 +385,49 @@ function Stat({
   );
 }
 
+function PerfCard({
+  label,
+  value,
+  hint,
+}: {
+  label: string;
+  value: string;
+  hint: string;
+}) {
+  return (
+    <div className="rounded-sm border border-ocean-deep/10 bg-sand-soft p-5">
+      <div className="eyebrow text-ink-soft">{label}</div>
+      <div className="display mt-2 text-[32px] leading-none tracking-[-0.02em] text-ink">
+        {value}
+      </div>
+      <div className="mt-2 text-[11px] text-ink-soft">{hint}</div>
+    </div>
+  );
+}
+
 function Funnel({ title, counts }: { title: string; counts: StatusCount }) {
-  const order = ['new', 'contacted', 'qualified', 'quoted', 'booked', 'converted', 'archived', 'lost'];
+  const order = [
+    'new',
+    'contacted',
+    'qualified',
+    'quoted',
+    'booked',
+    'converted',
+    'archived',
+    'lost',
+  ];
   const rows = order.filter((k) => counts[k]).map((k) => [k, counts[k]] as const);
   const max = Math.max(1, ...rows.map(([, n]) => n));
+
+  // Compute rate-of-progression from previous active stage.
+  const rates: Record<string, string> = {};
+  for (let i = 1; i < rows.length; i++) {
+    const prev = rows[i - 1][1];
+    const curr = rows[i][1];
+    if (prev > 0) {
+      rates[rows[i][0]] = `${Math.round((curr / prev) * 100)}%`;
+    }
+  }
 
   return (
     <div>
@@ -184,7 +441,10 @@ function Funnel({ title, counts }: { title: string; counts: StatusCount }) {
       ) : (
         <ol className="mt-4 flex flex-col gap-2">
           {rows.map(([status, n]) => (
-            <li key={status} className="grid grid-cols-[100px_1fr_40px] items-center gap-3 text-[13px]">
+            <li
+              key={status}
+              className="grid grid-cols-[100px_1fr_60px_40px] items-center gap-3 text-[13px]"
+            >
               <span className="capitalize text-ink-soft">{status}</span>
               <div className="relative h-5 overflow-hidden rounded-sm bg-sand-deep/30">
                 <div
@@ -192,7 +452,12 @@ function Funnel({ title, counts }: { title: string; counts: StatusCount }) {
                   style={{ width: `${(n / max) * 100}%` }}
                 />
               </div>
-              <span className="text-right font-mono text-[12px] text-ink">{n}</span>
+              <span className="text-right text-[11px] text-ink-soft">
+                {rates[status] || ''}
+              </span>
+              <span className="text-right font-mono text-[12px] text-ink">
+                {n}
+              </span>
             </li>
           ))}
         </ol>
