@@ -57,7 +57,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
                 <CompassRose size={22} />
               </span>
               <span className="eyebrow-coral eyebrow">
-                Trip type · Hilton Head Island
+                {trip.eyebrow ?? 'Trip type · Hilton Head Island'}
               </span>
             </div>
             <h1 className="display mt-5 text-balance text-[44px] leading-[1.02] tracking-[-0.025em] text-ink md:text-[64px] lg:text-[76px]">
