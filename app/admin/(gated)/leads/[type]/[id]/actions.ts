@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { createClient } from '@/utils/supabase/server';
+import { requireAdmin } from '@/utils/supabase/admin';
 import { sendEmailFromAdmin } from '@/utils/gmail/client';
 
 type LeadTableKind = 'itinerary_requests' | 'newsletter_subscribers' | 'leads';
@@ -26,6 +27,9 @@ export async function updateLeadStatus(
   id: string,
   status: string,
 ): Promise<{ ok: boolean; error?: string }> {
+  const auth = await requireAdmin();
+  if (!auth.ok) return auth;
+
   const table = TYPE_TO_TABLE[type];
   if (!table || table === 'newsletter_subscribers') {
     return { ok: false, error: 'Status not supported for this lead type.' };
@@ -54,6 +58,9 @@ export async function addLeadNote(
   id: string,
   body: string,
 ): Promise<{ ok: boolean; error?: string }> {
+  const auth = await requireAdmin();
+  if (!auth.ok) return auth;
+
   const table = TYPE_TO_TABLE[type];
   if (!table) return { ok: false, error: 'Invalid lead type.' };
 
@@ -61,15 +68,12 @@ export async function addLeadNote(
   if (!trimmed) return { ok: false, error: 'Note cannot be empty.' };
 
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
 
   const { error } = await supabase.from('lead_activity').insert({
     lead_table: table,
     lead_id: id,
     kind: 'note',
-    actor_email: user?.email ?? null,
+    actor_email: auth.user.email ?? null,
     body: trimmed,
     metadata: {},
   });
@@ -91,6 +95,9 @@ export async function updateDealValue(
   id: string,
   valueRaw: string,
 ): Promise<{ ok: boolean; error?: string }> {
+  const auth = await requireAdmin();
+  if (!auth.ok) return auth;
+
   const table = TYPE_TO_TABLE[type];
   if (!table || table === 'newsletter_subscribers') {
     return { ok: false, error: 'Deal value not supported for this lead type.' };
@@ -135,6 +142,14 @@ export async function sendGmailReply(
     inReplyTo?: string;
   },
 ): Promise<{ ok: boolean; error?: string }> {
+  const auth = await requireAdmin();
+  if (!auth.ok) return auth;
+
+  const adminEmail = auth.admin.email;
+  if (!adminEmail) {
+    return { ok: false, error: 'Admin record missing email.' };
+  }
+
   const table = TYPE_TO_TABLE[type];
   if (!table) return { ok: false, error: 'Invalid lead type.' };
 
@@ -145,15 +160,8 @@ export async function sendGmailReply(
     return { ok: false, error: 'All fields are required.' };
   }
 
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user?.email) {
-    return { ok: false, error: 'Not signed in.' };
-  }
-
-  const sendResult = await sendEmailFromAdmin(user.email, {
+  // Send via the admin's own Gmail tokens — never the caller's.
+  const sendResult = await sendEmailFromAdmin(adminEmail, {
     to,
     subject,
     body,
@@ -165,12 +173,12 @@ export async function sendGmailReply(
     return { ok: false, error: sendResult.error };
   }
 
-  // Log to activity timeline.
+  const supabase = await createClient();
   const { error: logError } = await supabase.from('lead_activity').insert({
     lead_table: table,
     lead_id: id,
     kind: 'email_sent',
-    actor_email: user.email,
+    actor_email: adminEmail,
     body: subject,
     metadata: {
       to,

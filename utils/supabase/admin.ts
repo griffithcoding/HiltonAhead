@@ -21,14 +21,32 @@ export async function getAdminUser(): Promise<{ user: User; admin: AdminRecord }
 
   if (!user?.email) return null;
 
+  // Case-insensitive match: admin_users.email may be stored mixed-case.
   const { data } = await supabase
     .from('admin_users')
     .select('email, display_name')
-    .eq('email', user.email.toLowerCase())
+    .ilike('email', user.email)
     .maybeSingle();
 
   if (!data) return null;
   return { user, admin: data as AdminRecord };
+}
+
+/**
+ * Gate for server actions. Returns the authenticated admin's user + record,
+ * or an { ok: false, error } the caller can return to the client.
+ *
+ * Every exported server action under /admin must call this first — the
+ * (gated) route group only guards navigation, not direct POSTs to
+ * server-action endpoints.
+ */
+export async function requireAdmin(): Promise<
+  | { ok: true; user: User; admin: AdminRecord }
+  | { ok: false; error: string }
+> {
+  const result = await getAdminUser();
+  if (!result) return { ok: false, error: 'Unauthorized.' };
+  return { ok: true, ...result };
 }
 
 /**
