@@ -36,8 +36,8 @@ export default function Header() {
           </span>
         </Link>
 
-        <div className="flex flex-wrap items-center gap-6 text-[13px] md:gap-8">
-          <nav className="flex flex-wrap items-center gap-5 md:gap-7">
+        <div className="flex flex-wrap items-center gap-8 text-[13px]">
+          <nav className="flex items-center gap-8 whitespace-nowrap">
             {nav.links.map((link) => (
               <Link
                 key={link.href}

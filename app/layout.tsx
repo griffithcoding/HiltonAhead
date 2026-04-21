@@ -1,8 +1,12 @@
 import type { Metadata, Viewport } from 'next'
 import { Fraunces, Instrument_Sans } from 'next/font/google'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { brand } from '@/data/brand'
 import './globals.css'
+
+// Google Analytics measurement ID. Hardcoded (public identifier, no secret).
+const GA_MEASUREMENT_ID = 'G-4QN2BHZCBM'
 
 // Display serif — variable font with optical size, softness, and wonky axes.
 const fraunces = Fraunces({
@@ -107,6 +111,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Vercel Analytics — zero-config, privacy-friendly pageview tracking.
             Auto-enables on Vercel-hosted deploys; no-ops locally. */}
         <Analytics />
+        {/* Google Analytics (gtag.js) — loads on every page via root layout.
+            `afterInteractive` strategy = injected after hydration, matches
+            a normal <head> script tag without blocking first paint. */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   )
