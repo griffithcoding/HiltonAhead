@@ -129,6 +129,54 @@ export async function updateDealValue(
 }
 
 // ============================================================================
+// Next-action date (Funnel Pro · B)
+// ============================================================================
+export async function updateNextAction(
+  type: string,
+  id: string,
+  dateRaw: string,
+): Promise<{ ok: boolean; error?: string }> {
+  const auth = await requireAdmin();
+  if (!auth.ok) return auth;
+
+  const table = TYPE_TO_TABLE[type];
+  if (!table || table === 'newsletter_subscribers') {
+    return { ok: false, error: 'Next action not supported for this lead type.' };
+  }
+
+  // Empty string clears the date.
+  let value: string | null = null;
+  if (dateRaw.trim()) {
+    // Accept either YYYY-MM-DD (from <input type="date">) or full ISO.
+    // Date-only inputs are pinned to 9am local — that's when the operator
+    // realistically sees their morning queue.
+    const trimmed = dateRaw.trim();
+    const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(trimmed);
+    const parsed = dateOnly
+      ? new Date(`${trimmed}T09:00:00`)
+      : new Date(trimmed);
+    if (Number.isNaN(parsed.getTime())) {
+      return { ok: false, error: 'Could not read that date.' };
+    }
+    value = parsed.toISOString();
+  }
+
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from(table)
+    .update({ next_action_at: value })
+    .eq('id', id);
+
+  if (error) {
+    console.error('[admin] updateNextAction error:', error);
+    return { ok: false, error: error.message };
+  }
+
+  revalidateLead(type, id);
+  return { ok: true };
+}
+
+// ============================================================================
 // Gmail reply (Phase 3)
 // ============================================================================
 export async function sendGmailReply(

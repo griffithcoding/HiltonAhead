@@ -4,6 +4,7 @@ import { createClient } from '@/utils/supabase/server';
 import LeadStatusSelect from './LeadStatusSelect';
 import LeadNoteForm from './LeadNoteForm';
 import DealValueInput from './DealValueInput';
+import NextActionInput from './NextActionInput';
 import GmailPanel from './GmailPanel';
 
 export const dynamic = 'force-dynamic';
@@ -63,6 +64,7 @@ export default async function LeadDetailPage({
   const status = (lead.status as string | null) || null;
   const createdAt = (lead.created_at as string) || '';
   const dealValue = (lead.deal_value as number | null) ?? null;
+  const nextActionAt = (lead.next_action_at as string | null) || null;
   const firstContactedAt = (lead.first_contacted_at as string | null) || null;
   const convertedAt = (lead.converted_at as string | null) || null;
 
@@ -120,12 +122,18 @@ export default async function LeadDetailPage({
               </span>
               <DealValueInput type={type} id={id} current={dealValue} />
             </div>
+            <div className="flex items-start gap-3">
+              <span className="mt-2 text-[11px] uppercase tracking-[0.22em] text-ink-soft">
+                Next action
+              </span>
+              <NextActionInput type={type} id={id} current={nextActionAt} />
+            </div>
           </div>
         )}
       </header>
 
       {/* Lifecycle timestamps */}
-      {type !== 'newsletter' && (firstContactedAt || convertedAt) && (
+      {type !== 'newsletter' && (firstContactedAt || convertedAt || nextActionAt) && (
         <div className="mt-6 flex flex-wrap gap-6 text-[12px] text-ink-soft">
           {firstContactedAt && (
             <span>
@@ -137,6 +145,12 @@ export default async function LeadDetailPage({
             <span>
               <span className="font-semibold text-ink">Converted:</span>{' '}
               {formatDateTime(convertedAt)}
+            </span>
+          )}
+          {nextActionAt && (
+            <span>
+              <span className="font-semibold text-ink">Next action:</span>{' '}
+              {formatDateTime(nextActionAt)}
             </span>
           )}
         </div>

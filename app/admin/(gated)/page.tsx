@@ -45,12 +45,19 @@ function fmtMoney(n: number): string {
 
 // ============================================================================
 interface LeadRow {
+  id?: string;
+  email?: string;
   status?: string | null;
   created_at: string;
   first_contacted_at?: string | null;
   converted_at?: string | null;
   deal_value?: number | null;
   source?: string | null;
+  next_action_at?: string | null;
+  full_name?: string | null;
+  phone?: string | null;
+  // Discriminator added at combine-time so we can build /admin/leads/{type}/{id} links.
+  _type?: 'itinerary' | 'lead';
 }
 
 interface SourceStats {
@@ -113,7 +120,7 @@ export default async function AdminDashboard() {
       supabase
         .from('itinerary_requests')
         .select(
-          'id, email, status, source, created_at, first_contacted_at, converted_at, deal_value',
+          'id, email, full_name, phone, status, source, created_at, first_contacted_at, converted_at, deal_value, next_action_at',
         )
         .order('created_at', { ascending: false })
         .limit(500),
@@ -125,7 +132,7 @@ export default async function AdminDashboard() {
       supabase
         .from('leads')
         .select(
-          'id, email, status, source, created_at, first_contacted_at, converted_at, deal_value',
+          'id, email, full_name, phone, status, source, created_at, first_contacted_at, converted_at, deal_value, next_action_at',
         )
         .order('created_at', { ascending: false })
         .limit(500),
@@ -138,9 +145,15 @@ export default async function AdminDashboard() {
         .limit(10),
     ]);
 
-  const itineraries: LeadRow[] = itinerariesRes.data ?? [];
+  const itineraries: LeadRow[] = (itinerariesRes.data ?? []).map((r) => ({
+    ...r,
+    _type: 'itinerary' as const,
+  }));
   const newsletters = newslettersRes.data ?? [];
-  const leads: LeadRow[] = leadsRes.data ?? [];
+  const leads: LeadRow[] = (leadsRes.data ?? []).map((r) => ({
+    ...r,
+    _type: 'lead' as const,
+  }));
   const activity = activityRes.data ?? [];
 
   const itStatus = countByStatus(itineraries);
@@ -173,6 +186,30 @@ export default async function AdminDashboard() {
   const convertedRevenue = priced
     .filter((r) => r.converted_at)
     .reduce((sum, r) => sum + (Number(r.deal_value) || 0), 0);
+
+  // ----- Follow-up queue -----
+  const todayStart = (() => {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d.getTime();
+  })();
+  const todayEnd = todayStart + 86_400_000 - 1;
+
+  const dueQueue = priced
+    .filter((r) => r.next_action_at)
+    .map((r) => ({ ...r, _t: new Date(r.next_action_at!).getTime() }))
+    .filter((r) => r._t <= todayEnd)
+    .sort((a, b) => a._t - b._t);
+
+  const overdueCount = dueQueue.filter((r) => r._t < todayStart).length;
+  const dueTodayCount = dueQueue.length - overdueCount;
+
+  const openStatuses = new Set(['new', 'contacted', 'qualified', 'quoted']);
+  const unscheduledOpenCount = priced.filter(
+    (r) =>
+      !r.next_action_at &&
+      openStatuses.has((r.status || '').toLowerCase()),
+  ).length;
 
   return (
     <div className="mx-auto max-w-[1100px]">
@@ -230,6 +267,99 @@ export default async function AdminDashboard() {
           value={convertedRevenue > 0 ? fmtMoney(convertedRevenue) : '—'}
           hint={`from ${priced.filter((r) => r.converted_at).length} converted`}
         />
+      </section>
+
+      {/* ——— Today's follow-up queue ——— */}
+      <section className="mt-14">
+        <div className="flex items-end justify-between">
+          <h2 className="display text-[24px] leading-[1.1] text-ink md:text-[30px]">
+            Today's{' '}
+            <span className="display-italic text-coral">queue.</span>
+          </h2>
+          <div className="flex gap-3 text-[11px] uppercase tracking-[0.18em]">
+            <Link
+              href="/admin/leads?due=overdue"
+              className={`rounded-full border px-3 py-1 ${overdueCount > 0 ? 'border-coral/50 bg-coral/10 text-coral-deep hover:border-coral' : 'border-ocean-deep/20 text-ink-soft'}`}
+            >
+              Overdue · {overdueCount}
+            </Link>
+            <Link
+              href="/admin/leads?due=today"
+              className={`rounded-full border px-3 py-1 ${dueTodayCount > 0 ? 'border-gold/50 bg-gold/10 text-gold-deep hover:border-gold' : 'border-ocean-deep/20 text-ink-soft'}`}
+            >
+              Today · {dueTodayCount}
+            </Link>
+            <Link
+              href="/admin/leads?due=unscheduled"
+              className="rounded-full border border-ocean-deep/20 px-3 py-1 text-ink-soft hover:border-ink hover:text-ink"
+            >
+              Unscheduled · {unscheduledOpenCount}
+            </Link>
+          </div>
+        </div>
+        {dueQueue.length === 0 ? (
+          <div className="mt-6 rounded-sm border border-dashed border-ocean-deep/20 bg-sand-soft p-8 text-center text-[13px] text-ink-soft">
+            No follow-ups scheduled for today. Set a "next action" on a lead to see it here.
+          </div>
+        ) : (
+          <ol className="mt-6 divide-y divide-ocean-deep/10 border-y border-ocean-deep/10">
+            {dueQueue.slice(0, 8).map((r) => {
+              const isOverdue = r._t < todayStart;
+              return (
+                <li
+                  key={`${r._type}-${r.id}`}
+                  className="grid grid-cols-[110px_1fr_140px_auto] items-center gap-4 py-4 text-[13px]"
+                >
+                  <span
+                    className={
+                      isOverdue
+                        ? 'font-semibold uppercase tracking-[0.14em] text-[10px] text-coral-deep'
+                        : 'font-semibold uppercase tracking-[0.14em] text-[10px] text-gold-deep'
+                    }
+                  >
+                    {isOverdue ? 'Overdue' : 'Today'}
+                  </span>
+                  <div className="min-w-0">
+                    <div className="truncate font-semibold text-ink">
+                      {r.full_name || r.email}
+                    </div>
+                    <div className="mt-0.5 flex flex-wrap gap-3 text-[11px] text-ink-soft">
+                      <span>{r.email}</span>
+                      {r.phone && (
+                        <a
+                          href={`tel:${r.phone}`}
+                          className="font-mono text-ocean-deep hover:text-coral"
+                        >
+                          {r.phone}
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <span className="text-[11px] uppercase tracking-[0.14em] text-ink-soft">
+                    {r.status} · {r.deal_value ? fmtMoney(Number(r.deal_value)) : 'no value'}
+                  </span>
+                  <Link
+                    href={`/admin/leads/${r._type}/${r.id}`}
+                    className="text-[11px] uppercase tracking-[0.18em] text-ink-soft hover:text-coral"
+                  >
+                    Open →
+                  </Link>
+                </li>
+              );
+            })}
+            {dueQueue.length > 8 && (
+              <li className="py-3 text-center text-[11px] uppercase tracking-[0.14em] text-ink-soft">
+                + {dueQueue.length - 8} more —{' '}
+                <Link
+                  href="/admin/leads?due=today"
+                  className="hover:text-coral"
+                >
+                  see all
+                </Link>
+              </li>
+            )}
+          </ol>
+        )}
       </section>
 
       {/* ——— Source attribution ——— */}
