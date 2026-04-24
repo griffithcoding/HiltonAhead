@@ -10,6 +10,7 @@ import {
   generatePageMetadata,
   getBreadcrumbSchema,
   getServiceSchema,
+  getFaqSchema,
 } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -24,8 +25,53 @@ export const metadata: Metadata = generatePageMetadata({
     'Hilton Head concierge',
     'Hilton Head tee times',
     'Hilton Head dinner reservations',
+    'Hilton Head travel consultant services',
+    'Hilton Head wedding logistics',
   ],
 });
+
+const SERVICES_FAQ = [
+  {
+    question: 'What services does Hilton Ahead actually book for clients?',
+    answer:
+      'Villa and resort lodging, Harbour Town and Palmetto Dunes tee times, S-tier dinner reservations, dolphin and fishing charters, private-car airport transfers, spa appointments, group dinners for weddings and corporate trips, and full-week family itineraries. We are based on the island and do most of this by a phone call, not a booking form.',
+  },
+  {
+    question: 'How is pricing structured?',
+    answer:
+      'Three main options: a $95 discovery session (credits toward the itinerary), a $450 flat custom itinerary with revisions, and full-service trip planning billed as a percentage of trip spend for groups of 6+ or weddings. No kickbacks from vendors; every fee is agreed up front.',
+  },
+  {
+    question: 'Can you get me a Harbour Town tee time?',
+    answer:
+      'Yes, if you stay inside Sea Pines Resort. Villa guests get 120-day tee-time priority at Harbour Town Golf Links. If you book the villa through us, we land the tee sheet. Public bookings are nearly impossible inside 60 days.',
+  },
+  {
+    question: 'Do you handle wedding logistics?',
+    answer:
+      'Yes. Hilton Head wedding weekends are one of our core services. We coordinate group lodging across 8-12 properties, airport shuttles, welcome bags, rehearsal dinner venues, and a point of contact during the weekend itself. We are not the wedding planner, we are the travel operations team around them.',
+  },
+  {
+    question: 'Do you plan Bluffton and Palmetto Bluff trips?',
+    answer:
+      'Yes. Bluffton and Palmetto Bluff sit 20-25 minutes off-island, and we regularly split trips between Hilton Head and Bluffton for couples and small groups. Palmetto Bluff is on our S-tier list for anniversaries and proposals.',
+  },
+  {
+    question: 'How far ahead do I need to book?',
+    answer:
+      'Summer villas: 5-6 months out. October: 3-4 months. RBC Heritage week: 9-10 months. Winter: two weeks is fine unless it is a holiday. Spring break: 4-5 months. Dinner reservations at S-tier restaurants: 2-3 weeks lead time in summer, 1 week off-season.',
+  },
+  {
+    question: 'What makes you different from booking direct with a resort?',
+    answer:
+      'We tell you which building to ask for, which room number to avoid, which restaurant disappoints on a Saturday, and whether a property is in-between renovation cycles. A resort cannot say "skip the Omni in May 2026, they are mid-renovation." We can, and do, in writing.',
+  },
+  {
+    question: 'Do you offer on-island concierge once my trip starts?',
+    answer:
+      'For full-service clients, yes. Text-line support during your trip window for restaurant swaps, weather pivots, last-minute charter bookings, and anything else that comes up. For flat-fee itinerary clients, we handle pre-trip changes but the concierge line is not included.',
+  },
+];
 
 export default function ServicesPage() {
   const breadcrumb = getBreadcrumbSchema([
@@ -40,6 +86,7 @@ export default function ServicesPage() {
       path: `/services#${s.slug}`,
     }),
   );
+  const faqSchema = getFaqSchema(SERVICES_FAQ);
 
   return (
     <>
@@ -54,6 +101,10 @@ export default function ServicesPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
         />
       ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />
@@ -112,6 +163,28 @@ export default function ServicesPage() {
             </article>
           ))}
         </div>
+
+        {/* ——— FAQ ——— */}
+        <section className="mt-20">
+          <SectionHead
+            number="№ 02"
+            eyebrow="FAQ"
+            plain="Questions we"
+            italic="hear most."
+          />
+          <dl className="mt-10 divide-y divide-ink/15 border-y border-ink/15">
+            {SERVICES_FAQ.map((item) => (
+              <div key={item.question} className="grid gap-3 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:gap-10">
+                <dt className="display text-[20px] leading-[1.2] text-ink md:text-[22px]">
+                  {item.question}
+                </dt>
+                <dd className="text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                  {item.answer}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </div>
 
       <FinalCta />

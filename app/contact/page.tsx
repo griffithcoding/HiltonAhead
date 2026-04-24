@@ -18,7 +18,16 @@ export const metadata: Metadata = generatePageMetadata({
   description:
     'Get in touch with Hilton Ahead. Based on Hilton Head Island, SC. We respond within one business day.',
   path: '/contact',
-  keywords: ['contact Hilton Head travel consultant', 'Hilton Head travel agent contact'],
+  keywords: [
+    'contact Hilton Head travel consultant',
+    'Hilton Head travel agent contact',
+    'Hilton Head itinerary request',
+    'Hilton Head travel planner contact',
+    'Hilton Head vacation planning help',
+    'Hilton Head concierge contact',
+    'book a Hilton Head trip',
+    'Hilton Head trip quote',
+  ],
 });
 
 export default function ContactPage() {

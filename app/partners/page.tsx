@@ -22,6 +22,10 @@ export const metadata: Metadata = generatePageMetadata({
     'Hilton Head recommended businesses',
     'Hilton Head villa companies',
     'Hilton Head local businesses',
+    'Hilton Head restaurants partners',
+    'Hilton Head charter and tour operators',
+    'Hilton Head wedding vendors',
+    'Hilton Head trusted vendors',
   ],
 });
 

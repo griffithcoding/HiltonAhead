@@ -81,7 +81,7 @@ const post2026Stays: Post = {
   excerpt:
     "The newly-renovated resorts, the villa buildings locals actually book, and the one property you should avoid in 2026. An insider's ranking.",
   description:
-    'The 15 best places to stay on Hilton Head Island in 2026. Ranked. Newly-renovated resorts, best villa buildings in Sea Pines and Palmetto Dunes, and the properties locals actually recommend.',
+    'Ranked: the 15 best places to stay on Hilton Head in 2026. Refreshed resorts, top Sea Pines and Palmetto Dunes villa buildings, and one to skip.',
   category: 'Stays',
   readTime: '12 min',
   publishedAt: '2026-03-14',
@@ -288,6 +288,89 @@ const post2026Stays: Post = {
       kind: 'p',
       html: "The big platforms don't vet the on-island service. When the AC breaks at 9pm on a Saturday in July, the listing on VRBO has no meaningful recourse. A local rental company has a tech on-call and a phone number that answers. We'll name the four companies we trust on a planning call.",
     },
+    {
+      kind: 'h2',
+      text: 'Hilton Head lodging by neighborhood, at a glance',
+    },
+    {
+      kind: 'p',
+      html: "A compressed view of who should stay where, what you'll pay in peak weeks, and how long it takes to reach the beach from the door. Use it to narrow the short-list; use the tiers above to pick the specific property.",
+    },
+    {
+      kind: 'table',
+      caption: 'Where to stay on Hilton Head Island: 2026 snapshot',
+      headers: ['Neighborhood', 'Best for', 'Property types', 'Avg weekly villa (peak)', 'To the beach'],
+      rows: [
+        ['Sea Pines', 'Couples, golfers, first-timers', '3 resorts + 400+ villas', '$4,500-9,000', '2-15 min walk or bike'],
+        ['Palmetto Dunes', 'Families, long stays', 'Omni, Marriott, 200+ villas', '$3,500-8,000', '2-10 min walk'],
+        ['Forest Beach', '3-5 day trips, walkability', 'Condos, small resorts', '$2,500-5,000', 'Walking distance'],
+        ['Shelter Cove', 'Couples, date nights', 'Marina condos, timeshares', '$2,000-4,000', '5 min drive'],
+        ['Mid-island / Shipyard', 'Budget, short stays', 'Hotels (Palmera, Sonesta)', '$1,500-3,500', '5-10 min drive'],
+        ['Bluffton / Palmetto Bluff', 'Anniversaries, quiet escape', 'Montage, boutique inns', '$4,000-12,000', '18-25 min drive'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "For neighborhood deep-dives, see the <a href=\"/hilton-head/sea-pines\">Sea Pines</a>, <a href=\"/hilton-head/palmetto-dunes\">Palmetto Dunes</a>, <a href=\"/hilton-head/forest-beach\">Forest Beach</a>, and <a href=\"/hilton-head/shelter-cove\">Shelter Cove</a> guides. For Bluffton, see the <a href=\"/bluffton-travel-planner\">Bluffton travel planner</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head lodging: frequently asked questions',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'Should I stay in Sea Pines or Palmetto Dunes?',
+          a: 'Sea Pines for couples, golfers, and first-timers who want the iconic Hilton Head experience (Harbour Town, lighthouse, best restaurants within the gate). Palmetto Dunes for families with kids who want a full-service resort, kids\u2019 programming, and three golf courses on one plantation. Both are S-tier; they attract different travelers.',
+        },
+        {
+          q: 'What is the best resort on Hilton Head Island?',
+          a: 'The Inn & Club at Harbour Town is our default S-tier pick as of 2026, following its 2025 renovation. For families, the Omni Hilton Head in Palmetto Dunes just completed its 2026 lobby and pool refresh. For ultra-luxury, Montage Palmetto Bluff (20 minutes off-island in Bluffton) sets the service bar for the region.',
+        },
+        {
+          q: 'How early should I book a Hilton Head villa?',
+          a: 'Summer weeks (June-August): 5-6 months out for oceanfront villas, 3-4 for resorts. RBC Heritage week (April 13-19, 2026): 9-10 months out. October (our favorite window): 3-4 months. Winter and early December: two weeks out is usually fine. Spring break: 4-5 months out.',
+        },
+        {
+          q: 'Is VRBO or Airbnb safe to book on Hilton Head?',
+          a: 'Technically yes, practically no. The big platforms do not vet on-island service. When the AC fails on a Saturday night in July, there is no meaningful recourse through the listing. Local Hilton Head rental companies have tech staff on call and a phone number that answers. Book through a local rental manager whenever possible.',
+        },
+        {
+          q: 'What is the cheapest neighborhood to stay in on Hilton Head?',
+          a: 'Mid-island hotels (Palmera Inn, Beach House) run 40-50% below resort rates and work well for 3-5 day trips where the room is just a place to sleep. Forest Beach is the best-value walkable neighborhood for short stays. In winter, Palmetto Dunes villas drop 50-55% below summer peak.',
+        },
+        {
+          q: 'Is Bluffton a good alternative to staying on Hilton Head?',
+          a: 'Increasingly, yes. Bluffton and Palmetto Bluff sit 18-25 minutes off-island and run 40-60% below Sea Pines pricing on comparable properties. Montage Palmetto Bluff is genuinely the best service experience in the region. For couples, quiet weekends, and foodie trips, Bluffton is often the stealth move. See the <a href="/bluffton-travel-planner">Bluffton travel planner</a>.',
+        },
+        {
+          q: 'What does a Sea Pines gate pass cost?',
+          a: 'Sea Pines charges $10 per car, per day for non-resort-guest entry. If you stay inside Sea Pines (resort or villa) the pass is included in your rate. The pass is valid for the day and lets you come and go.',
+        },
+        {
+          q: 'Which hotel on Hilton Head is walking distance to the beach?',
+          a: 'Inside Sea Pines: Harbour Town Inn and Inn & Club at Harbour Town (short walk or bike to South Beach). Palmetto Dunes: Omni Hilton Head (direct access). Forest Beach: Beach House Holiday Inn Resort (across the street). Coligny: Palmera Inn & Suites is a short walk. All four handle beach access in under 10 minutes door-to-sand.',
+        },
+        {
+          q: 'Are pets allowed at Hilton Head villas?',
+          a: 'About 25-30% of private villas accept dogs, with pet fees ranging from $150-400 per stay. Resort hotels are stricter: the Omni and Beach House allow dogs under 50 lbs with advance notice; Sea Pines resort hotels generally do not. Beach rules: dogs are allowed on Hilton Head beaches with a leash from April through September before 10 a.m. and after 5 p.m.',
+        },
+        {
+          q: 'Do I need to rent a car on Hilton Head?',
+          a: 'For most trips, yes. The island is 12 miles long and Uber/Lyft coverage is thin after 9 p.m. The exception: if you stay in Forest Beach within walking distance of Coligny Plaza, you can get by without a car for a 3-5 day trip, using bikes and occasional rideshare for dinner reservations elsewhere on the island.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan your Hilton Head lodging around the right window',
+    },
+    {
+      kind: 'p',
+      html: "Where you stay shapes your trip more than any other single decision. If you want us to match the right property to your group, calendar, and budget, see the <a href=\"/itinerary\">$450 itinerary service</a> or jump to the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas planner</a>. For timing questions, the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a> walks through all 12 months with rates, crowds, and water temps.",
+    },
   ],
 };
 
@@ -301,7 +384,7 @@ const postRestaurantsRanked: Post = {
   excerpt:
     "Forget the TripAdvisor top 20. These are the restaurants locals actually eat at. Ranked S through C with honest reviews and what to order.",
   description:
-    "A locally-ranked tier list of the best restaurants on Hilton Head Island in 2026. Where to eat, what to order, and which spots to skip. Honest reviews from someone who actually lives here.",
+    "Tier-ranked: the best restaurants on Hilton Head in 2026. Where to eat, what to order, and the spots locals quietly skip. Honest reviews.",
   category: 'Dining',
   readTime: '10 min',
   publishedAt: '2026-02-21',
@@ -490,7 +573,90 @@ const postRestaurantsRanked: Post = {
     },
     {
       kind: 'p',
-      html: "Short answer: worth the drive, once per trip, for dinner. FARM Bluffton is the obvious move. The Pearl is a quieter alternative. Cottage Café does a perfect casual lunch if you're already over there shopping.",
+      html: "Short answer: worth the drive, once per trip, for dinner. FARM Bluffton is the obvious move. The Pearl is a quieter alternative. Cottage Café does a perfect casual lunch if you're already over there shopping. See the <a href=\"/bluffton-travel-planner\">Bluffton travel planner</a> for a full food-first itinerary.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head dining at a glance',
+    },
+    {
+      kind: 'p',
+      html: "A quick-pick matrix by occasion. Full blurbs on each restaurant are in the tier lists above. Price tiers are per-person dinner, pre-tax, pre-tip: $ = under $25, $$ = $25-50, $$$ = $50-85, $$$$ = $85+.",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head & Bluffton: the right restaurant for the occasion',
+      headers: ['Occasion', 'Top pick', 'Price', 'Reservation lead time'],
+      rows: [
+        ['Waterfront seafood + sunset', 'Skull Creek Boathouse', '$$$', '3-4 weeks in peak season'],
+        ['Upscale fine dining', "Michael Anthony's", '$$$$', '2-3 weeks'],
+        ['Lowcountry / shrimp & grits', 'Red Fish', '$$$', '2-3 weeks'],
+        ['Dock-style casual', "Hudson's Seafood House", '$$', '1-2 weeks'],
+        ['Best-in-region (Bluffton)', 'FARM Bluffton', '$$$$', '3 weeks (weekend)'],
+        ['Date night, quieter', "Ela's on the Water (Shelter Cove)", '$$$', '1-2 weeks'],
+        ['Walkable family dinner', 'Poseidon (Shelter Cove)', '$$', 'Walk-in most nights'],
+        ['Best breakfast', 'Harbour Town Bakery', '$', 'Walk-in'],
+        ['Best lunch value', 'Skull Creek grouper reuben', '$$', 'Walk-in'],
+        ['Kid-friendly with view', 'The Crazy Crab (Jarvis Creek)', '$$', 'Walk-in OK'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head restaurants: frequently asked questions',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'What is the best seafood restaurant on Hilton Head?',
+          a: "Skull Creek Boathouse for waterfront seafood with a sunset, Red Fish for refined Lowcountry seafood, Hudson's for dock-casual fried and raw bar. Skull Creek is the tourist default; Red Fish is the local pick for a serious meal.",
+        },
+        {
+          q: 'What are the hardest dinner reservations to get on Hilton Head?',
+          a: "In order: Skull Creek Boathouse (30-day Resy drop, set an alarm), Michael Anthony's (2-3 weeks, call directly), Red Fish (2-3 weeks, call), FARM Bluffton (3 weeks for weekends). During RBC Heritage week (April 13-19, 2026), all four jump to 4+ weeks lead time.",
+        },
+        {
+          q: 'Do I need to book restaurants in advance on Hilton Head?',
+          a: "In summer and during Heritage week, yes, for anything above B-tier. Off-season (November-March), weeknight walk-ins are usually fine at all but Michael Anthony's. Our rule: if the restaurant takes reservations, book it at least a week out in peak months.",
+        },
+        {
+          q: 'Are kids welcome at Hilton Head\u2019s best restaurants?',
+          a: "Most yes: Skull Creek, Hudson's, The Crazy Crab, Poseidon, and Ela's on the Water all welcome children and have kids' menus. Michael Anthony's and Red Fish are kid-tolerant but quieter; better for children 10+. The one consistent exception is FARM Bluffton, which is calibrated for adults.",
+        },
+        {
+          q: 'What is the dress code at Hilton Head restaurants?',
+          a: "Resort casual almost everywhere. Collared shirt for men at dinner at Michael Anthony's, Red Fish, and the Montage. Shorts and flip-flops are fine at Skull Creek, Hudson's, Poseidon, and Harbour Town Bakery. No restaurant on the island requires a jacket.",
+        },
+        {
+          q: 'Where is the best breakfast on Hilton Head?',
+          a: 'Harbour Town Bakery (ham biscuits, pastries, coffee with a lighthouse view), Hilton Head Social Bakery (French croissants, counter seating), and the Sea Shack (breakfast tacos, griddle staples). All three are walk-in, all three beat hotel breakfast buffets.',
+        },
+        {
+          q: 'What is the best restaurant on Hilton Head for an anniversary or proposal?',
+          a: "Three answers: Michael Anthony's for in-town fine dining, Red Fish for Lowcountry romance with an excellent wine list, and the May River Grill at Montage Palmetto Bluff for the regional S-tier experience. For proposals specifically, book the Harbour Town Lighthouse deck for a pre-dinner drink.",
+        },
+        {
+          q: 'Which Hilton Head restaurants have the best sunset views?',
+          a: "Skull Creek Boathouse (Broad Creek, west-facing), Hudson's Seafood House (Skull Creek, north-facing), Ela's on the Water (Shelter Cove marina), and The Rooftop at Poseidon. Request \"water-side\" or \"deck\" on your reservation and arrive 45 minutes before sunset for the table transition.",
+        },
+        {
+          q: 'Is FARM Bluffton worth the drive from Hilton Head?',
+          a: "Yes, once per trip. FARM is the single best restaurant in the region and Bluffton is 18-25 minutes from most Hilton Head lodging. Book a weekend dinner 3 weeks out or a Thursday walk-in at the bar. Pair with a walk around Old Town Bluffton beforehand.",
+        },
+        {
+          q: 'Can I walk in at Hilton Head\u2019s best restaurants?',
+          a: "The bar seats at Michael Anthony's, Red Fish, Skull Creek, and Ela's all accept walk-ins. Arrive right at 5 p.m. or between 8:30-9:30 p.m. for the highest success rate. Full dining-room walk-ins are essentially impossible in peak season.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan your Hilton Head dining week around the reservations',
+    },
+    {
+      kind: 'p',
+      html: "Dinner reservations are the hardest-to-solve piece of a Hilton Head trip. If you want us to lock in the four S-tier tables before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes reservation handling. For timing questions, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a> shows which weeks have the tightest booking windows.",
     },
   ],
 };
@@ -505,7 +671,7 @@ const postThingsToDoRanked: Post = {
   excerpt:
     "The activities worth doing, the activities worth skipping, and the one tourist trap everyone falls for. A local's tier list for 2026.",
   description:
-    "Ranked list of the best things to do on Hilton Head Island in 2026. Beaches, boats, bikes, tours, and tourist traps. Honest tiers from a local travel consultant.",
+    "Ranked: the best things to do on Hilton Head Island in 2026. Beaches, boats, bikes, tours, and the tourist traps worth skipping.",
   category: 'Activities',
   readTime: '9 min',
   publishedAt: '2026-01-30',
@@ -694,6 +860,90 @@ const postThingsToDoRanked: Post = {
         "<strong>Birding / Pinckney:</strong> October-March. Migration windows are spectacular.",
       ],
     },
+    {
+      kind: 'h2',
+      text: 'Activity booking lead times and costs',
+    },
+    {
+      kind: 'p',
+      html: "The fastest-booking activities go four to six weeks ahead of peak-week dates. Everything else is one-to-two-weeks or walk-in. A compressed view:",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head activities: booking window, season, and typical cost',
+      headers: ['Activity', 'Booking lead time (peak)', 'Best season', 'Typical cost'],
+      rows: [
+        ['Private dolphin cruise (Captain Mark)', '4-6 weeks', 'Year-round', '$85/adult'],
+        ['Private sunset sail (charter)', '3-4 weeks', 'April-October', '$500-1,200'],
+        ['Offshore fishing charter', '4-6 weeks', 'April-October', '$900-1,400'],
+        ['Kayak Broad Creek (Outside HH)', '1-2 weeks', 'Year-round (7 a.m. slot best)', '$55/person'],
+        ['Bike rental', 'Walk-in most days', 'Year-round', '$20-30/day'],
+        ['Horseback ride (Lawton Stables)', '1 week', 'Year-round (ages 8+)', '$95/person'],
+        ['Harbour Town Lighthouse climb', 'Walk-in', 'Year-round', '$5'],
+        ['Coastal Discovery Museum', 'Walk-in', 'Year-round (rainy-day fallback)', 'Free'],
+        ['Pinckney Island Refuge', 'Walk-in (weekday morning)', 'October-March', 'Free'],
+        ['Tennis or pickleball clinic', '1-2 weeks', 'Year-round', '$60-150/session'],
+        ['RBC Heritage grounds pass', '9-10 months', 'April 13-19, 2026', '$55-85/day'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head activities: frequently asked questions',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'What is the single best thing to do on Hilton Head Island?',
+          a: 'For most visitors: a dawn bike ride on the hard sand at low tide, from Coligny to Sea Pines. Free, 90 minutes, and the single most Hilton Head moment on the island. Rent from Hilton Head Bicycle the afternoon before so you can start at sunrise.',
+        },
+        {
+          q: 'What are the best free things to do on Hilton Head?',
+          a: 'The sunrise walk to Dragon Tree (the oldest live oak on the island), the Coligny-to-Sea Pines low-tide beach bike ride, Pinckney Island National Wildlife Refuge (15 minutes off-island), the Coastal Discovery Museum, Harbour Town sunset, and beach days at Coligny or Forest Beach. None of these cost a dollar.',
+        },
+        {
+          q: 'What is the best dolphin tour on Hilton Head?',
+          a: "Captain Mark\u2019s small-group dolphin cruise out of Harbour Town. The quality gap between operators is enormous; Captain Mark actually finds dolphins, actually teaches you about them, and keeps groups small. Everybody else runs the same loop with 40-person boats. Ask for him by name when booking.",
+        },
+        {
+          q: 'How much does a Hilton Head sunset sail cost?',
+          a: 'Public sunset cruises run $45-65/person on 30-person boats. A private charter for up to 6 runs $500-1,200 for two hours on Calibogue Sound. For couples or groups of 4+, the private charter is almost always the better value; it feels like the Caribbean instead of a bus.',
+        },
+        {
+          q: 'Is Sea Pines Forest Preserve worth visiting?',
+          a: 'Yes, especially early morning. The preserve is 605 acres of maritime forest with sandy trails, the occasional alligator, and near-zero crowds before 9 a.m. Start at the Lawton Stables trailhead. Entry is included with a Sea Pines gate pass ($10/day).',
+        },
+        {
+          q: 'What are the best things to do on Hilton Head with kids?',
+          a: "Coastal Discovery Museum, the Gregg Russell concert at Harbour Town (free, nightly in summer), horseback rides at Lawton Stables for ages 8+, dolphin cruise with Captain Mark, beach days with boogie boards at Coligny or Folly Field, and the Pirate's Cove mini-golf course. See the <a href=\"/blog/hilton-head-with-kids\">Hilton Head with kids guide</a> for a full 7-day family plan.",
+        },
+        {
+          q: 'Can you swim in the ocean at Hilton Head?',
+          a: "Yes, from late May through October. Peak water temperature is 84\u00b0F in July-August. October is the sweet spot: water still 73\u00b0F, crowds gone, rates 30-40% below summer. For monthly water temperatures, see the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a>.",
+        },
+        {
+          q: 'What is the best thing to do when it rains on Hilton Head?',
+          a: 'Coastal Discovery Museum (butterfly garden, indoor exhibits, genuinely good for kids 8+), the Sandbox Interactive Children\u2019s Museum, the Arts Center of Coastal Carolina, or a pickleball clinic under a covered court. Summer afternoon thunderstorms typically clear in 30-60 minutes; plan beach time for morning and rainy-day backups for 3-5 p.m.',
+        },
+        {
+          q: 'Do I need to book Hilton Head activities in advance?',
+          a: 'For peak weeks (summer, Heritage, Thanksgiving): dolphin cruises 4-6 weeks out, fishing charters 4-6 weeks, private sunset sails 3-4 weeks, kayak tours 1-2 weeks. Off-season (November-March): most activities are walk-in or one-week lead time. Bikes, the lighthouse, and Pinckney never need a booking.',
+        },
+        {
+          q: 'Is the Harbour Town Lighthouse worth the climb?',
+          a: 'For the photo at the top, yes. For the museum exhibits, not really. Go early morning (no line, soft light) or right before sunset. Skip rainy afternoons; the stairwell is a bottleneck. Cost is $5 and takes 15 minutes.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan your Hilton Head activity week around the right bookings',
+    },
+    {
+      kind: 'p',
+      html: "A good Hilton Head week balances two or three booked activities with four or five open days. If you want us to lock Captain Mark, the 7 a.m. kayak slot, and the right fishing captain before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes activity bookings. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> maps each activity to its best month.",
+    },
   ],
 };
 
@@ -707,7 +957,7 @@ const postSeaPines: Post = {
   excerpt:
     "Sea Pines is the largest and most famous neighborhood on Hilton Head. Here's how to pick the right pocket of it for your trip.",
   description:
-    "A local's complete guide to Sea Pines Resort on Hilton Head Island. How to pick the right villa area, where to eat, which bike paths to ride, and what the 2026 changes mean for travelers.",
+    "A local's guide to Sea Pines on Hilton Head. Which villa area to pick, the best bike paths and restaurants, and what the 2026 changes mean.",
   category: 'Neighborhoods',
   readTime: '11 min',
   publishedAt: '2026-01-15',
@@ -876,7 +1126,7 @@ const postPalmettoDunes: Post = {
   excerpt:
     "Three championship courses, 11 miles of lagoons, and some of the island's most family-friendly rentals. Here's what to know before you book.",
   description:
-    "A local's guide to staying in Palmetto Dunes on Hilton Head. Golf courses, villa selection, the Omni renovation, restaurants, and what makes it different from Sea Pines.",
+    "A local's guide to Palmetto Dunes on Hilton Head. Golf courses, villa picks, the Omni renovation, and how it differs from Sea Pines.",
   category: 'Neighborhoods',
   readTime: '9 min',
   publishedAt: '2026-02-05',
@@ -1038,7 +1288,7 @@ const postForestBeach: Post = {
   excerpt:
     "The best base for a short trip. Walking distance to Coligny, real beach access, and the most value in mid-island rentals.",
   description:
-    "A local's guide to Forest Beach on Hilton Head. Walkability to Coligny Plaza, mid-island villa rentals, beach access points, and why it's the best value neighborhood for 3-5 night trips.",
+    "A local's guide to Forest Beach on Hilton Head: walking to Coligny Plaza, mid-island rentals, and why it's the best value for 3-5 day trips.",
   category: 'Neighborhoods',
   readTime: '7 min',
   publishedAt: '2026-02-18',
@@ -1194,7 +1444,7 @@ const postShelterCove: Post = {
   excerpt:
     "Quiet, elegant, and built for couples. Here's how to string together a Shelter Cove weekend without leaving the marina.",
   description:
-    "A local's guide to Shelter Cove on Hilton Head. Marina lodging, the best dinners, sunset dolphin cruises, and why it's the most adult-friendly pocket of the island.",
+    "A local's guide to Shelter Cove on Hilton Head. Marina lodging, four of the island's best dinners, sunset cruises, and the quietest pocket for couples.",
   category: 'Neighborhoods',
   readTime: '7 min',
   publishedAt: '2026-03-03',
@@ -1345,7 +1595,7 @@ const postGolfTrip: Post = {
   excerpt:
     "Four-guy golf trips, ten-guy corporate outings, once-in-a-lifetime Harbour Town pilgrimages. Here's how to book each one.",
   description:
-    "A complete guide to planning a golf trip to Hilton Head Island. The best courses ranked, how to book Harbour Town, where to stay, and the corporate outings logistics most guides skip.",
+    "Planning a Hilton Head golf trip: the best courses ranked, how to land a Harbour Town tee time, where to stay, and corporate outing logistics.",
   category: 'Golf',
   readTime: '11 min',
   publishedAt: '2026-02-12',
@@ -1805,7 +2055,7 @@ const postRbcHeritage: Post = {
   excerpt:
     "Tickets, hospitality, lodging, and the three things visitors always get wrong. Everything you need for Heritage week, April 13-19, 2026.",
   description:
-    "A local travel guide to RBC Heritage 2026 at Harbour Town Golf Links. Tickets, hospitality packages, where to stay, parking strategy, and insider logistics for the PGA Tour's only Lowcountry stop.",
+    "Local travel guide to RBC Heritage 2026 at Harbour Town. Tickets, hospitality, lodging, parking strategy, and insider logistics for the tournament.",
   category: 'Golf',
   readTime: '9 min',
   publishedAt: '2026-02-28',
@@ -1948,7 +2198,7 @@ const postWithKids: Post = {
   excerpt:
     "The twelve activities that work, the three tourist traps to skip, and how to pace a week so the kids don't melt down on day 3.",
   description:
-    "A local's honest guide to Hilton Head with kids. Best beaches for toddlers, the bike-path strategy, kid-friendly restaurants, and the one meltdown-proof daily rhythm that works for families.",
+    "A local's honest Hilton Head with kids guide. Best beaches for toddlers, kid-friendly restaurants, and a meltdown-proof daily rhythm that works.",
   category: 'Planning',
   readTime: '10 min',
   publishedAt: '2026-03-18',

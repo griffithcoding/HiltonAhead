@@ -6,7 +6,11 @@ import TripCalculator from '@/components/TripCalculator';
 import CalendlyButton from '@/components/CalendlyButton';
 import CheckoutButton from '@/components/CheckoutButton';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
-import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
+import {
+  generatePageMetadata,
+  getBreadcrumbSchema,
+  getFaqSchema,
+} from '@/app/lib/metadata';
 import { brand } from '@/data/brand';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -18,8 +22,50 @@ export const metadata: Metadata = generatePageMetadata({
     'Hilton Head itinerary request',
     'Hilton Head custom trip',
     'Hilton Head vacation planner',
+    'Hilton Head trip quote',
+    'Hilton Head travel concierge',
+    'book Hilton Head travel consultant',
+    'Hilton Head travel planning service',
   ],
 });
+
+const ITINERARY_FAQ = [
+  {
+    question: 'How much does a Hilton Head itinerary cost?',
+    answer:
+      'The flat-fee custom itinerary is $450, delivered within 5-7 days and with revisions included. A $95 discovery session is also available and credits toward your itinerary if you proceed. Full-service group trips are billed as a percentage of trip spend, agreed up front.',
+  },
+  {
+    question: 'How quickly will I hear back after submitting the form?',
+    answer:
+      'One business day for a real quote with scope and pricing. Same-day for active clients. If your trip is within a week, flag it in the message and we will prioritize.',
+  },
+  {
+    question: 'Do you charge kickbacks or commissions?',
+    answer:
+      'No. Every fee is flat or percentage-based and agreed up front. We do not take commissions from villa companies, restaurants, or tour operators that affect your rates. Sponsorship income is separate from client work and publicly disclosed.',
+  },
+  {
+    question: 'Can you book villas, dinner reservations, and tee times for me?',
+    answer:
+      'Yes. Full-service bookings include villa selection and contracts, Harbour Town and Palmetto Dunes tee times, S-tier restaurant reservations, charters, spa appointments, and airport transfers. Itineraries-only include specific recommendations and booking instructions for you to execute.',
+  },
+  {
+    question: 'What kinds of Hilton Head trips do you plan?',
+    answer:
+      'Family vacations, golf trips, couples getaways, wedding weekends, corporate outings, Thanksgiving and spring break weeks, and RBC Heritage weeks. We also handle winter long-stay trips for snowbirds. If the trip is larger than six travelers, flag it on the form.',
+  },
+  {
+    question: 'Is the discovery session worth it before the itinerary?',
+    answer:
+      "It is if you want to think through your trip out loud before committing. The $95 fee credits toward the $450 itinerary, so the only real cost is your time. If you already know what you want, skip the call and go straight to the itinerary request form.",
+  },
+  {
+    question: 'Do you plan Bluffton and Palmetto Bluff trips too?',
+    answer:
+      'Yes. Bluffton and Palmetto Bluff are a 20-25 minute drive off-island, and we plan trips that split time between Hilton Head and Bluffton regularly. Palmetto Bluff is on our S-tier recommendation list for anniversaries and high-stakes weekends.',
+  },
+];
 
 export default async function ItineraryPage({
   searchParams,
@@ -33,12 +79,17 @@ export default async function ItineraryPage({
     { name: 'Home', path: '/' },
     { name: 'Request Itinerary', path: '/itinerary' },
   ]);
+  const faqSchema = getFaqSchema(ITINERARY_FAQ);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <div className="mx-auto max-w-[1280px] px-5">
@@ -200,6 +251,28 @@ export default async function ItineraryPage({
               </CheckoutButton>
             </div>
           </div>
+        </section>
+
+        {/* ——— FAQ ——— */}
+        <section className="mt-24">
+          <SectionHead
+            number="№ 04"
+            eyebrow="FAQ"
+            plain="Questions we"
+            italic="hear most."
+          />
+          <dl className="mt-10 divide-y divide-ocean-deep/15 border-y border-ocean-deep/15">
+            {ITINERARY_FAQ.map((item) => (
+              <div key={item.question} className="grid gap-3 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:gap-10">
+                <dt className="display text-[20px] leading-[1.2] text-ink md:text-[22px]">
+                  {item.question}
+                </dt>
+                <dd className="text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                  {item.answer}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </section>
       </div>
 
