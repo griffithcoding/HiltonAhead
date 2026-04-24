@@ -116,12 +116,18 @@ export default async function BlogPostPage({
     zinc: 4,
     rose: 2.5,
   };
-  const reviewItemType: 'Restaurant' | 'LodgingBusiness' | 'TouristAttraction' =
+  // Google's Review rich-result spec only allows specific itemReviewed types
+  // (Restaurant, LodgingBusiness, LocalBusiness, Product, Event, etc.).
+  // TouristAttraction is a valid schema.org type but not on Google's list,
+  // so it triggers "Invalid object type for field itemReviewed" in GSC.
+  // LocalBusiness covers golf courses, tour operators, charters, and beach-
+  // access concessions, all of which are the real reviewable entities here.
+  const reviewItemType: 'Restaurant' | 'LodgingBusiness' | 'LocalBusiness' =
     post.category === 'Dining'
       ? 'Restaurant'
       : post.category === 'Stays'
         ? 'LodgingBusiness'
-        : 'TouristAttraction';
+        : 'LocalBusiness';
 
   const reviewSchemas = tierBlocks.flatMap((tier) =>
     tier.items.map((item) =>

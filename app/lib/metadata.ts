@@ -368,12 +368,16 @@ export function getOrganizationSchema(opts?: {
 }
 
 /**
- * JSON-LD Review — one per tier-list item. Wrapped inside an itemReviewed
- * that describes what was reviewed (a restaurant, hotel, or attraction).
+ * JSON-LD Review — one per tier-list item. itemType is constrained to the
+ * set that Google accepts in the Review rich-result spec (see
+ * https://developers.google.com/search/docs/appearance/structured-data/review-snippet).
+ * TouristAttraction is a valid schema.org type but is NOT on Google's list,
+ * so it must not be used here or GSC will reject the rich result with
+ * "Invalid object type for field itemReviewed".
  */
 export function getReviewSchema(review: {
   itemName: string
-  itemType: 'Restaurant' | 'LodgingBusiness' | 'TouristAttraction' | 'LocalBusiness'
+  itemType: 'Restaurant' | 'LodgingBusiness' | 'LocalBusiness'
   reviewBody: string
   ratingValue: number // 1–5
   authorName: string
