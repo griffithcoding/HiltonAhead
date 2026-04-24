@@ -16,6 +16,17 @@ export type PostBlock =
   | { kind: 'callout'; label?: string; html: string }
   | { kind: 'quote'; html: string; attribution?: string }
   | {
+      kind: 'table';
+      caption?: string;
+      headers: string[];
+      rows: string[][];
+    }
+  | {
+      kind: 'faq';
+      label?: string;
+      items: Array<{ q: string; a: string }>;
+    }
+  | {
       kind: 'tier';
       label: string;
       subtitle?: string;
@@ -1487,34 +1498,78 @@ const postGolfTrip: Post = {
 
 const postBestTime: Post = {
   slug: 'best-time-to-visit-hilton-head',
-  title: "The Best Time to Visit Hilton Head. Month by Month",
+  title: "Hilton Head Weather by Month. The Best Time to Visit in 2026.",
   excerpt:
-    "The four travel windows locals actually use, ranked. Weather, crowds, rates, and the two weeks you should absolutely avoid.",
+    "A month-by-month guide to Hilton Head weather, water temperatures, hurricane risk, and the four travel windows locals actually plan trips around.",
   description:
-    "A month-by-month guide to when to visit Hilton Head Island. Weather, hotel rates, crowd levels, and the best windows for families, golfers, and couples in 2026.",
+    "A month-by-month guide to Hilton Head weather. Temperatures, ocean temps, hurricane risk, and the four travel windows locals plan trips around in 2026.",
   category: 'Planning',
-  readTime: '8 min',
+  readTime: '11 min',
   publishedAt: '2026-03-02',
-  updatedAt: '2026-04-18',
+  updatedAt: '2026-04-24',
   author: 'Hilton Ahead',
   featuredOrder: 2.5,
   relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
   keywords: [
-    'best time to visit Hilton Head',
     'Hilton Head weather',
-    'Hilton Head off-season',
+    'Hilton Head weather by month',
+    'best time to visit Hilton Head',
+    'Hilton Head water temperature',
+    'Hilton Head ocean temperature',
     'Hilton Head hurricane season',
+    'Hilton Head weather October',
+    'Hilton Head weather June',
+    'Hilton Head weather March',
     'when to visit Hilton Head',
     'Hilton Head shoulder season',
+    'cheapest time to visit Hilton Head',
+    'Hilton Head rainfall',
+    'Hilton Head climate',
   ],
   body: [
     {
       kind: 'p',
-      html: "The standard advice. \"come in summer\". Is exactly wrong for most of our clients. The island has four genuinely different seasons, and picking the right one can cut your trip cost by 40% or add three hours of beach time per day. Here's how we think about it.",
+      html: "The standard advice. \"come in summer\". Is exactly wrong for most of our clients. Hilton Head Island has four genuinely different weather seasons, and picking the right window can cut your trip cost by 40%, add three hours of beach time per day, and swap a 90-minute airport-to-villa drive for a 25-minute one. Here's the honest month-by-month breakdown we walk every client through before they book.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>The best time to visit Hilton Head is mid-October.</strong> Ocean water still averages 73\u00b0F, days sit at a dry 75-80\u00b0F, hurricane risk has passed, and lodging rates run 30-40% below summer peak. If school calendars lock you into summer, book mid-June. For golf, <a href=\"/hilton-head-golf-packages\">early May or late October</a>. For families at <a href=\"/hilton-head-spring-break\">spring break</a>, the second half of March.",
     },
     {
       kind: 'h2',
-      text: "The four real seasons",
+      text: "Hilton Head weather at a glance",
+    },
+    {
+      kind: 'p',
+      html: "The Lowcountry sits on the same latitude as Casablanca. Winters are mild, summers are hot and humid, and the Atlantic moderates both ends. Here's what every month actually looks like on the island. Averages are built from 30-year NOAA data at the nearby Savannah station, adjusted for the 2-3\u00b0F warmer ocean signal Hilton Head reads right on the coast.",
+    },
+    {
+      kind: 'table',
+      caption: "Hilton Head Island: average weather by month",
+      headers: ['Month', 'Avg High', 'Avg Low', 'Ocean Temp', 'Rainy Days', 'Crowd Level'],
+      rows: [
+        ['January',   '58\u00b0F', '41\u00b0F', '55\u00b0F', '8',  'Very low'],
+        ['February',  '61\u00b0F', '43\u00b0F', '55\u00b0F', '8',  'Very low'],
+        ['March',     '67\u00b0F', '49\u00b0F', '60\u00b0F', '8',  'Low \u2192 rising'],
+        ['April',     '74\u00b0F', '55\u00b0F', '67\u00b0F', '7',  'Moderate (Heritage spike)'],
+        ['May',       '81\u00b0F', '63\u00b0F', '74\u00b0F', '6',  'Moderate'],
+        ['June',      '87\u00b0F', '71\u00b0F', '80\u00b0F', '10', 'Peak'],
+        ['July',      '90\u00b0F', '74\u00b0F', '84\u00b0F', '12', 'Peak'],
+        ['August',    '89\u00b0F', '73\u00b0F', '84\u00b0F', '13', 'Peak'],
+        ['September', '85\u00b0F', '69\u00b0F', '80\u00b0F', '10', 'Moderate'],
+        ['October',   '77\u00b0F', '59\u00b0F', '73\u00b0F', '7',  'Low'],
+        ['November',  '70\u00b0F', '50\u00b0F', '65\u00b0F', '6',  'Low (Thanksgiving spike)'],
+        ['December',  '62\u00b0F', '43\u00b0F', '58\u00b0F', '7',  'Low (holidays lift)'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Two notes people miss. The island is <strong>noticeably warmer than inland Savannah</strong> in winter and <strong>cooler than inland Savannah</strong> in summer. Think of Hilton Head as its own micro-climate. And rainy-day counts here mean afternoon thunderstorms in summer, not all-day washouts. A July afternoon storm clears in 45 minutes and the beach is open again by five.",
+    },
+    {
+      kind: 'h2',
+      text: "The four real seasons on Hilton Head",
     },
     {
       kind: 'h3',
@@ -1522,11 +1577,11 @@ const postBestTime: Post = {
     },
     {
       kind: 'p',
-      html: "<strong>Weather:</strong> 62-78\u00b0F. Water still cold (58-68\u00b0F) through April. <strong>Crowds:</strong> Low until spring break hits mid-March, then heavy the week of RBC Heritage (April 13-19, 2026). <strong>Rates:</strong> Moderate, except Heritage week doubles everything. <strong>Best for:</strong> golf trips, couples' getaways, serious cyclists.",
+      html: "<strong>Weather:</strong> 62-78\u00b0F days, dropping to 49-60\u00b0F at night. Water still cold (58-68\u00b0F) through April, swimmable for most by mid-May. <strong>Crowds:</strong> Low until spring break hits mid-March, then heavy the week of the <a href=\"/blog/rbc-heritage-2026-travel-guide\">RBC Heritage (April 13-19, 2026)</a>. <strong>Rates:</strong> Moderate, except Heritage week doubles everything. <strong>Best for:</strong> golf trips, couples' getaways, serious cyclists, bird-watchers at the end of migration.",
     },
     {
       kind: 'p',
-      html: "This is our default recommendation for golf. Course conditioning is post-winter pristine, weather is ideal, and rates are 25-35% below summer peaks. Avoid the second week of April unless you're specifically coming for Heritage.",
+      html: "This is our default recommendation for <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages</a>. Course conditioning is post-winter pristine, overnight lows still dew-set the greens, and rates run 25-35% below summer peaks. Pollen is the one catch. Oak pollen peaks in late March; pack Zyrtec if you're reactive. Avoid the second week of April unless you're specifically coming for Heritage.",
     },
     {
       kind: 'h3',
@@ -1534,11 +1589,11 @@ const postBestTime: Post = {
     },
     {
       kind: 'p',
-      html: "<strong>Weather:</strong> 82-92\u00b0F, humid. Water 78-84\u00b0F (warmest of the year). <strong>Crowds:</strong> Peak. Coligny at capacity, villa inventory tight, traffic on 278 real. <strong>Rates:</strong> Highest of the year. <strong>Best for:</strong> families with school-age kids who have no other window.",
+      html: "<strong>Weather:</strong> 82-92\u00b0F days, 71-74\u00b0F nights, humidity routinely 75-85%. Water 78-84\u00b0F, the warmest of the year and the only window the Atlantic feels bath-warm. <strong>Crowds:</strong> Peak. Coligny at capacity, villa inventory tight, Highway 278 gridlocked on Saturday turnover days. <strong>Rates:</strong> Highest of the year, 50-70% above winter. <strong>Best for:</strong> <a href=\"/hilton-head-family-trip-planner\">families with school-age kids</a> who have no other window.",
     },
     {
       kind: 'p',
-      html: "If summer is your only option. Book 5-6 months out for villa inventory, 3-4 for resorts. Rent bikes for the kids; the heat becomes tolerable on a shaded bike path. Dinner reservations require 2 weeks lead time at S-tier restaurants.",
+      html: "If summer is your only option. Book 5-6 months out for villa inventory, 3-4 for resort rooms, and target the first week of June or the last week of August for slightly softer pricing. Rent bikes for the kids. The heat becomes tolerable on a shaded bike path. Dinner reservations require 2-3 weeks lead time at S-tier restaurants. Afternoon thunderstorms clock in between 3 and 5 p.m. like a Swiss train. Plan beach time for morning, storms for nap time.",
     },
     {
       kind: 'h3',
@@ -1546,12 +1601,12 @@ const postBestTime: Post = {
     },
     {
       kind: 'p',
-      html: "<strong>Weather:</strong> 72-85\u00b0F through early October, 60-75\u00b0F through early November. Water stays 70\u00b0F+ through October. <strong>Crowds:</strong> Light after Labor Day (September 7, 2026), near-empty after mid-October. <strong>Rates:</strong> 30-40% below summer. <strong>Best for:</strong> couples, foodies, and serious golfers.",
+      html: "<strong>Weather:</strong> 72-85\u00b0F through early October, 60-75\u00b0F through early November. Water stays 70\u00b0F+ through October, which most visitors underestimate. <strong>Crowds:</strong> Light after Labor Day (September 7, 2026), near-empty after mid-October. <strong>Rates:</strong> 30-40% below summer. <strong>Best for:</strong> couples, foodies, <a href=\"/blog/hilton-head-golf-trip\">serious golfers</a>, photographers chasing Lowcountry golden hour.",
     },
     {
       kind: 'callout',
       label: "Our favorite window",
-      html: "<strong>October is the best month to visit Hilton Head, full stop.</strong> Warm water, empty beaches, perfect golf weather, rates 35% below summer, and dinner reservations become walk-in-able at 70% of restaurants.",
+      html: "<strong>October is the best month to visit Hilton Head, full stop.</strong> Warm water, empty beaches, perfect 75\u00b0F golf weather, rates 35% below summer, and dinner reservations become walk-in-able at 70% of restaurants. Book <a href=\"/blog/2026-best-places-to-stay-hilton-head\">an S-tier villa</a> by June for October stays.",
     },
     {
       kind: 'h3',
@@ -1559,31 +1614,54 @@ const postBestTime: Post = {
     },
     {
       kind: 'p',
-      html: "<strong>Weather:</strong> 55-68\u00b0F days, 40-50\u00b0F nights. Occasional 45\u00b0F rainy day. Water too cold to swim. <strong>Crowds:</strong> Genuinely quiet. The island breathes out. <strong>Rates:</strong> Lowest of the year, 50% below summer. <strong>Best for:</strong> budget-conscious couples, writers' retreats, shoulder-season golfers.",
+      html: "<strong>Weather:</strong> 55-68\u00b0F days, 40-50\u00b0F nights. The occasional 45\u00b0F rainy stretch. Water too cold to swim at 55-58\u00b0F. <strong>Crowds:</strong> Genuinely quiet. The island breathes out. <strong>Rates:</strong> Lowest of the year, 50-55% below summer on villas, 40% below on resorts. <strong>Best for:</strong> budget-conscious couples, writers' retreats, shoulder-season golfers willing to sweater-up at 7 a.m.",
     },
     {
       kind: 'p',
-      html: "The beach is empty and stunning. You'll wear a jacket at sunset. Many restaurants close one night a week, and some island programs pause. We plan around it. Genuinely underrated for older couples who don't care about beach swimming.",
+      html: "The beach is empty and stunning. You'll wear a jacket at sunset. A handful of restaurants close one night a week, some tour operators pause, and the Sea Pines trolley runs a limited schedule. We plan around it. Genuinely underrated for older couples who don't care about swimming and for anyone who prefers <a href=\"/hilton-head/sea-pines\">Sea Pines</a> without the bikes-ten-abreast traffic of July.",
     },
     {
       kind: 'h2',
-      text: "Month by month",
+      text: "Hilton Head water temperature by month",
+    },
+    {
+      kind: 'p',
+      html: "Ocean temperature is the single most-asked weather question we get. Hilton Head sits in a slightly warmer pocket than Tybee or Charleston thanks to the shallow shelf off Fish Haul and the bend of the Atlantic coast. Here's what the water actually feels like month by month, and whether it's swimmable for kids, adults, or only for someone in a wetsuit:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>January-February:</strong> 55\u00b0F. Jacket-and-walk weather. Not swimmable without a 5/4 wetsuit.",
+        "<strong>March:</strong> 60\u00b0F. Still cold. Fine for a quick plunge if you're 14 years old and impervious.",
+        "<strong>April:</strong> 67\u00b0F. The water warms fast late month. Swimmable for kids who don't care about shiver.",
+        "<strong>May:</strong> 74\u00b0F. Officially swimmable for most adults by mid-May.",
+        "<strong>June:</strong> 80\u00b0F. Bath-warm. This is when the water starts inviting long sessions.",
+        "<strong>July-August:</strong> 84\u00b0F. Peak ocean temperature. Warmer than most Florida beaches north of Miami.",
+        "<strong>September:</strong> 80\u00b0F. Water still peak-warm even as air temps drop. Underrated swim month.",
+        "<strong>October:</strong> 73\u00b0F. Swimmable all month. The sweet spot locals don't advertise.",
+        "<strong>November:</strong> 65\u00b0F. Early November still brisk-swimmable; by month-end, too cold.",
+        "<strong>December:</strong> 58\u00b0F. Decorative only.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "Month-by-month planning notes",
     },
     {
       kind: 'ol',
       items: [
-        "<strong>January:</strong> Coldest, cheapest. 55\u00b0F beach walks, bonfires. Avoid if you need to swim.",
-        "<strong>February:</strong> Slight warm-up. Whale-watching windows off Savannah. Valentine's weekend is good value.",
-        "<strong>March:</strong> The turn. Weather improves rapidly. Second half = spring break surge.",
+        "<strong>January:</strong> Coldest, cheapest. 55\u00b0F beach walks, bonfires on Forest Beach at sunset. Avoid if you need to swim. Great for a <a href=\"/hilton-head/palmetto-dunes\">Palmetto Dunes</a> villa at half price.",
+        "<strong>February:</strong> Slight warm-up. Whale-watching charters run out of Savannah. Valentine's weekend is a real value window.",
+        "<strong>March:</strong> The turn. Weather improves rapidly. Second half of the month = <a href=\"/hilton-head-spring-break\">spring break surge</a>.",
         "<strong>April:</strong> Peak spring. Avoid week 2 (Heritage) unless tournament-attending. Otherwise perfect.",
-        "<strong>May:</strong> Last quiet month before summer. Water warms by mid-month. Our sleeper pick for couples.",
-        "<strong>June:</strong> Summer begins. Villa inventory gets tight by mid-month. Book by January.",
-        "<strong>July:</strong> Peak heat + peak crowds. Book 6 months out or forget oceanfront.",
-        "<strong>August:</strong> Still peak. Hurricane watch begins (low actual risk until late September).",
-        "<strong>September:</strong> Back-to-school exodus after Labor Day. Rates drop 25% overnight. Hurricane season peaks. Have trip insurance.",
+        "<strong>May:</strong> The last quiet month before summer. Water warms by mid-month. Our sleeper pick for couples and golfers.",
+        "<strong>June:</strong> Summer begins. Villa inventory gets tight by mid-month. Book by January for prime weeks.",
+        "<strong>July:</strong> Peak heat plus peak crowds. Book 6 months out or forget oceanfront. Afternoon storms are reliable; plan around them.",
+        "<strong>August:</strong> Still peak. Hurricane watch begins but real risk stays low until late September.",
+        "<strong>September:</strong> Post-Labor-Day exodus. Rates drop 25% overnight. Hurricane season peaks mid-month. Have trip insurance.",
         "<strong>October:</strong> <strong>The best month.</strong> Book now.",
-        "<strong>November:</strong> First two weeks excellent. Thanksgiving week is quieter than you'd expect.",
-        "<strong>December:</strong> Holiday lights at Harbour Town. Christmas week is surprisingly open and cheap.",
+        "<strong>November:</strong> First two weeks excellent. <a href=\"/hilton-head-thanksgiving\">Thanksgiving week</a> is quieter than you'd expect. Holiday lights go up the weekend after.",
+        "<strong>December:</strong> Holiday lights at <a href=\"/harbour-town-villas\">Harbour Town</a>. Christmas week is surprisingly open and cheap; New Year's booked out.",
       ],
     },
     {
@@ -1592,28 +1670,127 @@ const postBestTime: Post = {
     },
     {
       kind: 'p',
-      html: "<strong>Week of RBC Heritage (April 13-19, 2026)</strong>. Unless you're attending. Rates double, restaurants overwhelmed, villas booked a year out.",
+      html: "<strong>Week of RBC Heritage (April 13-19, 2026)</strong>. Unless you're attending. Rates double, restaurants overwhelmed, villas booked a year out. If the tournament is the point, see our <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage travel guide</a>.",
     },
     {
       kind: 'p',
-      html: "<strong>July 4th week</strong>. Peak-on-peak. Fireworks at Shelter Cove are great, but the drive home is 90 min for a 15-min trip.",
+      html: "<strong>July 4th week</strong>. Peak-on-peak. Fireworks at Shelter Cove are great, but the drive home is 90 minutes for a 15-minute trip. If you must be here for the Fourth, rent a villa <a href=\"/hilton-head/forest-beach\">within walking distance of Coligny</a> and don't move the car.",
     },
     {
       kind: 'h2',
-      text: "Hurricane season. The honest talk",
+      text: "Hurricane season on Hilton Head: the honest numbers",
     },
     {
       kind: 'p',
-      html: "Atlantic hurricane season runs June 1-November 30. Actual risk to Hilton Head is concentrated in <strong>late August through mid-October</strong>. In the last 10 years, only two hurricanes have caused island-wide closures. The probability of your specific week being affected is <strong>under 4%</strong>.",
+      html: "Atlantic hurricane season officially runs <strong>June 1 to November 30</strong>. Actual risk to Hilton Head is concentrated in <strong>late August through mid-October</strong>, with the historical peak around September 10. In the last 10 years, only two hurricanes have caused island-wide closures (Matthew in 2016, Irma in 2017). Dorian in 2019 and Idalia in 2023 triggered evacuations that turned out largely precautionary.",
     },
     {
       kind: 'p',
-      html: "That said. We always recommend trip insurance for September bookings. Costs about 5% of trip total. Covers full refund if an evacuation order is issued.",
+      html: "The odds of your specific travel week being hit by a named storm are <strong>under 4%</strong>. The odds of a mandatory evacuation are closer to 1%. Hilton Head's barrier-island geometry and the Lowcountry's wide tidal marsh both eat surge; most storms that threaten the island track west or north before landfall.",
+    },
+    {
+      kind: 'p',
+      html: "That said. We always recommend trip insurance for September and early-October bookings. A named-storm policy costs roughly 5-7% of trip total and covers full refund if an evacuation order is issued during your travel window. Call us if you want specifics on which policy actually pays out. Most don't.",
+    },
+    {
+      kind: 'h2',
+      text: "What to pack, by season",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Spring:</strong> Layers. Mornings in the 50s, afternoons in the 70s. A light rain shell for the one afternoon storm that's coming. Golfers: a quarter-zip for the 7 a.m. tee time.",
+        "<strong>Summer:</strong> UPF sun shirts, reef-safe sunscreen, a wide-brim hat, and sandals that survive sand. Evenings never drop below 72\u00b0F; no jacket needed.",
+        "<strong>Fall:</strong> The most variable packing. Shorts and tees through early October, add a light layer mid-month, long sleeves and a fleece by early November.",
+        "<strong>Winter:</strong> Jeans, a real sweater, a windbreaker for the beach walk, and flip-flops you won't actually wear. Pack slippers; villa floors are tile.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "When to book, by season",
+    },
+    {
+      kind: 'p',
+      html: "Lodging lead time matters as much as weather. For <strong>summer</strong>, book 5-6 months out for oceanfront villas and 3-4 for resort rooms. For <strong>October</strong>, 3-4 months out; the word is getting around. For <strong>Heritage week</strong>, 9-10 months out. For <strong>winter</strong>, two weeks out is fine unless it's a holiday. For <strong>spring break</strong>, 4-5 months out.",
     },
     {
       kind: 'callout',
       label: "What we actually recommend",
-      html: "For most clients we plan <strong>October</strong> first. For families locked into school calendars, <strong>mid-June</strong>. For golf, <strong>early May or late October</strong>. For couples on budget, <strong>early December</strong>. These are the four windows we come back to over and over.",
+      html: "For most clients we plan <strong>October</strong> first. For families locked into school calendars, <strong>mid-June</strong>. For <a href=\"/hilton-head-golf-packages\">golf</a>, <strong>early May or late October</strong>. For couples on a budget, <strong>early December</strong>. For a <a href=\"/hilton-head-weddings\">Hilton Head wedding</a>, late April or mid-October for the weather and photography sweet spot. These are the five windows we come back to over and over.",
+    },
+    {
+      kind: 'h2',
+      text: "Hilton Head weather: frequently asked questions",
+    },
+    {
+      kind: 'faq',
+      label: "Questions we hear most",
+      items: [
+        {
+          q: "What is the best month to visit Hilton Head Island?",
+          a: "October. Ocean water averages 73\u00b0F, days sit at a dry 75-80\u00b0F, hurricane risk has passed, crowds thin after Labor Day, and lodging rates run 30-40% below summer peak. Early May is a close runner-up for couples and golfers.",
+        },
+        {
+          q: "What is the cheapest time to visit Hilton Head?",
+          a: "January and early December. Villa rates run 50-55% below summer peak, and weekday resort rooms can be booked within two weeks of travel. The tradeoff: water is too cold to swim and a handful of restaurants reduce hours.",
+        },
+        {
+          q: "What is the water temperature at Hilton Head by month?",
+          a: "Ocean temperature tracks the calendar: April averages 67\u00b0F, May 74\u00b0F, June 80\u00b0F, July and August 84\u00b0F (peak), September 80\u00b0F, and October 73\u00b0F. Winter lows sit near 55\u00b0F. Hilton Head's shallow shelf runs 2-3\u00b0F warmer than neighboring Tybee or Charleston.",
+        },
+        {
+          q: "When is hurricane season on Hilton Head?",
+          a: "Atlantic hurricane season runs June 1 through November 30, but the actual risk window for Hilton Head is concentrated from late August through mid-October, peaking around September 10. Historical odds of a named-storm impact in any given week are under 4%, and full evacuations are rarer than 1%.",
+        },
+        {
+          q: "Is Hilton Head warm in March?",
+          a: "March averages 67\u00b0F during the day and 49\u00b0F at night, with ocean water around 60\u00b0F. Warm enough for beach walks, bike rides, and golf; still too cold for most adults to swim. The second half of March brings the first real crowds with spring break.",
+        },
+        {
+          q: "How hot is Hilton Head in July?",
+          a: "July averages 90\u00b0F during the day and 74\u00b0F at night, with humidity routinely 75-85% and afternoon thunderstorms between 3 and 5 p.m. Ocean water reaches its peak at 84\u00b0F. Plan beach time for morning, indoor or covered activity for afternoon.",
+        },
+        {
+          q: "What is the rainiest month on Hilton Head?",
+          a: "August, averaging 13 rainy days. June, July, and September each average 10-12. Rain in summer means afternoon thunderstorms that clear in 30-60 minutes, not all-day washouts. Winter rain is less frequent but longer.",
+        },
+        {
+          q: "Is Hilton Head good to visit in October?",
+          a: "October is the single best month to visit Hilton Head. Average high 77\u00b0F, average low 59\u00b0F, ocean water 73\u00b0F (still swimmable), six to seven rainy days total, and hurricane risk effectively past by mid-month. Crowds are light and lodging runs 30-40% below summer.",
+        },
+        {
+          q: "Is November a good time to visit Hilton Head?",
+          a: "The first two weeks of November are excellent. Days run 65-72\u00b0F, water is still 65\u00b0F, and the island is quiet. Thanksgiving week fills up for family trips but stays calmer than summer. Late November gets brisk at night and ocean swimming ends for the year.",
+        },
+        {
+          q: "What is shoulder season on Hilton Head?",
+          a: "Two shoulder-season windows: April through early May (spring, excluding Heritage week) and September through October (fall, excluding any active-storm windows). Both deliver summer-like weather at 25-35% lower rates, with fall being the better play thanks to warmer water and fewer crowds.",
+        },
+        {
+          q: "Can you swim at Hilton Head in April?",
+          a: "Kids yes, most adults no. Water averages 67\u00b0F in April, warming fast through the month. By late April early-season swimmers are in; by Mother's Day weekend, it's swimmable for nearly everyone.",
+        },
+        {
+          q: "How cold does Hilton Head get in winter?",
+          a: "Daytime averages run 55-68\u00b0F, overnight lows 40-50\u00b0F. Hard freezes (below 32\u00b0F) happen one to three nights per year on average. Snow is a once-every-10-years event. You'll wear a jacket at sunset and a sweater most days.",
+        },
+        {
+          q: "What week should I absolutely avoid on Hilton Head?",
+          a: "Two: the week of RBC Heritage (April 13-19, 2026) and July 4th week. Heritage doubles lodging rates and fills every restaurant; July 4th stacks peak summer crowds on top of fireworks traffic. Every other week has a pocket that works.",
+        },
+        {
+          q: "When does hurricane season end on Hilton Head?",
+          a: "Officially November 30. In practice, the real risk drops off sharply after October 15. A late-October or November trip carries the same storm risk as spring.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "Plan your trip around the right window",
+    },
+    {
+      kind: 'p',
+      html: "Weather is the cheapest trip-planning lever you can pull. Shifting a family beach week from July to early June cuts villa cost by 30% without changing a single reservation. Moving a golf trip from March to early May trades pollen for warmer water and the same tee-sheet prices. If you want us to pick the window for you, tell us the trip and we'll map it against the next six months of island calendar. The <a href=\"/itinerary\">full itinerary service</a> is $450 flat, and the guide is free either way.",
     },
   ],
 };

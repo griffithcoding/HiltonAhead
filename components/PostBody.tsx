@@ -40,11 +40,88 @@ export default function PostBody({ blocks }: { blocks: PostBlock[] }) {
             return (
               <Quote key={i} html={block.html} attribution={block.attribution} />
             );
+          case 'table':
+            return <DataTable key={i} block={block} />;
+          case 'faq':
+            return <FaqBlock key={i} block={block} />;
           case 'tier':
             return <TierBlock key={i} block={block} />;
         }
       })}
     </div>
+  );
+}
+
+function DataTable({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'table' }>;
+}) {
+  return (
+    <figure className="not-prose my-10 overflow-x-auto border-y border-ink/15">
+      <table className="w-full min-w-[620px] border-collapse text-left text-[13px] md:text-[14px]">
+        {block.caption && (
+          <caption className="eyebrow border-b border-ink/10 py-3 text-left text-sunset">
+            {block.caption}
+          </caption>
+        )}
+        <thead>
+          <tr>
+            {block.headers.map((h, i) => (
+              <th
+                key={i}
+                scope="col"
+                className="border-b border-ink/20 px-3 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink md:px-4"
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {block.rows.map((row, i) => (
+            <tr key={i} className="even:bg-cream-deep/30">
+              {row.map((cell, j) => (
+                <td
+                  key={j}
+                  className={`border-b border-ink/10 px-3 py-3 leading-[1.5] md:px-4 ${
+                    j === 0 ? 'font-medium text-ink' : 'text-ink-soft'
+                  }`}
+                  dangerouslySetInnerHTML={{ __html: cell }}
+                />
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </figure>
+  );
+}
+
+function FaqBlock({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'faq' }>;
+}) {
+  return (
+    <section className="not-prose my-12 border-y border-ink/20 py-10">
+      {block.label && (
+        <div className="eyebrow mb-6 text-sunset">{block.label}</div>
+      )}
+      <dl className="divide-y divide-ink/10">
+        {block.items.map((item, i) => (
+          <div key={i} className="py-6 first:pt-0 last:pb-0">
+            <dt className="display text-[18px] leading-[1.25] text-ink md:text-[20px]">
+              {item.q}
+            </dt>
+            <dd
+              className="mt-3 max-w-[640px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]"
+              dangerouslySetInnerHTML={{ __html: item.a }}
+            />
+          </div>
+        ))}
+      </dl>
+    </section>
   );
 }
 

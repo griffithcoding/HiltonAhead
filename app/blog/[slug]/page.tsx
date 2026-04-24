@@ -18,6 +18,7 @@ import {
   getLodgingBusinessSchema,
   getPlaceSchema,
   getEventSchema,
+  getFaqSchema,
 } from '@/app/lib/metadata';
 import {
   posts,
@@ -177,6 +178,19 @@ export default async function BlogPostPage({
         })
       : null;
 
+  // FAQPage schema — aggregates every faq block in the post. Google can
+  // award FAQ rich results and "People Also Ask" placements from this.
+  const faqItems = post.body
+    .filter((b): b is Extract<typeof post.body[number], { kind: 'faq' }> =>
+      b.kind === 'faq',
+    )
+    .flatMap((b) => b.items)
+    .map((item) => ({
+      question: item.q,
+      answer: item.a.replace(/<[^>]+>/g, '').trim(),
+    }));
+  const faqSchema = faqItems.length > 0 ? getFaqSchema(faqItems) : null;
+
   return (
     <>
       <script
@@ -219,6 +233,12 @@ export default async function BlogPostPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
 
