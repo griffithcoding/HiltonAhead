@@ -2618,6 +2618,836 @@ const postBestBeaches: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 13) 3-day Hilton Head itinerary
+// ---------------------------------------------------------------------------
+
+const post3DayItinerary: Post = {
+  slug: 'hilton-head-3-day-itinerary',
+  title: "3 Days on Hilton Head: The Local's Hour-by-Hour Plan",
+  excerpt:
+    "Three days, three districts, and the twelve things worth doing. A tight itinerary for first-timers who want the full island without rushing it.",
+  description:
+    "A local's 3-day Hilton Head itinerary. Hour-by-hour plan through Harbour Town, Coligny, Sea Pines, Bluffton, and the best dinners in between.",
+  category: 'Planning',
+  readTime: '11 min',
+  publishedAt: '2026-04-24',
+  updatedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 2.6,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
+  keywords: [
+    'Hilton Head 3 day itinerary',
+    '48 hours Hilton Head',
+    'weekend in Hilton Head',
+    'Hilton Head weekend getaway',
+    'Hilton Head 72 hours',
+    'Hilton Head long weekend',
+    'Hilton Head short trip',
+    '3 days in Hilton Head',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "The classic mistake on a 3-day Hilton Head trip is trying to see all twelve miles of the island in one push. You can't, and forcing it means 45 minutes of driving between every meal. Better plan: pick three districts, anchor each day in one, and let the island do its thing. Here is the itinerary we send to weekenders.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short version',
+      html: "<strong>Day 1:</strong> Forest Beach + Coligny (settle in, ocean day, casual dinner). <strong>Day 2:</strong> Sea Pines + Harbour Town (bike, golf or lighthouse, S-tier dinner). <strong>Day 3:</strong> Bluffton day trip + sunset sail (one Lowcountry town, one water exit). Three districts, twelve things, one car key per day.",
+    },
+    {
+      kind: 'h2',
+      text: 'Before you arrive',
+    },
+    {
+      kind: 'p',
+      html: "Four bookings handle 80% of the trip quality. Book them before you land:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Villa or hotel:</strong> 3-4 months out in peak season. See the <a href=\"/blog/2026-best-places-to-stay-hilton-head\">2026 best places to stay</a> post.",
+        "<strong>Saturday dinner:</strong> 2-3 weeks out at Skull Creek Boathouse or Michael Anthony's (our S-tier picks).",
+        "<strong>Sunday morning activity:</strong> Dolphin cruise with Captain Mark (2-3 weeks), kayak with Outside Hilton Head (1-2 weeks), or a tee time.",
+        "<strong>Bike rental:</strong> Book 1 week out through Hilton Head Bicycle; they deliver to the villa.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Day 1. Arrival, beach, Forest Beach dinner',
+    },
+    {
+      kind: 'h3',
+      text: "Morning \u2014 arrive, unpack, don't over-program",
+    },
+    {
+      kind: 'p',
+      html: "Most flights land at Savannah/Hilton Head International (SAV) before noon. A 45-minute drive puts you at the villa by 1 p.m. Skip the \u201Clet's hit the beach immediately\u201D move. Unpack, grab lunch at <strong>Harbour Town Bakery</strong> (the ham biscuit is the move) or <strong>Sea Shack</strong> if you're in Forest Beach.",
+    },
+    {
+      kind: 'h3',
+      text: "Afternoon \u2014 Coligny Beach, low-stakes",
+    },
+    {
+      kind: 'p',
+      html: "Head to <a href=\"/hilton-head-beaches\">Coligny Beach Park</a> (free parking) or the gated access if you're staying in Sea Pines, Palmetto Dunes, or Shipyard. Bring minimal gear on day 1. Walk the beach, figure out which direction the tide is running, scout dinner options at Coligny Plaza. Two hours is plenty.",
+    },
+    {
+      kind: 'h3',
+      text: "Evening \u2014 walkable dinner",
+    },
+    {
+      kind: 'p',
+      html: "Night 1 is not the night for your S-tier reservation. You'll be tired. Go walkable-casual: <strong>Poseidon</strong> at Shelter Cove (rooftop, sunset), <strong>A Lowcountry Backyard</strong> (shrimp and grits, kid-friendly), or <strong>The Sea Shack</strong> for walk-in seafood. Home by 9 p.m. Day 2 needs energy.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 2. Sea Pines, bike, and the serious dinner',
+    },
+    {
+      kind: 'h3',
+      text: "Morning \u2014 bike ride at low tide",
+    },
+    {
+      kind: 'p',
+      html: "Check the tide chart the night before. Low tide anywhere 7-11 a.m. means you bike on hard-packed sand. Start at Coligny or your villa, ride south toward Sea Pines for 30-45 minutes, grab breakfast at <a href=\"/hilton-head/sea-pines\">South Beach Marina</a> or Salty Dog Cafe. The best single hour on Hilton Head.",
+    },
+    {
+      kind: 'h3',
+      text: "Afternoon \u2014 choose your Sea Pines",
+    },
+    {
+      kind: 'p',
+      html: "Pick one of three: (1) <strong>Harbour Town + lighthouse</strong> \u2014 climb it for the photo, browse shops, grab a drink at Quarterdeck. (2) <strong>Nine holes at Atlantic Dunes</strong> if you golf. (3) <strong>Sea Pines Forest Preserve</strong> walk to the Dragon Tree \u2014 605 acres of maritime forest, nearly empty on weekday afternoons. Pair with a pool afternoon at the villa before dinner.",
+    },
+    {
+      kind: 'h3',
+      text: "Evening \u2014 your S-tier dinner",
+    },
+    {
+      kind: 'p',
+      html: "Book <strong>Skull Creek Boathouse</strong> (waterfront, sunset, the 6:45-7:15 p.m. window), <strong>Michael Anthony's</strong> (fine dining, quieter), or <strong>Red Fish</strong> (Lowcountry refined). Arrive 15 minutes before your reservation, request water-side or patio, and order oysters. Don't plan anything after; good dinners on Hilton Head run two hours.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 3. Bluffton day trip and the water exit',
+    },
+    {
+      kind: 'h3',
+      text: "Morning \u2014 drive to Old Town Bluffton",
+    },
+    {
+      kind: 'p',
+      html: "Leave by 9 a.m. for the 18-minute drive to <a href=\"/bluffton-travel-planner\">Old Town Bluffton</a>. Walk Calhoun Street, poke into the galleries, visit Heyward House if history is your thing. Lunch at <strong>The Cottage</strong> (pimento cheese biscuit, coastal salads) or <strong>Captain Woody's</strong> (casual seafood). Back on the island by 2 p.m.",
+    },
+    {
+      kind: 'h3',
+      text: "Afternoon \u2014 pool or Pinckney",
+    },
+    {
+      kind: 'p',
+      html: "Hot weather: pool afternoon at the villa. Cooler weather or birders: <strong>Pinckney Island National Wildlife Refuge</strong> for a 90-minute hike (alligators, egrets, no crowds). Either way, rest before the evening activity.",
+    },
+    {
+      kind: 'h3',
+      text: "Evening \u2014 sunset sail, then home",
+    },
+    {
+      kind: 'p',
+      html: "The proper Hilton Head exit is on the water. Book a <strong>private sunset sail</strong> out of Palmetto Bay Marina ($500-1,200 for up to 6, 90 minutes). The public sunset cruises are fine but feel like a bus; the private charter feels like the Caribbean. Dinner at the marina afterward at <strong>Ela's on the Water</strong>.",
+    },
+    {
+      kind: 'h2',
+      text: '3-day itinerary at a glance',
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head 3-day itinerary: time-block summary',
+      headers: ['Day', 'Morning', 'Afternoon', 'Evening'],
+      rows: [
+        ['Day 1 (Arrival)', 'Fly in, villa check-in, Harbour Town Bakery lunch', 'Coligny or gated beach, 2 hours', 'Walkable dinner (Poseidon / Sea Shack)'],
+        ['Day 2 (Sea Pines)', 'Low-tide beach bike ride, breakfast at South Beach', 'Lighthouse OR Forest Preserve OR 9 holes', "Skull Creek or Michael Anthony's (booked 2-3 weeks out)"],
+        ['Day 3 (Bluffton + water)', 'Old Town Bluffton, Calhoun Street, lunch at The Cottage', 'Pool OR Pinckney Island hike', "Private sunset sail, Ela's on the Water"],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Where to stay for a 3-day trip',
+    },
+    {
+      kind: 'p',
+      html: "For 3 days, prioritize walkability. Two great bases: <a href=\"/hilton-head/forest-beach\">Forest Beach</a> (walk to Coligny, Sea Shack, and the beach) or a <a href=\"/harbour-town-villas\">Harbour Town villa</a> (walk to the marina, lighthouse, and S-tier golf). Both let you park the car Friday and barely touch it until Sunday. Full-resort properties work too but the walkability premium is real on a short trip.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head 3-day itinerary: frequently asked questions',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'Is 3 days enough for Hilton Head?',
+          a: "Yes, for a first visit. Three days is tight but workable if you anchor each day in one district and skip the urge to drive the whole island. For a family vacation with pool time, 5-7 days is better. For a couples\u2019 weekend, a food trip, or a golf getaway, 3 days is the sweet spot.",
+        },
+        {
+          q: 'What is the best Hilton Head weekend itinerary?',
+          a: "The short version: Day 1 beach and casual dinner in Forest Beach or Coligny. Day 2 Sea Pines (bike, Harbour Town or golf) plus S-tier dinner. Day 3 Bluffton day trip plus a sunset sail. Three districts, three dinners, minimal driving. The full hour-by-hour is in this post above.",
+        },
+        {
+          q: 'What are the must-do activities on a 3-day Hilton Head trip?',
+          a: "Four: a low-tide beach bike ride, one S-tier dinner, Harbour Town at sunset, and a sunset sail. Everything else is optional. If you have kids, swap the sunset sail for a Captain Mark dolphin cruise.",
+        },
+        {
+          q: 'Should I visit Bluffton on a 3-day Hilton Head trip?',
+          a: "Yes, for at least half a day. Bluffton is 18 minutes off the north end of the island and gives you a second Lowcountry flavor (19th-century fishing village, galleries, Palmetto Bluff nearby). Lunch or dinner in Old Town Bluffton is a standard part of our 3-day plans.",
+        },
+        {
+          q: 'Do I need a car for a 3-day Hilton Head trip?',
+          a: "Yes, unless you stay in a walkable neighborhood (Forest Beach near Coligny, or a Harbour Town villa inside Sea Pines) and stay put for the weekend. Uber and Lyft coverage thins out after 9 p.m. The Bluffton day trip on Day 3 requires driving.",
+        },
+        {
+          q: "What's the best time of year for a 3-day Hilton Head trip?",
+          a: "Mid-October is the single best weekend of the year (73\u00b0F water, empty beaches, rates 30-40% below summer, reservations walk-in-able). Early May is a close second. Thanksgiving week is an underrated value play. For the full month-by-month, see the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a>.",
+        },
+        {
+          q: 'Is 3 days in Hilton Head enough to golf?',
+          a: "Yes, for one round. Morning rounds at Atlantic Dunes or Heron Point work on Day 2 without wrecking the rest of the day. For a golf-focused trip, plan on 4-5 days to play multiple courses. See the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a>.",
+        },
+        {
+          q: "How is this different from the CVB's \u201C48 hours\u201D itinerary?",
+          a: "The Visit Hilton Head Island CVB publishes a 48-hour plan that covers Coligny, Harbour Town, and one dinner. Our 3-day plan adds the Bluffton half-day, swaps in specific restaurant picks, pins each day to a single district so you don't burn 45 minutes in traffic per meal, and calls out which bookings actually need to happen before you land.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Want us to book it?',
+    },
+    {
+      kind: 'p',
+      html: "A 3-day Hilton Head trip lives or dies on the four reservations above. If you want us to lock the villa, the Saturday dinner, the sunset sail, and the bike delivery before you land, the <a href=\"/itinerary\">$450 itinerary service</a> handles it. For longer trips, see the <a href=\"/blog/hilton-head-7-day-itinerary\">7-day itinerary</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 14) 7-day Hilton Head itinerary
+// ---------------------------------------------------------------------------
+
+const post7DayItinerary: Post = {
+  slug: 'hilton-head-7-day-itinerary',
+  title: "A Perfect Week on Hilton Head: The 7-Day Plan",
+  excerpt:
+    "Seven days, five districts, and the pacing that keeps a family trip from melting down by Wednesday. Our full week-on-the-island plan.",
+  description:
+    "A local's 7-day Hilton Head itinerary. Pacing, daily activities, best dinner sequence, Bluffton day trip, and the rest days that make a week work.",
+  category: 'Planning',
+  readTime: '13 min',
+  publishedAt: '2026-04-24',
+  updatedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 2.7,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
+  keywords: [
+    'Hilton Head 7 day itinerary',
+    'week in Hilton Head',
+    'Hilton Head week trip',
+    'Hilton Head vacation plan',
+    'Hilton Head 7 days',
+    'one week Hilton Head',
+    'Hilton Head family week itinerary',
+    'Hilton Head activities week',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "A week on Hilton Head is longer than most visitors think they need and shorter than they realize once they arrive. Seven days is enough to hit every district, play a real round of golf, do a proper Bluffton night, and still have three rest days. The mistake is trying to program all seven. Here is the plan we send clients.",
+    },
+    {
+      kind: 'callout',
+      label: 'The principle',
+      html: "Alternate <strong>anchor days</strong> (one big activity, one real dinner) with <strong>flex days</strong> (pool, beach, nap, walk-in lunch). A seven-day trip needs at least three flex days or everyone melts down by Wednesday. We build the week around booked reservations, not around filling every slot.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 1 (Saturday). Arrival',
+    },
+    {
+      kind: 'p',
+      html: "Fly into Savannah. Check into the villa, unpack, grocery run if self-catering. First dinner walkable-casual (Poseidon at Shelter Cove, A Lowcountry Backyard, or Sea Shack). Save the S-tier restaurant for Tuesday when jet lag is gone.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 2 (Sunday). First beach day',
+    },
+    {
+      kind: 'p',
+      html: "Low-key. Beach morning, pool afternoon, walk to the marina for dinner (<a href=\"/hilton-head/shelter-cove\">Ela's on the Water</a> if you're in Shelter Cove, South Beach Marina if you're in Sea Pines). Don't drive more than 10 minutes all day. Sundays are for the neighborhood.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 3 (Monday). The signature activity day',
+    },
+    {
+      kind: 'p',
+      html: "Pick one marquee activity: <strong>Captain Mark's dolphin cruise</strong> out of Harbour Town, a <strong>sunset sail</strong> on Calibogue Sound, a <strong>kayak tour of Broad Creek</strong> with Outside Hilton Head (7 a.m. slot is best), or an <strong>offshore fishing charter</strong>. Afternoon rest. Dinner at your second-favorite option; S-tier gets Tuesday.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 4 (Tuesday). S-tier dinner night',
+    },
+    {
+      kind: 'p',
+      html: "Program light during the day. Bike Sea Pines, climb the lighthouse, walk the Forest Preserve to Dragon Tree, hit Coligny for a walking tour. At night, the big reservation: <strong>Skull Creek Boathouse</strong>, <strong>Michael Anthony's</strong>, or <strong>Red Fish</strong>. Arrive early, sit by the water if possible, order oysters, let dinner take two hours.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 5 (Wednesday). The flex day',
+    },
+    {
+      kind: 'p',
+      html: "This is the day the trip breathes. No alarms, no reservations, no itinerary. Pool, book, beach, nap. If the weather turns, the <strong>Coastal Discovery Museum</strong> is worth 90 minutes. If you have energy, rent a kayak or paddleboard at South Beach Marina. Walk-in dinner wherever you feel like it.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 6 (Thursday). Bluffton day trip',
+    },
+    {
+      kind: 'p',
+      html: "Morning: drive 18 minutes to <a href=\"/bluffton-travel-planner\">Old Town Bluffton</a>. Walk Calhoun Street, Heyward House, galleries. Lunch at The Cottage. Afternoon: Palmetto Bluff for a walk along the May River, or straight back to the villa for pool time. Evening: dinner at <strong>FARM Bluffton</strong> (book 3 weeks out). If you only eat one dinner in Bluffton all week, make it this one.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 7 (Friday). Golf morning or beach day',
+    },
+    {
+      kind: 'p',
+      html: "Two tracks depending on the group. Track A: <strong>golf</strong> at Atlantic Dunes, Heron Point, or Harbour Town (if you have Sea Pines stay-and-play priority). Track B: <strong>full beach day</strong> at a different beach than earlier in the week (try Driessen or Alder Lane for variety; see the <a href=\"/blog/best-hilton-head-beaches\">beaches guide</a>). Dinner at Hudson's for the casual Hilton Head sunset send-off.",
+    },
+    {
+      kind: 'h2',
+      text: 'Day 8 (Saturday). Departure',
+    },
+    {
+      kind: 'p',
+      html: "Late check-out if possible. Harbour Town Bakery ham biscuit on the way to the airport. Don't program an activity on departure day; traffic to SAV doubles on Saturday mornings and every extra activity is a risk to a morning flight. Airport by one hour before departure for domestic.",
+    },
+    {
+      kind: 'h2',
+      text: '7-day itinerary at a glance',
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head 7-day itinerary: week-at-a-glance',
+      headers: ['Day', 'Theme', 'Morning', 'Afternoon', 'Evening'],
+      rows: [
+        ['Sat', 'Arrival', 'Fly in, villa, groceries', 'Unpack, pool', 'Walkable casual dinner'],
+        ['Sun', 'First beach day', 'Beach', 'Pool', 'Marina dinner, in-neighborhood'],
+        ['Mon', 'Signature activity', 'Dolphin cruise, kayak, or sail', 'Rest / pool', 'Second-tier dinner'],
+        ['Tue', 'S-tier dinner', 'Bike or lighthouse', 'Light program', "Skull Creek / Michael Anthony's / Red Fish"],
+        ['Wed', 'Flex day', 'No alarms', 'Pool, book, nap', 'Walk-in dinner'],
+        ['Thu', 'Bluffton', 'Old Town walk', 'Palmetto Bluff or pool', 'FARM Bluffton (booked 3 weeks out)'],
+        ['Fri', 'Golf or big beach', 'Tee time or new beach', 'Pool, packing begins', "Hudson's sunset dinner"],
+        ['Sat', 'Departure', 'Harbour Town Bakery', 'Drive to SAV', '\u2014'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Pacing, honestly',
+    },
+    {
+      kind: 'p',
+      html: "The 7-day trap is over-programming. Four activity days plus three flex days is the right split for a family; five plus two is the right split for couples on a food-focused trip. More than five structured days and someone (usually a kid) melts down by Thursday. Three booked dinners (Days 4, 6, and 7) plus four open dinners is the right balance. Book the three that matter; let the rest drift.",
+    },
+    {
+      kind: 'h2',
+      text: 'What this week actually costs',
+    },
+    {
+      kind: 'p',
+      html: "A family of four in a 3BR Palmetto Dunes oceanfront villa, mid-June:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Villa (7 nights):</strong> $6,500-8,500 peak, $4,500-6,000 shoulder (late May or September).",
+        "<strong>Food:</strong> $1,200-1,800 with three big dinners plus groceries for lunch and breakfast.",
+        "<strong>Activities:</strong> $600-1,200 (dolphin cruise, one golf round, bike rental, one sunset sail).",
+        "<strong>Gas and transport:</strong> $150-250.",
+        "<strong>Total:</strong> $8,500-11,500 all in for a peak-week trip of four.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head 7-day itinerary: frequently asked questions',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'Is 7 days too long on Hilton Head?',
+          a: "No, for most trips. The island has enough to fill a week if you pace it right (four active days, three flex days) and add a Bluffton day trip. Where 7 days starts to feel long: a couples\u2019 weekend with no beach interest, or a winter trip where pool days are off the menu.",
+        },
+        {
+          q: 'What is the best Hilton Head week itinerary for a family?',
+          a: "Alternating anchor days and flex days: beach day, big activity, rest, S-tier dinner, pool day, Bluffton trip, golf or big-beach finale. Three booked dinners (Days 4, 6, 7) plus four open dinners. The full day-by-day is in this post above.",
+        },
+        {
+          q: 'Which day of the week is best to fly into Hilton Head?',
+          a: "Saturday is the most common (villa turnover day) but Sunday arrivals avoid the traffic on US-278 onto the island. If your villa allows, a Sunday-to-Saturday week gets you quieter airport and road experiences on both ends.",
+        },
+        {
+          q: 'Should I plan a Bluffton trip into a 7-day Hilton Head vacation?',
+          a: "Yes. A Bluffton day trip (Day 6 in our plan) adds one of the best dinners in the region (FARM), a walkable 19th-century fishing village, and access to Palmetto Bluff. It's the single best variety day we build into a Hilton Head week. See the <a href=\"/bluffton-travel-planner\">Bluffton travel planner</a>.",
+        },
+        {
+          q: 'How much does a 7-day Hilton Head trip cost?',
+          a: "A family-of-four peak-summer trip in a 3BR oceanfront villa runs $8,500-11,500 all in. Shoulder season (late May, September, October) drops that to $6,000-8,500. Winter long-stays are dramatically cheaper (see the <a href=\"/hilton-head-winter-rental\">Hilton Head winter rental page</a>).",
+        },
+        {
+          q: 'Do I need to pre-book activities for a week on Hilton Head?',
+          a: "Book three things before arrival: your S-tier dinner (Skull Creek, Michael Anthony's, or Red Fish, 2-3 weeks out), your signature activity (dolphin cruise, sunset sail, or charter, 4-6 weeks out in peak), and the Bluffton dinner (FARM, 3 weeks out). Everything else can be done on arrival or walk-in.",
+        },
+        {
+          q: 'What should I do on a rainy day during a Hilton Head week?',
+          a: "Coastal Discovery Museum, Sandbox Children's Museum, the Arts Center of Coastal Carolina, or a pickleball clinic under a covered court. Summer thunderstorms typically clear in 30-60 minutes; plan beach time for morning and indoor backups for 3-5 p.m.",
+        },
+        {
+          q: 'Is a 7-day Hilton Head trip worth it?',
+          a: "For families with kids, almost always yes. For couples, 4-5 days is often a better balance than a full week. For golfers, 5 days gets you three rounds with rest days. Length depends on use case; pace matters more than total days.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan the week with us',
+    },
+    {
+      kind: 'p',
+      html: "A Hilton Head week lives or dies on the villa pick, the three dinners, and the signature activity. Everything else can be flex. If you want us to lock those four things before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> handles it. For shorter trips, see the <a href=\"/blog/hilton-head-3-day-itinerary\">3-day itinerary</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 15) Hilton Head vs Myrtle Beach comparison
+// ---------------------------------------------------------------------------
+
+const postHHvsMyrtleBeach: Post = {
+  slug: 'hilton-head-vs-myrtle-beach',
+  title: "Hilton Head vs Myrtle Beach: Which South Carolina Coast Is Right for You",
+  excerpt:
+    "Both sit on the South Carolina coast. They could not be more different. A local-side breakdown of who each one is actually for.",
+  description:
+    "Hilton Head vs Myrtle Beach: cost, vibe, beaches, food, activities, and who each coastline is for. A local's straight-answer comparison for 2026.",
+  category: 'Planning',
+  readTime: '9 min',
+  publishedAt: '2026-04-24',
+  updatedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 3.2,
+  keywords: [
+    'Hilton Head vs Myrtle Beach',
+    'Myrtle Beach vs Hilton Head',
+    'Myrtle Beach or Hilton Head',
+    'which is better Myrtle Beach or Hilton Head',
+    'Hilton Head Myrtle Beach comparison',
+    'South Carolina beach comparison',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Both sit on the South Carolina coast. Both have wide Atlantic beaches. That's where the similarity ends. Hilton Head and Myrtle Beach are aimed at genuinely different travelers and the wrong pick can ruin a vacation. Here is the straight comparison we walk clients through.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>Hilton Head</strong> if you want upscale-quiet: golf, restaurants, bike paths, wildlife refuges, Spanish-moss oaks, and a resort feel without neon. <strong>Myrtle Beach</strong> if you want energy: amusement parks, boardwalks, outlet shopping, live shows, cheap hotels, and the beach-vacation-of-America vibe. Both are good at what they do. They are not substitutes.",
+    },
+    {
+      kind: 'h2',
+      text: 'The fundamental difference',
+    },
+    {
+      kind: 'p',
+      html: "Myrtle Beach is a 60-mile strip of beach towns (\u201CThe Grand Strand\u201D) built around high-volume affordable tourism. Seventeen million visitors a year. Think Orlando-by-the-sea: SkyWheel, Ripley's, mini-golf every third block, chain restaurants, $75-a-night motels in the off-season. Myrtle is for families who want lots to do at a reasonable cost.",
+    },
+    {
+      kind: 'p',
+      html: "Hilton Head is a 12-mile barrier island built around gated residential communities and resort golf. Three million visitors a year. Think Kiawah-meets-Amelia: live oaks, bike paths, Harbour Town lighthouse, five championship golf courses, $150-a-night-minimum lodging, restaurants that require reservations. Hilton Head is for travelers who pay more for quiet.",
+    },
+    {
+      kind: 'h2',
+      text: 'Side-by-side comparison',
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head vs Myrtle Beach: the category-by-category breakdown',
+      headers: ['Dimension', 'Hilton Head', 'Myrtle Beach'],
+      rows: [
+        ['Overall vibe', 'Upscale-quiet, Spanish moss, gated', 'Energetic boardwalk, family-amusement, neon'],
+        ['Avg lodging (peak, 3BR)', '$4,500-9,000/week', '$1,500-4,500/week'],
+        ['Avg lodging (peak, hotel)', '$250-500/night', '$120-280/night'],
+        ['Beach character', '12 mi wide hard-packed, undeveloped dunes', '60 mi Grand Strand, high-rises dense at waterline'],
+        ['Restaurant scene', 'Reservations-required, 15-20 S-tier', 'Chain dense, 250+ choices, walk-in easy'],
+        ['Golf', '5 championship courses incl. Harbour Town (PGA)', '90+ courses, mass-market pricing'],
+        ['Family amusement', 'Minimal (no piers, no SkyWheel)', 'Dominant (Family Kingdom, SkyWheel, mini-golf)'],
+        ['Shopping', 'Tanger Outlets (Bluffton, 20 min)', 'Broadway at the Beach, Tanger, Coastal Grand'],
+        ['Airport', 'SAV (45 min drive)', 'MYR (on-site)'],
+        ['Best for', 'Couples, golfers, quiet families, retirees', 'Big families, spring break, budget trips'],
+        ['Summer crowds', 'Heavy on specific beaches; never Myrtle-level', 'Intense throughout, Grand Strand stacked'],
+        ['Water temp (peak)', '84\u00b0F July/Aug', '84\u00b0F July/Aug'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'When Hilton Head is the right pick',
+    },
+    {
+      kind: 'ul',
+      items: [
+        "You prioritize a <strong>quieter vacation</strong> over lots to do.",
+        "You're a <strong>golfer</strong> (Hilton Head has the serious courses).",
+        "You care about <strong>restaurants</strong> as a primary trip component.",
+        "You want <strong>bike paths and wildlife refuges</strong> over boardwalks and SkyWheels.",
+        "You're on a <strong>couples\u2019, honeymoon, or anniversary</strong> trip.",
+        "You can absorb <strong>30-50% higher lodging costs</strong> for a more refined experience.",
+        "You want to feel like you're in the Lowcountry, not in a beach-themed amusement district.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'When Myrtle Beach is the right pick',
+    },
+    {
+      kind: 'ul',
+      items: [
+        "You have a <strong>big family or multi-household group</strong> where everyone needs something different.",
+        "Your <strong>budget is tight</strong> ($2k-4k total for the week).",
+        "You want <strong>amusement parks, piers, and boardwalks</strong> as part of the trip.",
+        "It's your <strong>kids\u2019 first beach vacation</strong> and novelty matters more than sophistication.",
+        "You want <strong>huge restaurant variety</strong> with easy walk-in access.",
+        "You're a <strong>casual golfer</strong> who wants 90+ courses at mid-market pricing.",
+        "You like <strong>spring break energy</strong>. (Hilton Head is the opposite of this.)",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Cost reality check',
+    },
+    {
+      kind: 'p',
+      html: "A summer-week comparison for a family of four, roughly equivalent units:",
+    },
+    {
+      kind: 'table',
+      caption: 'Cost comparison: family of four, 7 nights in July',
+      headers: ['Cost category', 'Hilton Head', 'Myrtle Beach'],
+      rows: [
+        ['3BR oceanfront villa', '$7,500', '$3,200'],
+        ['3 big dinners', '$450-600', '$200-350'],
+        ['Family activities', '$400-600 (cruise, bikes, golf)', '$400-800 (SkyWheel, pier, putt-putt)'],
+        ['Groceries and casual meals', '$800', '$600'],
+        ['Gas and transport', '$200', '$150'],
+        ['Approx total', '$9,400-9,700', '$4,550-5,100'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "The roughly-2x cost gap is real and consistent. Hilton Head is not more expensive because it's \u201Cfancier\u201D; it's more expensive because the barrier-island geography and development pattern restrict supply. That supply constraint is also why the beaches stay quieter.",
+    },
+    {
+      kind: 'h2',
+      text: 'Can I do both on one trip?',
+    },
+    {
+      kind: 'p',
+      html: "Technically yes, they are 3 hours apart by car. Practically, no. The vibes are so different that splitting a week between them dilutes both experiences. If you're on the fence, pick Hilton Head for refinement and take a future trip to Myrtle, or vice versa. The one case where combining works: a 10-14 day South Carolina coast tour that also includes Charleston (then you're doing a sampler, not a beach vacation).",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head vs Myrtle Beach: FAQ',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'Is Hilton Head or Myrtle Beach better for families?',
+          a: "Both are good for families, for different kinds. Hilton Head wins for families with kids under 7 (calm beaches, bike paths, resort programs), families that like quieter trips, and multi-generational trips with grandparents. Myrtle Beach wins for families with kids 7-14 who love amusement parks, families on budget, and first-time beach vacations where novelty matters.",
+        },
+        {
+          q: 'Which is more expensive, Hilton Head or Myrtle Beach?',
+          a: "Hilton Head is roughly 2x the cost for equivalent accommodations. A peak-summer 3BR oceanfront villa runs $7-9k on Hilton Head vs $3-5k on Myrtle Beach. Food, golf, and activities also trend 30-50% higher on Hilton Head.",
+        },
+        {
+          q: 'Which has better beaches, Hilton Head or Myrtle Beach?',
+          a: "Different rather than better. Hilton Head has 12 miles of hard-packed sand fronted by low dunes and sea oats, biking at low tide, and no high-rises on the waterline. Myrtle Beach has 60 miles of Grand Strand with condo high-rises and piers. If you want bikable, walkable, undeveloped, Hilton Head wins. If you want the classic commercial beach-town experience, Myrtle.",
+        },
+        {
+          q: 'Which has better golf, Hilton Head or Myrtle Beach?',
+          a: "Hilton Head has the better single course (Harbour Town Golf Links, a PGA Tour venue) and 5 championship courses inside 15 minutes. Myrtle Beach has 90+ courses at mid-market pricing. If you want one exceptional course, Hilton Head. If you want volume and variety, Myrtle.",
+        },
+        {
+          q: 'Is Hilton Head worth the extra money over Myrtle Beach?',
+          a: "For couples, anniversary trips, and golfers: yes, easily. For families with young kids on a budget: probably not; Myrtle Beach delivers a great family experience at a much lower cost. For families with teens who want amusement parks, Myrtle is the better match regardless of budget.",
+        },
+        {
+          q: "Which is better for a couples\u2019 trip, Hilton Head or Myrtle Beach?",
+          a: "Hilton Head, almost always. The restaurant scene, Palmetto Bluff, the quieter beaches, and the sunset sail culture all favor couples. Myrtle Beach is designed for families and tends to feel like a theme park for a couples\u2019 weekend. See the <a href=\"/hilton-head-honeymoon\">Hilton Head honeymoon and couples planner</a>.",
+        },
+        {
+          q: 'Is Myrtle Beach good for a spring break trip?',
+          a: "Yes, Myrtle Beach runs a traditional spring break scene with full hotels, bars, and beach energy. Hilton Head is the opposite of spring break; it's deliberately quiet even during Easter week. For the spring-break vibe, Myrtle. For the Hilton Head version (which is a family trip, not a college trip), see our <a href=\"/hilton-head-spring-break\">Hilton Head spring break page</a>.",
+        },
+        {
+          q: 'Which is easier to drive around, Hilton Head or Myrtle Beach?',
+          a: "Hilton Head is easier once you're on the island (12 miles, simple layout, one main road). Myrtle Beach has more traffic on Ocean Boulevard and US-17 but also more parking supply. Airport-to-hotel is 10-20 minutes on Myrtle Beach vs 45 minutes on Hilton Head.",
+        },
+        {
+          q: 'When is the best time to visit Hilton Head vs Myrtle Beach?',
+          a: "Both have peak summer (June-August) and warm fall (September-October). Hilton Head's shoulder season is noticeably cheaper than Myrtle Beach's in the same windows. Myrtle Beach stays busier longer into October because its spring break season and summer energy draw mid-market families year-round. For Hilton Head specifically, see our <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a>.",
+        },
+        {
+          q: 'Is Hilton Head or Myrtle Beach safer?',
+          a: "Both are safe tourist destinations. Hilton Head has lower overall crime rates and less of a late-night scene, which most visitors read as safer. Myrtle Beach has more police presence on Ocean Boulevard and stronger visible security around the boardwalk, but also more late-night bar activity.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Still not sure?',
+    },
+    {
+      kind: 'p',
+      html: "If you've read this and you're still torn, the deciding question is: <strong>what do you want to do at 4 p.m. on Day 3</strong>? If the answer is \u201Cnap, swim, maybe a bike ride,\u201D Hilton Head. If it's \u201Cride the Ferris wheel, grab funnel cake, walk the pier,\u201D Myrtle Beach. Both are legitimate answers. We just plan one of them. If you picked Hilton Head, start with the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> or the <a href=\"/blog/hilton-head-3-day-itinerary\">3-day itinerary</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 16) Sea Pines vs Palmetto Dunes comparison
+// ---------------------------------------------------------------------------
+
+const postSeaPinesVsPalmettoDunes: Post = {
+  slug: 'sea-pines-vs-palmetto-dunes',
+  title: "Sea Pines vs Palmetto Dunes: Which Hilton Head Neighborhood Is Right for You",
+  excerpt:
+    "The two biggest gated plantations on Hilton Head. Same price point, completely different trip. Here is who each one is actually for.",
+  description:
+    "Sea Pines vs Palmetto Dunes: side-by-side comparison of Hilton Head's two biggest gated communities. Golf, beach, lodging, restaurants, and the right pick.",
+  category: 'Neighborhoods',
+  readTime: '10 min',
+  publishedAt: '2026-04-24',
+  updatedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 3.8,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes'],
+  keywords: [
+    'Sea Pines vs Palmetto Dunes',
+    'Palmetto Dunes vs Sea Pines',
+    'Hilton Head neighborhoods comparison',
+    'Sea Pines or Palmetto Dunes',
+    'which Hilton Head community',
+    'Hilton Head gated community comparison',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "These are the two biggest gated communities on Hilton Head. They sit back-to-back in the middle of the island and attract fundamentally different travelers. Picking the wrong one is the single most common mistake we fix on a planning call. Here is the side-by-side.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>Sea Pines</strong> for couples, golfers (Harbour Town), first-time visitors who want the iconic Hilton Head experience, and travelers who value dining inside the gate. <strong>Palmetto Dunes</strong> for families with kids, larger groups, multi-generational trips, and travelers who want a full-service resort with kids\u2019 programs. Both are S-tier, both are on the ocean. The trip types are different.",
+    },
+    {
+      kind: 'h2',
+      text: 'The basic orientation',
+    },
+    {
+      kind: 'p',
+      html: "<strong>Sea Pines</strong> sits on the south end of Hilton Head. 5,200 acres, 400+ villas, 3 resort hotels, and the island's iconic features: Harbour Town, the lighthouse, the Forest Preserve, South Beach Marina. Three golf courses including Harbour Town Golf Links (PGA Tour). See the full <a href=\"/hilton-head/sea-pines\">Sea Pines guide</a>.",
+    },
+    {
+      kind: 'p',
+      html: "<strong>Palmetto Dunes</strong> sits mid-island, just north of Sea Pines. 2,000 acres, 200+ villas, 2 resort hotels (Omni, Marriott Grande Ocean), 3 miles of oceanfront beach, three championship golf courses, an 11-mile lagoon for kayaking, and the best resort tennis program in the country. See the full <a href=\"/hilton-head/palmetto-dunes\">Palmetto Dunes guide</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'Side-by-side comparison',
+    },
+    {
+      kind: 'table',
+      caption: 'Sea Pines vs Palmetto Dunes: 2026 side-by-side',
+      headers: ['Dimension', 'Sea Pines', 'Palmetto Dunes'],
+      rows: [
+        ['Size', '5,200 acres', '2,000 acres'],
+        ['Villa inventory', '400+ units', '200+ units'],
+        ['Oceanfront beach', '~5 miles', '~3 miles'],
+        ['Golf courses', '3 (Harbour Town, Heron Point, Atlantic Dunes)', '3 (Robert Trent Jones, Fazio, Arthur Hills)'],
+        ['Best golf', 'Harbour Town (PGA Tour venue)', 'RTJ Oceanfront (Top 50 resort course)'],
+        ['Marquee feature', 'Harbour Town + lighthouse', '11-mile lagoon + tennis'],
+        ['Dining inside the gate', '6-8 options, 2 S-tier', '3-4 options, mostly resort-hotel'],
+        ['Best for', 'Couples, golfers, first-timers', 'Families, groups, tennis enthusiasts'],
+        ['Kids\u2019 programming', 'Light (Sea Pines Resort only)', 'Strong (Omni program, tennis camp)'],
+        ['Gate fee (non-resort)', '$10/car/day', '$8/car/day'],
+        ['3BR oceanfront villa (peak)', '$6,000-9,000/week', '$5,500-8,000/week'],
+        ['3BR interior villa (shoulder)', '$3,000-5,000/week', '$3,500-5,500/week'],
+        ['Bike-path network', 'Excellent (connects to Forest Preserve)', 'Very good (lagoon loops)'],
+        ['Walk to the beach', 'Varies by villa, 2-15 min', 'Most villas 2-10 min'],
+        ['Drive to Coligny / off-gate dining', '5-12 min', '8-15 min'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Why to pick Sea Pines',
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Harbour Town.</strong> The lighthouse, the marina, the 18th at the RBC Heritage course. There is no Palmetto Dunes equivalent.",
+        "<strong>Dining inside the gate.</strong> Two S-tier options (Salty Dog, Quarterdeck) plus the resort dining rooms mean you can eat well without leaving the plantation.",
+        "<strong>The Forest Preserve.</strong> 605 acres of maritime forest, bike paths, the Dragon Tree. Palmetto Dunes has lagoons; Sea Pines has forest.",
+        "<strong>Harbour Town Golf Links.</strong> A 120-day resort-guest priority system gets you onto a PGA Tour course. Non-guests cannot reliably book this.",
+        "<strong>The iconic Hilton Head experience.</strong> If this is your first visit, Sea Pines is what postcards, Heritage week, and every Hilton Head article mean when they say \u201CHilton Head.\u201D",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Why to pick Palmetto Dunes',
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Kids\u2019 programming.</strong> The Omni has a full kids\u2019 program, Palmetto Dunes tennis runs summer camps, and the lagoon kayaking is exactly the activity a 10-year-old wants. Sea Pines is quieter for kids.",
+        "<strong>Three golf courses on one plantation.</strong> Robert Trent Jones Oceanfront, Fazio, and Arthur Hills all run off one clubhouse. For a golf group that wants variety in a 3-day stay, Palmetto Dunes beats Sea Pines.",
+        "<strong>Tennis.</strong> Palmetto Dunes Tennis is ranked in the US top 10 resort programs. Sea Pines tennis is good but not at this level.",
+        "<strong>The lagoon.</strong> 11 miles of kayakable freshwater creek running through the plantation. Sunrise kayaking here is one of the top 5 experiences on the island.",
+        "<strong>Shorter beach walk, most villas.</strong> Palmetto Dunes has a denser oceanfront villa layout. More properties sit a 2-5 minute walk to the sand than in Sea Pines.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'When we pick one over the other',
+    },
+    {
+      kind: 'p',
+      html: "Our default decision tree, based on hundreds of trips:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Couples, honeymoon, anniversary:</strong> Sea Pines. Better dining, Harbour Town sunset, more romantic feel. See the <a href=\"/hilton-head-honeymoon\">honeymoon planner</a>.",
+        "<strong>Family with kids 6-14:</strong> Palmetto Dunes. Better programming, shorter beach walk, kids\u2019 camp infrastructure. See the <a href=\"/hilton-head-family-trip-planner\">family trip planner</a>.",
+        "<strong>Family with kids under 6:</strong> Palmetto Dunes (Omni kids\u2019 pool and sitter service). Sea Pines works if you're in a villa with a private pool.",
+        "<strong>Golf trip, serious:</strong> Sea Pines for Harbour Town access. See the <a href=\"/hilton-head-golf-packages\">golf packages page</a>.",
+        "<strong>Golf trip, variety focus:</strong> Palmetto Dunes for three courses off one tee sheet.",
+        "<strong>Tennis or pickleball trip:</strong> Palmetto Dunes, no question.",
+        "<strong>First-time Hilton Head visit:</strong> Sea Pines. It is what people mean when they say Hilton Head.",
+        "<strong>Multi-generational trip:</strong> Palmetto Dunes, Marriott Grande Ocean or a 5BR oceanfront villa. Wider range of bedroom counts and kids\u2019 programming for the grandkids.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'The honest downsides of each',
+    },
+    {
+      kind: 'h3',
+      text: 'Sea Pines downsides',
+    },
+    {
+      kind: 'ul',
+      items: [
+        "Kid programming is thin outside of the resort hotels.",
+        "Restaurants inside the gate are a smaller set than non-gated Hilton Head.",
+        "Traffic on Sea Pines Circle can be real during Heritage week.",
+      ],
+    },
+    {
+      kind: 'h3',
+      text: 'Palmetto Dunes downsides',
+    },
+    {
+      kind: 'ul',
+      items: [
+        "Less \u201CHilton Head atmosphere.\u201D It feels resort-y, not historic.",
+        "Fewer standalone restaurants inside the gate; you'll drive to Shelter Cove or Sea Pines for better dining variety.",
+        "The Omni renovation is phased through 2027. Ask us which floor.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Cost comparison, honestly',
+    },
+    {
+      kind: 'p',
+      html: "For equivalent 3BR oceanfront villas in peak week (July), Sea Pines runs roughly 10-15% higher than Palmetto Dunes. For resort hotels, Omni (Palmetto Dunes) is comparable to the Sea Pines Resort hotels. For value seekers: a mid-island interior villa in Palmetto Dunes runs $3,500-4,500/week in peak and gets you full Palmetto Dunes amenity access. The Sea Pines equivalent runs $4,500-5,500/week.",
+    },
+    {
+      kind: 'h2',
+      text: 'Sea Pines vs Palmetto Dunes: FAQ',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'Is Sea Pines or Palmetto Dunes better for families?',
+          a: "Palmetto Dunes, in most cases. The Omni kids\u2019 program, tennis camp, lagoon kayaking, and shorter beach walks favor families with kids 5-14. Sea Pines works for families too but is quieter and less programmed. For multi-generational trips, Palmetto Dunes is the more forgiving choice.",
+        },
+        {
+          q: 'Is Sea Pines or Palmetto Dunes better for golf?',
+          a: "Depends on priority. Sea Pines for Harbour Town Golf Links (a PGA Tour venue with 120-day resort-guest priority). Palmetto Dunes for three championship courses off one tee sheet (RTJ Oceanfront, Fazio, Arthur Hills). A serious golfer picks Sea Pines; a golf group that wants variety picks Palmetto Dunes.",
+        },
+        {
+          q: 'Which is bigger, Sea Pines or Palmetto Dunes?',
+          a: "Sea Pines is 5,200 acres with 400+ villas. Palmetto Dunes is 2,000 acres with 200+ villas. Sea Pines is more than double the geographic footprint and has a more varied neighborhood mix (Harbour Town, South Beach, Baynard Cove, Sea Pines interior).",
+        },
+        {
+          q: 'How much is the gate fee at Sea Pines vs Palmetto Dunes?',
+          a: "Sea Pines charges $10 per car per day for non-resort-guest day entry. Palmetto Dunes charges $8 per car per day. Both waive the fee if you're a resort or villa guest. Both passes are valid the day issued.",
+        },
+        {
+          q: "Can I visit Sea Pines and Palmetto Dunes if I'm not staying there?",
+          a: "Yes, both allow day visitors with a gate pass ($8-10). You can drive in, park, walk the beach, climb the Harbour Town lighthouse, eat at a restaurant, or play golf as a day visitor. Both plantations welcome non-guest visitors; the pass is the only hurdle.",
+        },
+        {
+          q: 'Which has better beaches, Sea Pines or Palmetto Dunes?',
+          a: "Palmetto Dunes has a 3-mile continuous stretch of oceanfront with a denser villa layout, meaning most villas are a 2-10 minute walk to sand. Sea Pines has 5 miles of beach but the villas are spread over a larger footprint, so walk times vary more (2-15 minutes). Beach quality itself is similar.",
+        },
+        {
+          q: 'Is Sea Pines worth the extra money over Palmetto Dunes?',
+          a: "For specific trips, yes. For a Harbour Town golf trip, a first-time visit, or a couples\u2019 weekend focused on dining, Sea Pines justifies the 10-15% premium. For a family summer week, you're not gaining enough over Palmetto Dunes to justify the gap. Pick by trip type, not by price point.",
+        },
+        {
+          q: 'Which has better restaurants, Sea Pines or Palmetto Dunes?',
+          a: "Sea Pines, inside the gate. Harbour Town has 3-4 legitimately good options (Quarterdeck, Links, Topside). South Beach Marina has 2 more. Palmetto Dunes has the Omni dining rooms and one or two bar-restaurants but you'll drive to Shelter Cove or outside the gate for a real dinner scene.",
+        },
+        {
+          q: 'Can I bike between Sea Pines and Palmetto Dunes?',
+          a: "Yes. Both plantations connect to the Hilton Head bike path network. A bike ride from a Palmetto Dunes villa to Harbour Town runs 25-35 minutes and is mostly on dedicated paths. This is one of the better day rides on the island.",
+        },
+        {
+          q: 'Which is quieter, Sea Pines or Palmetto Dunes?',
+          a: "Sea Pines, in most weeks. Palmetto Dunes\u2019 family programming and tennis camps generate more energy in peak season. Outside Heritage week (April 13-19, 2026), Sea Pines is noticeably quieter, especially in the South Beach and Heritage Villa pockets.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Not sure? We can match you',
+    },
+    {
+      kind: 'p',
+      html: "The Sea Pines vs Palmetto Dunes question is the most common planning-call opener we get. If you want us to match your trip to the right gate, the <a href=\"/itinerary\">$450 itinerary service</a> includes the neighborhood pick and villa short-list. For lodging-specific guidance, see the <a href=\"/blog/2026-best-places-to-stay-hilton-head\">2026 best places to stay</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -2635,6 +3465,10 @@ export const posts: Post[] = [
   postRbcHeritage,
   postWithKids,
   postBestBeaches,
+  post3DayItinerary,
+  post7DayItinerary,
+  postHHvsMyrtleBeach,
+  postSeaPinesVsPalmettoDunes,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
