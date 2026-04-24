@@ -4239,6 +4239,662 @@ const postWinterGuide: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 20) ACTIVITIES. Hilton Head fishing guide
+// ---------------------------------------------------------------------------
+
+const postFishingGuide: Post = {
+  slug: 'hilton-head-fishing-guide',
+  title: 'Hilton Head Fishing Guide: Inshore, Offshore & Charters in 2026',
+  excerpt:
+    'Bull redfish in October, mahi offshore in July, sharks all summer. A local breakdown of what to fish, when, how to book a charter, and what it costs.',
+  description:
+    'The complete guide to fishing on Hilton Head Island: inshore redfish and trout, offshore mahi and tuna, shark fishing season, best charter operators, prices, and tips from people who live here.',
+  category: 'Activities',
+  readTime: '10 min',
+  publishedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 20,
+  relatedNeighborhoods: ['shelter-cove'],
+  keywords: [
+    'hilton head fishing',
+    'hilton head fishing charters',
+    'inshore fishing hilton head',
+    'hilton head shark fishing',
+    'offshore fishing hilton head island',
+    'best time to fish hilton head',
+    'hilton head fishing guide 2026',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Hilton Head sits at the intersection of three distinct fisheries: the shallow tidal creeks and estuaries of Broad Creek and the May River, the nearshore Atlantic waters out to the Gulf Stream continental shelf, and Port Royal Sound — one of the deepest natural harbors on the East Coast. That combination means you can be sight-casting for redfish in four inches of water at 7am and trolling for mahi in 80-foot blue water by noon. Fishing here is not a side activity. It's a reason to come.",
+    },
+    {
+      kind: 'callout',
+      label: 'Quick reference',
+      html: '<strong>Inshore best months:</strong> September–November (bull reds), April–June (flounder). <strong>Offshore best months:</strong> June–September (mahi, wahoo, tuna). <strong>Shark season:</strong> May–September. <strong>No license required</strong> if you book a licensed charter.',
+    },
+    {
+      kind: 'h2',
+      text: 'Inshore fishing: the backwater season',
+    },
+    {
+      kind: 'p',
+      html: "Inshore fishing on Hilton Head targets the shallow estuaries around Broad Creek, Calibogue Sound, Port Royal Sound, and the May River in Bluffton. The primary inshore species — redfish, flounder, spotted seatrout, sheepshead, and black drum — live in these waters year-round, but the seasons matter.",
+    },
+    {
+      kind: 'table',
+      caption: 'Inshore species calendar (Hilton Head Island)',
+      headers: ['Species', 'Peak Season', 'Where', 'Method'],
+      rows: [
+        ['Redfish (Red Drum)', 'Sep–Nov (bull reds), Apr–Jun (slot fish)', 'Broad Creek flats, oyster bars', 'Topwater, live shrimp, DOA Shrimp lure'],
+        ['Flounder', 'Apr–Jun, Sep–Oct', 'Creek mouths, dock pilings', 'Bucktail jigs, live mud minnows'],
+        ['Spotted Seatrout', 'Spring and fall', 'Grass flats, Calibogue Sound', 'Popping cork with live shrimp'],
+        ['Sheepshead', 'Dec–Mar', 'Dock pilings, jetties', 'Fiddler crabs on light tackle'],
+        ['Black Drum', 'Mar–May', 'Oyster beds', 'Cut shrimp on bottom'],
+        ['Tarpon (catch-and-release)', 'Jul–Sep', 'Port Royal Sound', 'Live mullet, fly fishing'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: 'October is the standout month. Bull redfish — fish that have been growing all summer in the creeks — move onto the flats in schools. A sight-fishing guide working the grass edges in October can put you on 20+ fish in a half-day. <strong>If you fish one month on Hilton Head, fish October.</strong>',
+    },
+    {
+      kind: 'h2',
+      text: 'Offshore fishing: Gulf Stream access',
+    },
+    {
+      kind: 'p',
+      html: "Hilton Head sits about 40 miles from the Gulf Stream, which makes offshore trips practical but not short — plan on a 1.5-hour run each way on a 35-foot center console. The offshore fishery peaks June through September when warm blue water pushes northwest and mahi, wahoo, and yellowfin tuna arrive behind floating weed lines.",
+    },
+    {
+      kind: 'table',
+      caption: 'Offshore species calendar',
+      headers: ['Species', 'Peak Season', 'Depth/Location', 'Method'],
+      rows: [
+        ['Mahi-Mahi', 'Jun–Sep', 'Gulf Stream, 60–120 ft, weed lines', 'Trolling, live bait'],
+        ['Wahoo', 'Jul–Sep', 'Gulf Stream, deep water', 'High-speed trolling'],
+        ['Yellowfin Tuna', 'Jul–Oct', 'Gulf Stream, 80–150 ft', 'Chunking, trolling'],
+        ['King Mackerel', 'May–Oct', 'Nearshore, 20–40 ft', 'Live bait, trolling'],
+        ['Red Snapper', 'Jun–Aug (open season)', 'Betsy Ross Reef (~18 mi offshore)', 'Bottom fishing, circle hooks'],
+        ['Black Sea Bass', 'Year-round', 'Any reef structure', 'Bottom fishing'],
+        ['Barracuda', 'May–Oct', 'Nearshore reefs', 'Trolling, casting lures'],
+      ],
+    },
+    {
+      kind: 'callout',
+      html: '<strong>Betsy Ross Reef</strong> is the largest artificial reef in South Carolina, positioned about 18 miles southeast of Hilton Head. It holds concentrations of red snapper, black sea bass, grouper, and amberjack. A nearshore bottom-fishing trip to the reef is a strong option for groups who want fish-on-rod action without a Gulf Stream run.',
+    },
+    {
+      kind: 'h2',
+      text: 'Shark fishing: the sleeper hit',
+    },
+    {
+      kind: 'p',
+      html: "Shark fishing gets undersold on Hilton Head, which is a shame because it's one of the most accessible big-game experiences in the Southeast. Fifteen to twenty species arrive in the nearshore waters in May, and charter trips running 2–3 hours out of Shelter Cove routinely hook blacktip, bull, lemon, hammerhead, and tiger sharks. No offshore run required — most shark action happens 3–15 miles out.",
+    },
+    {
+      kind: 'p',
+      html: "Expect sharks in the 4–8 foot range on most trips; the occasional bull or tiger pushes past 10 feet. All sharks are catch-and-release. The <strong>best window is June through August</strong>, with action tapering in September as water temperatures cool.",
+    },
+    {
+      kind: 'h2',
+      text: 'Charter fishing: what to book and what to pay',
+    },
+    {
+      kind: 'p',
+      html: "Most charters operate out of <strong>Shelter Cove Harbour & Marina</strong> (mid-island, off US-278) or <strong>Broad Creek Marina</strong> on the south end. Shelter Cove is the better logistical base — central, easy parking, restaurants for post-trip lunch. For offshore trips, Palmetto Bay Marina also has full-day offshore boats.",
+    },
+    {
+      kind: 'table',
+      caption: 'Charter fishing price guide (Hilton Head Island, 2026 estimates)',
+      headers: ['Trip Type', 'Duration', 'Price Range (whole boat)', 'Best For'],
+      rows: [
+        ['Inshore (backwater)', '2–3 hours', '$275–$350', 'Families, first-timers, kids under 10'],
+        ['Inshore (extended)', '4 hours', '$375–$450', 'Serious inshore anglers'],
+        ['Nearshore reef', '4–5 hours', '$500–$650', 'Mixed groups, bottomfish focus'],
+        ['Shark fishing', '3–4 hours', '$500–$700', 'Groups seeking big-game action'],
+        ['Offshore full day', '8–10 hours', '$1,200–$1,800', 'Mahi/tuna/wahoo pursuit'],
+        ['Fly fishing (inshore)', '4 hours', '$450–$600', 'Fly anglers targeting redfish/tarpon'],
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Top charter operators',
+      subtitle: 'Our honest read on the options.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Shelter Cove-based inshore guides',
+          meta: 'Inshore / nearshore',
+          blurb: 'The best inshore guides on the island operate out of Shelter Cove. Book through the marina directly or ask us — we vet the captains and know which ones work well with kids and beginners vs. serious anglers who want to sight-fish.',
+        },
+        {
+          name: 'Off the Hook Fishing Charters',
+          meta: 'Nearshore / shark',
+          blurb: 'Solid reputation for nearshore reef trips and shark fishing. Boats run out of Broad Creek. Captains are knowledgeable and patient with non-anglers.',
+        },
+        {
+          name: 'Offshore full-day boats',
+          meta: 'Offshore / Gulf Stream',
+          blurb: 'For Gulf Stream offshore trips, you want a purpose-built offshore boat (35+ feet) with twin engines. Booking these 3–4 weeks ahead in summer is smart — the best captains fill up fast. We handle this as part of our concierge service.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Fishing without a charter',
+    },
+    {
+      kind: 'p',
+      html: "If you want to fish independently, South Carolina requires a recreational saltwater fishing license for anyone 16 and older fishing from shore or a private vessel. A 14-day non-resident license runs about $11. You do <em>not</em> need a license if you're on a licensed charter boat.",
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Fishing piers:</strong> The public fishing pier at Folly Field Beach Park is free and stocked with spots for mullet, speckled trout, and flounder.',
+        '<strong>Kayak fishing:</strong> Renting a kayak and paddling Broad Creek at low tide is a legitimate inshore fishing option — redfish and flounder concentrate around the oyster bars on the edges.',
+        '<strong>Shore fishing:</strong> The beach near the jetties at the north end of the island (near Port Royal Plantation) is a known spot for bluefish and whiting runs in fall.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What to bring on a charter',
+    },
+    {
+      kind: 'ul',
+      items: [
+        'Polarized sunglasses — essential for sight-fishing and spotting fish on the flats',
+        'Sunscreen (reef-safe preferred — the Lowcountry takes its estuaries seriously)',
+        'Motion sickness medication if going offshore (take 30 min before departure)',
+        'A cooler and ice if you want to keep fish — most inshore charters assume catch-and-release unless discussed upfront',
+        'Layers in spring/fall — it is cold on the water at 6am even in May',
+      ],
+    },
+    {
+      kind: 'faq',
+      label: 'Fishing FAQ',
+      items: [
+        {
+          q: 'Do I need a fishing license on a charter?',
+          a: "No. When you book a licensed charter captain, their vessel license covers all anglers on board. You need your own license only if fishing from shore, a kayak, or a private boat.",
+        },
+        {
+          q: 'Can kids fish on Hilton Head?',
+          a: "Yes — a 2-hour inshore trip out of Shelter Cove is one of the best family activities on the island. Kids under 10 love it. The fish are active, the boats are stable, and the captain handles the bait. Ask specifically for a 'family-friendly' or 'beginner' inshore captain when booking.",
+        },
+        {
+          q: 'What is the best month to fish Hilton Head?',
+          a: "October for inshore (bull redfish on the flats). July for offshore (peak mahi and wahoo season). May or September for a solid all-around trip that includes both inshore and nearshore options.",
+        },
+        {
+          q: 'Can I keep what I catch?',
+          a: "For inshore fishing, keeping redfish (within slot limits), flounder (during open season), and other species is allowed per SC regulations. Offshore, you can keep mahi, king mackerel, and reef fish within bag limits. Sharks and tarpon are catch-and-release. Ask your captain — they know the current season rules.",
+        },
+        {
+          q: 'How far in advance should I book?',
+          a: "Summer (June–August): 2–4 weeks ahead, especially for weekend dates. Fall inshore season (September–November): 1–2 weeks is usually fine. Offshore full-day trips in prime season should be booked a month out. We can handle charter booking as part of our concierge service.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Book it as part of your trip plan',
+    },
+    {
+      kind: 'p',
+      html: "Fishing charters are one of the items we handle most often for clients — finding the right captain for your group's skill level, coordinating timing with other activities, and making sure you're fishing the right species window for your travel dates. If you want us to build a trip around a fishing day (or two), the <a href=\"/itinerary\">itinerary service</a> is the right place to start.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 21) ACTIVITIES. Dog-friendly Hilton Head guide
+// ---------------------------------------------------------------------------
+
+const postDogFriendly: Post = {
+  slug: 'hilton-head-dog-friendly-guide',
+  title: 'Dog-Friendly Hilton Head: The Complete Guide for 2026',
+  excerpt:
+    'Yes, you can bring your dog — but the rules vary by season and most visitors get them wrong. Here\'s the honest guide: beach hours, dog parks, pet-friendly villas, and where to eat with your dog.',
+  description:
+    'Everything you need to know about bringing your dog to Hilton Head Island: seasonal beach rules, off-leash parks, pet-friendly restaurants and villas, and tips from people who live here year-round.',
+  category: 'Activities',
+  readTime: '8 min',
+  publishedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 21,
+  relatedNeighborhoods: ['forest-beach', 'sea-pines', 'shelter-cove'],
+  keywords: [
+    'hilton head dog friendly',
+    'dogs on hilton head beach',
+    'hilton head pet friendly rentals',
+    'hilton head dog park',
+    'can I bring my dog to hilton head beach',
+    'pet friendly hilton head island',
+    'dog friendly hilton head vacation',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Hilton Head is genuinely dog-friendly — more so than most beach destinations in the Southeast. But the beach rules are seasonal and specific, and getting them wrong means watching a beach patrol officer politely ask you to leave at 9am on a July morning. Here's everything you need to know before you arrive.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>October 1 – March 31:</strong> Dogs allowed on the beach anytime, on leash or under voice control. <strong>April 1 – Friday before Memorial Day:</strong> Dogs allowed 10am–5pm on leash. <strong>Memorial Day weekend – September 30:</strong> Dogs NOT allowed on the beach between 10am and 5pm — you can go early morning or evening. These are town ordinances, enforced.",
+    },
+    {
+      kind: 'h2',
+      text: 'Beach rules by season',
+    },
+    {
+      kind: 'p',
+      html: "Hilton Head Island's beach rules are set by the Town of Hilton Head Island, and they actually make sense once you understand the reasoning: the summer restriction protects both nesting shorebirds and beachgoers during peak hours.",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head dog beach rules (Town ordinance)',
+      headers: ['Season', 'Dates', 'Dogs Allowed?', 'Hours', 'Leash Rule'],
+      rows: [
+        ['Winter / shoulder', 'Oct 1 – Mar 31', 'Yes', 'Anytime', 'On leash or voice control'],
+        ['Spring', 'Apr 1 – Fri before Memorial Day', 'Yes', '10am – 5pm on leash only', 'Leash required'],
+        ['Summer', 'Memorial Day – Sep 30', 'Restricted', 'Before 10am and after 5pm only', 'Leash required'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "The summer restriction is the one that catches people. If you're traveling in July or August with your dog, plan your beach time for <strong>the early morning</strong> — first light to 9:30am is genuinely one of the best times to be on the beach anyway, before the crowd and the heat. Then pick up and head to a dog park or shaded trail for midday.",
+    },
+    {
+      kind: 'h2',
+      text: 'Dog parks and off-leash areas',
+    },
+    {
+      kind: 'p',
+      html: "Hilton Head has several excellent options for off-leash exercise and shaded trail time — important during summer.",
+    },
+    {
+      kind: 'tier',
+      label: 'Dog parks and trail access',
+      subtitle: "Ranked by off-leash freedom and how much your dog will actually love it.",
+      accent: 'primary',
+      items: [
+        {
+          name: 'Chaplin Community Park Dog Park',
+          meta: 'Off-leash, fenced',
+          blurb: "The island's dedicated off-leash dog park. Fully fenced with double-gate entry. Located just off William Hilton Parkway between Singleton Beach Road and Burke's Beach Road. Separate sections for large and small dogs. Free.",
+        },
+        {
+          name: 'Sea Pines Forest Preserve',
+          meta: 'On-leash trails, forested',
+          blurb: "Four miles of shaded trails through a 605-acre maritime forest. Dogs must be on leash, but the shade and wildlife make this one of the best dog walks on the island — great for a midday outing when the beach is restricted. Small vehicle entrance fee for non-Sea-Pines guests.",
+        },
+        {
+          name: 'Shelter Cove Community Park',
+          meta: 'On-leash, waterfront',
+          blurb: 'A waterfront park at Shelter Cove Harbour with paved paths and green space. Dogs on leash welcome. Good post-dinner walk with your dog while the rest of your group grabs ice cream at the marina.',
+        },
+        {
+          name: 'Pinckney Island National Wildlife Refuge',
+          meta: 'On-leash, free, excellent wildlife',
+          blurb: 'Just across the bridge from Hilton Head (before you get to the island). Five miles of trails through salt marsh, ponds, and maritime forest. Dogs on leash allowed. One of the genuinely great dog hikes in the Lowcountry. Free, no facilities.',
+        },
+        {
+          name: 'Jarvis Creek Park',
+          meta: 'On-leash, kayak launch',
+          blurb: 'A mid-island park with a boat ramp, picnic area, and walking path along Jarvis Creek. Good for a quick leg-stretch with your dog. Free.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Pet-friendly villas and accommodation',
+    },
+    {
+      kind: 'p',
+      html: "Most vacation villas on Hilton Head allow pets, but the policies — and the pet fees — vary significantly by property. Here's what to know before you book.",
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Pet fees are almost universal:</strong> Expect a non-refundable pet fee of $75–$200, or a refundable pet deposit of $150–$500. Ask upfront — some properties charge both.',
+        '<strong>Weight limits are common:</strong> Many properties cap at 25–50 lbs per dog. If your dog is larger, filter explicitly or call the rental company to confirm.',
+        '<strong>Fenced yards are rare but findable:</strong> If a fenced yard is important, filter for it specifically or contact us — we know which villa buildings have enclosed patios and ground-floor units with yard access.',
+        '<strong>Best neighborhoods for dogs:</strong> Forest Beach and Shelter Cove tend to have the most dog-friendly rental inventory. Forest Beach is flat, walkable to Coligny Beach, and has easy pavement for morning walks. Sea Pines has the Forest Preserve access.',
+        '<strong>Ask about the dog gate situation:</strong> Many villas have interior staircases or open floor plans — a dog gate matters if you have a senior dog or a puppy.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Dog-friendly restaurants and bars',
+    },
+    {
+      kind: 'p',
+      html: "The outdoor patio scene on Hilton Head is genuinely dog-welcoming at several spots. These are the ones where your dog will actually be comfortable and welcomed, not just technically tolerated.",
+    },
+    {
+      kind: 'tier',
+      label: 'Pet-friendly patios worth visiting',
+      subtitle: 'Outdoor dining where dogs are genuinely welcome.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'The Salty Dog Cafe',
+          meta: 'South Beach Marina, Sea Pines',
+          blurb: "Hilton Head's most iconic outdoor dining spot has a large dog-friendly patio and an actual dog-themed culture (the cartoon mascot is a Lab). The area around South Beach Marina is dog-friendly in general — a good evening destination.",
+        },
+        {
+          name: 'Hudson\'s Seafood House on the Docks',
+          meta: 'Shelter Cove area',
+          blurb: 'Outdoor waterfront deck with a relaxed atmosphere. Dogs welcome on the patio. Good for casual seafood dinner without feeling like you\'re inconveniencing anyone.',
+        },
+        {
+          name: 'Coligny Plaza outdoor spots',
+          meta: 'Forest Beach / Coligny area',
+          blurb: 'Several casual restaurants and bars around Coligny Plaza have outdoor seating where dogs are welcome. Good for the after-beach lunch crowd. Ask at each spot — some outdoor sections are technically covered patios with open sides.',
+        },
+        {
+          name: 'Harbour Town waterfront',
+          meta: 'Sea Pines',
+          blurb: 'The walkable marina area at Harbour Town has multiple options with outdoor seating. Dog-friendly in the open-air walkway sense. Check with individual spots for formal pet policies.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Veterinary and emergency services',
+    },
+    {
+      kind: 'p',
+      html: "If something happens to your dog while you're on the island, here's what to know:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Hilton Head Island Veterinary Clinic</strong> on William Hilton Parkway handles routine and urgent care during business hours.',
+        '<strong>Bluffton Animal Medical Center</strong> (15 min away in Bluffton) is a solid backup option.',
+        '<strong>Nearest 24/7 emergency vet:</strong> VCA Coastal Animal Hospital in Savannah, GA (~45 min). For after-hours emergencies, this is where you go.',
+        "If your dog eats something on the beach — check for <strong>blue-green algae warnings</strong> (rare but present in some lagoons in summer). Don't let your dog drink from standing water in the lagoon system.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What to pack for your dog',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Fresh water and a portable bowl</strong> — always, especially in summer when pavement gets hot and shade is limited between spots',
+        '<strong>Dog booties or paw wax</strong> — optional but genuinely useful in July/August when asphalt reaches 120°F in direct sun',
+        '<strong>Leash (multiple)</strong> — 6-foot for trails and parks, a longer training lead for open beach time in winter',
+        '<strong>Poop bags (more than you think)</strong> — all public spaces require cleanup; beach patrols issue fines',
+        '<strong>A printed copy of beach hour rules</strong> — saves the awkward Google scramble when you\'re standing at the beach access with a ranger nearby',
+        '<strong>Your vet\'s contact info and your dog\'s vaccination records</strong> — some pet-friendly rentals ask for proof of rabies vaccination',
+      ],
+    },
+    {
+      kind: 'faq',
+      label: 'Dog-friendly Hilton Head FAQ',
+      items: [
+        {
+          q: 'Can my dog go on Hilton Head Beach in summer?',
+          a: "Yes, but only before 10am and after 5pm from Memorial Day through September 30. During those restricted hours, dogs must still be on leash. The early morning beach — usually 6:30–9am — is one of the most beautiful times to be there anyway.",
+        },
+        {
+          q: 'Are there dog-friendly beaches in the area with no restrictions?',
+          a: "Hilton Head has the best overall dog experience of any Lowcountry beach. Nearby Hunting Island State Park (about 45 min north) allows leashed dogs on its beach year-round with no time restrictions. Worth a day trip if you want a full beach day in summer.",
+        },
+        {
+          q: 'Do vacation rentals allow dogs?',
+          a: "Most do, with a pet fee. Filter specifically for pet-friendly listings on VRBO or Airbnb, or let us find you a villa — we know which buildings have the best setups for dogs (ground-floor access, enclosed patios, easy beach walk).",
+        },
+        {
+          q: 'Is the Sea Pines Forest Preserve dog-friendly?',
+          a: "Yes — dogs on leash are welcome on the trails. There's a small vehicle entry fee if you're not staying within Sea Pines. It's one of the best midday dog activities when the beach is restricted.",
+        },
+        {
+          q: 'What is the Hilton Head leash law?',
+          a: "Dogs must be on a leash on all public beaches and in all public parks and common areas. The exception is the Chaplin Community Park off-leash enclosure. Voice control is technically allowed on the beach October–March but leash is still safer near crowds.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Finding a dog-friendly villa',
+    },
+    {
+      kind: 'p',
+      html: "Finding the right pet-friendly villa — ground-floor access, walkable to the beach, fenced outdoor space — takes more than a VRBO filter. If you want us to shortlist options for your dog's size, travel dates, and neighborhood preference, the <a href=\"/itinerary\">itinerary service</a> covers villa matching as part of the full planning package.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 22) PLANNING. Hilton Head weekend getaway — drive market
+// ---------------------------------------------------------------------------
+
+const postWeekendGetaway: Post = {
+  slug: 'hilton-head-weekend-getaway',
+  title: 'The Perfect Hilton Head Weekend Getaway: Charlotte, Atlanta & Savannah',
+  excerpt:
+    'Four hours from Charlotte, four hours from Atlanta, 45 minutes from Savannah. Here\'s the exact route, a 2-night and 3-night itinerary, and what to do with the time you have.',
+  description:
+    'Planning a weekend trip to Hilton Head from Charlotte, Atlanta, or Savannah? Drive times, exact routes, 2-night and 3-night itineraries, where to stay, and what to eat. A local\'s guide for the drive market.',
+  category: 'Planning',
+  readTime: '9 min',
+  publishedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 22,
+  relatedNeighborhoods: ['forest-beach', 'palmetto-dunes'],
+  keywords: [
+    'hilton head weekend getaway',
+    'charlotte to hilton head road trip',
+    'atlanta to hilton head drive',
+    'hilton head 2 day itinerary',
+    'hilton head weekend trip from charlotte',
+    'savannah and hilton head weekend',
+    'hilton head road trip from atlanta',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Hilton Head is one of the most underrated long-weekend destinations on the East Coast — not because it's obscure, but because most people assume it's a week-long trip. It isn't. Charlotte is 4.5 hours away. Atlanta is 4 hours. Savannah is 45 minutes. You can leave Friday at 2pm and have your feet in the sand before dinner. Here's how to do it right.",
+    },
+    {
+      kind: 'callout',
+      label: 'The drive case in one line',
+      html: 'Charlotte: 250 miles via I-26 E → I-95 S → US-278 E. Atlanta: 240 miles via I-75 S → I-16 E → I-95 N → US-278 E. Savannah: 40 miles via US-278 E, straight shot.',
+    },
+    {
+      kind: 'h2',
+      text: 'Getting there: from Charlotte',
+    },
+    {
+      kind: 'p',
+      html: "The Charlotte to Hilton Head drive is one of the most painless coastal routes in the South — almost entirely interstate until the final 15 miles. Realistic drive time: <strong>4 to 4.5 hours without stops</strong>, depending on I-26 traffic through Columbia.",
+    },
+    {
+      kind: 'ol',
+      items: [
+        'Take I-77 S from Charlotte to I-26 E toward Columbia (about 90 minutes)',
+        'Stay on I-26 E through Columbia — this is your halfway point, good for gas and coffee',
+        'Pick up I-95 S at the junction near Santee (about 30 minutes past Columbia)',
+        'Exit onto US-278 E toward Hilton Head Island at Exit 8 — 30 more minutes across Bluffton',
+        '<strong>Stop in Old Town Bluffton</strong> before crossing the bridge — it\'s 10 minutes off route, walkable, and worth a quick stretch',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Getting there: from Atlanta',
+    },
+    {
+      kind: 'p',
+      html: "Atlanta to Hilton Head is about 4 hours on a good traffic day. The route goes south through Macon before cutting east toward Savannah and the coast.",
+    },
+    {
+      kind: 'ol',
+      items: [
+        'Take I-75 S from Atlanta through Macon (about 90 minutes)',
+        'Exit at I-16 E toward Savannah — straight, easy highway for 90 miles',
+        'Pick up I-95 N just outside Savannah — drive 20 miles north',
+        'Take Exit 8 onto US-278 E — Hilton Head Island is 30 minutes east',
+        '<strong>Savannah detour option:</strong> If you leave Atlanta early, drop off the highway in Savannah for 2–3 hours (brunch, River Street walk, Forsyth Park) before finishing the drive. Savannah to Hilton Head is 45 min.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Getting there: from Savannah',
+    },
+    {
+      kind: 'p',
+      html: "Savannah sits 40 miles from Hilton Head via US-278 — an easy 45-minute drive. The Savannah/Hilton Head International Airport (SAV) is the closest major airport to the island, making it a natural feeder for both fly-drive trips and Savannah-combination weekends.",
+    },
+    {
+      kind: 'p',
+      html: "The classic combination: <strong>Friday night in Savannah</strong> (dinner on River Street, ghost tour, stay in the historic district) → <strong>Saturday and Sunday on Hilton Head</strong>. The two places have completely different vibes — Savannah's cobblestones vs. Hilton Head's beach trails — and work well as a pair.",
+    },
+    {
+      kind: 'h2',
+      text: '2-night weekend itinerary',
+    },
+    {
+      kind: 'p',
+      html: "Arriving Friday afternoon, leaving Sunday. This is the most common format — efficient and genuinely satisfying if you pick the right base.",
+    },
+    {
+      kind: 'table',
+      caption: '2-night weekend: Friday PM arrival, Sunday morning departure',
+      headers: ['Time', 'Activity', 'Notes'],
+      rows: [
+        ['Friday 5–6pm', 'Arrive, check in', 'Mid-island location best for 2-night trips — central to everything'],
+        ['Friday 7pm', 'Dinner: casual arrival meal', "Skull Creek Dockside or Charlie's L\'Etoile Verte — nothing fancy, get your bearings"],
+        ['Saturday 8am', 'Morning beach walk or bike ride', 'Rent bikes the night before if possible — shops close early'],
+        ['Saturday 10am', 'Beach setup', 'Choose a beach based on your vibe: Coligny (lively) or Folly Field (quiet)'],
+        ['Saturday 1pm', 'Lunch at a beach bar', 'Reilley\'s Grill & Bar or Coligny beach area options'],
+        ['Saturday 3pm', 'Optional activity', 'Dolphin tour, kayak rental, or golf afternoon if your group plays'],
+        ['Saturday 7pm', 'Dinner', 'Book this in advance — The Boathouse at Harbour Town or One Hot Mama\'s for something memorable'],
+        ['Sunday 8am', 'Early beach walk or Harbour Town coffee', 'Harbour Town has a coffee shop with marina views — excellent before the drive home'],
+        ['Sunday 10am', 'Depart', 'Head out before 10am to avoid Sunday afternoon traffic on I-95/I-26'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: '3-night weekend itinerary',
+    },
+    {
+      kind: 'p',
+      html: "Three nights — Thursday or Friday arrival, Monday morning departure — is the format where Hilton Head really opens up. You have time for golf, a dolphin tour, a nicer dinner, and still have a lazy beach day.",
+    },
+    {
+      kind: 'table',
+      caption: '3-night getaway: Friday arrival, Monday departure',
+      headers: ['Day', 'Morning', 'Afternoon', 'Evening'],
+      rows: [
+        ['Friday', 'Drive — depart by noon if coming from Charlotte/Atlanta', 'Arrive, check in, grocery run to stock villa', 'Casual dinner, early night'],
+        ['Saturday', 'Beach day — full morning', 'Dolphin tour or kayak tour (~2.5 hours, departs early afternoon)', 'Dinner at a waterfront restaurant (make a reservation)'],
+        ['Sunday', 'Golf if applicable — tee time at 8am', 'Harbour Town walk, lighthouse climb, shopping', 'Best dinner of the trip — Hudson\'s or Poseidon'],
+        ['Monday', 'Early morning beach walk (best light of the trip)', 'Depart by 9–10am', '—'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Where to stay for a long weekend',
+    },
+    {
+      kind: 'p',
+      html: "For a 2–3 night weekend trip, villa location matters more than it does on a week-long trip. You want to minimize driving on the island.",
+    },
+    {
+      kind: 'tier',
+      label: 'Best bases for a weekend trip',
+      subtitle: 'Ranked for ease and access on a short stay.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Palmetto Dunes (mid-island)',
+          meta: 'Best all-around weekend base',
+          blurb: 'Central to restaurants, golf, and beach activities. The 11-mile lagoon system is great for morning kayaking. Three championship courses on property. Strong villa inventory across price points.',
+        },
+        {
+          name: 'Forest Beach / Coligny area',
+          meta: 'Best for beach-first weekenders',
+          blurb: "Walking distance to Coligny Beach Park, bike rentals, and half a dozen casual restaurants. Best for groups who want to minimize driving. Not the most scenic setting but wildly practical for a 48-hour beach trip.",
+        },
+        {
+          name: 'Sea Pines (south end)',
+          meta: 'Best for a splurge or golf weekend',
+          blurb: 'Harbour Town is here. The Salty Dog is here. Three golf courses and the Forest Preserve are here. If you want the full Hilton Head experience in two nights and price is secondary, book into Sea Pines.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What to eat in a long weekend',
+    },
+    {
+      kind: 'p',
+      html: "You have roughly five or six meal slots on a long weekend. Here's how to allocate them:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Friday night arrival dinner:</strong> Casual, no reservation needed. Skull Creek Dockside, Reilley\'s, or Fish Camp Bar & Grill.',
+        '<strong>Saturday lunch:</strong> Grab-and-go near the beach. Rock Fish Seafood & Chicken, Big Bamboo Cafe.',
+        "<strong>Saturday dinner:</strong> The one you book in advance. Hudson's Seafood House, Poseidon, or The Boathouse.",
+        "<strong>Sunday morning:</strong> Coffee and pastry at Harbour Town Marina (Brown Dog Deli is right there) before a late checkout.",
+        '<strong>Road-trip fuel (Bluffton stop):</strong> Old Town Bluffton\'s May River Coffee is the best coffee between I-95 and the island — worth a stop.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Weekend trip by season',
+    },
+    {
+      kind: 'table',
+      caption: 'When to go for a Hilton Head weekend',
+      headers: ['Season', 'Months', 'Vibe', 'Crowds', 'Price', 'Verdict'],
+      rows: [
+        ['Spring', 'March–May', 'Warm, green, RBC Heritage buzz in April', 'Building — manageable', 'Lower than summer', 'Best overall weekend window'],
+        ['Summer', 'June–August', 'Hot, full beach scene, families', 'Peak', 'Highest', 'Fun but book 4+ weeks out'],
+        ['Fall', 'September–November', 'Cooler evenings, uncrowded, best fishing', 'Low', 'Drops 30–50% from summer', 'Best value weekend — our recommendation'],
+        ['Winter', 'December–February', 'Quiet, locals-only feel', 'Very low', 'Lowest', 'Great for couples, not for beach swimmers'],
+      ],
+    },
+    {
+      kind: 'faq',
+      label: 'Weekend getaway FAQ',
+      items: [
+        {
+          q: 'Is Hilton Head worth a long weekend (vs. a full week)?',
+          a: "Yes — completely. A 3-night weekend covers the highlights: a beach day, an activity (golf, dolphin tour, kayaking), and two good dinners. What you lose with less time is the slower pace — the afternoon nap on the beach, the second-round-of-golf feeling. If your schedule allows a week, take it. But a 3-night trip is not a compromise.",
+        },
+        {
+          q: 'Can I do Hilton Head without a car?',
+          a: "Not easily for a weekend trip. The island has a seasonal trolley (Breeze Transit) and Uber/Lyft, but coverage is limited. Renting a golf cart on the island is a fun and practical option for getting around within a neighborhood. But to get from the highway to the island, you need a car or a rideshare from Savannah.",
+        },
+        {
+          q: 'Best time to visit Hilton Head for a weekend?',
+          a: "September and October are our strongest recommendation — fall light, warm water (still 78°F in September), no summer crowds, and prices that are 30–50% lower than July. April is a close second: the island is beautiful in spring and the RBC Heritage golf tournament adds an optional bonus activity.",
+        },
+        {
+          q: 'Should I fly into Savannah or Charlotte for a Hilton Head weekend?',
+          a: "Savannah/Hilton Head International (SAV) is the obvious choice — 45 minutes from the island. Charleston (CHS, about 2 hours north) is a solid backup with more flight options. Atlanta (ATL) is 4 hours driving but has the most flights. If you're coming from the Northeast, flying to SAV is usually the most efficient option.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan it properly',
+    },
+    {
+      kind: 'p',
+      html: "A long weekend works best with a little upfront planning — the right villa, one dinner reservation, and one activity booked. If you want us to handle the logistics, the <a href=\"/itinerary\">itinerary service</a> is built for exactly this: 30 minutes on a call, a custom plan for your dates, and everything confirmed before you leave the driveway.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -4263,6 +4919,9 @@ export const posts: Post[] = [
   postGolfCoursesRanked,
   postRomanticRestaurants,
   postWinterGuide,
+  postFishingGuide,
+  postDogFriendly,
+  postWeekendGetaway,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
