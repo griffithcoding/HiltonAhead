@@ -3448,6 +3448,797 @@ const postSeaPinesVsPalmettoDunes: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 17) Hilton Head golf courses ranked
+// ---------------------------------------------------------------------------
+
+const postGolfCoursesRanked: Post = {
+  slug: 'hilton-head-golf-courses-ranked',
+  title: "Hilton Head Golf Courses Ranked: The 2026 Tier List",
+  excerpt:
+    "Twelve championship courses inside twenty minutes. Harbour Town on top, the value picks underneath, the one course you can skip. A local's ranked list.",
+  description:
+    "A local's ranked tier list of every Hilton Head golf course for 2026. Harbour Town, Robert Trent Jones, Arthur Hills, Heron Point, and the stay-and-play math.",
+  category: 'Golf',
+  readTime: '12 min',
+  publishedAt: '2026-04-24',
+  updatedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 3.6,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes'],
+  keywords: [
+    'Hilton Head golf courses',
+    'best golf course Hilton Head',
+    'Harbour Town Golf Links',
+    'Palmetto Dunes golf',
+    'Robert Trent Jones Oceanfront',
+    'Heron Point by Pete Dye',
+    'Atlantic Dunes Davis Love',
+    'stay and play Hilton Head',
+    'Hilton Head golf tee times',
+    'Shipyard Golf Club',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Hilton Head has more championship golf per square mile than anywhere in the US except Pinehurst. Twelve courses inside a twenty-minute radius, four nationally ranked, and one (Harbour Town) that hosts the PGA Tour every April. Most visitors play one or two and leave. The optimized golf trip plays four in five days and picks each for a reason. Here is the ranked list we send to every golf group.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>Must-play:</strong> Harbour Town. <strong>Best ocean-view round:</strong> RTJ Oceanfront at Palmetto Dunes. <strong>Best value S-tier:</strong> Heron Point by Pete Dye. <strong>Best stay-and-play economics:</strong> Atlantic Dunes. <strong>Best Bluffton splurge:</strong> May River at Palmetto Bluff. <strong>The one to skip:</strong> Shipyard's Clipper nine (always rough), covered below.",
+    },
+    {
+      kind: 'h2',
+      text: 'The 2026 Hilton Head golf landscape at a glance',
+    },
+    {
+      kind: 'p',
+      html: "Most Hilton Head golf is resort-play, which means you book through the resort at either the guest rate (cheaper) or the non-guest rate. Stay-and-play packages almost always beat retail green fees; we have priced dozens. Here is the compressed view:",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head + Bluffton: course-by-course snapshot',
+      headers: ['Course', 'Designer', 'Location', 'Peak green fee (retail)', 'Public/resort'],
+      rows: [
+        ['Harbour Town Golf Links', 'Pete Dye', 'Sea Pines', '$400-550', 'Sea Pines resort guests + Heritage'],
+        ['Heron Point by Pete Dye', 'Pete Dye', 'Sea Pines', '$190-250', 'Sea Pines resort guests'],
+        ['Atlantic Dunes by Davis Love III', 'Davis Love III', 'Sea Pines', '$170-230', 'Sea Pines resort guests'],
+        ['Robert Trent Jones Oceanfront', 'Robert Trent Jones', 'Palmetto Dunes', '$195-245', 'Public + Palmetto Dunes guests'],
+        ['Arthur Hills Course', 'Arthur Hills', 'Palmetto Dunes', '$165-210', 'Public + Palmetto Dunes guests'],
+        ['George Fazio Course', 'George Fazio', 'Palmetto Dunes', '$165-210', 'Public + Palmetto Dunes guests'],
+        ['Shipyard Golf Club (27 holes)', 'George Cobb / Willard Byrd', 'Shipyard', '$130-175', 'Public'],
+        ['Port Royal Golf Club (3 courses)', 'Fazio / Cobb / Jones', 'Port Royal', '$135-185', 'Public'],
+        ['Palmetto Hall (2 courses)', 'Arthur Hills / Robert Cupp', 'North island', '$125-165', 'Public'],
+        ['Oyster Reef Golf Course', 'Rees Jones', 'North island', '$120-160', 'Public'],
+        ['May River Golf Club', 'Jack Nicklaus', 'Palmetto Bluff, Bluffton', '$275-350', 'Montage Palmetto Bluff guests'],
+        ['Old South Golf Links', 'Clyde Johnston', 'Bluffton', '$90-140', 'Public'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Stay-and-play pricing beats retail by 20-40% on every course above. Book through the resort (Sea Pines, Palmetto Dunes, Montage) and pair green fees with lodging for the best math. For Harbour Town specifically, there is no public-play equivalent; you need to be inside the gate.",
+    },
+    {
+      kind: 'tier',
+      label: 'S-Tier',
+      subtitle: 'Courses worth building a trip around.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Harbour Town Golf Links (Sea Pines)',
+          meta: 'Pete Dye \u00b7 Par 71 \u00b7 6,973 yards \u00b7 Sea Pines resort priority',
+          blurb:
+            "The best single course in the Southeast and the crown jewel of Hilton Head golf. Host of the RBC Heritage every April. Famous for the 18th hole with the red-and-white lighthouse framing the green. Tight fairways, small greens, and a finishing stretch that rewards shot-shaping. Stay-and-play through Sea Pines Resort is the only reliable way to book; 120-day priority window for resort guests.",
+        },
+        {
+          name: 'Robert Trent Jones Oceanfront (Palmetto Dunes)',
+          meta: 'Robert Trent Jones \u00b7 Par 72 \u00b7 7,004 yards \u00b7 Public',
+          blurb:
+            "The 10th hole plays directly along the Atlantic, making RTJ the only course on Hilton Head with an oceanfront golf shot. Ranked top-50 resort course by Golfweek. Recently re-bunkered and greens regrassed. Best time to play: early morning for the ocean breeze and light. Pair with Arthur Hills and Fazio on a 3-day Palmetto Dunes package.",
+        },
+        {
+          name: 'May River at Palmetto Bluff (Bluffton)',
+          meta: 'Jack Nicklaus \u00b7 Par 72 \u00b7 7,174 yards \u00b7 Montage guests',
+          blurb:
+            "Technically off-island (20 min in Bluffton) but worth the drive. Nicklaus design threading live oaks and marsh. The service level at Montage Palmetto Bluff is unmatched in the region. A round here plus one night at the Montage plus dinner at the May River Grill is the S-tier Lowcountry golf experience. $275-350 green fees.",
+        },
+        {
+          name: 'Heron Point by Pete Dye (Sea Pines)',
+          meta: 'Pete Dye \u00b7 Par 71 \u00b7 7,035 yards \u00b7 Sea Pines guests',
+          blurb:
+            "Sea Pines' second Dye course, renovated in 2007. Wider fairways than Harbour Town, slightly more forgiving, still Pete Dye-strategic. The best-value S-tier round on the island at $190-250. Most golf groups actually prefer this to Harbour Town for day-to-day play; Harbour Town is ceremony, Heron Point is golf.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'A-Tier',
+      subtitle: 'Strong rounds any day.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Atlantic Dunes by Davis Love III (Sea Pines)',
+          meta: 'Davis Love III \u00b7 Par 72 \u00b7 7,010 yards \u00b7 Sea Pines guests',
+          blurb:
+            "The newest Sea Pines course (renovated 2016 from the old Ocean Course by Davis Love's firm). Links-style feel, exposed dunes, challenging winds. Reasonable difficulty for mid-handicappers. Best call when Heron Point is booked. $170-230 retail.",
+        },
+        {
+          name: 'Arthur Hills Course (Palmetto Dunes)',
+          meta: 'Arthur Hills \u00b7 Par 72 \u00b7 6,651 yards \u00b7 Public',
+          blurb:
+            "The most forgiving of the three Palmetto Dunes courses. Lagoon-laced layout with generous landing areas. Best for mid to high handicappers or the first round of a trip when you want to warm up. Pairs well with the tougher RTJ on Day 2.",
+        },
+        {
+          name: 'George Fazio Course (Palmetto Dunes)',
+          meta: 'George Fazio \u00b7 Par 70 \u00b7 6,873 yards \u00b7 Public',
+          blurb:
+            "Tighter than Arthur Hills, with only two par-5s (rare). Rewards accuracy over distance. Often overlooked by visitors who assume \u201CFazio\u201D means Tom Fazio (it doesn't; George was Tom's uncle). A legitimately good test; lower green fees than the bigger names.",
+        },
+        {
+          name: 'Port Royal Golf Club (3 courses)',
+          meta: 'Robert Trent Jones / George Cobb / Pete Dye \u00b7 Public',
+          blurb:
+            "Three 18-hole tracks in one location. Planters Row (RTJ) is the strongest; Robbers Row (Cobb) the most historic. Good choice when Sea Pines and Palmetto Dunes are booked or when you want variety at a lower price point. Worth it in the mid-March to mid-May sweet spot.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'B-Tier',
+      subtitle: 'Fine when the calendar is tight.',
+      accent: 'zinc',
+      items: [
+        {
+          name: 'Palmetto Hall Plantation',
+          meta: 'Arthur Hills / Robert Cupp \u00b7 Public \u00b7 North island',
+          blurb:
+            "Two solid courses 25 minutes north of the action. Lower green fees ($125-165), less crowded on weekdays. Good value if you're staying on the north end or if the main-island courses are booked. Otherwise, the drive is an additional tax.",
+        },
+        {
+          name: 'Oyster Reef Golf Course',
+          meta: 'Rees Jones \u00b7 Public \u00b7 North island',
+          blurb:
+            "A Rees Jones design (Robert Trent Jones' son) with a legitimate par-3 over salt marsh. Not destination-worthy on its own, but a respectable value round. Best for a group that wants more golf than Sea Pines and Palmetto Dunes can provide in a 5-day trip.",
+        },
+        {
+          name: 'Shipyard Golf Club (27 holes)',
+          meta: 'George Cobb / Willard Byrd \u00b7 Public \u00b7 Mid-island',
+          blurb:
+            "Three nines (Brigantine, Clipper, Galleon) combined into 18-hole rotations. Brigantine plus Galleon is the good round. Clipper is always the weakest nine; skip it if the tee sheet lets you. Decent value ($130-175) and convenient mid-island location.",
+        },
+        {
+          name: 'Old South Golf Links (Bluffton)',
+          meta: 'Clyde Johnston \u00b7 Public \u00b7 20 min off-island',
+          blurb:
+            "The best budget round in the region ($90-140). Clyde Johnston layout on a former rice plantation. Not a championship test but genuinely enjoyable for a mid-trip afternoon round when the S-tier courses have priced you out.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Tee-time booking priority, by course',
+    },
+    {
+      kind: 'p',
+      html: "The single biggest mistake on a Hilton Head golf trip is assuming you can book Harbour Town walk-up or 30 days out. You cannot. Here is how each course's tee sheet actually opens:",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head golf: when each course opens its tee sheet',
+      headers: ['Course', 'Resort-guest priority', 'Public booking', 'Booking reality (peak)'],
+      rows: [
+        ['Harbour Town Golf Links', '120 days (Sea Pines Resort only)', '30 days (rare cancellations)', 'Book Sea Pines lodging 4+ months out'],
+        ['Heron Point / Atlantic Dunes', '90 days (Sea Pines Resort)', '30 days', 'Good availability inside 45 days'],
+        ['RTJ Oceanfront / Arthur Hills / Fazio', '60 days (Palmetto Dunes stay)', '30 days (all 3 open)', 'Tee times inside 2 weeks are feasible'],
+        ['Shipyard / Port Royal / Palmetto Hall', 'No resort priority', '60 days open to public', 'Walk-up Monday-Thursday often works'],
+        ['May River (Montage)', '90 days (Montage stay only)', 'Not public', 'Stay at Montage or skip'],
+        ['Old South / Oyster Reef', 'No priority tier', '60 days open', 'Easy to book inside 1 week'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Stay-and-play math, honestly',
+    },
+    {
+      kind: 'p',
+      html: "Retail green fees plus separate lodging is almost always worse economics than a stay-and-play package. A three-round Sea Pines stay-and-play (Harbour Town + Heron Point + Atlantic Dunes over 4 nights at the Inn & Club at Harbour Town) runs roughly $299-399/player/night with breakfast, rounds, and villa lodging included. Same three rounds retail plus the same lodging runs $300-450/player/night more. The stay-and-play is simply a better number.",
+    },
+    {
+      kind: 'p',
+      html: "The one exception: if your group is 8+ and you want a standalone villa, direct villa booking plus retail green fees can beat the resort package because the villa economics scale. We run the numbers both ways for every group.",
+    },
+    {
+      kind: 'h2',
+      text: 'A 4-round, 5-day Hilton Head golf trip',
+    },
+    {
+      kind: 'p',
+      html: "The optimized trip most groups ask us for:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Day 1:</strong> Arrive, warm-up round at <strong>Atlantic Dunes</strong>. Casual, get the body moving.",
+        "<strong>Day 2:</strong> <strong>Heron Point</strong> morning. Afternoon range session or bike ride.",
+        "<strong>Day 3:</strong> <strong>Harbour Town Golf Links</strong>. The ceremony round. Book the 10 a.m. tee time, lunch at Quarterdeck after.",
+        "<strong>Day 4:</strong> Recovery day. Beach, pool, and a walk to the lighthouse.",
+        "<strong>Day 5:</strong> <strong>May River at Palmetto Bluff</strong> or <strong>RTJ Oceanfront</strong> as the finale. Different vibe, different designer, strong closing round.",
+      ],
+    },
+    {
+      kind: 'p',
+      html: "For the full trip logistics including lodging, dinner reservations, and non-golf programming, see the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a> and the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages landing page</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head golf courses: frequently asked questions',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'What is the best golf course on Hilton Head?',
+          a: "Harbour Town Golf Links, without serious debate. It's a PGA Tour venue, hosts the RBC Heritage every April, and has the most iconic 18th hole in the Southeast (lighthouse, Calibogue Sound, small green). Heron Point and Robert Trent Jones Oceanfront are the closest seconds; Heron Point for Pete Dye purists, RTJ for the oceanfront shot.",
+        },
+        {
+          q: 'Can the public play Harbour Town Golf Links?',
+          a: "Technically yes, but reliably no. The course prioritizes Sea Pines Resort guests with a 120-day booking window. Public tee times open at 30 days and are almost always full by that point. If you want to play Harbour Town, book a stay-and-play package through Sea Pines Resort 4+ months out. Non-guests who show up looking for a walk-up round nearly always leave disappointed.",
+        },
+        {
+          q: 'How much does a round at Harbour Town cost?',
+          a: "Peak-season green fees run $400-550 for non-guests and $325-450 for Sea Pines Resort guests. Stay-and-play packages effectively net the round to $200-275 per player when bundled with 4+ nights of lodging. Heritage week (April 13-19, 2026) the course is closed to public play.",
+        },
+        {
+          q: 'Is Robert Trent Jones Oceanfront really oceanfront?',
+          a: "The 10th hole plays directly along the Atlantic, with the beach visible from the tee. It's the only actual oceanfront golf hole on Hilton Head. The rest of the course is inland but within 300 yards of the ocean. Call it \u201Coceanfront\u201D in the literal PGA-marketing sense; not every hole is on the water.",
+        },
+        {
+          q: 'How many golf courses are on Hilton Head Island?',
+          a: "Twelve championship-grade courses inside Hilton Head and Bluffton (20 minutes off-island). Counting the three nines at Shipyard and the three courses at Port Royal as one \u201Ccourse\u201D each, the total is 12. Within 30 minutes including Palmetto Bluff and beyond, the count exceeds 20.",
+        },
+        {
+          q: 'When is the best time of year to golf on Hilton Head?',
+          a: "March through May and October through early November. Course conditioning peaks in March after winter overseeding. October delivers dry, 75\u00b0F afternoons with the greens still dense. Summer golf is playable but the humidity and afternoon storms force morning-only play. Winter golf is the budget play: cooler air, slower greens, 30-40% lower green fees. See the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a>.",
+        },
+        {
+          q: 'What is a stay-and-play package on Hilton Head?',
+          a: "Bundled lodging plus green fees plus usually daily breakfast, sold by the major resorts (Sea Pines, Palmetto Dunes, Montage Palmetto Bluff). Prices run $299-399/player/night for S-tier courses and $225-325/player/night for A-tier. These beat retail pricing 20-40% and handle the booking priority simultaneously. See the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages page</a>.",
+        },
+        {
+          q: 'Which Hilton Head course is easiest for a beginner or high-handicapper?',
+          a: "Arthur Hills Course at Palmetto Dunes for a full championship layout with wider fairways and forgiving landing areas. Old South Golf Links in Bluffton at a lower price point. Oyster Reef is also reasonable. Avoid Harbour Town if you're over a 20 handicap; the small greens and demanding approach shots will frustrate you at $450 a round.",
+        },
+        {
+          q: 'Is Shipyard Golf Club worth playing?',
+          a: "Yes on the Brigantine and Galleon nines; the Clipper nine is the weakest 9 holes in the main Hilton Head course rotation and we routinely steer groups away. Shipyard's pricing ($130-175) makes it a fine value round when the bigger names are booked.",
+        },
+        {
+          q: 'How far ahead do I need to book a Hilton Head golf trip?',
+          a: "Harbour Town stays: 9-10 months out for RBC Heritage week, 4-6 months out for March-May peak. Other Sea Pines and Palmetto Dunes packages: 3-4 months out in peak. Non-resort public courses (Shipyard, Port Royal, Palmetto Hall): 2-4 weeks out is fine. For a full trip plan, see the <a href=\"/blog/hilton-head-golf-trip\">golf trip guide</a> or contact us.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan your Hilton Head golf trip',
+    },
+    {
+      kind: 'p',
+      html: "A Hilton Head golf trip lives or dies on the Harbour Town tee time, the stay-and-play structure, and the non-golf nights (S-tier dinners matter). If you want us to handle the whole thing, the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages</a> page is the trip-type planner, and the <a href=\"/itinerary\">$450 itinerary service</a> includes the 4-round schedule plus lodging plus dinner reservations. For the full trip overview, see the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 18) Hilton Head romantic restaurants (honeymoon segment)
+// ---------------------------------------------------------------------------
+
+const postRomanticRestaurants: Post = {
+  slug: 'hilton-head-romantic-restaurants',
+  title: "The Best Hilton Head Restaurants for a Honeymoon, Anniversary, or Proposal",
+  excerpt:
+    "Where to book the big dinner. Romantic restaurants on Hilton Head and in Bluffton, sorted by occasion and booked by a local.",
+  description:
+    "A local's guide to Hilton Head's most romantic restaurants. Michael Anthony's, Red Fish, May River Grill, and the right spot for every occasion.",
+  category: 'Dining',
+  readTime: '10 min',
+  publishedAt: '2026-04-24',
+  updatedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 3.9,
+  relatedNeighborhoods: ['sea-pines', 'shelter-cove'],
+  keywords: [
+    'Hilton Head romantic restaurants',
+    'Hilton Head anniversary dinner',
+    'Hilton Head honeymoon dinner',
+    'where to propose Hilton Head',
+    'Hilton Head date night',
+    'romantic restaurants Hilton Head',
+    'best anniversary restaurant Hilton Head',
+    'Palmetto Bluff wedding proposal',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Romantic dinner logistics are different from family dinner logistics. Different restaurants, different time slots, different reservation windows, and a different answer to \u201Cis this worth the wait?\u201D We plan honeymoons, anniversaries, and proposal dinners every month. Here are the Hilton Head and Bluffton restaurants we actually book for them, sorted by occasion.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>Fine dining, intimate:</strong> Michael Anthony's. <strong>Waterfront with sunset:</strong> Red Fish or Skull Creek Boathouse. <strong>Splurge for the memory:</strong> May River Grill at Montage Palmetto Bluff. <strong>Anniversary in Shelter Cove:</strong> Ela's on the Water. <strong>Proposal-specific:</strong> The 18th-hole deck at Quarterdeck for the pre-dinner drink, then Michael Anthony's for the toast.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head romantic restaurants at a glance',
+    },
+    {
+      kind: 'p',
+      html: "Ten restaurants that work for a big-occasion dinner on Hilton Head or in Bluffton. Price tiers are per-person dinner before tax and tip: $$ = $25-50, $$$ = $50-85, $$$$ = $85+. Reservation lead time is for peak season (summer, Heritage week); off-season lead times are 30-50% shorter.",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head + Bluffton: romantic restaurants by occasion',
+      headers: ['Restaurant', 'Location', 'Occasion fit', 'Price', 'Lead time'],
+      rows: [
+        ["Michael Anthony's", 'Mid-island', 'Anniversary, honeymoon, proposal toast', '$$$$', '3 weeks'],
+        ['Red Fish', 'Pope Avenue', 'Lowcountry romance, anniversary', '$$$', '2-3 weeks'],
+        ['Skull Creek Boathouse', 'Hilton Head Plantation', 'Sunset + water-side', '$$$', '3-4 weeks'],
+        ["Ela's on the Water", 'Shelter Cove', 'Date night, quieter marina', '$$$', '1-2 weeks'],
+        ['May River Grill (Montage)', 'Palmetto Bluff, Bluffton', 'Honeymoon splurge, milestone', '$$$$', '3 weeks (Montage guests priority)'],
+        ['Old Fort Pub', 'Skull Creek', 'Historic, tucked-away romance', '$$$', '2 weeks'],
+        ['FARM Bluffton', 'Old Town Bluffton', 'Serious-dinner destination', '$$$$', '3 weeks (weekend)'],
+        ['Frankie Bones', 'Mid-island', 'Italian, quiet booths', '$$', '1 week'],
+        ["CQ's Restaurant", 'Harbour Town', 'Historic, fireside in winter', '$$$', '2 weeks'],
+        ['Ombra Cucina Italiana', 'Shelter Cove', 'Modern Italian, date night', '$$$', '1-2 weeks'],
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'S-Tier',
+      subtitle: 'The room feels like a special occasion.',
+      accent: 'gold',
+      items: [
+        {
+          name: "Michael Anthony's",
+          meta: 'Mid-island \u00b7 Italian fine dining \u00b7 $$$$',
+          blurb:
+            "The quiet answer for a serious anniversary or honeymoon dinner. Dimly lit, professional service, a wine list with enough depth to actually open a second bottle for a toast. The tasting menu is the move for a milestone. Pair with a reservation for the early seating (5:30-6:00 p.m.) for the proposal window; the room is quieter and servers will accommodate any pre-game.",
+        },
+        {
+          name: 'Red Fish',
+          meta: 'Pope Avenue \u00b7 Refined Lowcountry \u00b7 $$$',
+          blurb:
+            "The in-town pick for Lowcountry romance. Family-run, excellent wine list, and a kitchen that actually cooks the shrimp and grits at a fine-dining level. The corner tables near the wine racks are the quietest in the room; call directly and ask for them. Best paired with a sunset drink at the bar 30 minutes before your reservation.",
+        },
+        {
+          name: 'May River Grill at Montage Palmetto Bluff',
+          meta: 'Palmetto Bluff, Bluffton \u00b7 S-tier service \u00b7 $$$$',
+          blurb:
+            "The single best dining experience in the region for a honeymoon or milestone anniversary. Overlooks the May River, service calibrated at the Montage level, cuisine grounded in Lowcountry tradition but executed at fine-dining precision. Book the outdoor porch in good weather. 20 minutes off-island; worth pairing with a one-night Montage stay.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'A-Tier',
+      subtitle: 'Strong choices with their own specific magic.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Skull Creek Boathouse',
+          meta: 'Hilton Head Plantation \u00b7 Waterfront \u00b7 $$$',
+          blurb:
+            "The single best sunset reservation on the island. Creek-side tables, water for 270 degrees, the marsh lighting up at golden hour. Book the 6:45-7:15 p.m. slot 3-4 weeks out and request \u201Cwater-side\u201D or \u201Cdeck\u201D on the reservation. The catch: the kitchen is not Michael Anthony's-level; you're paying for the view and the vibe, both of which deliver.",
+        },
+        {
+          name: "Ela's on the Water",
+          meta: 'Shelter Cove \u00b7 Marina-side \u00b7 $$$',
+          blurb:
+            "The quieter date-night pick on Hilton Head proper. Marina views, tables spaced for conversation, and a menu that leans coastal without cliche. Valet parks the car; you walk four steps to a water-side table. A good pick for a low-key anniversary night or the second romantic dinner of a trip (the first being something bigger).",
+        },
+        {
+          name: 'Old Fort Pub',
+          meta: 'Skull Creek (historic site) \u00b7 $$$',
+          blurb:
+            "Built on the site of a Revolutionary War fort, with century-old live oaks out the window. Historic ambiance more than modern fine dining; the menu skews traditional. Works for couples who want \u201Cold Lowcountry\u201D atmosphere over current-day precision. Ask for the porch table; it's the best seat on the island on a 70-degree evening.",
+        },
+        {
+          name: 'FARM Bluffton',
+          meta: 'Old Town Bluffton \u00b7 Modern Lowcountry \u00b7 $$$$',
+          blurb:
+            "Not traditionally romantic in a candle-lit sense but it's the best dinner in the region, which makes it the right pick for a big-day celebration. Intimate room, calibrated service, farm-to-table Lowcountry cuisine. Book 3 weeks ahead for weekends; weeknight bar seats are sometimes a walk-in possibility. See the <a href=\"/bluffton-travel-planner\">Bluffton travel planner</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Where to propose on Hilton Head',
+    },
+    {
+      kind: 'p',
+      html: "Three proven spots that we've coordinated for clients. Each pairs naturally with a pre-dinner drink and flows into one of the S-tier restaurants above.",
+    },
+    {
+      kind: 'h3',
+      text: 'The 18th-hole deck at Quarterdeck, Harbour Town',
+    },
+    {
+      kind: 'p',
+      html: "West-facing over Calibogue Sound. Arrive 45 minutes before sunset with a drink, walk to the end of the deck, execute there. Calendar-accurate: in June, sunset is 8:29 p.m.; in October, 6:50 p.m. Pair with dinner at <strong>CQ's Restaurant</strong> (3 min walk) or drive to <strong>Michael Anthony's</strong> (15 min). Photographers know this spot; we connect clients with one if they want.",
+    },
+    {
+      kind: 'h3',
+      text: 'The dune overlook at South Beach (Sea Pines)',
+    },
+    {
+      kind: 'p',
+      html: "Private, quiet, sand dunes, sea oats, nearly always nobody there. Approach from the South Beach Marina boardwalk, walk 200 yards east. Best at sunrise (fewer people, golden light on the water) or sunset (warmer light, more dramatic). Pair with breakfast at Salty Dog Cafe or dinner at Skull Creek.",
+    },
+    {
+      kind: 'h3',
+      text: 'Private sunset sail on Calibogue Sound',
+    },
+    {
+      kind: 'p',
+      html: "Book a private charter out of Palmetto Bay Marina ($500-1,200, 90 minutes). Execute at the quietest moment of the sail, usually when the captain anchors briefly for champagne. Pair with dinner at <strong>Ela's on the Water</strong> 100 yards from the marina or at <strong>Michael Anthony's</strong> (15 min drive). Worth noting: captains are excellent at discreetly coordinating.",
+    },
+    {
+      kind: 'h2',
+      text: 'Timing a romantic dinner reservation',
+    },
+    {
+      kind: 'p',
+      html: "The best reservation windows for big-occasion dinners:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>5:30-6:00 p.m.:</strong> Quietest room, full staff attention, lets you linger without rushing into a 9 p.m. turnover. Our default for proposals.",
+        "<strong>6:45-7:15 p.m.:</strong> The sunset slot. Book this window for water-side restaurants (Skull Creek, Ela's). Arrive 15 min early for the full light transition.",
+        "<strong>8:00-8:30 p.m.:</strong> The fine-dining slot. Slower service, more intimate because it's the last seating. Best for anniversaries where you want a long, unhurried dinner.",
+        "<strong>Avoid Saturday 7:00-8:00 p.m.:</strong> The noisiest hour at every Hilton Head restaurant in peak season. For a quieter room, shift 30 min earlier or later.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head romantic restaurants: FAQ',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'What is the most romantic restaurant on Hilton Head?',
+          a: "Michael Anthony's for fine-dining romance, Red Fish for Lowcountry intimacy, and May River Grill at Montage Palmetto Bluff for the regional splurge. If you want water-side and sunset, Skull Creek Boathouse (book the 6:45-7:15 p.m. slot). All four are reservation-required; none take reliable walk-ups in peak season.",
+        },
+        {
+          q: 'Where should I propose on Hilton Head Island?',
+          a: "Three proven spots: the 18th-hole deck at Quarterdeck (Harbour Town, sunset over Calibogue Sound), the dune overlook at South Beach (quiet, sand dunes, Sea Pines), or a private sunset sail out of Palmetto Bay Marina. Each pairs naturally with dinner at Michael Anthony's or Ela's on the Water.",
+        },
+        {
+          q: 'What is the best Hilton Head anniversary dinner?',
+          a: "Michael Anthony's for a fine-dining anniversary in town. May River Grill at Montage Palmetto Bluff for a milestone (10th, 25th, 50th). Red Fish as the Lowcountry-romance pick. For a quieter second-choice, Old Fort Pub has the best historic-ambiance room on the island.",
+        },
+        {
+          q: 'How far in advance should I book a romantic dinner on Hilton Head?',
+          a: "Michael Anthony's: 3 weeks in peak, 1-2 off-season. Red Fish: 2-3 weeks. Skull Creek Boathouse: 3-4 weeks (especially for the sunset slot). May River Grill: 3 weeks if you're staying at Montage; otherwise longer. FARM Bluffton: 3 weeks for weekends. Call directly rather than OpenTable for any of these; staff can flex more than the platform allows.",
+        },
+        {
+          q: "Is Michael Anthony's worth the price on Hilton Head?",
+          a: "For a serious anniversary or honeymoon, yes. The kitchen executes at a level that most Hilton Head restaurants don't reach, the wine list has real depth, and the service calibration is fine-dining precision rather than resort-casual. Per-person dinner runs $85-130 before wine. Not worth it for a random Tuesday; very worth it for a once-a-decade dinner.",
+        },
+        {
+          q: 'Is Palmetto Bluff worth the drive for a special-occasion dinner?',
+          a: "Yes, for a honeymoon or 10+ year anniversary. The Montage Palmetto Bluff sets the regional service bar, the May River Grill overlooks a tidal river framed by live oaks, and the overall experience is genuinely different from anything on Hilton Head proper. 20-minute drive from most Hilton Head lodging. Worth pairing with one overnight stay at the Montage for the full experience.",
+        },
+        {
+          q: 'What is the dress code at Hilton Head romantic restaurants?',
+          a: "Resort casual everywhere, with a collared shirt expected at Michael Anthony's, Red Fish, May River Grill, and FARM Bluffton. Jackets are not required at any Hilton Head restaurant; a blazer is welcome at Michael Anthony's and May River Grill in winter. Flip-flops and shorts are fine at Skull Creek, Hudson's, and Old Fort Pub (the latter only at the porch tables in warm weather).",
+        },
+        {
+          q: 'Can I book a private dining room on Hilton Head?',
+          a: "Yes, at Michael Anthony's (two small private rooms, seat 8-14), May River Grill (Montage private dining), and Sea Pines Resort properties for larger groups. For a proposal or milestone dinner with family, private dining is a solid move; the rest of the room's noise disappears. Expect a $300-800 room fee plus food minimum, depending on restaurant and size.",
+        },
+        {
+          q: "What's the most underrated romantic restaurant on Hilton Head?",
+          a: "Old Fort Pub, for the historic atmosphere most visitors don't know about. Built on a Revolutionary War fort site with century-old live oaks outside the porch. The cuisine is traditional rather than cutting-edge, but the room is unlike anywhere else on the island. Request a porch table in warm weather.",
+        },
+        {
+          q: 'Is the Quarterdeck at Harbour Town a good dinner restaurant?',
+          a: "The food is fine rather than exceptional. The magic is the 18th-hole view at sunset, which is unmatched. Book for the pre-dinner drink (4:30-5:30 p.m., watch the sun set, propose if that's the plan) and move to Michael Anthony's, CQ's, or Skull Creek for the actual dinner. Quarterdeck is a venue first, a restaurant second.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan the romantic dinner sequence',
+    },
+    {
+      kind: 'p',
+      html: "A four-night honeymoon should run a restaurant sequence, not a random list. We plan them as: night 1 waterfront casual (Skull Creek), night 2 fine dining (Michael Anthony's or Red Fish), night 3 Bluffton escape (FARM or May River Grill), night 4 sunset sail with wine. If you want us to book the sequence and coordinate the proposal logistics, the <a href=\"/hilton-head-honeymoon\">Hilton Head honeymoon planner</a> covers the full package.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 19) Hilton Head winter guide (snowbird segment)
+// ---------------------------------------------------------------------------
+
+const postWinterGuide: Post = {
+  slug: 'hilton-head-winter-guide',
+  title: "Hilton Head in Winter: The Month-by-Month Snowbird Guide",
+  excerpt:
+    "55-68\u00b0F days, half-price villas, and a quiet island that feels unlocked. Here's exactly what November through March looks like on Hilton Head.",
+  description:
+    "A local's month-by-month Hilton Head winter guide. What's open, rental costs, weather, activities, and the snowbird logistics nobody writes down.",
+  category: 'Planning',
+  readTime: '12 min',
+  publishedAt: '2026-04-24',
+  updatedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 4.2,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
+  keywords: [
+    'Hilton Head in winter',
+    'Hilton Head winter guide',
+    'Hilton Head snowbird',
+    'Hilton Head January',
+    'Hilton Head February',
+    'Hilton Head December',
+    'Hilton Head November',
+    'Hilton Head March',
+    'Hilton Head monthly rental cost',
+    'Hilton Head winter activities',
+    "what's open Hilton Head winter",
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Hilton Head November through March is the island most visitors never see. Days run 55-68\u00b0F, nights 40-50\u00b0F, villa rates drop 50-55% below summer, and the bike paths, beaches, and wildlife refuges stay beautiful. Thirty to ninety-day snowbird rentals are increasingly the smart play, and we've planned enough of them to know which months, neighborhoods, and logistics matter. Here is the full picture.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>Best single winter month:</strong> March (67\u00b0F days, course conditioning peak, spring bird migration starts). <strong>Cheapest month:</strong> January (deepest rate cut, 58\u00b0F days, quietest island). <strong>Underrated value play:</strong> Thanksgiving week and early December (still mild, reservations easy, holiday vibe). <strong>The trap:</strong> Booking a 1-week winter trip and expecting it to feel the same as a summer week. Pick 30+ days for the full winter Hilton Head experience.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head winter at a glance',
+    },
+    {
+      kind: 'p',
+      html: "Five winter months, each distinct. Here is the month-by-month breakdown with weather, water temperature, rental cost index, and what stays open. Rental cost index is relative to the July peak at 100. The lower the number, the cheaper the month.",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head winter months: weather, rental cost, and island activity',
+      headers: ['Month', 'Avg high / low', 'Water temp', 'Rental cost (vs July)', 'Island activity'],
+      rows: [
+        ['November', '70\u00b0F / 50\u00b0F', '65\u00b0F', '55-65%', 'Thanksgiving surge then drops off; restaurants all open'],
+        ['December', '62\u00b0F / 43\u00b0F', '58\u00b0F', '40-50% (Christmas week 60-70%)', 'Harbour Town holiday lights; bike rentals and most restaurants fully open'],
+        ['January', '58\u00b0F / 41\u00b0F', '55\u00b0F', '40-45%', 'Quietest month; a few restaurants close 1 night/week; full gym and activity access'],
+        ['February', '61\u00b0F / 43\u00b0F', '55\u00b0F', '40-48%', "Valentine's week bump; whale-watching charters from Savannah; golf conditioning improves"],
+        ['March', '67\u00b0F / 49\u00b0F', '60\u00b0F', '55-65% (spring break surge wks 3-4)', 'Course conditioning peak; bird migration; spring break March 14-28 surges rates'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'November on Hilton Head',
+    },
+    {
+      kind: 'p',
+      html: "The transition month. First two weeks feel like the best of the year: 70\u00b0F afternoons, empty beaches, light tourism, full restaurant scene. Thanksgiving week itself surges (villa rates lift 60-70%, restaurants book out 2-3 weeks ahead, but it's still 40% below July). See the <a href=\"/hilton-head-thanksgiving\">Hilton Head Thanksgiving planning page</a>. After Thanksgiving, the island empties and pricing drops into true winter mode.",
+    },
+    {
+      kind: 'h2',
+      text: 'December on Hilton Head',
+    },
+    {
+      kind: 'p',
+      html: "The quiet holiday month. 62\u00b0F days, 43\u00b0F nights. Harbour Town lights up for the holidays. Christmas week is surprisingly affordable (lower than Thanksgiving) and the island is calm. New Year's week books out; book 2+ months ahead for a NYE villa. January through March is cheaper, but December has the holiday atmosphere that snowbird couples often want. Restaurants all open; a handful reduce to 6 nights/week.",
+    },
+    {
+      kind: 'h2',
+      text: 'January on Hilton Head',
+    },
+    {
+      kind: 'p',
+      html: "The cheapest month. 58\u00b0F average high, 41\u00b0F low. Ocean swimming is out (55\u00b0F water). Villa rates bottom at 40-45% of July peak. Some restaurants (3-4) close Mondays; everything else runs full hours. Great month for long bike rides (cool, dry), Pinckney Island hiking (bird migration peak), gym-plus-golf days, and reading-on-the-porch weeks. Most 30-day rentals we place are in January.",
+    },
+    {
+      kind: 'h2',
+      text: 'February on Hilton Head',
+    },
+    {
+      kind: 'p',
+      html: "Slight warm-up. 61\u00b0F average high. Valentine's week creates a mini-spike in couples' rentals (book early). Whale-watching charters run out of Savannah in late February as the gray-whale migration passes offshore. Course conditioning noticeably improves toward month's end. February is the second-cheapest month behind January and often the right month for snowbirds who want slightly warmer weather.",
+    },
+    {
+      kind: 'h2',
+      text: 'March on Hilton Head',
+    },
+    {
+      kind: 'p',
+      html: "The winter exit month. 67\u00b0F average high, 49\u00b0F low. Week 1-2: still winter pricing and light crowds. Week 3-4: spring break surge (mid-March through early April), rates lift 60-70%, villa inventory tightens fast. If you want the \u201Cend of winter\u201D feel at winter pricing, book March 1-15. If you want the warmth of early spring without spring break crowds, book March 8-15 specifically.",
+    },
+    {
+      kind: 'h2',
+      text: "What stays open in winter",
+    },
+    {
+      kind: 'p',
+      html: "The \u201Cis anything open?\u201D question is the single most-asked question we get from first-time snowbird clients. The honest answer:",
+    },
+    {
+      kind: 'h3',
+      text: 'Restaurants',
+    },
+    {
+      kind: 'p',
+      html: "All major restaurants stay open year-round. Skull Creek, Michael Anthony's, Red Fish, Hudson's, Salty Dog Cafe, all open every month. Of the top 30 island restaurants, 3-4 close one night a week (usually Monday or Tuesday) from January through mid-February. Nothing shuts down for the winter; the island has enough year-round residents to sustain the scene.",
+    },
+    {
+      kind: 'h3',
+      text: 'Golf',
+    },
+    {
+      kind: 'p',
+      html: "All 12+ courses stay open year-round. Winter greens are slower (seasonal dormancy) but playable through March. Green fees drop 30-40% below summer. Harbour Town remains open to Sea Pines Resort guests with standard priority. Tee sheets are noticeably less crowded. See the <a href=\"/blog/hilton-head-golf-courses-ranked\">Hilton Head golf courses ranked</a>.",
+    },
+    {
+      kind: 'h3',
+      text: 'Activities',
+    },
+    {
+      kind: 'p',
+      html: "Bike rentals (Hilton Head Bicycle), kayak tours (Outside Hilton Head, 7 a.m. slot still best), Coastal Discovery Museum, Sea Pines Forest Preserve, Harbour Town Lighthouse, and Pinckney Island all run year-round. Seasonal closures: one or two of the 6 sunset-sail operators reduce winter schedule (Captain Mark runs year-round; others may not); surf school is out until May.",
+    },
+    {
+      kind: 'h3',
+      text: 'Gyms, groceries, medical',
+    },
+    {
+      kind: 'p',
+      html: "Sea Pines Racquet Club, Palmetto Dunes tennis complex, and Lifestyle Family Fitness all run winter programs. Hilton Head Hospital on Hospital Center Blvd is the full-service medical facility (24/7 ER). Walgreens, CVS, and a full Publix grocery are all year-round. Delivery via Instacart and DoorDash runs every day.",
+    },
+    {
+      kind: 'h2',
+      text: 'Monthly snowbird rental economics',
+    },
+    {
+      kind: 'p',
+      html: "What a 30/60/90-day Hilton Head winter rental actually costs:",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head winter monthly rental: January 2026 pricing',
+      headers: ['Property type', '30 days', '60 days', '90 days'],
+      rows: [
+        ['2BR interior villa, mid-island', '$2,800-3,500', '$5,200-6,600', '$7,500-9,500'],
+        ['3BR oceanfront villa, Palmetto Dunes', '$5,500-6,800', '$10,200-12,500', '$14,800-18,000'],
+        ['3BR oceanfront villa, Sea Pines', '$6,200-7,500', '$11,500-14,000', '$16,500-20,000'],
+        ['2BR Harbour Town villa', '$5,000-6,000', '$9,200-11,200', '$13,500-16,500'],
+        ['Shelter Cove marina condo, 2BR', '$3,200-4,000', '$5,800-7,400', '$8,400-10,800'],
+        ['Palmetto Bluff inn room (Montage)', '$11,000-13,500', '$21,500-26,000', '$32,000-38,000'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Monthly vs weekly: a 30-day rental runs roughly 2.5-3x the weekly rate (not 4x). Rental companies offer monthly-rate discounts to lock inventory during winter. Utilities, cleaning, and taxes typically add 10-15% on top. Most villa owners require first month upfront plus a security deposit.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head winter snowbird logistics',
+    },
+    {
+      kind: 'h3',
+      text: 'Payment structure',
+    },
+    {
+      kind: 'p',
+      html: "Most winter long-stays bill as: 25-50% at booking, remainder 30 days before arrival. Some owners bill month-by-month for 90+ day stays. Always get a written lease for stays over 28 days (it's required by state short-term-rental law anyway, and your rights are stronger under a lease).",
+    },
+    {
+      kind: 'h3',
+      text: 'Cancellation flexibility',
+    },
+    {
+      kind: 'p',
+      html: "Winter long-stay cancellation policies are more flexible than summer. Most allow cancellation up to 60 days out with a partial refund, and some allow shifting dates without penalty. Always confirm in writing before booking.",
+    },
+    {
+      kind: 'h3',
+      text: 'Utilities and wifi',
+    },
+    {
+      kind: 'p',
+      html: "Included in most rates. Double-check WiFi speed before booking if you're working remotely; speeds vary wildly (some villas run 50 Mbps, others 500+). Ask for a speed test screenshot if it matters to your week.",
+    },
+    {
+      kind: 'h3',
+      text: 'Delivery, services, mail',
+    },
+    {
+      kind: 'p',
+      html: "Grocery delivery (Instacart, Publix, Harris Teeter) runs daily. Amazon delivers reliably in 1-2 days. USPS General Delivery works if you need a temporary mailing address; better to have mail forwarded to a local P.O. Box if your stay exceeds 30 days. Cleaning services are bookable a la carte; most long-stay rentals include one mid-stay cleaning.",
+    },
+    {
+      kind: 'h2',
+      text: 'Best winter activities by month',
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>November:</strong> Thanksgiving restaurants (book by Nov 1), holiday lights preview at Harbour Town, peak fall bird migration at Pinckney Island.",
+        "<strong>December:</strong> Holiday lights throughout Harbour Town, Christmas Eve service at the Church of the Cross in Bluffton, beach bonfires on Forest Beach.",
+        "<strong>January:</strong> Long bike rides (cool, dry), Sea Pines Forest Preserve hikes, gym-plus-golf days, indoor cooking and wine projects in the villa.",
+        "<strong>February:</strong> Valentine's dinners (book 2 weeks out), whale-watching from Savannah, kayaking Broad Creek at low tide.",
+        "<strong>March:</strong> Bird migration, golf in peak condition, beach walks warming up, spring break planning if you're staying through April.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head winter guide: FAQ',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'Is Hilton Head worth visiting in the winter?',
+          a: "For snowbirds, remote workers, and couples who want a quiet mild-weather escape, yes. Days run 55-68\u00b0F, the island is genuinely quiet, and villa rates are 50-55% below summer peak. For beach-first trips where pool weather matters, pick a warmer destination or wait until May.",
+        },
+        {
+          q: "What's the weather like on Hilton Head in January?",
+          a: "Average high 58\u00b0F, average low 41\u00b0F. Sunny about two-thirds of days. Hard freezes (below 32\u00b0F) happen one to three nights per month. Snow is a once-every-10-years event. You'll wear a jacket at sunset and a sweater most days. Ocean swimming is out (water averages 55\u00b0F).",
+        },
+        {
+          q: 'How much does a monthly rental cost on Hilton Head?',
+          a: "A 2BR interior villa runs $2,800-3,500 for 30 days in winter. A 3BR oceanfront villa in Palmetto Dunes or Sea Pines runs $5,500-7,500. Harbour Town villas and Palmetto Bluff stays run higher. Utilities, cleaning, and taxes typically add 10-15% on top. For a full breakdown see the <a href=\"/hilton-head-winter-rental\">Hilton Head winter rental planner</a>.",
+        },
+        {
+          q: "What's open on Hilton Head in January?",
+          a: "All major restaurants, all 12+ golf courses, bike rentals, kayak tours, Coastal Discovery Museum, Sea Pines Forest Preserve, Harbour Town Lighthouse, grocery stores, and medical facilities run year-round. A handful of restaurants (3-4 of 30 top spots) close one night a week. Nothing major shuts for the winter.",
+        },
+        {
+          q: 'Can you swim in the ocean on Hilton Head in winter?',
+          a: "No, not comfortably. Water temperature averages 55\u00b0F in January-February. You can walk the beach, bike the hard-packed sand, and kayak without an issue, but swimming requires a wetsuit that most visitors don't bring. Early-season swimming starts in April (67\u00b0F water); full swim season is May-October.",
+        },
+        {
+          q: 'Is Hilton Head a good snowbird destination compared to Florida?',
+          a: "Different rather than better. Hilton Head is cooler (55-68\u00b0F in January vs 75\u00b0F in south Florida) and quieter, with fewer tourists and 50-60% lower rental rates than Naples, Marco Island, or south Florida beach towns. If you want 80\u00b0F pool weather, Florida wins. If you want mild days, empty bike paths, and significantly lower costs, Hilton Head is the right pick.",
+        },
+        {
+          q: 'How long do most snowbirds stay on Hilton Head?',
+          a: "The most common winter long-stay we book is 30 days in January or February. About 30% of our snowbird clients do 60-day stays, and 15% do 90-day stays. Under 14 days is too short to amortize the travel effort; over 90 days has South Carolina tax implications worth discussing with your accountant.",
+        },
+        {
+          q: 'Can I golf on Hilton Head in winter?',
+          a: "Yes, all 12+ courses stay open year-round. Winter greens are slower (seasonal dormancy) and green fees run 30-40% below summer. Conditioning is actually excellent in February-March because cool nights firm the greens. Tee sheets are open; Harbour Town still requires Sea Pines Resort priority. See the <a href=\"/blog/hilton-head-golf-courses-ranked\">Hilton Head golf courses ranked</a>.",
+        },
+        {
+          q: 'What should I pack for Hilton Head in winter?',
+          a: "Jeans, long-sleeve tees, a sweater, a windbreaker for beach walks, waterproof shoes, a light rain shell, and one dinner-out outfit. A swimsuit is optional; villa pools and hot tubs are usable some days. Flip-flops you probably won't wear except on 65\u00b0F afternoons. Packlist weighs less than summer; no beach gear needed.",
+        },
+        {
+          q: 'Are there snowbird communities on Hilton Head?',
+          a: "Yes, informally. Palmetto Dunes, Sea Pines, and Shelter Cove all have substantial winter long-stay populations, with pickleball leagues, weekly happy hours, and tennis round-robins that visitors can join. Contact the property management company or HOA of your rental for local schedules.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan your Hilton Head winter stay',
+    },
+    {
+      kind: 'p',
+      html: "Winter long-stays are the quietest deal on the Hilton Head calendar. If you want us to match you to the right neighborhood, villa, and length of stay, the <a href=\"/hilton-head-winter-rental\">Hilton Head winter rental planner</a> is the landing page; the <a href=\"/itinerary\">$450 itinerary service</a> covers full long-stay logistics (villa short-list, utilities, delivery setup, local gym and medical contacts). For weather specifics by month, see the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -3469,6 +4260,9 @@ export const posts: Post[] = [
   post7DayItinerary,
   postHHvsMyrtleBeach,
   postSeaPinesVsPalmettoDunes,
+  postGolfCoursesRanked,
+  postRomanticRestaurants,
+  postWinterGuide,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
