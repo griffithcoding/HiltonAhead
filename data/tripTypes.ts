@@ -540,6 +540,202 @@ export const tripTypes: TripTypeLanding[] = [
     ],
     blogPostSlug: 'sea-pines-guide',
   },
+
+  // ———————————————————————————————————————————————————————————————
+  // Activity: beaches
+  // ———————————————————————————————————————————————————————————————
+  {
+    slug: 'beaches',
+    path: '/hilton-head-beaches',
+    eyebrow: 'Activity · Hilton Head beaches',
+    tagline: {
+      plain: 'The best Hilton Head beaches,',
+      italic: 'ranked by use case.',
+    },
+    seoTitle: 'Hilton Head Beaches: Access, Parking, and the Best Picks',
+    metaDescription:
+      "A local's guide to Hilton Head beaches. Coligny, Alder Lane, Folly Field, Burkes, and Driessen. Parking, access, and which beach for which trip.",
+    keywords: [
+      'Hilton Head beaches',
+      'best Hilton Head beach',
+      'Coligny Beach Park',
+      'Hilton Head public beach access',
+      'Hilton Head beach parking',
+      'Hilton Head family beach',
+      'Alder Lane beach',
+      'Folly Field Beach',
+    ],
+    hook:
+      "Twelve miles of beach, five public access points, and a rising tide that cuts down the usable sand twice a day. We pick the right beach for the right trip. Coligny if you want the boardwalk energy, Alder Lane if you want quiet, Folly Field if you brought kids under five. Here is how we break it down.",
+    reasons: [
+      {
+        title: 'Right beach for the right trip',
+        body:
+          'Coligny, Alder Lane, Folly Field, Burkes, Fish Haul, and Driessen each have a use case. A 6-year-old learning to boogie-board belongs on Folly Field (calm, shallow). A surfer belongs on Burkes. A couple on a sunrise walk belongs on Fish Haul. We match beach to trip.',
+      },
+      {
+        title: 'Parking and access, honestly',
+        body:
+          'Coligny Beach Park has free parking but fills by 9:30 a.m. in July. Every other access charges $1-2/hour via meter or app. Alder Lane has the shortest boardwalk-to-sand on the island. We send clients the exact lot that works for their villa.',
+      },
+      {
+        title: 'Tide timing changes the whole day',
+        body:
+          'Hard-packed low-tide sand is the best biking and running surface on the East Coast. High tide cuts usable beach to 6-8 feet in some stretches. We plan beach days around the tide chart, not the clock.',
+      },
+      {
+        title: 'What the CVB will not tell you',
+        body:
+          "Two of the five public beach lots have sand-flea conditions in late June (seaweed bloom). One access has a painful walk in from the parking lot at low tide. None of this is in the official guide. We will save you a rough morning.",
+      },
+    ],
+    bestFor: [
+      'First-time Hilton Head visitors',
+      'Families choosing between beaches by kid age',
+      'Couples wanting the quietest stretch of sand',
+      'Surfers and boogie-boarders looking for the right break',
+    ],
+    tradeoffs:
+      "Every beach on Hilton Head is public from the high-water mark down. The differences are parking, access points, and crowd levels, not the sand itself. If you are inside a gated community (Sea Pines, Palmetto Dunes, Shipyard), your lodging includes a private access point that beats the public ones. The guidance here is optimized for off-resort or public-access visitors.",
+    hero: photos.beachMorning,
+    gallery: [
+      { ...photos.boardwalk, caption: 'Boardwalk to Coligny, 7 a.m.' },
+      { ...photos.beachAerial, caption: 'Atlantic from above' },
+      { ...photos.hero, caption: 'Forest Beach at golden hour' },
+    ],
+    blogPostSlug: 'best-hilton-head-beaches',
+  },
+
+  // ———————————————————————————————————————————————————————————————
+  // Trip type: honeymoon / couples getaway
+  // ———————————————————————————————————————————————————————————————
+  {
+    slug: 'honeymoon',
+    path: '/hilton-head-honeymoon',
+    eyebrow: 'Trip type · Couples & honeymoon',
+    tagline: {
+      plain: 'A Hilton Head honeymoon,',
+      italic: 'planned for two.',
+    },
+    seoTitle: 'Hilton Head Honeymoon: Couples Getaway Planning by a Local',
+    metaDescription:
+      "A local's guide to a Hilton Head honeymoon or couples getaway. S-tier villas, romantic dinners, sunset sails, and the quiet pockets that feel made for two.",
+    keywords: [
+      'Hilton Head honeymoon',
+      'Hilton Head couples getaway',
+      'Hilton Head romantic getaway',
+      'Hilton Head anniversary trip',
+      'Hilton Head couples weekend',
+      'Hilton Head romantic dinner',
+      'Palmetto Bluff honeymoon',
+      'Hilton Head proposal',
+    ],
+    hook:
+      "Hilton Head is quietly one of the best couples' trips on the East Coast. Palm-lined beaches, Spanish-moss sunsets, twenty miles of bike paths, and a dinner scene that rewards reservations. We plan honeymoons, anniversaries, and milestone couples' weekends. Here is how we do it.",
+    reasons: [
+      {
+        title: 'The right neighborhood is Shelter Cove or Sea Pines',
+        body:
+          'Shelter Cove is marina-centric, quieter, and built for adults. Sea Pines gives you Harbour Town, the lighthouse, and four S-tier restaurants within a mile. Both work; we match the couple to the pocket. See the <a href="/hilton-head/shelter-cove">Shelter Cove guide</a> and <a href="/hilton-head/sea-pines">Sea Pines guide</a>.',
+      },
+      {
+        title: 'The dinner sequence matters',
+        body:
+          "A four-night honeymoon should run: night 1 casual waterfront (Skull Creek), night 2 fine dining (Michael Anthony's or Red Fish), night 3 Bluffton escape (FARM), night 4 sunset sail with charcuterie. We book the sequence, not just individual dinners.",
+      },
+      {
+        title: 'Palmetto Bluff is the splurge layer',
+        body:
+          "For honeymoons or anniversaries, two nights at Montage Palmetto Bluff (20 minutes off-island in Bluffton) is worth the premium. Book the May River Cottages, not the Inn rooms. We pair this with three nights on Hilton Head for the balance of cost and variety.",
+      },
+      {
+        title: 'The proposal playbook',
+        body:
+          "Three proven spots: the 18th-hole deck at Quarterdeck (Harbour Town, sunset), the dune overlook at South Beach (private, quiet), or a sunset sail out of Palmetto Bay Marina. We coordinate the photographer, the reservation, and the after-drink without the surprise leaking.",
+      },
+    ],
+    bestFor: [
+      'Honeymoons, 4-7 nights',
+      'Milestone anniversaries (10, 25, 50 years)',
+      "Couples' weekend getaways, 2-3 nights",
+      'Proposals requiring logistical coordination',
+    ],
+    tradeoffs:
+      "Hilton Head in high summer (June-August) is a family island. The crowds are manageable but the vibe is family-resort. For a couples' trip, we strongly steer to mid-May, late September through October, or early December. The island is quieter, rates are 30-40% lower, and restaurants become actually walk-in-able.",
+    hero: photos.sundown,
+    gallery: [
+      { ...photos.teaTable, caption: 'Shelter Cove dinner, sunset' },
+      { ...photos.lighthouse, caption: 'Harbour Town, 6:30 p.m.' },
+      { ...photos.hammock, caption: 'Between rounds, South Beach' },
+    ],
+    blogPostSlug: 'shelter-cove-guide',
+  },
+
+  // ———————————————————————————————————————————————————————————————
+  // Seasonal: winter long-stay / snowbird
+  // ———————————————————————————————————————————————————————————————
+  {
+    slug: 'winter-rental',
+    path: '/hilton-head-winter-rental',
+    eyebrow: 'Season · Long-stay November through March',
+    tagline: {
+      plain: 'Hilton Head winter long-stays,',
+      italic: 'the quietest deal on the calendar.',
+    },
+    seoTitle: 'Hilton Head Winter Rental: Monthly & Snowbird Stays 2026',
+    metaDescription:
+      "A local's guide to winter and monthly Hilton Head rentals. 55-68°F days, 50% below peak rates, and the neighborhoods that stay alive off-season.",
+    keywords: [
+      'Hilton Head winter rental',
+      'Hilton Head monthly rental',
+      'Hilton Head snowbird rental',
+      'Hilton Head long-term rental',
+      'Hilton Head extended stay',
+      'Hilton Head off-season rental',
+      'Hilton Head winter villa',
+      'Hilton Head January rental',
+    ],
+    hook:
+      "Hilton Head November through March is a secret. Days run 55-68°F, nights 40-50°F, rates drop 50-55% below summer, and the island stays just busy enough that restaurants, bike shops, and grocery delivery keep full hours. We plan 30, 60, and 90-day winter stays for snowbirds and remote workers every year. Here is how.",
+    reasons: [
+      {
+        title: 'Monthly villa rates run $3-8k',
+        body:
+          'A Palmetto Dunes 3BR oceanfront that runs $9k/week in July runs $5-6k for an entire month in January. Sea Pines mid-island 2BRs bottom out around $3k/month. Inventory is wide open; the tradeoff is you are paying by month, not week.',
+      },
+      {
+        title: 'Weather is the real win',
+        body:
+          "Average January high: 58°F. February: 61°F. March: 67°F. Colder than Florida but warmer than New York, and sunny two-thirds of days. Hard freezes happen 1-3 nights/year. You will wear a jacket at sunset and a sweater most days; ocean swimming is out.",
+      },
+      {
+        title: 'The island stays alive off-season',
+        body:
+          "Every major restaurant, grocery store, and bike shop stays open year-round. A handful close one night/week (usually Monday). Sea Pines Forest Preserve, Pinckney Island, and the bike paths are better in winter than summer. The island breathes out.",
+      },
+      {
+        title: 'Pickleball, tennis, and golf',
+        body:
+          "Golf course conditions peak in February-March (overseeding, cool mornings, firm greens). Palmetto Dunes pickleball runs winter leagues for visiting members. Sea Pines tennis is 30% cheaper. If your winter trip is about staying active outside, this is the right calendar.",
+      },
+    ],
+    bestFor: [
+      'Snowbirds escaping Northeast or Midwest winters',
+      'Remote workers wanting a month of better weather',
+      'Retirees on 60-90 day stays',
+      "Writers' retreats and sabbatical months",
+      'Couples on budget who want off-season pricing',
+    ],
+    tradeoffs:
+      "Winter is not a beach trip. Water is too cold to swim, a few seasonal operators pause (surf school, some sunset sails), and the island is genuinely quiet after 9 p.m. If your version of a Hilton Head trip is pool-plus-ocean-plus-crowds, pick April-October. If you want mild days, empty bike paths, and restaurant reservations becoming walk-in-able, winter is unbeatable.",
+    hero: photos.mossOak,
+    gallery: [
+      { ...photos.marsh, caption: 'Marsh at low sun, January' },
+      { ...photos.coastalOak, caption: 'Forest preserve, 4 p.m.' },
+      { ...photos.dock, caption: 'Creek dock, November morning' },
+    ],
+    blogPostSlug: 'best-time-to-visit-hilton-head',
+  },
 ];
 
 export function getTripTypeBySlug(slug: string): TripTypeLanding | undefined {

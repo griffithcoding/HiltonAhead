@@ -2396,6 +2396,228 @@ const postWithKids: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 12) Best Hilton Head beaches
+// ---------------------------------------------------------------------------
+
+const postBestBeaches: Post = {
+  slug: 'best-hilton-head-beaches',
+  title: "The Best Hilton Head Beaches, Ranked by Use Case",
+  excerpt:
+    "Coligny, Alder Lane, Folly Field, Burkes, Driessen, Fish Haul. Which beach for which trip, and the parking and tide reality nobody writes down.",
+  description:
+    "A local's guide to Hilton Head beaches. Coligny, Alder Lane, Folly Field, Burkes, Driessen, Fish Haul. Parking, access, and the right beach for your trip.",
+  category: 'Activities',
+  readTime: '10 min',
+  publishedAt: '2026-04-24',
+  updatedAt: '2026-04-24',
+  author: 'Hilton Ahead',
+  featuredOrder: 2.8,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
+  keywords: [
+    'best Hilton Head beaches',
+    'Hilton Head public beach access',
+    'Coligny Beach Park',
+    'Alder Lane Beach',
+    'Folly Field Beach',
+    'Burkes Beach',
+    'Driessen Beach Park',
+    'Fish Haul Beach',
+    'Hilton Head beach parking',
+    'Hilton Head family beach',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Every beach on Hilton Head is public from the high-water mark down. The island has five dedicated public access parks, four gated-community access points, and twelve miles of Atlantic shoreline. The question isn't whether you can get to the beach; it's which beach makes sense for your specific trip. Here is the local-authority breakdown.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>Coligny Beach Park</strong> for first-timers who want boardwalk energy and free parking (get there by 9 a.m. in summer). <strong>Alder Lane</strong> for quiet couples. <strong>Folly Field</strong> for kids under five. <strong>Burkes</strong> for surfers and boogie-boarders. <strong>Fish Haul</strong> for sunrise walks. If you're inside a gated community (<a href=\"/hilton-head/sea-pines\">Sea Pines</a>, <a href=\"/hilton-head/palmetto-dunes\">Palmetto Dunes</a>, Shipyard), your private access beats all of them.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head public beaches at a glance',
+    },
+    {
+      kind: 'p',
+      html: "All five public access points have restrooms, outdoor showers, and seasonal lifeguards (May-September). The differences are parking supply, amenities, and crowd density. Here is what every beach actually offers:",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head public beach access: parking, amenities, and character',
+      headers: ['Beach', 'Parking', 'Parking cost', 'Best for', 'Crowd level (July)'],
+      rows: [
+        ['Coligny Beach Park', '~200 spots, fills early', 'Free', 'First-timers, boardwalk shops, families', 'Very high'],
+        ['Alder Lane Beach', '~45 metered spots', '$2/hr via ParkMobile', 'Quiet walks, couples, handicap access', 'Low'],
+        ['Folly Field Beach Park', '~130 spots', '$2/hr via ParkMobile', 'Families with young kids (calm, shallow)', 'Medium-high'],
+        ['Burkes Beach', '~50 spots', '$2/hr via ParkMobile', 'Surfers, boogie-boarders, quieter escape', 'Low-medium'],
+        ['Driessen Beach Park', '~200 spots, ample', '$2/hr via ParkMobile', 'Lighter crowds, playground, grills', 'Medium'],
+        ['Fish Haul Beach Park', '~40 spots', 'Free', 'Sunrise walks, birding, long walks', 'Very low'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Public access is only half the story. If you're staying inside <a href=\"/hilton-head/sea-pines\">Sea Pines</a>, <a href=\"/hilton-head/palmetto-dunes\">Palmetto Dunes</a>, or Shipyard, you have private gate-pass beach access points that never fill up and require zero parking hassle. Budget that into your lodging decision.",
+    },
+    {
+      kind: 'tier',
+      label: 'S-Tier',
+      subtitle: "The beaches we send clients to by default.",
+      accent: 'gold',
+      items: [
+        {
+          name: 'Coligny Beach Park',
+          meta: 'Forest Beach · Free parking · Bathrooms, showers, playground',
+          blurb:
+            "The most popular beach on Hilton Head, and deservedly so. Wide sand, calm surf, free parking (if you arrive by 9 a.m. in summer), playground, outdoor showers, lifeguards, and Coligny Plaza shops and restaurants one block back. The only downside is the crowd; in peak July it can feel like a music festival. For first-time visitors, this is the right introduction to the island.",
+        },
+        {
+          name: 'Alder Lane Beach Access',
+          meta: 'South end · $2/hr parking · Shortest boardwalk on the island',
+          blurb:
+            "The quietest of the public accesses. A short boardwalk takes you straight to the sand, there's handicap beach matting, restrooms and outdoor showers, and seasonal lifeguards. Parking is tight (45 spots) but almost never completely full, even in July. This is where we send couples and anyone who wants the beach without the boardwalk scene.",
+        },
+        {
+          name: 'Folly Field Beach Park',
+          meta: 'Mid-island · $2/hr parking · Calm shallow surf, wheelchair accessible',
+          blurb:
+            "The best family beach on the island. Calm, shallow water that works for boogie-boarding, toddlers in the shore break, and first-time ocean swimmers. Wheelchair-accessible boardwalk, restrooms, showers, seasonal rentals, and a parking lot that almost always has spaces. For families with kids under seven, this is the right default.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'A-Tier',
+      subtitle: "Strong picks for the right trip.",
+      accent: 'primary',
+      items: [
+        {
+          name: 'Burkes Beach',
+          meta: 'Mid-island · $2/hr parking · Surf break',
+          blurb:
+            "The best surf on Hilton Head (such as it is). Waves here are bigger than anywhere else on the island, which still isn't big by East Coast standards but means boogie boards, skim boards, and small longboards work on a 2-4 ft swell. Parking is tight and the walk from lot to sand is longer than Alder or Folly. Worth it if surf is why you're here.",
+        },
+        {
+          name: 'Driessen Beach Park',
+          meta: 'Mid-island · $2/hr parking · Playground, grills, pavilion',
+          blurb:
+            "Lighter crowds than Coligny with the same family amenities (playground, grills, picnic pavilion). A longer walk from the parking lot to the sand (about 4 minutes through a pine-shaded boardwalk), which deters the beach-umbrella-on-wheels crowd. For a day-long beach trip with gear and kids, this is often the move.",
+        },
+        {
+          name: 'Fish Haul Beach Park',
+          meta: 'North end · Free parking · Secluded, birding-friendly',
+          blurb:
+            "The most secluded public beach on the island. Free parking, a 5-minute walk through maritime forest to the sand, and then a wide quiet stretch that's often nearly empty. Best for sunrise walks, birding, and long beach walks (you can walk 2+ miles north toward Port Royal Sound without crowds). Not a classic swim beach; the shelf here is steeper.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'How tide timing changes your beach day',
+    },
+    {
+      kind: 'p',
+      html: "Hilton Head's tidal range runs 6-8 feet. That matters more than any other single variable. At low tide, the beach is 150-200 feet wide of hard-packed sand that you can bike, run, or walk for miles. At high tide, the usable beach narrows to 6-20 feet in some stretches. Two hours before high tide is the sweet spot for swimming (deepest water close to shore); low tide is the sweet spot for biking and shell-collecting.",
+    },
+    {
+      kind: 'p',
+      html: "Check the NOAA tide chart for \"Hilton Head Island\" or pull it up on any weather app. Match your beach plan to the tide, not the clock. A 2 p.m. beach day at dead-low tide is a very different beach than a 2 p.m. day at high tide.",
+    },
+    {
+      kind: 'h2',
+      text: 'Which beach for which trip',
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Couples, honeymoon:</strong> Alder Lane for the day, Fish Haul at sunrise. See the <a href=\"/hilton-head-honeymoon\">Hilton Head honeymoon planner</a>.",
+        "<strong>Families with toddlers and preschoolers:</strong> Folly Field Beach Park for calm shallow water.",
+        "<strong>Families with kids 7-14:</strong> Coligny for the boardwalk energy, or Driessen for a quieter version.",
+        "<strong>Biking the beach at low tide:</strong> Enter at Coligny, ride south to Sea Pines, or north from Driessen. Hard-packed sand for 6+ miles.",
+        "<strong>Surfers and boogie-boarders:</strong> Burkes Beach. Check the swell forecast for the east coast.",
+        "<strong>Sunrise walkers, birders:</strong> Fish Haul (north end) or Alder Lane (south end).",
+        "<strong>Groups with gear, grills, playground needs:</strong> Driessen Beach Park has the best pavilion setup.",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Beach amenity and rental intel',
+    },
+    {
+      kind: 'p',
+      html: "Beach umbrellas, chairs, boogie boards, and kayaks are rentable at Coligny, Folly Field, Driessen, and Burkes through Shore Beach Services (the island concession). Rates run $30-50/day for a chair-and-umbrella setup. Pre-book for peak weeks; the rental racks can run out by 9 a.m. on a hot Saturday. If you're staying inside a gated community, many villa rentals include a beach cart and some include chair-and-umbrella service.",
+    },
+    {
+      kind: 'h2',
+      text: 'Best time of year to visit the beach',
+    },
+    {
+      kind: 'p',
+      html: "Ocean water temperatures shape beach quality more than air temperature. Peak water temp is 84\u00b0F in July-August. September stays at 80\u00b0F while air temps drop to the 80s. October (73\u00b0F water) is the sweet spot most visitors miss: swimmable water, light crowds, beach rates 30-40% below summer. For the full month-by-month breakdown, see the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head beaches: frequently asked questions',
+    },
+    {
+      kind: 'faq',
+      label: 'Questions we hear most',
+      items: [
+        {
+          q: 'What is the best beach on Hilton Head Island?',
+          a: "Coligny Beach Park for most first-time visitors (free parking, most amenities, classic boardwalk scene). Alder Lane if you want quiet. Folly Field if you have young kids. There isn't one best beach; the sand itself is similar along most of the 12-mile shoreline. The differences are parking, crowd density, and nearby amenities.",
+        },
+        {
+          q: 'How much does beach parking cost on Hilton Head?',
+          a: "Coligny Beach Park and Fish Haul Beach Park have free parking. All other public access points charge $2/hour via the ParkMobile app or coin meter, with daily caps around $12-16. Inside gated communities (Sea Pines, Palmetto Dunes, Shipyard), beach access is included with your lodging or a day-pass ($10-15).",
+        },
+        {
+          q: 'Can you walk on Hilton Head beaches at low tide?',
+          a: "Yes, and it's one of the best things to do on the island. At low tide the beach is 150-200 feet of hard-packed sand. You can walk (or bike) continuously for 12 miles from Port Royal Sound to Sea Pines with only the Cross Island Parkway bridge as an interruption. Low-tide walks are easier than high-tide walks and the hard sand is easier on knees.",
+        },
+        {
+          q: 'Are dogs allowed on Hilton Head beaches?',
+          a: "Yes, with restrictions. From April 1 through September 30, dogs are allowed on the beach only before 10 a.m. and after 5 p.m. From October 1 through March 31, dogs are allowed all day. Leashes are required year-round. Owners must clean up; fines are enforced.",
+        },
+        {
+          q: 'Can you swim in the ocean at Hilton Head?',
+          a: "Yes, from late May through October. Peak water temperature is 84\u00b0F in July-August. Early-season swimmers can start mid-April (67\u00b0F water) if they don't mind cold; by May (74\u00b0F) it's comfortable for most adults. October is the quietest warm-water month (73\u00b0F, crowds gone).",
+        },
+        {
+          q: "What's the difference between Coligny Beach and Alder Lane?",
+          a: "Coligny is the busier beach: free parking, playground, wide sand, boardwalk shops and restaurants one block back, classic summer-crowd energy. Alder Lane is quieter: $2/hour metered parking, short boardwalk, shorter walk to the sand, genuinely less crowded even in July. Couples and anyone wanting quiet should pick Alder; families and first-time visitors should pick Coligny.",
+        },
+        {
+          q: 'Is Coligny Beach Park parking really free?',
+          a: "Yes, but you have to arrive early. The lot has roughly 200 spaces and fills by 9:30 a.m. on summer Saturdays and by 10:30 a.m. on weekdays. If the lot is full, the next-closest paid lots are 0.3 miles back. Alternative: park at Coligny Plaza (paid) and walk two minutes to the beach.",
+        },
+        {
+          q: "Are there lifeguards on Hilton Head beaches?",
+          a: "Seasonal lifeguards are posted at Coligny, Alder Lane, Folly Field, Burkes, and Driessen from Memorial Day through Labor Day, roughly 10 a.m. to 5 p.m. Fish Haul and off-hours access points are unguarded. Follow posted flags (green = OK, yellow = caution, red = dangerous current).",
+        },
+        {
+          q: 'Can I rent beach chairs and umbrellas on Hilton Head?',
+          a: "Yes, at Coligny, Folly Field, Driessen, and Burkes through Shore Beach Services. A chair-and-umbrella setup runs $30-50/day. Boogie boards, beach wagons, and kayaks are also rentable. Pre-book for peak weeks; rental inventory can run out by 9 a.m. on hot Saturdays.",
+        },
+        {
+          q: 'Which Hilton Head beach is best for young kids?',
+          a: "Folly Field Beach Park. The water is calm and shallow, wheelchair-accessible boardwalk, restrooms and showers, seasonal lifeguards, and parking usually available. Coligny works too but the crowds in peak season are intense for toddlers. See the <a href=\"/blog/hilton-head-with-kids\">Hilton Head with kids guide</a> for a full family plan.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Plan your Hilton Head beach week',
+    },
+    {
+      kind: 'p',
+      html: "The beach is the reason most people come to Hilton Head, but the wrong address turns a beach-focused week into a drive-to-the-beach week. If you want us to match your group to the right lodging for the beach you actually want, the <a href=\"/itinerary\">$450 itinerary service</a> handles it. For oceanfront villa specifics, see the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas planner</a>. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> walks through water temperatures month by month.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -2412,6 +2634,7 @@ export const posts: Post[] = [
   postBestTime,
   postRbcHeritage,
   postWithKids,
+  postBestBeaches,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
