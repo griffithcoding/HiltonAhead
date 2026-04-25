@@ -914,13 +914,255 @@ const waterBusinesses: Business[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Businesses — Golf (10 profiles)
+// ---------------------------------------------------------------------------
+
+const golfBusinesses: Business[] = [
+  // ——— FEATURED PARTNER ———
+  {
+    id: 'harbour-town-golf-links',
+    industrySlug: 'golf',
+    featured: true,
+    name: 'Harbour Town Golf Links',
+    tagline: "Pete Dye's masterpiece and the only PGA Tour course on Hilton Head — host of the RBC Heritage since 1969.",
+    schemaType: 'GolfCourse',
+    categories: ['PGA Tour', 'Pete Dye Design', 'Championship', 'Iconic', 'Sea Pines'],
+    priceRange: '$$$$',
+    review:
+      "Harbour Town Golf Links is one of the most important golf courses built in the twentieth century. Pete Dye — with input from a then-unknown Jack Nicklaus — designed it in 1969, and the par-71 layout immediately changed how architects thought about coastal golf: tight fairways, small greens, pot bunkers, and the famous 18th hole framed by the red-and-white lighthouse over Calibogue Sound. It hosts the PGA Tour's RBC Heritage every April — South Carolina's only Tour event — which means the conditioning standards are maintained at Tour level year-round. Playing it is the central golf pilgrimage on Hilton Head Island.",
+    notableFor:
+      "The definitive Hilton Head golf experience — PGA Tour conditions, the iconic lighthouse 18th, and a design by Pete Dye that has influenced every course built since.",
+    address: '11 Lighthouse Ln',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-8484',
+    website: 'https://www.seapines.com/golf/courses/harbour-town-golf-links',
+    hours: 'Tee times approx. 7am–5:30pm daily (closed ~4 weeks/year for RBC Heritage)', // TODO: VERIFY current season hours
+    heroImage: {
+      src: '',
+      alt: 'Harbour Town Golf Links 18th hole with lighthouse, Sea Pines, Hilton Head Island',
+    },
+    lat: 32.1432,
+    lng: -80.8104,
+  },
+  // ——— Regular listings ———
+  {
+    id: 'heron-point-pete-dye',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'Heron Point by Pete Dye',
+    tagline: "Sea Pines' most playable championship layout — a full Pete Dye redesign through marshland and lagoons.",
+    schemaType: 'GolfCourse',
+    categories: ['Pete Dye Design', 'Championship', 'Sea Pines', 'Resort Golf', 'Marsh Views'],
+    priceRange: '$$$',
+    review:
+      "Heron Point is the rebuilt version of Sea Pines' original Sea Marsh Course, completely redesigned by Pete Dye and reopened in 2007 after a multi-million-dollar renovation. The result is a course with authentic Dye DNA — waste bunkers, railroad ties, elevation changes within a flat coastal landscape — but a routing that rewards strategic play over pure power. The marsh and lagoon views throughout the back nine are among the best golf scenery on the island.",
+    notableFor:
+      "Pete Dye's second course at Sea Pines — a complete rebuild that delivers the architect's signature bold bunkering and marsh corridors at a lower green fee than Harbour Town.",
+    address: '100 N Sea Pines Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-8484',
+    website: 'https://www.seapines.com/golf/courses/heron-point-by-pete-dye',
+    hours: 'Daily 8am–6pm (seasonal)', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Heron Point by Pete Dye golf course, Sea Pines Resort, Hilton Head Island',
+    },
+  },
+  {
+    id: 'atlantic-dunes-davis-love',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'Atlantic Dunes by Davis Love III',
+    tagline: "A 2016 redesign of Hilton Head's very first golf course — links-style coastal terrain with native dunes and ocean views.",
+    schemaType: 'GolfCourse',
+    categories: ['Davis Love III Design', 'Links Style', 'Sea Pines', 'Coastal Golf', 'Award-Winning'],
+    priceRange: '$$$',
+    review:
+      "Atlantic Dunes sits on the footprint of Hilton Head's original golf course — the Ocean Course, built in 1960 — completely redesigned by Davis Love III and reopened in 2016. The redesign restored the natural coastal dune system, introduced bermuda fairways and bentgrass greens, and incorporated native vegetation throughout. It won South Carolina Golf Course of the Year the year it opened. The routing makes the most of its oceanside real estate: several holes play alongside the Atlantic with genuine sea-breeze variables.",
+    notableFor:
+      "Built on the site of Hilton Head's first-ever golf course and named SC Golf Course of the Year — one of the best modern redesigns on the East Coast.",
+    address: '100 N Sea Pines Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-1477',
+    website: 'https://www.seapines.com/golf/courses/atlantic-dunes-by-davis-love',
+    hours: 'Daily 8am–6pm (seasonal)', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Atlantic Dunes by Davis Love III golf course, Sea Pines Resort, Hilton Head Island',
+    },
+  },
+  {
+    id: 'rtj-oceanside-palmetto-dunes',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'Robert Trent Jones Oceanside Course',
+    tagline: "Palmetto Dunes' flagship course — one of the few layouts on Hilton Head with an oceanfront hole.",
+    schemaType: 'GolfCourse',
+    categories: ['Robert Trent Jones', 'Oceanfront', 'Palmetto Dunes', 'Championship', 'Resort Golf'],
+    priceRange: '$$$',
+    review:
+      "The Robert Trent Jones Oceanside Course at Palmetto Dunes was designed in 1969 — the same year as Harbour Town — and is the only other course on Hilton Head with a hole that genuinely plays alongside the Atlantic Ocean. The par-3 10th is that hole, and it's worth the round on its own. The course was renovated by Roger Rulewich and named South Carolina Golf Course of the Year in 2003. At par 72 and 6,710 yards from the tips, it challenges competitive players while remaining accessible to a wide range of handicaps.",
+    notableFor:
+      "One of only two courses on Hilton Head Island with a hole directly on the Atlantic Ocean — the 10th at Oceanside is among the most photographed golf holes in South Carolina.",
+    address: '7 Trent Jones Ln',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(844) 207-9301',
+    website: 'https://www.palmettodunes.com/golf/robert-trent-jones-course',
+    hours: 'Daily; pro shop approx. 7am–6pm', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Robert Trent Jones Oceanside Course at Palmetto Dunes, Hilton Head Island',
+    },
+  },
+  {
+    id: 'arthur-hills-palmetto-dunes',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'Arthur Hills Course at Palmetto Dunes',
+    tagline: "Palmetto Dunes' most demanding layout — precision driving through tightly wooded corridors and lagoons.",
+    schemaType: 'GolfCourse',
+    categories: ['Arthur Hills Design', 'Palmetto Dunes', 'Championship', 'Wooded', 'Challenging'],
+    priceRange: '$$$',
+    review:
+      "The Arthur Hills Course is the most technically demanding of Palmetto Dunes' three offerings. Opened in 1986, it routes through natural hardwoods and wetlands with tight fairways that punish wayward drives and greens that require specific approach angles to hold. It's the course at Palmetto Dunes that low-handicappers prefer for the challenge, and the condition-to-price ratio is consistently among the best on the island.",
+    notableFor:
+      "The tightest, most technically demanding layout on Palmetto Dunes — the course that better players seek out when they want to be tested rather than accommodated.",
+    address: '2 Leamington Ln',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-9138',
+    website: 'https://www.palmettodunes.com/golf/arthur-hills-course',
+    hours: 'Daily; open year-round', // TODO: VERIFY hours
+    heroImage: {
+      src: '',
+      alt: 'Arthur Hills Golf Course at Palmetto Dunes, Hilton Head Island',
+    },
+  },
+  {
+    id: 'george-fazio-palmetto-dunes',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'George Fazio Course at Palmetto Dunes',
+    tagline: "The island's only par-70 public course — deceptively difficult, with heavy bunkering and complex approach angles.",
+    schemaType: 'GolfCourse',
+    categories: ['George Fazio Design', 'Palmetto Dunes', 'Par-70', 'Public Access', 'Beginner-Friendly'],
+    priceRange: '$$',
+    review:
+      "The George Fazio Course is often the entry point for first-time golfers at Palmetto Dunes — it plays shorter than its sister courses and the fairways are more forgiving. But the 'beginner-friendly' label understates its complexity: the par-70 design features some of the most intricate bunkering on the resort, and the greens reward players who understand approach angles rather than just hit hard. It was designed by Tom Fazio's uncle George Fazio and opened in 1974.",
+    notableFor:
+      "Hilton Head Island's only par-70 public course — shorter than its Palmetto Dunes siblings but cleverly bunkered in ways that keep better players honest.",
+    address: '7 Carnoustie Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(844) 207-9301',
+    website: 'https://www.palmettodunes.com/golf/george-fazio-course',
+    hours: 'Pro shop 6:30am–6pm daily', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'George Fazio Golf Course at Palmetto Dunes, Hilton Head Island',
+    },
+  },
+  {
+    id: 'shipyard-golf-club',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'Shipyard Golf Club',
+    tagline: "27 holes through Carolina pines and lagoons — a former Senior PGA Tour host with the island's most distinctive alligator holes.",
+    schemaType: 'GolfCourse',
+    categories: ['27 Holes', 'Heritage Golf', 'Semi-Private', 'Wooded', 'Historic'],
+    priceRange: '$$',
+    review:
+      "Shipyard Golf Club's 27 holes are divided into three nine-hole courses — Clipper, Galleon, and Brigantine — routing through the Shipyard Plantation's interior forest of Carolina pines, live oaks, and waterways. It hosted the Senior PGA Tour in the early 1980s. The so-called 'Alligator Cove' stretch on one of the nines is a perennial talking point — sightings are genuine and frequent. For value and variety, Shipyard offers more combination options (18 from three possible configurations) than most courses on the island.",
+    notableFor:
+      "Three nine-hole courses you can mix and match — former Senior PGA Tour host with alligator sightings that are part of the local lore, not a marketing gimmick.",
+    address: '45 Shipyard Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 681-1503',
+    website: 'https://hiltonheadgolf.net/clubs/shipyard',
+    hours: 'Mon–Sat 7am–8pm; open year-round', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Shipyard Golf Club fairway through Carolina pines, Hilton Head Island',
+    },
+  },
+  {
+    id: 'palmetto-hall-plantation',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'Palmetto Hall Plantation',
+    tagline: "Two championship layouts by Arthur Hills and Robert Cupp — 36 holes of risk-reward golf on the island's north end.",
+    schemaType: 'GolfCourse',
+    categories: ['36 Holes', 'Arthur Hills', 'Robert Cupp', 'Semi-Private', 'Heritage Golf'],
+    priceRange: '$$',
+    review:
+      "Palmetto Hall is the 36-hole campus in the north of the island operated by Heritage Golf Group. The Arthur Hills Course (1991) emphasizes precision through wooded corridors; the Robert Cupp Course (1993) opens up with more generous landing areas and bolder risk-reward architecture. Having two distinct design philosophies in one complex lets golfers choose their challenge level — methodical versus aggressive — without driving to a different club.",
+    notableFor:
+      "Two architecturally distinct championship courses on one property — play the precision-focused Arthur Hills one day and the bold Robert Cupp layout the next.",
+    address: '108 Fort Howell Dr',
+    city: 'Hilton Head Island, SC 29926',
+    phone: '(843) 342-2582',
+    website: 'https://hiltonheadgolf.net/clubs/palmetto-hall',
+    hours: 'Open year-round; hours seasonal', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Palmetto Hall Plantation golf course, Hilton Head Island',
+    },
+  },
+  {
+    id: 'country-club-hilton-head',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'Country Club of Hilton Head',
+    tagline: "A Rees Jones design inside Hilton Head Plantation — has hosted USGA qualifiers and plays at slope 147.",
+    schemaType: 'GolfCourse',
+    categories: ['Rees Jones Design', 'Semi-Private', 'Hilton Head Plantation', 'Challenging', 'Reciprocal Access'],
+    priceRange: '$$$',
+    review:
+      "The Country Club of Hilton Head is a Rees Jones design inside the gated Hilton Head Plantation community, playing to a slope rating of 147 from the championship tees — among the more demanding slope ratings on the island. It has hosted a USGA U.S. Open Qualifier and operates as a private club (Invited/ClubCorp) with reciprocal access for members of affiliated clubs. The north-end location keeps it quieter than the resort courses despite its championship credentials.",
+    notableFor:
+      "A Rees Jones-designed course that has hosted USGA qualifiers — slope 147 puts it among the most technically demanding layouts on Hilton Head Island.",
+    address: '70 Skull Creek Dr',
+    city: 'Hilton Head Island, SC 29926',
+    phone: '(843) 681-2582',
+    website: 'https://www.invitedclubs.com/clubs/country-club-of-hilton-head',
+    hours: 'Mon–Fri 5:30am–9pm, Sat 6am–6pm, Sun 7:30am–6pm', // TODO: VERIFY — confirm reciprocal/visitor access
+    heroImage: {
+      src: '',
+      alt: 'Country Club of Hilton Head golf course, Hilton Head Plantation',
+    },
+  },
+  {
+    id: 'hilton-head-national',
+    industrySlug: 'golf',
+    featured: false,
+    name: 'Hilton Head National Golf Club',
+    tagline: "Gary Player and Bobby Weed's public course — no homes on the fairways, consistently ranked among SC's best public layouts.",
+    schemaType: 'GolfCourse',
+    categories: ['Gary Player Design', 'Public Access', 'No Homes', 'Value', 'Bluffton Adjacent'],
+    priceRange: '$$',
+    review:
+      "Hilton Head National is technically just outside the island in Bluffton, but it draws Hilton Head visitors specifically because no homes border any of its fairways or greens — a rarity in a market dominated by plantation-community courses where residential development competes with the golf experience. Designed by Gary Player and Bobby Weed, it opened in 1989 and is consistently ranked among South Carolina's top public access courses. The price-to-quality ratio is the best in the Hilton Head area.",
+    notableFor:
+      "The best value public course in the Hilton Head area — no fairway homes, Gary Player design, and a conditioning standard that competes with courses costing twice as much.",
+    address: '60 Hilton Head National Dr',
+    city: 'Bluffton, SC 29910', // 5 min from HHI bridge
+    phone: '(843) 842-5900',
+    website: 'https://www.hiltonheadnational.com',
+    hours: 'Daily 8am–5:30pm; open year-round',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Head National Golf Club fairway, Bluffton near Hilton Head Island',
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Business registry — add entries here as more industries are built out
 // ---------------------------------------------------------------------------
 
 export const allBusinesses: Business[] = [
   ...fbBusinesses,
   ...waterBusinesses,
-  // Golf, weddings, etc. added in subsequent commits
+  ...golfBusinesses,
+  // Weddings, spas, etc. added in subsequent commits
 ];
 
 // ---------------------------------------------------------------------------
