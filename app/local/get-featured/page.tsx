@@ -2,10 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { generatePageMetadata } from '@/app/lib/metadata'
 import { getBreadcrumbSchema, getFaqSchema } from '@/app/lib/metadata'
-import { brand } from '@/data/brand'
 import BusinessInquiryForm from '@/components/local/BusinessInquiryForm'
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Get Your Business Featured | Hilton Head Local Guide',

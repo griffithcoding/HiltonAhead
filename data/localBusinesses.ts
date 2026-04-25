@@ -130,7 +130,7 @@ export const industries: Industry[] = [
     tagline: 'World-class fairways from Pete Dye to Jack Nicklaus.',
     seoTitle: 'Best Golf Courses on Hilton Head Island, SC (2026)',
     metaDescription:
-      'The top 10 golf courses on Hilton Head Island — including Harbour Town Golf Links, Palmetto Dunes, and the island\'s best public and semi-private courses. Ranked by locals.',
+      'Top golf courses on Hilton Head Island — Harbour Town Golf Links, Palmetto Dunes, and the best public and semi-private courses. Ranked by locals.',
     h1: 'Best Golf Courses on Hilton Head Island',
     description:
       "Hilton Head Island has more than 20 championship golf courses packed into 12 miles of island. The range is genuine — from the PGA Tour's crown jewel at Harbour Town to oceanfront resort courses and Lowcountry layouts winding through live oaks and tidal marshes. This is our ranked guide to the ten worth booking a tee time on.",
@@ -172,7 +172,7 @@ export const industries: Industry[] = [
     tagline: 'Dolphin tours, kayaking, parasailing, and the best of Calibogue Sound.',
     seoTitle: 'Best Water Activities & Tours on Hilton Head Island (2026)',
     metaDescription:
-      'Top water activity operators on Hilton Head Island: dolphin tours, kayak tours, parasailing, paddleboarding, fishing charters, and sunset cruises. The local guide.',
+      'Top water activity operators on Hilton Head Island: dolphin tours, kayak tours, parasailing, paddleboarding, fishing charters, and sunset cruises.',
     h1: 'Best Water Activities & Tours on Hilton Head Island',
     description:
       "Hilton Head is surrounded by water on three sides — the Atlantic Ocean, Calibogue Sound, and a network of tidal creeks and lagoons — and the water activity scene reflects it. These are the ten operators we trust for everything from a gentle dolphin kayak tour with kids to a full-day offshore fishing charter.",
@@ -214,7 +214,7 @@ export const industries: Industry[] = [
     tagline: 'Oceanfront ceremonies, Lowcountry receptions, and the best vendors on the island.',
     seoTitle: 'Best Wedding Venues & Planners on Hilton Head Island (2026)',
     metaDescription:
-      'Top wedding venues, planners, and photographers on Hilton Head Island — oceanfront resorts, private estates, and boutique planners who know the island inside out.',
+      'Top wedding venues, planners, and photographers on Hilton Head Island — oceanfront resorts, private estates, and boutique planners who know the island.',
     h1: 'Best Wedding Venues & Planners on Hilton Head Island',
     description:
       "Hilton Head has been a destination wedding location for decades — the combination of 12 miles of beach, championship golf resort settings, and a roster of genuinely talented local vendors makes it one of the Southeast's premier wedding destinations. These are the venues and vendors we'd confidently recommend to guests planning a Hilton Head wedding.",
@@ -298,7 +298,7 @@ export const industries: Industry[] = [
     tagline: 'Local management companies with the best villa inventory on the island.',
     seoTitle: 'Best Vacation Rental Companies on Hilton Head Island (2026)',
     metaDescription:
-      'Top local vacation rental management companies on Hilton Head Island — who manages the best properties, their specialties, and what to know before booking direct.',
+      'Top vacation rental companies on Hilton Head Island — who manages the best properties, their specialties, and what to know before booking direct.',
     h1: 'Best Vacation Rental Companies on Hilton Head Island',
     description:
       "Hilton Head has dozens of vacation rental management companies, but the ones worth calling are the locally owned firms with deep inventory relationships — companies where someone actually picks up the phone and knows which buildings were last renovated and which have pool maintenance issues. This is our guide to the ten management companies that consistently deliver for clients.",
@@ -368,6 +368,10 @@ export const industries: Industry[] = [
         question: 'Are there art galleries on Hilton Head Island?',
         answer: "Yes — Harbour Town in Sea Pines has several galleries specializing in Lowcountry and coastal art. The Arts Center of Coastal Carolina in Shelter Cove area also showcases local and regional artists. The annual Fall and Spring Studio Tours give access to working artist studios across the island.",
       },
+      {
+        question: 'What local souvenirs are worth buying on Hilton Head?',
+        answer: "Lowcountry artwork (especially pluff mud paintings and coastal photography), local honey and jams, sweetgrass baskets from Gullah artisans, and branded gear from the RBC Heritage golf tournament. Avoid the generic beach-town merchandise and look for work by island-based artists at Harbour Town galleries.",
+      },
     ],
   },
   {
@@ -377,7 +381,7 @@ export const industries: Industry[] = [
     tagline: 'Mini golf, water parks, nature centers, and genuine kid-rated fun.',
     seoTitle: 'Best Family Activities for Kids on Hilton Head Island (2026)',
     metaDescription:
-      'Top family and kids activities on Hilton Head Island — from mini golf and the Coastal Discovery Museum to kayak tours, horseback rides, and the best nature programs.',
+      'Top family and kids activities on Hilton Head Island — mini golf, the Coastal Discovery Museum, kayak tours, horseback rides, and the best nature programs.',
     h1: 'Best Family & Kids Activities on Hilton Head Island',
     description:
       "Hilton Head is an excellent family destination — it was essentially designed as a low-car, nature-forward resort community, which means kids can bike to the beach, explore maritime forests, catch crabs off the docks, and do something meaningful every day without getting in a car. These are the ten activities families consistently love.",
@@ -541,7 +545,7 @@ const fbBusinesses: Business[] = [
     address: '8 New Orleans Rd', // TODO: VERIFY
     city: 'Hilton Head Island, SC 29928',
     phone: '(843) 785-9277', // TODO: VERIFY
-    website: '', // TODO: VERIFY if website exists
+    // website: '', // TODO: VERIFY if website exists
     hours: 'Dinner Tue–Sun; closed Mon (seasonal — TODO: VERIFY)', // TODO: VERIFY
     heroImage: {
       src: '', // TODO: REPLACE with actual Charlie's photo
@@ -609,7 +613,7 @@ const fbBusinesses: Business[] = [
       "The island's best rooftop dining — marina views from the top floor, a craft cocktail program that takes itself seriously, and cooking that earns its upscale positioning.",
     address: '1 Shelter Cove Ln', // TODO: VERIFY exact address
     city: 'Hilton Head Island, SC 29928',
-    phone: '', // TODO: FIND phone number
+    // phone: '', // TODO: FIND phone number
     website: 'https://www.poseidonhhi.com',
     hours: 'Dinner nightly (seasonal hours)', // TODO: VERIFY
     heroImage: {
@@ -635,7 +639,7 @@ const fbBusinesses: Business[] = [
     address: '6 Executive Park Rd', // TODO: VERIFY exact address within Sea Turtle Marketplace
     city: 'Hilton Head Island, SC 29928',
     phone: '(843) 842-3600', // TODO: VERIFY
-    website: '', // TODO: FIND website
+    // website: '', // TODO: FIND website
     hours: 'Dinner Tue–Sun (seasonal — TODO: VERIFY)', // TODO: VERIFY
     heroImage: {
       src: '', // TODO: REPLACE with actual Gusto photo

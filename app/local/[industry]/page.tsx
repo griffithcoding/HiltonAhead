@@ -254,9 +254,9 @@ export default async function IndustryPage({
 
         {/* Browse other industries */}
         <section className="mt-16 border-t border-rule-soft pt-12">
-          <h3 className="display mb-6 text-center text-xl font-medium text-ink">
+          <h2 className="display mb-6 text-center text-xl font-medium text-ink">
             Explore other categories
-          </h3>
+          </h2>
           <div className="flex flex-wrap justify-center gap-3">
             {industries
               .filter((i) => i.slug !== slug)

@@ -3,9 +3,6 @@ import Link from 'next/link'
 import { industries } from '@/data/localBusinesses'
 import { generatePageMetadata } from '@/app/lib/metadata'
 import { getBreadcrumbSchema, getFaqSchema } from '@/app/lib/metadata'
-import { brand } from '@/data/brand'
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Hilton Head Local Business Directory',

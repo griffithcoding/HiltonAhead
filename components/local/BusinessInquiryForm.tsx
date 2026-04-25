@@ -121,6 +121,7 @@ export default function BusinessInquiryForm({
         <Field label="Business name" required>
           <input
             type="text"
+            name="businessName"
             value={businessName}
             onChange={(e) => setBusinessName(e.target.value)}
             required
@@ -132,6 +133,7 @@ export default function BusinessInquiryForm({
         <Field label="Your name" required>
           <input
             type="text"
+            name="contactName"
             value={contactName}
             onChange={(e) => setContactName(e.target.value)}
             required
@@ -146,6 +148,7 @@ export default function BusinessInquiryForm({
         <Field label="Email address" required>
           <input
             type="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -157,6 +160,7 @@ export default function BusinessInquiryForm({
         <Field label="Phone number">
           <input
             type="tel"
+            name="phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             maxLength={30}
@@ -169,6 +173,7 @@ export default function BusinessInquiryForm({
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label="Industry" required>
           <select
+            name="industry"
             value={industry}
             onChange={(e) => setIndustry(e.target.value)}
             required
@@ -185,6 +190,7 @@ export default function BusinessInquiryForm({
         <Field label="Business website">
           <input
             type="url"
+            name="website"
             value={website}
             onChange={(e) => setWebsite(e.target.value)}
             maxLength={240}
@@ -224,6 +230,7 @@ export default function BusinessInquiryForm({
 
       <Field label="Anything else you'd like us to know">
         <textarea
+          name="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           maxLength={1000}
