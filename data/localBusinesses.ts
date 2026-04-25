@@ -1396,6 +1396,241 @@ const vacationRentalBusinesses: Business[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Businesses — Weddings (10 profiles)
+// ---------------------------------------------------------------------------
+
+const weddingBusinesses: Business[] = [
+  // ——— FEATURED PARTNER ———
+  {
+    id: 'westin-hhi-weddings',
+    industrySlug: 'weddings',
+    featured: true,
+    name: 'The Westin Hilton Head Island Resort & Spa',
+    tagline: "Oceanfront ceremonies for up to 600 guests — the Grand Ocean Terrace puts the Atlantic directly behind your ceremony.",
+    schemaType: 'EventVenue',
+    categories: ['Oceanfront', 'Full-Service Resort', 'Large Venue', 'Spa', 'Ceremony + Reception'],
+    priceRange: '$$$$',
+    review:
+      "The Westin Hilton Head Island Resort & Spa is the most complete wedding venue on the island — oceanfront ceremony spaces, a Grand Ballroom that handles up to 600 guests, five food and beverage outlets for rehearsal dinners and post-wedding brunches, a full-service spa for wedding party prep, and on-site accommodations to keep the entire group together. The Grand Ocean Terrace ceremony location seats up to 180 directly on the beach, with the Atlantic Ocean as the backdrop. It's the hotel that can handle every component of a multi-day wedding weekend without the couple leaving the property.",
+    notableFor:
+      "The most comprehensive wedding resort on Hilton Head Island — beach ceremony space, a 600-person ballroom, on-site spa, and accommodations all in one property.",
+    address: '2 Grasslawn Ave',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 681-4000',
+    website: 'https://www.westinhhiweddings.com',
+    hours: 'Events team available during business hours', // TODO: VERIFY direct events line
+    instagram: 'westinhiltonhead',
+    heroImage: {
+      src: '',
+      alt: 'Oceanfront wedding ceremony at The Westin Hilton Head Island Resort, South Carolina',
+    },
+    lat: 32.2033,
+    lng: -80.7456,
+  },
+  // ——— Regular listings ———
+  {
+    id: 'omni-hhi-weddings',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'Omni Hilton Head Oceanfront Resort',
+    tagline: "AAA Four Diamond oceanfront resort — beachfront ceremonies, Lowcountry catering, and up to 250 guests.",
+    schemaType: 'EventVenue',
+    categories: ['Oceanfront', 'Four Diamond', 'Lowcountry Cuisine', 'Intimate', 'Ceremony + Reception'],
+    priceRange: '$$$$',
+    review:
+      "The Omni Hilton Head Oceanfront Resort is an AAA Four Diamond property with beachfront ceremony locations and indoor reception spaces that accommodate up to 250 guests. The catering team specializes in Lowcountry-inspired menus — shrimp and grits stations, she-crab soup, Lowcountry boil setups — that give receptions a sense of place that generic banquet food can't match. For couples who want an elegant but not enormous venue, it's one of the strongest options on the island.",
+    notableFor:
+      "AAA Four Diamond oceanfront resort with Lowcountry-focused catering — the right scale for elegant weddings up to 250 guests who want genuine coastal cuisine.",
+    address: '23 Ocean Ln',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-8000',
+    website: 'https://www.omnihotels.com/hotels/hilton-head/weddings',
+    heroImage: {
+      src: '',
+      alt: 'Wedding reception at Omni Hilton Head Oceanfront Resort, Hilton Head Island',
+    },
+  },
+  {
+    id: 'sea-pines-beach-club-weddings',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'Sea Pines Beach Club',
+    tagline: "Private oceanfront ceremony and reception venue inside Sea Pines — the Atlantic Ocean on one side, live oaks on the other.",
+    schemaType: 'EventVenue',
+    categories: ['Oceanfront', 'Exclusive', 'Sea Pines', 'Outdoor Ceremony', 'Private'],
+    priceRange: '$$$$',
+    review:
+      "The Sea Pines Beach Club is the flagship oceanfront event venue within Sea Pines Resort — private, exclusive, and set directly on the Atlantic. The combination of the beach ceremony space and the club's indoor reception capabilities makes it one of the few venues on the island where ceremony and reception can both happen without moving guests between locations. Access to the full Sea Pines Resort amenities — golf, spa, marina, dining — makes it a natural anchor for a wedding weekend.",
+    notableFor:
+      "Sea Pines Resort's premier oceanfront wedding venue — private beachfront ceremony space and reception in one of the island's most exclusive plantation communities.",
+    address: '87 N Sea Pines Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-1888',
+    website: 'https://www.seapines.com/gather/weddings',
+    heroImage: {
+      src: '',
+      alt: 'Sea Pines Beach Club oceanfront wedding venue, Hilton Head Island',
+    },
+  },
+  {
+    id: 'inn-harbour-town-weddings',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'The Inn & Club at Harbour Town',
+    tagline: "Hilton Head's only Forbes Four-Star hotel — a boutique 60-room property that can be fully reserved for a wedding weekend.",
+    schemaType: 'EventVenue',
+    categories: ['Forbes Four-Star', 'Boutique Hotel', 'Harbour Town', 'Exclusive Buyout', 'Intimate'],
+    priceRange: '$$$$',
+    review:
+      "The Inn & Club at Harbour Town holds the only Forbes Four-Star hotel rating on Hilton Head Island. At 60 rooms, it's small enough to be fully reserved for a wedding party — giving couples the rare experience of a private boutique hotel exclusively for their guests. The Fairway Parlor event space overlooks the first fairway at Harbour Town Golf Links, and the marina setting provides a backdrop that's distinctly Hilton Head rather than generic beachfront.",
+    notableFor:
+      "The island's only Forbes Four-Star hotel — a 60-room boutique property in Harbour Town that can be entirely reserved for your wedding party.",
+    address: '7 Lighthouse Ln',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 363-8100',
+    website: 'https://www.seapines.com/accommodations/inn-club',
+    heroImage: {
+      src: '',
+      alt: 'The Inn and Club at Harbour Town, Hilton Head Island wedding venue',
+    },
+  },
+  {
+    id: 'harbour-town-yacht-club-weddings',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'Harbour Town Yacht Club',
+    tagline: "Panoramic marina views from the fourth-floor Club Room — ceremony and reception above the Harbour Town lighthouse.",
+    schemaType: 'EventVenue',
+    categories: ['Marina Views', 'Waterfront', 'Sea Pines', 'Club Room', 'Intimate'],
+    priceRange: '$$$',
+    review:
+      "The Harbour Town Yacht Club's fourth-floor Club Room delivers some of the most dramatic wedding views on Hilton Head: the marina, the lighthouse, Calibogue Sound, and on clear days the mainland beyond. The space works best for intimate events — ceremony and reception for couples who want a distinctive setting without the scale of a full resort ballroom. The Harbour Town retail and restaurant corridor directly below makes it easy for out-of-town guests to fill the days around the wedding.",
+    notableFor:
+      "The most visually iconic wedding setting in Sea Pines — panoramic views of Harbour Town marina and the lighthouse from the fourth-floor Club Room.",
+    address: '149 Lighthouse Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 671-1400',
+    website: 'https://htyc.com/weddings',
+    heroImage: {
+      src: '',
+      alt: 'Harbour Town Yacht Club wedding venue, marina views, Hilton Head Island',
+    },
+  },
+  {
+    id: 'palmetto-dunes-events',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'Palmetto Dunes Oceanfront Resort — Events',
+    tagline: "Multiple ceremony and reception venues — beach, marina pavilion, and golf veranda — across one 2,000-acre oceanfront resort.",
+    schemaType: 'EventVenue',
+    categories: ['Multi-Venue', 'Oceanfront', 'Marina', 'Resort', 'Ceremony + Reception'],
+    priceRange: '$$$',
+    review:
+      "Palmetto Dunes offers one of the most flexible wedding setups on Hilton Head — multiple distinct venues within the same resort: the Dunes House with its beachside deck, the Shelter Cove Harbour Pavilion with marina views, and the Veranda at Arthur Hills overlooking the golf course. The in-house Dunes Catering & Events team has operated since 2000 and handles food and beverage across all venues, which simplifies logistics considerably versus venues that require outside caterers.",
+    notableFor:
+      "Three distinct ceremony and reception venues within one resort — couples can move from beach ceremony to marina reception to golf course dinner without leaving Palmetto Dunes.",
+    address: '4 Queens Folly Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-9142',
+    website: 'https://www.palmettodunesevents.com',
+    heroImage: {
+      src: '',
+      alt: 'Palmetto Dunes outdoor wedding venue on Hilton Head Island',
+    },
+  },
+  {
+    id: 'hilton-beachfront-weddings',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'Hilton Beachfront Resort & Spa Hilton Head',
+    tagline: "The island's largest oceanfront conference and event resort — 46,000 sq ft of event space and a dedicated oceanfront deck for 300.",
+    schemaType: 'EventVenue',
+    categories: ['Largest Venue', 'Oceanfront', 'Grand Scale', 'Full-Service', 'Conference Resort'],
+    priceRange: '$$$',
+    review:
+      "The Hilton Beachfront Resort & Spa — formerly the Hilton Head Marriott — is the largest full-service oceanfront event resort on the island, with more than 46,000 square feet of event space across 10 rooms and the Basshead Deck, which accommodates 300 guests with direct ocean views. For large weddings of 200+ that require on-site hotel accommodations, no other venue on Hilton Head matches the scale. The full-service Spa Soleil is available for wedding party prep.",
+    notableFor:
+      "The island's largest wedding and event venue — 46,000 sq ft of event space and the Basshead Deck for 300 with ocean views, in one full-service oceanfront resort.",
+    address: 'One Hotel Circle',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-8400',
+    website: 'https://www.hilton.com/en/hotels/hhhrshh-hilton-beachfront-resort-and-spa-hilton-head-island/',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Beachfront Resort oceanfront wedding event space, Hilton Head Island',
+    },
+  },
+  {
+    id: 'amanda-rose-weddings',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'Amanda Rose Weddings & Events',
+    tagline: "15+ years planning Hilton Head weddings — the most-reviewed independent wedding planner on the island.",
+    schemaType: 'ProfessionalService',
+    categories: ['Full Planning', 'Day-Of Coordination', 'Local Expert', '15+ Years', 'Lowcountry Specialist'],
+    priceRange: '$$$',
+    review:
+      "Amanda Rose Weddings & Events has been planning weddings on Hilton Head Island for more than 15 years and appears in the vendor listings of virtually every major resort and venue on the island — which is the strongest possible signal of established reputation in this market. Services range from full-service planning (venue selection through send-off) to day-of coordination. The vendor relationships built over 15 years translate directly into smoother logistics for clients, particularly at venues where she has planned dozens of events.",
+    notableFor:
+      "The most widely recommended independent wedding planner on Hilton Head Island — 15+ years and relationships with every major venue on the island.",
+    address: 'Hilton Head Island, SC',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 422-7907',
+    website: 'https://www.amandaroseweddings.com',
+    hours: 'By appointment',
+    heroImage: {
+      src: '',
+      alt: 'Amanda Rose Weddings beach wedding planning, Hilton Head Island',
+    },
+  },
+  {
+    id: 'spencer-special-events',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'Spencer Special Events',
+    tagline: "Luxury wedding design and full coordination for Hilton Head, Bluffton, and Savannah — consistently top-rated on WeddingWire and The Knot.",
+    schemaType: 'ProfessionalService',
+    categories: ['Luxury Planning', 'Full Design', 'WeddingWire Top-Rated', 'Lowcountry', 'Destination Weddings'],
+    priceRange: '$$$',
+    review:
+      "Spencer Special Events provides full-service luxury wedding design and planning for the Hilton Head and Lowcountry market, consistently earning top ratings on WeddingWire and The Knot. The firm handles everything from initial concept and venue selection through florals, rentals, and day-of execution — the integrated approach means one point of contact rather than managing multiple vendors independently. For destination couples planning a Hilton Head wedding from out of town, the full-service model significantly reduces the complexity of remote planning.",
+    notableFor:
+      "Full-service luxury wedding design and coordination — top-rated on both WeddingWire and The Knot for the Hilton Head market, with full vendor integration.",
+    address: 'Hilton Head Island, SC',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 757-9797',
+    website: 'https://www.spencerspecialevents.com',
+    hours: 'By appointment',
+    heroImage: {
+      src: '',
+      alt: 'Spencer Special Events luxury wedding design, Hilton Head Island',
+    },
+  },
+  {
+    id: 'simply-southern-events',
+    industrySlug: 'weddings',
+    featured: false,
+    name: 'Simply Southern Events',
+    tagline: "Lowcountry wedding coordination for beach, church, and coastal ceremonies — personalized planning for every budget.",
+    schemaType: 'ProfessionalService',
+    categories: ['Day-Of Coordination', 'Full Planning', 'Beach Weddings', 'Accessible Pricing', 'Lowcountry'],
+    priceRange: '$$',
+    review:
+      "Simply Southern Events is the Lowcountry wedding coordinator for couples who want genuine personalization without the luxury planning premium. Services range from day-of coordination (for couples who have done the planning themselves and need expert execution) to full planning packages. The focus on beach and coastal ceremonies suits the Hilton Head market well, and the Bluffton base gives practical access to every venue on the island and in the surrounding Lowcountry.",
+    notableFor:
+      "A personalized, accessible Lowcountry wedding coordinator — strong day-of coordination for couples who have planned themselves and need expert execution on the day.",
+    address: 'Bluffton, SC (serves all of Hilton Head Island)',
+    city: 'Bluffton, SC 29910',
+    website: 'https://www.asimplysouthernevent.com',
+    hours: 'By appointment',
+    heroImage: {
+      src: '',
+      alt: 'Simply Southern Events Lowcountry beach wedding coordination, Hilton Head Island',
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Business registry — add entries here as more industries are built out
 // ---------------------------------------------------------------------------
 
@@ -1404,7 +1639,8 @@ export const allBusinesses: Business[] = [
   ...waterBusinesses,
   ...golfBusinesses,
   ...vacationRentalBusinesses,
-  // Weddings, spas, etc. added in subsequent commits
+  ...weddingBusinesses,
+  // Spas, shopping, etc. added in subsequent commits
 ];
 
 // ---------------------------------------------------------------------------
