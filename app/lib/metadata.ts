@@ -387,6 +387,7 @@ export function getReviewSchema(review: {
   return {
     '@context': 'https://schema.org',
     '@type': 'Review',
+    name: `${review.itemName} review`,
     itemReviewed: {
       '@type': review.itemType,
       name: review.itemName,
@@ -455,6 +456,7 @@ export function getLodgingBusinessSchema(lodging: {
   locationName: string
 }) {
   return {
+    '@context': 'https://schema.org',
     '@type': 'LodgingBusiness',
     name: lodging.name,
     description: lodging.description,
