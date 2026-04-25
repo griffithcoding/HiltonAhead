@@ -4,6 +4,7 @@ import { services } from '@/data/services'
 import { posts } from '@/data/posts'
 import { neighborhoods } from '@/data/neighborhoods'
 import { tripTypes } from '@/data/tripTypes'
+import { industries } from '@/data/localBusinesses'
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
 
@@ -62,11 +63,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
+  // Local business directory
+  const localIndexEntry: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/local`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/local/get-featured`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    },
+  ]
+
+  const localIndustryEntries: MetadataRoute.Sitemap = industries.map((i) => ({
+    url: `${BASE_URL}/local/${i.slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.88, // high — commercial intent destination pages
+  }))
+
   return [
     ...staticEntries,
     ...postEntries,
     ...neighborhoodEntries,
     ...tripTypeEntries,
     ...serviceEntries,
+    ...localIndexEntry,
+    ...localIndustryEntries,
   ]
 }
