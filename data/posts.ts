@@ -708,7 +708,7 @@ const postThingsToDoRanked: Post = {
           name: 'Dolphin cruise with Captain Mark (Harbour Town)',
           meta: "$85/adult · 90 min · Private charter recommended",
           blurb:
-            "The biggest quality gap between operators is enormous. Captain Mark runs small-group cruises that actually find dolphins and actually teach you about them. Everybody else does the same loop and calls it a day. Ask for him by name.",
+            "The biggest quality gap between operators is enormous. Captain Mark runs small-group cruises that actually find dolphins and actually teach you about them. Everybody else does the same loop and calls it a day. Ask for him by name. Full breakdown of every operator and tour style in our <a href=\"/blog/hilton-head-dolphin-tours\">Hilton Head dolphin tours guide</a>.",
         },
         {
           name: 'Bike ride from Coligny to Sea Pines (beach at low tide)',
@@ -728,7 +728,7 @@ const postThingsToDoRanked: Post = {
           name: 'Kayak or paddleboard Broad Creek (Outside Hilton Head)',
           meta: "$55/person · 2 hours · Calibogue Cue trip is the upgrade",
           blurb:
-            "Outside Hilton Head (the local outfitter) runs small-group creek tours. The 7am slot is magical. Fog, herons, and zero boat traffic. Skip the bigger operators; they bunch groups of 20.",
+            "Outside Hilton Head (the local outfitter) runs small-group creek tours. The 7am slot is magical. Fog, herons, and zero boat traffic. Skip the bigger operators; they bunch groups of 20. See the <a href=\"/blog/hilton-head-kayaking-guide\">Hilton Head kayaking guide</a> for every route, tour-vs-rental call, and the bioluminescence option in summer.",
         },
         {
           name: 'Sunset sail on a private charter',
@@ -904,7 +904,7 @@ const postThingsToDoRanked: Post = {
         },
         {
           q: 'What is the best dolphin tour on Hilton Head?',
-          a: "Captain Mark\u2019s small-group dolphin cruise out of Harbour Town. The quality gap between operators is enormous; Captain Mark actually finds dolphins, actually teaches you about them, and keeps groups small. Everybody else runs the same loop with 40-person boats. Ask for him by name when booking.",
+          a: "Captain Mark\u2019s small-group dolphin cruise out of Harbour Town. The quality gap between operators is enormous; Captain Mark actually finds dolphins, actually teaches you about them, and keeps groups small. Everybody else runs the same loop with 40-person boats. Ask for him by name when booking. For the full operator breakdown by tour style (catamaran, sunset, zodiac, kayak), see our <a href=\"/blog/hilton-head-dolphin-tours\">Hilton Head dolphin tours guide</a>.",
         },
         {
           q: 'How much does a Hilton Head sunset sail cost?',
@@ -4895,6 +4895,511 @@ const postWeekendGetaway: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 23) ACTIVITIES. Hilton Head dolphin tour guide
+// ---------------------------------------------------------------------------
+
+const postDolphinTours: Post = {
+  slug: 'hilton-head-dolphin-tours',
+  title: 'Hilton Head Dolphin Tours: The Honest Guide for 2026',
+  excerpt:
+    "Calibogue Sound is one of the most reliable dolphin-watching spots on the East Coast. Here's which tour to book, when to go, and the one quirky behavior locals know that visitors miss.",
+  description:
+    "Hilton Head dolphin tours, ranked: catamaran cruises, zodiac speedboats, sunset trips, and kayak encounters. Prices, operators, best times of year, and tips for spotting dolphins from a local.",
+  category: 'Activities',
+  readTime: '8 min',
+  publishedAt: '2026-04-25',
+  author: 'Hilton Ahead',
+  featuredOrder: 23,
+  relatedNeighborhoods: ['shelter-cove', 'sea-pines'],
+  keywords: [
+    'hilton head dolphin tours',
+    'best dolphin tour hilton head',
+    'hilton head dolphin watching',
+    'hilton head boat tours',
+    'dolphin cruise hilton head',
+    'sunset dolphin tour hilton head',
+    'hilton head dolphin tour 2026',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Calibogue Sound — the wide, brackish stretch of water between Hilton Head and Daufuskie Island — holds one of the most reliable resident populations of bottlenose dolphins on the South Atlantic coast. There are roughly 350 dolphins that live in these waters year-round, plus seasonal visitors that push the count past 500 in summer. The practical version: it's almost impossible to take a Hilton Head dolphin tour and <em>not</em> see dolphins. The real question is which tour, at what time, with which operator.",
+    },
+    {
+      kind: 'callout',
+      label: 'Quick read',
+      html: '<strong>Best tour overall:</strong> 90-minute Calibogue Sound cruise out of Shelter Cove or Harbour Town. <strong>Most underrated:</strong> sunset trip in late spring or fall. <strong>Best for kids under 7:</strong> the catamaran (stable, slow, no spray). <strong>Most likely to see strand feeding:</strong> small-boat tour at low tide on the May River side.',
+    },
+    {
+      kind: 'h2',
+      text: 'What you are actually going to see',
+    },
+    {
+      kind: 'p',
+      html: "The dolphins here are <strong>Atlantic bottlenose dolphins</strong> (Tursiops truncatus), the same species you see at aquariums but living wild in roughly 6–25 feet of water. Pods of 4–12 are typical; you'll routinely see mothers with calves from May through August. Most operators run multi-stop loops through Calibogue Sound, Broad Creek, and the inland waterways — dolphins follow tide and bait, so a good captain reads water rather than driving to a fixed spot.",
+    },
+    {
+      kind: 'p',
+      html: "The thing that makes Hilton Head special is <strong>strand feeding</strong> — a learned behavior where dolphins coordinate to push fish onto a muddy bank, then beach themselves briefly to eat. It's been documented in only a handful of places worldwide. The Lowcountry pods around the May River and Calibogue Sound are one of those places. You won't see it on every tour, but if you book a small-boat tour at low tide with a captain who knows the strand-feeding sites, your odds jump dramatically.",
+    },
+    {
+      kind: 'h2',
+      text: 'Types of dolphin tours, ranked',
+    },
+    {
+      kind: 'tier',
+      label: 'Tour styles',
+      subtitle: 'Pick the format that matches your group.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Catamaran cruise (90 min)',
+          meta: 'Best for families, mixed ages',
+          blurb: 'Stable double-hull boats that hold 30–40 people. No spray, easy to walk around, bathroom on board. Lower viewing angle than a powerboat but kids and grandparents do well. The default option for most visitors and the one we book most.',
+        },
+        {
+          name: 'Sunset dolphin cruise (2 hr)',
+          meta: 'Best for couples, photographers',
+          blurb: "Departs ~90 minutes before sunset from Shelter Cove or Harbour Town. Dolphins feed actively at golden hour, light is dramatic, and crowds thin out. The single best version of this trip in spring (April–May) and fall (September–October) when temperatures are perfect on the water.",
+        },
+        {
+          name: 'Zodiac / RIB speedboat (1–2 hr)',
+          meta: 'Best for adults, thrill-seekers',
+          blurb: 'Rigid inflatable boats with twin outboards — faster, closer to the water, more exciting. You cover more sound than a catamaran can. Not recommended for kids under 7, anyone with back issues, or pregnant guests. Run mostly out of Broad Creek Marina.',
+        },
+        {
+          name: 'Kayak dolphin encounter (2.5 hr)',
+          meta: 'Best for experienced paddlers',
+          blurb: 'Guided kayak tours through Broad Creek or the Pinckney Island NWR put you at water level when dolphins surface 20 feet away. A real, quiet wildlife encounter — not a theme-park ride. You need to be a comfortable paddler and OK with the dolphins setting the pace.',
+        },
+        {
+          name: 'Private charter (custom)',
+          meta: 'Best for groups, special occasions',
+          blurb: 'Book the whole boat and the captain runs your itinerary — dolphins, lighthouse, sandbar stop, sunset finish. Worth it for groups of 6+ where the per-person math is similar to a private. We arrange these as part of the concierge service.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Best operators and prices',
+    },
+    {
+      kind: 'p',
+      html: "Most dolphin tours operate out of three marinas: <strong>Shelter Cove Harbour & Marina</strong> (mid-island, easiest parking, walking distance to restaurants for after), <strong>Harbour Town Marina</strong> (south end, inside Sea Pines, scenic), and <strong>Broad Creek Marina</strong> (Palmetto Dunes side, where most speedboat operators run from).",
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head dolphin tour price guide (2026 estimates, per person)',
+      headers: ['Tour Type', 'Duration', 'Price (Adult)', 'Price (Kids)', 'Best Departure'],
+      rows: [
+        ['Catamaran cruise', '90 min', '$35–$45', '$20–$30', 'Mid-morning or sunset'],
+        ['Sunset cruise', '2 hr', '$50–$75', '$30–$45', '90 min before sunset'],
+        ['Zodiac/RIB speedboat', '1–2 hr', '$45–$70', '$30–$50 (age 7+ only)', 'Mid-morning'],
+        ['Guided kayak tour', '2.5 hr', '$65–$85', '$50–$65 (age 10+)', 'Two hours before high tide'],
+        ['Private charter (whole boat)', '2 hr', '$650–$950 total', 'included', 'Flexible — discuss with operator'],
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Operators worth booking',
+      subtitle: "Our honest read — we don't take commissions.",
+      accent: 'primary',
+      items: [
+        {
+          name: 'Outside Hilton Head',
+          meta: 'Naturalist-led tours, kayak + boat',
+          blurb: 'The closest thing the island has to a true eco-tour outfit. Guides are actual marine naturalists, not just captains with a script. They run kayak tours, dolphin/nature catamaran cruises, and Pinckney Island trips. Best operator for kids who are curious about the wildlife (not just there for a boat ride).',
+        },
+        {
+          name: 'Vagabond Cruise',
+          meta: 'Catamaran out of Harbour Town',
+          blurb: "The classic Sea Pines option. Departs from Harbour Town, runs Calibogue Sound and the Daufuskie shoreline. Good captains, large stable boat, decent for big multigenerational groups. Book the morning trip in summer to dodge afternoon thunderstorms.",
+        },
+        {
+          name: 'Shelter Cove fleet',
+          meta: 'Multiple operators, mid-island',
+          blurb: 'Shelter Cove Harbour hosts several dolphin tour boats — Adventure Cruises, Pau Hana Boat Tours, and others. Quality varies by captain, not by company. Book through the marina or ask us — we know which captains are running this season.',
+        },
+        {
+          name: 'Lowcountry Nature Tours',
+          meta: 'Speedboat + nature-focused',
+          blurb: "Speedboat-style trips with a heavy nature emphasis. Captain Amber's tours specifically are a regular recommendation among locals — high spotting rate, good narration, no theme-park vibe.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Best time of year for a dolphin tour',
+    },
+    {
+      kind: 'p',
+      html: "Dolphins are here every month of the year — the population is resident. What changes is the experience around the dolphins (water comfort, crowds, light, ancillary wildlife).",
+    },
+    {
+      kind: 'table',
+      caption: 'Dolphin tour by season',
+      headers: ['Season', 'Months', 'Dolphin activity', 'Crowd level', 'Verdict'],
+      rows: [
+        ['Spring', 'March–May', 'High — calves born, active feeding', 'Light to moderate', 'Best month: late April–May'],
+        ['Summer', 'June–August', 'High — daily activity, calves visible', 'Heavy — book ahead', 'Fine, but go at sunrise or sunset'],
+        ['Fall', 'September–October', 'Very high — bait fish runs, feeding peaks', 'Moderate', 'Best overall window for tours'],
+        ['Winter', 'November–February', 'Steady — fewer dolphins but quieter sound', 'Very low', 'Surprisingly good if dressed for cold'],
+      ],
+    },
+    {
+      kind: 'callout',
+      label: 'Local tip',
+      html: 'Book the <strong>second tour of the morning</strong> rather than the first. The first boat of the day spooks the pods; the second arrives after they\'ve resettled and the captain has radio intel from the earlier trip on where the dolphins are working.',
+    },
+    {
+      kind: 'h2',
+      text: 'What to bring (and what not to bring)',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Polarized sunglasses</strong> — cuts glare and lets you spot dorsal fins from farther out',
+        '<strong>Light jacket or windbreaker</strong> in spring and fall — even at 75°F on land, the wind on the water adds a 10°F chill',
+        '<strong>Reef-safe sunscreen</strong> applied <em>before</em> boarding (boats often discourage spray-on sunscreen on deck)',
+        '<strong>A real camera or phone in a waterproof case</strong> — saltwater spray is brutal on electronics, especially on speedboats',
+        '<strong>Motion sickness medication</strong> if you\'re prone — Calibogue Sound is usually flat but afternoon chop builds in summer',
+        '<strong>Skip:</strong> heels, dangling jewelry, anything that can blow off — the wind takes things you didn\'t expect to lose',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Tips for actually seeing dolphins (not just being on a boat)',
+    },
+    {
+      kind: 'ol',
+      items: [
+        '<strong>Watch the birds.</strong> Diving pelicans and feeding gulls almost always mean dolphins are working bait below.',
+        '<strong>Look for slick spots.</strong> A dolphin pushing fish leaves a flat patch on the water surface — captains call them "footprints."',
+        '<strong>Listen, don\'t just look.</strong> A dolphin\'s exhale at the surface is a distinct sharp puff — quieter than you expect, but unmistakable once you\'ve heard it.',
+        '<strong>Go at low tide if strand feeding matters to you.</strong> The behavior happens on exposed mud banks. Mid-tide is most reliable for general dolphin viewing.',
+        '<strong>Don\'t lean over the rail when one surfaces close.</strong> Dolphins swim under boats; the next surface is often on the other side.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Combining a dolphin tour with the rest of your day',
+    },
+    {
+      kind: 'p',
+      html: "A 90-minute dolphin tour leaves the rest of your day open, which is the right way to use it. The patterns we recommend:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Morning tour → beach afternoon:</strong> 9:30am Shelter Cove cruise → noon lunch at the marina → afternoon at Burkes Beach (15 min away)',
+        '<strong>Afternoon tour → sunset dinner:</strong> 4pm tour from Harbour Town → 6:30pm dinner at Quarterdeck on the marina',
+        '<strong>Sunset tour → late dinner:</strong> 6:30pm sunset cruise → 9pm dinner at <a href="/blog/hilton-head-romantic-restaurants">a romantic restaurant</a> (book ahead)',
+        '<strong>Family day:</strong> Catamaran in the morning → lunch at <a href="/hilton-head/shelter-cove">Shelter Cove</a> → bike rentals or mini golf afternoon',
+        "<strong>Activity stack:</strong> Pair with a fishing charter the same day — many operators can handle both. See the <a href=\"/blog/hilton-head-fishing-guide\">Hilton Head fishing guide</a>.",
+      ],
+    },
+    {
+      kind: 'faq',
+      label: 'Dolphin tour FAQ',
+      items: [
+        {
+          q: 'Will I definitely see dolphins?',
+          a: "Almost always — most operators on Hilton Head report a 95–99% spotting rate, and many offer a 'see-them-or-cruise-again-free' guarantee. The resident population means there is no truly bad month. The exceptions are rare: heavy storms, days right after a cold snap, or unusual current conditions.",
+        },
+        {
+          q: 'What is the best dolphin tour for young kids?',
+          a: "A 90-minute catamaran cruise out of Shelter Cove or Harbour Town. Stable boat, no spray, bathroom on board, easy to walk around. Avoid the speedboat tours for kids under 7 — even kids who love boats can get rattled by the speed and bouncing.",
+        },
+        {
+          q: 'Sunset cruise or daytime cruise — which is better?',
+          a: "Sunset cruise wins for couples and photographers. Daytime works better for families because dolphins are visible against bright water and it's easier to see them clearly. If your trip is in summer (June–August), daytime tours are hot and crowded — go for the sunset slot.",
+        },
+        {
+          q: 'How early should I book?',
+          a: "Summer (June–August): book 1–2 weeks ahead, especially for sunset slots and weekend trips. Spring and fall: 3–4 days is usually enough. Winter: walk-up bookings are typically fine. RBC Heritage week (April) and the July 4th weekend always sell out — book a month in advance.",
+        },
+        {
+          q: 'Are dolphin tours running in winter?',
+          a: "Yes — most operators run year-round, with reduced winter schedules (typically 1–2 daily departures instead of 4–6). Dolphins are still here. Expect cooler water temps, fewer sightings of calves, and a much quieter experience on the boat. Bring a real jacket; the wind on the sound bites in January.",
+        },
+        {
+          q: 'Can I see dolphins without booking a tour?',
+          a: "Yes, occasionally — kayakers in Broad Creek and Sea Pines lagoon system encounter pods regularly, and the boardwalk at Shelter Cove sometimes spots dolphins working the marina entrance. But for a reliable hour with a pod, the tour is the move. See our <a href=\"/blog/hilton-head-kayaking-guide\">Hilton Head kayaking guide</a> for paddler routes that often produce dolphin encounters.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Make it part of a bigger plan',
+    },
+    {
+      kind: 'p',
+      html: "A dolphin tour is one of the easier activities to slot into a Hilton Head trip — but the right tour, at the right time of day, with the right captain, is a different experience than picking the first option off a hotel concierge brochure. If you want us to handle that piece (and pair it intelligently with the rest of your week), the <a href=\"/itinerary\">itinerary service</a> includes operator selection and timing as part of the standard plan. For a 3-day version of the trip, see the <a href=\"/blog/hilton-head-3-day-itinerary\">Hilton Head 3-day itinerary</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 24) ACTIVITIES. Hilton Head kayaking guide
+// ---------------------------------------------------------------------------
+
+const postKayakingGuide: Post = {
+  slug: 'hilton-head-kayaking-guide',
+  title: 'Hilton Head Kayaking Guide: Where to Paddle, Bioluminescence Tours & Operators',
+  excerpt:
+    "Calibogue Sound at sunrise, the Sea Pines lagoon system in the morning, bioluminescent paddle tours in summer. A local breakdown of every kayak option on the island.",
+  description:
+    "The complete guide to kayaking on Hilton Head Island: best paddle routes (Broad Creek, Sea Pines lagoons, Calibogue Sound), bioluminescence kayaking in summer, tour operators, prices, and a tour-vs-rental decision guide.",
+  category: 'Activities',
+  readTime: '8 min',
+  publishedAt: '2026-04-25',
+  author: 'Hilton Ahead',
+  featuredOrder: 24,
+  relatedNeighborhoods: ['shelter-cove', 'sea-pines'],
+  keywords: [
+    'hilton head kayaking',
+    'kayaking hilton head island',
+    'hilton head paddleboarding',
+    'hilton head bioluminescence kayaking',
+    'sea turtle kayak hilton head',
+    'broad creek kayaking',
+    'hilton head kayak rental',
+    'hilton head kayaking guide 2026',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Hilton Head's geography is built for paddling. The island sits between the Atlantic, two major sounds (Calibogue and Port Royal), and a lattice of tidal creeks and lagoons that snake through every neighborhood. You can launch a kayak from a Sea Pines lagoon at 7am, see herons, alligators, and dolphins before lunch, and never paddle the same water twice. This is a guide to the routes worth your time, the operators worth booking, and the calls (tour vs. rental, dawn vs. sunset, salt vs. fresh) most visitors get wrong.",
+    },
+    {
+      kind: 'callout',
+      label: 'Quick read',
+      html: '<strong>Best route for beginners:</strong> Sea Pines lagoon system at low wind. <strong>Best wildlife paddle:</strong> Broad Creek at high tide. <strong>Best one-time-only experience:</strong> bioluminescent kayak tour, May–September, on a moonless night. <strong>Skip:</strong> open Calibogue Sound if there is any chop or wind above 10 mph.',
+    },
+    {
+      kind: 'h2',
+      text: 'Where to kayak — by route',
+    },
+    {
+      kind: 'p',
+      html: "Hilton Head has four distinct paddling environments, and each rewards a different type of trip. Pick by what you actually want from the day, not by what's closest to your villa.",
+    },
+    {
+      kind: 'tier',
+      label: 'Paddle routes ranked',
+      subtitle: 'Where to launch and what each route is good for.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Broad Creek',
+          meta: 'Best wildlife paddle on the island',
+          blurb: 'The tidal creek that splits Hilton Head from north to south is the most productive paddle for wildlife — dolphins working bait, ospreys overhead, occasional manatees in summer. Launch from Broad Creek Marina or Shelter Cove. Fish at high tide; flats and oysters at low. The full creek is a 4–5 hour round trip; most paddlers do a 2-hour out-and-back.',
+        },
+        {
+          name: 'Sea Pines lagoon system',
+          meta: 'Best for beginners and families',
+          blurb: '11 miles of interconnected lagoons inside Sea Pines Plantation. Calm water, no boat traffic, and serious alligator viewing — they sun on the banks and ignore the kayaks (do not return the favor). Sea Pines residents and renters can launch from multiple put-ins; day visitors can rent from the Sea Pines Plantation activity center. The lagoon route is the safest paddle on the island and the best for mixed-skill groups.',
+        },
+        {
+          name: 'Pinckney Island National Wildlife Refuge',
+          meta: 'Best for serious naturalists',
+          blurb: 'Off-island just over the bridge — but a 15-minute drive from any villa. Pinckney is a 4,000-acre wildlife refuge accessible by kayak from a put-in just before the bridge. Roseate spoonbills, herons, alligators, and rookeries you cannot see from any other vantage. Best paddled with a guided tour the first time; the marsh maze is genuinely confusing without a guide.',
+        },
+        {
+          name: 'Calibogue Sound (advanced)',
+          meta: 'For experienced paddlers only',
+          blurb: 'The wide sound between Hilton Head and Daufuskie produces the best dolphin encounters and the most dramatic scenery — but it is exposed water with real boat traffic, tidal currents, and fast-changing conditions. Only paddle this with a guide or after a clear briefing on launch points and wind windows. Beginners get into trouble here every season.',
+        },
+        {
+          name: 'Sandbar trips at low tide',
+          meta: 'Best half-day adventure',
+          blurb: 'A specialty paddle: launch on a falling tide from Shelter Cove, paddle to a sandbar that emerges only on low water, picnic for an hour, and paddle back as the tide turns. Several guided operators run this; doing it without a guide requires reading tide charts well. The reward is a private beach in the middle of the sound that does not exist for most of the day.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Bioluminescent kayaking — the once-a-summer experience',
+    },
+    {
+      kind: 'p',
+      html: "From <strong>late May through September</strong>, the warm brackish water of the Lowcountry produces blooms of dinoflagellates — single-celled organisms that emit blue-green light when disturbed. Drag your paddle through the water at night and the wake glows. Knock on the hull and a halo of stars lights the surface. This is not metaphor. It looks exactly like the photos.",
+    },
+    {
+      kind: 'p',
+      html: "<strong>Conditions matter.</strong> The bioluminescence is strongest on dark, moonless nights, in waters with the right salinity, after warm days. A bright moon washes the effect out — book around the new moon for the best display. The launches are usually after 9pm and sometimes as late as 10:30pm in midsummer. Plan for a late dinner before, or a snack in the car after.",
+    },
+    {
+      kind: 'callout',
+      label: 'When to book a bio tour',
+      html: '<strong>Peak window:</strong> July and August. <strong>Best dates:</strong> 2–3 nights on either side of the new moon. <strong>Operators that consistently run good bio tours:</strong> Outside Hilton Head, Hilton Head Kayak Co, and Pau Hana Boat Tours (occasional). Book <strong>1–2 weeks ahead</strong> in summer; tours fill fast in July.',
+    },
+    {
+      kind: 'h2',
+      text: 'Tour vs. rental — which makes sense',
+    },
+    {
+      kind: 'p',
+      html: "This is the call most visitors get wrong. The default is to rent — it's cheaper and feels more flexible — but a guided tour is genuinely better for the first paddle on the island, and almost always worth the upcharge for any complicated route.",
+    },
+    {
+      kind: 'table',
+      caption: 'Tour vs. rental decision guide',
+      headers: ['Scenario', 'Tour or Rental?', 'Why'],
+      rows: [
+        ['First time paddling on Hilton Head', 'Tour', 'Tides, wildlife sites, and wind windows take a season to learn — a guide compresses that'],
+        ['Sea Pines lagoon paddle', 'Rental', 'Calm, contained, hard to get lost — go on your own'],
+        ['Broad Creek wildlife paddle', 'Either, lean tour', 'A guide will put you on dolphins; without one you might miss them'],
+        ['Pinckney Island NWR', 'Tour', "The marsh is a maze; you'll spend more time finding the route than enjoying it"],
+        ['Calibogue Sound', 'Tour only', 'Conditions matter too much; do not paddle this alone if you don\'t live here'],
+        ['Bioluminescence', 'Tour only', 'Night paddling, no rental shop will let you take a kayak after dark anyway'],
+        ['Repeat visit, comfortable on water', 'Rental', "You've done a tour; now do your own thing"],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Best operators and prices',
+    },
+    {
+      kind: 'tier',
+      label: 'Kayak operators worth booking',
+      subtitle: 'Our honest read on the options.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Outside Hilton Head',
+          meta: 'Tours + rentals; multiple launch points',
+          blurb: 'The best naturalist-led kayak operator on the island. Tours are guided by actual marine biologists, not just paddlers with a script. They run Broad Creek, Pinckney Island, sandbar trips, sunset paddles, and the bioluminescence tour. Rentals also available. Default first call.',
+        },
+        {
+          name: 'Hilton Head Kayak Co',
+          meta: 'Tours focused on small groups',
+          blurb: 'Smaller, less corporate operation. Group sizes capped at 6–8 paddlers; better for couples or anyone wanting a more relaxed pace. Strong for sunrise and sunset paddles. They run a solid bioluminescence tour in summer.',
+        },
+        {
+          name: 'Sea Pines Plantation activity center',
+          meta: 'Rentals only, lagoon access',
+          blurb: 'For lagoon paddling inside Sea Pines, this is the simplest option — rent on-site, launch into the lagoon system, return when done. Day-pass paddlers can also access via a guest pass. No guides, but the route is benign.',
+        },
+        {
+          name: 'Shelter Cove launches',
+          meta: 'Multiple rental + tour options',
+          blurb: 'Shelter Cove Harbour has a couple of paddle outfits launching from the marina docks. Easy parking, restaurants on either side of the trip. Quality varies; ask the marina office which boat is running this season.',
+        },
+      ],
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head kayaking price guide (2026 estimates)',
+      headers: ['Activity', 'Duration', 'Price (per person)', 'Best For'],
+      rows: [
+        ['Lagoon rental (single)', 'Hourly, $20–$30', '—', 'Beginners, kids, casual paddlers'],
+        ['Lagoon rental (tandem)', 'Hourly, $30–$45', '—', 'Couples, parent-with-child'],
+        ['Half-day rental', '4 hours', '$45–$70', 'Day paddlers wanting full freedom'],
+        ['Guided dolphin/wildlife tour', '2–2.5 hours', '$65–$85', 'First-time paddlers, naturalist focus'],
+        ['Sandbar paddle tour', '3 hours', '$75–$95', 'Adventurous groups, low-tide window'],
+        ['Bioluminescence tour', '90 min–2 hr', '$75–$110', 'Once-in-a-trip experience, summer only'],
+        ['Pinckney Island guided', '3 hours', '$85–$110', 'Birders, wildlife photographers'],
+        ['Sunset paddle', '90 min', '$60–$85', 'Couples, photographers, easy ask'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Wildlife you will likely see',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Bottlenose dolphins</strong> — pods of 4–12 work bait through Broad Creek and Calibogue Sound. See the <a href="/blog/hilton-head-dolphin-tours">Hilton Head dolphin tours guide</a> for more on the resident population.',
+        "<strong>Alligators</strong> — Sea Pines lagoons have a healthy population. They sun on banks and ignore boats. Do not approach within 30 feet, and do not feed them under any circumstances (this is enforced).",
+        '<strong>Roseate spoonbills</strong> — at Pinckney Island, especially in spring and early summer. The pink plumage is unmistakable.',
+        '<strong>Sea turtles</strong> — May through October, especially in Calibogue Sound. Loggerhead nesting beaches are protected; do not approach turtles in the water.',
+        '<strong>Bald eagles, ospreys, herons, ibis</strong> — year-round across all routes. Pinckney is the strongest birding paddle.',
+        '<strong>Manatees (occasional)</strong> — June through September in warmer water. A real treat when you see one.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What to bring',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Reef-safe sunscreen</strong> — applied 30 minutes before launch (oxybenzone-based formulas damage the estuaries; the Lowcountry is serious about this)',
+        '<strong>Polarized sunglasses with a strap</strong> — glare cuts your wildlife spotting, and you will tip them into the water without a strap',
+        '<strong>Quick-dry clothing or a swimsuit under shorts</strong> — assume you will get wet from paddle drip and the occasional small wave',
+        '<strong>Water bottle</strong> with a clip — clip it to the deck rigging; loose bottles roll into the water',
+        '<strong>Phone in a waterproof pouch</strong> — saltwater destroys electronics, and dry bags are not as reliable as people assume',
+        '<strong>Light jacket in shoulder season</strong> — even at 70°F on land, water-level paddling adds a 5–10°F chill',
+        '<strong>Bug spray for dawn/dusk paddles</strong> — May through September; the no-see-ums are real in marsh country',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Best time of year — and time of day',
+    },
+    {
+      kind: 'table',
+      caption: 'Kayaking seasons on Hilton Head',
+      headers: ['Season', 'Months', 'Conditions', 'What is happening', 'Verdict'],
+      rows: [
+        ['Spring', 'March–May', 'Cool mornings, warming water', 'Wildlife active, calves born', 'Best overall paddling window'],
+        ['Summer', 'June–August', 'Hot, afternoon storms, warm water', 'Bioluminescence, manatees, dolphin calves', 'Paddle dawn or after 6pm only'],
+        ['Fall', 'September–November', 'Mild, low humidity, dry', 'Bait runs, dolphins feeding', 'Strongest day-paddle conditions'],
+        ['Winter', 'December–February', 'Cool, calm, low traffic', 'Quiet, no crowds', 'Underrated; dress for cold water'],
+      ],
+    },
+    {
+      kind: 'callout',
+      label: 'Tide and time-of-day rule',
+      html: '<strong>Paddle the rising tide</strong> when possible. Easier paddling, more wildlife, and you finish on the high — which makes the take-out simple. Avoid afternoon paddles in summer (June–August) — the thunderstorm risk is real, and Calibogue Sound builds chop quickly. Sunrise paddles are the most underrated experience on the island.',
+    },
+    {
+      kind: 'faq',
+      label: 'Hilton Head kayaking FAQ',
+      items: [
+        {
+          q: 'Do I need experience to kayak on Hilton Head?',
+          a: "For Sea Pines lagoons or a guided tour, no — the lagoon water is calm, and guided tours are sized for beginners. For Broad Creek on your own, you should be comfortable handling tide and minor current. For Calibogue Sound, you should be a confident open-water paddler. The honest move for first-timers: take a guided tour the first paddle, then rent on subsequent trips.",
+        },
+        {
+          q: 'What is the best kayak tour for kids?',
+          a: "For kids 6–10, the Sea Pines lagoon paddle in a tandem with a parent is ideal — calm water, alligator viewing, and short distances. For kids 10+, the dolphin tour out of Broad Creek is a more memorable experience. Most operators have a minimum age of 7 for guided tours, with younger kids only allowed in tandem with a parent.",
+        },
+        {
+          q: 'When is bioluminescence the strongest on Hilton Head?',
+          a: "Late July through August, on dark moonless nights, after consecutive warm days. The water needs to hit roughly 80°F to produce the strongest blooms. Operators only run the tour seasonally — typically late May through September — and check conditions night-of. If a tour is canceled for poor bioluminescence, most operators offer a free reschedule.",
+        },
+        {
+          q: 'Can I see dolphins from a kayak?',
+          a: "Yes — and it's one of the best wildlife encounters available on the island. Broad Creek dolphin pods routinely surface within 20–30 feet of kayaks; they're habituated to small craft and ignore them. The kayak experience is quieter than a tour boat — you hear the exhales clearly. Do not chase or follow dolphins; let them set the encounter.",
+        },
+        {
+          q: 'Are kayaks allowed on the beaches?',
+          a: "Surf-launching from Hilton Head's main beaches (Coligny, Folly Field, Burkes) is legal but discouraged outside of dawn and dusk — beach traffic, swimmers, and shorebreak make it impractical. Most paddlers launch from inland marinas or lagoons. Sit-on-tops and surfskis can be carried over from a beach access; always check posted signs at each beach for current rules.",
+        },
+        {
+          q: 'Is winter kayaking on Hilton Head worth it?',
+          a: "Surprisingly, yes — for the right paddler. Water is cold (50–60°F), but air temperatures often hit 65°F on sunny December days. Crowds are zero, marsh visibility is at its best (no leaf canopy), and bird activity peaks. Dress for immersion: a wetsuit or layered fleece under a paddle jacket. The <a href=\"/blog/hilton-head-winter-guide\">Hilton Head winter guide</a> covers cool-season activities in more detail.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Where this fits in a trip',
+    },
+    {
+      kind: 'p',
+      html: "Kayaking is not a fill-time activity on Hilton Head — it's a hero activity, and most groups want to slot exactly one paddle into a 4–7 day trip. The pattern that works: <strong>kayak in the morning of day 2 or 3</strong>, after a beach day on day 1, before the bigger commitments (golf, dolphin tour, dinner reservations) later in the week. If you're staying near <a href=\"/hilton-head/shelter-cove\">Shelter Cove</a> or <a href=\"/hilton-head/sea-pines\">Sea Pines</a>, the launches are within 10 minutes of your villa.",
+    },
+    {
+      kind: 'p',
+      html: "If you want help picking the route, the operator, and the time of day to match conditions during your dates — that's exactly what the <a href=\"/itinerary\">itinerary service</a> handles. Tell us who's paddling, what level of adventure they're up for, and we map it to the right launch and the right captain.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -4922,6 +5427,8 @@ export const posts: Post[] = [
   postFishingGuide,
   postDogFriendly,
   postWeekendGetaway,
+  postDolphinTours,
+  postKayakingGuide,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
