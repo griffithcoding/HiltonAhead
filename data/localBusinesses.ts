@@ -1631,6 +1631,247 @@ const weddingBusinesses: Business[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Businesses — Spas & Wellness (10 profiles)
+// ---------------------------------------------------------------------------
+
+const spaBusinesses: Business[] = [
+  // ——— FEATURED PARTNER ———
+  {
+    id: 'heavenly-spa-westin',
+    industrySlug: 'spas-wellness',
+    featured: true,
+    name: 'Heavenly Spa by Westin',
+    tagline: "8,000 sq ft of resort spa inside the Westin — the island's most complete full-service spa experience.",
+    schemaType: 'DaySpa',
+    categories: ['Full-Service Spa', 'Resort Spa', 'Couples Treatments', 'Salon', 'Signature Massages'],
+    priceRange: '$$$$',
+    review:
+      "Heavenly Spa by Westin is the benchmark resort spa on Hilton Head Island — 8,000 square feet of treatment space with nine private rooms, a full-service salon, and a retail boutique. The signature treatments rotate seasonally but consistently center around the Westin's wellness philosophy: restorative massage techniques, marine-sourced ingredients, and body treatments designed to work with the coastal environment. It's open to hotel guests and outside visitors alike, and it's the spa most consistently recommended by locals for special-occasion treatments.",
+    notableFor:
+      "The largest and most complete resort spa on Hilton Head Island — 9 treatment rooms, a full salon, and the brand prestige of the Westin Heavenly Spa program.",
+    address: '2 Grasslawn Ave',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 681-1019',
+    website: 'https://www.westinhiltonheadspa.com',
+    hours: 'Daily 9am–6pm (closed Thanksgiving and Christmas)',
+    heroImage: {
+      src: '',
+      alt: 'Heavenly Spa by Westin treatment room, Hilton Head Island resort spa',
+    },
+    lat: 32.2033,
+    lng: -80.7456,
+  },
+  // ——— Regular listings ———
+  {
+    id: 'ocean-tides-spa-omni',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'Ocean Tides Spa at Omni Hilton Head',
+    tagline: "Full-service resort spa at the Omni — signature oceanfront treatments including the Paradise Glow and Ocean Tides Facial.",
+    schemaType: 'DaySpa',
+    categories: ['Resort Spa', 'Facials', 'Body Treatments', 'Couples', 'Manicure & Pedicure'],
+    priceRange: '$$$',
+    review:
+      "Ocean Tides Spa sits inside the Omni Hilton Head Oceanfront Resort and offers a focused menu of massages, facials, body treatments, and nail services. The signature treatments — the Paradise Glow Body Treatment and the Ocean Tides Signature Facial — are designed around coastal ingredients and the property's oceanfront setting. Like most resort spas, it's available to non-hotel guests by appointment, and the Omni's AAA Four Diamond positioning means the service quality is consistently maintained.",
+    notableFor:
+      "The spa at Hilton Head's only AAA Four Diamond resort — signature treatments inspired by the coastal environment and consistently maintained Four Diamond service.",
+    address: '23 Ocean Ln',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 341-8056',
+    website: 'https://www.omnihotels.com/hotels/hilton-head/spa',
+    hours: 'Tue–Sat 9am–5pm; closed Mon and Sun', // TODO: VERIFY — hours may expand in peak season
+    heroImage: {
+      src: '',
+      alt: 'Ocean Tides Spa at Omni Hilton Head resort, Hilton Head Island',
+    },
+  },
+  {
+    id: 'spa-soleil-hilton',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'Spa Soleil',
+    tagline: "16-treatment-room spa inside the island's largest oceanfront resort — massages, facials, body treatments, and salon.",
+    schemaType: 'DaySpa',
+    categories: ['Resort Spa', 'Full-Service', 'Large Spa', 'Massages', 'Salon Services'],
+    priceRange: '$$$',
+    review:
+      "Spa Soleil operates inside the Hilton Beachfront Resort & Spa — formerly the Hilton Head Marriott — which is the largest resort on the island. With 16 treatment rooms, it's one of the highest-capacity spas in the area, which means appointment availability is more reliable than at smaller boutique spas, particularly during peak season weeks when resort spas routinely book solid. The full menu covers massages, facials, body treatments, nails, and salon services.",
+    notableFor:
+      "16 treatment rooms at the island's largest resort — the highest-capacity spa on Hilton Head, with better appointment availability during peak season than smaller operations.",
+    address: 'One Hotel Circle',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-8420',
+    website: 'https://www.hilton.com/en/hotels/hhhrshh-hilton-beachfront-resort-and-spa-hilton-head-island/spa/',
+    hours: 'Daily 8am–6pm',
+    heroImage: {
+      src: '',
+      alt: 'Spa Soleil treatment room at Hilton Beachfront Resort, Hilton Head Island',
+    },
+  },
+  {
+    id: 'hilton-head-health',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'Hilton Head Health (H3)',
+    tagline: "America's top-ranked weight loss and wellness retreat — immersive multi-week programs on Hilton Head Island since 1976.",
+    schemaType: 'HealthClub',
+    categories: ['Wellness Retreat', 'Weight Loss', 'Immersive Programs', 'Fitness', 'Nutrition'],
+    priceRange: '$$$$',
+    review:
+      "Hilton Head Health — known as H3 — is in a category of its own among island wellness offerings. It's not a day spa or yoga studio; it's an immersive residential wellness retreat that has operated on Hilton Head since 1976, specializing in week-long and multi-week programs combining clinical nutrition, behavioral change coaching, fitness programming, and mindfulness. It has been ranked as America's top weight loss and wellness resort by multiple publications. The programs attract people from across the country specifically to Hilton Head Island.",
+    notableFor:
+      "America's top-ranked wellness and weight loss retreat, operating on Hilton Head Island since 1976 — the island's only residential immersive wellness program.",
+    address: '14 Valencia Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 785-3286',
+    website: 'https://www.hhhealth.com',
+    hours: 'Residential programs — contact for schedule',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Head Health wellness retreat campus, Hilton Head Island',
+    },
+  },
+  {
+    id: 'art-of-massage-yoga',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'Art of Massage & Yoga',
+    tagline: "Holistic wellness studio — organic facials, restorative bodywork, private yoga, and beach yoga sessions.",
+    schemaType: 'DaySpa',
+    categories: ['Holistic Wellness', 'Yoga', 'Organic Facials', 'Beach Yoga', 'Couples Massage'],
+    priceRange: '$$',
+    review:
+      "Art of Massage & Yoga occupies a genuine niche on Hilton Head — a holistic wellness studio that combines therapeutic massage, organic facials, energy work, and yoga instruction under one roof with practitioners who hold advanced credentials across multiple modalities. The beach yoga sessions are particularly popular with visitors who want their wellness practice to connect with the coastal environment. It's the right choice for guests who want thoughtfully integrated wellness rather than a standard hotel spa menu.",
+    notableFor:
+      "Hilton Head's most holistic independent wellness studio — organic skincare, multi-modality bodywork, and beach yoga sessions all from a single locally-rooted practice.",
+    address: '14 New Orleans Rd, Suite 2',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 422-8378',
+    website: 'https://www.artofmassagehiltonhead.com',
+    hours: 'Mon–Fri 9am–5pm (weekend sessions available — contact for schedule)', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Art of Massage and Yoga wellness studio, Hilton Head Island',
+    },
+  },
+  {
+    id: 'jiva-yoga-center',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'Jiva Yoga Center',
+    tagline: "Seven-days-a-week yoga classes in multiple styles — Vinyasa, Kundalini, Yin, SUP Yoga, and private instruction.",
+    schemaType: 'HealthClub',
+    categories: ['Yoga Studio', 'Multi-Style', 'SUP Yoga', 'Private Sessions', 'Beach Yoga'],
+    priceRange: '$',
+    review:
+      "Jiva Yoga Center is the most complete yoga studio on Hilton Head Island — seven-days-a-week classes in Vinyasa, Hatha, Kundalini, Ashtanga, Yin, and Gentle/Restorative styles, plus private sessions and stand-up paddleboard yoga on the island's waterways. The two locations (William Hilton Pkwy and Mathews Dr) give access from both ends of the island, and the combination of class variety and experienced instructors makes it a practical option for visitors of any yoga background who want to maintain their practice during a stay.",
+    notableFor:
+      "The most comprehensive yoga studio on Hilton Head Island — seven-day-a-week classes in every major style, plus SUP yoga and private instruction.",
+    address: '1032 William Hilton Pkwy',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 247-4549',
+    website: 'https://www.jivayogacenter.com',
+    hours: 'Mon–Fri 9am–7:15pm (varies by day), Sat–Sun 9am–12:30pm',
+    heroImage: {
+      src: '',
+      alt: 'Jiva Yoga Center studio class, Hilton Head Island',
+    },
+  },
+  {
+    id: 'hh-beach-yoga',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'HH Beach Yoga (Island Yoga)',
+    tagline: "Beach yoga sessions at Hilton Head's best locations — beginner-friendly classes on the sand and in the studio.",
+    schemaType: 'HealthClub',
+    categories: ['Beach Yoga', 'Beginner-Friendly', 'Studio Classes', 'Gentle Yoga', 'Restorative'],
+    priceRange: '$',
+    review:
+      "HH Beach Yoga specializes in what visitors come to Hilton Head for: yoga on the actual beach. The studio offers both outdoor beach sessions at prime island locations and indoor classes — Gentle Yoga, Yoga 101, Vinyasa Flow, and Restorative — for less weather-dependent practice. The beginner-inclusive approach makes it the right first yoga experience for guests who want to try it in the best possible setting without needing prior experience.",
+    notableFor:
+      "The island's specialist in beach yoga sessions — guided classes on the sand at Hilton Head's best beach locations, with no yoga experience required.",
+    address: '1012 William Hilton Pkwy, Suite 1',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(803) 420-2829',
+    website: 'https://www.hhbeachyoga.com',
+    hours: 'Check website for current class schedule', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Beach yoga class on Hilton Head Island, South Carolina',
+    },
+  },
+  {
+    id: 'bikram-hot-yoga-hhi',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'Bikram Hot Yoga Hilton Head',
+    tagline: "Dedicated hot yoga studio — the traditional 26-posture Bikram series in a heated room, 6 days a week.",
+    schemaType: 'HealthClub',
+    categories: ['Hot Yoga', 'Bikram', 'Heated Studio', 'Traditional Practice', 'Daily Classes'],
+    priceRange: '$',
+    review:
+      "Bikram Hot Yoga Hilton Head is the island's only dedicated hot yoga studio, offering the traditional 26-posture Bikram series in a properly heated room six days a week with early morning, midday, and evening class options. For visitors who practice Bikram at home and want to maintain the format during their stay, it's the one place on the island that delivers the authentic heated Bikram experience rather than a modified hot yoga variation.",
+    notableFor:
+      "The only dedicated Bikram hot yoga studio on Hilton Head Island — traditional 26-posture series, proper heat, and multiple daily class times.",
+    address: '10 Executive Park Rd, Suite 101',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 689-9642',
+    website: 'https://www.bikramhh.com',
+    hours: 'Mon/Wed/Fri 5:30am–7:45pm; Tue/Thu 7:30am–8pm; Sat–Sun 7:30am–6pm',
+    heroImage: {
+      src: '',
+      alt: 'Bikram Hot Yoga studio interior, Hilton Head Island',
+    },
+  },
+  {
+    id: 'back-in-balance-hhi',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'Back In Balance Wellness Spa',
+    tagline: "Therapeutic massage clinic — deep tissue, sports massage, and advanced bodywork from a locally trusted practice.",
+    schemaType: 'DaySpa',
+    categories: ['Therapeutic Massage', 'Deep Tissue', 'Sports Massage', 'By Appointment', 'Clinical'],
+    priceRange: '$$',
+    review:
+      "Back In Balance Wellness Spa is a therapeutic massage and bodywork clinic with a strong reputation among the island's full-time residents — the signal that distinguishes a genuinely effective practice from a tourist-oriented one. The service menu focuses on functional outcomes: deep tissue work, sports massage, and specialized modalities for chronic tension and injury recovery. It's a better choice for visitors who want therapeutic results from their massage than the relaxation-oriented resort spa experience.",
+    notableFor:
+      "A therapeutically focused massage clinic trusted by local residents — the right choice when you want clinical results rather than a resort spa ambiance.",
+    address: '33 Bow Cir, Building 62, Suite C',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 422-4841',
+    website: 'https://www.backinbalancehhi.com',
+    hours: 'Mon–Fri 8am–6:30pm, Sat–Sun 9am–5pm',
+    heroImage: {
+      src: '',
+      alt: 'Back In Balance Wellness Spa massage therapy, Hilton Head Island',
+    },
+  },
+  {
+    id: 'hhi-spa-wellness',
+    industrySlug: 'spas-wellness',
+    featured: false,
+    name: 'Hilton Head Island Spa & Wellness',
+    tagline: "Boutique day spa specializing in Pure Organic Anti-Aging facials and an extensive massage menu — open seven days a week.",
+    schemaType: 'DaySpa',
+    categories: ['Organic Facials', 'Anti-Aging', 'Couples Massage', 'Seven Days', 'Boutique'],
+    priceRange: '$$',
+    review:
+      "Hilton Head Island Spa & Wellness is a boutique day spa built around two specialties: Pure Organic Anti-Aging Facials and a broad massage menu that runs from Swedish and deep tissue to craniosacral, sports, Reiki, and couples massage. Seven-day availability (including Sundays with a 10am–3pm window) makes it practical for visitors whose schedules don't flex around typical spa hours. The mid-island location is accessible from most communities.",
+    notableFor:
+      "Open seven days a week including Sunday mornings — Pure Organic facials and an unusually wide massage menu from Swedish to craniosacral and Reiki.",
+    address: '42 New Orleans Rd, Suite 203',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 816-3355',
+    website: 'https://www.hiltonheadislandspa.com',
+    hours: 'Mon 9am–5:30pm, Tue–Sat 9am–6pm, Sun 10am–3pm',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Head Island Spa & Wellness boutique day spa treatment room',
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Business registry — add entries here as more industries are built out
 // ---------------------------------------------------------------------------
 
@@ -1640,7 +1881,8 @@ export const allBusinesses: Business[] = [
   ...golfBusinesses,
   ...vacationRentalBusinesses,
   ...weddingBusinesses,
-  // Spas, shopping, etc. added in subsequent commits
+  ...spaBusinesses,
+  // Shopping, family, etc. added in subsequent commits
 ];
 
 // ---------------------------------------------------------------------------
