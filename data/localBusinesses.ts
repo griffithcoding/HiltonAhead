@@ -672,12 +672,255 @@ const fbBusinesses: Business[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Businesses — Water Activities (10 profiles)
+// ---------------------------------------------------------------------------
+
+const waterBusinesses: Business[] = [
+  // ——— FEATURED PARTNER ———
+  {
+    id: 'outside-hilton-head',
+    industrySlug: 'water-activities',
+    featured: true,
+    name: 'Outside Hilton Head',
+    tagline: "The island's original nature guide service — dolphin tours, kayak, eco adventures, and Daufuskie day trips since 1979.",
+    schemaType: 'TouristInformationCenter',
+    categories: ['Dolphin Tours', 'Kayak', 'Eco Tours', 'Daufuskie Island', 'Family-Friendly'],
+    priceRange: '$$',
+    review:
+      "Outside Hilton Head has been running guided tours off this island since 1979, which makes it the longest-established outdoor outfitter on Hilton Head and one of the most experienced anywhere on the South Carolina coast. Every tour is led by USCG-licensed captains or trained naturalists — the dolphin eco tours are particularly good, as guides combine marine biology with the kind of local knowledge that takes decades to accumulate. The Daufuskie Island day trip is the most complete off-island excursion available from Hilton Head.",
+    notableFor:
+      "The gold-standard guided tour operator on Hilton Head Island — 45+ years of dolphin tours, kayak expeditions, and nature programs, all led by working naturalists.",
+    address: '50 Shelter Cove Ln',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-6996',
+    website: 'https://www.outsidehiltonhead.com',
+    hours: 'Daily 7:30am–6pm, 365 days a year',
+    instagram: 'outsidehiltonhead',
+    heroImage: {
+      src: '',
+      alt: 'Outside Hilton Head guided kayak and dolphin tour, Hilton Head Island',
+    },
+    lat: 32.1997,
+    lng: -80.7549,
+  },
+  // ——— Regular listings ———
+  {
+    id: 'vagabond-cruise',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'Vagabond Cruise',
+    tagline: "Hilton Head's original sightseeing cruise operator — dolphin tours, dinner cruises, and the famous Stars & Stripes America's Cup yacht.",
+    schemaType: 'TouristAttraction',
+    categories: ['Dolphin Cruises', 'Sailing', 'Dinner Cruises', 'Daufuskie Island', 'Sightseeing'],
+    priceRange: '$$',
+    review:
+      "Vagabond Cruise has operated out of Harbour Town Yacht Basin since 1968, making it the oldest continuously running cruise operation on Hilton Head Island. The dolphin cruises and shrimp trawling excursions are popular with families; the sailing trips aboard Stars & Stripes — a former America's Cup racing yacht — are a genuinely rare experience. The Daufuskie Island ferry service gives day-trippers access to the uninhabited barrier island without renting a private boat.",
+    notableFor:
+      "In business since 1968 and still operating the Stars & Stripes, an actual America's Cup racing yacht — the most storied boat in Hilton Head's charter fleet.",
+    address: '149 Lighthouse Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 363-9026',
+    website: 'https://www.vagabondcruise.com',
+    hours: 'Daily 8am–8pm (seasonal schedule — confirm departures)',
+    heroImage: {
+      src: '',
+      alt: 'Vagabond Cruise dolphin tour at Harbour Town Yacht Basin, Hilton Head Island',
+    },
+  },
+  {
+    id: 'h2o-sports',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'H2O Sports',
+    tagline: 'Parasailing, kayak tours, and dolphin watch trips from the base of the Harbour Town Lighthouse.',
+    schemaType: 'SportsActivityLocation',
+    categories: ['Parasailing', 'Kayak Tours', 'Dolphin Watch', 'Waterfront', 'Rentals'],
+    priceRange: '$$',
+    review:
+      "H2O Sports operates from one of the best addresses on the island — the dock at Harbour Town Yacht Basin, directly under the lighthouse. The location makes it easy to add a parasail flight or dolphin tour to any Sea Pines afternoon without extra driving. The guided kayak tours wind through the tidal creeks behind Harbour Town, where wildlife sightings (herons, dolphins, loggerhead turtles) are reliable in season.",
+    notableFor:
+      "Parasailing and guided kayak tours launched directly from Harbour Town marina — the most scenically positioned water sports operator on the island.",
+    address: '149 Lighthouse Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 671-4386',
+    website: 'https://www.h2osports.com',
+    hours: 'Mon–Fri 9am–6pm, Sat 9am–4pm', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'H2O Sports parasailing and kayak tours at Harbour Town, Hilton Head Island',
+    },
+  },
+  {
+    id: 'kayak-hilton-head',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'Kayak Hilton Head',
+    tagline: 'Guided dolphin kayak tours with multiple daily departures — among the most-reviewed tour operators on the island.',
+    schemaType: 'SportsActivityLocation',
+    categories: ['Kayak Tours', 'Dolphin Watching', 'Paddleboard', 'Eco Tours', 'Family-Friendly'],
+    priceRange: '$$',
+    review:
+      "Kayak Hilton Head focuses on one thing — guided paddling tours — and the depth of experience shows. The dolphin kayak tours run multiple departures daily and are consistently among the top-rated outdoor experiences on TripAdvisor for the island. The creek-level vantage point puts you close enough to dolphins, shorebirds, and marsh wildlife that a dedicated kayak tour consistently outperforms larger boat tours for wildlife observation.",
+    notableFor:
+      "Consistently the top-rated kayak tour operator on Hilton Head — multiple daily dolphin tours with guides who know exactly where the creek wildlife will be.",
+    address: '18 Simmons Rd', // TODO: VERIFY
+    city: 'Hilton Head Island, SC 29926',
+    phone: '(843) 684-1910',
+    website: 'https://www.kayakhiltonhead.com',
+    hours: 'Daily 7:30am–7:30pm (seasonal)',
+    heroImage: {
+      src: '',
+      alt: 'Kayak Hilton Head guided dolphin kayak tour, Hilton Head Island',
+    },
+  },
+  {
+    id: 'island-water-sports',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'Island Water Sports',
+    tagline: 'Sailing charters, kayak tours, paddleboarding, and powerboat rentals from South Beach Marina in Sea Pines.',
+    schemaType: 'SportsActivityLocation',
+    categories: ['Sailing', 'Kayak', 'Paddleboard', 'Boat Rentals', 'Family-Friendly'],
+    priceRange: '$$',
+    review:
+      "Island Water Sports sits at South Beach Marina — the same marina as the Salty Dog Cafe — giving it the most concentrated foot traffic of any water sports operator in Sea Pines. The menu is wide: sailing charters, kayak and paddleboard tours, banana boat rides, wildlife eco tours, and powerboat rentals. It's a practical option for visitors staying in the south end of the island who want multiple activity types in one stop.",
+    notableFor:
+      "The most versatile water sports operation in Sea Pines — sailing, kayak, paddleboard, and boat rentals all from South Beach Marina.",
+    address: '232 S Sea Pines Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 671-7007',
+    website: 'https://www.islandwatersportshhi.com',
+    hours: 'Daily 8am–7pm (Tue closes 5pm)', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Island Water Sports sailing and kayak at South Beach Marina, Sea Pines, Hilton Head',
+    },
+  },
+  {
+    id: 'hilton-head-outfitters',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'Hilton Head Outfitters',
+    tagline: "Kayak and canoe rentals on Palmetto Dunes' famous 11-mile interconnected lagoon system.",
+    schemaType: 'SportsActivityLocation',
+    categories: ['Kayak Rentals', 'Canoe', 'Paddleboard', 'Bike Rentals', 'Lagoon Tours'],
+    priceRange: '$',
+    review:
+      "The appeal of Hilton Head Outfitters is the setting: Palmetto Dunes' lagoon system is one of the most extraordinary freshwater paddling environments in the coastal Southeast — 11 miles of interconnected waterways running through the resort, visible from every bridge. Launching from the Outfitters' dock puts you directly onto those lagoons for a completely calm, sheltered paddle through marsh grass and live oaks, with alligator sightings common year-round.",
+    notableFor:
+      "The best-positioned kayak rental on the island for calm-water paddling — direct access to Palmetto Dunes' 11-mile lagoon system, the largest in the western hemisphere.",
+    address: '80 Queens Folly Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(866) 380-1783',
+    website: 'https://www.hiltonheadoutfitters.com',
+    hours: 'Daily 9am–5pm (seasonal)',
+    heroImage: {
+      src: '',
+      alt: 'Kayak rental on Palmetto Dunes lagoon system, Hilton Head Island',
+    },
+  },
+  {
+    id: 'lowcountry-watersports',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'Lowcountry Watersports',
+    tagline: 'Dolphin tours, kayak tours, jet ski rentals, and Daufuskie Island excursions from Palmetto Bay Marina.',
+    schemaType: 'SportsActivityLocation',
+    categories: ['Dolphin Tours', 'Jet Ski', 'Kayak Tours', 'Boat Rentals', 'Sunset Cruises'],
+    priceRange: '$$',
+    review:
+      "Lowcountry Watersports operates from Palmetto Bay Marina on Broad Creek, which puts it away from the resort-area crowds and gives access to some of the island's best dolphin-watching territory. The 90-minute dolphin tour comes with a sighting guarantee — uncommon in this market and a sign of genuine confidence in the guides. The jet ski and boat rental fleet rounds out the offering for visitors who want to explore independently.",
+    notableFor:
+      "One of the few dolphin tours on Hilton Head Island offered with a guaranteed sighting — backed by guides who know the resident bottlenose dolphin population intimately.",
+    address: '86 Helmsman Way, Suite 101',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 684-2004',
+    website: 'https://www.lowcountrywatersports.com',
+    hours: 'Seasonal — check website for current schedule', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Lowcountry Watersports dolphin tour at Palmetto Bay Marina, Hilton Head Island',
+    },
+  },
+  {
+    id: 'sky-pirate-parasail',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'Sky Pirate Parasail & Watersports',
+    tagline: 'USCG-certified parasailing with panoramic island views from Broad Creek Marina.',
+    schemaType: 'SportsActivityLocation',
+    categories: ['Parasailing', 'Jet Ski', 'Tubing', 'Watersports', 'Adventure'],
+    priceRange: '$$',
+    review:
+      "Sky Pirate operates a USCG-certified 12-passenger parasail vessel out of Broad Creek Marina, with solo, tandem, and triple flights that put riders 500–1,000 feet above the island — high enough to see both the Atlantic Ocean and the Intracoastal Waterway simultaneously. The jet ski and tubing rentals make it a full-day activity hub. The Broad Creek location is less trafficked than the resort marinas, which typically means faster departure times.",
+    notableFor:
+      "Dedicated parasail specialist with USCG certification and the only operation offering triple parasail flights — up to three riders airborne at once over Hilton Head.",
+    address: '18 Simmons Rd',
+    city: 'Hilton Head Island, SC 29926',
+    phone: '(843) 842-2566',
+    website: 'https://www.skypirateparasail.com',
+    hours: 'Daily 8am–8pm (seasonal)',
+    heroImage: {
+      src: '',
+      alt: 'Parasailing over Hilton Head Island with Sky Pirate Parasail, Broad Creek Marina',
+    },
+  },
+  {
+    id: 'sea-monkeys-watersports',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'Sea Monkeys Watersports',
+    tagline: "Independent watercraft rentals — jet skis, pontoons, kayaks, and paddleboards at Hilton Head's north end.",
+    schemaType: 'SportsActivityLocation',
+    categories: ['Jet Ski', 'Pontoon Rentals', 'Kayak Rentals', 'Paddleboard', 'Boat Rentals'],
+    priceRange: '$$',
+    review:
+      "Sea Monkeys is the no-fuss watercraft rental operation on the north end of the island — jet ski rentals, pontoon boats, kayaks, and paddleboards available without the resort markup. The Jenkins Island Road location accesses quieter waterways than the south-end marinas, which makes it a better choice for families who want to explore rather than join a tour group. Locally owned and operated with a straightforward pricing model.",
+    notableFor:
+      "The most straightforward watercraft rental on Hilton Head's north end — no resort premium, with access to quieter tidal creeks away from the marina crowds.",
+    address: '43A Jenkins Island Rd',
+    city: 'Hilton Head Island, SC 29926',
+    phone: '(843) 842-4754',
+    website: 'https://www.seamonkeyshhi.com',
+    hours: 'Mon–Sat 7am–8pm', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Jet ski and boat rentals at Sea Monkeys Watersports, Hilton Head Island',
+    },
+  },
+  {
+    id: 'live-oac',
+    industrySlug: 'water-activities',
+    featured: false,
+    name: 'Live OAC (Outdoor Adventure Company)',
+    tagline: 'Wakeboarding, waterskiing, tubing, and dolphin eco tours — one boat outing with multiple activities.',
+    schemaType: 'SportsActivityLocation',
+    categories: ['Wakeboarding', 'Waterskiing', 'Tubing', 'Dolphin Tours', 'Fishing'],
+    priceRange: '$$$',
+    review:
+      "Live OAC fills a gap in the Hilton Head water sports market: a private charter company that can combine wake sports, tubing, wildlife watching, and light inshore fishing on a single outing rather than booking separate tours. The setup works well for groups — a 2-hour charter can move through waterskiing, dolphin spotting, and tubing in sequence. The Intracoastal Waterway access from their Waterway Lane base gives flexibility on where to run each activity.",
+    notableFor:
+      "The only Hilton Head operator combining wake sports (waterskiing, wakeboarding, tubing) with dolphin eco tours in a single customizable private charter.",
+    address: '1 Waterway Ln',
+    city: 'Hilton Head Island, SC 29926',
+    phone: '(843) 384-1414',
+    website: 'https://www.liveoac.com',
+    hours: 'Daily 8am–8pm (seasonal)', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Wakeboarding and dolphin tour charter with Live OAC, Hilton Head Island',
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Business registry — add entries here as more industries are built out
 // ---------------------------------------------------------------------------
 
 export const allBusinesses: Business[] = [
   ...fbBusinesses,
-  // Golf, water activities, weddings, etc. added in subsequent PRs
+  ...waterBusinesses,
+  // Golf, weddings, etc. added in subsequent commits
 ];
 
 // ---------------------------------------------------------------------------
