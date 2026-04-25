@@ -1872,7 +1872,491 @@ const spaBusinesses: Business[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Business registry — add entries here as more industries are built out
+// Businesses — Shopping & Boutiques (10 profiles)
+// ---------------------------------------------------------------------------
+
+const shoppingBusinesses: Business[] = [
+  // ——— FEATURED PARTNER ———
+  {
+    id: 'village-at-wexford',
+    industrySlug: 'shopping',
+    featured: true,
+    name: 'The Village at Wexford',
+    tagline: "Upscale European-style courtyard shopping with 30+ award-winning merchants, live jazz, and Lilly Pulitzer.",
+    schemaType: 'ShoppingCenter',
+    categories: ['Boutiques', 'Gift Shops', 'Jewelry', 'Upscale', 'Live Entertainment'],
+    priceRange: '$$$',
+    review:
+      "The Village at Wexford is the most refined shopping destination on Hilton Head Island — a European-style courtyard complex with 30+ merchants ranging from Lilly Pulitzer and fine jewelry to gift boutiques, galleries, and top-rated restaurants. The regular live jazz performances in the courtyard make it a destination in the evening rather than just a retail errand, and the merchant caliber is consistently above what you'll find at the more tourist-oriented centers. It's the shopping option that repeat visitors seek out specifically.",
+    notableFor:
+      "Hilton Head's most curated retail destination — European courtyard setting, 30+ award-winning merchants, and live jazz performances that make it a destination rather than a chore.",
+    address: '1000 William Hilton Pkwy',
+    city: 'Hilton Head Island, SC 29928',
+    website: 'https://www.villageatwexford.com',
+    hours: 'Mon–Thu 9am–9pm, Fri–Sun 10am–9pm (individual store hours vary)',
+    heroImage: {
+      src: '',
+      alt: 'The Village at Wexford courtyard shopping center, Hilton Head Island',
+    },
+    lat: 32.1844,
+    lng: -80.7325,
+  },
+  // ——— Regular listings ———
+  {
+    id: 'coligny-plaza',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Coligny Plaza',
+    tagline: "The island's original beach shopping center — 60+ shops steps from Coligny Beach, open late in season.",
+    schemaType: 'ShoppingCenter',
+    categories: ['Beach Shopping', 'Surf Shops', 'Souvenirs', 'Family-Friendly', 'Open Late'],
+    priceRange: '$$',
+    review:
+      "Coligny Plaza has anchored the Forest Beach shopping corridor since the 1950s and remains the most-visited retail hub on the island. With 60+ shops, restaurants, and services in an open-air format walkable from Coligny Beach, it serves every visitor segment — surf gear, T-shirts, ice cream, beach rentals, and casual dining all in one place. The free parking and late evening hours in season make it a reliable base for families who want to extend their beach day without driving across the island.",
+    notableFor:
+      "The island's best-located shopping center — 60+ shops steps from Coligny Beach, free parking, and the late hours that let families turn a beach day into an evening out.",
+    address: '1 N Forest Beach Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-6050',
+    website: 'https://www.colignyplaza.com',
+    hours: 'Mon & Fri 8am–10pm, Tue–Thu & Sat–Sun 10am–9pm (seasonal)',
+    heroImage: {
+      src: '',
+      alt: 'Coligny Plaza beach shopping center, Forest Beach, Hilton Head Island',
+    },
+  },
+  {
+    id: 'shelter-cove-towne-centre',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Shelter Cove Towne Centre',
+    tagline: "Waterfront lifestyle center on Broad Creek marina — shops, dining, farmers market, and nightly summer entertainment.",
+    schemaType: 'ShoppingCenter',
+    categories: ['Marina', 'Waterfront', 'Live Events', 'Dining', 'Farmers Market'],
+    priceRange: '$$',
+    review:
+      "Shelter Cove Towne Centre is Hilton Head's waterfront lifestyle center — 35+ shops and restaurants on the banks of Broad Creek marina, with a community park, playground, and a calendar of free outdoor events that includes summer concerts, a Tuesday farmers market, and holiday programming. The marina setting makes it a natural gathering spot in the evenings; boats dock alongside the restaurants, and the combination of shopping, dining, and entertainment covers most of what families and couples need for a full afternoon.",
+    notableFor:
+      "The only marina-front shopping center on Hilton Head Island — boutiques, dining, and free summer concerts in a waterfront setting that keeps people there all evening.",
+    address: '40 Shelter Cove Ln',
+    city: 'Hilton Head Island, SC 29928',
+    website: 'https://www.sheltercovetownecentre.com',
+    hours: 'Individual store hours vary; grounds always accessible',
+    heroImage: {
+      src: '',
+      alt: 'Shelter Cove Towne Centre waterfront shopping, Hilton Head Island',
+    },
+  },
+  {
+    id: 'harbour-town-shops',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Harbour Town Shops at Sea Pines',
+    tagline: "20+ locally owned boutiques and galleries around the Harbour Town lighthouse — the most photographed shopping in the Southeast.",
+    schemaType: 'ShoppingCenter',
+    categories: ['Boutiques', 'Art Galleries', 'Lighthouse Setting', 'Gifts', 'Sea Pines'],
+    priceRange: '$$$',
+    review:
+      "The 20+ shops clustered around the Harbour Town lighthouse are as much a part of the Sea Pines experience as the golf and the marina. Bailey's Ltd. has anchored the row for over 40 years with decorative gifts and accessories; the Harbour Town Surf Shop serves the water sports crowd; and the combination of galleries, clothing boutiques, and specialty shops makes it worth a full afternoon. The setting — sailboats, the lighthouse, waterfront dining — is the most distinctive retail environment on the island.",
+    notableFor:
+      "Shopping around one of the most recognized landmarks in the South — 20+ boutiques at the base of the Harbour Town lighthouse, where the setting is as good as the stores.",
+    address: '149 Lighthouse Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 363-4530',
+    website: 'https://www.seapines.com/experiences/harbour-town/shopping-dining',
+    hours: 'Most shops daily 10am–6pm (seasonal)',
+    heroImage: {
+      src: '',
+      alt: 'Harbour Town lighthouse boutiques and shops, Sea Pines Resort, Hilton Head Island',
+    },
+  },
+  {
+    id: 'coastal-bliss-boutique',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Coastal Bliss Boutique',
+    tagline: "Voted Hilton Head's Best Women's Clothing Store — locally owned since 2013 with curated coastal style at every price point.",
+    schemaType: 'ClothingStore',
+    categories: ['Women\'s Boutique', 'Coastal Style', 'Award-Winning', 'Locally Owned', 'Resort Wear'],
+    priceRange: '$$',
+    review:
+      "Coastal Bliss Boutique has been voted Hilton Head's Best Women's Clothing Store and operates from its Shelter Cove Towne Centre location with a curated selection of coastal resort wear that covers everything from casual beach cover-ups to elevated occasion pieces. Owner Blake Schmid opened the boutique in 2013 with a specific vision: locally owned, thoughtfully curated, and priced across a range that doesn't require a special occasion. The island's best independent women's clothing boutique.",
+    notableFor:
+      "Voted Hilton Head's best women's boutique — locally owned and curated with genuine coastal style, from casual cover-ups to occasion-worthy pieces.",
+    address: '38 Shelter Cove Ln, Suite 126',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 802-4050',
+    website: 'https://www.coastalblisshiltonhead.com',
+    hours: 'Mon–Sat 10am–7pm',
+    heroImage: {
+      src: '',
+      alt: 'Coastal Bliss Boutique women\'s clothing store, Shelter Cove, Hilton Head Island',
+    },
+  },
+  {
+    id: 'gifted-hilton-head',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Gifted Hilton Head',
+    tagline: "Award-winning upscale gifts, fine jewelry, and custom Hilton Head pieces — the island's best destination for occasion shopping.",
+    schemaType: 'JewelryStore',
+    categories: ['Fine Jewelry', 'Gifts', 'Custom Items', 'Baby Gifts', 'Award-Winning'],
+    priceRange: '$$$',
+    review:
+      "Gifted Hilton Head has been one of the island's most decorated boutiques for over 15 years — consistently recognized for the quality and originality of its gift and jewelry selection. The store carries fine jewelry, baby gifts, custom Hilton Head-branded items, candles, tableware, and locally curated pieces across a range that makes it equally useful for a first-anniversary present and a high-quality souvenir. It's the shop visitors return to specifically rather than discovering accidentally.",
+    notableFor:
+      "The island's most awarded gift and jewelry boutique — 15+ years of curated fine gifts and custom Hilton Head pieces that set a standard above generic resort shopping.",
+    address: '1000 William Hilton Pkwy, Suite J2',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-8787',
+    website: 'https://www.giftedhiltonhead.com',
+    hours: 'Mon–Sat 10am–5pm',
+    heroImage: {
+      src: '',
+      alt: 'Gifted Hilton Head fine jewelry and gift boutique, Village at Wexford',
+    },
+  },
+  {
+    id: 'nash-gallery',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Nash Gallery',
+    tagline: "Family-owned fine craft gallery since 1989 — 150+ American craftsmen, 100% made in North America, no mass production.",
+    schemaType: 'ArtGallery',
+    categories: ['Fine Craft', 'Art Gallery', 'American Made', 'Jewelry', 'Glass & Ceramics'],
+    priceRange: '$$$',
+    review:
+      "Nash Gallery has operated at Shelter Cove Harbour since 1989 with a mission that remains unusual in gallery retail: every piece is made by North American craftspeople, nothing is imported, and nothing is mass-produced. The 150+ artists represented work in glass, ceramics, studio jewelry, metal sculpture, and mixed media — giving collectors genuinely distinctive work rather than the coastal art clichés that fill most beach town galleries. It's one of the most respected fine craft destinations on the East Coast.",
+    notableFor:
+      "Fine craft gallery operating since 1989 with a strict 100%-made-in-North-America policy — 150+ craftspeople whose work you won't find in any other gallery.",
+    address: '13 Harbourside Ln, Suite 2H',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 785-6424',
+    website: 'https://www.nashgallery.com',
+    hours: 'Mon 11am–4pm, Tue–Sat 10am–5pm, Sun 11am–5pm',
+    heroImage: {
+      src: '',
+      alt: 'Nash Gallery fine American craft at Shelter Cove Harbour, Hilton Head Island',
+    },
+  },
+  {
+    id: 'vivid-gallery-hhi',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Vivid Gallery',
+    tagline: "Fine art photography inside the Harbour Town Lighthouse — Lowcountry large-format prints with proceeds to Parkinson's research.",
+    schemaType: 'ArtGallery',
+    categories: ['Photography', 'Fine Art', 'Lighthouse Gallery', 'Lowcountry Prints', 'Charitable'],
+    priceRange: '$$$',
+    review:
+      "Vivid Gallery occupies a unique position — literally — as the only gallery inside the Harbour Town Lighthouse. Photographer Jeff Keefer's large-format canvas prints of Hilton Head and the Lowcountry are produced at a quality that rewards the close inspection the gallery setting enables. The story behind the work is meaningful: a portion of canvas print proceeds goes to the Michael J. Fox Foundation for Parkinson's research, which gives purchases a dimension beyond interior decoration.",
+    notableFor:
+      "The only gallery inside the Harbour Town Lighthouse — large-format Lowcountry photography by Jeff Keefer, with canvas print sales supporting Parkinson's research.",
+    address: '71 Lighthouse Rd, Suite 214',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(912) 414-4383',
+    website: 'https://www.vivid-gallery-hhi.com',
+    hours: 'Check website for current hours', // TODO: VERIFY — inside Lighthouse complex
+    heroImage: {
+      src: '',
+      alt: 'Vivid Gallery Lowcountry photography inside Harbour Town Lighthouse, Hilton Head Island',
+    },
+  },
+  {
+    id: 'hilton-head-outfitters-retail',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Hilton Head Outfitters',
+    tagline: "The activity hub inside Palmetto Dunes — bike rentals, Segways, kayaks, beach gear, and guided tours all in one stop.",
+    schemaType: 'SportingGoodsStore',
+    categories: ['Outdoor Gear', 'Bike Rentals', 'Beach Equipment', 'Segway Tours', 'Activity Booking'],
+    priceRange: '$$',
+    review:
+      "Hilton Head Outfitters is the practical hub for active visitors staying at or near Palmetto Dunes — bikes, kayaks, paddleboards, Segways, and beach gear all available for rent with guided tours bookable at the same counter. For families who want to spend full days exploring the resort without driving off-property, it eliminates the need to bring or source equipment from multiple providers. It's among the most positively reviewed activity operations on the island for its combination of selection and staff quality.",
+    notableFor:
+      "One-stop activity and equipment hub inside Palmetto Dunes — bikes, kayaks, beach gear, and Segway tours with the friendliest staff operation on the island.",
+    address: '80 Queens Folly Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(866) 380-1783',
+    website: 'https://www.hiltonheadoutfitters.com',
+    hours: 'Daily 9am–5pm (seasonal)',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Head Outfitters bike and kayak rentals at Palmetto Dunes Resort',
+    },
+  },
+  {
+    id: 'coastal-treasures-harbour-town',
+    industrySlug: 'shopping',
+    featured: false,
+    name: 'Coastal Treasures',
+    tagline: "Handcrafted gifts, local art, and curated wine selection in the heart of Harbour Town — the island's most distinctive souvenir shop.",
+    schemaType: 'GiftShop',
+    categories: ['Gifts', 'Local Art', 'Wine', 'Handcrafted', 'Harbour Town'],
+    priceRange: '$$',
+    review:
+      "Coastal Treasures sits in Harbour Town and distinguishes itself from generic resort gift shops through a curatorial approach that favors handcrafted items, locally made art, and a thoughtful wine selection over mass-produced merchandise. It's the place visitors come when they want something they won't find at the airport gift shop — items that actually reflect the island rather than just displaying its name. The Harbour Town location puts it within easy reach of the lighthouse, marina, and restaurants.",
+    notableFor:
+      "The Harbour Town gift shop that actually reflects the island — handcrafted pieces, local art, and a curated wine selection that justify the word 'treasure' in the name.",
+    address: '149 Lighthouse Rd, Suite B',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 671-3643',
+    website: 'https://www.coastaltreasures-hiltonhead.com',
+    hours: 'Seasonal — call for current hours', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Coastal Treasures gift shop in Harbour Town, Sea Pines, Hilton Head Island',
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Businesses — Family & Kids Activities (10 profiles)
+// ---------------------------------------------------------------------------
+
+const familyBusinesses: Business[] = [
+  // ——— FEATURED PARTNER ———
+  {
+    id: 'coastal-discovery-museum',
+    industrySlug: 'family-activities',
+    featured: true,
+    name: 'Coastal Discovery Museum',
+    tagline: "70 acres of historic Honey Horn Plantation — free admission, nature trails, Gullah history, and the island's best guided programs.",
+    schemaType: 'Museum',
+    categories: ['Museum', 'Nature Programs', 'Gullah Culture', 'Free Admission', 'Historic Site'],
+    priceRange: '$',
+    review:
+      "The Coastal Discovery Museum at Honey Horn is one of the best family attractions in coastal South Carolina, full stop. Set on 70 acres of a historic plantation with tabby ruins, centuries-old live oaks, and working gardens, it offers free admission with rotating exhibits on Hilton Head's natural history, the Gullah Geechee culture that shaped the island, and the Lowcountry ecosystem. The guided nature programs — salt marsh walks, sea turtle patrols, nature art workshops — are legitimately excellent, and the price (free to low-cost) makes it accessible every day of a week-long stay.",
+    notableFor:
+      "Free admission to 70 acres of historic plantation land with exceptional nature programs and Gullah cultural interpretation — the best all-ages attraction on Hilton Head Island.",
+    address: '70 Honey Horn Dr',
+    city: 'Hilton Head Island, SC 29926',
+    phone: '(843) 689-6767',
+    website: 'https://www.coastaldiscovery.org',
+    hours: 'Mon–Sat 9am–4:30pm, Sun 11am–4:30pm',
+    heroImage: {
+      src: '',
+      alt: 'Coastal Discovery Museum at Honey Horn Plantation, Hilton Head Island',
+    },
+    lat: 32.2378,
+    lng: -80.7603,
+  },
+  // ——— Regular listings ———
+  {
+    id: 'the-sandbox-museum',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: 'The Sandbox: An Interactive Children\'s Museum',
+    tagline: "Two floors, 11+ hands-on exhibits — Hilton Head's dedicated children's museum near Coligny Beach.",
+    schemaType: 'Museum',
+    categories: ['Children\'s Museum', 'Interactive', 'Indoor', 'Ages 1–10', 'Rainy Day'],
+    priceRange: '$',
+    review:
+      "The Sandbox fills a real need on Hilton Head Island — a dedicated children's museum with 11+ hands-on interactive exhibits spread across two floors, specifically designed for young children ages 1 to 10. The themed areas span imaginative play (a miniature grocery store, a construction zone, a veterinary clinic), creative arts, and basic science exploration. It's the island's go-to answer for rainy mornings, recovery days, or families with kids too young to log a full beach day.",
+    notableFor:
+      "Hilton Head's only dedicated children's museum — 11+ interactive exhibits for ages 1–10, the island's best solution for rainy days or high-energy mornings.",
+    address: '80 Nassau St',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-7645',
+    website: 'https://www.thesandbox.org',
+    hours: 'Mon–Sat 10am–5pm',
+    heroImage: {
+      src: '',
+      alt: 'The Sandbox interactive children\'s museum, Hilton Head Island',
+    },
+  },
+  {
+    id: 'lawton-stables',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: 'Lawton Stables',
+    tagline: "The only horseback riding on Hilton Head Island — guided trail rides through Sea Pines Forest Preserve.",
+    schemaType: 'SportsActivityLocation',
+    categories: ['Horseback Riding', 'Trail Rides', 'Sea Pines', 'Pony Rides', 'Farm Animals'],
+    priceRange: '$$',
+    review:
+      "Lawton Stables is the only place on Hilton Head Island to go horseback riding — and the setting makes it genuinely exceptional. The one-hour western-style trail rides wind through Sea Pines Forest Preserve, a 600-acre protected maritime forest with ancient live oaks, deer, and the quiet that comes from being inside one of the most carefully managed natural areas on the East Coast. Pony rides for young children, a small animal farm, and carriage tours round out the offering for families with mixed age groups.",
+    notableFor:
+      "The only horseback riding on Hilton Head Island — guided trail rides through the 600-acre Sea Pines Forest Preserve, with pony rides and a farm for younger kids.",
+    address: '190 Greenwood Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 671-2586',
+    website: 'https://www.lawtonstables.com',
+    hours: 'Tue–Sun 8am–5pm; closed Monday',
+    heroImage: {
+      src: '',
+      alt: 'Lawton Stables horseback riding in Sea Pines Forest Preserve, Hilton Head Island',
+    },
+  },
+  {
+    id: 'pirates-island-golf',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: "Pirate's Island Adventure Golf",
+    tagline: "Two 18-hole pirate-themed courses with caves, waterfalls, and props — Hilton Head's most elaborate mini golf.",
+    schemaType: 'SportsActivityLocation',
+    categories: ['Mini Golf', 'Family Entertainment', 'Themed', 'Ages 3+', 'Evening Activity'],
+    priceRange: '$',
+    review:
+      "Pirate's Island Adventure Golf is consistently the highest-rated mini golf option on Hilton Head Island — two 18-hole courses themed around a pirate ship wreck, with genuine caves, waterfalls, sound effects, and props that go well beyond the standard flat-green mini golf format. It's near Shelter Cove, so it pairs naturally with dinner at the marina restaurants, and the evening lighting makes it better at dusk than in afternoon heat. Consistently cited on TripAdvisor as a top family activity.",
+    notableFor:
+      "The island's most elaborately themed mini golf — caves, waterfalls, and pirate props that make it a genuine event rather than a filler activity.",
+    address: '8 Marina Side Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-4001',
+    website: 'https://www.piratesislandgolf.com',
+    hours: 'Daily 9am–10pm (seasonal)',
+    heroImage: {
+      src: '',
+      alt: "Pirate's Island Adventure Golf mini golf course, Hilton Head Island",
+    },
+  },
+  {
+    id: 'legendary-golf-hhi',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: 'Legendary Golf',
+    tagline: "Voted #1 mini golf in South Carolina — 41+ years, two 18-hole outdoor courses with real water hazards and elevation.",
+    schemaType: 'SportsActivityLocation',
+    categories: ['Mini Golf', '#1 in SC', 'Outdoor', 'Water Features', 'Family Classic'],
+    priceRange: '$',
+    review:
+      "Legendary Golf has been operating on Hilton Head Island for more than 41 years and has been voted the number one miniature golf course in both Beaufort County and South Carolina. The two 18-hole outdoor courses feature real water hazards, ponds, waterfalls, elevation changes, and shaded tree canopy — a significant step above the flat painted-concrete variety. The long operating history shows in the maintenance quality; the courses are genuinely well-kept. The inspirational plaques on each hole are a distinctive touch that regular visitors remember.",
+    notableFor:
+      "Voted #1 miniature golf in South Carolina — 41+ years on the island, two outdoor courses with genuine water features and the shaded canopy that makes afternoon play bearable.",
+    address: '900 William Hilton Pkwy',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-3399',
+    website: 'https://www.legendarygolfhhi.com',
+    hours: 'Daily 9am–9pm (seasonal)',
+    heroImage: {
+      src: '',
+      alt: 'Legendary Golf miniature golf course, Hilton Head Island, SC',
+    },
+  },
+  {
+    id: 'adventure-cove-mini-golf',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: 'Adventure Cove Mini Golf & Arcade',
+    tagline: "36 holes of Caribbean-themed mini golf plus the island's largest arcade — open late every night.",
+    schemaType: 'AmusementPark',
+    categories: ['Mini Golf', 'Arcade', 'Caribbean Theme', 'Late Hours', 'Family Entertainment'],
+    priceRange: '$',
+    review:
+      "Adventure Cove combines two 18-hole Caribbean-themed mini golf courses — Lost Lagoon and Paradise Falls — with the largest arcade on Hilton Head Island. The 11pm closing time makes it the go-to evening activity for families whose kids have boundless energy after dinner, and the arcade gives younger children an option when their siblings are working through the mini golf. The tropical cave-and-lagoon theming on the courses is genuinely elaborate.",
+    notableFor:
+      "Two 18-hole Caribbean courses plus the island's largest arcade — open until 11pm, making it the default answer when families need an evening activity after dinner.",
+    address: '18 Folly Field Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-9990',
+    website: 'https://www.adventurecove.com',
+    hours: 'Daily 10am–11pm',
+    heroImage: {
+      src: '',
+      alt: 'Adventure Cove Caribbean mini golf and arcade, Hilton Head Island',
+    },
+  },
+  {
+    id: 'coligny-beach-park',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: 'Coligny Beach Park',
+    tagline: "Free public beach access, kids' splash pad, accessible mat, and 397 free parking spaces — the island's family beach hub.",
+    schemaType: 'Park',
+    categories: ['Public Beach', 'Free Admission', 'Splash Pad', 'Accessible', 'Lifeguards'],
+    priceRange: '$',
+    review:
+      "Coligny Beach Park is the most family-engineered beach access point on Hilton Head Island — shallow water extending far offshore (30 feet out to reach 3 feet depth), a kids' splash pad adjacent to the beach, seasonal lifeguards, accessible beach matting for mobility devices, covered gazebos, outdoor showers and changing rooms, and 397 free parking spaces. It's directly walkable to Coligny Plaza's restaurants and shops. Named a national Best Family Beach, and the infrastructure backs up the designation.",
+    notableFor:
+      "The best-equipped public beach access on Hilton Head Island — free admission, free parking, kids' splash pad, accessible matting, and one of the shallowest shorelines on the East Coast.",
+    address: '1 N Forest Beach Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 785-4713',
+    website: 'https://hiltonheadislandsc.gov/parks/ColignyBeach',
+    hours: 'Daily 6am–9pm (summer); 6am–6pm (winter); lifeguards seasonal',
+    heroImage: {
+      src: '',
+      alt: 'Coligny Beach Park public beach with families, Forest Beach, Hilton Head Island',
+    },
+    lat: 32.1366,
+    lng: -80.7614,
+  },
+  {
+    id: 'harbour-town-lighthouse',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: 'Harbour Town Lighthouse & Museum',
+    tagline: "Climb Hilton Head's most iconic landmark — 114 steps, 9 floors of island history, panoramic views at the top.",
+    schemaType: 'TouristAttraction',
+    categories: ['Landmark', 'Museum', 'Views', 'History', 'Ages 4+'],
+    priceRange: '$',
+    review:
+      "The Harbour Town Lighthouse is the most recognized structure on Hilton Head Island and the visual centerpiece of Sea Pines Resort. Visitors climb 114 steps through nine landings, each featuring interpretive exhibits covering the island's Civil War history, Gullah cultural heritage, the development of Sea Pines, and the RBC Heritage PGA tournament. The panoramic view from the top takes in the marina, Calibogue Sound, Daufuskie Island, and on clear days the South Carolina mainland. Children as young as four can manage the climb; the lighthouse museum adds genuine educational value to what would otherwise be a tourist photo stop.",
+    notableFor:
+      "Hilton Head Island's defining landmark — climb 114 steps through Civil War history, Gullah culture, and RBC Heritage golf exhibits to panoramic views of Calibogue Sound.",
+    address: '149 Lighthouse Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 671-2810',
+    website: 'https://www.harbourtownlighthouse.com',
+    hours: 'Daily 10am–sundown, year-round',
+    heroImage: {
+      src: '',
+      alt: 'Harbour Town Lighthouse red and white striped tower, Sea Pines, Hilton Head Island',
+    },
+    lat: 32.1432,
+    lng: -80.8104,
+  },
+  {
+    id: 'pinckney-island-refuge',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: 'Pinckney Island National Wildlife Refuge',
+    tagline: "4,000+ acres of tidal marsh and maritime forest — free wildlife refuge with 14 miles of trails 1 mile from the Hilton Head bridge.",
+    schemaType: 'Park',
+    categories: ['Wildlife', 'Bird Watching', 'Hiking', 'Free', 'No Cars'],
+    priceRange: '$',
+    review:
+      "Pinckney Island National Wildlife Refuge sits one mile from the Hilton Head bridge and is one of the most accessible free wildlife experiences in the Lowcountry. The 4,053-acre refuge has 14 miles of unpaved trails through salt marsh, freshwater ponds, and maritime forest — no motorized vehicles allowed, which means it stays genuinely quiet even in high season. The bird list runs to 250+ species; alligators, deer, and wading birds are reliable sightings year-round. The Ibis Pond Loop (1.2 miles) is the right trail for families.",
+    notableFor:
+      "A 4,000-acre free wildlife refuge one mile from Hilton Head — no cars, 250+ bird species, reliable alligator sightings, and an easy 1.2-mile family trail.",
+    address: 'US Hwy 278 at Pinckney Island (approx. 1 mile west of HHI bridge)',
+    city: 'Hilton Head Island, SC 29926',
+    phone: '(843) 784-2468',
+    website: 'https://www.fws.gov/refuge/pinckney-island',
+    hours: 'Daily sunrise to sunset',
+    heroImage: {
+      src: '',
+      alt: 'Pinckney Island National Wildlife Refuge salt marsh trail, near Hilton Head Island',
+    },
+  },
+  {
+    id: 'outside-hhi-family-tours',
+    industrySlug: 'family-activities',
+    featured: false,
+    name: 'Outside Hilton Head — Family Eco Tours',
+    tagline: "USCG-guided family kayak tours, nature programs, and dolphin trips designed specifically for kids and families.",
+    schemaType: 'TouristInformationCenter',
+    categories: ['Kayak Tours', 'Dolphin Tours', 'Eco Programs', 'Kids Camps', 'Family-Friendly'],
+    priceRange: '$$',
+    review:
+      "Outside Hilton Head's family programming is the most established on the island — guided kayak tours designed for children as young as five, family-format dolphin watches, and summer kids camps run by trained naturalists who are as good with children as they are with coastal ecology. The 46-year operating history means the programs are refined rather than improvised, and the USCG-licensed guides ensure every on-water activity is properly structured for safety. For families who want nature education alongside the adventure, this is the right operator.",
+    notableFor:
+      "46 years of family-format guided nature tours — the most experienced and safety-focused outdoor program operator for families with young children on Hilton Head Island.",
+    address: '50 Shelter Cove Ln',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-6996',
+    website: 'https://www.outsidehiltonhead.com',
+    hours: 'Daily 7:30am–6pm, 365 days a year',
+    heroImage: {
+      src: '',
+      alt: 'Family kayak eco tour with Outside Hilton Head, Hilton Head Island',
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Business registry
 // ---------------------------------------------------------------------------
 
 export const allBusinesses: Business[] = [
@@ -1882,7 +2366,8 @@ export const allBusinesses: Business[] = [
   ...vacationRentalBusinesses,
   ...weddingBusinesses,
   ...spaBusinesses,
-  // Shopping, family, etc. added in subsequent commits
+  ...shoppingBusinesses,
+  ...familyBusinesses,
 ];
 
 // ---------------------------------------------------------------------------
