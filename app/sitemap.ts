@@ -4,6 +4,7 @@ import { services } from '@/data/services'
 import { posts } from '@/data/posts'
 import { neighborhoods } from '@/data/neighborhoods'
 import { tripTypes } from '@/data/tripTypes'
+import { months } from '@/data/months'
 import { industries } from '@/data/localBusinesses'
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
@@ -21,6 +22,8 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/itinerary', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/contact', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/blog', changeFrequency: 'weekly', priority: 0.8 },
+  { path: '/events', changeFrequency: 'weekly', priority: 0.85 },
+  { path: '/hilton-head-weather', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/partners', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/sponsorships', changeFrequency: 'monthly', priority: 0.7 },
 ]
@@ -54,6 +57,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.9, // keyword-rich trip-intent pages
+  }))
+
+  // Per-month weather/travel pages — distinct ranking signals for
+  // queries like "Hilton Head weather October" vs head term.
+  const monthEntries: MetadataRoute.Sitemap = months.map((m) => ({
+    url: `${BASE_URL}/hilton-head-weather/${m.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
   }))
 
   const serviceEntries: MetadataRoute.Sitemap = services.items.map((s) => ({
@@ -91,6 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...postEntries,
     ...neighborhoodEntries,
     ...tripTypeEntries,
+    ...monthEntries,
     ...serviceEntries,
     ...localIndexEntry,
     ...localIndustryEntries,
