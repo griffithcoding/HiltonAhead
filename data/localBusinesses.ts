@@ -1155,6 +1155,247 @@ const golfBusinesses: Business[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Businesses — Vacation Rentals (10 profiles)
+// ---------------------------------------------------------------------------
+
+const vacationRentalBusinesses: Business[] = [
+  // ——— FEATURED PARTNER ———
+  {
+    id: 'sea-pines-resort-rentals',
+    industrySlug: 'vacation-rentals',
+    featured: true,
+    name: 'Sea Pines Resort',
+    tagline: "Hilton Head's largest resort community — 400+ managed villas, cottages, and homes inside 5,000 acres of Sea Pines Plantation.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Resort Community', 'Villas', 'Oceanfront', 'Golf Included', 'Full-Service'],
+    priceRange: '$$$',
+    review:
+      "Sea Pines Resort manages more than 400 rental properties inside the 5,000-acre plantation that occupies the southern tip of Hilton Head Island. The inventory runs from one-bedroom villas to seven-bedroom oceanfront homes, and guests access all resort amenities — Harbour Town, the Salty Dog Marina, 36+ holes of golf, 20 miles of bike paths, and three beach accesses — as part of their stay. The Resort's property management program is the largest and most established on the island, with a full-service front desk staffed around the clock.",
+    notableFor:
+      "The island's most complete resort rental experience — booking through Sea Pines Resort means full access to Harbour Town, the PGA Tour golf courses, and 20 miles of private bike paths.",
+    address: '32 Greenwood Dr',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 785-3333',
+    website: 'https://www.seapines.com/vacation-rentals',
+    hours: 'Rental desk daily 7am–11pm',
+    heroImage: {
+      src: '',
+      alt: 'Sea Pines Resort villas and Harbour Town marina, Hilton Head Island',
+    },
+    lat: 32.1432,
+    lng: -80.8104,
+  },
+  // ——— Regular listings ———
+  {
+    id: 'palmetto-dunes-resort-rentals',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'Palmetto Dunes Oceanfront Resort',
+    tagline: "200+ managed villas and homes inside Hilton Head's most amenity-rich resort community.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Oceanfront', 'Villas', 'Resort Community', 'Golf Included', 'Lagoon System'],
+    priceRange: '$$$',
+    review:
+      "Palmetto Dunes Oceanfront Resort manages 200+ rental properties inside one of the most amenity-packed resort communities on the Eastern Seaboard: three championship golf courses, an 11-mile lagoon system, a private beach, tennis, and a marina all within the plantation gates. The resort's property management program has been recognized as among the best-run in the Southeast, with consistent maintenance standards and a strong repeat-guest base that books a year in advance for peak weeks.",
+    notableFor:
+      "The top-rated resort management program on Hilton Head — properties inside a community with three championship golf courses and an 11-mile paddling lagoon.",
+    address: '4 Queens Folly Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(877) 567-6507',
+    website: 'https://www.palmettodunes.com/vacation-rentals',
+    hours: 'Rental office open daily', // TODO: VERIFY hours
+    heroImage: {
+      src: '',
+      alt: 'Palmetto Dunes Oceanfront Resort rental villas, Hilton Head Island',
+    },
+  },
+  {
+    id: 'the-vacation-company',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'The Vacation Company',
+    tagline: "Locally operated for 30+ years — nearly 400 rentals across Sea Pines, Palmetto Dunes, Shipyard, and Forest Beach.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Locally Owned', 'Sea Pines', 'Palmetto Dunes', 'Forest Beach', 'Full-Service'],
+    priceRange: '$$$',
+    review:
+      "The Vacation Company has been managing Hilton Head Island vacation rentals for more than three decades — long enough to have built a repeat-guest network that fills a significant portion of its inventory before the calendar opens to new bookings. With nearly 400 properties across multiple communities, it's one of the larger independent management operations on the island and offers the local knowledge and service responsiveness that national platforms can't match.",
+    notableFor:
+      "One of the longest-standing independent rental companies on the island — 30+ years of local management across Sea Pines, Palmetto Dunes, Shipyard, and Forest Beach.",
+    address: '50 Palmetto Bay Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 686-6100',
+    website: 'https://www.vacationcompany.com',
+    hours: 'Mon–Sat 9am–5pm, Sun 9am–12pm',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Head Island vacation rental villa managed by The Vacation Company',
+    },
+  },
+  {
+    id: 'vacasa-hilton-head',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'Vacasa Hilton Head Island',
+    tagline: "460+ Hilton Head rentals under national management — 24/7 guest service, 3D home tours, and the island's deepest inventory.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Largest Inventory', '24/7 Support', 'Online Booking', 'National Platform', 'Full-Service'],
+    priceRange: '$$$',
+    review:
+      "Vacasa's Hilton Head operation began as Resort Rentals of Hilton Head Island — one of the oldest rental management companies on the island, in business since 1958 — and has grown under national management to over 460 properties. The platform provides 24/7 guest services, 3D virtual home tours for every property, and consistent maintenance standards across the portfolio. For visitors who want the widest selection and a reliable booking platform, it's the largest single catalog of Hilton Head rentals available.",
+    notableFor:
+      "The largest single inventory of managed Hilton Head rentals — 460+ properties on a nationally backed platform with roots on the island going back to 1958.",
+    address: '21 Executive Park Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 310-6983',
+    website: 'https://www.vacasa.com/usa/South-Carolina/Hilton-Head-Island',
+    hours: '24/7 guest services by phone',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Head Island oceanfront vacation rental, Vacasa portfolio',
+    },
+  },
+  {
+    id: 'beach-properties-hhi',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'Beach Properties of Hilton Head',
+    tagline: "Premium oceanfront and ocean-oriented homes since 1995 — focused inventory, strong owner relationships, 400+ high-end properties.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Luxury', 'Oceanfront', 'High-End', 'Locally Owned', 'Premium Inventory'],
+    priceRange: '$$$$',
+    review:
+      "Beach Properties of Hilton Head has built its reputation since 1995 around the premium end of the rental market — oceanfront and ocean-oriented homes rather than interior plantation villas. The 400+ property portfolio skews toward larger homes (4–8 bedrooms) and luxury inventory, with a focus on repeat owner relationships and high-end guest services. For visitors planning a larger family reunion or group trip in a premium property, it's the specialist on the island.",
+    notableFor:
+      "The specialist in luxury and oceanfront rental homes on Hilton Head — 400+ premium properties with a 30-year track record in the high-end market.",
+    address: '862 William Hilton Pkwy',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(800) 671-5155',
+    website: 'https://www.beach-property.com',
+    hours: 'Daily 9am–5pm',
+    heroImage: {
+      src: '',
+      alt: 'Luxury oceanfront vacation home on Hilton Head Island, Beach Properties',
+    },
+  },
+  {
+    id: 'destination-vacation-hhi',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'Destination Vacation Hilton Head',
+    tagline: "Locally owned luxury rental management in Sea Pines, Palmetto Dunes, and Forest Beach — concierge-level service.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Luxury', 'Locally Owned', 'Sea Pines', 'Concierge Service', 'Boutique'],
+    priceRange: '$$$',
+    review:
+      "Destination Vacation Hilton Head Island operates as a boutique management company focused on the luxury end of three major communities: Sea Pines, Palmetto Dunes, and Forest Beach. The smaller portfolio means individual attention to both property owners and guests — this is the operation that knows its inventory intimately and can match guests to specific properties with precision. The concierge approach is a meaningful differentiator from larger platforms where properties are managed at scale.",
+    notableFor:
+      "Boutique luxury rental management with a concierge-level matching approach — small enough to know every property personally, covering the island's three top communities.",
+    address: '7 Executive Park Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 785-7774',
+    website: 'https://www.destinationvacationhhi.com',
+    hours: 'Mon–Sat 9am–5pm, Sun 10am–4pm',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Head Island luxury vacation villa managed by Destination Vacation',
+    },
+  },
+  {
+    id: 'sunset-rentals-hhi',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'Sunset Rentals',
+    tagline: "28+ years on Hilton Head — boutique management with a strong repeat-guest base in Sea Pines and Palmetto Dunes.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Boutique', 'Sea Pines', 'Palmetto Dunes', 'Repeat Guests', 'Locally Owned'],
+    priceRange: '$$$',
+    review:
+      "Sunset Rentals has operated on Hilton Head Island for more than 28 years as a family-owned, boutique vacation rental management company. It's the kind of operation where staff recognize returning guests by name — the repeat booking rate is unusually high, which speaks to consistent service delivery. The portfolio focuses on Sea Pines, Palmetto Dunes, Shipyard, and Forest Beach, with a thoughtful selection of villas and homes rather than maximum inventory.",
+    notableFor:
+      "A family-owned boutique rental company with a loyal repeat-guest base — 28 years on the island and a personalized approach that larger platforms don't replicate.",
+    address: '21 New Orleans Rd, Suite D',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(800) 276-8991',
+    website: 'https://www.sunsetrentals.com',
+    hours: 'Mon–Sat 9am–5:30pm',
+    heroImage: {
+      src: '',
+      alt: 'Hilton Head Island vacation rental, Sunset Rentals portfolio',
+    },
+  },
+  {
+    id: 'dunes-real-estate',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'Dunes Real Estate',
+    tagline: "Founded 1979 — full-service real estate and rental management with the island's deepest institutional knowledge.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Established 1979', 'Sales & Rentals', 'Palmetto Dunes', 'Full-Service', 'Local Expert'],
+    priceRange: '$$$',
+    review:
+      "Dunes Real Estate was founded in 1979, making it one of the oldest continuously operating real estate and rental management firms on Hilton Head Island. The combination of sales and rental management under one roof means the staff carry genuine institutional knowledge about property values, community conditions, and rental performance that a pure rental platform can't offer. The Palmetto Dunes office gives strong access to that community's premium properties.",
+    notableFor:
+      "In business since 1979 and one of the oldest real estate firms on the island — the combined sales and rental operation carries decades of institutional property knowledge.",
+    address: '6 Queens Folly Rd',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 842-1111',
+    website: 'https://www.dunesrealestate.com',
+    hours: 'Mon–Sat 9am–5pm, Sun 12pm–5pm',
+    heroImage: {
+      src: '',
+      alt: 'Dunes Real Estate office, Hilton Head Island vacation rental management',
+    },
+  },
+  {
+    id: 'vacation-time-hhi',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'Vacation Time of Hilton Head',
+    tagline: "South Forest Beach specialists — oceanfront villas and family beach homes steps from Coligny Beach.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Forest Beach', 'Oceanfront', 'Family-Friendly', 'Beach Access', 'Locally Owned'],
+    priceRange: '$$',
+    review:
+      "Vacation Time of Hilton Head is the rental specialist for South Forest Beach — the stretch of the island centered around Coligny Beach that draws families who want walkable beach access and the casual energy of the Coligny Plaza corridor. The portfolio is concentrated in oceanfront and ocean-view villas and homes in this zone, which makes it the most efficient search for visitors whose priority is morning-to-evening beach access without a car trip.",
+    notableFor:
+      "The Forest Beach and Coligny area specialist — the most focused inventory of walkable oceanfront properties in Hilton Head's most family-friendly beach corridor.",
+    address: '3 LeMoyne Ave',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 785-5151',
+    website: 'https://www.vthhi.com',
+    hours: 'Daily 9am–6pm',
+    heroImage: {
+      src: '',
+      alt: 'Oceanfront vacation rental in Forest Beach, Hilton Head Island',
+    },
+  },
+  {
+    id: 'island-time-hhi',
+    industrySlug: 'vacation-rentals',
+    featured: false,
+    name: 'Island Time Hilton Head',
+    tagline: "100+ curated luxury homes and villas — locally operated with a personal-service focus across multiple HHI communities.",
+    schemaType: 'LodgingBusiness',
+    categories: ['Luxury', 'Curated Portfolio', 'Locally Owned', 'Personal Service', 'Multi-Community'],
+    priceRange: '$$$',
+    review:
+      "Island Time Hilton Head manages a carefully curated portfolio of 100+ luxury homes and villas across multiple communities on Hilton Head Island. The smaller portfolio enables a higher level of personal service — guests work with staff who know the properties well enough to make specific recommendations rather than filter results from a database. For visitors who want a hands-on booking experience rather than a self-service platform, it's a strong alternative to the larger operators.",
+    notableFor:
+      "A curated portfolio of 100+ luxury properties managed with genuine personal attention — the boutique operator for visitors who want specific recommendations, not database filters.",
+    address: '1 Chamber of Commerce Dr, Suite B',
+    city: 'Hilton Head Island, SC 29928',
+    phone: '(843) 785-3456',
+    website: 'https://www.islandtimehhi.com',
+    hours: 'Seasonal — check website for current hours', // TODO: VERIFY
+    heroImage: {
+      src: '',
+      alt: 'Luxury vacation home rental managed by Island Time Hilton Head',
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Business registry — add entries here as more industries are built out
 // ---------------------------------------------------------------------------
 
@@ -1162,6 +1403,7 @@ export const allBusinesses: Business[] = [
   ...fbBusinesses,
   ...waterBusinesses,
   ...golfBusinesses,
+  ...vacationRentalBusinesses,
   // Weddings, spas, etc. added in subsequent commits
 ];
 
