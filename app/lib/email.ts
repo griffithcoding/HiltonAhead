@@ -179,6 +179,85 @@ export async function sendItineraryNotification(req: ItineraryRequestEmail) {
   });
 }
 
+// ——— Business / "get featured" inquiry notification ———
+
+export interface BusinessInquiryEmail {
+  businessName: string;
+  contactName?: string;
+  email: string;
+  phone?: string;
+  industry?: string;
+  website?: string;
+  tierInterest?: string;
+  message?: string;
+  userAgent?: string | null;
+}
+
+export async function sendBusinessInquiryNotification(req: BusinessInquiryEmail) {
+  const to = process.env.RESEND_TO_EMAIL || 'hiltonahead@gmail.com';
+
+  const subject = `New business inquiry — ${req.businessName}${req.industry ? ` (${req.industry})` : ''}`;
+
+  const html = `<!doctype html>
+<html>
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+  <div style="max-width:600px;margin:0 auto;padding:32px 24px;">
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#E8A74B;font-weight:600;margin-bottom:8px;">
+      New partner inquiry · hiltonahead.com/local
+    </div>
+    <h1 style="font-family:Georgia,serif;font-size:28px;line-height:1.15;color:#0A2930;margin:0 0 24px 0;letter-spacing:-0.02em;">
+      ${esc(req.businessName)}
+    </h1>
+    <table style="width:100%;border-collapse:collapse;background:#FBF3E2;border:1px solid rgba(10,41,48,0.1);padding:16px;">
+      <tbody>
+        ${fieldRow('Contact', req.contactName)}
+        ${fieldRow('Email', req.email)}
+        ${fieldRow('Phone', req.phone)}
+        ${fieldRow('Industry', req.industry)}
+        ${fieldRow('Website', req.website)}
+        ${fieldRow('Tier interest', req.tierInterest)}
+        ${fieldRow('Message', req.message)}
+      </tbody>
+    </table>
+    <div style="margin-top:24px;font-size:12px;color:#6B7280;line-height:1.6;">
+      <strong>Reply directly</strong> to this email — it\u2019ll go to ${esc(req.email)}.
+    </div>
+    <hr style="border:0;border-top:1px solid rgba(10,41,48,0.15);margin:32px 0 16px;" />
+    <div style="font-size:11px;color:#9CA3AF;line-height:1.5;">
+      Source: get_featured_form<br/>
+      User agent: ${esc((req.userAgent || '').slice(0, 200))}
+    </div>
+  </div>
+</body>
+</html>`;
+
+  const text = [
+    `New business inquiry — hiltonahead.com`,
+    ``,
+    `Business: ${req.businessName}`,
+    req.contactName ? `Contact: ${req.contactName}` : '',
+    `Email: ${req.email}`,
+    req.phone ? `Phone: ${req.phone}` : '',
+    req.industry ? `Industry: ${req.industry}` : '',
+    req.website ? `Website: ${req.website}` : '',
+    req.tierInterest ? `Tier interest: ${req.tierInterest}` : '',
+    req.message ? `Message: ${req.message}` : '',
+    ``,
+    `Reply directly to this email — it'll go to ${req.email}.`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  return sendEmail({
+    to,
+    subject,
+    html,
+    text,
+    replyTo: req.email,
+    tags: [{ name: 'type', value: 'business_inquiry' }],
+  });
+}
+
 // ——— Newsletter welcome (kept short — just a confirmation) ———
 
 export async function sendNewsletterWelcome(to: string) {

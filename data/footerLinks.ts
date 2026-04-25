@@ -18,6 +18,7 @@ export const footerLinks = {
       links: [
         { href: '/about', label: 'About' },
         { href: '/blog', label: 'Local Guide' },
+        { href: '/local', label: 'Business Directory' },
         { href: '/itinerary', label: 'Request Itinerary' },
         { href: '/partners', label: 'Partners' },
         { href: '/sponsorships', label: 'Partner With Us' },
