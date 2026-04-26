@@ -4,6 +4,12 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/utils/supabase/server';
 import { getAdminUser } from '@/utils/supabase/admin';
+import { sendEmailFromAdmin } from '@/utils/gmail/client';
+import { appendCanSpamFooter } from '@/lib/outreach/compliance';
+
+// Hard daily cap — keep us safely under Gmail's 500/day free-tier limit.
+// Adjust if you upgrade to Workspace.
+const DAILY_SEND_CAP = 200;
 
 // ============================================================================
 // Outreach CRM server actions
@@ -242,6 +248,151 @@ export async function markPublishedAction(opportunityId: string, placedUrl: stri
 
   revalidatePath(`/admin/outreach/${opportunityId}`);
   revalidatePath('/admin/outreach');
+}
+
+// ============================================================================
+// Send outreach email via Gmail
+//
+// Returns a serializable result so the client can show success/error
+// inline instead of triggering a runtime exception in the modal.
+// ============================================================================
+export type SendOutreachResult =
+  | { ok: true; messageId: string; threadId: string }
+  | { ok: false; error: string; code?: 'opted_out' | 'bounced' | 'no_contact' | 'cap_reached' | 'gmail' };
+
+export async function sendOutreachEmailAction(
+  opportunityId: string,
+  subject: string,
+  body: string,
+): Promise<SendOutreachResult> {
+  const result = await getAdminUser();
+  if (!result) redirect('/admin/login');
+  const adminEmail = result.admin.email;
+
+  if (!subject.trim() || !body.trim()) {
+    return { ok: false, error: 'Subject and body are required.' };
+  }
+
+  const supabase = await createClient();
+
+  // 1. Load the opportunity + contact
+  const { data: opp, error: oppErr } = await supabase
+    .from('outreach_opportunities')
+    .select(
+      `id, stage, contact_id,
+       contact:contact_id ( id, email, opted_out, email_bounced ),
+       account:account_id ( id, domain, name )`,
+    )
+    .eq('id', opportunityId)
+    .maybeSingle();
+
+  if (oppErr || !opp) {
+    return { ok: false, error: 'Opportunity not found.' };
+  }
+
+  // Supabase types FK joins as arrays even for single-row relations.
+  // We cast through unknown to match the actual runtime shape.
+  const contact = opp.contact as unknown as
+    | { id: string; email: string; opted_out: boolean; email_bounced: boolean }
+    | null;
+
+  if (!contact) {
+    return {
+      ok: false,
+      code: 'no_contact',
+      error: 'No contact attached to this opportunity. Add one first.',
+    };
+  }
+
+  if (contact.opted_out) {
+    return {
+      ok: false,
+      code: 'opted_out',
+      error: 'This contact has opted out. Cannot send.',
+    };
+  }
+
+  if (contact.email_bounced) {
+    return {
+      ok: false,
+      code: 'bounced',
+      error: 'This email previously bounced. Update the address before retrying.',
+    };
+  }
+
+  // 2. Check the daily send cap (count today's email_sent activity rows)
+  const startOfTodayUtc = new Date();
+  startOfTodayUtc.setUTCHours(0, 0, 0, 0);
+  const { count: sentToday } = await supabase
+    .from('outreach_activity')
+    .select('id', { count: 'exact', head: true })
+    .eq('kind', 'email_sent')
+    .gte('created_at', startOfTodayUtc.toISOString());
+
+  if ((sentToday ?? 0) >= DAILY_SEND_CAP) {
+    return {
+      ok: false,
+      code: 'cap_reached',
+      error: `Daily send cap of ${DAILY_SEND_CAP} reached. Resume tomorrow.`,
+    };
+  }
+
+  // 3. Append CAN-SPAM footer (unsub link + physical address)
+  const finalBody = appendCanSpamFooter(body, contact.id);
+
+  // 4. Send via Gmail API
+  const sendResult = await sendEmailFromAdmin(adminEmail, {
+    to: contact.email,
+    subject,
+    body: finalBody,
+  });
+
+  if (!sendResult.ok) {
+    return {
+      ok: false,
+      code: 'gmail',
+      error: sendResult.error,
+    };
+  }
+
+  // 5. Log to activity timeline
+  await supabase.from('outreach_activity').insert({
+    opportunity_id: opportunityId,
+    contact_id: contact.id,
+    kind: 'email_sent',
+    actor_email: adminEmail,
+    body: subject,
+    metadata: {
+      thread_id: sendResult.threadId,
+      message_id: sendResult.messageId,
+      to: contact.email,
+      subject,
+      body_preview: finalBody.slice(0, 280),
+    },
+  });
+
+  // 6. Auto-advance stage if still pre-outreach
+  const PRE_OUTREACH_STAGES = ['discovered', 'researched'];
+  if (PRE_OUTREACH_STAGES.includes(opp.stage)) {
+    await supabase
+      .from('outreach_opportunities')
+      .update({ stage: 'outreached' })
+      .eq('id', opportunityId);
+  } else if (opp.stage === 'outreached') {
+    await supabase
+      .from('outreach_opportunities')
+      .update({ stage: 'followed_up' })
+      .eq('id', opportunityId);
+  }
+
+  revalidatePath(`/admin/outreach/${opportunityId}`);
+  revalidatePath('/admin/outreach');
+
+  return {
+    ok: true,
+    messageId: sendResult.messageId,
+    threadId: sendResult.threadId,
+  };
 }
 
 // ============================================================================

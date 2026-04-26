@@ -4,6 +4,7 @@ import { createClient } from '@/utils/supabase/server';
 import StageSelect from './StageSelect';
 import NoteForm from './NoteForm';
 import PublishForm from './PublishForm';
+import ComposeButton from './ComposeButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -241,12 +242,39 @@ export default async function OpportunityDetailPage({
             )}
           </Section>
 
+          {/* Send outreach email */}
+          <Section title="Send outreach">
+            <ComposeButton
+              opportunityId={opp.id}
+              contact={
+                opp.contact
+                  ? {
+                      email: opp.contact.email,
+                      first_name: opp.contact.first_name,
+                      last_name: opp.contact.last_name,
+                    }
+                  : null
+              }
+              account={
+                opp.account
+                  ? { domain: opp.account.domain, name: opp.account.name }
+                  : null
+              }
+              opportunity={{
+                target_url: opp.target_url,
+                source_url: opp.source_url,
+                anchor_text_proposal: opp.anchor_text_proposal,
+                link_type: opp.link_type,
+              }}
+            />
+          </Section>
+
           {/* Add note */}
           <Section title="Log activity">
             <NoteForm opportunityId={opp.id} />
             <p className="mt-2 text-[11px] text-ink-soft">
-              Email sends will appear here automatically once Gmail send is wired
-              (Phase 4b).
+              Notes are private to the CRM. For outbound emails use the
+              compose button above — sends are auto-logged here.
             </p>
           </Section>
 
