@@ -313,6 +313,40 @@ export default async function NeighborhoodPage({
           </Link>
         </section>
 
+        {/* \u2014\u2014\u2014 Other neighborhoods (cross-link rail) \u2014\u2014\u2014 */}
+        <section aria-label="Other Hilton Head neighborhoods" className="mt-20 border-t border-ink/15 pt-12">
+          <h2 className="display text-[22px] leading-[1.2] text-ink md:text-[26px]">
+            Other neighborhoods to consider
+          </h2>
+          <p className="mt-3 max-w-[560px] text-[14px] leading-[1.7] text-ink-soft">
+            {n.name} is one of {neighborhoods.length} distinct communities on
+            Hilton Head Island. Compare the alternatives to find the right fit
+            for your trip.
+          </p>
+          <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {neighborhoods
+              .filter((other) => other.slug !== n.slug)
+              .map((other) => (
+                <li key={other.slug}>
+                  <Link
+                    href={`/hilton-head/${other.slug}`}
+                    className="group flex h-full flex-col gap-2 rounded-2xl border border-ink/15 bg-cream/40 px-5 py-4 transition-colors hover:border-coral hover:bg-cream"
+                  >
+                    <span className="display text-[18px] leading-[1.2] text-ink group-hover:text-coral">
+                      {other.name}
+                    </span>
+                    <span className="line-clamp-2 text-[13px] leading-[1.5] text-ink-soft">
+                      {other.bestFor[0] ?? other.keywords[0]}
+                    </span>
+                    <span className="mt-auto pt-2 text-[11px] uppercase tracking-[0.18em] text-ink-soft group-hover:text-coral">
+                      Read the guide \u2192
+                    </span>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </section>
+
         <div className="mt-24">
           <NewsletterSignup
             variant="inline"

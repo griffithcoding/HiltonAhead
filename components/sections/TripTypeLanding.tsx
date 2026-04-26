@@ -12,7 +12,11 @@ import {
   TravelSeal,
   CompassRose,
 } from '@/components/ui/Ornament';
-import type { TripTypeLanding as TripType } from '@/data/tripTypes';
+import {
+  type TripTypeLanding as TripType,
+  getRelatedTripTypes,
+  getTripTypeDisplayName,
+} from '@/data/tripTypes';
 
 interface Props {
   trip: TripType;
@@ -233,6 +237,46 @@ export default function TripTypeLandingPage({ trip }: Props) {
             </Link>
           </section>
         )}
+
+        {/* ——— Other ways to visit (cross-link rail) ——— */}
+        {(() => {
+          const related = getRelatedTripTypes(trip.slug);
+          if (related.length === 0) return null;
+          return (
+            <section
+              aria-label="Other ways to visit Hilton Head"
+              className="mt-20 border-t border-ink/15 pt-12"
+            >
+              <h2 className="display text-[22px] leading-[1.2] text-ink md:text-[26px]">
+                Other ways to visit
+              </h2>
+              <p className="mt-3 max-w-[560px] text-[14px] leading-[1.7] text-ink-soft">
+                Different trip, different priorities. These are the other
+                Hilton Head trip types we plan most often.
+              </p>
+              <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {related.map((rt) => (
+                  <li key={rt.slug}>
+                    <Link
+                      href={rt.path}
+                      className="group flex h-full flex-col gap-2 rounded-2xl border border-ink/15 bg-cream/40 px-5 py-4 transition-colors hover:border-coral hover:bg-cream"
+                    >
+                      <span className="display text-[18px] leading-[1.2] text-ink group-hover:text-coral">
+                        {getTripTypeDisplayName(rt)}
+                      </span>
+                      <span className="line-clamp-2 text-[13px] leading-[1.5] text-ink-soft">
+                        {rt.hook}
+                      </span>
+                      <span className="mt-auto pt-2 text-[11px] uppercase tracking-[0.18em] text-ink-soft group-hover:text-coral">
+                        See how we plan it →
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })()}
 
         <div className="mt-24">
           <NewsletterSignup

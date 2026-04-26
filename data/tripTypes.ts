@@ -741,3 +741,45 @@ export const tripTypes: TripTypeLanding[] = [
 export function getTripTypeBySlug(slug: string): TripTypeLanding | undefined {
   return tripTypes.find((t) => t.slug === slug);
 }
+
+// ---------------------------------------------------------------------------
+// Cross-link relations between trip types. Each trip type lists 3 related
+// trip types to feature in the "Other ways to visit" rail at the bottom of
+// the landing page. Curated by editorial intent (e.g., honeymoon ↔ weddings,
+// thanksgiving ↔ winter-rental).
+// ---------------------------------------------------------------------------
+
+export const TRIP_TYPE_RELATIONS: Record<string, string[]> = {
+  'golf-packages': ['oceanfront-villas', 'harbour-town-villas', 'family-trip-planner'],
+  weddings: ['honeymoon', 'oceanfront-villas', 'harbour-town-villas'],
+  honeymoon: ['weddings', 'oceanfront-villas', 'winter-rental'],
+  'oceanfront-villas': ['harbour-town-villas', 'family-trip-planner', 'beaches'],
+  'family-trip-planner': ['beaches', 'spring-break', 'oceanfront-villas'],
+  'spring-break': ['family-trip-planner', 'beaches', 'oceanfront-villas'],
+  thanksgiving: ['winter-rental', 'family-trip-planner', 'oceanfront-villas'],
+  bluffton: ['family-trip-planner', 'weddings', 'oceanfront-villas'],
+  'harbour-town-villas': ['oceanfront-villas', 'golf-packages', 'family-trip-planner'],
+  beaches: ['family-trip-planner', 'oceanfront-villas', 'spring-break'],
+  'winter-rental': ['thanksgiving', 'oceanfront-villas', 'honeymoon'],
+};
+
+/**
+ * Returns the resolved TripTypeLanding objects for the given slug's
+ * related trip types. Filters out the current slug and any unresolved IDs.
+ */
+export function getRelatedTripTypes(slug: string): TripTypeLanding[] {
+  const slugs = TRIP_TYPE_RELATIONS[slug] ?? [];
+  return slugs
+    .filter((s) => s !== slug)
+    .map((s) => getTripTypeBySlug(s))
+    .filter((t): t is TripTypeLanding => !!t);
+}
+
+/**
+ * Friendly display name for a trip type. Strips the colon-suffix from
+ * the SEO title (e.g., "Hilton Head Golf Packages: Planned by a Local"
+ * -> "Hilton Head Golf Packages").
+ */
+export function getTripTypeDisplayName(t: TripTypeLanding): string {
+  return t.seoTitle.split(':')[0].trim();
+}
