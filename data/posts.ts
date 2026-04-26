@@ -942,7 +942,7 @@ const postThingsToDoRanked: Post = {
     },
     {
       kind: 'p',
-      html: "A good Hilton Head week balances two or three booked activities with four or five open days. If you want us to lock Captain Mark, the 7 a.m. kayak slot, and the right fishing captain before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes activity bookings. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> maps each activity to its best month.",
+      html: "A good Hilton Head week balances two or three booked activities with four or five open days. If you want us to lock Captain Mark, the 7 a.m. kayak slot, and the right fishing captain before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes activity bookings. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> maps each activity to its best month, and our <a href=\"/events\">Hilton Head events calendar</a> shows what's on while you're here.",
     },
   ],
 };
@@ -992,7 +992,7 @@ const postSeaPines: Post = {
     },
     {
       kind: 'p',
-      html: "The postcard. Iconic red-and-white lighthouse, yacht-lined marina, Liberty Oak with live music most nights. Best for couples, first-timers, and anyone who wants to be where the energy is. Villas here walk to dinner. Downside: busiest parking, highest rates, cruise-port feel at peak hour.",
+      html: "The postcard. Iconic red-and-white lighthouse, yacht-lined marina, Liberty Oak with live music most nights. Best for couples, first-timers, and anyone who wants to be where the energy is. Villas here walk to dinner — see our shortlist of <a href=\"/harbour-town-villas\">Harbour Town villa picks</a>. Downside: busiest parking, highest rates, cruise-port feel at peak hour.",
     },
     {
       kind: 'p',
@@ -1225,7 +1225,7 @@ const postPalmettoDunes: Post = {
     },
     {
       kind: 'p',
-      html: "Three courses, one booking system, one caveat.",
+      html: "Three courses, one booking system, one caveat. For the wider Hilton Head picture, see <a href=\"/local/golf\">our golf directory</a>.",
     },
     {
       kind: 'ul',
@@ -1359,7 +1359,7 @@ const postForestBeach: Post = {
     },
     {
       kind: 'p',
-      html: "Coligny is the only real retail plaza on the island. Honest take: the food is middling (tourist-forward), but the convenience is unbeatable. What's worth knowing:",
+      html: "Coligny is the only real retail plaza on the island. Honest take: the food is middling (tourist-forward), but the convenience is unbeatable. For dinners worth driving to, see <a href=\"/local/restaurants\">our restaurants directory</a>. What's worth knowing:",
     },
     {
       kind: 'ul',
@@ -1551,7 +1551,7 @@ const postShelterCove: Post = {
     },
     {
       kind: 'p',
-      html: "The marina is where most of the island's boat operators run from. Sunset sail on a 41-foot catamaran. The Vagabond Cruise. Is the obvious move. 90 minutes, BYOB, typically 10-12 people.",
+      html: "The marina is where most of the island's <a href=\"/local/water-activities\">water-activity operators</a> run from. Sunset sail on a 41-foot catamaran. The Vagabond Cruise. Is the obvious move. 90 minutes, BYOB, typically 10-12 people.",
     },
     {
       kind: 'h3',
@@ -1792,7 +1792,7 @@ const postBestTime: Post = {
     },
     {
       kind: 'p',
-      html: "The Lowcountry sits on the same latitude as Casablanca. Winters are mild, summers are hot and humid, and the Atlantic moderates both ends. Here's what every month actually looks like on the island. Averages are built from 30-year NOAA data at the nearby Savannah station, adjusted for the 2-3\u00b0F warmer ocean signal Hilton Head reads right on the coast.",
+      html: "The Lowcountry sits on the same latitude as Casablanca. Winters are mild, summers are hot and humid, and the Atlantic moderates both ends. Here's what every month actually looks like on the island. Averages are built from 30-year NOAA data at the nearby Savannah station, adjusted for the 2-3\u00b0F warmer ocean signal Hilton Head reads right on the coast. Want a single page per month? See our <a href=\"/hilton-head-weather\">Hilton Head weather guide by month</a>.",
     },
     {
       kind: 'table',
@@ -2612,7 +2612,7 @@ const postBestBeaches: Post = {
     },
     {
       kind: 'p',
-      html: "The beach is the reason most people come to Hilton Head, but the wrong address turns a beach-focused week into a drive-to-the-beach week. If you want us to match your group to the right lodging for the beach you actually want, the <a href=\"/itinerary\">$450 itinerary service</a> handles it. For oceanfront villa specifics, see the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas planner</a>. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> walks through water temperatures month by month.",
+      html: "The beach is the reason most people come to Hilton Head, but the wrong address turns a beach-focused week into a drive-to-the-beach week. If you want us to match your group to the right lodging for the beach you actually want, the <a href=\"/itinerary\">$450 itinerary service</a> handles it. For oceanfront villa specifics, see the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas planner</a>; for the broader trip frame, our <a href=\"/hilton-head-beaches\">Hilton Head beach vacation guide</a> covers villa-to-sand logistics. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> walks through water temperatures month by month.",
     },
   ],
 };
@@ -3857,7 +3857,7 @@ const postRomanticRestaurants: Post = {
     },
     {
       kind: 'p',
-      html: "Three proven spots that we've coordinated for clients. Each pairs naturally with a pre-dinner drink and flows into one of the S-tier restaurants above.",
+      html: "Three proven spots that we've coordinated for clients. Each pairs naturally with a pre-dinner drink and flows into one of the S-tier restaurants above. (For full ceremony venues, see our <a href=\"/hilton-head-weddings\">Hilton Head wedding planning</a> page.)",
     },
     {
       kind: 'h3',
@@ -4803,7 +4803,7 @@ const postWeekendGetaway: Post = {
     },
     {
       kind: 'p',
-      html: "For a 2–3 night weekend trip, villa location matters more than it does on a week-long trip. You want to minimize driving on the island.",
+      html: "For a 2–3 night weekend trip, villa location matters more than it does on a week-long trip. You want to minimize driving on the island. If beach time tops the agenda, our <a href=\"/hilton-head-oceanfront-villas\">oceanfront villa picks</a> shortlist the buildings where you walk straight to the sand.",
     },
     {
       kind: 'tier',
