@@ -5446,3 +5446,138 @@ export function getAdjacentPosts(slug: string): {
     next: idx < posts.length - 1 ? posts[idx + 1] : undefined,
   };
 }
+
+// ---------------------------------------------------------------------------
+// Topical relations — used by the blog template to render two cross-link
+// rails:
+//   1. Related Posts (other articles in the topical cluster)
+//   2. Related Local Directory (industry pages where readers can act on intent)
+//
+// Maintained as a separate map so we can update relationships without
+// editing every post object.
+// ---------------------------------------------------------------------------
+
+import type { IndustrySlug } from './localBusinesses';
+
+type PostRelation = {
+  posts: string[]; // up to 3 post slugs to feature as Related Reading
+  industries: IndustrySlug[]; // up to 3 directory categories to feature
+};
+
+export const POST_RELATIONS: Record<string, PostRelation> = {
+  '2026-best-places-to-stay-hilton-head': {
+    posts: ['sea-pines-vs-palmetto-dunes', 'sea-pines-guide', 'palmetto-dunes-guide'],
+    industries: ['vacation-rentals'],
+  },
+  'hilton-head-restaurants-ranked-2026': {
+    posts: ['hilton-head-romantic-restaurants', 'hilton-head-things-to-do-ranked-2026', 'best-time-to-visit-hilton-head'],
+    industries: ['restaurants'],
+  },
+  'hilton-head-things-to-do-ranked-2026': {
+    posts: ['hilton-head-restaurants-ranked-2026', 'best-hilton-head-beaches', 'hilton-head-with-kids'],
+    industries: ['water-activities', 'family-activities', 'golf'],
+  },
+  'sea-pines-guide': {
+    posts: ['palmetto-dunes-guide', 'sea-pines-vs-palmetto-dunes', 'hilton-head-golf-trip'],
+    industries: ['vacation-rentals', 'golf', 'restaurants'],
+  },
+  'palmetto-dunes-guide': {
+    posts: ['sea-pines-guide', 'sea-pines-vs-palmetto-dunes', '2026-best-places-to-stay-hilton-head'],
+    industries: ['vacation-rentals', 'golf', 'water-activities'],
+  },
+  'forest-beach-guide': {
+    posts: ['shelter-cove-guide', 'best-hilton-head-beaches', 'hilton-head-with-kids'],
+    industries: ['vacation-rentals', 'restaurants', 'shopping'],
+  },
+  'shelter-cove-guide': {
+    posts: ['forest-beach-guide', 'hilton-head-fishing-guide', 'hilton-head-dolphin-tours'],
+    industries: ['restaurants', 'water-activities', 'shopping'],
+  },
+  'hilton-head-golf-trip': {
+    posts: ['hilton-head-golf-courses-ranked', 'rbc-heritage-2026-travel-guide', 'sea-pines-guide'],
+    industries: ['golf', 'vacation-rentals'],
+  },
+  'best-time-to-visit-hilton-head': {
+    posts: ['hilton-head-3-day-itinerary', 'hilton-head-winter-guide', 'best-hilton-head-beaches'],
+    industries: ['water-activities', 'family-activities'],
+  },
+  'rbc-heritage-2026-travel-guide': {
+    posts: ['hilton-head-golf-trip', 'hilton-head-golf-courses-ranked', 'sea-pines-guide'],
+    industries: ['golf', 'vacation-rentals', 'restaurants'],
+  },
+  'hilton-head-with-kids': {
+    posts: ['best-hilton-head-beaches', 'hilton-head-things-to-do-ranked-2026', 'hilton-head-3-day-itinerary'],
+    industries: ['family-activities', 'water-activities'],
+  },
+  'best-hilton-head-beaches': {
+    posts: ['hilton-head-with-kids', 'forest-beach-guide', 'hilton-head-things-to-do-ranked-2026'],
+    industries: ['water-activities', 'family-activities'],
+  },
+  'hilton-head-3-day-itinerary': {
+    posts: ['hilton-head-7-day-itinerary', 'hilton-head-things-to-do-ranked-2026', 'hilton-head-restaurants-ranked-2026'],
+    industries: ['restaurants', 'water-activities'],
+  },
+  'hilton-head-7-day-itinerary': {
+    posts: ['hilton-head-3-day-itinerary', 'hilton-head-things-to-do-ranked-2026', 'hilton-head-restaurants-ranked-2026'],
+    industries: ['restaurants', 'water-activities', 'golf'],
+  },
+  'hilton-head-vs-myrtle-beach': {
+    posts: ['2026-best-places-to-stay-hilton-head', 'best-time-to-visit-hilton-head', 'hilton-head-things-to-do-ranked-2026'],
+    industries: ['vacation-rentals'],
+  },
+  'sea-pines-vs-palmetto-dunes': {
+    posts: ['sea-pines-guide', 'palmetto-dunes-guide', '2026-best-places-to-stay-hilton-head'],
+    industries: ['vacation-rentals', 'golf'],
+  },
+  'hilton-head-golf-courses-ranked': {
+    posts: ['hilton-head-golf-trip', 'rbc-heritage-2026-travel-guide', 'sea-pines-guide'],
+    industries: ['golf'],
+  },
+  'hilton-head-romantic-restaurants': {
+    posts: ['hilton-head-restaurants-ranked-2026', 'hilton-head-3-day-itinerary', 'best-time-to-visit-hilton-head'],
+    industries: ['restaurants', 'weddings'],
+  },
+  'hilton-head-winter-guide': {
+    posts: ['best-time-to-visit-hilton-head', '2026-best-places-to-stay-hilton-head', 'hilton-head-romantic-restaurants'],
+    industries: ['vacation-rentals', 'restaurants'],
+  },
+  'hilton-head-fishing-guide': {
+    posts: ['hilton-head-kayaking-guide', 'hilton-head-dolphin-tours', 'shelter-cove-guide'],
+    industries: ['water-activities'],
+  },
+  'hilton-head-dog-friendly-guide': {
+    posts: ['best-hilton-head-beaches', 'forest-beach-guide', 'hilton-head-with-kids'],
+    industries: ['family-activities', 'restaurants'],
+  },
+  'hilton-head-weekend-getaway': {
+    posts: ['hilton-head-3-day-itinerary', 'best-time-to-visit-hilton-head', '2026-best-places-to-stay-hilton-head'],
+    industries: ['restaurants', 'vacation-rentals'],
+  },
+  'hilton-head-dolphin-tours': {
+    posts: ['hilton-head-kayaking-guide', 'hilton-head-fishing-guide', 'hilton-head-with-kids'],
+    industries: ['water-activities', 'family-activities'],
+  },
+  'hilton-head-kayaking-guide': {
+    posts: ['hilton-head-dolphin-tours', 'hilton-head-fishing-guide', 'shelter-cove-guide'],
+    industries: ['water-activities', 'family-activities'],
+  },
+};
+
+/**
+ * Returns up to 3 related posts for the given post slug.
+ * Filters out the current post and any slugs that don't resolve to a real post.
+ */
+export function getRelatedPosts(slug: string): Post[] {
+  const slugs = POST_RELATIONS[slug]?.posts ?? [];
+  return slugs
+    .filter((s) => s !== slug)
+    .map((s) => getPostBySlug(s))
+    .filter((p): p is Post => !!p);
+}
+
+/**
+ * Returns the IndustrySlug array for a post's related local directory pages.
+ */
+export function getRelatedIndustries(slug: string): IndustrySlug[] {
+  return POST_RELATIONS[slug]?.industries ?? [];
+}

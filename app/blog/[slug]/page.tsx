@@ -24,9 +24,12 @@ import {
   posts,
   getPostBySlug,
   getAdjacentPosts,
+  getRelatedPosts,
+  getRelatedIndustries,
   type Post,
 } from '@/data/posts';
 import { getNeighborhoodBySlug } from '@/data/neighborhoods';
+import { getIndustryBySlug } from '@/data/localBusinesses';
 
 type Params = { slug: string };
 
@@ -77,6 +80,11 @@ export default async function BlogPostPage({
 
   const { prev, next } = getAdjacentPosts(slug);
   const heroPhoto = CATEGORY_PHOTOS[post.category] ?? photos.hero;
+
+  const relatedPosts = getRelatedPosts(slug);
+  const relatedIndustries = getRelatedIndustries(slug)
+    .map((s) => getIndustryBySlug(s))
+    .filter((i): i is NonNullable<typeof i> => !!i);
 
   const postSchema = getBlogPostingSchema({
     slug: post.slug,
@@ -382,6 +390,72 @@ export default async function BlogPostPage({
                       </Link>
                     </li>
                   ))}
+              </ul>
+            </aside>
+          )}
+
+          {/* ——— Related posts (cluster cross-links) ——— */}
+          {relatedPosts.length > 0 && (
+            <aside
+              aria-label="Related reading"
+              className="mx-auto mt-16 max-w-[720px]"
+            >
+              <div className="eyebrow text-sunset">Keep reading</div>
+              <ul className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {relatedPosts.map((rp) => (
+                  <li key={rp.slug}>
+                    <Link
+                      href={`/blog/${rp.slug}`}
+                      className="group flex flex-col gap-1.5 border-t border-ink/15 pt-4 transition-colors hover:border-coral"
+                    >
+                      <span className="text-[11px] uppercase tracking-[0.18em] text-ink-soft group-hover:text-coral">
+                        {rp.category}
+                      </span>
+                      <span className="display text-[18px] leading-[1.25] text-ink group-hover:text-coral md:text-[20px]">
+                        {rp.title}
+                      </span>
+                      <span className="mt-1 line-clamp-2 text-[13px] leading-[1.55] text-ink-soft">
+                        {rp.description}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
+
+          {/* ——— Related local directory categories (commercial intent) ——— */}
+          {relatedIndustries.length > 0 && (
+            <aside
+              aria-label="Browse the local directory"
+              className="mx-auto mt-16 max-w-[720px]"
+            >
+              <div className="eyebrow text-sunset">Browse local businesses</div>
+              <p className="mt-3 max-w-[520px] text-[14px] leading-[1.6] text-ink-soft">
+                Ready to act on this? Our hand-curated directory of Hilton Head
+                businesses covers the categories most relevant to this guide.
+              </p>
+              <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
+                {relatedIndustries.map((ind) => (
+                  <li key={ind.slug}>
+                    <Link
+                      href={`/local/${ind.slug}`}
+                      className="group flex items-center gap-3 rounded-2xl border border-ink/15 bg-cream/40 px-4 py-3.5 transition-colors hover:border-coral hover:bg-cream"
+                    >
+                      <span aria-hidden="true" className="text-2xl">
+                        {ind.icon}
+                      </span>
+                      <span className="flex flex-col">
+                        <span className="text-[14px] font-medium leading-[1.2] text-ink group-hover:text-coral">
+                          {ind.name}
+                        </span>
+                        <span className="text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+                          Browse listings →
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </aside>
           )}

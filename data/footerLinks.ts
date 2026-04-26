@@ -14,6 +14,34 @@ export const footerLinks = {
       ],
     },
     {
+      label: 'Plan Your Trip',
+      links: [
+        { href: '/hilton-head-honeymoon', label: 'Honeymoon' },
+        { href: '/hilton-head-weddings', label: 'Weddings' },
+        { href: '/hilton-head-golf-packages', label: 'Golf Packages' },
+        { href: '/hilton-head-family-trip-planner', label: 'Family Trips' },
+        { href: '/hilton-head-beaches', label: 'Beach Vacation' },
+        { href: '/hilton-head-oceanfront-villas', label: 'Oceanfront Villas' },
+        { href: '/hilton-head-winter-rental', label: 'Winter Rental' },
+        { href: '/hilton-head-weather', label: 'Weather by Month' },
+        { href: '/events', label: 'Events Calendar' },
+      ],
+    },
+    {
+      label: 'Browse Local',
+      links: [
+        { href: '/local', label: 'All Categories' },
+        { href: '/local/restaurants', label: 'Restaurants' },
+        { href: '/local/golf', label: 'Golf Courses' },
+        { href: '/local/water-activities', label: 'Water Activities' },
+        { href: '/local/weddings', label: 'Wedding Venues' },
+        { href: '/local/spas-wellness', label: 'Spas & Wellness' },
+        { href: '/local/vacation-rentals', label: 'Vacation Rentals' },
+        { href: '/local/family-activities', label: 'Family Activities' },
+        { href: '/local/shopping', label: 'Shopping' },
+      ],
+    },
+    {
       label: 'Explore',
       links: [
         { href: '/about', label: 'About' },
