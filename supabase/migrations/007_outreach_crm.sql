@@ -149,15 +149,17 @@ create table if not exists public.outreach_contacts (
   notes               text,
   added_by            text,
   created_at          timestamptz not null default now(),
-  updated_at          timestamptz not null default now(),
-  -- A given email lives at exactly one account (allows account merges via FK update).
-  unique (lower(email))
+  updated_at          timestamptz not null default now()
 );
+
+-- A given email lives at exactly one contact row (case-insensitive).
+-- Postgres doesn't allow function expressions in table-level UNIQUE
+-- constraints — must be a unique index instead.
+create unique index if not exists idx_outreach_contacts_email_unique
+  on public.outreach_contacts(lower(email));
 
 create index if not exists idx_outreach_contacts_account
   on public.outreach_contacts(account_id);
-create index if not exists idx_outreach_contacts_email
-  on public.outreach_contacts(lower(email));
 create index if not exists idx_outreach_contacts_opted_out
   on public.outreach_contacts(opted_out)
   where opted_out = true;
