@@ -656,7 +656,7 @@ const postRestaurantsRanked: Post = {
     },
     {
       kind: 'p',
-      html: "Dinner reservations are the hardest-to-solve piece of a Hilton Head trip. If you want us to lock in the four S-tier tables before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes reservation handling. For timing questions, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a> shows which weeks have the tightest booking windows.",
+      html: "Dinner reservations are the hardest-to-solve piece of a Hilton Head trip. If you want us to lock in the four S-tier tables before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes reservation handling. For everyday casual options outside the tier list, browse <a href=\"/local/restaurants\">our restaurants directory</a>. For timing questions, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a> shows which weeks have the tightest booking windows.",
     },
   ],
 };
@@ -1614,7 +1614,7 @@ const postGolfTrip: Post = {
   body: [
     {
       kind: 'p',
-      html: "Hilton Head has 24 golf courses across three clusters (Sea Pines, Palmetto Dunes, Bluffton). More golf per square mile than any resort island in America. The problem isn't finding a course. It's figuring out which four to play, which order, and how to sequence lodging so you're not driving across the island between rounds.",
+      html: "Hilton Head has 24 golf courses across three clusters (Sea Pines, Palmetto Dunes, Bluffton). More golf per square mile than any resort island in America. The problem isn't finding <a href=\"/local/golf\">the courses</a>. It's figuring out which four to play, which order, and how to sequence lodging so you're not driving across the island between rounds.",
     },
     {
       kind: 'h2',
@@ -1711,7 +1711,7 @@ const postGolfTrip: Post = {
     },
     {
       kind: 'p',
-      html: "Peak-season (April or July) versions of the same trip run 30-40% higher.",
+      html: "Peak-season (April or July) versions of the same trip run 30-40% higher. For prebuilt stay-and-play options, see our <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages</a>.",
     },
     {
       kind: 'h2',
@@ -2217,7 +2217,7 @@ const postWithKids: Post = {
   body: [
     {
       kind: 'p',
-      html: "Hilton Head is the rare American beach destination genuinely built for kids. 12 miles of gentle Atlantic coast, 60 miles of paved bike path, a lighthouse you can climb, and restaurants that don't pretend kids don't exist. Here's the plan we give families.",
+      html: "Hilton Head is the rare American beach destination genuinely built for kids. 12 miles of gentle Atlantic coast, 60 miles of paved bike path, a lighthouse you can climb, and restaurants that don't pretend kids don't exist. Here's the plan we give families. For a quick scan of the <a href=\"/local/family-activities\">kid-friendly things to do</a> on the island, start with our family activities directory.",
     },
     {
       kind: 'h2',
@@ -2390,7 +2390,7 @@ const postWithKids: Post = {
     },
     {
       kind: 'p',
-      html: "A typical family-of-4 summer week through us: 3BR oceanfront villa in Palmetto Dunes, bikes delivered day 1, Captain Mark cruise pre-booked, Skull Creek 5:30 pm reservation for Tuesday, Gregg Russell Thursday night, kayak clinic Saturday morning. Total trip $6,200-8,500 all in. Our fee: $450 flat for the itinerary, or 8% of trip total if you want us to book the villa and handle concierge. Saves ~10 hrs of research and gets you the restaurant tables you can't get yourself.",
+      html: "A typical family-of-4 summer week through us: 3BR oceanfront villa in Palmetto Dunes, bikes delivered day 1, Captain Mark cruise pre-booked, Skull Creek 5:30 pm reservation for Tuesday, Gregg Russell Thursday night, kayak clinic Saturday morning. Total trip $6,200-8,500 all in. Our fee: $450 flat for the itinerary, or 8% of trip total if you want us to book the villa and handle concierge. Saves ~10 hrs of research and gets you the restaurant tables you can't get yourself. For the broader breakdown of <a href=\"/hilton-head-family-trip-planner\">Hilton Head family vacations</a> — neighborhoods, budgets, and trip lengths — see the family trip planner.",
     },
   ],
 };
@@ -3774,7 +3774,7 @@ const postRomanticRestaurants: Post = {
     },
     {
       kind: 'p',
-      html: "Ten restaurants that work for a big-occasion dinner on Hilton Head or in Bluffton. Price tiers are per-person dinner before tax and tip: $$ = $25-50, $$$ = $50-85, $$$$ = $85+. Reservation lead time is for peak season (summer, Heritage week); off-season lead times are 30-50% shorter.",
+      html: "Ten restaurants that work for a big-occasion dinner on Hilton Head or in Bluffton. Price tiers are per-person dinner before tax and tip: $$ = $25-50, $$$ = $50-85, $$$$ = $85+. Reservation lead time is for peak season (summer, Heritage week); off-season lead times are 30-50% shorter. For everyday dining options outside the romantic-occasion list, see <a href=\"/local/restaurants\">our full restaurants directory</a>.",
     },
     {
       kind: 'table',
@@ -4343,7 +4343,7 @@ const postFishingGuide: Post = {
     },
     {
       kind: 'p',
-      html: "Most charters operate out of <strong>Shelter Cove Harbour & Marina</strong> (mid-island, off US-278) or <strong>Broad Creek Marina</strong> on the south end. Shelter Cove is the better logistical base — central, easy parking, restaurants for post-trip lunch. For offshore trips, Palmetto Bay Marina also has full-day offshore boats.",
+      html: "Most charters operate out of <strong><a href=\"/hilton-head/shelter-cove\">Shelter Cove Harbour & Marina</a></strong> (mid-island, off US-278) or <strong>Broad Creek Marina</strong> on the south end. Shelter Cove is the better logistical base — central, easy parking, restaurants for post-trip lunch. For offshore trips, Palmetto Bay Marina also has full-day offshore boats.",
     },
     {
       kind: 'table',
@@ -4443,7 +4443,7 @@ const postFishingGuide: Post = {
     },
     {
       kind: 'p',
-      html: "Fishing charters are one of the items we handle most often for clients — finding the right captain for your group's skill level, coordinating timing with other activities, and making sure you're fishing the right species window for your travel dates. If you want us to build a trip around a fishing day (or two), the <a href=\"/itinerary\">itinerary service</a> is the right place to start.",
+      html: "Fishing charters are one of the items we handle most often for clients — finding the right captain for your group's skill level, coordinating timing with other activities, and making sure you're fishing the right species window for your travel dates. Browse the <a href=\"/local/water-activities\">local charter and tour operators</a> we recommend, or, if you want us to build a trip around a fishing day (or two), the <a href=\"/itinerary\">itinerary service</a> is the right place to start.",
     },
   ],
 };
@@ -4923,7 +4923,7 @@ const postDolphinTours: Post = {
   body: [
     {
       kind: 'p',
-      html: "Calibogue Sound — the wide, brackish stretch of water between Hilton Head and Daufuskie Island — holds one of the most reliable resident populations of bottlenose dolphins on the South Atlantic coast. There are roughly 350 dolphins that live in these waters year-round, plus seasonal visitors that push the count past 500 in summer. The practical version: it's almost impossible to take a Hilton Head dolphin tour and <em>not</em> see dolphins. The real question is which tour, at what time, with which operator.",
+      html: "Calibogue Sound — the wide, brackish stretch of water between Hilton Head and Daufuskie Island — holds one of the most reliable resident populations of bottlenose dolphins on the South Atlantic coast. There are roughly 350 dolphins that live in these waters year-round, plus seasonal visitors that push the count past 500 in summer. The practical version: it's almost impossible to take a Hilton Head dolphin tour and <em>not</em> see dolphins. The real question is which tour, at what time, with which operator — see our <a href=\"/local/water-activities\">Hilton Head water-activity operators</a> for the full vetted list.",
     },
     {
       kind: 'callout',
@@ -5169,7 +5169,7 @@ const postKayakingGuide: Post = {
   body: [
     {
       kind: 'p',
-      html: "Hilton Head's geography is built for paddling. The island sits between the Atlantic, two major sounds (Calibogue and Port Royal), and a lattice of tidal creeks and lagoons that snake through every neighborhood. You can launch a kayak from a Sea Pines lagoon at 7am, see herons, alligators, and dolphins before lunch, and never paddle the same water twice. This is a guide to the routes worth your time, the operators worth booking, and the calls (tour vs. rental, dawn vs. sunset, salt vs. fresh) most visitors get wrong.",
+      html: "Hilton Head's geography is built for paddling. The island sits between the Atlantic, two major sounds (Calibogue and Port Royal), and a lattice of tidal creeks and lagoons that snake through every neighborhood. You can launch a kayak from a Sea Pines lagoon at 7am, see herons, alligators, and dolphins before lunch, and never paddle the same water twice. This is a guide to the routes worth your time, the <a href=\"/local/water-activities\">kayak operators we trust</a>, and the calls (tour vs. rental, dawn vs. sunset, salt vs. fresh) most visitors get wrong.",
     },
     {
       kind: 'callout',
