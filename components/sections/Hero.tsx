@@ -149,7 +149,7 @@ export default function Hero() {
             <TravelSeal
               size={120}
               topText="HILTON HEAD ISLAND"
-              bottomText="· ATLANTIC · LOWCOUNTRY ·"
+              bottomText="· ATLANTIC ·"
               motif="palmetto"
             />
           </div>

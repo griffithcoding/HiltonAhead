@@ -145,6 +145,20 @@ export function TravelSeal({
   className?: string;
 }) {
   const r = size / 2;
+  // Concentric text arcs spanning ~170° of the badge — enough room for
+  // 18+ char strings like "HILTON HEAD ISLAND" without the SVG clipping
+  // glyphs past the path endpoints.
+  const textRadius = r * 0.80;
+  const span = (170 * Math.PI) / 180;
+  const topStart = -Math.PI / 2 - span / 2;
+  const topEnd = -Math.PI / 2 + span / 2;
+  const botStart = Math.PI / 2 + span / 2;
+  const botEnd = Math.PI / 2 - span / 2;
+  const pt = (a: number) => [r + textRadius * Math.cos(a), r + textRadius * Math.sin(a)] as const;
+  const [tsx, tsy] = pt(topStart);
+  const [tex, tey] = pt(topEnd);
+  const [bsx, bsy] = pt(botStart);
+  const [bex, bey] = pt(botEnd);
   return (
     <svg
       width={size}
@@ -155,9 +169,9 @@ export function TravelSeal({
     >
       <defs>
         <path id="sealTop"
-          d={`M ${size*0.15},${r} A ${r*0.85},${r*0.85} 0 0 1 ${size*0.85},${r}`} />
+          d={`M ${tsx},${tsy} A ${textRadius},${textRadius} 0 0 1 ${tex},${tey}`} />
         <path id="sealBottom"
-          d={`M ${size*0.18},${r*1.05} A ${r*0.78},${r*0.78} 0 0 0 ${size*0.82},${r*1.05}`} />
+          d={`M ${bsx},${bsy} A ${textRadius},${textRadius} 0 0 0 ${bex},${bey}`} />
       </defs>
       <circle cx={r} cy={r} r={r - 1.5} fill="none" stroke="currentColor" strokeWidth="1.5" />
       <circle cx={r} cy={r} r={r - 7} fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.5" />
@@ -173,12 +187,14 @@ export function TravelSeal({
             stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
         );
       })}
-      <text fill="currentColor" fontSize={size * 0.07} letterSpacing="2" fontFamily="var(--font-sans)" fontWeight="700">
+      <text fill="currentColor" fontSize={size * 0.065} letterSpacing="1.5" fontFamily="var(--font-sans)" fontWeight="700">
         <textPath href="#sealTop" startOffset="50%" textAnchor="middle">{topText}</textPath>
       </text>
-      <text fill="currentColor" fontSize={size * 0.065} letterSpacing="2" fontFamily="var(--font-sans)" fontWeight="700">
-        <textPath href="#sealBottom" startOffset="50%" textAnchor="middle">{bottomText}</textPath>
-      </text>
+      {bottomText && (
+        <text fill="currentColor" fontSize={size * 0.06} letterSpacing="1.5" fontFamily="var(--font-sans)" fontWeight="700">
+          <textPath href="#sealBottom" startOffset="50%" textAnchor="middle">{bottomText}</textPath>
+        </text>
+      )}
       <g transform={`translate(${r - size * 0.12}, ${r - size * 0.12})`} color="currentColor">
         {motif === 'palmetto' && <PalmettoFrond size={size * 0.24} />}
         {motif === 'compass' && <CompassRose size={size * 0.24} />}
