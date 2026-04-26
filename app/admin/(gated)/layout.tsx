@@ -15,6 +15,7 @@ export const dynamic = 'force-dynamic';
 const NAV = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/leads', label: 'Leads' },
+  { href: '/admin/outreach', label: 'Backlink Outreach' },
 ];
 
 export default async function AdminAppLayout({
