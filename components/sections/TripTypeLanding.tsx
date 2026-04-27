@@ -9,7 +9,7 @@ import {
   Divider,
   Polaroid,
   Ticket,
-  TravelSeal,
+  NewsletterCircleButton,
   CompassRose,
 } from '@/components/ui/Ornament';
 import {
@@ -193,12 +193,10 @@ export default function TripTypeLandingPage({ trip }: Props) {
         <section className="mt-24 border-y border-ocean-deep/15 py-12">
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div>
-              <TravelSeal
+              <NewsletterCircleButton
                 size={72}
-                topText="HILTON AHEAD · TRAVEL CO"
-                bottomText="· LOCAL DISPATCH ·"
-                motif="compass"
-                className="text-ocean-deep mb-5"
+                className="mb-5"
+                href="#newsletter"
               />
               <h3 className="display text-[28px] leading-[1.1] text-ink md:text-[40px]">
                 Ready to{' '}
@@ -278,7 +276,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
           );
         })()}
 
-        <div className="mt-24">
+        <div id="newsletter" className="mt-24">
           <NewsletterSignup
             variant="inline"
             source={`trip_type_${trip.slug}`}

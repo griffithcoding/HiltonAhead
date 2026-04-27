@@ -88,7 +88,7 @@ export default function Home() {
       </div>
 
       {/* Newsletter card — breathing room before the final full-bleed CTA */}
-      <div className="mx-auto max-w-[1280px] px-5 mt-28 md:mt-36">
+      <div id="newsletter" className="mx-auto max-w-[1280px] px-5 mt-28 md:mt-36">
         <NewsletterSignup variant="card" source="homepage" />
       </div>
 

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { photos } from '@/data/photos';
-import { Ticket, WaveLine } from '@/components/ui/Ornament';
+import { Ticket } from '@/components/ui/Ornament';
 
 /**
  * Photo rail — a full-bleed look-book strip of island moods.
@@ -18,14 +18,13 @@ export default function PhotoRail() {
     >
       <div className="mx-auto max-w-[1400px] px-5">
         <div className="mb-14 flex flex-col items-center justify-center text-center">
-          <div className="text-sand"><WaveLine width={80} /></div>
-          <div className="eyebrow eyebrow-coral mt-5">Paradise in every pixel</div>
+          <div className="eyebrow eyebrow-coral">Paradise in every pixel</div>
           <h2 className="display mt-5 max-w-[680px] text-[32px] leading-[1.08] text-sand md:text-[48px]">
-            One month of Hilton Head in six frames.
+            One month of Hilton Head in seven frames.
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-6 lg:grid-cols-7">
           {photos.moods.map((m, i) => (
             <figure
               key={i}

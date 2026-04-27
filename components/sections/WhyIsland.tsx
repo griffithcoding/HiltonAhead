@@ -6,7 +6,7 @@ import {
   Divider,
   Polaroid,
   Ticket,
-  TravelSeal,
+  NewsletterCircleButton,
 } from '@/components/ui/Ornament';
 
 /**
@@ -107,13 +107,7 @@ export default function WhyIsland() {
         </div>
 
         <div className="relative mt-14 flex flex-col items-center gap-3">
-          <TravelSeal
-            size={96}
-            topText="LOWCOUNTRY · ATLANTIC"
-            bottomText="· FIELD DISPATCH ·"
-            motif="compass"
-            className="text-ocean-deep"
-          />
+          <NewsletterCircleButton size={96} href="#newsletter" />
           <span className="display-italic text-[14px] text-ink-soft">
             Photographed on-island, every season
           </span>

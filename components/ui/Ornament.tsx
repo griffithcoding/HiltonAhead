@@ -4,6 +4,7 @@
  * Everything inherits color from `currentColor`.
  */
 import Image from 'next/image';
+import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 // ———————————————————————————————————————————————————————————————————
@@ -202,6 +203,83 @@ export function TravelSeal({
         {motif === 'oyster' && <Oyster size={size * 0.24} />}
       </g>
     </svg>
+  );
+}
+
+/**
+ * Newsletter circle button — sleek on-brand CTA that replaces the vintage TravelSeal.
+ * Solid ocean-teal circle with adaptive text; coral on hover.
+ * Use tone="ghost" on dark photographic backgrounds.
+ */
+export function NewsletterCircleButton({
+  size = 120,
+  tone = 'ocean',
+  href = '#newsletter',
+  className = '',
+}: {
+  size?: number;
+  /** 'ocean' = solid teal on light bg · 'ghost' = translucent sand outline on dark bg */
+  tone?: 'ocean' | 'ghost';
+  href?: string;
+  className?: string;
+}) {
+  const isSmall = size < 86;
+  const isTiny = size < 64;
+  return (
+    <Link
+      href={href}
+      aria-label="Join The Insider Letter newsletter"
+      className={[
+        'group inline-flex flex-col items-center justify-center rounded-full transition-colors duration-200',
+        tone === 'ghost'
+          ? 'border border-sand/50 bg-white/10 text-sand hover:bg-coral hover:border-coral'
+          : 'bg-ocean text-sand hover:bg-coral',
+        className,
+      ].join(' ')}
+      style={{ width: size, height: size }}
+    >
+      {isTiny ? (
+        <span
+          aria-hidden="true"
+          className="block transition-transform group-hover:translate-x-0.5"
+          style={{ fontSize: Math.round(size * 0.34) }}
+        >
+          →
+        </span>
+      ) : isSmall ? (
+        <>
+          <span
+            className="block text-center font-bold uppercase leading-tight"
+            style={{ fontSize: Math.round(size * 0.115), letterSpacing: '0.1em' }}
+          >
+            JOIN
+          </span>
+          <span
+            aria-hidden="true"
+            className="mt-1 block transition-transform group-hover:translate-x-0.5"
+            style={{ fontSize: Math.round(size * 0.15) }}
+          >
+            →
+          </span>
+        </>
+      ) : (
+        <>
+          <span
+            className="block text-center font-bold uppercase leading-snug"
+            style={{ fontSize: Math.round(size * 0.1), letterSpacing: '0.1em' }}
+          >
+            THE<br />INSIDER<br />LETTER
+          </span>
+          <span
+            aria-hidden="true"
+            className="mt-1.5 block transition-transform group-hover:translate-x-0.5"
+            style={{ fontSize: Math.round(size * 0.13) }}
+          >
+            →
+          </span>
+        </>
+      )}
+    </Link>
   );
 }
 

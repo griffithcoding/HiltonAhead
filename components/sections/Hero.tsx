@@ -5,11 +5,9 @@ import { hero } from '@/data/hero';
 import { photos } from '@/data/photos';
 import {
   CompassRose,
-  PostcardStamp,
+  NewsletterCircleButton,
   Ticket,
   WaveLine,
-  Sailboat,
-  TravelSeal,
 } from '@/components/ui/Ornament';
 
 /**
@@ -31,11 +29,6 @@ export default function Hero() {
         {/* ——— LEFT: typographic display ——— */}
         <div className="flex flex-col justify-center">
           <div className="rise mb-6 flex items-center gap-4">
-            <PostcardStamp>
-              <span className="flex items-center gap-2">
-                <Sailboat size={16} /> Est. 1956 · Atlantic
-              </span>
-            </PostcardStamp>
             <span className="eyebrow-coral eyebrow">
               {hero.eyebrow}
             </span>
@@ -144,14 +137,9 @@ export default function Hero() {
             />
           </figure>
 
-          {/* Travel seal — bottom-right floating ornament */}
-          <div className="absolute -right-4 bottom-[8%] hidden text-ocean-deep md:block">
-            <TravelSeal
-              size={120}
-              topText="HILTON HEAD ISLAND"
-              bottomText="· ATLANTIC ·"
-              motif="palmetto"
-            />
+          {/* Newsletter circle — bottom-right floating CTA */}
+          <div className="absolute -right-4 bottom-[8%] hidden md:block">
+            <NewsletterCircleButton size={120} />
           </div>
         </div>
       </div>

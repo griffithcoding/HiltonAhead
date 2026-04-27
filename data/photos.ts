@@ -22,6 +22,10 @@
 const unsplash = (id: string, w = 1800, q = 80) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=${q}`;
 
+// Pexels CDN (already in next.config.ts remotePatterns)
+const pexels = (id: number, w = 1600) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
 // ——— Primary plates ———————————————————————————————————————————————
 const hero        = { src: unsplash('1507525428034-b723cf961d3e', 2200, 82), alt: 'Golden hour over Hilton Head dunes and sea oats' };
 // [HH] Harbour Town Lighthouse — Nikhil Mistry
@@ -51,6 +55,9 @@ const sundown     = { src: unsplash('1631845085830-10c38cc98ac8', 1600, 80), alt
 const teaTable    = { src: unsplash('1551024601-bec78aea704b', 1400, 80), alt: 'A dinner table set near the water' };
 // [HH] Coastal cottage on the docks — Jake Johnson
 const hammock     = { src: unsplash('1628214458185-a49d4fc577f3', 1400, 80), alt: 'Coastal cottage on the docks, Hilton Head Island' };
+const mealPlate      = { src: unsplash('1565299624946-b28f40a0ae38', 1400, 80), alt: 'Plated Lowcountry dish at a Hilton Head waterfront restaurant' };
+// [HH] Confirmed Hilton Head Island marina — Curt Hubner / Pexels
+const shelterCoveMarina = { src: pexels(12900135), alt: 'Sailboats and motorboats docked at Shelter Cove Harbour marina, Hilton Head Island' };
 
 export const photos = {
   // ——— Primary plates (preserves existing imports) ———
@@ -78,23 +85,26 @@ export const photos = {
   sundown,
   teaTable,
   hammock,
+  mealPlate,
+  shelterCoveMarina,
 
   // ——— Curated sets for specific layouts ———
   /** Layered hero collage — 3 overlapping plates (featured, left-top, right-bottom) */
   heroCollage: [
-    { ...hero,       caption: 'Forest Beach, dusk',      label: '01' },
-    { ...lighthouse, caption: 'Harbour Town, marina',    label: '02' },
-    { ...mossOak,    caption: 'Sea Pines, golden hour',  label: '03' },
+    { ...hero,        caption: 'Forest Beach, dusk',     label: '01' },
+    { ...lighthouse,  caption: 'Harbour Town, marina',   label: '02' },
+    { ...harborBoats, caption: 'Shelter Cove, marina',   label: '03' },
   ],
 
-  /** Look-book photo rail — 6 island moods */
+  /** Look-book photo rail — 7 island moods */
   moods: [
-    { ...harborBoats, caption: 'Harbour Town, low tide' },
-    { ...mossOak,     caption: 'Spanish moss, 6 p.m.' },
-    { ...oysters,     caption: 'Hudson’s, Tuesday' },
-    { ...bikePath,    caption: 'Harbour Town shops' },
-    { ...palms,       caption: 'South Beach, August' },
-    { ...hammock,     caption: 'Sea Pines, dockside' },
+    { ...harborBoats, caption: ‘Harbour Town, low tide’ },
+    { ...mossOak,     caption: ‘Spanish moss, 6 p.m.’ },
+    { ...oysters,     caption: ‘Hudson’s, Tuesday’ },
+    { ...mealPlate,   caption: ‘Skull Creek · 7 p.m.’ },
+    { ...bikePath,    caption: ‘Harbour Town shops’ },
+    { ...palms,       caption: ‘South Beach, August’ },
+    { ...hammock,     caption: ‘Sea Pines, dockside’ },
   ],
 
   /** Polaroid wall — 4 tilted shots on WhyIsland section */
@@ -102,7 +112,7 @@ export const photos = {
     { ...lighthouse, caption: 'Harbour Town · ’96' },
     { ...boardwalk,  caption: 'Coligny · 7:04 a.m.'    },
     { ...dock,       caption: 'Harbour Town, low tide' },
-    { ...marsh,      caption: 'Broad Creek · August'   },
+    { ...shelterCoveMarina, caption: 'Shelter Cove · marina' },
   ],
 
   /** Neighborhood plates — 6 images matched to insider-proof list */

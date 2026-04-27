@@ -4,7 +4,7 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import CheckoutButton from '@/components/CheckoutButton';
 import CalendlyButton from '@/components/CalendlyButton';
-import { SectionHead, Divider, TravelSeal } from '@/components/ui/Ornament';
+import { SectionHead, Divider, NewsletterCircleButton } from '@/components/ui/Ornament';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import { sponsorshipTiers, partnersMeta } from '@/data/partners';
 import { brand } from '@/data/brand';
@@ -294,12 +294,9 @@ export default function SponsorshipsPage() {
         <section className="mt-24 border-y border-coral/30 bg-sand-deep/30 px-6 py-16 md:px-12 md:py-24">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.3fr_auto] md:items-center">
             <div>
-              <TravelSeal
+              <NewsletterCircleButton
                 size={88}
-                topText="PARTNER · HILTON AHEAD"
-                bottomText="· APPLICATIONS OPEN 2026 ·"
-                motif="compass"
-                className="text-ocean-deep mb-6"
+                className="mb-6"
               />
               <div className="eyebrow text-coral">Ready to talk?</div>
               <h2 className="display mt-4 text-[34px] leading-[1.05] text-ink md:text-[52px]">

@@ -11,7 +11,7 @@ import {
   Divider,
   Polaroid,
   Ticket,
-  TravelSeal,
+  NewsletterCircleButton,
   CompassRose,
 } from '@/components/ui/Ornament';
 import {
@@ -277,12 +277,10 @@ export default async function NeighborhoodPage({
         <section className="mt-24 border-y border-ocean-deep/15 py-12">
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div>
-              <TravelSeal
+              <NewsletterCircleButton
                 size={72}
-                topText={`${n.name.toUpperCase()} · HILTON HEAD`}
-                bottomText="· LOCAL DISPATCH ·"
-                motif="compass"
-                className="text-ocean-deep mb-5"
+                className="mb-5"
+                href="#newsletter"
               />
               <h3 className="display text-[28px] leading-[1.1] text-ink md:text-[40px]">
                 Ready to plan a{' '}
@@ -382,7 +380,7 @@ export default async function NeighborhoodPage({
           </ul>
         </section>
 
-        <div className="mt-24">
+        <div id="newsletter" className="mt-24">
           <NewsletterSignup
             variant="inline"
             source={`neighborhood_${n.slug}`}

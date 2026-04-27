@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { brand } from '@/data/brand';
 import { photos } from '@/data/photos';
-import { TravelSeal, WaveLine } from '@/components/ui/Ornament';
+import { NewsletterCircleButton, WaveLine } from '@/components/ui/Ornament';
 
 /**
  * Final CTA — full-bleed cinematic photograph with an enormous mixed-style
@@ -30,14 +30,9 @@ export default function FinalCta() {
         <WaveLine width={140} />
       </div>
 
-      {/* Travel seal floating top-right */}
-      <div className="absolute right-6 top-14 hidden text-sand/80 md:block lg:right-16">
-        <TravelSeal
-          size={150}
-          topText="HILTON AHEAD · EST · 2026"
-          bottomText="· ATLANTIC · LOWCOUNTRY ·"
-          motif="sailboat"
-        />
+      {/* Newsletter circle floating top-right */}
+      <div className="absolute right-6 top-14 hidden md:block lg:right-16">
+        <NewsletterCircleButton size={150} tone="ghost" />
       </div>
 
       <div className="relative mx-auto flex h-full max-w-[1280px] flex-col justify-end px-5 pb-16 text-sand md:pb-24">
