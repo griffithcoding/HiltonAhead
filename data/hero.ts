@@ -24,7 +24,7 @@ export const hero = {
   /** Trust signals beneath the lede, tightly kerned and small-caps. */
   proofLine: [
     'Just shy of 400 trips planned',
-    'Partner rates at Sea Pines & Palmetto Dunes',
+    'Locally based, Hilton Head Island',
   ],
 } as const;
 

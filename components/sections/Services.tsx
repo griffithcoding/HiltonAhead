@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { services } from '@/data/services';
 import { photos } from '@/data/photos';
 import { SectionHead, Divider, Ticket } from '@/components/ui/Ornament';
+import PhotoSlideshow from '@/components/ui/PhotoSlideshow';
 
 /**
  * Services — each item is a photo-left / type-right "editorial spread".
@@ -13,7 +14,7 @@ import { SectionHead, Divider, Ticket } from '@/components/ui/Ornament';
 
 // Index-aligned with services.items
 const SERVICE_PHOTOS = [
-  { ...photos.teaTable,  tag: 'Itinerary sample' },
+  { ...photos.teaTable,  tag: 'Dining on island' },
   { ...photos.villa,     tag: 'Sea Pines oceanfront' },
   { ...photos.hammock,   tag: 'Group, spring break' },
   { ...photos.harborBoats,tag: 'Concierge, Shelter Cove' },
@@ -54,13 +55,21 @@ export default function Services() {
             >
               {/* Photograph */}
               <figure className="relative aspect-[4/5] overflow-hidden rounded-md lg:aspect-[4/4.5]">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover photo-warm"
-                />
+                {i === 0 ? (
+                  <PhotoSlideshow
+                    photos={photos.customItinerariesFood}
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    className="object-cover photo-warm"
+                  />
+                ) : (
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    className="object-cover photo-warm"
+                  />
+                )}
                 <div className="absolute left-4 top-4">
                   <Ticket>{photo.tag}</Ticket>
                 </div>

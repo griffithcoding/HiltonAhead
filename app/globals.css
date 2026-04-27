@@ -318,6 +318,184 @@ body {
   }
 }
 
+/* ========================================================================
+ * Reveal — IntersectionObserver-driven (see components/ui/Reveal.tsx).
+ * The wrapper carries data-revealed="false" until in view, then "true".
+ * ======================================================================== */
+.reveal-root {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-distance, 24px), 0);
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms),
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-root[data-reveal-direction='left']  { transform: translate3d(calc(-1 * var(--reveal-distance, 24px)), 0, 0); }
+.reveal-root[data-reveal-direction='right'] { transform: translate3d(var(--reveal-distance, 24px), 0, 0); }
+.reveal-root[data-reveal-direction='none']  { transform: none; }
+.reveal-root[data-revealed='true'] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-root,
+  .reveal-root[data-reveal-direction='left'],
+  .reveal-root[data-reveal-direction='right'],
+  .reveal-root[data-reveal-direction='none'] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ========================================================================
+ * Ken Burns — slow loop on a wrapper inside KenBurnsImage.
+ * Variants pan/zoom in different directions.
+ * ======================================================================== */
+@keyframes kenBurnsIn {
+  from { transform: scale(1.0)  translate3d(0, 0, 0); }
+  to   { transform: scale(1.08) translate3d(-1.5%, -1.5%, 0); }
+}
+@keyframes kenBurnsOut {
+  from { transform: scale(1.08) translate3d(0, 0, 0); }
+  to   { transform: scale(1.0)  translate3d(1.5%, 1.5%, 0); }
+}
+@keyframes kenBurnsPanLeft {
+  from { transform: scale(1.06) translate3d(2%, 0, 0); }
+  to   { transform: scale(1.06) translate3d(-2%, 0, 0); }
+}
+@keyframes kenBurnsPanRight {
+  from { transform: scale(1.06) translate3d(-2%, 0, 0); }
+  to   { transform: scale(1.06) translate3d(2%, 0, 0); }
+}
+@keyframes kenBurnsPanUp {
+  from { transform: scale(1.06) translate3d(0, 2%, 0); }
+  to   { transform: scale(1.06) translate3d(0, -2%, 0); }
+}
+
+.ken-burns {
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  will-change: transform;
+}
+.ken-burns-in       { animation-name: kenBurnsIn; }
+.ken-burns-out      { animation-name: kenBurnsOut; }
+.ken-burns-pan-left { animation-name: kenBurnsPanLeft; }
+.ken-burns-pan-right{ animation-name: kenBurnsPanRight; }
+.ken-burns-pan-up   { animation-name: kenBurnsPanUp; }
+
+.kb-8s  { animation-duration: 8s; }
+.kb-12s { animation-duration: 12s; }
+.kb-18s { animation-duration: 18s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns { animation: none !important; transform: none !important; }
+}
+
+/* ========================================================================
+ * Storied page — typewritten card on paper
+ * ======================================================================== */
+.typed-card {
+  background: var(--sand-soft);
+  border: 1px solid var(--rule-soft);
+  padding: 28px 30px;
+  position: relative;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink);
+  box-shadow:
+    0 1px 0 rgba(10, 41, 48, 0.04),
+    0 12px 32px rgba(10, 41, 48, 0.10);
+}
+.typed-card::before {
+  /* Subtle paper grain — same noise palette as .paper */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='6'/><feColorMatrix values='0 0 0 0 0.04  0 0 0 0 0.16  0 0 0 0 0.19  0 0 0 0.05 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ========================================================================
+ * Story chapter — full-bleed dark canvas (used by PivotChapter, IslandFlyover).
+ * ======================================================================== */
+.chapter-dark {
+  background: var(--ocean-deep);
+  color: var(--sand);
+}
+.chapter-dark .display { color: var(--sand); }
+
+/* ========================================================================
+ * Vertical timeline — dotted spine + ticket-stub events.
+ * ======================================================================== */
+.story-timeline-spine {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 6px,
+    var(--ocean-deep) 6px,
+    var(--ocean-deep) 9px,
+    transparent 9px,
+    transparent 16px
+  );
+  background-size: 1px 16px;
+  background-repeat: repeat-y;
+  background-position: center top;
+  opacity: 0.35;
+}
+
+/* ========================================================================
+ * Island flyover — overlay graphics layer
+ * ======================================================================== */
+.flyover-stage {
+  position: relative;
+  isolation: isolate;
+}
+.flyover-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.flyover-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to top, rgba(10, 41, 48, 0.65) 0%, rgba(10, 41, 48, 0.10) 45%, rgba(10, 41, 48, 0.30) 100%);
+  pointer-events: none;
+}
+.flyover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.flyover-readout {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(245, 232, 208, 0.92);
+  text-transform: uppercase;
+}
+@keyframes flyoverPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 1.0;  transform: scale(1.18); }
+}
+.flyover-ping {
+  animation: flyoverPulse 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flyover-ping { animation: none; opacity: 0.85; }
+}
+
 /* Masthead bar */
 .masthead-rule {
   background: var(--ocean-deep);

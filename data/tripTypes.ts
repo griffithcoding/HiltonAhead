@@ -184,7 +184,7 @@ export const tripTypes: TripTypeLanding[] = [
     },
     seoTitle: 'Hilton Head Oceanfront Villas: Local Picks, Honest Reviews',
     metaDescription:
-      'Hilton Head oceanfront villa rentals chosen by a local. Sea Pines, Palmetto Dunes, and Forest Beach inventory we\u2019ve walked into, with partner rates.',
+      'Hilton Head oceanfront villa rentals chosen by a local. Sea Pines, Palmetto Dunes, and Forest Beach inventory we\u2019ve walked into.',
     keywords: [
       'Hilton Head oceanfront villas',
       'Hilton Head beachfront villa rental',
@@ -207,9 +207,9 @@ export const tripTypes: TripTypeLanding[] = [
           'True-oceanfront (sand-edge patio) runs $7k-$14k a week in peak. Ocean-view (first row inland) runs 40% less and is often the smarter pick for families who do not want a tidepool two steps from the crib.',
       },
       {
-        title: 'Partner rates, not commissions',
+        title: 'Flat fee, not commissions',
         body:
-          'Forty-plus partner properties quote us below the rate on Vrbo and the resort sites. We pass the spread to you as part of the flat-fee engagement. No hidden booking commissions.',
+          'We charge a flat planning fee. Whatever rate the property gives you is what you pay — no hidden booking commissions on top, no incentive for us to steer you toward a higher-rate stay.',
       },
       {
         title: 'The pool problem',

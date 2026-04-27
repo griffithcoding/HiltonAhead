@@ -17,6 +17,7 @@ import {
   getRelatedTripTypes,
   getTripTypeDisplayName,
 } from '@/data/tripTypes';
+import { getStoryBySlug } from '@/data/stories';
 
 interface Props {
   trip: TripType;
@@ -223,6 +224,58 @@ export default function TripTypeLandingPage({ trip }: Props) {
             </Link>
           </div>
         </section>
+
+        {/* ——— Related story link (if any) ——— */}
+        {trip.relatedStorySlug && (() => {
+          const story = getStoryBySlug(trip.relatedStorySlug);
+          if (!story) return null;
+          return (
+            <section
+              aria-label="See the story"
+              className="mt-20 overflow-hidden rounded-md bg-ocean-deep text-sand"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+                <Link
+                  href={`/stories/${story.slug}`}
+                  className="group relative block aspect-[4/3] md:aspect-auto"
+                  aria-label={`Read ${story.seoTitle}`}
+                >
+                  <Image
+                    src={story.cover.src}
+                    alt={story.cover.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover photo-warm transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/60 to-transparent" />
+                  <div className="absolute left-4 top-4">
+                    <Ticket className="!bg-sand !text-ocean-deep">
+                      Story № {story.storyNumber}
+                    </Ticket>
+                  </div>
+                </Link>
+                <div className="flex flex-col justify-center gap-5 p-8 md:p-12 lg:p-16">
+                  <span className="eyebrow text-coral">See the story</span>
+                  <h3 className="display text-[28px] leading-[1.1] text-sand md:text-[36px]">
+                    {story.title.plain}{' '}
+                    <span className="display-italic text-gold">
+                      {story.title.italic}
+                    </span>
+                  </h3>
+                  <p className="text-[14.5px] leading-[1.7] text-sand/80 md:text-[15px]">
+                    {story.hook}
+                  </p>
+                  <Link
+                    href={`/stories/${story.slug}`}
+                    className="link-underline mt-2 inline-block text-[12px] font-medium uppercase tracking-[0.22em] text-sand"
+                  >
+                    Read the full story →
+                  </Link>
+                </div>
+              </div>
+            </section>
+          );
+        })()}
 
         {/* ——— Related blog link (if any) ——— */}
         {trip.blogPostSlug && (

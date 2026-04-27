@@ -52,6 +52,31 @@ const teaTable    = { src: unsplash('1551024601-bec78aea704b', 1400, 80), alt: '
 // [HH] Coastal cottage on the docks — Jake Johnson
 const hammock     = { src: unsplash('1628214458185-a49d4fc577f3', 1400, 80), alt: 'Coastal cottage on the docks, Hilton Head Island' };
 
+// ——— Story-specific scenery (no people) ———
+// New shots used by /stories/[slug] chapters and the homepage IslandFlyover.
+// Same Unsplash CDN pattern as the rest of the file. Swap for press-kit
+// imagery once available.
+const golfFairway   = { src: unsplash('1535131749006-b7f58c99034b', 1800, 82), alt: 'Empty Lowcountry golf fairway lined with palmetto trees at sunrise' };
+const golfTeeBox    = { src: unsplash('1523712999610-f77fbcfc3843', 1800, 82), alt: 'Sunlight filtering through coastal pines along a fairway' };
+const ceremonyArbor = { src: unsplash('1519741497674-611481863552', 1800, 82), alt: 'Empty wedding arbor on a coastal lawn at golden hour' };
+const setTable      = { src: unsplash('1530103862676-de8c9debad1d', 1800, 82), alt: 'Long banquet table set under string lights with no guests' };
+const coastalAerial = { src: unsplash('1506260408121-e353d10b87c7', 1800, 82), alt: 'Wide aerial of barrier-island marsh and coastline at dusk' };
+const lagoonAerial  = { src: unsplash('1571939228382-b2f2b585ce15', 1800, 82), alt: 'Aerial of resort lagoons threaded between palm trees' };
+const marinaDawn    = { src: unsplash('1518495973542-4542c06a5843', 1800, 82), alt: 'Marina at dawn, sailboats at rest on glassy water' };
+const dunesPath     = { src: unsplash('1506929562872-bb421503ef21', 1800, 82), alt: 'Wooden dune crossover path bending toward the Atlantic' };
+
+// ——— Custom Itineraries food slideshow ———
+// TODO: replace with photographs from partner restaurants (Hudson's, Skull Creek,
+// Charlie's L'Etoile Verte, etc.) once licensed. Currently curated Unsplash shots
+// chosen to read as Lowcountry / coastal-Southern dining.
+const customItinerariesFood = [
+  { src: unsplash('1559827260-dc66d52bef19', 1400, 82), alt: 'Fresh-shucked oysters on ice with lemon' },
+  { src: unsplash('1565299624946-b28f40a0ae38', 1400, 82), alt: 'Shrimp and grits in a cast-iron skillet' },
+  { src: unsplash('1467003909585-2f8a72700288', 1400, 82), alt: 'Seared scallops plated with greens' },
+  { src: unsplash('1485921325833-c519f76c4927', 1400, 82), alt: 'Wood-grilled fish with charred lemon' },
+  { src: unsplash('1504674900247-0877df9cc836', 1400, 82), alt: 'Plated coastal entrée from a chef-driven kitchen' },
+];
+
 export const photos = {
   // ——— Primary plates (preserves existing imports) ———
   hero,
@@ -78,6 +103,49 @@ export const photos = {
   sundown,
   teaTable,
   hammock,
+  customItinerariesFood,
+
+  // ——— Story-specific (no people) ———
+  golfFairway,
+  golfTeeBox,
+  ceremonyArbor,
+  setTable,
+  coastalAerial,
+  lagoonAerial,
+  marinaDawn,
+  dunesPath,
+
+  /** Aerial frames — used by IslandFlyover overlays + story covers. */
+  aerials: [
+    { ...coastalAerial, caption: 'Calibogue Sound · barrier island' },
+    { ...lagoonAerial,  caption: 'Palmetto Dunes · resort lagoons' },
+    { ...beachAerial,   caption: 'Atlantic edge · oceanfront' },
+    { ...marsh,         caption: 'Broad Creek · low tide' },
+    { ...dunesPath,     caption: 'Forest Beach · dune crossover' },
+    { ...harborBoats,   caption: 'Skull Creek · sailboats' },
+  ],
+
+  /** Story setting shots, organized by the trip-type each story covers. */
+  storySettings: {
+    golf: [
+      { ...golfTeeBox,  caption: 'Harbour Town · first tee' },
+      { ...lighthouse,  caption: 'Harbour Town · 18th green' },
+      { ...golfFairway, caption: 'Palmetto Dunes · Robert Trent Jones' },
+      { ...marinaDawn,  caption: 'Sea Pines · marina at dawn' },
+    ],
+    wedding: [
+      { ...ceremonyArbor, caption: 'Sea Pines · ceremony arbor' },
+      { ...setTable,      caption: 'Reception · oyster table' },
+      { ...mossOak,       caption: 'Live oak · portrait grove' },
+      { ...harborBoats,   caption: 'Shelter Cove · rehearsal dinner' },
+    ],
+    family: [
+      { ...dunesPath,    caption: 'Coligny · boardwalk to sand' },
+      { ...bikePath,     caption: 'Sea Pines · kids bike loop' },
+      { ...beachMorning, caption: 'Forest Beach · 7 a.m.' },
+      { ...lagoonAerial, caption: 'Palmetto Dunes · resort lagoons' },
+    ],
+  },
 
   // ——— Curated sets for specific layouts ———
   /** Layered hero collage — 3 overlapping plates (featured, left-top, right-bottom) */
@@ -105,13 +173,22 @@ export const photos = {
     { ...marsh,      caption: 'Broad Creek · August'   },
   ],
 
-  /** Neighborhood plates — 6 images matched to insider-proof list */
+  /**
+   * Neighborhood plates — 6 images matched to insider-proof list.
+   *
+   * TODO: replace with photographs taken at each named neighborhood
+   * (Sea Pines / Palmetto Dunes / Forest Beach / Shelter Cove / Port Royal /
+   * Mid-Island) once we have a press kit or partner-property shoots.
+   * Current shots are Lowcountry-coastal Unsplash imagery chosen to match
+   * each neighborhood's character — only Sea Pines (Harbour Town Lighthouse)
+   * is verifiably location-specific.
+   */
   neighborhoods: [
-    { ...lighthouse,  label: 'Sea Pines',       caption: 'Harbour Town, 6:30 pm' },
-    { ...bikePath,    label: 'Palmetto Dunes',  caption: '11 miles of lagoon'    },
-    { ...boardwalk,   label: 'Forest Beach',    caption: 'Coligny, walking distance' },
-    { ...harborBoats, label: 'Shelter Cove',    caption: 'Marina, after work'    },
-    { ...coastalOak,  label: 'Port Royal',      caption: 'Tucked-away oaks'      },
-    { ...villa,       label: 'Mid-Island',      caption: 'Best value, easy access' },
+    { ...lighthouse,   label: 'Sea Pines',       caption: 'Harbour Town, 6:30 pm' },
+    { ...golfFairway,  label: 'Palmetto Dunes',  caption: '11 miles of lagoon'    },
+    { ...dunesPath,    label: 'Forest Beach',    caption: 'Coligny, walking distance' },
+    { ...marinaDawn,   label: 'Shelter Cove',    caption: 'Marina, after work'    },
+    { ...mossOak,      label: 'Port Royal',      caption: 'Tucked-away oaks'      },
+    { ...villa,        label: 'Mid-Island',      caption: 'Best value, easy access' },
   ],
 } as const;

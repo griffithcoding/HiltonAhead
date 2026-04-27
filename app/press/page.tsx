@@ -147,8 +147,8 @@ export default function PressPage() {
             </li>
             <li>
               <strong className="text-ink">Founder:</strong> William
-              Griffith — 12 years on the island, just shy of 400 trips
-              planned.
+              Griffith — Hilton Head Island resident, just shy of 400
+              trips planned.
             </li>
             <li>
               <strong className="text-ink">Specialties:</strong> custom

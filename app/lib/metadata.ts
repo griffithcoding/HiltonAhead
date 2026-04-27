@@ -496,6 +496,94 @@ export function getLodgingBusinessSchema(lodging: {
   }
 }
 
+/**
+ * JSON-LD Article — for storied long-form pages at /stories/[slug].
+ * Differentiated from BlogPosting (which is for /blog/) via the @type and
+ * the absence of `isPartOf: Blog`. Article is broader and more semantically
+ * correct for editorial trip-narrative pages with itineraries and infographics.
+ */
+export function getStoryArticleSchema(story: {
+  slug: string
+  title: string
+  description: string
+  publishedAt: string
+  updatedAt?: string
+  imageUrl?: string
+  imageAlt?: string
+  keywords: string[]
+  articleSection?: string // e.g. "Weddings", "Golf", "Family"
+}) {
+  const url = `${siteUrl}/stories/${story.slug}`
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': url,
+    url,
+    headline: story.title,
+    description: story.description,
+    datePublished: story.publishedAt,
+    dateModified: story.updatedAt || story.publishedAt,
+    ...(story.imageUrl
+      ? {
+          image: {
+            '@type': 'ImageObject',
+            url: story.imageUrl,
+            ...(story.imageAlt ? { caption: story.imageAlt } : {}),
+          },
+        }
+      : {}),
+    author: { '@type': 'Organization', name: brand.name, url: siteUrl },
+    publisher: {
+      '@type': 'Organization',
+      name: brand.name,
+      url: siteUrl,
+      logo: { '@type': 'ImageObject', url: `${siteUrl}/logo.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    keywords: story.keywords.join(', '),
+    inLanguage: 'en-US',
+    ...(story.articleSection ? { articleSection: story.articleSection } : {}),
+  }
+}
+
+/**
+ * JSON-LD CollectionPage — for the /stories index. Wraps an ItemList of
+ * the individual stories so search engines understand it's a list-style
+ * landing page.
+ */
+export function getStoriesCollectionSchema(stories: Array<{
+  slug: string
+  title: string
+  description: string
+}>) {
+  const url = `${siteUrl}/stories`
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': url,
+    url,
+    name: 'Hilton Head Stories',
+    description:
+      'Real Hilton Head trips, planned end-to-end. Long-form, place-as-protagonist narratives of golf weekends, weddings, and family weeks on the island.',
+    inLanguage: 'en-US',
+    isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}#website`, url: siteUrl },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: stories.map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Article',
+          '@id': `${siteUrl}/stories/${s.slug}`,
+          url: `${siteUrl}/stories/${s.slug}`,
+          headline: s.title,
+          description: s.description,
+        },
+      })),
+    },
+  }
+}
+
 /** JSON-LD Event — for RBC Heritage, festivals, concerts, etc. */
 export function getEventSchema(event: {
   name: string

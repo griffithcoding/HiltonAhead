@@ -4,6 +4,7 @@ import Hero from '@/components/sections/Hero';
 import WhyIsland from '@/components/sections/WhyIsland';
 import PhotoRail from '@/components/sections/PhotoRail';
 import Services from '@/components/sections/Services';
+import IslandFlyover from '@/components/sections/IslandFlyover';
 import InsiderProof from '@/components/sections/InsiderProof';
 import LatestPosts from '@/components/sections/LatestPosts';
 import LocalDirectoryPreview from '@/components/sections/LocalDirectoryPreview';
@@ -80,6 +81,12 @@ export default function Home() {
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Services />
+      </div>
+
+      {/* Full-bleed cinematic drone flyover — narrative midpoint */}
+      <IslandFlyover />
+
+      <div className="mx-auto max-w-[1280px] px-5">
         <InsiderProof />
         <LatestPosts />
         <LocalDirectoryPreview />

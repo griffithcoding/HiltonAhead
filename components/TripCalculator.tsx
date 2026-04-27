@@ -150,24 +150,13 @@ export default function TripCalculator({ calendlyUrl }: { calendlyUrl?: string }
             ({fmt(low)} to {fmt(high)})
           </span>
         </div>
-        <div className="mt-6 grid grid-cols-1 gap-4 border-t border-ocean-deep/10 pt-5 sm:grid-cols-2">
-          <div>
-            <div className="eyebrow text-ink-soft">Our fee</div>
-            <div className="display mt-1.5 text-[22px] text-ink">
-              {fmt(ourFee)}
-              <span className="ml-2 text-[12px] font-normal text-ink-soft">
-                {feeType === 'flat' ? 'flat' : `(~${feeType === 'percent' ? Math.round((ourFee / mid) * 100) : 0}% of total)`}
-              </span>
-            </div>
-          </div>
-          <div>
-            <div className="eyebrow text-ink-soft">Typical savings through us</div>
-            <div className="display mt-1.5 text-[22px] text-ocean">
-              {fmt(Math.round(mid * 0.11))}
-              <span className="ml-2 text-[12px] font-normal text-ink-soft">
-                (~11% via partner rates)
-              </span>
-            </div>
+        <div className="mt-6 border-t border-ocean-deep/10 pt-5">
+          <div className="eyebrow text-ink-soft">Our fee</div>
+          <div className="display mt-1.5 text-[22px] text-ink">
+            {fmt(ourFee)}
+            <span className="ml-2 text-[12px] font-normal text-ink-soft">
+              {feeType === 'flat' ? 'flat' : `(~${feeType === 'percent' ? Math.round((ourFee / mid) * 100) : 0}% of total)`}
+            </span>
           </div>
         </div>
       </div>

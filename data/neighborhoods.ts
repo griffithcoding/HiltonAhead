@@ -47,7 +47,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       italic: 'as it was designed to be.',
     },
     metaDescription:
-      'Sea Pines villas, Harbour Town Golf Links, and locals-only advice for the largest neighborhood on Hilton Head. Book through us for partner rates.',
+      'Sea Pines villas, Harbour Town Golf Links, and locals-only advice for the largest neighborhood on Hilton Head.',
     keywords: [
       'Sea Pines villas',
       'Sea Pines Resort Hilton Head',

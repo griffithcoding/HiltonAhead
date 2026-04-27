@@ -4,6 +4,7 @@ import { services } from '@/data/services'
 import { posts } from '@/data/posts'
 import { neighborhoods } from '@/data/neighborhoods'
 import { tripTypes } from '@/data/tripTypes'
+import { stories } from '@/data/stories'
 import { months } from '@/data/months'
 import { industries } from '@/data/localBusinesses'
 
@@ -22,6 +23,7 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/itinerary', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/contact', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/blog', changeFrequency: 'weekly', priority: 0.8 },
+  { path: '/stories', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/events', changeFrequency: 'weekly', priority: 0.85 },
   { path: '/hilton-head-weather', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/partners', changeFrequency: 'monthly', priority: 0.7 },
@@ -59,6 +61,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.9, // keyword-rich trip-intent pages
+  }))
+
+  // Storied long-form pages — high editorial value, low churn.
+  const storyEntries: MetadataRoute.Sitemap = stories.map((s) => ({
+    url: `${BASE_URL}/stories/${s.slug}`,
+    lastModified: new Date(s.updatedAt || s.publishedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
   }))
 
   // Per-month weather/travel pages — distinct ranking signals for
@@ -105,6 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...postEntries,
     ...neighborhoodEntries,
     ...tripTypeEntries,
+    ...storyEntries,
     ...monthEntries,
     ...serviceEntries,
     ...localIndexEntry,
