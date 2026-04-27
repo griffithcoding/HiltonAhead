@@ -5,12 +5,17 @@
  * only when window.gtag is present (i.e. browser, post-hydration). All calls
  * are fire-and-forget — they never throw and never block the UI.
  *
- * After deploying, mark these event names as Conversions in the GA4 UI:
- *   Admin → Events → toggle "Mark as conversion"
+ * Uses GA4 recommended event names so reports auto-populate without manual
+ * key-event configuration:
  *
- *   - lead_submitted        (itinerary + business inquiry)
- *   - newsletter_signup
- *   - purchase              (Stripe checkout success)
+ *   - generate_lead   (itinerary + business inquiry submissions)
+ *   - sign_up         (newsletter subscription)
+ *   - purchase        (Stripe checkout success)
+ *
+ * Recommended events have built-in semantic meaning in GA4 — they appear in
+ * the Lead Generation, Engagement, and Monetization reports respectively.
+ * To also count them as conversions in the Key Events report, mark them in
+ * Admin → Key events after they've fired at least once.
  */
 
 type GtagFn = (
@@ -37,14 +42,19 @@ function track(eventName: string, params?: Record<string, unknown>): void {
 }
 
 export function trackLead(source: string, leadType: 'itinerary' | 'business_inquiry'): void {
-  track('lead_submitted', {
+  track('generate_lead', {
+    event_category: 'engagement',
+    value: 1.0,
     lead_source: source,
     lead_type: leadType,
   });
 }
 
 export function trackNewsletterSignup(source: string): void {
-  track('newsletter_signup', {
+  track('sign_up', {
+    event_category: 'engagement',
+    value: 1.0,
+    method: 'newsletter',
     signup_source: source,
   });
 }
