@@ -5619,6 +5619,482 @@ const postBestPizza: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// H2 STUBS — Brand-visibility plan, Q2 2026 slate.
+// Outline-only posts created so the founder can expand each into a full piece.
+// All have full metadata, schema-ready category, FAQ block (FAQPage schema),
+// and at least one tier block where applicable (ItemList schema).
+// ---------------------------------------------------------------------------
+
+const postHarbourTownTeeTime: Post = {
+  slug: 'harbour-town-tee-time-guide',
+  title: 'How to Get a Harbour Town Tee Time (And What to Do If You Can’t)',
+  excerpt:
+    'The booking windows, the priority tiers, the workarounds, and the three Hilton Head courses you should book if Harbour Town is sold out.',
+  description:
+    'Step-by-step guide to booking Harbour Town Golf Links tee times. Resort-guest priority windows, public booking timing, and three excellent backup courses if Harbour Town is full.',
+  category: 'Golf',
+  readTime: '8 min',
+  publishedAt: '2026-05-01',
+  author: 'Hilton Ahead',
+  featuredOrder: 26,
+  relatedNeighborhoods: ['sea-pines'],
+  keywords: [
+    'Harbour Town tee time',
+    'Harbour Town Golf Links booking',
+    'Sea Pines tee times',
+    'Hilton Head golf booking',
+    'RBC Heritage course',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: '<strong>Outline — to expand.</strong> Harbour Town tee times move in three tiers: resort guests (120 days out), Sea Pines property owners, and the public (~30 days out). Most visitors find the Resy page empty, panic, and book a worse course. The fix is structural, not luck.',
+    },
+    {
+      kind: 'callout',
+      label: 'Quick answer',
+      html: 'Book a Sea Pines property through us; we route you through the 120-day resort window. If it’s already too late, the three best backups are Atlantic Dunes (Sea Pines), George Fazio (Palmetto Dunes), and May River (Bluffton).',
+    },
+    { kind: 'h2', text: 'The three booking tiers' },
+    { kind: 'p', html: 'Resort guests, owners, public.' },
+    { kind: 'h2', text: 'When to call vs. when to use Resy' },
+    { kind: 'p', html: 'Phone is faster for premium tee blocks than the website.' },
+    { kind: 'h2', text: 'Three backup courses worth booking' },
+    {
+      kind: 'tier',
+      label: 'If Harbour Town is full',
+      subtitle: 'Three courses we book most often as substitutes.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Atlantic Dunes by Davis Love III',
+          meta: 'Sea Pines',
+          blurb:
+            'The newer Sea Pines course. Different feel from Harbour Town — more open, dune-style, less penal off the tee. Resort guest priority same as Harbour Town.',
+        },
+        {
+          name: 'George Fazio at Palmetto Dunes',
+          meta: 'Palmetto Dunes',
+          blurb:
+            'The toughest course on the island. If you want a true championship test and Harbour Town is gone, Fazio is the closer-to-equal substitute, often with more availability.',
+        },
+        {
+          name: 'May River Golf Club',
+          meta: 'Bluffton (Palmetto Bluff)',
+          blurb:
+            '20 minutes off-island. Pete Dye design, Inn at Palmetto Bluff hospitality. The locals’ favorite for a non-Sea Pines round.',
+        },
+      ],
+    },
+    { kind: 'h2', text: 'What to do the day-of if your tee time vanishes' },
+    { kind: 'p', html: 'Standby protocol; pro shop relationships.' },
+    {
+      kind: 'faq',
+      label: 'Frequently asked',
+      items: [
+        {
+          q: 'How far in advance can I book a Harbour Town tee time?',
+          a: 'Sea Pines resort guests can book 120 days out. Outside guests typically book about 30 days out. Premium morning slots in March, April, and October are first to fill.',
+        },
+        {
+          q: 'Do I have to stay at The Inn & Club at Harbour Town to get priority?',
+          a: 'No. Any Sea Pines property booked through the resort’s booking system qualifies for the resort-guest priority window. We book four villa buildings on South Beach Lane that all qualify.',
+        },
+        {
+          q: 'What is the dress code at Harbour Town?',
+          a: 'Collared shirts, golf slacks or knee-length shorts, soft-spike shoes. No denim or athletic shorts. Strict and enforced.',
+        },
+      ],
+    },
+    { kind: 'h2', text: 'Get help booking' },
+    {
+      kind: 'p',
+      html: 'If you’re trying to lock in Harbour Town for a 2026 trip, <a href="/itinerary">tell us about your trip</a> and we’ll route you through the priority window.',
+    },
+  ],
+};
+
+const postHurricaneInsurance: Post = {
+  slug: 'hilton-head-hurricane-season-travel-insurance',
+  title: 'Hurricane Season Travel Insurance: What Actually Matters for a Hilton Head Trip',
+  excerpt:
+    'Most travel insurance is theater. Here’s what actually pays out when a hurricane closes Hilton Head, and which two policy types are worth the money.',
+  description:
+    'Travel insurance for Hilton Head during hurricane season. Cancel-for-any-reason vs. named-storm coverage, when to buy, what villa rental contracts cover, and the three carriers locals trust.',
+  category: 'Planning',
+  readTime: '7 min',
+  publishedAt: '2026-05-08',
+  author: 'Hilton Ahead',
+  featuredOrder: 27,
+  keywords: [
+    'Hilton Head travel insurance',
+    'hurricane season Hilton Head',
+    'cancel for any reason travel insurance',
+    'Hilton Head villa rental cancellation',
+    'Hilton Head hurricane evacuation',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: '<strong>Outline — to expand.</strong> Atlantic hurricane season runs June 1 to November 30. Hilton Head sees a direct or near-miss storm about every three years on average. Most travelers buy the wrong insurance and find out at the worst moment.',
+    },
+    {
+      kind: 'callout',
+      label: 'The short version',
+      html: 'Standard “travel insurance” covers cancellation for documented illness or named perils. <strong>Cancel-For-Any-Reason (CFAR)</strong> is the only policy that lets you cancel for a forecast — and it must be purchased within 14 to 21 days of the first trip deposit.',
+    },
+    { kind: 'h2', text: 'What standard policies actually cover' },
+    { kind: 'p', html: 'Trip cancellation, interruption, medical, lost baggage.' },
+    { kind: 'h2', text: 'Cancel-For-Any-Reason — the only hurricane-relevant coverage' },
+    { kind: 'p', html: 'Why CFAR exists; cost premium (~40% over base); 14-day buying window.' },
+    { kind: 'h2', text: 'What villa rental contracts already cover' },
+    { kind: 'p', html: 'Most reputable HH villa management companies have a force-majeure clause covering mandatory evacuations; smaller operators often do not.' },
+    {
+      kind: 'tier',
+      label: 'Carriers we’ve seen pay out',
+      subtitle: 'Three travel-insurance carriers that have actually delivered for Hilton Head clients.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Travel Guard (AIG)',
+          meta: 'Comprehensive + CFAR add-on',
+          blurb: 'Largest US travel insurer; CFAR coverage is straightforward and pays in our experience. Buy within 15 days of first deposit.',
+        },
+        {
+          name: 'Allianz',
+          meta: 'OneTrip Prime',
+          blurb: 'Strong on medical evacuation and trip-interruption. CFAR is available as an upgrade. Reasonable claims process.',
+        },
+        {
+          name: 'Berkshire Hathaway Travel Protection',
+          meta: 'ExactCare Value',
+          blurb: 'Lower-cost option without CFAR; works for travelers who only need illness/medical coverage and accept hurricane risk.',
+        },
+      ],
+    },
+    { kind: 'h2', text: 'When to skip insurance entirely' },
+    { kind: 'p', html: 'Spring shoulder, late fall, and February: hurricane risk is functionally zero, and the policy premium often exceeds the deposit at risk.' },
+    {
+      kind: 'faq',
+      label: 'Frequently asked',
+      items: [
+        {
+          q: 'When should I buy travel insurance for a Hilton Head trip?',
+          a: 'For Cancel-For-Any-Reason coverage, within 14 to 21 days of your first trip deposit. Standard policies have more flexible windows but still must be in place before any cancellation event begins.',
+        },
+        {
+          q: 'Will my insurance pay out if a hurricane is forecast but doesn’t hit?',
+          a: 'Standard policies, no — they require an actual named-storm landfall or mandatory evacuation. CFAR policies, yes — you can cancel for any reason, including a forecast you don’t like, typically for 50 to 75% of trip cost.',
+        },
+        {
+          q: 'Do credit cards cover hurricane cancellations?',
+          a: 'Some premium cards (Chase Sapphire Reserve, Amex Platinum) include trip cancellation insurance, but the named-peril triggers are stricter than a standalone policy. Read your card’s benefits guide before relying on it.',
+        },
+      ],
+    },
+  ],
+};
+
+const postCompassItinerary: Post = {
+  slug: 'inside-a-compass-itinerary',
+  title: 'What $295 Buys You: Inside a Compass Itinerary',
+  excerpt:
+    'A walk-through of exactly what arrives in your inbox when you book the $295 Compass plan. The villa shortlist, the reservation list, the neighborhood guide, and the 30 days of email.',
+  description:
+    'See what’s included in the $295 Compass plan from Hilton Ahead. A real example of the villa shortlist, restaurant + tee-time reservation list, neighborhood PDF, and 60-minute consultation.',
+  category: 'Planning',
+  readTime: '6 min',
+  publishedAt: '2026-05-15',
+  author: 'Hilton Ahead',
+  featuredOrder: 28,
+  keywords: [
+    'Hilton Head trip planner',
+    'Compass plan Hilton Ahead',
+    'Hilton Head travel consultant cost',
+    'Hilton Head custom itinerary',
+    'Hilton Head trip planning service',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: '<strong>Outline — to expand.</strong> Compass is the entry-level Hilton Ahead plan, $295 one-time. It’s designed for first-time visitors who want a focused consult, not a full custom build. Here’s exactly what shows up in your inbox.',
+    },
+    {
+      kind: 'callout',
+      label: 'In one paragraph',
+      html: 'You get a 60-minute video call, a curated 3-villa shortlist with notes, a restaurant + tee-time reservation list, a neighborhood guide PDF, and 30 days of email follow-up. Designed to save 15 to 20 hours of research and skip the $5,500 villa that should have been a $3,200 villa.',
+    },
+    { kind: 'h2', text: 'The 60-minute consultation' },
+    { kind: 'p', html: 'What we cover; how we run the call.' },
+    { kind: 'h2', text: 'The 3-villa shortlist' },
+    { kind: 'p', html: 'How we choose; what each note includes.' },
+    { kind: 'h2', text: 'The reservation list' },
+    { kind: 'p', html: 'Restaurants by neighborhood; tee times if applicable; spa or activity bookings.' },
+    { kind: 'h2', text: 'The neighborhood guide PDF' },
+    { kind: 'p', html: 'Beach access, parking, the off-the-radar coffee shop, the bike-path map.' },
+    { kind: 'h2', text: '30 days of email follow-up' },
+    { kind: 'p', html: 'Question windows; how to actually use it.' },
+    { kind: 'h2', text: 'When Compass is right — and when to upgrade' },
+    {
+      kind: 'p',
+      html: 'Compass is right for solo, couples, and small-family first trips. Upgrade to <a href="/services">Charter or Heritage</a> if you want full booking handled, ground transport, or trip-week concierge.',
+    },
+    {
+      kind: 'faq',
+      label: 'Frequently asked',
+      items: [
+        {
+          q: 'How is Compass different from a free travel agent?',
+          a: 'Free agents are paid by the villa companies they book — their incentives skew toward the most commission-friendly properties. We charge a flat fee so the recommendations are aligned to you, not the platforms paying the kickback.',
+        },
+        {
+          q: 'How long does a Compass consultation take from booking to delivery?',
+          a: 'Five to seven days from purchase to delivered itinerary. The 60-minute call typically happens in days 1–3, the materials arrive 48–72 hours later, and the email window stays open for 30 days after delivery.',
+        },
+        {
+          q: 'Can I upgrade to Charter after starting with Compass?',
+          a: 'Yes. The $295 credits toward a Charter retainer if you upgrade within 30 days of the consultation. Most upgrades happen because the trip got bigger or more groups joined.',
+        },
+      ],
+    },
+    {
+      kind: 'p',
+      html: '<a href="/services#compass">Book Compass →</a>',
+    },
+  ],
+};
+
+const postWeddingVenuesByVibe: Post = {
+  slug: 'hilton-head-wedding-venues-by-vibe',
+  title: 'Hilton Head Wedding Venues, by Vibe: Lowcountry Elegant vs Beachfront Casual',
+  excerpt:
+    'Five wedding venue archetypes on Hilton Head Island, from oak-canopied Sea Pines elegance to barefoot Forest Beach. Costs, capacities, and the trade-offs nobody tells you.',
+  description:
+    'Hilton Head wedding venues organized by atmosphere: Lowcountry elegant, beachfront casual, marina sunset, intimate plantation, and budget-conscious. Capacities, ranges, and locals’ picks.',
+  category: 'Planning',
+  readTime: '11 min',
+  publishedAt: '2026-05-22',
+  author: 'Hilton Ahead',
+  featuredOrder: 29,
+  keywords: [
+    'Hilton Head wedding venues',
+    'Sea Pines wedding venues',
+    'Palmetto Bluff wedding',
+    'Hilton Head beach wedding',
+    'Hilton Head wedding planner',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: '<strong>Outline — to expand.</strong> The right Hilton Head wedding venue is a function of two things you already know: how many people, and what you want guests to feel. We sort by the second one.',
+    },
+    {
+      kind: 'callout',
+      label: 'How we group venues',
+      html: 'Five archetypes: <strong>Lowcountry elegant</strong> (oak canopies, plantation settings), <strong>beachfront casual</strong> (barefoot, sunset over the Atlantic), <strong>marina sunset</strong> (waterfront docks, Shelter Cove and Harbour Town), <strong>intimate plantation</strong> (under 60 guests, private feel), <strong>budget-conscious</strong> (under $25K all-in, real options).',
+    },
+    {
+      kind: 'tier',
+      label: 'Lowcountry Elegant',
+      subtitle: 'Oak canopies, ballrooms, plantation grandeur.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'The Inn at Palmetto Bluff',
+          meta: 'Bluffton · 80–250 guests',
+          blurb: 'The flagship Lowcountry venue. May River backdrop, signature oak chapel, full concierge wedding team. Most expensive on this list, by design.',
+        },
+        {
+          name: 'Sea Pines Resort — The Country Club',
+          meta: 'Sea Pines · 80–300 guests',
+          blurb: 'Renovated ballroom plus oceanfront ceremony lawn. The classic Hilton Head wedding everyone’s seen on Instagram, executed well.',
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Beachfront Casual',
+      subtitle: 'Barefoot, sunset, Atlantic backdrop.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Coligny Beach Park (public)',
+          meta: 'Forest Beach · up to 100 guests',
+          blurb: 'Permitted ceremony only; reception offsite. The most affordable beach option, with full lifeguard amenities and parking nearby.',
+        },
+        {
+          name: 'Sonesta Resort beach lawn',
+          meta: 'Shipyard · 60–180 guests',
+          blurb: 'Mid-island, refreshed property, oceanfront ceremony lawn plus indoor reception space. A common choice for 100–150 guest weddings.',
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Marina Sunset',
+      subtitle: 'Waterfront docks, west-facing, golden-hour ceremonies.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Shelter Cove waterfront pavilion',
+          meta: 'Shelter Cove · 40–120 guests',
+          blurb: 'Sunset over Broad Creek, four restaurants within a 2-minute walk for rehearsal dinner. Strong choice for 50–100 guest weddings.',
+        },
+        {
+          name: 'Harbour Town — Quarterdeck lawn',
+          meta: 'Sea Pines · 40–100 guests',
+          blurb: 'Lighthouse backdrop, marina foreground. Iconic. Limited capacity and tightly booked — inquire 12+ months out.',
+        },
+      ],
+    },
+    { kind: 'h2', text: 'What you actually pay for' },
+    { kind: 'p', html: 'Site fee vs F&B minimum vs full-service planning. The breakdowns differ wildly.' },
+    { kind: 'h2', text: 'Wedding-week logistics' },
+    { kind: 'p', html: 'Block lodging, vendor coordination, transportation, dietary, kids; we handle these in the Heritage tier.' },
+    {
+      kind: 'faq',
+      label: 'Frequently asked',
+      items: [
+        {
+          q: 'How far in advance should we book a Hilton Head wedding venue?',
+          a: 'Twelve to eighteen months for premium venues (Palmetto Bluff, Sea Pines Country Club, Harbour Town). Six to nine months can work for shoulder seasons or smaller venues. Heritage Week (mid-April) is impossible to book inside 18 months.',
+        },
+        {
+          q: 'Can we have a beach ceremony on Hilton Head?',
+          a: 'Yes — beachfront permits are issued by the town. Ceremonies only, no reception infrastructure. Some properties (Sonesta, certain Sea Pines villas) have private oceanfront lawns that allow full setups.',
+        },
+        {
+          q: 'What’s the typical all-in cost for a 100-guest Hilton Head wedding?',
+          a: 'Lowcountry elegant: $90–150K. Marina sunset: $55–95K. Beachfront casual: $45–80K. Budget-conscious (off-season, all-inclusive resort): $25–35K is achievable.',
+        },
+      ],
+    },
+    {
+      kind: 'p',
+      html: '<a href="/itinerary?tier=heritage">Plan a Hilton Head wedding with us</a>.',
+    },
+  ],
+};
+
+const postPublicBeachAccess: Post = {
+  slug: 'hilton-head-public-beach-access-ranked',
+  title: 'Every Public Beach Access on Hilton Head, Ranked',
+  excerpt:
+    'Eight named public beach access points, ranked by parking, restrooms, crowd, and walk-to-sand distance. The two no-go points and the one nobody knows about.',
+  description:
+    'Ranked guide to every public beach access on Hilton Head Island: Coligny, Driessen, Folly Field, Burkes, Mitchelville, Singleton, Alder Lane, Islanders. Parking, amenities, and which to skip.',
+  category: 'Activities',
+  readTime: '9 min',
+  publishedAt: '2026-05-29',
+  author: 'Hilton Ahead',
+  featuredOrder: 30,
+  keywords: [
+    'Hilton Head public beach access',
+    'Coligny Beach Park',
+    'Driessen Beach Park',
+    'Folly Field Beach',
+    'Hilton Head free beach parking',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: '<strong>Outline — to expand.</strong> Hilton Head has eight named public beach access points. They are not equivalent. Some are full parks with lifeguards and food; some are dead-end roads with five parking spots. Pick wrong and your morning is parking, not beach.',
+    },
+    {
+      kind: 'callout',
+      label: 'Quick answer',
+      html: 'Coligny for amenities, Driessen for families, Burkes if you want quiet. Avoid Mitchelville on summer weekends — it fills by 9 a.m. and the walk is the longest on the list.',
+    },
+    {
+      kind: 'tier',
+      label: 'A-Tier — Full-amenity access',
+      subtitle: 'Parks with parking, restrooms, lifeguards, food.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Coligny Beach Park',
+          meta: 'Forest Beach',
+          blurb: 'The flagship. Free parking lot (fills by 11 a.m. June–August), restrooms, outdoor showers, food, lifeguards, walking-distance restaurants. Best single beach access on the island.',
+        },
+        {
+          name: 'Driessen Beach Park',
+          meta: 'Mid-Island / Shipyard',
+          blurb: 'Larger lot than Coligny, longer dune-walk to sand, better for families with gear. Pavilions, restrooms, picnic areas. Less crowded than Coligny on weekends.',
+        },
+        {
+          name: 'Folly Field Beach Park',
+          meta: 'Mid-Island',
+          blurb: 'Smaller lot, fills earlier, but the beach itself is wider and quieter. Rent boards next door at the rental shop.',
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'B-Tier — Functional access, fewer amenities',
+      subtitle: 'Parking + path to sand, but bring your own everything.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Burkes Beach',
+          meta: 'Mid-Island',
+          blurb: 'Free street parking, no restrooms, short boardwalk. The locals’ quieter pick. Bring your own water and shade.',
+        },
+        {
+          name: 'Singleton Beach',
+          meta: 'Mid-Island / Shelter Cove side',
+          blurb: 'About 30 free spaces on a dead-end road. Closest public access from Shelter Cove. No amenities at all.',
+        },
+        {
+          name: 'Alder Lane Beach',
+          meta: 'Forest Beach (north)',
+          blurb: 'Small free lot at the end of Alder Lane. Walking-distance from north Forest Beach condos. Restrooms but no lifeguards.',
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'C-Tier — Skip on busy days',
+      subtitle: 'Long walks, tiny lots, or far from anything.',
+      accent: 'zinc',
+      items: [
+        {
+          name: 'Mitchelville Beach Park',
+          meta: 'North End',
+          blurb: 'Historic significance (Mitchelville was a Reconstruction-era freedmen’s settlement) but the parking is small and the dune walk is the longest on the island. Skip on summer weekends.',
+        },
+        {
+          name: 'Islanders Beach Park',
+          meta: 'Mid-Island',
+          blurb: 'Restricted to Hilton Head Island residents with permit. Don’t bother unless you have a friend with a sticker.',
+        },
+      ],
+    },
+    { kind: 'h2', text: 'Beach gear logistics' },
+    { kind: 'p', html: 'Rentals delivered (Beach Scouts), where to park umbrellas, glass-bottle rules.' },
+    { kind: 'h2', text: 'Best access for each kind of trip' },
+    { kind: 'p', html: 'First-timers, families, surfers (yes, the south end), couples.' },
+    {
+      kind: 'faq',
+      label: 'Frequently asked',
+      items: [
+        {
+          q: 'Is parking at Hilton Head public beaches free?',
+          a: 'Yes — all named public beach access lots are free. Sea Pines and Palmetto Dunes charge gate fees ($9 and $0 respectively for guests of certain properties), but the public access points outside those plantations don’t charge for parking.',
+        },
+        {
+          q: 'When do public beach lots fill up in summer?',
+          a: 'Coligny fills by 10–11 a.m. on summer weekends, by 12 p.m. on weekdays. Driessen and Folly Field fill 30–60 minutes after that. Burkes and Alder Lane have rolling turnover; you can usually find a spot.',
+        },
+        {
+          q: 'Can I drink alcohol on Hilton Head public beaches?',
+          a: 'Glass containers are prohibited. Alcohol in cans or plastic is permitted on public beaches but not inside Coligny Beach Park itself (private park rules differ from beach rules).',
+        },
+      ],
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -5649,6 +6125,11 @@ export const posts: Post[] = [
   postDolphinTours,
   postKayakingGuide,
   postBestPizza,
+  postHarbourTownTeeTime,
+  postHurricaneInsurance,
+  postCompassItinerary,
+  postWeddingVenuesByVibe,
+  postPublicBeachAccess,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
