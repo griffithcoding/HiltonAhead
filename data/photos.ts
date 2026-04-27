@@ -98,13 +98,13 @@ export const photos = {
 
   /** Look-book photo rail — 7 island moods */
   moods: [
-    { ...harborBoats, caption: ‘Harbour Town, low tide’ },
-    { ...mossOak,     caption: ‘Spanish moss, 6 p.m.’ },
-    { ...oysters,     caption: ‘Hudson’s, Tuesday’ },
-    { ...mealPlate,   caption: ‘Skull Creek · 7 p.m.’ },
-    { ...bikePath,    caption: ‘Harbour Town shops’ },
-    { ...palms,       caption: ‘South Beach, August’ },
-    { ...hammock,     caption: ‘Sea Pines, dockside’ },
+    { ...harborBoats, caption: 'Harbour Town, low tide' },
+    { ...mossOak,     caption: 'Spanish moss, 6 p.m.' },
+    { ...oysters,     caption: 'Hudson’s, Tuesday' },
+    { ...mealPlate,   caption: 'Skull Creek · 7 p.m.' },
+    { ...bikePath,    caption: 'Harbour Town shops' },
+    { ...palms,       caption: 'South Beach, August' },
+    { ...hammock,     caption: 'Sea Pines, dockside' },
   ],
 
   /** Polaroid wall — 4 tilted shots on WhyIsland section */
