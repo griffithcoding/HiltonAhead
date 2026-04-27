@@ -79,7 +79,7 @@
   },
   {
     "id": "lowcountry-watersports",
-    "website": "https://www.lowcountrywatersports.com",
+    "website": "https://lowcountrywatersports.com",
     "photo": "https://lowcountrywatersports.com/wp-content/uploads/2025/05/DSC2815.png",
     "ok": true
   },
@@ -410,8 +410,8 @@
   {
     "id": "breeze-trolley",
     "website": "https://www.breezetrolley.com",
-    "photo": null,
-    "ok": false
+    "photo": "https://static.wixstatic.com/media/15859c_ff469f2669fa49449ce637cc7984e9f5%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/15859c_ff469f2669fa49449ce637cc7984e9f5%7Emv2.jpg",
+    "ok": true
   },
   {
     "id": "hilton-head-cabana-services",
@@ -520,5 +520,161 @@
     "website": "https://jbanksdesign.com",
     "photo": "https://static.showit.co/1200/S7CswWpvbQp5IBcXJWlNSw/299941/jbanks_1.png",
     "ok": true
+  },
+  {
+    "id": "off-the-hook-charters",
+    "website": "https://www.offthehookcharters.com",
+    "photo": "https://www.offthehookcharters.com/cdn/shop/files/OTH_Social_Share_Logo_1200_x_628_72ppi_1200x.png?v=1768339314",
+    "ok": true
+  },
+  {
+    "id": "outcast-sport-fishing",
+    "website": "https://outcastfishing.com",
+    "photo": "https://outcastfishing.com/The%20best%20charter%20experience%20in%20Hilton%20Head.%20Record%20Shark%20fishing%20inland%20and%20off%20shore.",
+    "ok": true
+  },
+  {
+    "id": "palmetto-lagoon-charters",
+    "website": "https://palmettolagooncharters.com",
+    "photo": "https://palmettolagooncharters.com/wp-content/uploads/sites/2575/2019/05/header-photo.png?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "bay-runner-fishing-charters",
+    "website": "https://bayrunnerfishinghiltonhead.com",
+    "photo": "https://bayrunnerfishinghiltonhead.com/wp-content/uploads/sites/2047/2018/12/IMG_1598.jpg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "the-runaway-charter",
+    "website": "https://runawayfishingcharter.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "pole-cat-charters",
+    "website": "https://polecatcharters.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "tail-tamer-fishing-charters",
+    "website": "https://tailtamerfishingcharters.com",
+    "photo": "https://tailtamerfishingcharters.com/wp-content/uploads/2022/05/best-fishing-trips-hilton-head-1.jpg",
+    "ok": true
+  },
+  {
+    "id": "megabite-sportfishing",
+    "website": "https://megabitefishinghiltonhead.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "live-oac-charter",
+    "website": "https://liveoac.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "captain-hook-fishing-boat",
+    "website": "https://captainhookhiltonhead.com",
+    "photo": "https://www.captainhookhiltonhead.com/wp-content/uploads/sites/3067/2020/05/CaptHookHeaderImage.jpg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "reel-easy-charters",
+    "website": "https://reeleasyhiltonhead.com",
+    "photo": "https://reeleasyhiltonhead.com/wp-content/uploads/2026/04/Header3.png",
+    "ok": true
+  },
+  {
+    "id": "fishin-coach-charters",
+    "website": "https://fishincoach.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "salty-mistress-sport-fishing",
+    "website": "https://saltymistresssportfishing.com",
+    "photo": "https://img1.wsimg.com/isteam/ip/757d7ad7-2abc-4324-90f1-62a64de9e602/GOPR029411.jpg",
+    "ok": true
+  },
+  {
+    "id": "stray-cat-charters",
+    "website": "https://straycatcharters.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "vagabond-cruise",
+    "website": "https://www.vagabondcruise.com",
+    "photo": "https://www.vagabondcruise.com/wp-content/uploads/sites/1349/2023/10/OpenGraph-Image.jpg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "outside-hilton-head-eco-tours",
+    "website": "https://outsidehiltonhead.com",
+    "photo": "https://outsidehiltonhead.com/wp-content/uploads/2025/06/OutsideHHI-24-scaled.jpg",
+    "ok": true
+  },
+  {
+    "id": "dolphin-discoveries",
+    "website": "https://dolphindiscoverieshiltonhead.com",
+    "photo": "https://dolphindiscoverieshiltonhead.com/wp-content/uploads/2024/02/IMG_0446-768x868.jpeg",
+    "ok": true
+  },
+  {
+    "id": "captain-marks-dolphin-cruise",
+    "website": "https://cruisehiltonhead.com",
+    "photo": "https://cruisehiltonhead.com/wp-content/uploads/sites/2856/2022/03/hilton-head-dolphin-tour-smiling-dolphin-scaled.jpg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "dolphin-seafari",
+    "website": "https://dolphinseafarihhi.com",
+    "photo": "https://dolphinseafarihhi.com/wp-content/uploads/sites/3245/2025/04/IMG_0378.jpeg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "island-explorer-nature-tours",
+    "website": "https://dolphintourshiltonhead.com",
+    "photo": "https://dolphintourshiltonhead.com/images/Facebook-Open-Graph-1200x360.jpg",
+    "ok": true
+  },
+  {
+    "id": "tale-hunter-charter",
+    "website": "https://www.hiltonheaddolphintours.fish",
+    "photo": "https://www.hiltonheaddolphintours.fish/wp-content/uploads/2017/06/cropped-cropped-tailhunter-hilton-head-charters-06.jpg",
+    "ok": true
+  },
+  {
+    "id": "h2o-sports-dolphin-watch",
+    "website": "https://www.h2osports.com",
+    "photo": "https://www.h2osports.com/wp-content/uploads/sites/7790/2025/04/DSC_1898-e1743549171458.jpg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "saltmarsh-paddle-tours",
+    "website": "https://www.saltmarshpaddle.com",
+    "photo": "http://static1.squarespace.com/static/595290e4ff7c50422f0876e0/t/5aa2bb4cec212d492f353a9d/1520614221000/Water-Frame-SPT.jpg?format=1500w",
+    "ok": true
+  },
+  {
+    "id": "commander-zodiac",
+    "website": "https://www.commanderzodiac.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "cross-island-cruises",
+    "website": "https://crossislandcruises.com",
+    "photo": "https://crossislandcruises.com/wp-content/uploads/2025/06/social-media-logo-1024x816.png",
+    "ok": true
+  },
+  {
+    "id": "carolina-breeze-charters",
+    "website": "https://www.carolinabreezechartershhi.com",
+    "photo": null,
+    "ok": false
   }
 ]
