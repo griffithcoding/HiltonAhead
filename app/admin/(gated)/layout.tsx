@@ -17,6 +17,7 @@ const NAV = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/leads', label: 'Leads' },
   { href: '/admin/outreach', label: 'Backlink Outreach' },
+  { href: '/admin/newsletter', label: 'Newsletter' },
 ];
 
 export default async function AdminAppLayout({
