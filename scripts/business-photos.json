@@ -1,0 +1,524 @@
+[
+  {
+    "id": "salty-dog-cafe",
+    "website": "https://www.thesaltydog.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "hudsons-seafood",
+    "website": "https://www.hudsonsonthedocks.com",
+    "photo": "https://www.hudsonsonthedocks.com/wp-content/uploads/2025/09/Hudsons-Logo-1.png",
+    "ok": true
+  },
+  {
+    "id": "skull-creek-boathouse",
+    "website": "https://www.skullcreekboathouse.com",
+    "photo": "https://www.skullcreekboathouse.com/wp-content/uploads/2024/05/Skull-Creek-Boathouse-Logo-Thumbnail-1.jpg",
+    "ok": true
+  },
+  {
+    "id": "old-oyster-factory",
+    "website": "https://www.oldoysterfactory.com",
+    "photo": "https://images.getbento.com/accounts/4c61affe7fd0924e3230e96030205d83/media/images/8630old-oyster-logo.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100",
+    "ok": true
+  },
+  {
+    "id": "one-hot-mamas",
+    "website": "https://www.onehotmamas.com",
+    "photo": "https://onehotmamas.com/wp-content/uploads/2021/08/OHM-Logo-Thumbnail-1.jpeg",
+    "ok": true
+  },
+  {
+    "id": "a-lowcountry-backyard",
+    "website": "https://www.hhibackyard.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "poseidon-hhi",
+    "website": "https://www.poseidonhhi.com",
+    "photo": "https://www.poseidonhhi.com/wp-content/uploads/2024/05/Poseidon-Logo-Thumbnail-1.jpeg",
+    "ok": true
+  },
+  {
+    "id": "gusto-ristorante",
+    "website": "https://www.gustohhi.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "truffles-cafe",
+    "website": "https://www.trufflescafe.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "h2o-sports",
+    "website": "https://www.h2osports.com",
+    "photo": "https://www.h2osports.com/wp-content/uploads/sites/7790/2025/04/DSC_1898-e1743549171458.jpg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "kayak-hilton-head",
+    "website": "https://www.kayakhiltonhead.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "island-water-sports",
+    "website": "https://www.islandwatersportshhi.com",
+    "photo": "https://blogger.googleusercontent.com/img/a/AVvXsEjrFpm7hcTXhknuMvhwmpuCIyTtLpCedp4CbajhqKpmi1rQvztlZlJmGlRICnAmERvxHX3FmuryWf3BAjk8-_p3RCwVsAi5_wls9UZn67aanZGrg51POpuUg0dZp-JyWa9Z73XKeRA3vGueJdsWmmPaI8WbVW5G9cHjgLmKvOIW-ZfpmtSzR6IRvq8ECio=w1200-h630-p-k-no-nu",
+    "ok": true
+  },
+  {
+    "id": "hilton-head-outfitters",
+    "website": "https://www.hiltonheadoutfitters.com",
+    "photo": "https://static.wixstatic.com/media/78f7be_91e85a17a0fd4ec1b08bd72548c91ff3%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/78f7be_91e85a17a0fd4ec1b08bd72548c91ff3%7Emv2.jpg",
+    "ok": true
+  },
+  {
+    "id": "lowcountry-watersports",
+    "website": "https://www.lowcountrywatersports.com",
+    "photo": "https://lowcountrywatersports.com/wp-content/uploads/2025/05/DSC2815.png",
+    "ok": true
+  },
+  {
+    "id": "sky-pirate-parasail",
+    "website": "https://www.skypirateparasail.com",
+    "photo": "https://skypirateparasail.com/wp-content/uploads/sky-pirate-parasail-1.jpg",
+    "ok": true
+  },
+  {
+    "id": "sea-monkeys-watersports",
+    "website": "https://www.seamonkeyswatersports.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "live-oac",
+    "website": "https://www.liveoac.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "heron-point-pete-dye",
+    "website": "https://www.seapines.com/golf/courses/heron-point-by-pete-dye",
+    "photo": "https://www.seapines.com/sites/default/files/media/images/heron-point-hero.jpg",
+    "ok": true
+  },
+  {
+    "id": "arthur-hills-palmetto-dunes",
+    "website": "https://www.palmettodunes.com/golf/arthur-hills-course",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "george-fazio-palmetto-dunes",
+    "website": "https://www.palmettodunes.com/golf/george-fazio-course",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "palmetto-hall-plantation",
+    "website": "https://hiltonheadgolf.net/clubs/palmetto-hall",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "country-club-hilton-head",
+    "website": "https://www.invitedclubs.com/clubs/country-club-of-hilton-head",
+    "photo": "https://cms11-prod.invitedclubs.com/globalassets/country-club-of-hilton-head/_images/photoshelter-2023/cc_hilton-head_golf_1f3a7340_1920_1200.jpg/",
+    "ok": true
+  },
+  {
+    "id": "palmetto-dunes-resort-rentals",
+    "website": "https://www.palmettodunes.com/property-management",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "the-vacation-company",
+    "website": "https://www.vacationcompany.com",
+    "photo": "https://pictures.escapia.com/VacationCo/263383/7451130609.jpg",
+    "ok": true
+  },
+  {
+    "id": "beach-properties-hhi",
+    "website": "https://www.beach-property.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "sunset-rentals-hhi",
+    "website": "https://www.sunsetrentals.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "dunes-real-estate",
+    "website": "https://www.dunesrealestate.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "vacation-time-hhi",
+    "website": "https://www.vthhi.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "omni-hhi-weddings",
+    "website": "https://www.omnihotels.com/hotels/hilton-head/weddings",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "sea-pines-beach-club-weddings",
+    "website": "https://www.seapines.com/gather/weddings",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "inn-harbour-town-weddings",
+    "website": "https://www.seapines.com/accommodations/inn-club",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "harbour-town-yacht-club-weddings",
+    "website": "https://htyc.com/weddings",
+    "photo": "https://htyachtclub.wpengine.com/wp-content/uploads/2020/02/wedding-3.jpg",
+    "ok": true
+  },
+  {
+    "id": "simply-southern-events",
+    "website": "https://www.asimplysouthernevent.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "spa-soleil-hilton",
+    "website": "https://www.hilton.com/en/hotels/hhhrshh-hilton-beachfront-resort-and-spa-hilton-head-island/spa/",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "hh-beach-yoga",
+    "website": "https://www.hhbeachyoga.com",
+    "photo": "http://static1.squarespace.com/static/67e088304366b41ff9483241/t/67e4c97e5f3c551d9262001d/1743047038855/4480EE52-E743-4DDE-8096-DF46DF0DCF7E.png?format=1500w",
+    "ok": true
+  },
+  {
+    "id": "bikram-hot-yoga-hhi",
+    "website": "https://www.bikramhh.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "hhi-spa-wellness",
+    "website": "https://www.hiltonheadislandspa.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "coligny-plaza",
+    "website": "https://www.colignyplaza.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "the-sandbox-museum",
+    "website": "https://www.thesandbox.org",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "adventure-cove-mini-golf",
+    "website": "https://www.adventurecove.com",
+    "photo": "https://img1.wsimg.com/isteam/ip/f541cb16-774e-4055-b5f4-b0c6a815058f/New%20Logo.png",
+    "ok": true
+  },
+  {
+    "id": "local-pie-wood-fired-pizza",
+    "website": "https://localpie.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "dough-boys-pizza",
+    "website": "https://doughboyshhi.com",
+    "photo": "https://doughboyshhi.com/wp-content/uploads/2023/01/IMG_2860-1.jpg",
+    "ok": true
+  },
+  {
+    "id": "joelle",
+    "website": "https://joellebluffton.com",
+    "photo": "http://static1.squarespace.com/static/654d85db65c88e0f6d2000ca/t/65554626a145316fd4ab555f/1700087334947/Joelle+Secondary+Logo+Straight+Tagline+Pesto.png?format=1500w",
+    "ok": true
+  },
+  {
+    "id": "giuseppis-pizza-pasta",
+    "website": "https://giuseppispizza.com",
+    "photo": "https://www.giuseppispizza.com/wp-content/uploads/2018/08/Giuseppis-Logo-Thumbnail-1.jpeg",
+    "ok": true
+  },
+  {
+    "id": "pomodori",
+    "website": "https://www.gopomodori.com",
+    "photo": "https://www.gopomodori.com/wp-content/uploads/2020/10/pomoweblogo-small.png",
+    "ok": true
+  },
+  {
+    "id": "firemost-pizza",
+    "website": "https://www.firemostpizza.com",
+    "photo": "https://mypizza-assets-production.imgix.net/url-preview-background.png?mark64=aHR0cHM6Ly9hc3NldHMuaW1naXgubmV0L350ZXh0P2g9NDEwJnR4dDY0PVJrbFNSVTFQVTFRZ1VFbGFXa0UlM0QmdHh0LWNvbG9yPXdoaXRlJnR4dC1mb250PUFyaWFsLUJsYWNrJnR4dC1zaXplPTc1Jnc9ODQw&amp;mark-x=86&amp;mark-y=180",
+    "ok": true
+  },
+  {
+    "id": "school-pizza",
+    "website": "https://www.eatschoolpizza.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "new-york-city-pizza",
+    "website": "https://www.newyorkcitypizza.com",
+    "photo": "https://images.getbento.com/fm6NB2DR0SNueX48ThRP_NYC_Pizza_Logo%201.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100",
+    "ok": true
+  },
+  {
+    "id": "mellow-mushroom-hh",
+    "website": "https://www.mellowmushroom.com/locations/sc/hilton-head-island/",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "tjs-take-and-bake",
+    "website": "https://tjstakeandbakepizza.com",
+    "photo": "https://tjstakeandbakepizza.com/wp-content/uploads/2019/12/Pizza-On-Hilton-Head.png",
+    "ok": true
+  },
+  {
+    "id": "mangiamos-hilton-head-pizza",
+    "website": "https://www.hhipizza.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "bella-italia-hh",
+    "website": "https://www.bellaitaliahhi.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "fat-babys-pizza",
+    "website": "https://fatbabyspizzahhi.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "white-sands-transportation",
+    "website": "https://whitesandstransportation.com",
+    "photo": "https://i.vimeocdn.com/video/1686473845-dd9901da8986075afce3714a9cccf9e71b1a6d4237af7369b17aa157c098ed2e-d_1920x1080?r=pad",
+    "ok": true
+  },
+  {
+    "id": "palmetto-car-service",
+    "website": "https://palmettocarservice.com",
+    "photo": "https://palmettocarservice.com/wp-content/uploads/2023/03/header-main-logo.png",
+    "ok": true
+  },
+  {
+    "id": "jl-luxury-transport",
+    "website": "https://jlluxurytransport.com",
+    "photo": "http://static1.squarespace.com/static/63d001c7f0b7e26ce36fe737/t/66b79e3c24f1a659c5293510/1723309628455/IMG-20240810-WA0002.jpg?format=1500w",
+    "ok": true
+  },
+  {
+    "id": "savannah-airport-shuttle",
+    "website": "http://savannahairportshuttle.com",
+    "photo": "http://savannahairportshuttle.com/uploads/3/4/5/0/34506001/7322951_orig.png",
+    "ok": true
+  },
+  {
+    "id": "pegasus-transportation",
+    "website": "https://pegasustaxihhi.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "yellow-transportation-hhi",
+    "website": "https://yellowtransportationhhi.com",
+    "photo": "https://www.yellowtransportationhhi.com/uploads/1/2/7/1/127189632/editor/untitled-1.png?1767970443",
+    "ok": true
+  },
+  {
+    "id": "beeline-taxi",
+    "website": "http://www.taxihiltonhead.com",
+    "photo": "https://nebula.wsimg.com/134091fe73eedbd077722b888f97c368?AccessKeyId=BA518823F29E58E7438E&disposition=0&alloworigin=1",
+    "ok": true
+  },
+  {
+    "id": "hilton-head-bicycle-company",
+    "website": "https://hiltonheadbicycle.com",
+    "photo": "https://hiltonheadbicycle.com/wp-content/uploads/2025/03/Hilton-Head-Bicycle-Company-Logo.png",
+    "ok": true
+  },
+  {
+    "id": "riding-tigers",
+    "website": "https://aaaridingtigers.com",
+    "photo": "https://aaaridingtigers.com/wp-content/uploads/2019/01/NEW_tiger_logo-350px.png",
+    "ok": true
+  },
+  {
+    "id": "pedals-bicycles",
+    "website": "https://www.pedalsbicycles.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "wheelz-of-hilton-head",
+    "website": "https://www.rentwheelz.com",
+    "photo": "https://www.rentwheelz.com/wp-content/uploads/sites/4698/2021/03/Header.jpg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "sea-turtle-rentals",
+    "website": "https://seaturtlerentals.com",
+    "photo": "https://seaturtlerentals.com/wp-content/uploads/2021/06/20210611_185747-scaled.jpg",
+    "ok": true
+  },
+  {
+    "id": "h2o-sports-daufuskie-ferry",
+    "website": "https://www.h2osports.com",
+    "photo": "https://www.h2osports.com/wp-content/uploads/sites/7790/2025/04/DSC_1898-e1743549171458.jpg?w=700&h=700&zoom=2",
+    "ok": true
+  },
+  {
+    "id": "outside-hilton-head-water-taxi",
+    "website": "https://outsidehiltonhead.com",
+    "photo": "https://outsidehiltonhead.com/wp-content/uploads/2025/06/OutsideHHI-24-scaled.jpg",
+    "ok": true
+  },
+  {
+    "id": "low-country-limo-bus",
+    "website": "https://www.lowcountrylimobus.com",
+    "photo": "https://static.wixstatic.com/media/ce082b_2cc71325344c4598a46ba0a17c6f8894%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/ce082b_2cc71325344c4598a46ba0a17c6f8894%7Emv2.jpg",
+    "ok": true
+  },
+  {
+    "id": "breeze-trolley",
+    "website": "https://www.breezetrolley.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "hilton-head-cabana-services",
+    "website": "https://hhcabanaservices.com",
+    "photo": "http://hhcabanaservices.com/cdn/shop/files/TRANSPARENT_d866e642-4ede-450b-9945-0a60239b2741_1200x1200.png?v=1612455984",
+    "ok": true
+  },
+  {
+    "id": "beach-properties-of-hilton-head",
+    "website": "https://www.beach-property.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "sea-pines-resort-rentals",
+    "website": "https://www.seapines.com/vacation-rentals",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "vacasa-hilton-head",
+    "website": "https://www.vacasa.com/usa/Hilton-Head",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "sunset-rentals-hh",
+    "website": "https://www.sunsetrentals.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "maid-for-you-hhi",
+    "website": "https://maidforyouhhi.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "dust-away-cleaning",
+    "website": "https://www.dustawayhhi.com",
+    "photo": "https://static.wixstatic.com/media/350a36_2d6f97b36ef74b73ab392e1521a4aac4%7Emv2.png/v1/fit/w_2500,h_1330,al_c/350a36_2d6f97b36ef74b73ab392e1521a4aac4%7Emv2.png",
+    "ok": true
+  },
+  {
+    "id": "merry-maids-hilton-head",
+    "website": "https://merrymaids.com/home-cleaners-hilton-head-sc",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "father-nature-landscaping",
+    "website": "https://fathernatureinc.com",
+    "photo": "https://fathernatureinc.com/wp-content/uploads/2023/07/mainteneance.jpg",
+    "ok": true
+  },
+  {
+    "id": "prestige-landscaping-sc",
+    "website": "https://prestigelandscapingsc.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "hilton-head-exterminators",
+    "website": "https://www.hiltonheadexterminators.com",
+    "photo": "https://www.hiltonheadexterminators.com/assets/Social-Share.2205050941550.jpg",
+    "ok": true
+  },
+  {
+    "id": "bee-green-pest-solutions",
+    "website": "https://www.beegreenpestsolutions.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "tlc-pool-service",
+    "website": "https://tlcpoolservice.biz",
+    "photo": "https://uploads-ssl.webflow.com/5efcbb9099af6efc80ab8a76/5efcbb9099af6e806cab8b45_66a645d6-4005-4f1c-9e2f-0abb734adc3e.jpg",
+    "ok": true
+  },
+  {
+    "id": "reflections-pool-service",
+    "website": "https://reflectionspool.services",
+    "photo": "https://www.reflectionspool.services/images/ReflectionsPoolService.png",
+    "ok": true
+  },
+  {
+    "id": "handyman-of-hilton-head",
+    "website": "https://handymanofhiltonhead.com",
+    "photo": null,
+    "ok": false
+  },
+  {
+    "id": "mr-handyman-savannah-hh",
+    "website": "https://www.mrhandyman.com/greater-savannah-and-hilton-head",
+    "photo": "https://www.mrhandyman.com/brand/_assets/images/brand-img/brand-logo.svg",
+    "ok": true
+  },
+  {
+    "id": "kelly-hughes-interiors",
+    "website": "http://www.kellyhughesinteriors.com",
+    "photo": "http://www.kellyhughesinteriors.com/s/misc/logo.jpg?t=1771731796",
+    "ok": true
+  },
+  {
+    "id": "j-banks-design-group",
+    "website": "https://jbanksdesign.com",
+    "photo": "https://static.showit.co/1200/S7CswWpvbQp5IBcXJWlNSw/299941/jbanks_1.png",
+    "ok": true
+  }
+]

@@ -616,7 +616,7 @@ const fbBusinesses: Business[] = [
     website: 'https://www.hudsonsonthedocks.com',
     hours: 'Lunch and dinner daily (seasonal hours)', // TODO: VERIFY exact hours
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://www.hudsonsonthedocks.com/wp-content/uploads/2025/09/Hudsons-Logo-1.png',
       alt: "Hudson's Seafood House on the Docks, Hilton Head Island",
     },
     lat: 32.2354,
@@ -641,7 +641,7 @@ const fbBusinesses: Business[] = [
     website: 'https://www.skullcreekboathouse.com',
     hours: 'Daily 11am–10pm (seasonal)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://www.skullcreekboathouse.com/wp-content/uploads/2024/05/Skull-Creek-Boathouse-Logo-Thumbnail-1.jpg',
       alt: 'Skull Creek Boathouse waterfront dining, Hilton Head Island',
     },
   },
@@ -664,7 +664,7 @@ const fbBusinesses: Business[] = [
     website: 'https://www.oldoysterfactory.com',
     hours: 'Dinner nightly; limited lunch (seasonal)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.getbento.com/accounts/4c61affe7fd0924e3230e96030205d83/media/images/8630old-oyster-logo.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100',
       alt: 'Old Oyster Factory restaurant on Broad Creek, Hilton Head Island',
     },
     lat: 32.2078,
@@ -689,7 +689,7 @@ const fbBusinesses: Business[] = [
     // website: '', // TODO: VERIFY if website exists
     hours: 'Dinner Tue–Sat; closed Sun & Mon (seasonal — confirm)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1592861956120-e524fc739696?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop',
       alt: "Charlie's L'Etoile Verte French bistro, Hilton Head Island",
     },
   },
@@ -712,7 +712,7 @@ const fbBusinesses: Business[] = [
     website: 'https://www.onehotmamas.com',
     hours: 'Daily from 11:30am (seasonal hours)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://onehotmamas.com/wp-content/uploads/2021/08/OHM-Logo-Thumbnail-1.jpeg',
       alt: "One Hot Mama's American Grill, Hilton Head Island",
     },
   },
@@ -735,7 +735,7 @@ const fbBusinesses: Business[] = [
     website: 'https://www.hhibackyard.com',
     hours: 'Lunch and dinner (seasonal hours — TODO: VERIFY)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop',
       alt: 'A Lowcountry Backyard Restaurant, Hilton Head Island',
     },
   },
@@ -758,7 +758,7 @@ const fbBusinesses: Business[] = [
     website: 'https://www.poseidonhhi.com',
     hours: 'Dinner nightly (seasonal hours)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://www.poseidonhhi.com/wp-content/uploads/2024/05/Poseidon-Logo-Thumbnail-1.jpeg',
       alt: 'Poseidon rooftop restaurant at Shelter Cove, Hilton Head Island',
     },
     lat: 32.1997,
@@ -783,7 +783,7 @@ const fbBusinesses: Business[] = [
     website: 'https://www.gustohhi.com',
     hours: 'Mon–Sat 5pm–10pm; closed Sun (seasonal — confirm)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop',
       alt: 'Gusto Ristorante Italian restaurant, Hilton Head Island',
     },
   },
@@ -806,7 +806,7 @@ const fbBusinesses: Business[] = [
     website: 'https://www.trufflescafe.com',
     hours: 'Lunch and dinner daily (seasonal)', // TODO: VERIFY exact hours
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop',
       alt: "Truffles Cafe, Hilton Head Island, South Carolina",
     },
   },
@@ -838,7 +838,7 @@ const waterBusinesses: Business[] = [
     hours: 'Daily 7:30am–6pm, 365 days a year',
     instagram: 'outsidehiltonhead',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1572715376701-98568319fd0b?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=1200&q=80&auto=format&fit=crop',
       alt: 'Outside Hilton Head guided kayak and dolphin tour, Hilton Head Island',
     },
     lat: 32.1997,
@@ -864,7 +864,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.vagabondcruise.com',
     hours: 'Daily 8am–8pm (seasonal schedule — confirm departures)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=1200&q=80&auto=format&fit=crop',
       alt: 'Vagabond Cruise dolphin tour at Harbour Town Yacht Basin, Hilton Head Island',
     },
   },
@@ -887,7 +887,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.h2osports.com',
     hours: 'Mon–Fri 9am–6pm, Sat 9am–4pm', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1530053969600-caed2596d242?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://www.h2osports.com/wp-content/uploads/sites/7790/2025/04/DSC_1898-e1743549171458.jpg?w=700&h=700&zoom=2',
       alt: 'H2O Sports parasailing and kayak tours at Harbour Town, Hilton Head Island',
     },
   },
@@ -910,7 +910,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.kayakhiltonhead.com',
     hours: 'Daily 7:30am–7:30pm (seasonal)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=1200&q=80&auto=format&fit=crop',
       alt: 'Kayak Hilton Head guided dolphin kayak tour, Hilton Head Island',
     },
   },
@@ -933,7 +933,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.islandwatersportshhi.com',
     hours: 'Daily 8am–7pm (Tue closes 5pm)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1502209524164-acea936639a2?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://blogger.googleusercontent.com/img/a/AVvXsEjrFpm7hcTXhknuMvhwmpuCIyTtLpCedp4CbajhqKpmi1rQvztlZlJmGlRICnAmERvxHX3FmuryWf3BAjk8-_p3RCwVsAi5_wls9UZn67aanZGrg51POpuUg0dZp-JyWa9Z73XKeRA3vGueJdsWmmPaI8WbVW5G9cHjgLmKvOIW-ZfpmtSzR6IRvq8ECio=w1200-h630-p-k-no-nu',
       alt: 'Island Water Sports sailing and kayak at South Beach Marina, Sea Pines, Hilton Head',
     },
   },
@@ -956,7 +956,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.hiltonheadoutfitters.com',
     hours: 'Daily 9am–5pm (seasonal)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://static.wixstatic.com/media/78f7be_91e85a17a0fd4ec1b08bd72548c91ff3%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/78f7be_91e85a17a0fd4ec1b08bd72548c91ff3%7Emv2.jpg',
       alt: 'Kayak rental on Palmetto Dunes lagoon system, Hilton Head Island',
     },
   },
@@ -979,7 +979,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.lowcountrywatersports.com',
     hours: 'Seasonal — check website for current schedule', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://lowcountrywatersports.com/wp-content/uploads/2025/05/DSC2815.png',
       alt: 'Lowcountry Watersports dolphin tour at Palmetto Bay Marina, Hilton Head Island',
     },
   },
@@ -1002,7 +1002,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.skypirateparasail.com',
     hours: 'Daily 8am–8pm (seasonal)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1604079628040-94301bb21b91?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://skypirateparasail.com/wp-content/uploads/sky-pirate-parasail-1.jpg',
       alt: 'Parasailing over Hilton Head Island with Sky Pirate Parasail, Broad Creek Marina',
     },
   },
@@ -1025,7 +1025,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.seamonkeyswatersports.com',
     hours: 'Mon–Sat 7am–8pm', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1530053969600-caed2596d242?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=1200&q=80&auto=format&fit=crop',
       alt: 'Jet ski and boat rentals at Sea Monkeys Watersports, Hilton Head Island',
     },
   },
@@ -1048,7 +1048,7 @@ const waterBusinesses: Business[] = [
     website: 'https://www.liveoac.com',
     hours: 'Daily 8am–8pm (seasonal)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=1200&q=80&auto=format&fit=crop',
       alt: 'Wakeboarding and dolphin tour charter with Live OAC, Hilton Head Island',
     },
   },
@@ -1105,7 +1105,7 @@ const golfBusinesses: Business[] = [
     website: 'https://www.seapines.com/golf/courses/heron-point-by-pete-dye',
     hours: 'Daily 8am–6pm (seasonal)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://www.seapines.com/sites/default/files/media/images/heron-point-hero.jpg',
       alt: 'Heron Point by Pete Dye golf course, Sea Pines Resort, Hilton Head Island',
     },
   },
@@ -1128,7 +1128,7 @@ const golfBusinesses: Business[] = [
     website: 'https://www.seapines.com/golf/courses/atlantic-dunes-by-davis-love',
     hours: 'Daily 8am–6pm (seasonal)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1592919505780-303950717480?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Atlantic Dunes by Davis Love III golf course, Sea Pines Resort, Hilton Head Island',
     },
   },
@@ -1151,7 +1151,7 @@ const golfBusinesses: Business[] = [
     website: 'https://www.palmettodunes.com/golf/robert-trent-jones-course',
     hours: 'Daily; pro shop approx. 7am–6pm', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1500932334442-8761ee4810a7?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Robert Trent Jones Oceanside Course at Palmetto Dunes, Hilton Head Island',
     },
   },
@@ -1174,7 +1174,7 @@ const golfBusinesses: Business[] = [
     website: 'https://www.palmettodunes.com/golf/arthur-hills-course',
     hours: 'Daily; open year-round', // TODO: VERIFY hours
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Arthur Hills Golf Course at Palmetto Dunes, Hilton Head Island',
     },
   },
@@ -1197,7 +1197,7 @@ const golfBusinesses: Business[] = [
     website: 'https://www.palmettodunes.com/golf/george-fazio-course',
     hours: 'Pro shop 6:30am–6pm daily', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1632946269126-0f8edbe8b068?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: 'George Fazio Golf Course at Palmetto Dunes, Hilton Head Island',
     },
   },
@@ -1220,7 +1220,7 @@ const golfBusinesses: Business[] = [
     website: 'https://hiltonheadgolf.net/clubs/shipyard',
     hours: 'Mon–Sat 7am–8pm; open year-round', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1623567341691-1f47b5cf949e?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Shipyard Golf Club fairway through Carolina pines, Hilton Head Island',
     },
   },
@@ -1243,7 +1243,7 @@ const golfBusinesses: Business[] = [
     website: 'https://hiltonheadgolf.net/clubs/palmetto-hall',
     hours: 'Open year-round; hours seasonal', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1592937238247-cd0090e02f65?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Palmetto Hall Plantation golf course, Hilton Head Island',
     },
   },
@@ -1266,7 +1266,7 @@ const golfBusinesses: Business[] = [
     website: 'https://www.invitedclubs.com/clubs/country-club-of-hilton-head',
     hours: 'Mon–Fri 5:30am–9pm, Sat 6am–6pm, Sun 7:30am–6pm', // TODO: VERIFY — confirm reciprocal/visitor access
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1605144884374-ecbb643615f6?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://cms11-prod.invitedclubs.com/globalassets/country-club-of-hilton-head/_images/photoshelter-2023/cc_hilton-head_golf_1f3a7340_1920_1200.jpg/',
       alt: 'Country Club of Hilton Head golf course, Hilton Head Plantation',
     },
   },
@@ -1289,7 +1289,7 @@ const golfBusinesses: Business[] = [
     website: 'https://www.hiltonheadnational.com',
     hours: 'Daily 8am–5:30pm; open year-round',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1587205476864-4a5a195167b4?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Hilton Head National Golf Club fairway, Bluffton near Hilton Head Island',
     },
   },
@@ -1320,7 +1320,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.seapines.com/vacation-rentals',
     hours: 'Rental desk daily 7am–11pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop',
       alt: 'Sea Pines Resort villas and Harbour Town marina, Hilton Head Island',
     },
     lat: 32.1432,
@@ -1346,7 +1346,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.palmettodunes.com/vacation-rentals',
     hours: 'Rental office open daily', // TODO: VERIFY hours
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop',
       alt: 'Palmetto Dunes Oceanfront Resort rental villas, Hilton Head Island',
     },
   },
@@ -1369,7 +1369,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.vacationcompany.com',
     hours: 'Mon–Sat 9am–5pm; closed Sun',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://pictures.escapia.com/VacationCo/263383/7451130609.jpg',
       alt: 'Hilton Head Island vacation rental villa managed by The Vacation Company',
     },
   },
@@ -1392,7 +1392,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.vacasa.com/usa/South-Carolina/Hilton-Head-Island',
     hours: '24/7 guest services by phone',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop',
       alt: 'Hilton Head Island oceanfront vacation rental, Vacasa portfolio',
     },
   },
@@ -1415,7 +1415,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.beach-property.com',
     hours: 'Daily 9am–5pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1572715376701-98568319fd0b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Luxury oceanfront vacation home on Hilton Head Island, Beach Properties',
     },
   },
@@ -1438,7 +1438,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.destinationvacationhhi.com',
     hours: 'Mon–Sat 9am–5pm, Sun 10am–4pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Hilton Head Island luxury vacation villa managed by Destination Vacation',
     },
   },
@@ -1461,7 +1461,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.sunsetrentals.com',
     hours: 'Mon–Sat 9am–5:30pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Hilton Head Island vacation rental, Sunset Rentals portfolio',
     },
   },
@@ -1484,7 +1484,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.dunesrealestate.com',
     hours: 'Mon–Sat 9am–5pm, Sun 12pm–5pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1572715376701-98568319fd0b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Dunes Real Estate office, Hilton Head Island vacation rental management',
     },
   },
@@ -1507,7 +1507,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.vthhi.com',
     hours: 'Daily 9am–6pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1569317002804-ab77bc7f8a7f?w=1200&q=80&auto=format&fit=crop',
       alt: 'Oceanfront vacation rental in Forest Beach, Hilton Head Island',
     },
   },
@@ -1530,7 +1530,7 @@ const vacationRentalBusinesses: Business[] = [
     website: 'https://www.islandtimehhi.com',
     hours: 'Seasonal — check website for current hours', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1572715376701-98568319fd0b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Luxury vacation home rental managed by Island Time Hilton Head',
     },
   },
@@ -1587,7 +1587,7 @@ const weddingBusinesses: Business[] = [
     phone: '(843) 842-8000',
     website: 'https://www.omnihotels.com/hotels/hilton-head/weddings',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop',
       alt: 'Wedding reception at Omni Hilton Head Oceanfront Resort, Hilton Head Island',
     },
   },
@@ -1609,7 +1609,7 @@ const weddingBusinesses: Business[] = [
     phone: '(843) 842-1888',
     website: 'https://www.seapines.com/gather/weddings',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1525258946800-98cfd641d0de?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop',
       alt: 'Sea Pines Beach Club oceanfront wedding venue, Hilton Head Island',
     },
   },
@@ -1631,7 +1631,7 @@ const weddingBusinesses: Business[] = [
     phone: '(843) 363-8100',
     website: 'https://www.seapines.com/accommodations/inn-club',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop',
       alt: 'The Inn and Club at Harbour Town, Hilton Head Island wedding venue',
     },
   },
@@ -1653,7 +1653,7 @@ const weddingBusinesses: Business[] = [
     phone: '(843) 671-1400',
     website: 'https://htyc.com/weddings',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://htyachtclub.wpengine.com/wp-content/uploads/2020/02/wedding-3.jpg',
       alt: 'Harbour Town Yacht Club wedding venue, marina views, Hilton Head Island',
     },
   },
@@ -1675,7 +1675,7 @@ const weddingBusinesses: Business[] = [
     phone: '(843) 686-9142',
     website: 'https://www.palmettodunesevents.com',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop',
       alt: 'Palmetto Dunes outdoor wedding venue on Hilton Head Island',
     },
   },
@@ -1697,7 +1697,7 @@ const weddingBusinesses: Business[] = [
     phone: '(843) 686-8400',
     website: 'https://www.hilton.com/en/hotels/hhhrshh-hilton-beachfront-resort-and-spa-hilton-head-island/',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop',
       alt: 'Hilton Beachfront Resort oceanfront wedding event space, Hilton Head Island',
     },
   },
@@ -1720,7 +1720,7 @@ const weddingBusinesses: Business[] = [
     website: 'https://www.amandaroseweddings.com',
     hours: 'By appointment',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1606490194859-07c18c9f0968?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop',
       alt: 'Amanda Rose Weddings beach wedding planning, Hilton Head Island',
     },
   },
@@ -1743,7 +1743,7 @@ const weddingBusinesses: Business[] = [
     website: 'https://www.spencerspecialevents.com',
     hours: 'By appointment',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop',
       alt: 'Spencer Special Events luxury wedding design, Hilton Head Island',
     },
   },
@@ -1765,7 +1765,7 @@ const weddingBusinesses: Business[] = [
     website: 'https://www.asimplysouthernevent.com',
     hours: 'By appointment',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop',
       alt: 'Simply Southern Events Lowcountry beach wedding coordination, Hilton Head Island',
     },
   },
@@ -1796,7 +1796,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.westinhiltonheadspa.com',
     hours: 'Daily 9am–6pm (closed Thanksgiving and Christmas)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Heavenly Spa by Westin treatment room, Hilton Head Island resort spa',
     },
     lat: 32.2033,
@@ -1822,7 +1822,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.omnihotels.com/hotels/hilton-head/spa',
     hours: 'Tue–Sat 9am–5pm; closed Mon and Sun', // TODO: VERIFY — hours may expand in peak season
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1591343395082-e120087004b4?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Ocean Tides Spa at Omni Hilton Head resort, Hilton Head Island',
     },
   },
@@ -1845,7 +1845,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.hilton.com/en/hotels/hhhrshh-hilton-beachfront-resort-and-spa-hilton-head-island/spa/',
     hours: 'Daily 8am–6pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Spa Soleil treatment room at Hilton Beachfront Resort, Hilton Head Island',
     },
   },
@@ -1868,7 +1868,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.hhhealth.com',
     hours: 'Residential programs — contact for schedule',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Hilton Head Health wellness retreat campus, Hilton Head Island',
     },
   },
@@ -1891,7 +1891,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.artofmassagehiltonhead.com',
     hours: 'Mon–Fri 9am–5pm (weekend sessions available — contact for schedule)', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Art of Massage and Yoga wellness studio, Hilton Head Island',
     },
   },
@@ -1914,7 +1914,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.jivayogacenter.com',
     hours: 'Mon–Fri 9am–7:15pm (varies by day), Sat–Sun 9am–12:30pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Jiva Yoga Center studio class, Hilton Head Island',
     },
   },
@@ -1937,7 +1937,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.hhbeachyoga.com',
     hours: 'By appointment — text Crystal to book',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop',
+      src: 'http://static1.squarespace.com/static/67e088304366b41ff9483241/t/67e4c97e5f3c551d9262001d/1743047038855/4480EE52-E743-4DDE-8096-DF46DF0DCF7E.png?format=1500w',
       alt: 'Beach yoga class on Hilton Head Island, South Carolina',
     },
   },
@@ -1960,7 +1960,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.bikramhh.com',
     hours: 'Mon/Wed/Fri 5:30am–7:45pm; Tue/Thu 7:30am–8pm; Sat–Sun 7:30am–6pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Bikram Hot Yoga studio interior, Hilton Head Island',
     },
   },
@@ -1983,7 +1983,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.backinbalancehhi.com',
     hours: 'Mon–Fri 8am–6:30pm, Sat–Sun 9am–5pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Back In Balance Wellness Spa massage therapy, Hilton Head Island',
     },
   },
@@ -2006,7 +2006,7 @@ const spaBusinesses: Business[] = [
     website: 'https://www.hiltonheadislandspa.com',
     hours: 'Mon 9am–5:30pm, Tue–Sat 9am–6pm, Sun 10am–3pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop',
       alt: 'Hilton Head Island Spa & Wellness boutique day spa treatment room',
     },
   },
@@ -2037,7 +2037,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.villageatwexford.com',
     hours: 'Mon–Thu 9am–9pm, Fri–Sun 10am–9pm (individual store hours vary)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1572533177115-5bea803c0f49?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'The Village at Wexford courtyard shopping center, Hilton Head Island',
     },
     lat: 32.1844,
@@ -2063,7 +2063,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.colignyplaza.com',
     hours: 'Mon & Fri 8am–10pm, Tue–Thu & Sat–Sun 10am–9pm (seasonal)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Coligny Plaza beach shopping center, Forest Beach, Hilton Head Island',
     },
   },
@@ -2086,7 +2086,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.sheltercovetownecentre.com',
     hours: 'Individual store hours vary; grounds always accessible',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1517696522815-46a004b80a2d?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop',
       alt: 'Shelter Cove Towne Centre waterfront shopping, Hilton Head Island',
     },
   },
@@ -2109,7 +2109,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.seapines.com/experiences/harbour-town/shopping-dining',
     hours: 'Most shops daily 10am–6pm (seasonal)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1582517339790-63168430ee86?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Harbour Town lighthouse boutiques and shops, Sea Pines Resort, Hilton Head Island',
     },
   },
@@ -2132,7 +2132,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.coastalblisshiltonhead.com',
     hours: 'Mon–Sat 10am–7pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1572533177115-5bea803c0f49?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Coastal Bliss Boutique women\'s clothing store, Shelter Cove, Hilton Head Island',
     },
   },
@@ -2155,7 +2155,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.giftedhiltonhead.com',
     hours: 'Mon–Sat 10am–5pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Gifted Hilton Head fine jewelry and gift boutique, Village at Wexford',
     },
   },
@@ -2178,7 +2178,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.nashgallery.com',
     hours: 'Mon 11am–4pm, Tue–Sat 10am–5pm, Sun 11am–5pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1545558014401-f43c5b4b4f55?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Nash Gallery fine American craft at Shelter Cove Harbour, Hilton Head Island',
     },
   },
@@ -2201,7 +2201,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.vivid-gallery-hhi.com',
     hours: 'Check website for current hours', // TODO: VERIFY — inside Lighthouse complex
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1545558014401-f43c5b4b4f55?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Vivid Gallery Lowcountry photography inside Harbour Town Lighthouse, Hilton Head Island',
     },
   },
@@ -2224,7 +2224,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.hiltonheadoutfitters.com',
     hours: 'Daily 9am–5pm (seasonal)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=1200&q=80&auto=format&fit=crop',
       alt: 'Hilton Head Outfitters bike and kayak rentals at Palmetto Dunes Resort',
     },
   },
@@ -2247,7 +2247,7 @@ const shoppingBusinesses: Business[] = [
     website: 'https://www.coastaltreasures-hiltonhead.com',
     hours: 'Seasonal — call for current hours', // TODO: VERIFY
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1622726196151-bfa9875199b0?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Coastal Treasures gift shop in Harbour Town, Sea Pines, Hilton Head Island',
     },
   },
@@ -2278,7 +2278,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.coastaldiscovery.org',
     hours: 'Mon–Sat 9am–4:30pm, Sun 11am–4:30pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1623902114358-9ee816e91401?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1569317002804-ab77bc7f8a7f?w=1200&q=80&auto=format&fit=crop',
       alt: 'Coastal Discovery Museum at Honey Horn Plantation, Hilton Head Island',
     },
     lat: 32.2378,
@@ -2304,7 +2304,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.thesandbox.org',
     hours: 'Mon–Sat 10am–5pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1569317002804-ab77bc7f8a7f?w=1200&q=80&auto=format&fit=crop',
       alt: 'The Sandbox interactive children\'s museum, Hilton Head Island',
     },
   },
@@ -2327,7 +2327,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.lawtonstables.com',
     hours: 'Tue–Sun 8am–5pm; closed Monday',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1598711033236-3e0b403a14e8?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1569317002804-ab77bc7f8a7f?w=1200&q=80&auto=format&fit=crop',
       alt: 'Lawton Stables horseback riding in Sea Pines Forest Preserve, Hilton Head Island',
     },
   },
@@ -2350,7 +2350,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.piratesislandgolf.com',
     hours: 'Daily 9am–10pm (seasonal)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1564607890610-2172bf275043?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: "Pirate's Island Adventure Golf mini golf course, Hilton Head Island",
     },
   },
@@ -2373,7 +2373,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.legendarygolfhhi.com',
     hours: 'Daily 9am–9pm (seasonal)',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1575721087345-4cd6f2a157ca?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80&auto=format&fit=crop',
       alt: 'Legendary Golf miniature golf course, Hilton Head Island, SC',
     },
   },
@@ -2396,7 +2396,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.adventurecove.com',
     hours: 'Daily 10am–11pm',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1511882150382-421056c89033?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://img1.wsimg.com/isteam/ip/f541cb16-774e-4055-b5f4-b0c6a815058f/New%20Logo.png',
       alt: 'Adventure Cove Caribbean mini golf and arcade, Hilton Head Island',
     },
   },
@@ -2419,7 +2419,7 @@ const familyBusinesses: Business[] = [
     website: 'https://hiltonheadislandsc.gov/parks/ColignyBeach',
     hours: 'Daily 6am–9pm (summer); 6am–6pm (winter); lifeguards seasonal',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1569317002804-ab77bc7f8a7f?w=1200&q=80&auto=format&fit=crop',
       alt: 'Coligny Beach Park public beach with families, Forest Beach, Hilton Head Island',
     },
     lat: 32.1366,
@@ -2444,7 +2444,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.harbourtownlighthouse.com',
     hours: 'Daily 10am–sundown, year-round',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1582517339790-63168430ee86?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1569317002804-ab77bc7f8a7f?w=1200&q=80&auto=format&fit=crop',
       alt: 'Harbour Town Lighthouse red and white striped tower, Sea Pines, Hilton Head Island',
     },
     lat: 32.1432,
@@ -2469,7 +2469,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.fws.gov/refuge/pinckney-island',
     hours: 'Daily sunrise to sunset',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1572715376701-98568319fd0b?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1569317002804-ab77bc7f8a7f?w=1200&q=80&auto=format&fit=crop',
       alt: 'Pinckney Island National Wildlife Refuge salt marsh trail, near Hilton Head Island',
     },
   },
@@ -2492,7 +2492,7 @@ const familyBusinesses: Business[] = [
     website: 'https://www.outsidehiltonhead.com',
     hours: 'Daily 7:30am–6pm, 365 days a year',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1572715376701-98568319fd0b?w=1200&q=80&auto=format&fit=crop',
+      src: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=1200&q=80&auto=format&fit=crop',
       alt: 'Family kayak eco tour with Outside Hilton Head, Hilton Head Island',
     },
   },
@@ -2524,7 +2524,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 715-3499',
     website: 'https://localpie.com',
-    heroImage: { src: '', alt: 'Local Pie wood-fired Neapolitan pizza' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop', alt: 'Local Pie wood-fired Neapolitan pizza' },
   },
   {
     id: 'dough-boys-pizza',
@@ -2543,7 +2543,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 686-2697',
     website: 'https://doughboyshhi.com',
-    heroImage: { src: '', alt: 'Dough Boys Pizza NY-style cheese pie' },
+    heroImage: { src: 'https://doughboyshhi.com/wp-content/uploads/2023/01/IMG_2860-1.jpg', alt: 'Dough Boys Pizza NY-style cheese pie' },
   },
   {
     id: 'joelle',
@@ -2562,7 +2562,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Bluffton',
     phone: '(843) 815-2233',
     website: 'https://joellebluffton.com',
-    heroImage: { src: '', alt: 'Joelle wood-fired pizza in Old Town Bluffton' },
+    heroImage: { src: 'http://static1.squarespace.com/static/654d85db65c88e0f6d2000ca/t/65554626a145316fd4ab555f/1700087334947/Joelle+Secondary+Logo+Straight+Tagline+Pesto.png?format=1500w', alt: 'Joelle wood-fired pizza in Old Town Bluffton' },
   },
   {
     id: 'giuseppis-pizza-pasta',
@@ -2581,7 +2581,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 785-4144',
     website: 'https://giuseppispizza.com',
-    heroImage: { src: '', alt: "Giuseppi's Pizza & Pasta dining room" },
+    heroImage: { src: 'https://www.giuseppispizza.com/wp-content/uploads/2018/08/Giuseppis-Logo-Thumbnail-1.jpeg', alt: "Giuseppi's Pizza & Pasta dining room" },
   },
   {
     id: 'pomodori',
@@ -2600,7 +2600,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 686-3100',
     website: 'https://www.gopomodori.com',
-    heroImage: { src: '', alt: 'Pomodori Calabrian thin-crust pizza' },
+    heroImage: { src: 'https://www.gopomodori.com/wp-content/uploads/2020/10/pomoweblogo-small.png', alt: 'Pomodori Calabrian thin-crust pizza' },
   },
   {
     id: 'firemost-pizza',
@@ -2618,7 +2618,7 @@ const pizzaBusinesses: Business[] = [
     address: '18 Simmons Rd',
     city: 'Hilton Head Island',
     website: 'https://www.firemostpizza.com',
-    heroImage: { src: '', alt: 'Firemost Pizza tavern square-cut pie' },
+    heroImage: { src: 'https://mypizza-assets-production.imgix.net/url-preview-background.png?mark64=aHR0cHM6Ly9hc3NldHMuaW1naXgubmV0L350ZXh0P2g9NDEwJnR4dDY0PVJrbFNSVTFQVTFRZ1VFbGFXa0UlM0QmdHh0LWNvbG9yPXdoaXRlJnR4dC1mb250PUFyaWFsLUJsYWNrJnR4dC1zaXplPTc1Jnc9ODQw&amp;mark-x=86&amp;mark-y=180', alt: 'Firemost Pizza tavern square-cut pie' },
   },
   {
     id: 'school-pizza',
@@ -2636,7 +2636,7 @@ const pizzaBusinesses: Business[] = [
     address: 'Pop-up — Lot 9 / Side Hustle / Locals Only',
     city: 'Bluffton',
     website: 'https://www.eatschoolpizza.com',
-    heroImage: { src: '', alt: 'School Pizza Detroit-style square pizza' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop', alt: 'School Pizza Detroit-style square pizza' },
   },
   {
     id: 'new-york-city-pizza',
@@ -2655,7 +2655,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 842-2227',
     website: 'https://www.newyorkcitypizza.com',
-    heroImage: { src: '', alt: 'NY-style pizza slice on counter' },
+    heroImage: { src: 'https://images.getbento.com/fm6NB2DR0SNueX48ThRP_NYC_Pizza_Logo%201.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100', alt: 'NY-style pizza slice on counter' },
   },
   {
     id: 'mellow-mushroom-hh',
@@ -2675,7 +2675,7 @@ const pizzaBusinesses: Business[] = [
     phone: '(843) 686-2474',
     website:
       'https://www.mellowmushroom.com/locations/sc/hilton-head-island/',
-    heroImage: { src: '', alt: 'Mellow Mushroom pizza interior' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop', alt: 'Mellow Mushroom pizza interior' },
   },
   {
     id: 'tjs-take-and-bake',
@@ -2694,7 +2694,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 681-2900',
     website: 'https://tjstakeandbakepizza.com',
-    heroImage: { src: '', alt: "TJ's Take & Bake raw pizza" },
+    heroImage: { src: 'https://tjstakeandbakepizza.com/wp-content/uploads/2019/12/Pizza-On-Hilton-Head.png', alt: "TJ's Take & Bake raw pizza" },
   },
   {
     id: 'mangiamos-hilton-head-pizza',
@@ -2713,7 +2713,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 681-7700',
     website: 'https://www.hhipizza.com',
-    heroImage: { src: '', alt: "Mangiamo's NY-style pizza" },
+    heroImage: { src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop', alt: "Mangiamo's NY-style pizza" },
   },
   {
     id: 'bella-italia-hh',
@@ -2732,7 +2732,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 681-9200',
     website: 'https://www.bellaitaliahhi.com',
-    heroImage: { src: '', alt: 'Bella Italia exterior' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop', alt: 'Bella Italia exterior' },
   },
   {
     id: 'fat-babys-pizza',
@@ -2751,7 +2751,7 @@ const pizzaBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 842-4200',
     website: 'https://fatbabyspizzahhi.com',
-    heroImage: { src: '', alt: "Fat Baby's Pizza counter" },
+    heroImage: { src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop', alt: "Fat Baby's Pizza counter" },
   },
 ];
 
@@ -2781,7 +2781,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 929-2687',
     website: 'https://whitesandstransportation.com',
-    heroImage: { src: '', alt: 'White Sands Transportation black SUV' },
+    heroImage: { src: 'https://i.vimeocdn.com/video/1686473845-dd9901da8986075afce3714a9cccf9e71b1a6d4237af7369b17aa157c098ed2e-d_1920x1080?r=pad', alt: 'White Sands Transportation black SUV' },
   },
   {
     id: 'palmetto-car-service',
@@ -2799,7 +2799,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 981-1111',
     website: 'https://palmettocarservice.com',
-    heroImage: { src: '', alt: 'Palmetto Car Service SUV' },
+    heroImage: { src: 'https://palmettocarservice.com/wp-content/uploads/2023/03/header-main-logo.png', alt: 'Palmetto Car Service SUV' },
   },
   {
     id: 'jl-luxury-transport',
@@ -2816,7 +2816,7 @@ const transportationBusinesses: Business[] = [
     address: 'Lowcountry, SC',
     city: 'Hilton Head Island',
     website: 'https://jlluxurytransport.com',
-    heroImage: { src: '', alt: 'JL Luxury Transport black sedan' },
+    heroImage: { src: 'http://static1.squarespace.com/static/63d001c7f0b7e26ce36fe737/t/66b79e3c24f1a659c5293510/1723309628455/IMG-20240810-WA0002.jpg?format=1500w', alt: 'JL Luxury Transport black sedan' },
   },
   // ——— Airport Shuttles ———
   {
@@ -2835,7 +2835,7 @@ const transportationBusinesses: Business[] = [
     city: 'Savannah',
     phone: '(800) 511-8960',
     website: 'http://savannahairportshuttle.com',
-    heroImage: { src: '', alt: 'Savannah Airport Shuttle van' },
+    heroImage: { src: 'http://savannahairportshuttle.com/uploads/3/4/5/0/34506001/7322951_orig.png', alt: 'Savannah Airport Shuttle van' },
   },
   {
     id: 'pegasus-transportation',
@@ -2853,7 +2853,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 298-3384',
     website: 'https://pegasustaxihhi.com',
-    heroImage: { src: '', alt: 'Pegasus Transportation vehicle' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1556122071-e404cb6f31c0?w=1200&q=80&auto=format&fit=crop', alt: 'Pegasus Transportation vehicle' },
   },
   // ——— Local Taxi ———
   {
@@ -2871,7 +2871,7 @@ const transportationBusinesses: Business[] = [
     address: 'Hilton Head Island, SC',
     city: 'Hilton Head Island',
     website: 'https://yellowtransportationhhi.com',
-    heroImage: { src: '', alt: 'Yellow Transportation HHI taxi' },
+    heroImage: { src: 'https://www.yellowtransportationhhi.com/uploads/1/2/7/1/127189632/editor/untitled-1.png?1767970443', alt: 'Yellow Transportation HHI taxi' },
   },
   {
     id: 'beeline-taxi',
@@ -2889,7 +2889,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 683-1139',
     website: 'http://www.taxihiltonhead.com',
-    heroImage: { src: '', alt: 'BeeLine Taxi car' },
+    heroImage: { src: 'https://nebula.wsimg.com/134091fe73eedbd077722b888f97c368?AccessKeyId=BA518823F29E58E7438E&disposition=0&alloworigin=1', alt: 'BeeLine Taxi car' },
   },
   // ——— Bike Rentals ———
   {
@@ -2908,7 +2908,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 686-6888',
     website: 'https://hiltonheadbicycle.com',
-    heroImage: { src: '', alt: 'Hilton Head Bicycle Company storefront' },
+    heroImage: { src: 'https://hiltonheadbicycle.com/wp-content/uploads/2025/03/Hilton-Head-Bicycle-Company-Logo.png', alt: 'Hilton Head Bicycle Company storefront' },
   },
   {
     id: 'riding-tigers',
@@ -2926,7 +2926,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 686-5833',
     website: 'https://aaaridingtigers.com',
-    heroImage: { src: '', alt: 'Riding Tigers cruiser bike fleet' },
+    heroImage: { src: 'https://aaaridingtigers.com/wp-content/uploads/2019/01/NEW_tiger_logo-350px.png', alt: 'Riding Tigers cruiser bike fleet' },
   },
   {
     id: 'pedals-bicycles',
@@ -2944,7 +2944,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 842-5522',
     website: 'https://www.pedalsbicycles.com',
-    heroImage: { src: '', alt: 'Pedals Bicycles family shop' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=1200&q=80&auto=format&fit=crop', alt: 'Pedals Bicycles family shop' },
   },
   // ——— Golf Cart Rentals ———
   {
@@ -2963,7 +2963,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 842-4445',
     website: 'https://www.rentwheelz.com',
-    heroImage: { src: '', alt: 'Wheelz golf cart fleet' },
+    heroImage: { src: 'https://www.rentwheelz.com/wp-content/uploads/sites/4698/2021/03/Header.jpg?w=700&h=700&zoom=2', alt: 'Wheelz golf cart fleet' },
   },
   {
     id: 'sea-turtle-rentals',
@@ -2981,7 +2981,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 755-7777',
     website: 'https://seaturtlerentals.com',
-    heroImage: { src: '', alt: 'Sea Turtle Rentals LSV cart' },
+    heroImage: { src: 'https://seaturtlerentals.com/wp-content/uploads/2021/06/20210611_185747-scaled.jpg', alt: 'Sea Turtle Rentals LSV cart' },
   },
   // ——— Boat / Water Taxi ———
   {
@@ -3000,7 +3000,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 671-4386',
     website: 'https://www.h2osports.com',
-    heroImage: { src: '', alt: 'H2O Sports Daufuskie ferry' },
+    heroImage: { src: 'https://www.h2osports.com/wp-content/uploads/sites/7790/2025/04/DSC_1898-e1743549171458.jpg?w=700&h=700&zoom=2', alt: 'H2O Sports Daufuskie ferry' },
   },
   {
     id: 'outside-hilton-head-water-taxi',
@@ -3018,7 +3018,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 686-6996',
     website: 'https://outsidehiltonhead.com',
-    heroImage: { src: '', alt: 'Outside Hilton Head water taxi' },
+    heroImage: { src: 'https://outsidehiltonhead.com/wp-content/uploads/2025/06/OutsideHHI-24-scaled.jpg', alt: 'Outside Hilton Head water taxi' },
   },
   // ——— Wedding / Event Transportation ———
   {
@@ -3038,7 +3038,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 632-5309',
     website: 'https://www.lowcountrylimobus.com',
-    heroImage: { src: '', alt: 'Low Country Limo Bus interior' },
+    heroImage: { src: 'https://static.wixstatic.com/media/ce082b_2cc71325344c4598a46ba0a17c6f8894%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/ce082b_2cc71325344c4598a46ba0a17c6f8894%7Emv2.jpg', alt: 'Low Country Limo Bus interior' },
   },
   // ——— Beach Shuttle / Trolley ———
   {
@@ -3056,7 +3056,7 @@ const transportationBusinesses: Business[] = [
     address: 'South End, Hilton Head Island',
     city: 'Hilton Head Island',
     website: 'https://www.breezetrolley.com',
-    heroImage: { src: '', alt: 'The Breeze trolley with wood interior' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1556122071-e404cb6f31c0?w=1200&q=80&auto=format&fit=crop', alt: 'The Breeze trolley with wood interior' },
   },
   {
     id: 'hilton-head-cabana-services',
@@ -3074,7 +3074,7 @@ const transportationBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 295-7600',
     website: 'https://hhcabanaservices.com',
-    heroImage: { src: '', alt: 'Hilton Head Cabana Services beach setup' },
+    heroImage: { src: 'http://hhcabanaservices.com/cdn/shop/files/TRANSPARENT_d866e642-4ede-450b-9945-0a60239b2741_1200x1200.png?v=1612455984', alt: 'Hilton Head Cabana Services beach setup' },
   },
 ];
 
@@ -3103,7 +3103,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 671-5155',
     website: 'https://www.beach-property.com',
-    heroImage: { src: '', alt: 'Beach Properties of Hilton Head office' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop', alt: 'Beach Properties of Hilton Head office' },
   },
   {
     id: 'sea-pines-resort-rentals',
@@ -3175,7 +3175,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 785-2333',
     website: 'https://www.sunsetrentals.com',
-    heroImage: { src: '', alt: 'Sunset Rentals office' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop', alt: 'Sunset Rentals office' },
   },
   // ——— Cleaning Services ———
   {
@@ -3194,7 +3194,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 422-7611',
     website: 'https://maidforyouhhi.com',
-    heroImage: { src: '', alt: 'Maid for You cleaning crew' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80&auto=format&fit=crop', alt: 'Maid for You cleaning crew' },
   },
   {
     id: 'dust-away-cleaning',
@@ -3212,7 +3212,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 707-6633',
     website: 'https://www.dustawayhhi.com',
-    heroImage: { src: '', alt: 'Dust Away cleaning supplies' },
+    heroImage: { src: 'https://static.wixstatic.com/media/350a36_2d6f97b36ef74b73ab392e1521a4aac4%7Emv2.png/v1/fit/w_2500,h_1330,al_c/350a36_2d6f97b36ef74b73ab392e1521a4aac4%7Emv2.png', alt: 'Dust Away cleaning supplies' },
   },
   {
     id: 'merry-maids-hilton-head',
@@ -3230,7 +3230,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 681-6630',
     website: 'https://merrymaids.com/home-cleaners-hilton-head-sc',
-    heroImage: { src: '', alt: 'Merry Maids cleaning' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80&auto=format&fit=crop', alt: 'Merry Maids cleaning' },
   },
   // ——— Lawn / Landscape ———
   {
@@ -3249,7 +3249,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 815-3033',
     website: 'https://fathernatureinc.com',
-    heroImage: { src: '', alt: 'Father Nature Landscaping crew' },
+    heroImage: { src: 'https://fathernatureinc.com/wp-content/uploads/2023/07/mainteneance.jpg', alt: 'Father Nature Landscaping crew' },
   },
   {
     id: 'prestige-landscaping-sc',
@@ -3267,7 +3267,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 815-7727',
     website: 'https://prestigelandscapingsc.com',
-    heroImage: { src: '', alt: 'Prestige Landscaping project' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80&auto=format&fit=crop', alt: 'Prestige Landscaping project' },
   },
   // ——— Pest Control ———
   {
@@ -3286,7 +3286,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 681-2590',
     website: 'https://www.hiltonheadexterminators.com',
-    heroImage: { src: '', alt: 'Hilton Head Exterminators truck' },
+    heroImage: { src: 'https://www.hiltonheadexterminators.com/assets/Social-Share.2205050941550.jpg', alt: 'Hilton Head Exterminators truck' },
   },
   {
     id: 'bee-green-pest-solutions',
@@ -3304,7 +3304,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 706-5111',
     website: 'https://www.beegreenpestsolutions.com',
-    heroImage: { src: '', alt: 'Bee Green Pest Solutions' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1597762470488-3877b1f538c6?w=1200&q=80&auto=format&fit=crop', alt: 'Bee Green Pest Solutions' },
   },
   // ——— Pool Maintenance ———
   {
@@ -3323,7 +3323,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 815-6900',
     website: 'https://tlcpoolservice.biz',
-    heroImage: { src: '', alt: 'TLC Pool Service' },
+    heroImage: { src: 'https://uploads-ssl.webflow.com/5efcbb9099af6efc80ab8a76/5efcbb9099af6e806cab8b45_66a645d6-4005-4f1c-9e2f-0abb734adc3e.jpg', alt: 'TLC Pool Service' },
   },
   {
     id: 'reflections-pool-service',
@@ -3341,7 +3341,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 605-3556',
     website: 'https://reflectionspool.services',
-    heroImage: { src: '', alt: 'Reflections Pool Service' },
+    heroImage: { src: 'https://www.reflectionspool.services/images/ReflectionsPoolService.png', alt: 'Reflections Pool Service' },
   },
   // ——— Handyman / Home Repair ———
   {
@@ -3360,7 +3360,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 415-5060',
     website: 'https://handymanofhiltonhead.com',
-    heroImage: { src: '', alt: 'Handyman of Hilton Head' },
+    heroImage: { src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80&auto=format&fit=crop', alt: 'Handyman of Hilton Head' },
   },
   {
     id: 'mr-handyman-savannah-hh',
@@ -3379,7 +3379,7 @@ const homeServicesBusinesses: Business[] = [
     phone: '(843) 549-2090',
     website:
       'https://www.mrhandyman.com/greater-savannah-and-hilton-head',
-    heroImage: { src: '', alt: 'Mr. Handyman truck' },
+    heroImage: { src: 'https://www.mrhandyman.com/brand/_assets/images/brand-img/brand-logo.svg', alt: 'Mr. Handyman truck' },
   },
   // ——— Interior Design ———
   {
@@ -3398,7 +3398,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 422-1717',
     website: 'http://www.kellyhughesinteriors.com',
-    heroImage: { src: '', alt: 'Kelly Hughes Interiors project' },
+    heroImage: { src: 'http://www.kellyhughesinteriors.com/s/misc/logo.jpg?t=1771731796', alt: 'Kelly Hughes Interiors project' },
   },
   {
     id: 'j-banks-design-group',
@@ -3416,7 +3416,7 @@ const homeServicesBusinesses: Business[] = [
     city: 'Hilton Head Island',
     phone: '(843) 681-5122',
     website: 'https://jbanksdesign.com',
-    heroImage: { src: '', alt: 'J Banks Design Group office' },
+    heroImage: { src: 'https://static.showit.co/1200/S7CswWpvbQp5IBcXJWlNSw/299941/jbanks_1.png', alt: 'J Banks Design Group office' },
   },
 ];
 
