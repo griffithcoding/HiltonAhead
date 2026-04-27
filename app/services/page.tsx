@@ -12,6 +12,8 @@ import {
   getServiceSchema,
   getFaqSchema,
 } from '@/app/lib/metadata';
+import PricingTiers from '@/components/pricing/PricingTiers';
+import { B2C_TIERS } from '@/data/pricing';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Services: Hilton Head Travel Consulting',
@@ -126,7 +128,47 @@ export default function ServicesPage() {
 
         <Divider ornament="compass" className="my-14 text-gold" />
 
-        <div className="divide-y divide-ink/15 border-y border-ink/15">
+        {/* ——— Pricing tiers (B2C) ——— */}
+        <section id="pricing" className="scroll-mt-24">
+          <SectionHead
+            number="№ 02"
+            eyebrow="Pricing"
+            plain="Three tiers,"
+            italic="priced up front."
+          />
+          <p className="mt-6 max-w-[640px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
+            No kickbacks from villa companies. No commission baked into your
+            quoted rates. Pick the tier that matches your trip — and the
+            tier-2/3 bookings include a transparent percentage on top so the
+            harder work gets paid for. Heritage week, Wine &amp; Food, snowbird
+            leases, and ultra-premium stays use the application path.
+          </p>
+
+          <div className="mt-10">
+            <PricingTiers tiers={B2C_TIERS} applyHref="/itinerary" />
+          </div>
+
+          <div className="mt-8 max-w-[820px] text-[12.5px] leading-[1.65] text-ink-soft">
+            <strong className="text-ink">A note on commission:</strong> the
+            7% (Charter) and 10% (Heritage) percentages apply only to
+            commissionable bookings — villas, private clubs, restaurant
+            packages where the supplier offers a referral fee. In practice,
+            most of the percentage rides on supplier commission, so the
+            client-side delta is small or nothing. Disclosed before booking,
+            never hidden.
+          </div>
+        </section>
+
+        <Divider ornament="palmetto" className="my-20 text-gold" />
+
+        <SectionHead
+          number="№ 03"
+          eyebrow="What we actually do"
+          plain="The five services,"
+          italic="line by line."
+        />
+
+        <div className="mt-10 divide-y divide-ink/15 border-y border-ink/15">
           {services.items.map((item, i) => (
             <article
               key={item.slug}
@@ -167,7 +209,7 @@ export default function ServicesPage() {
         {/* ——— FAQ ——— */}
         <section className="mt-20">
           <SectionHead
-            number="№ 02"
+            number="№ 04"
             eyebrow="FAQ"
             plain="Questions we"
             italic="hear most."

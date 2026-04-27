@@ -8,9 +8,10 @@ import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import {
   partnersMeta,
   partnersByTier,
-  sponsorshipTiers,
   type Partner,
 } from '@/data/partners';
+import PricingTiers from '@/components/pricing/PricingTiers';
+import { B2B_TIERS } from '@/data/pricing';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Our Partners: Trusted Hilton Head Businesses',
@@ -170,45 +171,6 @@ export default function PartnersPage() {
           </div>
         </section>
 
-        {/* ——— Become a partner ——— */}
-        <section className="mt-24 border-y border-coral/25 bg-sand-deep/30 px-6 py-14 md:px-12 md:py-20">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.3fr_auto] md:items-center">
-            <div>
-              <div className="eyebrow text-coral">Run a Hilton Head business?</div>
-              <h2 className="display mt-4 text-[32px] leading-[1.08] text-ink md:text-[44px]">
-                Three tiers,{' '}
-                <span className="display-italic">starting at $100/mo.</span>
-              </h2>
-              <p className="mt-5 max-w-[560px] text-[15px] leading-[1.75] text-ink-soft md:text-[16px]">
-                Twelve Featured slots. Six Curated. Three Signature. When
-                they\u2019re filled, we close the roster for the year and come
-                back in 12 months.
-              </p>
-              <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-[13px]">
-                {sponsorshipTiers.map((t) => (
-                  <div key={t.tier} className="flex items-baseline gap-2">
-                    <dt className="eyebrow text-ink-soft">{t.name}</dt>
-                    <dd className="text-ink">
-                      ${t.price.toLocaleString()}/yr · {t.slots} slots
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-            <Link
-              href="/sponsorships"
-              className="group inline-flex items-center gap-2 self-start bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral md:self-center"
-            >
-              See tiers &amp; apply
-              <span
-                aria-hidden="true"
-                className="transition-transform group-hover:translate-x-0.5"
-              >
-                →
-              </span>
-            </Link>
-          </div>
-        </section>
       </div>
 
       <FinalCta />
