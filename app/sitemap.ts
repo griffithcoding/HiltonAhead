@@ -26,6 +26,8 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/hilton-head-weather', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/partners', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/sponsorships', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/founder', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/press', changeFrequency: 'monthly', priority: 0.6 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

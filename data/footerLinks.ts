@@ -51,6 +51,7 @@ export const footerLinks = {
         { href: '/itinerary', label: 'Request Itinerary' },
         { href: '/partners', label: 'Partners' },
         { href: '/sponsorships', label: 'Partner With Us' },
+        { href: '/press', label: 'Press' },
         { href: '/contact', label: 'Contact' },
       ],
     },
