@@ -1,7 +1,16 @@
 /**
  * Photo references — Hilton Head Island & coastal Lowcountry.
+ *
  * Unsplash CDN URLs used at build time; swap to local /public shoots
  * once available. All hosts allowed via next.config.ts remotePatterns.
+ *
+ * Photos labeled "[HH]" are confirmed Hilton Head Island shots:
+ *   - Camylla Battani — boats at Harbour Town
+ *   - Nikhil Mistry — Harbour Town Lighthouse, sunset pier
+ *   - Nikolay Loubet — Harbour Town marina, lighthouse + dock
+ *   - Ken Bitar — Harbour Town shops + lighthouse
+ *   - Jake Johnson — Sea Pines / dockside cottages
+ * All used under the Unsplash License.
  *
  * Naming groups:
  *   .hero, .lighthouse, .mossOak, .marsh, …  — single-use primary shots
@@ -15,25 +24,33 @@ const unsplash = (id: string, w = 1800, q = 80) =>
 
 // ——— Primary plates ———————————————————————————————————————————————
 const hero        = { src: unsplash('1507525428034-b723cf961d3e', 2200, 82), alt: 'Golden hour over Hilton Head dunes and sea oats' };
-const lighthouse  = { src: unsplash('1613977257363-707ba9348227', 1800, 80), alt: 'Red-and-white lighthouse at dusk, Harbour Town' };
+// [HH] Harbour Town Lighthouse — Nikhil Mistry
+const lighthouse  = { src: unsplash('1633647251095-fe1fec4e4c50', 1800, 80), alt: 'Harbour Town Lighthouse, Sea Pines — Hilton Head Island' };
 const mossOak     = { src: unsplash('1533104816931-20fa691ff6ca', 1800, 80), alt: 'Spanish moss draped from a Lowcountry live oak' };
 const marsh       = { src: unsplash('1506260408121-e353d10b87c7', 1800, 80), alt: 'Coastal grass rolling toward the horizon at dusk' };
 const boardwalk   = { src: unsplash('1506929562872-bb421503ef21', 1800, 80), alt: 'Wooden boardwalk through coastal sea oats' };
-const dock        = { src: unsplash('1507133750040-4a8f57021571', 1800, 80), alt: 'Weathered dock reaching into Lowcountry water' };
-const villa       = { src: unsplash('1564501049412-61c2a3083791', 1800, 80), alt: 'Southern coastal cottage with a wraparound porch' };
+// [HH] Harbour Town marina dock with boats and lighthouse — Nikolay Loubet
+const dock        = { src: unsplash('1631845085760-638f42d1b2e9', 1800, 80), alt: 'Harbour Town marina dock at twilight, Hilton Head Island' };
+// [HH] Sea Pines cottage on the marsh — Jake Johnson
+const villa       = { src: unsplash('1628214457196-676766da086e', 1800, 80), alt: 'Lowcountry cottage on the marsh, Hilton Head Island' };
 const beachMorning= { src: unsplash('1519046904884-53103b34b206', 1800, 80), alt: 'Lone sailboat anchored off a quiet Atlantic beach' };
 
 // ——— Additional island shots for collages, polaroid walls, rails ———
 const palms       = { src: unsplash('1552733407-5d5c46c3bb3b', 1600, 80), alt: 'Palm trees against a warm coastal sky' };
 const oysters     = { src: unsplash('1559827260-dc66d52bef19', 1600, 80), alt: 'Fresh-shucked oysters with lemon' };
-const harborBoats = { src: unsplash('1502784444187-359ac186c5bb', 1600, 80), alt: 'Sailboats anchored off a Lowcountry sandbar' };
+// [HH] Sailboats at Harbour Town marina — Camylla Battani
+const harborBoats = { src: unsplash('1539112416716-92d1f870a487', 1600, 80), alt: 'Sailboats at Harbour Town marina, Sea Pines — Hilton Head' };
 const beachAerial = { src: unsplash('1540541338287-41700207dee6', 1600, 80), alt: 'Oceanfront pool overlooking the Atlantic' };
-const bikePath    = { src: unsplash('1506929562872-bb421503ef21', 1600, 80), alt: 'Wooden path winding through coastal pines' };
-const surfSoft    = { src: unsplash('1507525428034-b723cf961d3e', 1600, 80), alt: 'Soft surf at golden hour' };
+// [HH] Harbour Town shops and lighthouse from the marina — Ken Bitar
+const bikePath    = { src: unsplash('1748821454217-37110c80ac11', 1600, 80), alt: 'Harbour Town shops below the lighthouse, Hilton Head' };
+// [HH] Sunset on a Hilton Head pier — Nikhil Mistry
+const surfSoft    = { src: unsplash('1634948601598-dfe5fa67a48c', 1600, 80), alt: 'Sunset on a Hilton Head pier' };
 const coastalOak  = { src: unsplash('1523712999610-f77fbcfc3843', 1600, 80), alt: 'Sunlight filtering through a tall tree canopy' };
-const sundown     = { src: unsplash('1507525428034-b723cf961d3e', 1600, 80), alt: 'Atlantic horizon at sundown' };
+// [HH] Harbour Town Lighthouse and dock at golden hour — Nikolay Loubet
+const sundown     = { src: unsplash('1631845085830-10c38cc98ac8', 1600, 80), alt: 'Harbour Town Lighthouse and dock at golden hour, Hilton Head' };
 const teaTable    = { src: unsplash('1551024601-bec78aea704b', 1400, 80), alt: 'A dinner table set near the water' };
-const hammock     = { src: unsplash('1540541338287-41700207dee6', 1400, 80), alt: 'Oceanfront pool overlooking the Atlantic at Hilton Head' };
+// [HH] Coastal cottage on the docks — Jake Johnson
+const hammock     = { src: unsplash('1628214458185-a49d4fc577f3', 1400, 80), alt: 'Coastal cottage on the docks, Hilton Head Island' };
 
 export const photos = {
   // ——— Primary plates (preserves existing imports) ———
@@ -72,19 +89,19 @@ export const photos = {
 
   /** Look-book photo rail — 6 island moods */
   moods: [
-    { ...harborBoats, caption: 'Low tide, Broad Creek' },
+    { ...harborBoats, caption: 'Harbour Town, low tide' },
     { ...mossOak,     caption: 'Spanish moss, 6 p.m.' },
-    { ...oysters,     caption: 'Hudson\u2019s, Tuesday' },
-    { ...bikePath,    caption: 'Sea Pines, forest path' },
+    { ...oysters,     caption: 'Hudson’s, Tuesday' },
+    { ...bikePath,    caption: 'Harbour Town shops' },
     { ...palms,       caption: 'South Beach, August' },
-    { ...hammock,     caption: 'Between rounds' },
+    { ...hammock,     caption: 'Sea Pines, dockside' },
   ],
 
   /** Polaroid wall — 4 tilted shots on WhyIsland section */
   polaroidWall: [
-    { ...lighthouse, caption: 'Harbour Town · \u201996' },
+    { ...lighthouse, caption: 'Harbour Town · ’96' },
     { ...boardwalk,  caption: 'Coligny · 7:04 a.m.'    },
-    { ...dock,       caption: 'Mackay Creek, low tide' },
+    { ...dock,       caption: 'Harbour Town, low tide' },
     { ...marsh,      caption: 'Broad Creek · August'   },
   ],
 
