@@ -33,7 +33,7 @@ const surfSoft    = { src: unsplash('1507525428034-b723cf961d3e', 1600, 80), alt
 const coastalOak  = { src: unsplash('1523712999610-f77fbcfc3843', 1600, 80), alt: 'Sunlight filtering through a tall tree canopy' };
 const sundown     = { src: unsplash('1507525428034-b723cf961d3e', 1600, 80), alt: 'Atlantic horizon at sundown' };
 const teaTable    = { src: unsplash('1551024601-bec78aea704b', 1400, 80), alt: 'A dinner table set near the water' };
-const hammock     = { src: unsplash('1528127269322-539801943592', 1400, 80), alt: 'Hammock slung between two palms' };
+const hammock     = { src: unsplash('1540541338287-41700207dee6', 1400, 80), alt: 'Oceanfront pool overlooking the Atlantic at Hilton Head' };
 
 export const photos = {
   // ——— Primary plates (preserves existing imports) ———
