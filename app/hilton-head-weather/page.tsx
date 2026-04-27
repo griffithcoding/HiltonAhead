@@ -12,6 +12,8 @@ import {
 } from '@/app/lib/metadata';
 import { months } from '@/data/months';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = generatePageMetadata({
   title: 'Hilton Head Weather by Month: All 12 Months in One Place',
   description:

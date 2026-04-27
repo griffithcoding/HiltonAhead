@@ -18,6 +18,8 @@ import GetFeaturedBanner from '@/components/local/GetFeaturedBanner'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url
 
+export const revalidate = 3600
+
 // ---------------------------------------------------------------------------
 // Static params — pre-render all 8 industry pages
 // ---------------------------------------------------------------------------

@@ -10,6 +10,10 @@ import { SectionHead, Divider } from '@/components/ui/Ornament';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import { posts } from '@/data/posts';
 
+// Re-render the static page at most every hour so newly published posts and
+// updated metadata propagate without a full rebuild.
+export const revalidate = 3600;
+
 export const metadata: Metadata = generatePageMetadata({
   title: 'Local Guide: Hilton Head Island Travel Tips for 2026',
   description:

@@ -24,6 +24,8 @@ import {
   getNeighborhoodBySlug,
 } from '@/data/neighborhoods';
 
+export const revalidate = 3600;
+
 type Params = { slug: string };
 
 export function generateStaticParams(): Params[] {

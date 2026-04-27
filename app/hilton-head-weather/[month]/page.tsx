@@ -14,6 +14,8 @@ import {
 } from '@/app/lib/metadata';
 import { months, getMonthBySlug } from '@/data/months';
 
+export const revalidate = 3600;
+
 type Params = { month: string };
 
 export function generateStaticParams(): Params[] {
