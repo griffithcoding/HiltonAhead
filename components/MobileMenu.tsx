@@ -100,14 +100,29 @@ export default function MobileMenu() {
           {/* Drawer body — links + CTA */}
           <nav className="flex flex-1 flex-col overflow-y-auto px-5 py-6">
             {nav.links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="display border-b border-ink/10 py-4 text-[28px] leading-tight text-ink transition-colors hover:text-sunset"
-              >
-                {link.label}
-              </Link>
+              <div key={link.href} className="border-b border-ink/10">
+                <Link
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="display block py-4 text-[28px] leading-tight text-ink transition-colors hover:text-sunset"
+                >
+                  {link.label}
+                </Link>
+                {link.children && link.children.length > 0 && (
+                  <div className="-mt-2 mb-3 ml-1 flex flex-col gap-1 pl-3 border-l border-ink/10">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={() => setOpen(false)}
+                        className="py-1.5 text-[15px] text-ink/75 transition-colors hover:text-sunset"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
 
             {/* Admin link (only renders if signed in admin user) */}
