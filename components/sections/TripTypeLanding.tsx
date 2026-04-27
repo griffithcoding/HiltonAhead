@@ -64,7 +64,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
                 {trip.eyebrow ?? 'Trip type · Hilton Head Island'}
               </span>
             </div>
-            <h1 className="display mt-5 text-balance text-[44px] leading-[1.02] tracking-[-0.025em] text-ink md:text-[64px] lg:text-[76px]">
+            <h1 className="display mt-5 text-balance text-[34px] leading-[1.05] tracking-[-0.025em] text-ink sm:text-[40px] md:text-[64px] lg:text-[76px]">
               {trip.tagline.plain}{' '}
               <span className="display-italic text-coral">
                 {trip.tagline.italic}

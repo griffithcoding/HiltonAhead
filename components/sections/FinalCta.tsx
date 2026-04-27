@@ -13,7 +13,7 @@ export default function FinalCta() {
     <section
       id="contact-cta"
       aria-labelledby="final-cta-heading"
-      className="bleed relative mt-28 h-[88vh] min-h-[600px] overflow-hidden md:mt-36"
+      className="bleed relative mt-28 h-[88vh] min-h-[480px] overflow-hidden md:mt-36 md:min-h-[600px]"
     >
       <Image
         src={photos.dock.src}
@@ -48,7 +48,7 @@ export default function FinalCta() {
 
         <h2
           id="final-cta-heading"
-          className="display mt-5 max-w-[920px] text-balance text-[48px] leading-[0.98] tracking-[-0.025em] text-sand md:text-[80px] lg:text-[104px]"
+          className="display mt-5 max-w-[920px] text-balance text-[34px] leading-[1.02] tracking-[-0.025em] text-sand sm:text-[44px] md:text-[80px] lg:text-[104px]"
         >
           Tell us when{' '}
           <span className="display-italic text-gold">you&apos;re coming.</span>

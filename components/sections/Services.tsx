@@ -65,7 +65,7 @@ export default function Services() {
                   <Ticket>{photo.tag}</Ticket>
                 </div>
                 <div className="absolute right-4 bottom-4">
-                  <span className="section-number text-[72px] leading-none text-sand/85 drop-shadow-[0_2px_10px_rgba(10,41,48,0.5)] md:text-[110px]">
+                  <span className="section-number text-[48px] leading-none text-sand/85 drop-shadow-[0_2px_10px_rgba(10,41,48,0.5)] sm:text-[64px] md:text-[110px]">
                     {`0${i + 1}`}
                   </span>
                 </div>

@@ -298,7 +298,7 @@ export default async function BlogPostPage({
                 )}
               </div>
 
-              <h1 className="display mt-6 text-balance text-[40px] leading-[1.02] tracking-[-0.02em] text-ink md:text-[60px] lg:text-[68px]">
+              <h1 className="display mt-6 text-balance text-[30px] leading-[1.08] tracking-[-0.02em] text-ink sm:text-[38px] md:text-[60px] lg:text-[68px]">
                 {post.title}
               </h1>
 

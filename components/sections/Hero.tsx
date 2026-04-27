@@ -47,17 +47,17 @@ export default function Hero() {
 
           <div aria-hidden="true" className="relative">
             <div className="rise">
-              <span className="display block text-balance text-[56px] leading-[0.92] tracking-[-0.03em] text-ink md:text-[88px] lg:text-[108px]">
+              <span className="display block text-balance text-[40px] leading-[0.96] tracking-[-0.03em] text-ink sm:text-[52px] md:text-[88px] lg:text-[108px]">
                 {hero.title.lineOne}
               </span>
             </div>
             <div className="rise rise-delay-1 mt-1">
-              <span className="display-italic block text-balance text-[46px] leading-[0.96] tracking-[-0.02em] text-coral md:text-[74px] lg:text-[92px]">
+              <span className="display-italic block text-balance text-[34px] leading-[1] tracking-[-0.02em] text-coral sm:text-[44px] md:text-[74px] lg:text-[92px]">
                 {hero.title.italic}
               </span>
             </div>
             <div className="rise rise-delay-2 mt-1">
-              <span className="display block text-balance text-[56px] leading-[0.92] tracking-[-0.03em] text-ink md:text-[88px] lg:text-[108px]">
+              <span className="display block text-balance text-[40px] leading-[0.96] tracking-[-0.03em] text-ink sm:text-[52px] md:text-[88px] lg:text-[108px]">
                 {hero.title.lineTwo}
               </span>
             </div>
@@ -100,7 +100,7 @@ export default function Hero() {
         </div>
 
         {/* ——— RIGHT: layered photo collage ——— */}
-        <div className="relative min-h-[520px] md:min-h-[620px]">
+        <div className="relative min-h-[400px] sm:min-h-[480px] md:min-h-[620px]">
           {/* Primary photograph — off-center main plate */}
           <figure className="rise rise-delay-1 absolute left-[8%] top-0 h-[72%] w-[80%] overflow-hidden rounded-md shadow-[0_30px_80px_-20px_rgba(10,41,48,0.4)]">
             <Image

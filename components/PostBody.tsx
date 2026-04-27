@@ -58,8 +58,14 @@ function DataTable({
   block: Extract<PostBlock, { kind: 'table' }>;
 }) {
   return (
-    <figure className="not-prose my-10 overflow-x-auto border-y border-ink/15">
-      <table className="w-full min-w-[620px] border-collapse text-left text-[13px] md:text-[14px]">
+    <figure className="not-prose group relative my-10">
+      {/* Mobile scroll hint — fade on the right edge that disappears on md+ */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-cream to-transparent md:hidden"
+      />
+      <div className="overflow-x-auto border-y border-ink/15">
+        <table className="w-full min-w-[620px] border-collapse text-left text-[13px] md:text-[14px]">
         {block.caption && (
           <caption className="eyebrow border-b border-ink/10 py-3 text-left text-sunset">
             {block.caption}
@@ -93,7 +99,14 @@ function DataTable({
             </tr>
           ))}
         </tbody>
-      </table>
+        </table>
+      </div>
+      <div
+        aria-hidden="true"
+        className="mt-2 text-[10px] uppercase tracking-[0.14em] text-ink-soft md:hidden"
+      >
+        ← scroll →
+      </div>
     </figure>
   );
 }

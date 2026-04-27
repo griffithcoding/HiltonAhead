@@ -195,7 +195,7 @@ export default function ItineraryForm() {
                 key={interest}
                 type="button"
                 onClick={() => toggleInterest(interest)}
-                className={`rounded-full px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition ${
+                className={`rounded-full px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.12em] transition sm:px-3.5 sm:py-1.5 ${
                   active
                     ? 'bg-ink text-cream'
                     : 'border border-ink/25 text-ink hover:border-ink'
