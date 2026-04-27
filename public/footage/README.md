@@ -48,8 +48,25 @@ ffmpeg -i source.mov -c:v libvpx-vp9 -b:v 3.5M -an -vf scale=1920:1080 \
 
 ## License attribution
 
-When you drop a file in, add a row here so we have a record:
+When you drop a file in, add a row here so we have a record.
 
-| Filename                       | Source | License | Attribution |
-| ------------------------------ | ------ | ------- | ----------- |
-| _none yet — drop yours here_   |        |         |             |
+`hilton-head-flyover.mp4` / `.webm` is a 30s montage of six Pexels-licensed
+4K aerial drone clips — six 5.5s segments joined with 0.6s crossfades. All
+six are tagged or visually consistent with Hilton Head Island.
+
+| # | Pexels ID | Title                                  | Contributor | License            | Source URL                                     |
+| - | --------- | -------------------------------------- | ----------- | ------------------ | ---------------------------------------------- |
+| 1 | 32742689  | Aerial View of Tranquil Beachfront     | K (kelly)   | Pexels License (free, commercial OK) | https://www.pexels.com/video/32742689/ |
+| 2 | 32742692  | Aerial View of Coastal Wetlands & Boardwalk | K (kelly) | Pexels License | https://www.pexels.com/video/32742692/ |
+| 3 | 32742701  | Aerial View of Scenic Golf Course      | K (kelly)   | Pexels License     | https://www.pexels.com/video/32742701/         |
+| 4 | 26326850  | Hilton Head                            | Eric Skaggs | Pexels License     | https://www.pexels.com/video/26326850/         |
+| 5 | 32742702  | Aerial View of Coastal Beachfront & Resort | K (kelly) | Pexels License | https://www.pexels.com/video/32742702/         |
+| 6 | 26326851  | Hilton Head                            | Eric Skaggs | Pexels License     | https://www.pexels.com/video/26326851/         |
+
+Pexels License terms: free for personal and commercial use, modification
+allowed, no attribution required (but courtesy credit is welcomed). Full
+license: https://www.pexels.com/license/
+
+The montage was assembled with ffmpeg's `xfade` filter chain at 1920×1080,
+30 fps. Source clips kept under `/tmp/footage-source/` (gitignored) for
+re-edits; re-running the build is documented in `scripts/` if/when added.
