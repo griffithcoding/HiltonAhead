@@ -19,6 +19,7 @@ export default function PhotoRail() {
       <div className="mx-auto max-w-[1400px] px-5">
         <div className="mb-14 flex flex-col items-center justify-center text-center">
           <div className="text-sand"><WaveLine width={80} /></div>
+          <div className="eyebrow eyebrow-coral mt-5">Paradise in every pixel</div>
           <h2 className="display mt-5 max-w-[680px] text-[32px] leading-[1.08] text-sand md:text-[48px]">
             One month of Hilton Head in six frames.
           </h2>
