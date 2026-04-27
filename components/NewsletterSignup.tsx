@@ -1,6 +1,7 @@
 'use client';
 
 import { useId, useState } from 'react';
+import { trackNewsletterSignup } from '@/app/lib/analytics';
 
 const INTEREST_OPTIONS = [
   'Villa deals',
@@ -87,6 +88,7 @@ export default function NewsletterSignup({
         setSubmitting(false);
         return;
       }
+      trackNewsletterSignup(source);
       setSubmitted(true);
     } catch {
       setError('Network error. Please try again.');

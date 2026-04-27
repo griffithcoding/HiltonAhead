@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import { B2C_TIERS, B2B_TIERS, type Tier } from '@/data/pricing';
+import PurchaseTracker from './PurchaseTracker';
 
 export const metadata: Metadata = {
   title: 'Welcome to Hilton Ahead — Hilton Head Travel Co',
@@ -26,6 +27,13 @@ export default async function CheckoutSuccessPage({ searchParams }: PageProps) {
 
   return (
     <>
+      {tier?.priceUsd && params.session_id ? (
+        <PurchaseTracker
+          sessionId={params.session_id}
+          tier={tier.slug}
+          value={tier.priceUsd}
+        />
+      ) : null}
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />
 

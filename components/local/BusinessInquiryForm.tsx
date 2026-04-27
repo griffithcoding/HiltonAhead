@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import type { IndustrySlug } from '@/data/localBusinesses'
 import { industries } from '@/data/localBusinesses'
+import { trackLead } from '@/app/lib/analytics'
 
 const TIERS = [
   { value: 'standard', label: 'Standard Listing — Free' },
@@ -80,6 +81,7 @@ export default function BusinessInquiryForm({
       if (!res.ok || !data.ok) {
         setError(data.error || 'Something went wrong. Please try again or email us directly.')
       } else {
+        trackLead('business_inquiry_form', 'business_inquiry')
         setSubmitted(true)
       }
     } catch {

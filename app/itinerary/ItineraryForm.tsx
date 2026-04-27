@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackLead } from '@/app/lib/analytics';
 
 const LODGING_OPTIONS = ['Oceanfront villa', 'Resort', 'Condo', 'No preference'] as const;
 const INTERESTS = [
@@ -83,6 +84,7 @@ export default function ItineraryForm() {
         setSubmitting(false);
         return;
       }
+      trackLead('itinerary_form', 'itinerary');
       setSubmitted(true);
     } catch {
       setError('Network error. Please try again or email hello@hiltonahead.com.');
