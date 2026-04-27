@@ -45,6 +45,7 @@ export const footerLinks = {
       label: 'Explore',
       links: [
         { href: '/about', label: 'About' },
+        { href: '/founder', label: 'Founder' },
         { href: '/blog', label: 'Local Guide' },
         { href: '/local', label: 'Business Directory' },
         { href: '/itinerary', label: 'Request Itinerary' },
