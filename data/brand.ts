@@ -52,9 +52,18 @@ export const brand = {
     },
   },
 
+  /**
+   * Social account URLs feed schema.org `sameAs` for brand consolidation
+   * across the knowledge graph. Leave empty until the account is claimed
+   * and live — empty strings are filtered out before they hit the schema.
+   *
+   * Recommended handle: @hiltonaheadtravel (Instagram, LinkedIn).
+   * Skipping TikTok and Twitter — wrong audience for the price point.
+   */
   social: {
     instagram: '',
     facebook: '',
+    linkedin: '',
   },
 
   analytics: {

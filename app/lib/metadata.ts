@@ -18,6 +18,12 @@ interface PageMetadataOptions {
   ogImage?: string
   ogImageAlt?: string
   keywords?: string[]
+  /**
+   * Set true on intermediate pages (thank-you, gated previews, etc.) so they
+   * don't pollute search results. Skip the canonical too — a noindexed page
+   * shouldn't be the canonical version of anything.
+   */
+  noindex?: boolean
 }
 
 const DEFAULT_OG_IMAGE = `${siteUrl}/opengraph-image`
@@ -32,6 +38,7 @@ export function generatePageMetadata({
   ogImage = DEFAULT_OG_IMAGE,
   ogImageAlt = DEFAULT_OG_ALT,
   keywords = [],
+  noindex = false,
 }: PageMetadataOptions): Metadata {
   const url = `${siteUrl}${path}`
   const images = [
@@ -41,7 +48,9 @@ export function generatePageMetadata({
     title,
     description,
     keywords,
-    alternates: { canonical: url },
+    ...(noindex
+      ? { robots: { index: false, follow: false } }
+      : { alternates: { canonical: url } }),
     openGraph: {
       title: ogTitle || title,
       description: ogDescription || description,
@@ -191,6 +200,7 @@ export function getLocalBusinessSchema(opts?: {
   if (brand.contact.phone) schema.telephone = brand.contact.phone
   if (brand.social?.instagram) (schema.sameAs as string[]).push(brand.social.instagram)
   if (brand.social?.facebook) (schema.sameAs as string[]).push(brand.social.facebook)
+  if (brand.social?.linkedin) (schema.sameAs as string[]).push(brand.social.linkedin)
   if ((schema.sameAs as string[]).length === 0) delete schema.sameAs
   if (opts?.ratingValue && opts?.reviewCount) {
     schema.aggregateRating = {
@@ -355,6 +365,11 @@ export function getOrganizationSchema(opts?: {
       'Lowcountry dining',
     ],
   }
+  const sameAs: string[] = []
+  if (brand.social?.instagram) sameAs.push(brand.social.instagram)
+  if (brand.social?.facebook) sameAs.push(brand.social.facebook)
+  if (brand.social?.linkedin) sameAs.push(brand.social.linkedin)
+  if (sameAs.length > 0) base.sameAs = sameAs
   if (opts?.ratingValue && opts?.reviewCount) {
     base.aggregateRating = {
       '@type': 'AggregateRating',
