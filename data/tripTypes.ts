@@ -44,6 +44,11 @@ export type TripTypeLanding = {
   gallery: Array<{ src: string; alt: string; caption: string }>;
   /** Slug of the long-form blog post to link out to (if any). */
   blogPostSlug?: string;
+  /**
+   * Slug of a /stories/[slug] page that shows a real trip of this type
+   * end-to-end. When set, the trip-type page renders a "See the story" rail.
+   */
+  relatedStorySlug?: string;
 };
 
 export const tripTypes: TripTypeLanding[] = [
@@ -105,6 +110,7 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.villa,      caption: 'A Sea Pines villa we book for golf groups' },
     ],
     blogPostSlug: 'hilton-head-golf-trip',
+    relatedStorySlug: 'fall-golf-weekend',
   },
   {
     slug: 'weddings',
@@ -140,7 +146,7 @@ export const tripTypes: TripTypeLanding[] = [
       {
         title: 'Vendor relationships that already exist',
         body:
-          'Transportation operators, welcome-bag suppliers, rehearsal-dinner holds at the restaurants that actually deliver. Twelve years of booking on this island compounds into a rolodex you cannot fake.',
+          'Transportation operators, welcome-bag suppliers, rehearsal-dinner holds at the restaurants that actually deliver. Booking after booking on this island compounds into a rolodex you cannot fake.',
       },
       {
         title: 'Three days of on-island concierge',
@@ -162,6 +168,7 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.villa,       caption: 'Family-block villa, Sea Pines' },
       { ...photos.mossOak,     caption: 'Lowcountry oaks, wedding portraits' },
     ],
+    relatedStorySlug: 'october-villa-wedding',
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -288,6 +295,7 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.villa,       caption: 'Family villa, Palmetto Dunes' },
     ],
     blogPostSlug: 'hilton-head-with-kids',
+    relatedStorySlug: 'summer-family-week',
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -521,7 +529,7 @@ export const tripTypes: TripTypeLanding[] = [
       {
         title: 'Sunset at the Quarterdeck',
         body:
-          'The bar at the 18th green, west-facing over Calibogue Sound. In twelve years of booking this island, nothing has beat the last ten minutes of sunset there. Worth walking to on night one.',
+          'The bar at the 18th green, west-facing over Calibogue Sound. Of every sunset spot on this island, nothing has beat the last ten minutes there. Worth walking to on night one.',
       },
     ],
     bestFor: [

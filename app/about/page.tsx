@@ -16,7 +16,7 @@ import { testimonialsMeta } from '@/data/testimonials';
 export const metadata: Metadata = generatePageMetadata({
   title: 'About: Local Travel Consulting for Hilton Head',
   description:
-    'Hilton Ahead is a locally-run travel consulting service on Hilton Head Island. Twelve years on the island, 400+ trips planned, real relationships with the properties and restaurants.',
+    'Hilton Ahead is a locally-run travel consulting service on Hilton Head Island. 400+ trips planned, real relationships with the properties and restaurants.',
   path: '/about',
   keywords: [
     'Hilton Head local travel agent',

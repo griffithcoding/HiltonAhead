@@ -21,9 +21,8 @@ export const hero = {
     href: '#why-hilton-head',
     label: 'Why Hilton Head',
   },
-  /** Three trust signals beneath the lede, tightly kerned and small-caps. */
+  /** Trust signals beneath the lede, tightly kerned and small-caps. */
   proofLine: [
-    'Twelve years on this island',
     'Just shy of 400 trips planned',
     'Partner rates at Sea Pines & Palmetto Dunes',
   ],
