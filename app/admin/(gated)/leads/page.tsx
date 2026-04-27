@@ -104,6 +104,8 @@ export default async function AdminLeadsList({
   const { q, type, status, due } = await searchParams;
   const supabase = await createClient();
 
+  // ── DEBUG: surface query errors directly to the page (production strips
+  // error messages from React's error boundary, so we capture them here).
   const [itRes, nlRes, lRes] = await Promise.all([
     supabase
       .from('itinerary_requests')
@@ -125,6 +127,38 @@ export default async function AdminLeadsList({
       .order('created_at', { ascending: false })
       .limit(300),
   ]);
+
+  const queryErrors: Array<{ table: string; error: unknown }> = [];
+  if (itRes.error) queryErrors.push({ table: 'itinerary_requests', error: itRes.error });
+  if (nlRes.error) queryErrors.push({ table: 'newsletter_subscribers', error: nlRes.error });
+  if (lRes.error) queryErrors.push({ table: 'leads', error: lRes.error });
+
+  if (queryErrors.length > 0) {
+    return (
+      <div className="mx-auto max-w-[900px] p-8 font-mono text-[13px]">
+        <div className="mb-4 text-[16px] font-semibold text-coral-deep">
+          Supabase query errors
+        </div>
+        <div className="mb-4 text-ink-soft">
+          One or more lead-table queries returned errors. Likely a missing
+          column or migration not applied in production.
+        </div>
+        {queryErrors.map((e, i) => (
+          <div
+            key={i}
+            className="mt-4 rounded-sm border border-coral/30 bg-coral/5 p-4"
+          >
+            <div className="mb-1 text-[10px] uppercase tracking-[0.18em] text-coral-deep">
+              {e.table}
+            </div>
+            <pre className="overflow-x-auto whitespace-pre-wrap break-words text-[12px] text-ink">
+              {JSON.stringify(e.error, null, 2)}
+            </pre>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   const combined: UnifiedLead[] = [
     ...(itRes.data ?? []).map(
