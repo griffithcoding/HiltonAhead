@@ -16,7 +16,7 @@ import PhotoSlideshow from '@/components/ui/PhotoSlideshow';
 const SERVICE_PHOTOS = [
   { ...photos.teaTable,  tag: 'Dining on island' },
   { ...photos.villa,     tag: 'Sea Pines oceanfront' },
-  { ...photos.hammock,   tag: 'Group, spring break' },
+  { ...photos.bikePath,  tag: 'Group, spring break' },
   { ...photos.harborBoats,tag: 'Concierge, Shelter Cove' },
   { ...photos.oysters,   tag: 'Skull Creek · 7 p.m.' },
 ];
