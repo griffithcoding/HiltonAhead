@@ -142,22 +142,30 @@ export default function PressPage() {
           <ul className="mt-6 space-y-4 text-[14px] leading-[1.65] text-ink-soft md:text-[15px]">
             <li>
               <strong className="text-ink">Founded:</strong> Hilton Head
-              Island, SC — full-time local presence since the early
-              &rsquo;90s.
+              Island, SC &mdash; familiar with the area since the early
+              &rsquo;90s; full-time local for the last six years.
             </li>
             <li>
               <strong className="text-ink">Founder:</strong> William
-              Griffith — 12 years on the island, just shy of 400 trips
-              planned.
+              Griffith &mdash; 10+ years in marketing and communications,
+              with the past several in travel and hospitality.
+              Master&rsquo;s from Georgetown, bachelor&rsquo;s from NYU.
+              Before founding this agency, William advised tech companies
+              nationwide on product management, marketing, website
+              building, and AI integrations. Hundreds of trips planned
+              for clients across the country and from Europe, South
+              America, and Asia.
             </li>
             <li>
               <strong className="text-ink">Specialties:</strong> custom
               itineraries, villa booking, on-island concierge, dining and
-              tee-time reservations, golf and wedding travel.
+              tee-time reservations, golf and wedding travel, resorts,
+              bars, and leisure.
             </li>
             <li>
               <strong className="text-ink">Coverage:</strong> Hilton Head
-              Island, Bluffton, Daufuskie, broader Lowcountry.
+              Island, Bluffton, the broader Lowcountry, and Savannah
+              (occasionally).
             </li>
           </ul>
         </section>
