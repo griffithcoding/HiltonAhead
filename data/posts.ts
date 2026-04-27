@@ -5400,6 +5400,225 @@ const postKayakingGuide: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 25) Best pizza on Hilton Head & Bluffton (tier list)
+// ---------------------------------------------------------------------------
+
+const postBestPizza: Post = {
+  slug: 'best-pizza-hilton-head-2026',
+  title:
+    'The Best Pizza on Hilton Head Island & Bluffton: Ranked S to Skip',
+  excerpt:
+    "Wood-fired Neapolitan, NY-style slices, late-night takeout, and the only Detroit-square pop-up on the island. 13 spots ranked by a local.",
+  description:
+    "The 13 best pizza spots on Hilton Head Island and in Bluffton, ranked S to Skip. Wood-fired Neapolitan, NY-style, late-night, Detroit-square, and the takeout standards.",
+  category: 'Dining',
+  readTime: '6 min',
+  publishedAt: '2026-04-26',
+  author: 'Hilton Ahead Editors',
+  keywords: [
+    'best pizza hilton head',
+    'pizza hilton head island',
+    'hilton head pizza',
+    'bluffton pizza',
+    'wood fired pizza hilton head',
+    'ny style pizza hilton head',
+    'pizza delivery hilton head',
+    'late night pizza hilton head',
+  ],
+  featuredOrder: 25,
+  body: [
+    {
+      kind: 'p',
+      html: "Pizza on Hilton Head used to mean a flabby NY slice from a strip mall. The last five years changed that. We got a true 800°F wood-fired Neapolitan, a Calabrian-Italian thin crust, a Detroit-square pop-up, and a 2024 chef-driven coastal-Italian room across the bridge in Bluffton. The strip-mall slice is still around — but it's no longer the only option.",
+    },
+    {
+      kind: 'p',
+      html: "This is the working tier list. 13 spots from Hilton Head Island and the immediate Bluffton/Lowcountry area, ranked from <strong>S</strong> (the absolute best) to <strong>Skip</strong> (popular but overrated). Built from local-blog reviews, Tripadvisor signal, the <em>We Love Hilton Head Island</em> Facebook group, and what we actually order on a Friday night.",
+    },
+    { kind: 'h2', text: 'How we ranked' },
+    {
+      kind: 'p',
+      html: "Three filters, in order: <strong>1)</strong> the dough — is it made fresh, does it taste like more than salt and yeast? <strong>2)</strong> the bake — properly leoparded char on a Neapolitan, crispy bottom on a NY pie, no soggy crusts. <strong>3)</strong> consistency — does it deliver the same pie on a Tuesday in February as a Saturday in July? A spot that nails one and fails another doesn't make S-tier.",
+    },
+    {
+      kind: 'tier',
+      label: 'S-Tier',
+      subtitle: 'The absolute best on the island',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Local Pie Wood Fired Pizza',
+          meta: 'South End · Wood-fired Neapolitan',
+          blurb:
+            "The first and only true 800°F wood-fired Neapolitan operation on the island. Regionally sourced mozzarella, San Marzano sauce, and the kind of leoparded char you'd expect from a Naples-trained kitchen. Sister location at 15 State of Mind St in Bluffton.",
+        },
+        {
+          name: 'Dough Boys Pizza',
+          meta: 'South End · NY-style hand-tossed',
+          blurb:
+            "Tripadvisor's #1 pizza on Hilton Head since 2013. Organic spring-wheat dough made fresh daily, San Marzano sauce, and a decade-plus of consistency. Island-wide delivery. The default order is the classic cheese.",
+        },
+        {
+          name: 'Joelle',
+          meta: 'Old Town Bluffton · Coastal Italian + wood-fired',
+          blurb:
+            "A 2024 opening from a chef couple in Old Town Bluffton. <em>The Local Palate</em> and <em>Post and Courier</em> both raved in their first-look reviews. Wood-fired pies anchor a coastal-Italian menu with house-made pasta sides — best treated as a full date-night dinner.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'A-Tier',
+      subtitle: 'Consistently great',
+      accent: 'primary',
+      items: [
+        {
+          name: "Giuseppi's Pizza & Pasta",
+          meta: 'Shelter Cove · NY-style + pub',
+          blurb:
+            "Open since 1984 and the original SERG Restaurant Group concept. NY-style pies plus a full pasta menu. Big-group friendly and the family-room standard for Mid-Island. Locals reflexively recommend it.",
+        },
+        {
+          name: 'Pomodori',
+          meta: 'South End + Old Town Bluffton · Calabrian thin crust',
+          blurb:
+            "Chef Amanda trained in Calabria and brought regional thin-crust pies to two locations. Phone-only orders, no online platform — call early on Friday because the Calabrian chili honey pie sells out. Closed Sundays.",
+        },
+        {
+          name: 'Firemost Pizza',
+          meta: 'Broad Creek Marina · Tavern thin-and-crispy',
+          blurb:
+            "Founded July 2025 by HHI locals and already pulling regulars away from the chains. Square-cut tavern pies, marina patio seating, and a sunset view that makes it the right Friday call.",
+        },
+        {
+          name: 'School Pizza',
+          meta: 'Bluffton (pop-up) · Detroit-style square',
+          blurb:
+            "No storefront — the only Detroit-style on the island. Bakes every other Sunday at Lot 9 Brewing, Side Hustle, or Locals Only Taproom. Crispy edges, deep cheese, brewery hang. Pre-orders via Instagram fill fast.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'B-Tier',
+      subtitle: 'Solid backup',
+      accent: 'zinc',
+      items: [
+        {
+          name: 'New York City Pizza',
+          meta: 'Heritage Plaza, Pope Avenue · NY by-the-slice',
+          blurb:
+            "Counter-style cheese-slice-and-go on Pope Avenue. Open until 10pm Friday and Saturday — closest thing to a true late-night slice on the island. Delivery via Toast.",
+        },
+        {
+          name: 'Mellow Mushroom',
+          meta: 'Office Park Rd · Pub chain',
+          blurb:
+            "Yes, a chain. But consistent execution and the latest open hours on Hilton Head proper (11pm daily). Specialty pies plus a full beer list — the right call for a sports-bar pizza setting.",
+        },
+        {
+          name: "TJ's Take & Bake Pizza Co.",
+          meta: 'North End · Take-and-bake',
+          blurb:
+            "Build your own raw pie, take it back to the villa, finish it in the rental kitchen. The right call for beach-house dinners with kids and large families. Closed Sundays.",
+        },
+        {
+          name: "Mangiamo's Hilton Head Pizza Co.",
+          meta: 'Main St + Bluffton · NY-style delivery',
+          blurb:
+            "Two locations and reliable island-wide delivery. The cheese-slice-and-wings combo is the workhorse. Not a destination, but a dependable backup when the S-tier spots are slammed.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Skip',
+      subtitle: 'Popular, but you can do better',
+      accent: 'rose',
+      items: [
+        {
+          name: 'Bella Italia',
+          meta: 'Port Royal Plaza · Italian-American',
+          blurb:
+            "Tripadvisor #4 mostly on tourist volume. Locals on the <em>We Love HHI</em> Facebook group rate it middling. Specialty and gluten-free pies are competent but unremarkable. Drive five more minutes to Dough Boys or Local Pie.",
+        },
+        {
+          name: "Fat Baby's Pizza & Subs",
+          meta: 'South End · Thin-crust counter',
+          blurb:
+            "Tripadvisor ranks it #2 on the island, but reviews skew \"fine, fast, forgettable.\" If you're already there and starving, fine. If you can drive five more minutes — do that instead.",
+        },
+      ],
+    },
+    { kind: 'h2', text: 'Notes for visitors' },
+    {
+      kind: 'h3',
+      text: 'Late-night pizza on Hilton Head',
+    },
+    {
+      kind: 'p',
+      html: "Mellow Mushroom on Office Park Rd is open until 11pm seven days, the latest pizza on HHI proper. New York City Pizza on Pope Avenue runs until 10pm Friday and Saturday for slice-by-the-counter orders. Everything else closes by 9pm in summer and 8pm off-season.",
+    },
+    {
+      kind: 'h3',
+      text: 'Pizza delivery to vacation rentals',
+    },
+    {
+      kind: 'p',
+      html: "Dough Boys, Mangiamo's, and Mellow Mushroom all deliver island-wide. TJ's Take & Bake delivers raw pies you finish in your villa oven — useful when you want pizza without leaving the rental and the oven is already preheating.",
+    },
+    {
+      kind: 'h3',
+      text: 'Best pizza for kids',
+    },
+    {
+      kind: 'p',
+      html: "Giuseppi's at Shelter Cove is the family-room standard — NY-style pies, pasta on the menu, and big-group seating. Dough Boys works for takeout family dinners. Skip the wood-fired Neapolitan for picky eaters; the slight char and fresh basil are not what 7-year-olds want.",
+    },
+    {
+      kind: 'callout',
+      label: 'Pro tip',
+      html: "If you're staying in Sea Pines or Palmetto Dunes for a week and want to do one date-night dinner with great pizza, drive across the bridge to Joelle in Old Town Bluffton. It's 25 minutes from Sea Pines, and the menu is more than just pizza — house-made pasta sides, a serious wine list, and it's the most-talked-about new room in the Lowcountry.",
+    },
+    {
+      kind: 'faq',
+      label: 'Pizza FAQ',
+      items: [
+        {
+          q: 'What is the #1 pizza on Hilton Head Island?',
+          a: "By Tripadvisor signal, Dough Boys Pizza on the South End. By local-blog and chef-credentials signal, Local Pie Wood Fired Pizza is the most-acclaimed. Both are S-tier on our list.",
+        },
+        {
+          q: 'Where do locals get pizza on Hilton Head?',
+          a: "Locals lean Local Pie for date-night Neapolitan, Dough Boys for the standard takeout cheese pie, Pomodori when they want something different, and Giuseppi's when they have kids in the car. The <em>We Love Hilton Head Island</em> Facebook group has a long-running pizza thread that surfaces the same names.",
+        },
+        {
+          q: 'Is there pizza in Bluffton?',
+          a: "Yes — and it's worth crossing the bridge. Joelle (S-tier), Pomodori's Bluffton location (A-tier), and School Pizza's biweekly pop-up all give Bluffton three serious options. Joelle alone is worth the 25-minute drive from Sea Pines.",
+        },
+        {
+          q: 'Where can I get gluten-free pizza on Hilton Head?',
+          a: "Bella Italia, Mellow Mushroom, and Mangiamo's all offer gluten-free crusts. Local Pie does a wood-fired GF option on request. Call ahead in summer — the GF dough sometimes runs out by Friday night.",
+        },
+        {
+          q: 'Are there any 24-hour or very-late-night pizza places?',
+          a: "No. Mellow Mushroom (11pm) and NYC Pizza on Pope (10pm Fri/Sat) are the latest. After that, Domino's delivery from Bluffton is technically the only option, and it's not worth ordering.",
+        },
+        {
+          q: 'Can I get pizza delivered to a Sea Pines villa?',
+          a: "Yes. Dough Boys, Mellow Mushroom, and Mangiamo's all deliver into Sea Pines. Add a 15-20 minute pad to whatever ETA they quote — the gate adds time. NYC Pizza delivers via Toast on Pope Avenue.",
+        },
+      ],
+    },
+    { kind: 'h2', text: 'Want help with the rest of the trip?' },
+    {
+      kind: 'p',
+      html: "Pizza is one decision out of about forty when you plan a Hilton Head week. Restaurants for the bigger dinners, tee times, beach gear, neighborhood selection — the <a href=\"/itinerary\">itinerary service</a> handles all of it as one plan. Tell us your dates, group, and what kind of trip you want, and we send back a full week with reservations made.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -5429,6 +5648,7 @@ export const posts: Post[] = [
   postWeekendGetaway,
   postDolphinTours,
   postKayakingGuide,
+  postBestPizza,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {

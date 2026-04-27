@@ -69,6 +69,12 @@ export const currentPlan: CurrentPlan = {
     { text: 'CEO call-down skill (project-level)' },
     { text: 'Agent-sales skill (project-level)' },
     { text: 'Summary-plan skill (project-level)' },
+    { text: 'Right-sidebar plan view in /admin/(gated)', commit: '66e4dff' },
+    { text: 'Mobile responsive overhaul — header drawer, scaled typography', commit: '925fe39' },
+    {
+      text:
+        'Pizza, Transportation, Home-Services directories + pizza tier-list blog post',
+    },
   ],
 
   items: [
@@ -171,6 +177,51 @@ export const currentPlan: CurrentPlan = {
     },
 
     // ——— STRATEGIC BACKLOG — interest expressed, no commitment yet ————————
+    {
+      id: 'fishing-charters-directory',
+      text: 'Fishing charters directory + blog post',
+      detail:
+        '~5K monthly searches, $400-$1,200 per booking. Captains pay 10-15% commission and $600-1,800/yr placement. Tier 1 in CEO brainstorm.',
+      priority: 'strategic',
+      status: 'pending',
+      estimate: 'quick win (<3 days)',
+    },
+    {
+      id: 'dolphin-tours-directory',
+      text: 'Dolphin tours / eco-tours directory',
+      detail:
+        '~4K monthly searches, near-100% transactional intent. FareHarbor affiliate commissions.',
+      priority: 'strategic',
+      status: 'pending',
+      estimate: 'quick win (<3 days)',
+    },
+    {
+      id: 'dog-friendly-mega-post',
+      text: 'Dog-friendly Hilton Head mega-post + filter overlay',
+      detail:
+        '8K+ combined monthly searches across "dog friendly beaches/restaurants/rentals". Evergreen, low competition. Strong email-list builder.',
+      priority: 'strategic',
+      status: 'pending',
+      estimate: 'quick win (<3 days)',
+    },
+    {
+      id: 'wedding-vendors-hub',
+      text: 'Wedding vendors hub (photographers, florists, DJs, planners)',
+      detail:
+        'HHI does 800+ weddings/yr at avg $50K+. Vendors will pay $2,400-$4,800/yr for top placement.',
+      priority: 'strategic',
+      status: 'pending',
+      estimate: 'moderate (1-2 weeks)',
+    },
+    {
+      id: 'itinerary-builder-tool',
+      text: 'Interactive itinerary-builder tool (5-question quiz → emailed PDF)',
+      detail:
+        'Highest single conversion lever — 8-15% close vs 1-2% for static pages. Direct funnel to concierge service.',
+      priority: 'strategic',
+      status: 'pending',
+      estimate: 'substantial (1+ month)',
+    },
     {
       id: 'feeder-city-pages',
       text: '12 /from/[city] landing pages',
