@@ -366,7 +366,6 @@ export default async function AdminLeadsList({
                       {r.phone && (
                         <a
                           href={`tel:${r.phone}`}
-                          onClick={(e) => e.stopPropagation()}
                           className="mt-0.5 block text-[11px] font-mono text-ocean-deep hover:text-coral"
                         >
                           {r.phone}
