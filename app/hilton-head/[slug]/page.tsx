@@ -18,6 +18,7 @@ import {
   generatePageMetadata,
   getBreadcrumbSchema,
   getPlaceSchema,
+  getFaqSchema,
 } from '@/app/lib/metadata';
 import {
   neighborhoods,
@@ -77,6 +78,7 @@ export default async function NeighborhoodPage({
     latitude: n.latitude,
     longitude: n.longitude,
   });
+  const faqSchema = n.faqs && n.faqs.length > 0 ? getFaqSchema(n.faqs) : null;
 
   return (
     <>
@@ -88,6 +90,12 @@ export default async function NeighborhoodPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(place) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />
@@ -301,6 +309,31 @@ export default async function NeighborhoodPage({
             </Link>
           </div>
         </section>
+
+        {/* ——— FAQ — drives FAQPage schema for AI-search citation ——— */}
+        {n.faqs && n.faqs.length > 0 && (
+          <section
+            aria-label={`${n.name} frequently asked questions`}
+            className="mt-20 border-t border-ink/15 pt-12"
+          >
+            <div className="eyebrow text-coral">Frequently Asked</div>
+            <h2 className="display mt-4 text-[28px] leading-[1.1] text-ink md:text-[36px]">
+              {n.name}, answered.
+            </h2>
+            <dl className="mt-10 max-w-[760px] divide-y divide-ink/10">
+              {n.faqs.map((item) => (
+                <div key={item.question} className="py-6">
+                  <dt className="display text-[18px] leading-[1.3] text-ink md:text-[20px]">
+                    {item.question}
+                  </dt>
+                  <dd className="mt-3 text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
+                    {item.answer}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
 
         {/* ——— Related: link to blog post ——— */}
         <section className="mt-16">

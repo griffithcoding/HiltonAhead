@@ -36,6 +36,12 @@ export type NeighborhoodLanding = {
   gallery: Array<{ src: string; alt: string; caption: string }>;
   /** Slug of the long-form blog post to link out to. */
   blogPostSlug: string;
+  /**
+   * 4–6 FAQ entries phrased as literal user/AI-search queries
+   * ("Is X worth it?", "Best month for Y?"). Drives FAQPage schema
+   * + on-page rendering for AI-assistant citation surface area.
+   */
+  faqs: Array<{ question: string; answer: string }>;
 };
 
 export const neighborhoods: NeighborhoodLanding[] = [
@@ -103,6 +109,33 @@ export const neighborhoods: NeighborhoodLanding[] = [
       { ...photos.villa,       caption: 'A Sea Pines villa we book' },
     ],
     blogPostSlug: 'sea-pines-guide',
+    faqs: [
+      {
+        question: 'Is Sea Pines worth the gate fee?',
+        answer:
+          'For a 4+ day trip with golf or kids who bike, yes. The $9/day pass covers one car, and the trade-off is 5,200 acres of forest preserve, 17 miles of bike paths, and walk-to-beach access from most villas. For a 2-night couples trip with no golf, the gate fee math gets thinner — Forest Beach is a better value at that length.',
+      },
+      {
+        question: 'What is the best month to stay in Sea Pines?',
+        answer:
+          'May and October are the local picks: 75–82°F days, water still warm, no crowds, lower rates. June through August is peak family season; book 5–6 months out. November through February is quiet and mild (50s–60s) — fewer dining options open, but the best per-dollar value of the year for a long weekend.',
+      },
+      {
+        question: 'How far in advance should I book a Sea Pines villa?',
+        answer:
+          'Summer (June–August): 5–6 months out for the South Beach Lane buildings. Spring break and Heritage Week (mid-April): book by January at the latest. Fall and winter: 6–8 weeks is usually fine. Wedding-week blocks: a year minimum if you want contiguous units.',
+      },
+      {
+        question: 'Can non-resort guests book tee times at Harbour Town Golf Links?',
+        answer:
+          'Yes, but priority goes to Sea Pines resort guests, who can book up to 120 days out. Outside guests can book about 30 days out, and prime morning slots vanish first. The workaround: book a property through us and we route you through the resort priority window.',
+      },
+      {
+        question: 'Where should I eat dinner if I am staying in Sea Pines?',
+        answer:
+          'Inside the gates: The Quarterdeck for the sunset view, CQ’s for a quieter date night. Outside the gates (5–10 min drive): Skull Creek Boathouse for sunset waterfront, Charlie’s L’Etoile Verte for fine dining, Hudson’s for casual seafood on the docks. Most of the best dinners on the island are technically outside Sea Pines.',
+      },
+    ],
   },
   {
     slug: 'palmetto-dunes',
@@ -168,6 +201,33 @@ export const neighborhoods: NeighborhoodLanding[] = [
       { ...photos.hammock,   caption: 'Between rounds' },
     ],
     blogPostSlug: 'palmetto-dunes-guide',
+    faqs: [
+      {
+        question: 'Is Palmetto Dunes better than Sea Pines for a family trip?',
+        answer:
+          'For families with kids 6 to 14 who want to balance pool, beach, and tennis without driving — yes. Palmetto Dunes is mid-island, which means shorter drives to dinner and the airport, and the Omni’s 2026-renovated pool deck is the best on the island. Sea Pines wins for older kids who bike everywhere or for golf-first families who want Harbour Town in walking distance.',
+      },
+      {
+        question: 'Is the Omni Hilton Head renovated yet?',
+        answer:
+          'The lobby and pool deck completed in early 2026 and are excellent. Room renovations are phased through 2027, so floor matters: ask for floor 4 or higher in the renovated sections. We track which rooms have been refreshed and route bookings accordingly.',
+      },
+      {
+        question: 'How good is the tennis program at Palmetto Dunes?',
+        answer:
+          'It’s a US top-10 program. 23 clay courts, 8 pickleball courts, real teaching pros. Drop-in clinics fill 2 weeks out in summer; book through the Palmetto Dunes Tennis Center directly. Worth the trip even if tennis isn’t your primary reason for being on the island.',
+      },
+      {
+        question: 'What is the best month for Palmetto Dunes golf?',
+        answer:
+          'Mid-March through mid-May, and mid-September through early November. Daytime highs 70–82°F, courses in best condition, and tee sheets manageable. Avoid the second week of April (Heritage Week) unless you’re going for the tournament — courses and rates are both at peak.',
+      },
+      {
+        question: 'How do I get to the beach from inland Palmetto Dunes villas?',
+        answer:
+          'Free trolley loops continuously from spring through fall, hitting all major villa clusters and the beach club. Bikes are the locals’ way (paths run alongside the lagoon), about 8–12 minutes from the interior to oceanfront. Some villas include bikes; we confirm before booking.',
+      },
+    ],
   },
   {
     slug: 'forest-beach',
@@ -233,6 +293,33 @@ export const neighborhoods: NeighborhoodLanding[] = [
       { ...photos.surfSoft,    caption: 'Low tide, walkable' },
     ],
     blogPostSlug: 'forest-beach-guide',
+    faqs: [
+      {
+        question: 'Is Forest Beach walkable?',
+        answer:
+          'Yes — the most walkable neighborhood on Hilton Head. Most condos sit within a 10-minute walk of Coligny Plaza (restaurants, shops, beach, lifeguards). For a 3 to 5 day trip, you can skip the rental car entirely and Uber to fewer-than-10 dinners.',
+      },
+      {
+        question: 'What is Coligny Beach Park like?',
+        answer:
+          'The only public beach access on Hilton Head with full amenities: free parking, restrooms, outdoor showers, food, lifeguards, and a small playground. It gets busy at peak (10 a.m. to 4 p.m. in summer), but mornings before 9 and evenings after 5 are uncrowded year-round.',
+      },
+      {
+        question: 'Is Forest Beach safe at night?',
+        answer:
+          'Yes. It’s a tourist district anchored by Coligny Plaza, lit and active until about 11 p.m. in summer. The biggest annoyance is bar noise spillover on weekend nights — pick a south-end condo if you want quieter.',
+      },
+      {
+        question: 'How does Forest Beach compare to Sea Pines for value?',
+        answer:
+          'A 2BR oceanfront condo in June runs about $3,200/week in Forest Beach and $5,500/week in Sea Pines for an equivalent unit. There’s no $9/day gate fee. The trade is fewer amenities (no plantation-wide bike paths, smaller pools), but for short trips that’s often the right trade.',
+      },
+      {
+        question: 'How busy is Forest Beach in summer?',
+        answer:
+          'Coligny gets crowded 10 a.m. to 4 p.m. in June through August — expect packed restaurants and full beach access stations. Mornings and evenings are calmer. Beach itself never feels crammed because it’s 12 miles long; people cluster within 100 yards of access points.',
+      },
+    ],
   },
   {
     slug: 'shelter-cove',
@@ -298,6 +385,33 @@ export const neighborhoods: NeighborhoodLanding[] = [
       { ...photos.sundown,     caption: 'Sunset, looking west' },
     ],
     blogPostSlug: 'shelter-cove-guide',
+    faqs: [
+      {
+        question: 'Is Shelter Cove on the beach?',
+        answer:
+          'No. Shelter Cove faces Broad Creek (a marina), not the Atlantic. The ocean is a 6-minute drive or a longer walk to the closest public access at Singleton Beach. For couples and foodies, the marina vibe is the feature; for a beach-first family trip, Forest Beach or Palmetto Dunes is a better fit.',
+      },
+      {
+        question: 'What restaurants are in Shelter Cove?',
+        answer:
+          'Four of the densest dining picks on the island, all within a 2-minute walk of each other: Ela’s on the Water (waterfront fine dining), Jack’s (chef-driven seasonal), WiseGuys (steakhouse + bar), and San Miguel’s (casual Mexican). Reservations 2 weeks out for Friday/Saturday in summer.',
+      },
+      {
+        question: 'Is Shelter Cove good for couples without kids?',
+        answer:
+          'Yes — it’s the adults’ pocket of the island. No theme-park vibe, no spring-break crush. Quiet, marina-centric, four good dinners, and floor-to-ceiling sunset views from the Towers. Ideal for anniversaries, milestone birthdays, and child-free long weekends.',
+      },
+      {
+        question: 'When are the free concerts at Shelter Cove?',
+        answer:
+          'Free concerts on the marina lawn run Tuesdays and Thursdays from June through August, typically 6 to 8 p.m. Bring a blanket, wine is allowed, no tickets needed. One of the best low-cost summer evenings on the island.',
+      },
+      {
+        question: 'Where do I park for dinner at Shelter Cove?',
+        answer:
+          'Free public parking in the Shelter Cove Towne Centre lot, a 2-minute walk to all four restaurants. It fills up Friday and Saturday after 6:30 p.m. in summer — arrive by 6 or use the overflow lot near the Kroger.',
+      },
+    ],
   },
 ];
 
