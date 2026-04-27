@@ -138,7 +138,7 @@ export async function sendItineraryNotification(req: ItineraryRequestEmail) {
     </table>
 
     <div style="margin-top:24px;font-size:12px;color:#6B7280;line-height:1.6;">
-      <strong>Reply directly</strong> to this email — it\u2019ll go to
+      <strong>Reply directly</strong> to this email — it’ll go to
       ${esc(req.email)}. Or open your CRM/Supabase dashboard to respond.
     </div>
 
@@ -220,7 +220,7 @@ export async function sendBusinessInquiryNotification(req: BusinessInquiryEmail)
       </tbody>
     </table>
     <div style="margin-top:24px;font-size:12px;color:#6B7280;line-height:1.6;">
-      <strong>Reply directly</strong> to this email — it\u2019ll go to ${esc(req.email)}.
+      <strong>Reply directly</strong> to this email — it’ll go to ${esc(req.email)}.
     </div>
     <hr style="border:0;border-top:1px solid rgba(10,41,48,0.15);margin:32px 0 16px;" />
     <div style="font-size:11px;color:#9CA3AF;line-height:1.5;">
@@ -258,42 +258,174 @@ export async function sendBusinessInquiryNotification(req: BusinessInquiryEmail)
   });
 }
 
-// ——— Newsletter welcome (kept short — just a confirmation) ———
+// ——— Newsletter welcome ———
 
+/**
+ * Full welcome email. Fires immediately on subscribe via the newsletter API
+ * route. Thanks the reader, orients them to Hilton Ahead and the island,
+ * and offers three escalating next steps (plan a trip, read the guide,
+ * see pricing). Designed to convert warm traffic into either a content
+ * engagement or a lead within the first 60 seconds of subscribing.
+ */
 export async function sendNewsletterWelcome(to: string) {
-  const subject = 'You\u2019re on the list — Hilton Ahead';
+  const siteUrl = 'https://www.hiltonahead.com';
+  const subject = 'Welcome to The Insider Letter — Hilton Ahead';
+
   const html = `<!doctype html>
 <html>
-<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
-  <div style="max-width:560px;margin:0 auto;padding:40px 24px;">
-    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:12px;">
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#0A2930;">
+  <div style="max-width:600px;margin:0 auto;padding:40px 24px;">
+
+    <div style="font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:14px;">
       The Insider Letter
     </div>
-    <h1 style="font-family:Georgia,serif;font-size:32px;line-height:1.12;color:#0A2930;margin:0 0 16px 0;letter-spacing:-0.02em;">
-      You\u2019re on the list.
+    <h1 style="font-family:Georgia,serif;font-size:34px;line-height:1.1;color:#0A2930;margin:0 0 18px 0;letter-spacing:-0.02em;">
+      You’re on the list.
     </h1>
-    <p style="font-size:15px;line-height:1.7;color:#3D5860;">
-      Thanks for subscribing. The first dispatch lands in a week or two \u2014
-      villa deals, openings, seasonal intel, and the tee times that just
-      dropped. No spam, no forwarding your email anywhere, one-click
-      unsubscribe in every issue.
+    <p style="font-size:16px;line-height:1.7;color:#3D5860;margin:0 0 16px 0;">
+      Thanks for subscribing — we’re glad you’re here. Hilton
+      Ahead is a locally-run trip planning service for Hilton Head Island.
+      Twelve years on the island, just shy of 400 trips planned, and every
+      itinerary still written by hand. No call centers, no franchise, no
+      scripts — just an honest local read on the place we actually live.
     </p>
-    <p style="font-size:14px;line-height:1.7;color:#3D5860;margin-top:24px;">
-      \u2014 Hilton Ahead<br/>
-      <span style="color:#9CA3AF;font-size:12px;">Hilton Head Island, SC</span>
+    <p style="font-size:16px;line-height:1.7;color:#3D5860;margin:0;">
+      The first dispatch lands in a week or two. Until then, here’s
+      what’s already waiting.
+    </p>
+
+    <hr style="border:0;border-top:1px solid rgba(10,41,48,0.15);margin:32px 0;" />
+
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:10px;">
+      About the island
+    </div>
+    <h2 style="font-family:Georgia,serif;font-size:22px;line-height:1.2;color:#0A2930;margin:0 0 14px 0;letter-spacing:-0.01em;">
+      Twelve miles of beach. Six golf resorts. A hundred restaurants the booking sites won’t tell you about.
+    </h2>
+    <p style="font-size:15px;line-height:1.7;color:#3D5860;margin:0 0 12px 0;">
+      Hilton Head Island sits at the southern tip of South Carolina, an
+      hour from Savannah and three from Charleston. Sea Pines and Palmetto
+      Dunes anchor the resort scene. Harbour Town hosts the RBC Heritage
+      every April. Skull Creek Boathouse holds tables for locals at
+      sunset. Forest Beach has the only oceanfront walk-up bars on the
+      island. Bluffton, just over the bridge, has a quiet old-town main
+      street worth a half-day on its own.
+    </p>
+    <p style="font-size:15px;line-height:1.7;color:#3D5860;margin:0;">
+      The island runs on local intel. The Insider Letter is how we share
+      ours.
+    </p>
+
+    <hr style="border:0;border-top:1px solid rgba(10,41,48,0.15);margin:32px 0;" />
+
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:10px;">
+      Three things to do right now
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;">
+      <tbody>
+        <tr>
+          <td style="padding:0 0 18px 0;">
+            <div style="font-family:Georgia,serif;font-size:18px;color:#0A2930;margin-bottom:4px;">
+              1. <a href="${siteUrl}/itinerary" style="color:#0A2930;text-decoration:none;border-bottom:1px solid #C44A2B;">Tell us about your trip.</a>
+            </div>
+            <div style="font-size:14px;line-height:1.65;color:#3D5860;">
+              Three minutes of intake — dates, group size, what you want.
+              We come back inside one business day with a sample plan and
+              pricing. No commitment.
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:0 0 18px 0;">
+            <div style="font-family:Georgia,serif;font-size:18px;color:#0A2930;margin-bottom:4px;">
+              2. <a href="${siteUrl}/blog" style="color:#0A2930;text-decoration:none;border-bottom:1px solid #C44A2B;">Read the local guide.</a>
+            </div>
+            <div style="font-size:14px;line-height:1.65;color:#3D5860;">
+              Tier lists for restaurants, beaches, and stays. Neighborhood
+              breakdowns. The Sea Pines vs Palmetto Dunes piece is the
+              shortcut for anyone choosing where to stay first.
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:0;">
+            <div style="font-family:Georgia,serif;font-size:18px;color:#0A2930;margin-bottom:4px;">
+              3. <a href="${siteUrl}/services" style="color:#0A2930;text-decoration:none;border-bottom:1px solid #C44A2B;">See how we work.</a>
+            </div>
+            <div style="font-size:14px;line-height:1.65;color:#3D5860;">
+              Three plans — Compass ($295) for a focused consult,
+              Charter ($895) for a full itinerary build, Heritage ($2,500+)
+              for snowbirds and Heritage Week. Pick what fits.
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin:32px 0 0;text-align:center;">
+      <a href="${siteUrl}/itinerary" style="display:inline-block;background:#0A2930;color:#F5E8D0;padding:14px 28px;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;border-radius:999px;">
+        Plan my trip →
+      </a>
+    </div>
+
+    <hr style="border:0;border-top:1px solid rgba(10,41,48,0.15);margin:36px 0 20px;" />
+
+    <p style="font-size:14px;line-height:1.7;color:#3D5860;margin:0 0 10px 0;">
+      Reply to this email anytime — it goes straight to William, the
+      founder. Questions about the island, a specific villa, a tee time,
+      or the trip you’re considering: hit reply.
+    </p>
+    <p style="font-size:14px;line-height:1.7;color:#3D5860;margin:0 0 8px 0;">
+      — William Griffith<br/>
+      <span style="font-size:12px;color:#6B7280;">Founder, Hilton Ahead Travel Co.</span>
+    </p>
+    <p style="font-size:11px;color:#9CA3AF;line-height:1.6;margin:24px 0 0;">
+      Hilton Head Island, SC · One dispatch a month ·
+      One-click unsubscribe in every issue.
     </p>
   </div>
 </body>
 </html>`;
+
+  const text = [
+    `Welcome to The Insider Letter — Hilton Ahead`,
+    ``,
+    `Thanks for subscribing — we're glad you're here.`,
+    ``,
+    `Hilton Ahead is a locally-run trip planning service for Hilton Head`,
+    `Island. Twelve years on the island, just shy of 400 trips planned,`,
+    `and every itinerary still written by hand.`,
+    ``,
+    `The first dispatch lands in a week or two. Until then, here's`,
+    `what's already waiting:`,
+    ``,
+    `1. Tell us about your trip — three minutes of intake, sample plan`,
+    `   back inside one business day, no commitment.`,
+    `   ${siteUrl}/itinerary`,
+    ``,
+    `2. Read the local guide — tier lists, neighborhood breakdowns,`,
+    `   honest reviews from someone who lives here.`,
+    `   ${siteUrl}/blog`,
+    ``,
+    `3. See how we work — Compass ($295), Charter ($895), Heritage`,
+    `   ($2,500+). Pick what fits.`,
+    `   ${siteUrl}/services`,
+    ``,
+    `Reply to this email anytime — it goes straight to William, the`,
+    `founder.`,
+    ``,
+    `— William Griffith`,
+    `Founder, Hilton Ahead Travel Co.`,
+    `Hilton Head Island, SC`,
+  ].join('\n');
+
   return sendEmail({
     to,
     subject,
     html,
-    text:
-      'You\u2019re on the list. First dispatch lands in a week or two. Reply anytime.',
-    // Replies go directly to the operator inbox. Reply-To can be any
-    // address; it does not need to be on the sending domain. The
-    // send.hiltonahead.com subdomain has no mailbox.
+    text,
+    // Replies go directly to the operator inbox.
     replyTo: 'hiltonahead@gmail.com',
     tags: [{ name: 'type', value: 'newsletter_welcome' }],
   });
