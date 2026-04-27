@@ -154,7 +154,11 @@ export function TravelSeal({
   const topEnd = -Math.PI / 2 + span / 2;
   const botStart = Math.PI / 2 + span / 2;
   const botEnd = Math.PI / 2 - span / 2;
-  const pt = (a: number) => [r + textRadius * Math.cos(a), r + textRadius * Math.sin(a)] as const;
+  // Round to 3 decimals — SVG renders identically and we avoid SSR/client
+  // float-to-string mismatches that cause hydration warnings.
+  const round = (n: number) => Math.round(n * 1000) / 1000;
+  const pt = (a: number) =>
+    [round(r + textRadius * Math.cos(a)), round(r + textRadius * Math.sin(a))] as const;
   const [tsx, tsy] = pt(topStart);
   const [tex, tey] = pt(topEnd);
   const [bsx, bsy] = pt(botStart);
@@ -178,10 +182,10 @@ export function TravelSeal({
       {/* Radial tick marks */}
       {Array.from({ length: 24 }).map((_, i) => {
         const a = (i * 15 * Math.PI) / 180;
-        const x1 = r + Math.cos(a) * (r - 12);
-        const y1 = r + Math.sin(a) * (r - 12);
-        const x2 = r + Math.cos(a) * (r - 7);
-        const y2 = r + Math.sin(a) * (r - 7);
+        const x1 = round(r + Math.cos(a) * (r - 12));
+        const y1 = round(r + Math.sin(a) * (r - 12));
+        const x2 = round(r + Math.cos(a) * (r - 7));
+        const y2 = round(r + Math.sin(a) * (r - 7));
         return (
           <line key={i} x1={x1} y1={y1} x2={x2} y2={y2}
             stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
