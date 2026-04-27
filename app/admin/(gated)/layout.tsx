@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getAdminUser } from '@/utils/supabase/admin';
 import AdminSignOut from './AdminSignOut';
+import PlanSidebar from '@/components/admin/PlanSidebar';
 
 export const metadata: Metadata = {
   title: 'Admin — HiltonAhead',
@@ -31,7 +32,7 @@ export default async function AdminAppLayout({
 
   return (
     <div className="min-h-screen bg-sand text-ink">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 md:grid-cols-[240px_minmax(0,1fr)]">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 md:grid-cols-[240px_minmax(0,1fr)] lg:max-w-[1700px] lg:grid-cols-[240px_minmax(0,1fr)_320px]">
         {/* ——— Sidebar ——— */}
         <aside className="border-r border-ocean-deep/10 bg-sand-soft p-6 md:min-h-screen">
           <Link
@@ -79,6 +80,11 @@ export default async function AdminAppLayout({
 
         {/* ——— Main ——— */}
         <main className="p-8 md:p-12">{children}</main>
+
+        {/* ——— Right: plan view (lg+ only) ——— */}
+        <div className="hidden lg:block">
+          <PlanSidebar />
+        </div>
       </div>
     </div>
   );
