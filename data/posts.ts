@@ -6738,6 +6738,306 @@ const postFirstTimerGuide: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 35) Hilton Head nightlife & bar scene 2026
+// ---------------------------------------------------------------------------
+
+const postNightlifeGuide: Post = {
+  slug: 'hilton-head-nightlife-bars-2026',
+  title: 'Hilton Head Nightlife & Bars 2026: Where Locals Actually Go at Night',
+  excerpt:
+    "Sunset docks, live jazz, craft breweries in Bluffton, and the one beach bar that never closes before midnight. The honest guide to drinking and staying out on Hilton Head.",
+  description:
+    "The complete 2026 guide to Hilton Head nightlife — sunset bars, live music venues, beach bars, rooftop cocktails, craft breweries, and what to skip. Written by a local, not a listicle farm.",
+  category: 'Dining',
+  readTime: '9 min',
+  publishedAt: '2026-04-28',
+  author: 'Hilton Ahead',
+  featuredOrder: 35,
+  relatedNeighborhoods: ['shelter-cove', 'sea-pines', 'forest-beach'],
+  keywords: [
+    'hilton head nightlife',
+    'hilton head bars',
+    'bars on hilton head island',
+    'hilton head bar scene',
+    'hilton head nightlife 2026',
+    'hilton head live music',
+    'hilton head beach bars',
+    'best bars hilton head',
+    'skull creek boathouse bar',
+    'salty dog cafe bar',
+    'hilton head craft beer',
+    'bluffton bars',
+    'hilton head happy hour',
+    'hilton head rooftop bar',
+    'late night hilton head',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Hilton Head's reputation is golf and beach. Its nightlife reputation is \"closes at 9pm.\" Both are partially right and mostly wrong. The island has no club district, no crawl strip, and no place where you stumble from bar to bar until 2am — and locals like it that way. What it does have: a few sunset-dock bars that genuinely compete with anywhere in the South, a live jazz room that books real national acts, a Bluffton craft brewery scene that opened in earnest in 2023–2025, and a handful of spots that stay lively until midnight or later.",
+    },
+    {
+      kind: 'p',
+      html: "This guide is organized by what you're actually looking for — sunset views, live music, craft beer, beach scene, late-night options — with a honest tier ranking of every venue worth considering in 2026. The short version: <strong>Skull Creek Boathouse</strong> for sunsets, <strong>The Jazz Corner</strong> for music, <strong>Lot 9 Brewing</strong> in Bluffton for craft beer, <strong>Coconutz</strong> for the beach-bar hang. Everything else is a supporting cast.",
+    },
+    { kind: 'h2', text: 'The tier rankings' },
+    {
+      kind: 'p',
+      html: "Ranked on three factors: <strong>atmosphere</strong> (does the room or dock actually feel good at night?), <strong>drink quality</strong> (craft cocktails, real wine list, or well-executed beer selection — not just rail liquor and domestic draft), and <strong>staying power</strong> (is it still good at 10pm, or does it empty out when the kitchen closes?).",
+    },
+    {
+      kind: 'tier',
+      label: 'S-Tier',
+      subtitle: 'The rooms that earn the night',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Skull Creek Boathouse',
+          meta: 'North End · Waterfront sunset dock bar',
+          blurb:
+            "The unambiguous answer to \"best bar on Hilton Head.\" A 200-seat waterfront deck on Skull Creek, facing the last ten minutes of Lowcountry sunset every evening. The drink program is serious — local craft on draft, a frozen cocktail rail, and a full raw bar. Wednesday locals nights and weekend live music on the outdoor stage. Book a dock table 48 hours out in summer; walk-in bar seats work if you arrive by 5:30pm.",
+        },
+        {
+          name: 'The Jazz Corner',
+          meta: 'Shelter Cove · Live jazz club',
+          blurb:
+            "The serious answer to live music on Hilton Head. A purpose-built jazz supper club at Shelter Cove with national touring acts Thursday–Saturday and local standouts Sunday–Wednesday. The bar runs craft cocktails and a wine list that matches the room. Tickets sell out for headliner weeks — check the calendar when you book your trip, not when you arrive.",
+        },
+        {
+          name: 'Quarterdeck at Harbour Town',
+          meta: 'Sea Pines · Lighthouse waterfront bar',
+          blurb:
+            "The Harbour Town Lighthouse deck bar — open-air dock seating right on the marina, iconic red-and-white lighthouse backdrop, and a crowd that mixes Sea Pines resort guests with locals who come specifically for the setting. Cocktails are resort-priced and worth it for the view. Live acoustic music most evenings in season. One of the only bars where the \"Instagram vs. reality\" gap closes in reality's favor.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'A-Tier',
+      subtitle: 'Reliable nights out',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Salty Dog Cafe',
+          meta: 'South Beach Marina, Sea Pines · Marina bar & grill',
+          blurb:
+            "The most famous name on the island, and it mostly lives up to it for atmosphere. The outdoor bar at South Beach Marina feels like Key West lite — string lights, sand underfoot, boat traffic, T-shirt shop next door. Best in the 5–7pm range before the crowds thin out. The drinks are fine, not exceptional. Come for the setting, not the cocktail list.",
+        },
+        {
+          name: 'Big Jim\'s Oyster Bar',
+          meta: 'North End · Waterfront oyster bar',
+          blurb:
+            "Lowcountry casual in the best sense — raw bar, cold local beer, picnic-table seating on the water, and a crowd that ranges from after-work locals to tourists who found it in year three of coming to the island. The oysters are the order. Happy hour runs 4–6pm with $1 off drafts and half-price oyster specials.",
+        },
+        {
+          name: 'Coconutz Sports Bar & Grill',
+          meta: 'South End · Beach bar near Coligny',
+          blurb:
+            "The closest thing to a beach bar that stays open past 11pm on the island. Three bars, a large outdoor patio, live music Thursday–Saturday, and a vibe that skews younger than anywhere else on Hilton Head. Not sophisticated — intentionally not sophisticated. The right call when the group wants to stay out, not wind down.",
+        },
+        {
+          name: 'Skull Creek Dockside',
+          meta: 'North End · Dockside tiki bar',
+          blurb:
+            "The sister property to Skull Creek Boathouse, lighter in execution — a tiki-bar vibe, frozen drinks, and dock seating without the prix fixe expectations. More casual, faster service, better for walk-ins. Good fallback when the Boathouse deck is full.",
+        },
+        {
+          name: 'Hudson\'s Seafood House on the Docks',
+          meta: 'North End · Working waterfront bar',
+          blurb:
+            "A working shrimp dock turned seafood institution. The bar area runs local draft and a respectable bourbon list while shrimp boats unload 20 feet away. Not primarily a nightlife venue, but the sunset timing is reliable and the locals-to-tourists ratio skews local — that's usually a good sign.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'B-Tier',
+      subtitle: 'Good for the right night',
+      accent: 'zinc',
+      items: [
+        {
+          name: "Reilley's Grill & Bar",
+          meta: 'Coligny area · Irish-ish pub',
+          blurb:
+            "The closest thing to a neighborhood bar on Hilton Head — pool table, flat screens, affordable pours, late kitchen. Not a destination, but the right call when the group wants a low-key Tuesday and everything fancier is booked. Open until midnight Sunday–Thursday, 1am Friday–Saturday.",
+        },
+        {
+          name: 'The Square Onion',
+          meta: 'Mid-Island · Casual neighborhood bar',
+          blurb:
+            "A mid-island standby with a covered patio, live music on weekends, and a menu that runs later than most. The crowd is mixed age. Not a destination on its own but worth knowing when you need somewhere in the middle of the island.",
+        },
+        {
+          name: 'Tiki Hut at Coligny',
+          meta: 'Coligny Beach Park · Beachfront bar',
+          blurb:
+            "Beachfront tiki bar at the main public beach access. Daytime and late-afternoon crowd, not a night venue per se — kitchen closes by 9pm. Good for an afternoon beer watching people play in the ocean. Sunsets face west-ish from this side of the island, so the view is decent but not Skull Creek caliber.",
+        },
+        {
+          name: 'Comedy Magic Cabaret',
+          meta: 'Shelter Cove · Show bar',
+          blurb:
+            "A cocktail-show hybrid — a comedy and magic dinner show that runs Thursday–Saturday nights in the Shelter Cove area. Not a traditional bar, but the right answer for a group that wants something to do after 8pm that isn't just another restaurant. Book in advance; Saturday shows sell out.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Skip',
+      subtitle: 'Popular, but your time is better spent elsewhere',
+      accent: 'rose',
+      items: [
+        {
+          name: 'Hotel lobby bars (generic)',
+          meta: 'Various resort properties',
+          blurb:
+            "The bar at the Westin, the bar at the Marriott, the bar at the Sonesta — fine if you're already staying there and want a nightcap, not worth a special trip. Overpriced rail cocktails, generic wine list, a crowd that's all from the same hotel floor. Use any of the A-tier or B-tier spots instead.",
+        },
+        {
+          name: 'The Crazy Crab (bar area only)',
+          meta: 'Harbour Town & North End · Seafood tourist institution',
+          blurb:
+            "Good seafood restaurant, mediocre bar. The bar area is an afterthought — tight, noisy, and serving the queue waiting for tables. The restaurant itself is solid; the bar is not a destination. Go for the crab, not the cocktail.",
+        },
+      ],
+    },
+    { kind: 'h2', text: 'The Bluffton craft beer scene' },
+    {
+      kind: 'p',
+      html: "If you have a car and any interest in craft beer, driving the 20 minutes across the bridge to Bluffton is one of the best nightlife decisions you can make on this trip. Three serious taprooms opened 2022–2025, and Old Town Bluffton has genuinely walkable late-night energy that Hilton Head proper doesn't.",
+    },
+    {
+      kind: 'tier',
+      label: 'Bluffton Breweries',
+      subtitle: 'Worth the bridge',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Lot 9 Brewing',
+          meta: 'Bluffton · Full-production craft brewery',
+          blurb:
+            "The anchor of the Bluffton craft beer scene. A 3,000 sq ft taproom with 12–16 taps rotating through lagers, IPAs, sours, and seasonals — all brewed on-site. Large outdoor biergarten, food trucks Thursday–Sunday, and the venue where School Pizza's Detroit-style pop-up appears every other weekend. Closes at 10pm Sun–Thu, 11pm Fri–Sat.",
+        },
+        {
+          name: 'Burnt Church Distillery',
+          meta: 'Old Town Bluffton · Craft distillery + cocktail bar',
+          blurb:
+            "A working distillery on the May River with a cocktail bar serving house-made vodka, gin, and whiskey. The tasting flight is the right intro; the cocktail menu uses house spirits well. Patio seating on the river. Opens at noon daily; closes at 9pm Sun–Thu, 10pm Fri–Sat.",
+        },
+        {
+          name: 'Hilton Head Brewing Co.',
+          meta: 'South End, HHI · Brewpub',
+          blurb:
+            "On-island option for craft beer — a brewpub format with house-brewed lagers and ales plus a full food menu. The tap list rotates seasonally. Good for groups that want craft beer without crossing the bridge. Not as interesting as Lot 9's lineup but convenient.",
+        },
+      ],
+    },
+    { kind: 'h2', text: 'Planning your night by intent' },
+    {
+      kind: 'h3',
+      text: 'Best bars for sunset on Hilton Head',
+    },
+    {
+      kind: 'p',
+      html: "The island faces east into the Atlantic — actual ocean sunsets don't exist here. The sunset action is on the western marsh and Intracoastal side. <strong>Skull Creek Boathouse</strong> (North End) is the best seat for it; the sun drops behind the marsh grass right off the dock around 8:15pm in July, 6:45pm in November. <strong>Quarterdeck at Harbour Town</strong> (Sea Pines) is close behind — the lighthouse provides foreground. <strong>Hudson's on the Docks</strong> works too, and the shrimp boats are better decoration than a lighthouse.",
+    },
+    {
+      kind: 'h3',
+      text: 'Best bars for live music',
+    },
+    {
+      kind: 'p',
+      html: "<strong>The Jazz Corner</strong> is the serious answer — real touring acts, Thursday through Saturday. <strong>Skull Creek Boathouse</strong> has outdoor live music on the deck Wednesday and weekends — usually acoustic or small ensemble, good background rather than foreground. <strong>Coconutz</strong> books cover bands Thursday–Saturday that skew classic rock and top 40 — fun if you want dancing, not if you want to hear the music. For the Bluffton side, Lot 9 Brewing brings in live acoustic and Americana acts on weekend evenings.",
+    },
+    {
+      kind: 'h3',
+      text: 'Late-night options (open past 11pm)',
+    },
+    {
+      kind: 'p',
+      html: "Options narrow past 11pm — this is genuinely a limitation of the island. <strong>Coconutz</strong> is the main answer, running until midnight or 1am. <strong>Reilley's</strong> goes to 1am Friday–Saturday. <strong>Mellow Mushroom</strong> is the late-night kitchen (11pm every day). After midnight, the island is functionally closed. If late-night is essential to your trip, plan your heavy nights early in the week and scale back Thursday–Sunday when reservation crowds thin the bar options.",
+    },
+    {
+      kind: 'h3',
+      text: 'Best happy hours',
+    },
+    {
+      kind: 'p',
+      html: "Most of the serious bars run 4–6pm specials. <strong>Big Jim's Oyster Bar</strong>: $1 off drafts, half-price oysters. <strong>Skull Creek Boathouse</strong>: discounted dock drinks and raw bar items. <strong>Quarterdeck at Harbour Town</strong>: resort prices drop 20–25% in the happy hour window. <strong>Lot 9 Brewing</strong>: $1 off pints daily 3–5pm. Show up early — summer happy hour crowds form by 4:30pm at any waterfront spot.",
+    },
+    {
+      kind: 'h3',
+      text: 'The neighborhood breakdown',
+    },
+    {
+      kind: 'p',
+      html: "<strong>North End (Skull Creek area):</strong> best waterfront nightlife — Skull Creek Boathouse, Skull Creek Dockside, Hudson's, Big Jim's. If you care about sunset bars, this is where to be. <strong>Harbour Town / Sea Pines:</strong> Quarterdeck, Salty Dog (South Beach), and the marina ambiance — more polished, better for couples and older crowds. <strong>Coligny / South End:</strong> Coconutz, Tiki Hut, beach-bar energy. Best for groups that want noise and outdoor space. <strong>Shelter Cove:</strong> The Jazz Corner and the Comedy Magic Cabaret — mid-island, easy from any neighborhood, entertainment-focused rather than bar-focused.",
+    },
+    {
+      kind: 'callout',
+      label: 'Local insight',
+      html: "Wednesday nights at Skull Creek Boathouse are a local institution — midweek crowd, shorter wait for dock tables, and the kitchen is less slammed. The deck empties slightly earlier than weekends, but the sunset is identical. If you're here for a full week, put Wednesday night on the Skull Creek deck and save the weekend slots for Harbour Town or Jazz Corner.",
+    },
+    { kind: 'h2', text: 'What Hilton Head nightlife is not' },
+    {
+      kind: 'p',
+      html: "There's no club district. No strip with back-to-back bars. No last call at 2am anywhere reputable. Hilton Head controls its commercial character tightly — no chain restaurants inside the gated communities, no illuminated signs, no drive-thru liquor stores. That same restraint applies to nightlife. The result is a bar scene that's nicer than it sounds but smaller than most beach destinations. The upside: you won't end up at a bad bar accidentally because there aren't many bars to end up at. The downside: the options above are basically all of them.",
+    },
+    {
+      kind: 'faq',
+      label: 'Nightlife FAQ',
+      items: [
+        {
+          q: 'What is the nightlife like on Hilton Head Island?',
+          a: 'Low-key and scenery-driven rather than scene-driven. The island has excellent sunset dock bars (Skull Creek Boathouse, Quarterdeck), a serious live jazz club (The Jazz Corner), and a handful of beach bars and breweries. It is not a party destination — there is no club district or 2am closing time. Most bars close by 11pm, with a few exceptions.',
+        },
+        {
+          q: 'What bars are open late on Hilton Head?',
+          a: "Coconutz (closes midnight–1am), Reilley's (closes 1am Friday–Saturday), and Mellow Mushroom (kitchen open until 11pm) are the main late-night options. After midnight, options are functionally zero.",
+        },
+        {
+          q: 'Where is the best sunset bar on Hilton Head?',
+          a: "Skull Creek Boathouse on the North End. The deck faces the Intracoastal waterway and the marsh, and the sun drops directly behind it in summer. Arrive by 5:30pm to get a dock table. Quarterdeck at Harbour Town in Sea Pines is a close second, with the lighthouse in the frame.",
+        },
+        {
+          q: 'Is there live music on Hilton Head?',
+          a: "Yes. The Jazz Corner at Shelter Cove is the main venue — national touring jazz acts Thursday through Saturday, local acts the rest of the week. Skull Creek Boathouse runs live acoustic music on the deck Wednesday nights and weekends. Coconutz books cover bands Thursday–Saturday.",
+        },
+        {
+          q: 'What are the best bars near Coligny Beach?',
+          a: "Coconutz Sports Bar is the most active option near Coligny — beach bar vibe, live music on weekends, open until midnight or later. The Tiki Hut at Coligny Beach Park is good for afternoon drinks but closes early. Reilley's is a short drive and stays open later.",
+        },
+        {
+          q: 'Can I walk to bars from Sea Pines?',
+          a: "From Sea Pines proper, the walkable nightlife is the Salty Dog Cafe at South Beach Marina and the Quarterdeck at Harbour Town — both are bikeable (3–5 miles) within the plantation. Skull Creek Boathouse is a 15-minute drive north and worth every minute.",
+        },
+        {
+          q: 'Are there any craft breweries on Hilton Head?',
+          a: "Hilton Head Brewing Co. is on the island's South End. The better craft beer options are in Bluffton — Lot 9 Brewing (the strongest tap list), Burnt Church Distillery (cocktails with house-made spirits), and the biweekly School Pizza pop-up at Lot 9. Drive 20 minutes across the bridge for the full Bluffton taproom crawl.",
+        },
+        {
+          q: 'Is the Salty Dog Cafe good for a night out?',
+          a: "Good for atmosphere, not for serious drinking. The South Beach Marina setting is genuinely great — string lights, boats, outdoor bar. The drinks are fine but not exceptional, and the area quiets down quickly after the restaurant rush. Come for the 5–7pm golden hour, then move on to Skull Creek or Quarterdeck if you want to stay out.",
+        },
+        {
+          q: 'What is there to do on Hilton Head at night besides bars?',
+          a: "The Jazz Corner (live jazz dinner shows), Comedy Magic Cabaret (Shelter Cove, Thursday–Saturday), evening dolphin tours (sunset cruises through most marinas), firefly walks at Sea Pines Forest Preserve (seasonal May–June), and stargazing on the less-lit north-end beaches. The island's low light pollution makes a dark beach at 10pm genuinely beautiful.",
+        },
+        {
+          q: 'What is the bar scene like in Bluffton compared to Hilton Head?',
+          a: "Bluffton punches above its size for late-evening options. Old Town Bluffton has walkable blocks with Burnt Church Distillery, Lot 9 Brewing, and a handful of restaurant bars that close 10–11pm. The energy is more local and less resort-polished than Hilton Head. If craft beer or a more neighborhood-bar feel matters, Bluffton is worth the 20-minute drive.",
+        },
+      ],
+    },
+    { kind: 'h2', text: 'Build it into your trip' },
+    {
+      kind: 'p',
+      html: "If you're planning a Hilton Head week, the nightlife calendar writes itself: one evening at Skull Creek Boathouse for sunset, one night at The Jazz Corner (book ahead), a Bluffton brewery run one evening, and Coconutz or Reilley's if the group wants to stay out late. That's four nights of actual plans from a 12-mile island. The <a href=\"/itinerary\">itinerary service</a> books the Jazz Corner tickets and Skull Creek reservations when we build your plan — they're both the kind of thing that sells out before you think to check.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -6777,6 +7077,7 @@ export const posts: Post[] = [
   postGettingToHHI,
   postWeatherPackingGuide,
   postFirstTimerGuide,
+  postNightlifeGuide,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
@@ -6927,6 +7228,10 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
   },
   'best-pizza-hilton-head-2026': {
     posts: ['best-restaurants-hilton-head-2026', 'forest-beach-guide', 'shelter-cove-guide'],
+    industries: ['restaurants'],
+  },
+  'hilton-head-nightlife-bars-2026': {
+    posts: ['best-restaurants-hilton-head-2026', 'shelter-cove-guide', 'sea-pines-guide'],
     industries: ['restaurants'],
   },
 };
