@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import KenBurnsImage from '@/components/ui/KenBurnsImage';
 import Reveal from '@/components/ui/Reveal';
-import { SectionHead, TravelSeal } from '@/components/ui/Ornament';
+import { SectionHead } from '@/components/ui/Ornament';
 
 interface AftermathChapterProps {
   takeaways: { src: string; alt: string; caption?: string }[];
@@ -62,13 +62,6 @@ export default function AftermathChapter({
       <div className="mt-24 border-y border-ocean-deep/15 py-14">
         <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-center">
           <div>
-            <TravelSeal
-              size={72}
-              topText="HILTON AHEAD · TRAVEL CO"
-              bottomText="· LOCAL DISPATCH ·"
-              motif="compass"
-              className="mb-6 text-ocean-deep"
-            />
             <h3 className="display text-[28px] leading-[1.1] text-ink md:text-[44px]">
               Want a story{' '}
               <span className="display-italic text-coral">like this?</span>

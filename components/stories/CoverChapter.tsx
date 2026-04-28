@@ -1,6 +1,6 @@
 import KenBurnsImage from '@/components/ui/KenBurnsImage';
 import Reveal from '@/components/ui/Reveal';
-import { TravelSeal, WaveLine } from '@/components/ui/Ornament';
+import { WaveLine } from '@/components/ui/Ornament';
 
 interface CoverChapterProps {
   storyNumber: string;            // "01"
@@ -34,16 +34,6 @@ export default function CoverChapter({
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/30 via-ocean-deep/20 to-ocean-deep/85" />
-
-      {/* Top-right seal */}
-      <div className="absolute right-5 top-8 hidden text-sand/85 md:block lg:right-12 lg:top-12">
-        <TravelSeal
-          size={140}
-          topText="HILTON AHEAD · STORIES"
-          bottomText={`· ${date.toUpperCase()} ·`}
-          motif="compass"
-        />
-      </div>
 
       {/* Top-left chapter ticker */}
       <div className="absolute left-5 top-8 flex items-center gap-3 text-sand md:left-10 md:top-12">

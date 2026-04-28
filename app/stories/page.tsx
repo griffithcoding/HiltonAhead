@@ -9,7 +9,6 @@ import {
   SectionHead,
   Divider,
   Ticket,
-  TravelSeal,
 } from '@/components/ui/Ornament';
 import {
   generatePageMetadata,
@@ -77,14 +76,6 @@ export default function StoriesIndexPage() {
         <header className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:gap-16">
           <div className="flex flex-col justify-center">
             <div className="flex items-center gap-3">
-              <span className="text-coral">
-                <TravelSeal
-                  size={56}
-                  topText="HILTON AHEAD · STORIES"
-                  bottomText="· LOCAL DISPATCH ·"
-                  motif="compass"
-                />
-              </span>
               <span className="eyebrow eyebrow-coral">
                 Real trips, planned by us
               </span>
