@@ -3,7 +3,7 @@ export const nav = {
     { href: '/services', label: 'Services' },
     { href: '/blog', label: 'Local Guide' },
     { href: '/local', label: 'Directory' },
-    { href: '/about', label: 'About' },
+    { href: '/about', label: 'Who We Are' },
     { href: '/contact', label: 'Contact' },
   ],
   statusPill: { label: 'Booking Summer 2026' },
