@@ -285,9 +285,9 @@ export async function sendNewsletterWelcome(to: string) {
     <p style="font-size:16px;line-height:1.7;color:#3D5860;margin:0 0 16px 0;">
       Thanks for subscribing — we’re glad you’re here. Hilton
       Ahead is a locally-run trip planning service for Hilton Head Island.
-      Just shy of 400 trips planned, and every itinerary still written by
-      hand. No call centers, no franchise, no scripts — just an honest
-      local read on the place we actually live.
+      255+ trips advised, and every itinerary still written by hand. No
+      call centers, no franchise, no scripts — just an honest local read
+      on the place we actually live.
     </p>
     <p style="font-size:16px;line-height:1.7;color:#3D5860;margin:0;">
       The first dispatch lands in a week or two. Until then, here’s
@@ -394,8 +394,8 @@ export async function sendNewsletterWelcome(to: string) {
     `Thanks for subscribing — we're glad you're here.`,
     ``,
     `Hilton Ahead is a locally-run trip planning service for Hilton Head`,
-    `Island. Just shy of 400 trips planned, and every itinerary still`,
-    `written by hand.`,
+    `Island. 255+ trips advised, and every itinerary still written by`,
+    `hand.`,
     ``,
     `The first dispatch lands in a week or two. Until then, here's`,
     `what's already waiting:`,

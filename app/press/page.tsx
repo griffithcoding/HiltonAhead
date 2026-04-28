@@ -147,8 +147,8 @@ export default function PressPage() {
             </li>
             <li>
               <strong className="text-ink">Founder:</strong> William
-              Griffith — Hilton Head Island resident, just shy of 400
-              trips planned.
+              Griffith — Hilton Head Island resident, 255+ trips
+              advised.
             </li>
             <li>
               <strong className="text-ink">Specialties:</strong> custom

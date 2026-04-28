@@ -85,7 +85,7 @@ export default function TripCalculator({ calendlyUrl }: { calendlyUrl?: string }
         <span className="display-italic">your Hilton Head trip.</span>
       </h3>
       <p className="mt-3 max-w-[520px] text-[13px] leading-[1.6] text-ink-soft">
-        A starting-point range based on 400+ trips we&apos;ve booked. Not a
+        A starting-point range based on 255+ trips we&apos;ve advised. Not a
         quote. The real one comes after you fill out the itinerary form.
       </p>
 
