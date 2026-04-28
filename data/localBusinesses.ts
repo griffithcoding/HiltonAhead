@@ -79,6 +79,35 @@ export type Business = {
   };
   lat?: number;
   lng?: number;
+
+  // -------------------------------------------------------------------------
+  // Editorial enrichment (universal, optional). Surfaced on the card when set.
+  // -------------------------------------------------------------------------
+  /** Short on-the-record local quote, ≤140 chars. Renders as a pull-quote. */
+  localQuote?: string;
+  /** "Best for…" line, e.g. "Sunday brunch with grandparents and a 4-year-old". */
+  bestFor?: string;
+  /** Short parking note, e.g. "Free lot, fills by 6pm summer." */
+  parking?: string;
+  /** Sea Pines / Palmetto Dunes gate-pass requirement for non-resort guests. */
+  gatePass?: 'sea-pines' | 'palmetto-dunes' | null;
+  /** Pet policy. Surfaced as a chip when true. */
+  petFriendly?: boolean;
+  /** Dress code summary, e.g. "Lowcountry casual; collared at dinner." */
+  dressCode?: string;
+  /** Booking lead-time guidance for travelers. */
+  bookingLeadTimeDays?: { peak: number; offPeak: number };
+  /** ISO date — last time we re-confirmed hours/phone/website. */
+  lastVerified?: string;
+
+  // -------------------------------------------------------------------------
+  // Owner outreach (private, never rendered publicly). Used by
+  // /admin/directory to email an attribution report.
+  // -------------------------------------------------------------------------
+  ownerName?: string;
+  ownerEmail?: string;
+  /** Email inquiry-form submissions route to. Defaults to ownerEmail. */
+  inquiryRoutingEmail?: string;
 };
 
 // ---------------------------------------------------------------------------
