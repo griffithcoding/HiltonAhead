@@ -17,3 +17,16 @@ next-env.d.ts
 
 # Claude Code local-machine settings
 .claude/settings.local.json
+.claude/worktrees/
+.claude/claude.md
+
+# Local workbench — source clips, ffmpeg scratch, etc.
+/tmp/
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
