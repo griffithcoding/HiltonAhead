@@ -6,6 +6,8 @@ import LeadNoteForm from './LeadNoteForm';
 import DealValueInput from './DealValueInput';
 import NextActionInput from './NextActionInput';
 import GmailPanel from './GmailPanel';
+import PurchasesPanel from './PurchasesPanel';
+import MeetingsPanel from './MeetingsPanel';
 
 export const dynamic = 'force-dynamic';
 
@@ -204,6 +206,14 @@ export default async function LeadDetailPage({
           )}
         </section>
       </div>
+
+      {/* Purchases — joined by email to the Stripe purchases table */}
+      {email && <PurchasesPanel leadEmail={email} />}
+
+      {/* Meetings — Google Calendar + Calendly bookings */}
+      {email && (
+        <MeetingsPanel leadEmail={email} leadTable={table} leadId={id} />
+      )}
 
       {/* Gmail panel — reads/sends via Google API */}
       {email && adminEmail && (

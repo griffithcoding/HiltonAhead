@@ -175,33 +175,54 @@ async function handleCheckoutCompleted(
 
   // Idempotent insert — unique constraint on stripe_session_id absorbs
   // the rare case where Stripe redelivers the same event.
-  const { error } = await supabase.from('purchases').upsert(
-    {
-      customer_email: customerEmail || 'unknown@unknown',
-      customer_name: customerName,
-      tier_slug: tier.slug,
-      tier_audience: tier.audience,
-      amount_cents: amountCents,
-      currency: session.currency ?? 'usd',
-      stripe_session_id: session.id,
-      stripe_payment_intent_id: paymentIntentId,
-      stripe_subscription_id: subscriptionId,
-      stripe_customer_id: customerId,
-      status: session.payment_status === 'paid' ? 'paid' : 'pending',
-      current_period_end: periodEnd,
-      metadata: {
-        mode: session.mode,
-        payment_status: session.payment_status,
+  const { data: purchaseRow, error } = await supabase
+    .from('purchases')
+    .upsert(
+      {
+        customer_email: customerEmail || 'unknown@unknown',
+        customer_name: customerName,
+        tier_slug: tier.slug,
+        tier_audience: tier.audience,
+        amount_cents: amountCents,
+        currency: session.currency ?? 'usd',
+        stripe_session_id: session.id,
+        stripe_payment_intent_id: paymentIntentId,
+        stripe_subscription_id: subscriptionId,
+        stripe_customer_id: customerId,
+        status: session.payment_status === 'paid' ? 'paid' : 'pending',
+        current_period_end: periodEnd,
+        metadata: {
+          mode: session.mode,
+          payment_status: session.payment_status,
+        },
+        paid_at:
+          session.payment_status === 'paid' ? new Date().toISOString() : null,
       },
-      paid_at:
-        session.payment_status === 'paid' ? new Date().toISOString() : null,
-    },
-    { onConflict: 'stripe_session_id' },
-  );
+      { onConflict: 'stripe_session_id' },
+    )
+    .select('id')
+    .maybeSingle();
 
   if (error) {
     console.error('[stripe-webhook] purchases upsert error:', error);
     throw new Error(`DB insert failed: ${error.message}`);
+  }
+
+  // Mirror the purchase into the per-lead activity timeline so the
+  // CRM lead detail surfaces the payment without any UI work.
+  if (
+    customerEmail &&
+    session.payment_status === 'paid' &&
+    purchaseRow?.id
+  ) {
+    await logPaymentActivity(
+      supabase,
+      customerEmail,
+      tier,
+      amountCents,
+      purchaseRow.id as string,
+      session.id,
+    );
   }
 
   if (customerEmail) {
@@ -209,6 +230,49 @@ async function handleCheckoutCompleted(
       sendCustomerWelcome(customerEmail, customerName, tier),
       sendOperatorNotification(customerEmail, customerName, tier, amountCents),
     ]);
+  }
+}
+
+async function logPaymentActivity(
+  supabase: ReturnType<typeof createServiceClient>,
+  customerEmail: string,
+  tier: Tier,
+  amountCents: number,
+  purchaseId: string,
+  stripeSessionId: string,
+): Promise<void> {
+  // First match wins — itinerary requests are the highest-intent leads
+  // so they're checked first.
+  const tables = [
+    'itinerary_requests',
+    'leads',
+    'newsletter_subscribers',
+  ] as const;
+  for (const table of tables) {
+    const { data } = await supabase
+      .from(table)
+      .select('id')
+      .ilike('email', customerEmail)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (data?.id) {
+      const dollars = (amountCents / 100).toFixed(2);
+      await supabase.from('lead_activity').insert({
+        lead_table: table,
+        lead_id: data.id,
+        kind: 'payment',
+        actor_email: null,
+        body: `Paid $${dollars} for ${tier.name}`,
+        metadata: {
+          purchase_id: purchaseId,
+          tier_slug: tier.slug,
+          amount_cents: amountCents,
+          stripe_session_id: stripeSessionId,
+        },
+      });
+      return;
+    }
   }
 }
 
