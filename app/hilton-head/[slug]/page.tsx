@@ -171,7 +171,8 @@ export default async function NeighborhoodPage({
         <Divider ornament="compass" className="my-20" />
 
         {/* ——— Why this neighborhood ——— */}
-        <section>
+        <section aria-labelledby="why-section-heading">
+          <h2 id="why-section-heading" className="sr-only">Why {n.name}</h2>
           <SectionHead
             number="№ 01"
             eyebrow={`Why ${n.name}`}
@@ -222,7 +223,7 @@ export default async function NeighborhoodPage({
         {/* ——— Best for / tradeoffs ——— */}
         <section className="mt-24 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-16">
           <div>
-            <h3 className="eyebrow text-coral">Best for</h3>
+            <h2 className="eyebrow text-coral">Best for</h2>
             <ul className="mt-6 flex flex-col gap-4">
               {n.bestFor.map((item) => (
                 <li
@@ -236,7 +237,7 @@ export default async function NeighborhoodPage({
             </ul>
           </div>
           <div>
-            <h3 className="eyebrow text-coral">The honest tradeoffs</h3>
+            <h2 className="eyebrow text-coral">The honest tradeoffs</h2>
             <p className="mt-6 text-[15px] leading-[1.75] text-ink-soft">
               {n.tradeoffs}
             </p>
@@ -244,7 +245,8 @@ export default async function NeighborhoodPage({
         </section>
 
         {/* ——— Properties ——— */}
-        <section className="mt-24">
+        <section className="mt-24" aria-labelledby="properties-section-heading">
+          <h2 id="properties-section-heading" className="sr-only">Properties we&apos;ve vetted in person</h2>
           <SectionHead
             number="№ 02"
             eyebrow="Where we book you"
@@ -282,12 +284,12 @@ export default async function NeighborhoodPage({
                 className="mb-5"
                 href="#newsletter"
               />
-              <h3 className="display text-[28px] leading-[1.1] text-ink md:text-[40px]">
+              <h2 className="display text-[28px] leading-[1.1] text-ink md:text-[40px]">
                 Ready to plan a{' '}
                 <span className="display-italic text-coral">
                   {n.name} trip?
                 </span>
-              </h3>
+              </h2>
               <p className="mt-3 max-w-[520px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
                 Tell us your dates and group. We come back with villa picks,
                 a dining plan, and a quote in one business day.
@@ -335,7 +337,7 @@ export default async function NeighborhoodPage({
 
         {/* ——— Related: link to blog post ——— */}
         <section className="mt-16">
-          <h3 className="eyebrow text-ink-soft">Deeper on the island</h3>
+          <h2 className="eyebrow text-ink-soft">Deeper on the island</h2>
           <Link
             href={`/blog/${n.blogPostSlug}`}
             className="mt-4 block text-[18px] italic leading-[1.4] text-ink transition-colors hover:text-coral md:text-[22px]"

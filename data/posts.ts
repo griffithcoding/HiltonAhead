@@ -1758,7 +1758,7 @@ const postBestTime: Post = {
   publishedAt: '2026-03-02',
   updatedAt: '2026-04-24',
   author: 'Hilton Ahead',
-  featuredOrder: 2.5,
+  featuredOrder: 1.5,
   relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
   keywords: [
     'Hilton Head weather',
@@ -5426,6 +5426,7 @@ const postBestPizza: Post = {
     'late night pizza hilton head',
   ],
   featuredOrder: 25,
+  relatedNeighborhoods: ['forest-beach', 'shelter-cove'],
   body: [
     {
       kind: 'p',
@@ -6923,6 +6924,10 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
   'first-time-hilton-head-guide': {
     posts: ['how-to-get-to-hilton-head-island', 'sea-pines-vs-palmetto-dunes', 'hilton-head-3-day-itinerary'],
     industries: ['vacation-rentals', 'restaurants'],
+  },
+  'best-pizza-hilton-head-2026': {
+    posts: ['best-restaurants-hilton-head-2026', 'forest-beach-guide', 'shelter-cove-guide'],
+    industries: ['restaurants'],
   },
 };
 

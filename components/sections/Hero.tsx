@@ -34,11 +34,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 id="hero-title" className="sr-only">
-            {hero.title.lineOne} {hero.title.italic} {hero.title.lineTwo}
-          </h1>
-
-          <div aria-hidden="true" className="relative">
+          <h1 id="hero-title" className="relative">
             <div className="rise">
               <span className="display block text-balance text-[40px] leading-[0.96] tracking-[-0.03em] text-ink sm:text-[52px] md:text-[88px] lg:text-[108px]">
                 {hero.title.lineOne}
@@ -54,7 +50,7 @@ export default function Hero() {
                 {hero.title.lineTwo}
               </span>
             </div>
-          </div>
+          </h1>
 
           <div className="rise rise-delay-3 mt-10">
             <p className="dropcap max-w-[520px] text-[17px] leading-[1.7] text-ink-soft md:text-[19px]">

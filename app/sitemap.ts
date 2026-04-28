@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
 import { brand } from '@/data/brand'
-import { services } from '@/data/services'
 import { posts } from '@/data/posts'
 import { neighborhoods } from '@/data/neighborhoods'
 import { tripTypes } from '@/data/tripTypes'
@@ -28,14 +27,19 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/sponsorships', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/founder', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/press', changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/hilton-head', changeFrequency: 'monthly', priority: 0.95 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
+  // Static pages that change infrequently use a fixed date so Googlebot
+  // doesn't treat every crawl as a modification. Dynamic pages (events,
+  // local directory) keep `now` since they genuinely update frequently.
+  const staticLastModified = new Date('2026-04-27')
 
   const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((r) => ({
     url: `${BASE_URL}${r.path === '/' ? '' : r.path}`,
-    lastModified: now,
+    lastModified: staticLastModified,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }))
@@ -70,13 +74,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  const serviceEntries: MetadataRoute.Sitemap = services.items.map((s) => ({
-    url: `${BASE_URL}/services#${s.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
-
   // Local business directory
   const localIndexEntry: MetadataRoute.Sitemap = [
     {
@@ -106,7 +103,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...neighborhoodEntries,
     ...tripTypeEntries,
     ...monthEntries,
-    ...serviceEntries,
     ...localIndexEntry,
     ...localIndustryEntries,
   ]

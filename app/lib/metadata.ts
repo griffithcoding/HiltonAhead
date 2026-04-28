@@ -214,6 +214,56 @@ export function getLocalBusinessSchema(opts?: {
   return schema
 }
 
+/**
+ * JSON-LD Person schema for the founder.
+ * Emitting this on /founder and /about establishes an author entity that
+ * Google can link to blog posts and the TravelAgency schema.
+ */
+export function getPersonSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${siteUrl}#founder`,
+    name: 'William Griffith',
+    jobTitle: 'Travel Consultant',
+    description:
+      'William Griffith is the founder of Hilton Ahead, a Hilton Head Island local who plans every trip personally.',
+    url: `${siteUrl}/founder`,
+    worksFor: { '@id': `${siteUrl}#travelagency` },
+    knowsAbout: [
+      'Hilton Head Island',
+      'Sea Pines Resort',
+      'Palmetto Dunes',
+      'Harbour Town Golf Links',
+      'Lowcountry travel',
+      'South Carolina beach vacations',
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Hilton Head Island',
+      addressRegion: 'SC',
+      addressCountry: 'US',
+    },
+  }
+}
+
+/**
+ * JSON-LD WebSite schema.
+ * Emitting this on the homepage makes the site eligible for the Google
+ * Sitelinks Search Box SERP feature.
+ */
+export function getWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${siteUrl}#website`,
+    url: siteUrl,
+    name: brand.name,
+    description: brand.seoDescription,
+    publisher: { '@id': `${siteUrl}#travelagency` },
+  }
+}
+
 /** JSON-LD for FAQ page */
 export function getFaqSchema(
   items: ReadonlyArray<{ question: string; answer: string }>,

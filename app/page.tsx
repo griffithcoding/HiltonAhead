@@ -18,6 +18,7 @@ import {
   getLocalBusinessSchema,
   getBreadcrumbSchema,
   getFaqSchema,
+  getWebSiteSchema,
 } from '@/app/lib/metadata';
 import { faq } from '@/data/faq';
 import { testimonialsMeta } from '@/data/testimonials';
@@ -38,6 +39,7 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 export default function Home() {
+  const websiteSchema = getWebSiteSchema();
   const travelAgencySchema = getTravelAgencySchema();
   const localBusinessSchema = getLocalBusinessSchema(
     testimonialsMeta.hasRealTestimonials
@@ -52,6 +54,10 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(travelAgencySchema) }}

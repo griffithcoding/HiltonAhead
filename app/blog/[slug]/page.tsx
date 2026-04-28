@@ -166,15 +166,19 @@ export default async function BlogPostPage({
         )
       : [];
 
-  // Place schema for Neighborhoods posts
+  // Place schema for Neighborhoods posts — use the neighborhood's actual
+  // coordinates instead of the island center so local-pack geo is accurate.
+  const neighborhoodGeo = post.relatedNeighborhoods?.[0]
+    ? getNeighborhoodBySlug(post.relatedNeighborhoods[0])
+    : null;
   const placeSchema =
     post.category === 'Neighborhoods'
       ? getPlaceSchema({
           name: post.title.split(':')[0].replace(/ Guide$/, '').trim(),
           description: post.excerpt,
           url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/blog/${post.slug}`,
-          latitude: 32.2163,
-          longitude: -80.7526,
+          latitude: neighborhoodGeo?.latitude ?? 32.2163,
+          longitude: neighborhoodGeo?.longitude ?? -80.7526,
         })
       : null;
 
@@ -310,7 +314,7 @@ export default async function BlogPostPage({
             <figure className="relative aspect-[4/5] overflow-hidden rounded-md md:aspect-auto md:h-full md:min-h-[460px]">
               <Image
                 src={heroPhoto.src}
-                alt={heroPhoto.alt}
+                alt={`${post.title} — Hilton Head Island`}
                 fill
                 sizes="(max-width: 768px) 100vw, 45vw"
                 className="object-cover photo-warm"

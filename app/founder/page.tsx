@@ -7,6 +7,7 @@ import { SectionHead, Divider } from '@/components/ui/Ornament';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
+  getPersonSchema,
 } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -26,12 +27,17 @@ export default function FounderPage() {
     { name: 'Home', path: '/' },
     { name: 'Founder', path: '/founder' },
   ]);
+  const personSchema = getPersonSchema();
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
       <div className="mx-auto max-w-[1280px] px-5">
