@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
           // Supabase doesn't surface expires_in; assume Google's 1h default.
           expires_at: new Date(Date.now() + 3600 * 1000).toISOString(),
           scope:
-            'openid email profile https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send',
+            'openid email profile https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/calendar.readonly',
         },
         { onConflict: 'email' },
       );
