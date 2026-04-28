@@ -5867,116 +5867,230 @@ const postCompassItinerary: Post = {
 
 const postWeddingVenuesByVibe: Post = {
   slug: 'hilton-head-wedding-venues-by-vibe',
-  title: 'Hilton Head Wedding Venues, by Vibe: Lowcountry Elegant vs Beachfront Casual',
+  title: 'Hilton Head Wedding Venues 2026: Every Option, Ranked by Vibe',
   excerpt:
-    'Five wedding venue archetypes on Hilton Head Island, from oak-canopied Sea Pines elegance to barefoot Forest Beach. Costs, capacities, and the trade-offs nobody tells you.',
+    'Twelve Hilton Head wedding venues sorted by what you actually want guests to feel: Lowcountry elegant, beachfront Atlantic, marina sunset, intimate private, or budget-conscious. Cost ranges, capacities, and the one booking mistake locals see every season.',
   description:
-    'Hilton Head wedding venues organized by atmosphere: Lowcountry elegant, beachfront casual, marina sunset, intimate plantation, and budget-conscious. Capacities, ranges, and locals’ picks.',
+    'Comprehensive 2026 guide to Hilton Head wedding venues: Palmetto Bluff, Sea Pines Country Club, Harbour Town, Sonesta, Shelter Cove, and nine more. Sorted by vibe with real cost ranges, capacity limits, and locals’ picks.',
   category: 'Planning',
-  readTime: '11 min',
-  publishedAt: '2026-05-22',
+  readTime: '12 min',
+  publishedAt: '2026-04-28',
   author: 'Hilton Ahead',
   featuredOrder: 29,
+  relatedNeighborhoods: ['sea-pines', 'shelter-cove', 'forest-beach'],
   keywords: [
     'Hilton Head wedding venues',
-    'Sea Pines wedding venues',
+    'Hilton Head wedding venue outdoor',
+    'Sea Pines wedding',
     'Palmetto Bluff wedding',
     'Hilton Head beach wedding',
     'Hilton Head wedding planner',
+    'Harbour Town wedding',
+    'lowcountry wedding venue',
+    'plantation wedding Hilton Head',
+    'Shelter Cove wedding',
+    'Hilton Head wedding cost',
+    'Hilton Head wedding packages',
+    'Hilton Head Island wedding ceremony',
+    'Hilton Head destination wedding',
+    'Hilton Head elopement',
   ],
   body: [
     {
       kind: 'p',
-      html: '<strong>Outline — to expand.</strong> The right Hilton Head wedding venue is a function of two things you already know: how many people, and what you want guests to feel. We sort by the second one.',
+      html: "The right Hilton Head wedding venue is the intersection of one question you already know (<em>how many guests?</em>) and one you may not (<em>what do you want guests to feel when they arrive?</em>). Palmetto Bluff on the May River and a permitted ceremony on Forest Beach are both technically “Hilton Head weddings.” They are not the same experience, budget, or logistical ask.",
     },
     {
       kind: 'callout',
-      label: 'How we group venues',
-      html: 'Five archetypes: <strong>Lowcountry elegant</strong> (oak canopies, plantation settings), <strong>beachfront casual</strong> (barefoot, sunset over the Atlantic), <strong>marina sunset</strong> (waterfront docks, Shelter Cove and Harbour Town), <strong>intimate plantation</strong> (under 60 guests, private feel), <strong>budget-conscious</strong> (under $25K all-in, real options).',
+      label: 'Five venue archetypes on this island',
+      html: '<strong>Lowcountry Elegant:</strong> Oak canopies, Spanish moss, plantation grandeur (Palmetto Bluff, Sea Pines Country Club). <strong>Beachfront Casual:</strong> Barefoot ceremony on the Atlantic, Sonesta or public permit. <strong>Marina Sunset:</strong> West-facing waterfront dock ceremony, Harbour Town or Shelter Cove. <strong>Intimate / Private:</strong> Under 60 guests, estate-feel, no resort crowds. <strong>Budget-Conscious:</strong> Off-season packages and public permits under $30K all-in.',
+    },
+    { kind: 'h2', text: 'Lowcountry Elegant — the signature venues' },
+    {
+      kind: 'p',
+      html: "These venues define the Hilton Head wedding in most people’s heads: long oak allées, Spanish moss, water views, full-service planning teams. They are the most expensive and the most tightly booked. Your planning window starts 12–18 months out.",
     },
     {
       kind: 'tier',
       label: 'Lowcountry Elegant',
-      subtitle: 'Oak canopies, ballrooms, plantation grandeur.',
+      subtitle: 'Oak canopies, plantation grandeur, May River and ocean backdrops.',
       accent: 'gold',
       items: [
         {
-          name: 'The Inn at Palmetto Bluff',
-          meta: 'Bluffton · 80–250 guests',
-          blurb: 'The flagship Lowcountry venue. May River backdrop, signature oak chapel, full concierge wedding team. Most expensive on this list, by design.',
+          name: 'The Inn at Palmetto Bluff (Montage)',
+          meta: 'Bluffton · 40–300 guests · $$$$$',
+          blurb: 'The benchmark Lowcountry wedding venue. Forty-five minutes from the island on the May River, oak-lined arrival drive, a dedicated wedding chapel with floor-to-ceiling windows over the marsh, and a full Montage concierge team. Site fees start around $8,000; expect all-in budgets of $120–250K for 100–200 guests. Every national wedding publication has featured it. Book 14–18 months out for spring/fall; Heritage Week (mid-April) dates go two years in advance.',
         },
         {
-          name: 'Sea Pines Resort — The Country Club',
-          meta: 'Sea Pines · 80–300 guests',
-          blurb: 'Renovated ballroom plus oceanfront ceremony lawn. The classic Hilton Head wedding everyone’s seen on Instagram, executed well.',
+          name: 'Sea Pines Resort — Country Club of Hilton Head',
+          meta: 'Sea Pines · 80–350 guests · $$$$',
+          blurb: 'A recently renovated ballroom, a signature oceanfront ceremony lawn under old-growth live oaks, and an ocean backdrop that photographs beautifully at any hour. The Country Club handles F&B in-house (no outside caterers), which streamlines planning but locks in costs. All-in budgets typically run $80–150K for 100–150 guests. Fourteen-month lead time recommended for October dates.',
+        },
+        {
+          name: 'Omni Hilton Head Oceanfront Resort',
+          meta: 'Shipyard · 50–500 guests · $$$–$$$$',
+          blurb: 'The largest-capacity resort wedding on the island — the Grand Ballroom holds up to 500 guests for a reception. Oceanfront ceremony lawn is beautiful at golden hour. Pricing is more accessible than Sea Pines Country Club on a per-head basis, and the Omni team has coordinated more HHI weddings than any other property. Strong pick for large weddings (200+).',
         },
       ],
+    },
+    { kind: 'h2', text: 'Beachfront Casual — sand and Atlantic backdrop' },
+    {
+      kind: 'p',
+      html: "Beach weddings on Hilton Head are common but technically nuanced. The Atlantic faces east — if a sunset ceremony matters, you want a west-facing marina venue, not the beach. Beachfront is right when the look you want is barefoot, daytime, or a sunrise ceremony on a nearly empty stretch of sand.",
     },
     {
       kind: 'tier',
       label: 'Beachfront Casual',
-      subtitle: 'Barefoot, sunset, Atlantic backdrop.',
+      subtitle: 'Atlantic backdrop, barefoot ceremonies, permitted and private options.',
       accent: 'primary',
       items: [
         {
-          name: 'Coligny Beach Park (public)',
-          meta: 'Forest Beach · up to 100 guests',
-          blurb: 'Permitted ceremony only; reception offsite. The most affordable beach option, with full lifeguard amenities and parking nearby.',
+          name: 'Sonesta Resort Hilton Head Island',
+          meta: 'Shipyard · 60–250 guests · $$$',
+          blurb: 'Mid-island resort with a genuine oceanfront ceremony lawn and separate indoor reception space. The property was refreshed in 2022 and now handles about 80 weddings per year — the team is experienced and the logistics are smooth. Ceremony-to-reception flow is the best of any beachfront property: guests walk 50 feet from sand to the air-conditioned ballroom. All-in budgets typically $55–100K for 100 guests.',
         },
         {
-          name: 'Sonesta Resort beach lawn',
-          meta: 'Shipyard · 60–180 guests',
-          blurb: 'Mid-island, refreshed property, oceanfront ceremony lawn plus indoor reception space. A common choice for 100–150 guest weddings.',
+          name: 'Beach House Hilton Head by Hilton',
+          meta: 'Forest Beach · 40–120 guests · $$$',
+          blurb: 'A boutique oceanfront Hilton property at the south end of Forest Beach. Smaller capacity than Sonesta but tighter site fee, giving mid-size weddings more budget flexibility. The rooftop and pool deck create a multi-level reception option. Strong pick for 60–100 guest weddings that want full-service hotel support without resort-tier pricing.',
+        },
+        {
+          name: 'Public beach ceremony permit (Town of Hilton Head)',
+          meta: 'Any public access · up to 100 guests · $',
+          blurb: 'A permitted ceremony on any public beach access point (Coligny, Driessen, Folly Field, Burkes). Permit costs are nominal ($50–$150). Limitations: ceremony only, no reception infrastructure, no reserved parking, no guaranteed weather shelter. Best paired with a private villa or restaurant space for the reception. The combination can land under $20K all-in for small weddings.',
         },
       ],
+    },
+    { kind: 'h2', text: 'Marina Sunset — the west-facing waterfront' },
+    {
+      kind: 'p',
+      html: "The most common mistake in Hilton Head wedding planning: booking a beach ceremony and expecting a sunset backdrop. The Atlantic faces east. Sunsets happen over the marsh, the Intracoastal, and the marinas on the western shore. Harbour Town and Shelter Cove both face the right direction.",
     },
     {
       kind: 'tier',
       label: 'Marina Sunset',
-      subtitle: 'Waterfront docks, west-facing, golden-hour ceremonies.',
+      subtitle: 'West-facing dock ceremonies with lighthouse and marina backdrops.',
       accent: 'primary',
       items: [
         {
-          name: 'Shelter Cove waterfront pavilion',
-          meta: 'Shelter Cove · 40–120 guests',
-          blurb: 'Sunset over Broad Creek, four restaurants within a 2-minute walk for rehearsal dinner. Strong choice for 50–100 guest weddings.',
+          name: 'Harbour Town — Quarterdeck Lawn & Marina',
+          meta: 'Sea Pines · 40–120 guests · $$$–$$$$',
+          blurb: 'The most iconic ceremony setting on the island: the red-and-white Harbour Town Lighthouse in the background, sailboat masts at dock, and the sun setting over Port Royal Sound. Limited to roughly 120 guests for the ceremony. Sea Pines Resort handles bookings and F&B. Book 12–16 months out; October weekends go fastest.',
         },
         {
-          name: 'Harbour Town — Quarterdeck lawn',
-          meta: 'Sea Pines · 40–100 guests',
-          blurb: 'Lighthouse backdrop, marina foreground. Iconic. Limited capacity and tightly booked — inquire 12+ months out.',
+          name: 'Shelter Cove waterfront pavilion',
+          meta: 'Shelter Cove · 40–150 guests · $$–$$$',
+          blurb: 'Sunset over Broad Creek from a covered dock pavilion at the mid-island marina. Four restaurants within a 2-minute walk make the rehearsal dinner logistics effortless. More affordable than Harbour Town, slightly less iconic. The right pick for couples who want a waterfront ceremony without Sea Pines access fees.',
+        },
+        {
+          name: 'Skull Creek Boathouse — private event deck',
+          meta: 'North End · 40–180 guests · $$$',
+          blurb: 'The private event deck at Skull Creek Boathouse is available for buyouts — the same sunset-dock setting that makes it the best bar on the island applies equally to a ceremony or cocktail hour. Best used for the reception portion rather than the ceremony proper.',
         },
       ],
     },
-    { kind: 'h2', text: 'What you actually pay for' },
-    { kind: 'p', html: 'Site fee vs F&B minimum vs full-service planning. The breakdowns differ wildly.' },
+    { kind: 'h2', text: 'Intimate & private — under 60 guests' },
+    {
+      kind: 'p',
+      html: "The Hilton Head wedding market tilts toward 100–200 guest resort weddings. If your guest count is under 60, you have options that resort venues don’t serve well — private villa estates, exclusive-use restaurant buyouts, and boutique properties that don’t advertise heavily because they don’t need to.",
+    },
+    {
+      kind: 'tier',
+      label: 'Intimate & Private',
+      subtitle: 'Exclusive-use estates, villa lawns, and boutique properties.',
+      accent: 'zinc',
+      items: [
+        {
+          name: 'Private Sea Pines villa estates (select listings)',
+          meta: 'Sea Pines · 20–60 guests · $$–$$$',
+          blurb: 'Several multi-bedroom estate villas inside Sea Pines have private pools, large lawns, and ocean or marsh views that accommodate small ceremonies and intimate receptions. The logistics require coordinating catering separately, but the setting is more personal than any hotel ballroom. We book these for clients regularly — the right villa can pull off a 40-person wedding weekend that feels like a private home rather than an event space.',
+        },
+        {
+          name: 'Palmetto Dunes resort lawn buyouts',
+          meta: 'Palmetto Dunes · 30–80 guests · $$$',
+          blurb: 'Several oceanfront villa lawns within Palmetto Dunes can be arranged for small ceremonies through the resort event team. Less publicized than the major resort venues but genuinely beautiful — wide beach, the Atlantic, and far less foot traffic than the main resort areas.',
+        },
+        {
+          name: 'Old Town Bluffton venues (boutique)',
+          meta: 'Bluffton · 20–80 guests · $$',
+          blurb: "Old Town Bluffton’s Church Street historic district has several event spaces — converted warehouses, the May River waterfront, and private garden venues — that serve small ceremonies well. 25 minutes from the island, genuinely local character, and significantly lower site fees than any Hilton Head resort.",
+        },
+      ],
+    },
+    { kind: 'h2', text: 'What you actually pay — the cost breakdown' },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Site fee:</strong> The venue’s charge for use of the space, separate from food and beverage. Ranges from $0 (public beach permit) to $8,000+ (Palmetto Bluff). Most resort venues charge $2,500–$6,000.',
+        "<strong>F&B minimum:</strong> The amount you must spend on catering and bar through the venue’s in-house team. Resort venues typically set this at $8,000–$25,000 depending on guest count and day of week. Saturday peaks are always highest.",
+        '<strong>Per-head cost:</strong> After site fee and F&B minimum, expect $90–$160 per guest for food-and-service at resort venues. Palmetto Bluff runs $150–$250+ per head.',
+        '<strong>Outside vendor fees:</strong> Most resort venues charge a 20–28% service charge on top of F&B. Some charge additional fees for outside photographers, florists, or DJ equipment. Ask before signing.',
+      ],
+    },
+    {
+      kind: 'callout',
+      label: 'All-in budget benchmarks',
+      html: '<strong>$25–$40K:</strong> 40 guests, off-season, public permit ceremony + restaurant reception. <strong>$55–$85K:</strong> 80 guests, marina sunset venue, shoulder season. <strong>$90–$130K:</strong> 100–120 guests, Sea Pines Country Club or Sonesta, peak season. <strong>$150–$250K+:</strong> 150+ guests, Palmetto Bluff, peak season.',
+    },
     { kind: 'h2', text: 'Wedding-week logistics' },
-    { kind: 'p', html: 'Block lodging, vendor coordination, transportation, dietary, kids; we handle these in the Heritage tier.' },
+    { kind: 'h3', text: 'Block lodging for guests' },
+    {
+      kind: 'p',
+      html: "Most Hilton Head resort venues require or strongly prefer that the wedding party book a room block through the property. For destination weddings where guests are flying in, villa rentals inside Sea Pines or Palmetto Dunes work better than hotel blocks — guests share a house rather than separate rooms, which is more fun and usually cheaper per person.",
+    },
+    { kind: 'h3', text: 'Best months for a Hilton Head wedding' },
+    {
+      kind: 'p',
+      html: "<strong>October</strong> is the local consensus: highs in the mid-70s, low humidity, spectacular light for photography. <strong>Late April and May</strong> are close behind — the island’s best green, warm but not brutal. <strong>Avoid July–August</strong> for outdoor ceremonies — heat index of 100°F+ makes a 45-minute outdoor ceremony genuinely uncomfortable for guests in formal wear.",
+    },
     {
       kind: 'faq',
-      label: 'Frequently asked',
+      label: 'Hilton Head wedding FAQ',
       items: [
         {
           q: 'How far in advance should we book a Hilton Head wedding venue?',
-          a: 'Twelve to eighteen months for premium venues (Palmetto Bluff, Sea Pines Country Club, Harbour Town). Six to nine months can work for shoulder seasons or smaller venues. Heritage Week (mid-April) is impossible to book inside 18 months.',
+          a: 'Fourteen to eighteen months for premium venues — Palmetto Bluff, Sea Pines Country Club, and Harbour Town. Six to nine months may work for shoulder season (January–March, November) or smaller venues. If your date falls on Heritage Week (mid-April), plan two years out. Saturday dates in October and late April go the fastest.',
         },
         {
-          q: 'Can we have a beach ceremony on Hilton Head?',
-          a: 'Yes — beachfront permits are issued by the town. Ceremonies only, no reception infrastructure. Some properties (Sonesta, certain Sea Pines villas) have private oceanfront lawns that allow full setups.',
+          q: 'Can we have a beach ceremony on Hilton Head Island?',
+          a: 'Yes. The Town of Hilton Head Island issues beach ceremony permits for up to 100 guests at any public beach access. Cost is nominal ($50–$150). Limitations: ceremony only, no reception infrastructure, no reserved parking, and no guarantee of weather shelter. Most couples pair a permitted beach ceremony with a private villa or restaurant reception nearby.',
         },
         {
-          q: 'What’s the typical all-in cost for a 100-guest Hilton Head wedding?',
-          a: 'Lowcountry elegant: $90–150K. Marina sunset: $55–95K. Beachfront casual: $45–80K. Budget-conscious (off-season, all-inclusive resort): $25–35K is achievable.',
+          q: "What’s the typical all-in cost for a 100-guest Hilton Head wedding?",
+          a: 'Lowcountry elegant (Sea Pines Country Club, Omni): $90–140K. Marina sunset (Harbour Town, Shelter Cove): $60–100K. Beachfront resort (Sonesta, Beach House): $55–$90K. Palmetto Bluff: $150–250K. These ranges include venue fee, F&B, photographer, florals, music, and basic transportation.',
+        },
+        {
+          q: 'Is Palmetto Bluff on Hilton Head Island?',
+          a: 'Technically no — Palmetto Bluff is in Bluffton, South Carolina, 45 minutes by car from Coligny Beach. It is the most famous Lowcountry wedding venue associated with the Hilton Head area but is a separate property across the bridge.',
+        },
+        {
+          q: 'What is the best month to get married on Hilton Head?',
+          a: 'October is the local answer: mid-70s highs, low humidity, best photography light of the year, and slightly better venue availability than May. Late April is close behind. Avoid July and August for outdoor ceremonies — heat index regularly exceeds 100°F.',
+        },
+        {
+          q: 'Can we elope or have a micro-wedding on Hilton Head?',
+          a: 'Yes — and the island is better for it than most beach destinations. A permitted beach ceremony for two to ten people costs almost nothing. Villa estates in Sea Pines can host 20–30 guests for an intimate dinner reception. Budget under $15K all-in for a true micro-wedding (under 20 guests) in the off-season.',
+        },
+        {
+          q: 'Do Hilton Head wedding venues allow outside caterers?',
+          a: 'Most resort venues (Sea Pines Country Club, Omni, Sonesta) require in-house catering and charge a service fee of 20–28% on top. Palmetto Bluff is fully exclusive. The exceptions are public permit venues and private villa estates, where you can bring any licensed caterer.',
+        },
+        {
+          q: 'Are there wedding venues for small weddings under $25,000 on Hilton Head?',
+          a: 'Yes. A public beach ceremony permit paired with a private villa reception can come in well under $20K for 30–40 guests in the off-season. Several Forest Beach restaurant buyouts run $4,000–$8,000 for the space and F&B.',
+        },
+        {
+          q: "What is the difference between a beach wedding and a waterfront wedding on Hilton Head?",
+          a: "Hilton Head’s beaches face east — you get ocean sunrise, not ocean sunset. If a sunset ceremony matters, you need a west-facing waterfront venue: Harbour Town marina, Shelter Cove dock, or Skull Creek Boathouse. Couples who don’t ask about this often book a beach venue expecting a sunset and are surprised.",
         },
       ],
     },
     {
       kind: 'p',
-      html: '<a href="/itinerary?tier=heritage">Plan a Hilton Head wedding with us</a>.',
+      html: "We coordinate wedding logistics — villa blocks, rehearsal dinner reservations, vendor contacts, and transportation — as part of our Heritage planning tier. If you’re in the early research stage, the <a href=\"/contact\">contact form</a> is the right place to start.",
     },
   ],
 };
-
 const postPublicBeachAccess: Post = {
   slug: 'hilton-head-public-beach-access-ranked',
   title: 'Every Public Beach Access on Hilton Head, Ranked',
@@ -7038,6 +7152,225 @@ const postNightlifeGuide: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 36) Hilton Head Airbnb & VRBO guide -- best vacation rentals by neighborhood
+// ---------------------------------------------------------------------------
+
+const postVrboAirbnbGuide: Post = {
+  slug: 'hilton-head-vrbo-airbnb-guide',
+  title: 'Hilton Head Airbnb & VRBO 2026: Best Vacation Rentals by Neighborhood',
+  excerpt:
+    "Villa or hotel, Sea Pines or Palmetto Dunes, Airbnb vs. booking direct — the questions every Hilton Head trip starts with. A local answers all of them with actual neighborhood intel.",
+  description:
+    "Complete 2026 guide to Hilton Head Island Airbnb and VRBO rentals: which neighborhoods have the best villa stock, what to look for in a listing, the booking platform comparison, and the one mistake locals see tourists make every summer.",
+  category: 'Planning',
+  readTime: '10 min',
+  publishedAt: '2026-04-28',
+  author: 'Hilton Ahead',
+  featuredOrder: 36,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
+  keywords: [
+    'hilton head airbnb',
+    'hilton head vrbo',
+    'best airbnb hilton head island',
+    'vacation rentals hilton head island',
+    'hilton head villa rental',
+    'sea pines vrbo',
+    'palmetto dunes airbnb',
+    'hilton head beach house rental',
+    'hilton head oceanfront rental',
+    'hilton head vacation rental companies',
+    'airbnb vs vrbo hilton head',
+    'book direct hilton head villa',
+    'hilton head villa vs hotel',
+    'best places to stay hilton head airbnb',
+    'hilton head island vacation homes',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Two questions dominate every Hilton Head trip-planning thread: <em>Which neighborhood should we stay in?</em> and <em>Should we book through Airbnb/VRBO or direct?</em> Both have real answers that depend on what you’re actually trying to get out of the week. This guide gives you the local read on each.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short version',
+      html: "<strong>For villa neighborhoods:</strong> Sea Pines if you want a resort with golf and the Salty Dog; Palmetto Dunes for families wanting beach + sports; Forest Beach if walkability matters; Shipyard for value. <strong>For platforms:</strong> Book through a local rental company when possible — not Airbnb or VRBO — for on-island service when things go wrong.",
+    },
+    { kind: 'h2', text: 'Villa or hotel: why most Hilton Head regulars choose villa' },
+    {
+      kind: 'p',
+      html: "Hilton Head has five full-service resort hotels (Westin, Marriott, Omni, Sonesta, Hilton). They’re fine. Local regulars almost universally prefer villa rentals for stays of three nights or more, for three reasons: <strong>space</strong> (a 3-bedroom villa sleeps 6–8 in separate beds for the same cost as 3–4 hotel rooms), <strong>kitchen</strong> (groceries plus a villa kitchen cuts food costs in half on a 7-night trip), and <strong>outdoor space</strong> (private pool, screened porch, or lagoon-front deck that hotels don’t provide).",
+    },
+    { kind: 'h2', text: 'The neighborhood breakdown: where to book your rental' },
+    {
+      kind: 'p',
+      html: "Hilton Head’s villa stock is split across gated plantation communities and open neighborhoods. The plantations (Sea Pines, Palmetto Dunes, Shipyard, Port Royal) charge daily access fees for non-guests. Open neighborhoods (Forest Beach, Shelter Cove area) have no access fees but more variable villa quality.",
+    },
+    {
+      kind: 'tier',
+      label: 'Sea Pines',
+      subtitle: 'Best for: golf, Harbour Town, Salty Dog, couples, and multi-family groups.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Sea Pines villa rental (general)',
+          meta: 'South End · 2BR from ~$350/night · $9/day access fee',
+          blurb: 'The most complete self-contained community on the island — 22 miles of trails, Harbour Town Golf Links, Lighthouse Beach, and the Salty Dog Cafe. Villa stock ranges from dated 1980s condos to fully renovated 5-bedroom estate homes on lagoon or golf course lots. A $9/day access fee applies to non-resort guests.',
+        },
+        {
+          name: 'Oceanfront Sea Pines',
+          meta: 'Direct-beachfront · 4–6BR from ~$900/night',
+          blurb: 'True oceanfront Sea Pines villas are rare and go fast — most are 4–6 bedroom homes on the south-end beach. Expect $900–$2,500/night in peak season. These list on VRBO more often than Airbnb. Book January–February for summer dates.',
+        },
+        {
+          name: 'Golf course villas in Sea Pines',
+          meta: 'Ocean, Heron Point, Sea Marsh courses · 2–4BR from ~$250/night',
+          blurb: 'The largest category of Sea Pines rental — villas directly on one of the three Sea Pines golf courses. Prices run $250–$600/night. Best value tier: Heron Point course villas, which are quieter than Ocean Course proximity but well-maintained and often recently renovated.',
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Palmetto Dunes',
+      subtitle: 'Best for: families with kids, sports-focused groups, beach + lagoon.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Palmetto Dunes villa rental (general)',
+          meta: 'Mid-Island · 1–5BR from ~$250/night · free access',
+          blurb: 'Palmetto Dunes is the family-focused plantation — three golf courses, the Arthur Hills tennis center, an 11-mile lagoon system for kayaking, and wide uncrowded beach. No daily access fee. Villa stock is heavily concentrated in mid-century condos that have been updated in waves. Filter specifically for recent renovation dates and lagoon-front or beachfront premium listings.',
+        },
+        {
+          name: 'Oceanfront Palmetto Dunes (Villamare)',
+          meta: 'Direct beach · 3–6BR from ~$700/night',
+          blurb: "Villamare is the resort’s most sought-after beachfront condominium community — pools, tennis, and direct beach access — booking 6–8 months out for summer. A consistent performer on VRBO with high review volume.",
+        },
+        {
+          name: 'Lagoon-front Palmetto Dunes',
+          meta: 'Lagoon system · 2–4BR from ~$200/night',
+          blurb: 'The 11-mile lagoon runs through the plantation and creates a secondary tier of water-view rentals at a 30–40% discount from beachfront. Kayaking from your back porch is a feature, not a consolation prize. Best for families who want the water experience without paying direct-beach prices.',
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Forest Beach',
+      subtitle: 'Best for: walkability to restaurants, Coligny Beach access, groups that want to go out.',
+      accent: 'zinc',
+      items: [
+        {
+          name: 'Forest Beach house rental',
+          meta: 'South End, no gate · 3–6BR from ~$400/night',
+          blurb: 'Forest Beach is the only major rental neighborhood without a plantation gate — you can walk to Coligny Beach Park, the Tiki Hut, Coconutz, and a dozen restaurants without a car. Villa quality varies widely; the best properties are updated single-family homes within 3–4 blocks of Coligny. Filter rigorously by reviews.',
+        },
+        {
+          name: 'Coligny Beach area condo',
+          meta: 'Walking distance to beach · 1–2BR from ~$175/night',
+          blurb: "Studio to 2-bedroom units marketed to couples and small families. These list heavily on Airbnb. Good for budget-conscious travelers who don’t need a full house. The best buildings in this category (South Beach Villas, Breakers) are within a 5-minute walk of Coligny Beach Park.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Shipyard & Port Royal',
+      subtitle: 'Best for: value-seekers, golf-focused groups, mid-island convenience.',
+      accent: 'zinc',
+      items: [
+        {
+          name: 'Shipyard Plantation villa',
+          meta: 'Mid-Island · 2–4BR from ~$200/night · free access',
+          blurb: 'The value-tier plantation on Hilton Head. No access fee, three golf courses, and direct beach access via the Sonesta Resort. Villa stock is older (mostly 1980s–1990s condo buildings) but prices reflect it — Shipyard is typically 20–30% cheaper than comparable Sea Pines rentals. The right pick for golf groups focused on value.',
+        },
+        {
+          name: 'Port Royal villa',
+          meta: 'North End · 2–5BR from ~$250/night',
+          blurb: "Port Royal Plantation on the north end has some of the island’s most underrated rental stock — large single-family homes on golf or lagoon lots, well-maintained, with beach access at Port Royal Beach. Further from the tourist centers, which locals consider a feature. The drive to Skull Creek Boathouse is 5 minutes.",
+        },
+      ],
+    },
+    { kind: 'h2', text: 'Airbnb vs. VRBO vs. booking direct: the honest comparison' },
+    { kind: 'h3', text: 'Airbnb on Hilton Head' },
+    {
+      kind: 'p',
+      html: "Airbnb has grown its Hilton Head inventory significantly since 2020. Best for: smaller properties (studio–2BR condos in Forest Beach), shorter stays (2–4 nights where the cleaning fee math works), and properties where the host has a strong review history and Superhost status. <strong>The risk on HHI specifically:</strong> Airbnb has no island-level support when an AC unit fails at 10pm on a Saturday in July. The platform’s resolution center is a customer service queue, not a local technician.",
+    },
+    { kind: 'h3', text: 'VRBO on Hilton Head' },
+    {
+      kind: 'p',
+      html: "VRBO carries more of the premium inventory — larger homes, oceanfront listings, and the villa category that local rental companies also manage. The listing quality on VRBO skews higher than Airbnb for the 4–6BR plantation-villa category. Service is similarly platform-level, not local. <strong>One VRBO-specific issue on HHI:</strong> several listings don’t reflect current access fee policies (Sea Pines $9/day) in the quoted nightly rate. Read the full price breakdown before booking.",
+    },
+    { kind: 'h3', text: 'Booking direct through a local rental company' },
+    {
+      kind: 'p',
+      html: "<strong>Our recommendation for stays of 5+ nights</strong>: book through a local Hilton Head rental management company instead of Airbnb or VRBO. The same villa is often available through the rental company’s website at the same or lower price (no platform service fee). More importantly, when something breaks, you call a local number that dispatches a local technician. The four rental companies we refer clients to have 24-hour maintenance lines and replacement-unit inventory when the original property has an issue.",
+    },
+    {
+      kind: 'callout',
+      label: 'The one booking mistake locals see every summer',
+      html: "Booking a Hilton Head villa on Airbnb or VRBO without checking whether the property is inside a gated plantation. The listing will describe the setting beautifully. It will often omit the $9/day access fee (Sea Pines) or the gate-code requirement that means guests arriving after the management office closes can’t get the code to enter. Call the management company or host directly before booking any plantation-community property.",
+    },
+    { kind: 'h2', text: 'What to look for in a Hilton Head rental listing' },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Recent renovation date:</strong> HHI condo stock ages visibly in the salt air. Look for listings that explicitly mention a renovation year in the last 4–5 years, or photos that show contemporary fixtures.',
+        '<strong>Access to a pool:</strong> Plantation community pools are usually shared among condo buildings. Confirm the pool is operational and open for your dates — some smaller community pools close for maintenance in shoulder season.',
+        '<strong>Golf cart included:</strong> Many villa listings include a golf cart. For Sea Pines (22 miles of trail) and Palmetto Dunes (11-mile lagoon), this changes the trip. Filter for it specifically.',
+        '<strong>Private pool vs. community pool:</strong> Private pools appear in about 15–20% of HHI villa listings and command a significant premium. Worth it for groups with young kids.',
+        '<strong>Plantation vs. non-plantation:</strong> Gated plantations have controlled access (quieter, more private) but gate fees and code logistics. Open neighborhoods (Forest Beach, Shelter Cove area) have no fees but slightly more foot traffic.',
+        '<strong>Cleaning fees:</strong> HHI cleaning fees on short-term rentals run $150–$500 depending on property size. On a 2-night stay, a $400 cleaning fee effectively doubles the nightly cost. Minimum stays of 5–7 nights are standard in peak season.',
+      ],
+    },
+    { kind: 'h2', text: 'When to book for peak season' },
+    {
+      kind: 'p',
+      html: "Hilton Head peak season is mid-June through Labor Day. The most-requested properties (oceanfront Sea Pines, Villamare in Palmetto Dunes, Forest Beach 4BR homes near Coligny) book out by <strong>February for the following July</strong>. If you have a specific week in mind and want a specific type of property, January booking is not too early.",
+    },
+    {
+      kind: 'faq',
+      label: 'Airbnb & VRBO FAQ',
+      items: [
+        {
+          q: 'Is it safe to book a Hilton Head vacation rental on Airbnb or VRBO?',
+          a: "Safe in the sense that you’ll get the property — yes, with normal due diligence (read all reviews, confirm access instructions before your arrival date). Safe in the sense that problems will be solved quickly on-island — less reliable than booking through a local rental management company. For 2-night stays, platforms are fine. For 7-night family trips, local rental companies are worth the slightly more complex booking process.",
+        },
+        {
+          q: 'What is the average cost of an Airbnb or VRBO on Hilton Head?',
+          a: '2026 ranges: 1BR condo (Forest Beach, off-season) from $130/night. 2–3BR plantation villa (Shipyard, mid-season) $250–$400/night. 3–4BR Sea Pines or Palmetto Dunes villa (peak summer) $450–$900/night. Oceanfront 4–6BR: $900–$2,500/night peak. Add cleaning fees ($150–$500) and, for Sea Pines, a $9/day access fee.',
+        },
+        {
+          q: 'Does Sea Pines charge a fee to enter?',
+          a: "Yes. The Sea Pines Plantation access fee is $9 per day per vehicle for non-resort guests. This is charged at the gate. Guests staying in a Sea Pines villa receive a vehicle pass through the rental. The fee is sometimes omitted from Airbnb/VRBO listing quotes — calculate it into your total cost when comparing properties.",
+        },
+        {
+          q: 'What is the best neighborhood for an Airbnb in Hilton Head?',
+          a: 'For families: Palmetto Dunes (lagoon kayaking, sports, wide beach, no access fee). For couples and golf groups: Sea Pines (Harbour Town, Lighthouse Beach, the Salty Dog). For groups that want to walk to restaurants and nightlife: Forest Beach. For value: Shipyard or Port Royal.',
+        },
+        {
+          q: 'Can I find an oceanfront Airbnb on Hilton Head?',
+          a: "Yes, but inventory is limited and they book far in advance. Most true oceanfront listings on HHI list on VRBO more heavily than Airbnb. Search ‘oceanfront’ specifically in the filter — ‘ocean view’ on HHI can mean a partial view from a 3rd-floor balcony. Book January–February for summer oceanfront dates.",
+        },
+        {
+          q: 'Should I book a villa or a hotel on Hilton Head?',
+          a: "Villa for stays of 3 nights or more, groups of 4+, or families who will cook any meals. Hotel for 1–2 night stays, solo travelers or couples who won’t cook, or anyone who specifically wants resort amenities (daily housekeeping, on-site restaurant, fitness center). On a 7-night trip for 6 people, a comparable-comfort villa typically costs 30–50% less per person than equivalent hotel rooms.",
+        },
+        {
+          q: 'What is the minimum stay for Hilton Head vacation rentals?',
+          a: "Most properties enforce a 5 or 7-night minimum in peak season (June 15 through August 31) with Saturday-to-Saturday check-in. Shoulder season (May, September–October) allows 3–4 night minimums. Off-season (November–March) often allows 2-night stays.",
+        },
+        {
+          q: 'Are there vacation rentals that allow pets on Hilton Head?',
+          a: "Yes, but they’re a minority of the total inventory. Filter ‘pet-friendly’ on any platform. Expect a pet fee of $100–$300 per stay. The best setups for dogs: ground-floor Forest Beach cottages (easy beach walk), Port Royal homes with fenced yards, and select Palmetto Dunes villas with lagoon-access patios. Sea Pines has the most trail mileage on the island (22 miles).",
+        },
+      ],
+    },
+    {
+      kind: 'p',
+      html: "If you’re comparing specific properties and want a local read on a listing before you commit, that’s exactly what the <a href=\"/contact\">contact form</a> is for. We know which buildings have been renovated and which haven’t, which community pools are actually maintained, and which rental companies to avoid.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -7078,6 +7411,7 @@ export const posts: Post[] = [
   postWeatherPackingGuide,
   postFirstTimerGuide,
   postNightlifeGuide,
+  postVrboAirbnbGuide,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
@@ -7233,6 +7567,14 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
   'hilton-head-nightlife-bars-2026': {
     posts: ['best-restaurants-hilton-head-2026', 'shelter-cove-guide', 'sea-pines-guide'],
     industries: ['restaurants'],
+  },
+  'hilton-head-wedding-venues-by-vibe': {
+    posts: ['hilton-head-romantic-restaurants-2026', 'sea-pines-guide', 'shelter-cove-guide'],
+    industries: ['weddings', 'vacation-rentals'],
+  },
+  'hilton-head-vrbo-airbnb-guide': {
+    posts: ['2026-best-places-to-stay-hilton-head', 'sea-pines-vs-palmetto-dunes', 'first-time-hilton-head-guide'],
+    industries: ['vacation-rentals'],
   },
 };
 
