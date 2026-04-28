@@ -115,35 +115,57 @@ function computeResponseTime(rows: LeadRow[]): {
 export default async function AdminDashboard() {
   const supabase = await createClient();
 
-  const [itinerariesRes, newslettersRes, leadsRes, activityRes] =
-    await Promise.all([
-      supabase
-        .from('itinerary_requests')
-        .select(
-          'id, email, full_name, phone, status, source, created_at, first_contacted_at, converted_at, deal_value, next_action_at',
-        )
-        .order('created_at', { ascending: false })
-        .limit(500),
-      supabase
-        .from('newsletter_subscribers')
-        .select('id, email, source, created_at')
-        .order('created_at', { ascending: false })
-        .limit(500),
-      supabase
-        .from('leads')
-        .select(
-          'id, email, full_name, phone, status, source, created_at, first_contacted_at, converted_at, deal_value, next_action_at',
-        )
-        .order('created_at', { ascending: false })
-        .limit(500),
-      supabase
-        .from('lead_activity')
-        .select(
-          'id, lead_table, lead_id, kind, body, actor_email, created_at',
-        )
-        .order('created_at', { ascending: false })
-        .limit(10),
-    ]);
+  const [
+    itinerariesRes,
+    newslettersRes,
+    leadsRes,
+    activityRes,
+    purchasesRes,
+    meetingsRes,
+  ] = await Promise.all([
+    supabase
+      .from('itinerary_requests')
+      .select(
+        'id, email, full_name, phone, status, source, created_at, first_contacted_at, converted_at, deal_value, next_action_at',
+      )
+      .order('created_at', { ascending: false })
+      .limit(500),
+    supabase
+      .from('newsletter_subscribers')
+      .select('id, email, source, created_at')
+      .order('created_at', { ascending: false })
+      .limit(500),
+    supabase
+      .from('leads')
+      .select(
+        'id, email, full_name, phone, status, source, created_at, first_contacted_at, converted_at, deal_value, next_action_at',
+      )
+      .order('created_at', { ascending: false })
+      .limit(500),
+    supabase
+      .from('lead_activity')
+      .select(
+        'id, lead_table, lead_id, kind, body, actor_email, created_at',
+      )
+      .order('created_at', { ascending: false })
+      .limit(10),
+    supabase
+      .from('purchases')
+      .select(
+        'id, customer_email, customer_name, tier_slug, amount_cents, status, paid_at, created_at, current_period_end, cancel_at_period_end, stripe_subscription_id',
+      )
+      .order('created_at', { ascending: false })
+      .limit(1000),
+    supabase
+      .from('meetings')
+      .select(
+        'id, provider, title, attendee_email, attendee_name, scheduled_at, lead_table, lead_id',
+      )
+      .eq('status', 'scheduled')
+      .gte('scheduled_at', new Date().toISOString())
+      .order('scheduled_at', { ascending: true })
+      .limit(5),
+  ]);
 
   const itineraries: LeadRow[] = (itinerariesRes.data ?? []).map((r) => ({
     ...r,
@@ -186,6 +208,38 @@ export default async function AdminDashboard() {
   const convertedRevenue = priced
     .filter((r) => r.converted_at)
     .reduce((sum, r) => sum + (Number(r.deal_value) || 0), 0);
+
+  // ----- Stripe revenue (real money, not deal_value estimates) -----
+  const purchases = purchasesRes.data ?? [];
+  const upcomingMeetings = meetingsRes.data ?? [];
+  const paidPurchases = purchases.filter((p) => p.status === 'paid');
+  const totalRevenueCents = paidPurchases.reduce(
+    (s, p) => s + (Number(p.amount_cents) || 0),
+    0,
+  );
+  // Avg/week: weeks since first paid purchase, capped at 12 (rolling
+  // 12-week window). Avoids misleading lifetime average for old data.
+  const earliestPaid = paidPurchases.reduce<number>((min, p) => {
+    const t = new Date(p.paid_at ?? p.created_at).getTime();
+    return min === 0 || t < min ? t : min;
+  }, 0);
+  const weeksElapsed = earliestPaid
+    ? Math.max(1, (Date.now() - earliestPaid) / (7 * 86_400_000))
+    : 1;
+  const weeksDivisor = Math.min(weeksElapsed, 12);
+  const avgRevenuePerWeek = totalRevenueCents / weeksDivisor;
+  // Active subs = paid subscriptions whose period hasn't lapsed.
+  const activeSubs = purchases.filter(
+    (p) =>
+      p.stripe_subscription_id &&
+      p.status === 'paid' &&
+      (!p.current_period_end ||
+        new Date(p.current_period_end).getTime() > Date.now()),
+  );
+  const arrCents = activeSubs.reduce(
+    (s, p) => s + (Number(p.amount_cents) || 0),
+    0,
+  );
 
   // ----- Follow-up queue -----
   const todayStart = (() => {
@@ -246,7 +300,7 @@ export default async function AdminDashboard() {
         />
       </section>
 
-      {/* ——— Performance — response time + booked revenue ——— */}
+      {/* ——— Performance — response time + booked deals (manual) ——— */}
       <section className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
         <PerfCard
           label="Response time · median"
@@ -263,10 +317,127 @@ export default async function AdminDashboard() {
           hint="90% of leads contacted within"
         />
         <PerfCard
-          label="Booked revenue · lifetime"
+          label="Booked deals · manual"
           value={convertedRevenue > 0 ? fmtMoney(convertedRevenue) : '—'}
-          hint={`from ${priced.filter((r) => r.converted_at).length} converted`}
+          hint={`deal_value of ${priced.filter((r) => r.converted_at).length} converted`}
         />
+      </section>
+
+      {/* ——— Stripe revenue — real money ——— */}
+      <section className="mt-10">
+        <div className="flex items-end justify-between">
+          <h2 className="display text-[24px] leading-[1.1] text-ink md:text-[30px]">
+            Stripe{' '}
+            <span className="display-italic text-coral">revenue.</span>
+          </h2>
+          <Link
+            href="/admin/purchases"
+            className="text-[11px] uppercase tracking-[0.22em] text-ink-soft hover:text-coral"
+          >
+            All purchases →
+          </Link>
+        </div>
+        <div className="mt-5 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <PerfCard
+            label="Total revenue"
+            value={
+              totalRevenueCents > 0 ? fmtMoney(totalRevenueCents / 100) : '—'
+            }
+            hint={`${paidPurchases.length} paid purchase${paidPurchases.length === 1 ? '' : 's'}`}
+          />
+          <PerfCard
+            label="Avg revenue / week"
+            value={
+              avgRevenuePerWeek > 0 ? fmtMoney(avgRevenuePerWeek / 100) : '—'
+            }
+            hint={`over ${weeksDivisor.toFixed(1)} weeks`}
+          />
+          <PerfCard
+            label="Active subscriptions"
+            value={activeSubs.length.toString()}
+            hint={
+              activeSubs.length > 0
+                ? `${fmtMoney(arrCents / 100)} ARR`
+                : 'no active subs'
+            }
+          />
+          <PerfCard
+            label="Last purchase"
+            value={
+              paidPurchases[0]?.paid_at
+                ? timeSince(paidPurchases[0].paid_at)
+                : '—'
+            }
+            hint={paidPurchases[0]?.tier_slug ?? 'none yet'}
+          />
+        </div>
+      </section>
+
+      {/* ——— Upcoming meetings ——— */}
+      <section className="mt-10">
+        <div className="flex items-end justify-between">
+          <h2 className="display text-[24px] leading-[1.1] text-ink md:text-[30px]">
+            Upcoming{' '}
+            <span className="display-italic text-coral">meetings.</span>
+          </h2>
+          <Link
+            href="/admin/meetings"
+            className="text-[11px] uppercase tracking-[0.22em] text-ink-soft hover:text-coral"
+          >
+            All meetings →
+          </Link>
+        </div>
+        {upcomingMeetings.length === 0 ? (
+          <div className="mt-5 rounded-sm border border-dashed border-ocean-deep/20 bg-sand-soft p-8 text-center text-[13px] text-ink-soft">
+            No upcoming meetings. Refresh from Google Calendar on the
+            meetings page or wait for the next Calendly booking.
+          </div>
+        ) : (
+          <ol className="mt-5 divide-y divide-ocean-deep/10 border-y border-ocean-deep/10">
+            {upcomingMeetings.map((m) => (
+              <li
+                key={m.id}
+                className="grid grid-cols-[140px_1fr_120px_auto] items-center gap-4 py-4 text-[13px]"
+              >
+                <span className="font-mono text-[12px] text-ink-soft">
+                  {new Date(m.scheduled_at).toLocaleString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                  })}
+                </span>
+                <div className="min-w-0">
+                  <div className="truncate font-semibold text-ink">
+                    {m.title || 'Meeting'}
+                  </div>
+                  <div className="mt-0.5 text-[11px] text-ink-soft">
+                    {m.attendee_name || m.attendee_email || '—'}
+                  </div>
+                </div>
+                <span className="text-[10px] uppercase tracking-[0.14em] text-ink-soft">
+                  {m.provider === 'google_calendar' ? 'Google' : 'Calendly'}
+                </span>
+                {m.lead_table && m.lead_id ? (
+                  <Link
+                    href={`/admin/leads/${
+                      m.lead_table === 'itinerary_requests'
+                        ? 'itinerary'
+                        : m.lead_table === 'newsletter_subscribers'
+                          ? 'newsletter'
+                          : 'lead'
+                    }/${m.lead_id}`}
+                    className="text-[11px] uppercase tracking-[0.18em] text-ink-soft hover:text-coral"
+                  >
+                    Open →
+                  </Link>
+                ) : (
+                  <span className="text-[11px] text-ink-soft/60">unmatched</span>
+                )}
+              </li>
+            ))}
+          </ol>
+        )}
       </section>
 
       {/* ——— Today's follow-up queue ——— */}
