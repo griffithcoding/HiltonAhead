@@ -133,29 +133,27 @@ export default function ServicesPage() {
           <SectionHead
             number="№ 02"
             eyebrow="Pricing"
-            plain="Three tiers,"
+            plain="Two tiers,"
             italic="priced up front."
           />
           <p className="mt-6 max-w-[640px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
             No kickbacks from villa companies. No commission baked into your
-            quoted rates. Pick the tier that matches your trip — and the
-            tier-2/3 bookings include a transparent percentage on top so the
-            harder work gets paid for. Heritage week, Wine &amp; Food, snowbird
-            leases, and ultra-premium stays use the application path.
+            quoted rates. Pick the tier that matches your trip — Charter
+            bookings include a transparent percentage on top so the harder
+            work gets paid for.
           </p>
 
           <div className="mt-10">
-            <PricingTiers tiers={B2C_TIERS} applyHref="/itinerary" />
+            <PricingTiers tiers={B2C_TIERS.filter((t) => !t.hidden)} applyHref="/itinerary" />
           </div>
 
           <div className="mt-8 max-w-[820px] text-[12.5px] leading-[1.65] text-ink-soft">
             <strong className="text-ink">A note on commission:</strong> the
-            7% (Charter) and 10% (Heritage) percentages apply only to
-            commissionable bookings — villas, private clubs, restaurant
-            packages where the supplier offers a referral fee. In practice,
-            most of the percentage rides on supplier commission, so the
-            client-side delta is small or nothing. Disclosed before booking,
-            never hidden.
+            7% on Charter applies only to commissionable bookings — villas,
+            private clubs, restaurant packages where the supplier offers a
+            referral fee. In practice most of the percentage rides on
+            supplier commission, so the client-side delta is small or
+            nothing. Disclosed before booking, never hidden.
           </div>
         </section>
 

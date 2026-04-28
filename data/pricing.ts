@@ -47,6 +47,8 @@ export interface Tier {
   accent: 'gold' | 'coral' | 'ocean' | 'ink';
   /** Mark "most popular" for visual emphasis. */
   popular?: boolean;
+  /** Hide this tier from public render (kept in code so it can be brought back). */
+  hidden?: boolean;
 }
 
 // ============================================================================
@@ -80,21 +82,19 @@ export const B2C_TIERS: Tier[] = [
     mode: 'self-serve',
     name: 'Charter',
     tagline: 'Full itinerary build with bookings handled end-to-end.',
-    priceDisplay: '$895',
-    priceUsd: 895,
+    priceDisplay: '$495',
+    priceUsd: 495,
     commissionAddendum: '+ 7% of net commissionable trip cost',
     billing: 'one_time',
     stripePriceEnv: 'STRIPE_PRICE_CHARTER_RETAINER',
     includes: [
       'Full custom itinerary build',
-      '2 video planning calls',
+      'Two 1-hour planning calls',
       'Lodging negotiation + booking',
       'Restaurant, tee-time, and activity reservations',
       'Trip-week text-line support',
-      '60 days post-trip support',
-      'Welcome gift on arrival',
     ],
-    idealFor: 'Returning visitors, honeymoons, $10K-$25K trips.',
+    idealFor: 'Returning visitors, honeymoons, families building a 4-7 day plan.',
     accent: 'coral',
     popular: true,
   },
@@ -102,6 +102,7 @@ export const B2C_TIERS: Tier[] = [
     slug: 'heritage',
     audience: 'b2c',
     mode: 'application-only',
+    hidden: true,
     name: 'Heritage',
     tagline: '9-month lead planning for Heritage week, snowbirds, and ultra-luxury.',
     priceDisplay: '$2,500',
