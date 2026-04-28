@@ -23,7 +23,7 @@ export const hero = {
   },
   /** Trust signals beneath the lede, tightly kerned and small-caps. */
   proofLine: [
-    'Just shy of 400 trips planned',
+    '255+ trips advised',
     'Locally based, Hilton Head Island',
   ],
 } as const;
