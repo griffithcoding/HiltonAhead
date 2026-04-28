@@ -13,6 +13,9 @@ import { WaveLine } from '@/components/ui/Ornament';
  *   - Orange flight path is drawn blurred at low opacity by default. As the section
  *     scrolls through the viewport, segments resolve to crisp at five waypoints
  *     (t = 0.10, 0.30, 0.52, 0.74, 0.92).
+ *   - As the video plays, the line auto-advances through the 5 stops in sync
+ *     with the current cue (timeupdate driven). On every video loop, the line
+ *     restarts and marches through again.
  *   - Numbered waypoint bubbles (1–5) are clickable: a click seeks the looping
  *     montage to that location's cue, glows the line, and toggles a small chip
  *     showing the location name. A second click on the active bubble dismisses
@@ -38,11 +41,11 @@ type Waypoint = {
 };
 
 const WAYPOINTS: ReadonlyArray<Waypoint> = [
-  { t: 0.10, pos: [195, 246],  label: 'Harbour Town',   cue: 0  },
-  { t: 0.30, pos: [490, 320],  label: 'South Beach',    cue: 6  },
-  { t: 0.52, pos: [800, 415],  label: 'Coligny',        cue: 12 },
-  { t: 0.74, pos: [1180, 502], label: 'Palmetto Dunes', cue: 18 },
-  { t: 0.92, pos: [1490, 580], label: 'Shelter Cove',   cue: 24 },
+  { t: 0.10, pos: [195, 246],  label: 'Harbour Town · Lighthouse', cue: 0  },
+  { t: 0.30, pos: [490, 320],  label: 'Sea Pines · South Beach',   cue: 6  },
+  { t: 0.52, pos: [800, 415],  label: 'Coligny · Forest Beach',    cue: 12 },
+  { t: 0.74, pos: [1180, 502], label: 'Palmetto Dunes · 18th',     cue: 18 },
+  { t: 0.92, pos: [1490, 580], label: 'Shelter Cove · Marina',     cue: 24 },
 ];
 
 // SVG viewBox
@@ -58,8 +61,9 @@ export default function IslandFlyover() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const pathRef = useRef<SVGPathElement | null>(null);
   const [pathLength, setPathLength] = useState<number>(0);
-  const [stepIdx, setStepIdx] = useState<number>(-1);     // scroll-driven, -1 = none reached
-  const [activeIdx, setActiveIdx] = useState<number | null>(null); // user-clicked bubble
+  const [stepIdx, setStepIdx] = useState<number>(-1);              // scroll-driven, -1 = none reached
+  const [playingIdx, setPlayingIdx] = useState<number>(-1);        // tracks video.currentTime
+  const [activeIdx, setActiveIdx] = useState<number | null>(null); // user-clicked bubble (chip toggle)
   const [videoReady, setVideoReady] = useState<boolean>(false);
 
   // Lazy-load + autoplay video when in view
@@ -101,6 +105,30 @@ export default function IslandFlyover() {
   // strokeDasharray/Offset declaratively.
   useEffect(() => {
     if (pathRef.current) setPathLength(pathRef.current.getTotalLength());
+  }, []);
+
+  // Auto-advance: track video playback so the line marches forward through
+  // the 5 stops on its own loop. Click overrides simply seek the video; this
+  // listener picks the new position up.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const sync = () => {
+      const t = v.currentTime;
+      let idx = -1;
+      for (let i = 0; i < WAYPOINTS.length; i++) {
+        if (t >= WAYPOINTS[i].cue) idx = i;
+      }
+      setPlayingIdx(idx);
+    };
+    v.addEventListener('timeupdate', sync);
+    v.addEventListener('seeked', sync);
+    v.addEventListener('play', sync);
+    return () => {
+      v.removeEventListener('timeupdate', sync);
+      v.removeEventListener('seeked', sync);
+      v.removeEventListener('play', sync);
+    };
   }, []);
 
   // Scroll-driven step progression
@@ -171,8 +199,10 @@ export default function IslandFlyover() {
     }
   };
 
-  // Reveal up to whichever step is further along — scroll progress OR a clicked bubble
-  const effectiveIdx = Math.max(stepIdx, activeIdx ?? -1);
+  // Reveal up to whichever step is furthest along — scroll progress, current
+  // video time (auto-loop), or the user's last clicked bubble. Each loop of
+  // the video resets playingIdx so the line restarts the journey.
+  const effectiveIdx = Math.max(stepIdx, playingIdx, activeIdx ?? -1);
   const reachedT = effectiveIdx >= 0 ? WAYPOINTS[effectiveIdx].t : 0;
   const dashOffset = pathLength > 0 ? pathLength * (1 - reachedT) : undefined;
 
@@ -261,13 +291,17 @@ export default function IslandFlyover() {
           const isActive = i === activeIdx;
           const [x, y] = wp.pos;
 
-          // Chip dimensions — small rounded pill, fully rounded ends → reads as circular
+          // Chip dimensions — small rounded pill, fully rounded ends.
+          // Roughly 30% the visual mass of the original 260×32 pill while
+          // still fitting the full compound label (e.g., "HARBOUR TOWN ·
+          // LIGHTHOUSE"). Per-character estimate at 8px Inter-ish font.
           const chipText = wp.label.toUpperCase();
-          const chipW = Math.max(70, chipText.length * 6.4 + 22);
-          const chipH = 22;
+          const chipFs = 8;
+          const chipH = 16;
+          const chipW = chipText.length * (chipFs * 0.62) + 16;
           // Position chip just above & to the right of the bubble
-          const chipDx = 26;
-          const chipDy = -28;
+          const chipDx = 22;
+          const chipDy = -22;
 
           return (
             <g
@@ -283,7 +317,10 @@ export default function IslandFlyover() {
                 aria-pressed={isActive}
                 onClick={() => handleBubbleClick(i)}
                 onKeyDown={(e) => handleBubbleKeyDown(e, i)}
-                style={{ cursor: 'pointer', outline: 'none' }}
+                // pointerEvents:auto re-enables clicks here; the parent svg
+                // sets pointer-events:none so the editorial heading underneath
+                // stays interactive.
+                style={{ cursor: 'pointer', outline: 'none', pointerEvents: 'auto' }}
               >
                 <circle
                   cx={x}
@@ -342,8 +379,8 @@ export default function IslandFlyover() {
                 />
                 <text
                   x={chipW / 2}
-                  y={4}
-                  fontSize="10"
+                  y={chipFs / 2 - 1}
+                  fontSize={chipFs}
                   fontWeight="600"
                   fill="#F5E8D0"
                   textAnchor="middle"
