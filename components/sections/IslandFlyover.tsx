@@ -30,22 +30,26 @@ import { WaveLine } from '@/components/ui/Ornament';
  */
 
 type Waypoint = {
-  /** Position along FLIGHT_PATH_D, 0–1. */
+  /** Position along FLIGHT_PATH_D, 0–1. Bubble pixel positions are computed
+   *  at runtime via getPointAtLength so they always sit ON the rendered line. */
   t: number;
-  /** Empirical sample of FLIGHT_PATH_D at this t — pixel space within the SVG viewBox. */
-  pos: readonly [number, number];
   /** Short label shown in the small click-toggle chip. */
   label: string;
-  /** Seconds offset in the looping montage to seek to when this bubble is clicked. */
+  /** Seconds offset in the looping montage to seek to when clicked.
+   *  Shot mid-points for the 6-clip / 30s montage documented in
+   *  /public/footage/README.md (5.5s segments + 0.6s crossfades). */
   cue: number;
 };
 
+// Five shot-level chapters in playback order. The 6-clip montage has two
+// generic "Hilton Head" Skaggs shots; we surface clips 1, 2, 3, 5, 6 as the
+// five visual chapters and skip clip 4 (a duplicate generic coastline).
 const WAYPOINTS: ReadonlyArray<Waypoint> = [
-  { t: 0.10, pos: [195, 246],  label: 'Harbour Town · Lighthouse', cue: 0  },
-  { t: 0.30, pos: [490, 320],  label: 'Sea Pines · South Beach',   cue: 6  },
-  { t: 0.52, pos: [800, 415],  label: 'Coligny · Forest Beach',    cue: 12 },
-  { t: 0.74, pos: [1180, 502], label: 'Palmetto Dunes · 18th',     cue: 18 },
-  { t: 0.92, pos: [1490, 580], label: 'Shelter Cove · Marina',     cue: 24 },
+  { t: 0.10, label: 'Atlantic Beachfront',  cue: 2.5  }, // clip 1 mid
+  { t: 0.30, label: 'Marsh & Boardwalk',    cue: 7.7  }, // clip 2 mid
+  { t: 0.52, label: 'Resort Fairways',      cue: 12.5 }, // clip 3 mid
+  { t: 0.74, label: 'Coastal Resort',       cue: 22.5 }, // clip 5 mid
+  { t: 0.92, label: 'Open Coastline',       cue: 27.5 }, // clip 6 mid
 ];
 
 // SVG viewBox
@@ -61,6 +65,7 @@ export default function IslandFlyover() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const pathRef = useRef<SVGPathElement | null>(null);
   const [pathLength, setPathLength] = useState<number>(0);
+  const [stepPositions, setStepPositions] = useState<ReadonlyArray<readonly [number, number]>>([]);
   const [stepIdx, setStepIdx] = useState<number>(-1);              // scroll-driven, -1 = none reached
   const [playingIdx, setPlayingIdx] = useState<number>(-1);        // tracks video.currentTime
   const [activeIdx, setActiveIdx] = useState<number | null>(null); // user-clicked bubble (chip toggle)
@@ -101,10 +106,19 @@ export default function IslandFlyover() {
     return () => io.disconnect();
   }, []);
 
-  // Measure the path's total length once it's in the DOM so we can set
-  // strokeDasharray/Offset declaratively.
+  // Measure the path's total length and sample each waypoint's exact
+  // position on the curve. Using getPointAtLength keeps bubbles ON the
+  // line regardless of viewBox tweaks or path edits.
   useEffect(() => {
-    if (pathRef.current) setPathLength(pathRef.current.getTotalLength());
+    const p = pathRef.current;
+    if (!p) return;
+    const len = p.getTotalLength();
+    setPathLength(len);
+    const positions = WAYPOINTS.map((wp) => {
+      const pt = p.getPointAtLength(len * wp.t);
+      return [pt.x, pt.y] as [number, number];
+    });
+    setStepPositions(positions);
   }, []);
 
   // Auto-advance: track video playback so the line marches forward through
@@ -285,11 +299,13 @@ export default function IslandFlyover() {
           }}
         />
 
-        {/* Numbered waypoint bubbles + chip labels */}
-        {WAYPOINTS.map((wp, i) => {
+        {/* Numbered waypoint bubbles + chip labels.
+            Don't render until path positions are measured — otherwise the
+            bubbles flash at (0,0) before useEffect fires. */}
+        {stepPositions.length === WAYPOINTS.length && WAYPOINTS.map((wp, i) => {
           const reached = i <= effectiveIdx;
           const isActive = i === activeIdx;
-          const [x, y] = wp.pos;
+          const [x, y] = stepPositions[i];
 
           // Chip dimensions — small rounded pill, fully rounded ends.
           // Roughly 30% the visual mass of the original 260×32 pill while
