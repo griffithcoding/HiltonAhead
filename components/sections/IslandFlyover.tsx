@@ -3,37 +3,49 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { photos } from '@/data/photos';
-import { TravelSeal, WaveLine } from '@/components/ui/Ornament';
+import { WaveLine } from '@/components/ui/Ornament';
 
 /**
- * Island flyover — full-bleed cinematic drone clip with editorial overlay
- * graphics. Sits between Services and InsiderProof on the homepage.
+ * Island flyover — full-bleed cinematic drone clip with a 5-stop guided tour.
  *
  * Behavior:
- *   - Video preloads "none" until IntersectionObserver fires.
- *   - Once intersecting, .load() + .play() (muted) so iOS autoplay works.
- *   - SVG flight path strokeDashoffset animates with scroll progress.
- *   - Numbered landmark "ticket" badges fade in sequentially with progress.
- *   - HDG / ALT readout cycles subtly with progress.
- *   - prefers-reduced-motion: video paused, path drawn fully, readout static.
+ *   - Video preloads "none" until IntersectionObserver fires, then autoplays muted on loop.
+ *   - Orange flight path is drawn blurred at low opacity by default. As the section
+ *     scrolls through the viewport, segments resolve to crisp at five waypoints
+ *     (t = 0.10, 0.30, 0.52, 0.74, 0.92).
+ *   - Numbered waypoint bubbles (1–5) are clickable: a click seeks the looping
+ *     montage to that location's cue, glows the line, and toggles a small chip
+ *     showing the location name. A second click on the active bubble dismisses
+ *     the chip and ends the highlighted state.
+ *   - prefers-reduced-motion: video paused, full path drawn crisp on mount.
  *
  * Footage convention:
- *   /public/footage/hilton-head-flyover.mp4   (H.264, ~3-5MB, 8-12s loop)
+ *   /public/footage/hilton-head-flyover.mp4   (~30s aerial montage)
  *   /public/footage/hilton-head-flyover.webm  (optional)
  *
- * If the file is missing the poster image still renders — the section
- * degrades to "aerial photo with overlay graphics" gracefully.
+ * Cue times below assume an evenly-spaced 30s montage. Tweak per shot if needed.
  */
 
-const WAYPOINTS = [
-  { t: 0.10, label: 'Harbour Town · Lighthouse',  hdg: '047°' },
-  { t: 0.30, label: 'Sea Pines · South Beach',    hdg: '058°' },
-  { t: 0.52, label: 'Coligny · Forest Beach',     hdg: '067°' },
-  { t: 0.74, label: 'Palmetto Dunes · 18th',      hdg: '081°' },
-  { t: 0.92, label: 'Shelter Cove · Marina',      hdg: '102°' },
-] as const;
+type Waypoint = {
+  /** Position along FLIGHT_PATH_D, 0–1. */
+  t: number;
+  /** Empirical sample of FLIGHT_PATH_D at this t — pixel space within the SVG viewBox. */
+  pos: readonly [number, number];
+  /** Short label shown in the small click-toggle chip. */
+  label: string;
+  /** Seconds offset in the looping montage to seek to when this bubble is clicked. */
+  cue: number;
+};
 
-// SVG overlay viewBox dimensions
+const WAYPOINTS: ReadonlyArray<Waypoint> = [
+  { t: 0.10, pos: [195, 246],  label: 'Harbour Town',   cue: 0  },
+  { t: 0.30, pos: [490, 320],  label: 'South Beach',    cue: 6  },
+  { t: 0.52, pos: [800, 415],  label: 'Coligny',        cue: 12 },
+  { t: 0.74, pos: [1180, 502], label: 'Palmetto Dunes', cue: 18 },
+  { t: 0.92, pos: [1490, 580], label: 'Shelter Cove',   cue: 24 },
+];
+
+// SVG viewBox
 const VB_W = 1600;
 const VB_H = 900;
 
@@ -45,8 +57,9 @@ export default function IslandFlyover() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const pathRef = useRef<SVGPathElement | null>(null);
-  const lengthRef = useRef<number>(0);
-  const [progress, setProgress] = useState<number>(0);
+  const [pathLength, setPathLength] = useState<number>(0);
+  const [stepIdx, setStepIdx] = useState<number>(-1);     // scroll-driven, -1 = none reached
+  const [activeIdx, setActiveIdx] = useState<number | null>(null); // user-clicked bubble
   const [videoReady, setVideoReady] = useState<boolean>(false);
 
   // Lazy-load + autoplay video when in view
@@ -84,28 +97,25 @@ export default function IslandFlyover() {
     return () => io.disconnect();
   }, []);
 
-  // Scroll-driven flight path + waypoint progress
+  // Measure the path's total length once it's in the DOM so we can set
+  // strokeDasharray/Offset declaratively.
   useEffect(() => {
-    const path = pathRef.current;
+    if (pathRef.current) setPathLength(pathRef.current.getTotalLength());
+  }, []);
+
+  // Scroll-driven step progression
+  useEffect(() => {
     const section = sectionRef.current;
-    if (!path || !section) return;
+    if (!section) return;
 
     const reduced =
       typeof window !== 'undefined' &&
       window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-    const length = path.getTotalLength();
-    lengthRef.current = length;
-    path.style.strokeDasharray = `${length}`;
-
     if (reduced) {
-      path.style.strokeDashoffset = '0';
-      // Defer to next frame so this setState isn't synchronous-in-effect.
-      const id = requestAnimationFrame(() => setProgress(1));
-      return () => cancelAnimationFrame(id);
+      setStepIdx(WAYPOINTS.length - 1);
+      return;
     }
-
-    path.style.strokeDashoffset = `${length}`;
 
     let raf: number | null = null;
     const update = () => {
@@ -117,8 +127,12 @@ export default function IslandFlyover() {
       const total = section.offsetHeight + (startY - endY);
       const traveled = startY - rect.top;
       const p = Math.min(1, Math.max(0, traveled / Math.max(total, 1)));
-      path.style.strokeDashoffset = `${length * (1 - p)}`;
-      setProgress(p);
+
+      let idx = -1;
+      for (let i = 0; i < WAYPOINTS.length; i++) {
+        if (p >= WAYPOINTS[i].t) idx = i;
+      }
+      setStepIdx(idx);
     };
     const onScroll = () => {
       if (raf == null) raf = requestAnimationFrame(update);
@@ -134,17 +148,33 @@ export default function IslandFlyover() {
     };
   }, []);
 
-  // Active waypoint = the highest waypoint whose .t <= progress
-  type Waypoint = (typeof WAYPOINTS)[number];
-  const activeWp: Waypoint = (() => {
-    let active: Waypoint = WAYPOINTS[0];
-    for (const wp of WAYPOINTS) if (progress >= wp.t) active = wp;
-    return active;
-  })();
+  const handleBubbleClick = (i: number) => {
+    const next = activeIdx === i ? null : i;
+    setActiveIdx(next);
+    if (next !== null) {
+      const v = videoRef.current;
+      if (v) {
+        try {
+          v.currentTime = WAYPOINTS[next].cue;
+        } catch {
+          /* seekable range may not yet cover cue if video is mid-load */
+        }
+        v.play().catch(() => {});
+      }
+    }
+  };
 
-  // Cycle the heading number subtly between waypoints
-  const hdgDisplay = activeWp.hdg;
-  const altFt = 800 + Math.round(progress * 220); // 800 → 1020 ft
+  const handleBubbleKeyDown = (e: React.KeyboardEvent<SVGGElement>, i: number) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleBubbleClick(i);
+    }
+  };
+
+  // Reveal up to whichever step is further along — scroll progress OR a clicked bubble
+  const effectiveIdx = Math.max(stepIdx, activeIdx ?? -1);
+  const reachedT = effectiveIdx >= 0 ? WAYPOINTS[effectiveIdx].t : 0;
+  const dashOffset = pathLength > 0 ? pathLength * (1 - reachedT) : undefined;
 
   return (
     <section
@@ -152,7 +182,6 @@ export default function IslandFlyover() {
       aria-label="Aerial flyover of Hilton Head Island"
       className="bleed flyover-stage relative mt-28 h-[78vh] min-h-[520px] overflow-hidden md:mt-36 md:h-[82vh] md:min-h-[640px]"
     >
-      {/* Layer 0a: Poster image — always present, shows under video while loading */}
       <Image
         src={photos.coastalAerial.src}
         alt={photos.coastalAerial.alt}
@@ -162,7 +191,6 @@ export default function IslandFlyover() {
         aria-hidden={videoReady}
       />
 
-      {/* Layer 0b: Video, lazy-loaded */}
       <video
         ref={videoRef}
         className="flyover-video"
@@ -178,39 +206,39 @@ export default function IslandFlyover() {
         <source src="/footage/hilton-head-flyover.mp4" type="video/mp4" />
       </video>
 
-      {/* Layer 1: Scrim */}
       <div className="flyover-scrim" />
 
-      {/* Layer 2: SVG overlay — flight path, pings, compass corner */}
       <svg
         viewBox={`0 0 ${VB_W} ${VB_H}`}
         preserveAspectRatio="xMidYMid slice"
         xmlns="http://www.w3.org/2000/svg"
         className="flyover-overlay"
-        aria-hidden="true"
       >
-        {/* Hatched grid lines for chart feel */}
-        <g stroke="rgba(245,232,208,0.12)" strokeWidth="0.6">
-          {Array.from({ length: 9 }).map((_, i) => {
-            const y = i * 100;
-            return <line key={`h-${i}`} x1="0" y1={y} x2={VB_W} y2={y} />;
-          })}
-          {Array.from({ length: 17 }).map((_, i) => {
-            const x = i * 100;
-            return <line key={`v-${i}`} x1={x} y1="0" x2={x} y2={VB_H} />;
-          })}
-        </g>
+        <defs>
+          <filter id="flyover-blur" x="-5%" y="-5%" width="110%" height="110%">
+            <feGaussianBlur stdDeviation="6" />
+          </filter>
+          <filter id="flyover-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="g" />
+            <feMerge>
+              <feMergeNode in="g" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
 
-        {/* Dashed under-line guidance */}
+        {/* Blurred baseline — the full journey, hazy and dim */}
         <path
           d={FLIGHT_PATH_D}
-          stroke="rgba(255,122,92,0.30)"
-          strokeWidth="2"
-          strokeDasharray="2 8"
+          stroke="#FF7A5C"
+          strokeWidth="6"
+          strokeLinecap="round"
           fill="none"
+          opacity="0.35"
+          filter="url(#flyover-blur)"
         />
 
-        {/* Animated flight path */}
+        {/* Crisp progress — strokeDashoffset reveals up to the effective step */}
         <path
           ref={pathRef}
           d={FLIGHT_PATH_D}
@@ -218,76 +246,111 @@ export default function IslandFlyover() {
           strokeWidth="3.5"
           strokeLinecap="round"
           fill="none"
+          filter={activeIdx !== null ? 'url(#flyover-glow)' : undefined}
+          style={{
+            strokeDasharray: pathLength || undefined,
+            strokeDashoffset: dashOffset,
+            transition:
+              'stroke-dashoffset 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease',
+          }}
         />
 
-        {/* Waypoint pings + labels */}
+        {/* Numbered waypoint bubbles + chip labels */}
         {WAYPOINTS.map((wp, i) => {
-          const reached = progress >= wp.t;
-          // Sample the path point at parameter wp.t — approximate by
-          // pre-computed positions for layout. We re-derive via path API
-          // on first render using getPointAtLength on a fresh ref isn't
-          // available here without a re-render; instead, hard-code positions
-          // taken from the path: matching the cubic in FLIGHT_PATH_D.
-          // (Empirical samples for the 5 t values).
-          const samples: [number, number][] = [
-            [195, 246],   // 0.10
-            [490, 320],   // 0.30
-            [800, 415],   // 0.52
-            [1180, 502],  // 0.74
-            [1490, 580],  // 0.92
-          ];
-          const [x, y] = samples[i] ?? [0, 0];
+          const reached = i <= effectiveIdx;
+          const isActive = i === activeIdx;
+          const [x, y] = wp.pos;
+
+          // Chip dimensions — small rounded pill, fully rounded ends → reads as circular
+          const chipText = wp.label.toUpperCase();
+          const chipW = Math.max(70, chipText.length * 6.4 + 22);
+          const chipH = 22;
+          // Position chip just above & to the right of the bubble
+          const chipDx = 26;
+          const chipDy = -28;
+
           return (
             <g
               key={i}
-              opacity={reached ? 1 : 0.28}
+              opacity={reached ? 1 : 0.32}
               style={{ transition: 'opacity 0.6s ease' }}
             >
-              <circle
-                cx={x}
-                cy={y}
-                r="22"
-                fill="rgba(255,122,92,0.18)"
-                className={reached ? 'flyover-ping' : ''}
-              />
-              <circle cx={x} cy={y} r="9" fill="#FF7A5C" stroke="#F5E8D0" strokeWidth="2" />
-              <text
-                x={x}
-                y={y + 3.5}
-                fontSize="11"
-                fontWeight="700"
-                fill="#F5E8D0"
-                textAnchor="middle"
-                fontFamily="var(--font-sans), sans-serif"
-              >
-                {i + 1}
-              </text>
-              {/* Label callout */}
+              {/* Hit target: invisible bigger circle for easy clicking */}
               <g
-                transform={`translate(${x + (i % 2 === 0 ? 18 : -18)}, ${y - 36})`}
-                opacity={reached ? 1 : 0}
-                style={{ transition: 'opacity 0.5s ease 0.1s' }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Show ${wp.label} on the flyover`}
+                aria-pressed={isActive}
+                onClick={() => handleBubbleClick(i)}
+                onKeyDown={(e) => handleBubbleKeyDown(e, i)}
+                style={{ cursor: 'pointer', outline: 'none' }}
+              >
+                <circle
+                  cx={x}
+                  cy={y}
+                  r="28"
+                  fill="rgba(255,122,92,0.18)"
+                  className={reached ? 'flyover-ping' : ''}
+                />
+                <circle
+                  cx={x}
+                  cy={y}
+                  r="13"
+                  fill="#FF7A5C"
+                  stroke="#F5E8D0"
+                  strokeWidth="2"
+                  style={{
+                    filter: isActive
+                      ? 'drop-shadow(0 0 6px rgba(255,122,92,0.9))'
+                      : undefined,
+                    transition: 'filter 0.3s ease',
+                  }}
+                />
+                <text
+                  x={x}
+                  y={y + 4}
+                  fontSize="13"
+                  fontWeight="700"
+                  fill="#F5E8D0"
+                  textAnchor="middle"
+                  fontFamily="var(--font-sans), sans-serif"
+                  pointerEvents="none"
+                >
+                  {i + 1}
+                </text>
+              </g>
+
+              {/* Toggleable chip — only renders for the active bubble */}
+              <g
+                transform={`translate(${x + chipDx}, ${y + chipDy})`}
+                opacity={isActive ? 1 : 0}
+                style={{
+                  transition: 'opacity 0.3s ease',
+                  pointerEvents: isActive ? 'auto' : 'none',
+                }}
+                aria-hidden={!isActive}
               >
                 <rect
-                  x={i % 2 === 0 ? 0 : -260}
-                  y="-22"
-                  width="260"
-                  height="32"
-                  rx="2"
-                  fill="rgba(10,41,48,0.85)"
+                  x={0}
+                  y={-chipH / 2}
+                  width={chipW}
+                  height={chipH}
+                  rx={chipH / 2}
+                  fill="rgba(10,41,48,0.92)"
                   stroke="#F5E8D0"
                   strokeWidth="1"
                 />
                 <text
-                  x={i % 2 === 0 ? 14 : -246}
-                  y="-2"
-                  fontSize="14"
-                  fill="#F5E8D0"
-                  fontFamily="var(--font-sans), sans-serif"
-                  letterSpacing="0.08em"
+                  x={chipW / 2}
+                  y={4}
+                  fontSize="10"
                   fontWeight="600"
+                  fill="#F5E8D0"
+                  textAnchor="middle"
+                  letterSpacing="0.08em"
+                  fontFamily="var(--font-sans), sans-serif"
                 >
-                  {wp.label.toUpperCase()}
+                  {chipText}
                 </text>
               </g>
             </g>
@@ -295,32 +358,6 @@ export default function IslandFlyover() {
         })}
       </svg>
 
-      {/* Layer 3a: Top-right compass + seal cluster */}
-      <div className="absolute right-5 top-6 hidden text-sand md:right-10 md:top-10 md:block">
-        <TravelSeal
-          size={130}
-          topText="AERIAL SURVEY · HHI"
-          bottomText="· 32.21° N · 80.75° W ·"
-          motif="compass"
-        />
-      </div>
-
-      {/* Layer 3b: Bottom-left HUD readout */}
-      <div className="absolute bottom-6 left-5 z-[3] flex items-center gap-5 md:bottom-10 md:left-10">
-        <span className="flyover-readout">
-          HDG <span className="text-coral">{hdgDisplay}</span>
-        </span>
-        <span className="h-px w-6 bg-sand/40" />
-        <span className="flyover-readout">
-          ALT <span className="text-coral">{altFt} FT</span>
-        </span>
-        <span className="h-px w-6 bg-sand/40" />
-        <span className="flyover-readout hidden md:inline">
-          LOOP <span className="text-coral">{Math.min(99, Math.floor(progress * 100))}%</span>
-        </span>
-      </div>
-
-      {/* Layer 3c: Editorial headline overlay */}
       <div className="absolute inset-x-0 bottom-0 z-[3] mx-auto flex max-w-[1280px] flex-col items-start justify-end px-5 pb-24 text-sand md:pb-32">
         <div className="text-sand/65">
           <WaveLine width={120} />
@@ -331,7 +368,7 @@ export default function IslandFlyover() {
         </h2>
         <p className="mt-5 max-w-[520px] text-[14px] leading-[1.7] text-sand/85 md:text-[16px]">
           From Harbour Town to Port Royal Sound, every villa we book and every
-          tee time we hold. Scroll the line.
+          tee time we hold.
         </p>
       </div>
     </section>
