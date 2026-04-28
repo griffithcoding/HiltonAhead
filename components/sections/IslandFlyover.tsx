@@ -395,7 +395,13 @@ export default function IslandFlyover() {
         })}
       </svg>
 
-      <div className="absolute inset-x-0 bottom-0 z-[3] mx-auto flex max-w-[1280px] flex-col items-start justify-end px-5 pb-24 text-sand md:pb-32">
+      {/*
+        pointer-events-none lets clicks fall through to the SVG bubbles in the
+        layer below — without this the heading container intercepts clicks on
+        bubbles 3–5 because its intrinsic height extends well above its bottom
+        anchor. The heading has no interactive children, so this is safe.
+      */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] mx-auto flex max-w-[1280px] flex-col items-start justify-end px-5 pb-24 text-sand md:pb-32">
         <div className="text-sand/65">
           <WaveLine width={120} />
         </div>
