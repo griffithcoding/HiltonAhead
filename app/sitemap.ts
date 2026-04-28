@@ -95,12 +95,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
-    {
-      url: `${BASE_URL}/local/get-featured`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    },
   ]
 
   const localIndustryEntries: MetadataRoute.Sitemap = industries.map((i) => ({

@@ -3201,7 +3201,7 @@ const homeServicesBusinesses: Business[] = [
     name: 'Beach Properties of Hilton Head',
     tagline: 'Full-service VR management + real estate, 30+ years on island.',
     schemaType: 'RealEstateAgent',
-    categories: ['Vacation Rental Management', 'Real Estate', 'Featured Partner'],
+    categories: ['Vacation Rental Management', 'Real Estate'],
     priceRange: '$$$',
     review:
       "30+ years on the island, A+ BBB, Sea Pines / Forest Beach / Palmetto Dunes specialist. The default choice for owners who want an established island operator with deep local relationships.",
@@ -3273,7 +3273,7 @@ const homeServicesBusinesses: Business[] = [
     name: 'Sunset Rentals',
     tagline: 'Mid-tier full-service VR management; 225+ home portfolio.',
     schemaType: 'RealEstateAgent',
-    categories: ['Vacation Rental Management', 'Featured Partner'],
+    categories: ['Vacation Rental Management'],
     priceRange: '$$$',
     review:
       "225+ home portfolio across Sea Pines, Forest Beach, and Folly Field, with an executive management team focus. The right call for owners wanting full-service mid-tier management with active marketing.",
