@@ -6095,6 +6095,648 @@ const postPublicBeachAccess: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 31) Hilton Head Airport Guide
+// ---------------------------------------------------------------------------
+
+const postAirportGuide: Post = {
+  slug: 'hilton-head-airport-guide',
+  title: 'Hilton Head Airport vs. Savannah Airport: Which One to Fly Into',
+  excerpt:
+    'Two airports serve Hilton Head. One is 10 minutes away. The other has every major airline and saves you $300. Here is exactly how to choose.',
+  description:
+    'Hilton Head Island Airport (HXD) vs. Savannah/Hilton Head International (SAV): flights, drive times, car rentals, and which one locals actually recommend for your trip.',
+  category: 'Planning',
+  readTime: '7 min',
+  publishedAt: '2026-04-27',
+  author: 'Hilton Ahead',
+  featuredOrder: 31,
+  relatedNeighborhoods: [],
+  keywords: [
+    'hilton head airport',
+    'savannah airport to hilton head',
+    'fly into hilton head island',
+    'hilton head island airport HXD',
+    'savannah hilton head international airport SAV',
+    'closest airport to hilton head',
+    'hilton head airport shuttle',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: 'Two airports serve Hilton Head Island. <strong>Hilton Head Island Airport (HXD)</strong> is 10 minutes from Coligny Beach. <strong>Savannah/Hilton Head International Airport (SAV)</strong> is 45 minutes away and has every major airline. The right choice depends on your city, your budget, and your willingness to pay for convenience.',
+    },
+    {
+      kind: 'callout',
+      label: 'Bottom line up front',
+      html: '<strong>Most travelers should fly into SAV.</strong> More routes, lower fares, all major carriers. HXD is the right call only if you find a direct flight and the fare difference is under $100 per person. We explain both below.',
+    },
+    {
+      kind: 'h2',
+      text: 'Hilton Head Island Airport (HXD)',
+    },
+    {
+      kind: 'p',
+      html: 'HXD is a small regional airport on the north end of the island, operated by Beaufort County. It handles about 100,000 passengers a year — tiny compared to SAV\'s 3 million. The upsides: <strong>10-minute drive to most of the island</strong>, rarely crowded security, easy parking, and no rental car shuttle (the lot is steps from the terminal).',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Airlines:</strong> American Eagle and United Express offer seasonal service from Charlotte (CLT), Washington Dulles (IAD), and New York (LGA/EWR). Service expands from March through October.',
+        '<strong>Fares:</strong> Typically $50–$200 more per person than SAV on the same travel window because of limited competition.',
+        '<strong>Rental cars:</strong> Available on-site (Avis, Hertz, National). <strong>Book early</strong> — the lot is small and sells out in peak season.',
+        '<strong>Ground transport:</strong> HXD has no Uber/Lyft surge issues. It\'s a short, flat drive to any plantation.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Savannah/Hilton Head International Airport (SAV)',
+    },
+    {
+      kind: 'p',
+      html: 'SAV sits 40 miles from Hilton Head — a straight, easy drive across US-278. It is the dominant airport for Hilton Head trips: <strong>American, Delta, Southwest, United, JetBlue, and Frontier</strong> all fly here. You will almost always find a cheaper or more convenient flight into SAV than HXD.',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Drive time to Hilton Head:</strong> 40–50 minutes via I-95 N and US-278 E. Toll-free. The route is simple and well-marked.',
+        '<strong>Rental cars:</strong> All major carriers. On-site garage. Book at least 4 weeks out for summer; prices triple in June–August.',
+        '<strong>Rideshare:</strong> Uber and Lyft operate from SAV. Expect $60–$90 to Hilton Head each way. Not practical for groups vs. a rental.',
+        '<strong>Shuttle services:</strong> Several private shuttles run Savannah to HHI: Around Town Tours, Island Shuttle, and Lowcountry Valet. Budget $50–$80 per vehicle for a scheduled pickup.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'The Drive from SAV to Hilton Head: Step by Step',
+    },
+    {
+      kind: 'ol',
+      items: [
+        'Exit SAV onto I-95 N (toward Ridgeland). Drive 8 miles.',
+        'Take Exit 8 toward Hilton Head Island / Bluffton.',
+        'Merge onto US-278 E. You\'ll pass through Bluffton — keep going east.',
+        'Cross the James F. Bryan bridge onto Hilton Head Island. You are now on the island.',
+        'US-278 becomes William Hilton Parkway. Stay on it to reach most plantations and hotels.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Other Airports Worth Considering',
+    },
+    {
+      kind: 'table',
+      caption: 'Airport options for Hilton Head travel',
+      headers: ['Airport', 'Code', 'Drive Time', 'Best for'],
+      rows: [
+        ['Hilton Head Island Airport', 'HXD', '10–15 min', 'Convenience, seasonal direct flights from CLT/IAD/LGA'],
+        ['Savannah/Hilton Head Intl', 'SAV', '40–50 min', 'Best fares, all major airlines, most routes'],
+        ['Charleston International', 'CHS', '2 hr', 'Overflow option when SAV fares are high or sold out'],
+        ['Jacksonville International', 'JAX', '2.5 hr', 'Southern FL travelers, sometimes cheaper on Southwest'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Which Airport Should You Actually Use?',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Use HXD if:</strong> You find a direct flight from Charlotte, DC, or New York, and the fare premium is under $100/person. The 35-minute time savings adds up when you have 5+ people.',
+        '<strong>Use SAV if:</strong> You are flying from anywhere in the Midwest, Texas, Florida, or the West Coast. The route options and fare competition are simply better.',
+        '<strong>Use CHS if:</strong> SAV fares are spiked (Heritage Week, Memorial Day, July 4th) and Charleston has a lower price. Two hours is a manageable drive.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Car Rentals: The One Thing You Must Not Overlook',
+    },
+    {
+      kind: 'p',
+      html: 'You need a car on Hilton Head Island. Uber and Lyft exist but are unreliable at peak hours (Friday evening arrivals, Saturday night restaurant rush), and wait times can hit 30–45 minutes in peak season. There is no public transit on the island.',
+    },
+    {
+      kind: 'p',
+      html: 'Book your rental car at the same time you book your flight — particularly for SAV in summer. The on-airport inventory sells out. Off-airport alternatives (Enterprise on William Hilton Parkway) are available but require a separate pickup.',
+    },
+    {
+      kind: 'faq',
+      label: 'Airport FAQ',
+      items: [
+        {
+          q: 'How far is Savannah Airport from Hilton Head?',
+          a: 'About 40 miles via I-95 N and US-278 E. Drive time is 40–50 minutes with normal traffic. Friday afternoon arrivals can run 60 minutes through Bluffton.',
+        },
+        {
+          q: 'Does Hilton Head Island Airport have direct flights?',
+          a: 'Yes, seasonal direct service from Charlotte (CLT), Washington Dulles (IAD), and New York (LGA/EWR) via American Eagle and United Express. Service runs primarily March through October.',
+        },
+        {
+          q: 'Is there a shuttle from Savannah Airport to Hilton Head?',
+          a: 'Yes. Around Town Tours, Island Shuttle, and several other operators run scheduled service. Expect $50–$80 one-way per vehicle. Book in advance — summer demand is high.',
+        },
+        {
+          q: 'Can I take an Uber from Savannah Airport to Hilton Head?',
+          a: 'Technically yes, but expect $70–$95 each way and limited availability. For groups of 3+, a rental car is cheaper over a 5+ day trip.',
+        },
+      ],
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 32) How to Get to Hilton Head Island
+// ---------------------------------------------------------------------------
+
+const postGettingToHHI: Post = {
+  slug: 'how-to-get-to-hilton-head-island',
+  title: 'How to Get to Hilton Head Island: Driving, Flying, and Everything In Between',
+  excerpt:
+    'One bridge connects Hilton Head to the mainland. Here is how to get there from anywhere — drive routes, airport options, rental car tips, and what to do once you are over the bridge.',
+  description:
+    'Complete guide to getting to Hilton Head Island: closest airports (SAV vs HXD), driving directions from Atlanta, Charlotte, and Columbia, car rental tips, and what to do first after crossing the bridge.',
+  category: 'Planning',
+  readTime: '8 min',
+  publishedAt: '2026-04-27',
+  author: 'Hilton Ahead',
+  featuredOrder: 32,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
+  keywords: [
+    'how to get to hilton head island',
+    'driving to hilton head',
+    'hilton head directions',
+    'hilton head bridge',
+    'hilton head from charlotte drive',
+    'hilton head from atlanta',
+    'hilton head island transportation',
+    'getting around hilton head island',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: 'Hilton Head Island sits on the South Carolina coast, connected to the mainland by a single causeway. Once you cross the James F. Bryan bridge over Skull Creek, you are on the island — and the rules change: no chains, no billboards, slower speeds, and a culture that actively works to keep tourists from feeling like they\'re in a tourist trap.',
+    },
+    {
+      kind: 'callout',
+      label: 'The one fact to know',
+      html: '<strong>You will need a car.</strong> There is no train, no ferry, no meaningful bus service to or on Hilton Head Island. Every trip starts with either driving or renting a vehicle at the closest airport (SAV, 40 minutes away).',
+    },
+    {
+      kind: 'h2',
+      text: 'Flying In',
+    },
+    {
+      kind: 'p',
+      html: 'Two airports serve the island. <strong>Savannah/Hilton Head International (SAV)</strong> is the practical choice for most travelers — 40 miles away, served by all major carriers. <strong>Hilton Head Island Airport (HXD)</strong> is 10 minutes from Coligny but has limited seasonal service from a handful of cities. See our full <a href="/blog/hilton-head-airport-guide">airport comparison guide</a> for the complete breakdown.',
+    },
+    {
+      kind: 'h2',
+      text: 'Driving to Hilton Head: The Routes That Matter',
+    },
+    {
+      kind: 'p',
+      html: 'Every road onto Hilton Head Island ends the same way: <strong>US-278 East across the bridge</strong>. The only variables are how you reach US-278. Here are the three routes we actually use with clients.',
+    },
+    {
+      kind: 'h3',
+      text: 'From Charlotte, NC (4 to 4.5 hours)',
+    },
+    {
+      kind: 'ol',
+      items: [
+        'I-77 S from Charlotte to I-26 E toward Columbia — about 90 minutes',
+        'I-26 E through Columbia (good gas/coffee stop at the halfway point)',
+        'I-95 S at the Santee junction — about 30 minutes past Columbia',
+        'Exit 8 onto US-278 E toward Bluffton and Hilton Head — 30 more minutes',
+        'Cross the Bryan bridge. You are on the island.',
+      ],
+    },
+    {
+      kind: 'h3',
+      text: 'From Atlanta, GA (4 to 4.5 hours)',
+    },
+    {
+      kind: 'ol',
+      items: [
+        'I-75 S from Atlanta through Macon — about 90 minutes',
+        'I-16 E toward Savannah — 90 flat miles, easy highway',
+        'I-95 N just outside Savannah — 20 miles north',
+        'Exit 8 onto US-278 E — Hilton Head is 30 minutes east',
+        '<strong>Optional:</strong> Stop in Savannah for 2 hours before finishing the drive. River Street, brunch, 45-minute drive to the island afterward.',
+      ],
+    },
+    {
+      kind: 'h3',
+      text: 'From Columbia, SC (2 hours)',
+    },
+    {
+      kind: 'ol',
+      items: [
+        'I-26 E from Columbia toward Charleston — about 60 minutes',
+        'Exit onto I-95 S at the junction near Hardeeville',
+        'Exit 8 onto US-278 E — 30 minutes to the island',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Bluffton: The Last Town Before the Bridge',
+    },
+    {
+      kind: 'p',
+      html: 'US-278 passes through Bluffton before reaching the island. <strong>Old Town Bluffton</strong> is worth a 30-minute stop on the way in: walkable streets, good coffee, excellent BBQ at Smoke on the Water, and a stretch of historic Lowcountry architecture along the May River. Most people skip it on arrival day. The ones who don\'t are glad they stopped.',
+    },
+    {
+      kind: 'h2',
+      text: 'Crossing the Bridge and Arriving on Island',
+    },
+    {
+      kind: 'p',
+      html: 'The James F. Bryan bridge is free in both directions. Once you cross, US-278 becomes <strong>William Hilton Parkway</strong> — the island\'s main east-west artery. The speed limit drops. Traffic circles (roundabouts) replace most intersections. GPS works fine here, but first-timers sometimes miss that many of the island\'s best addresses are inside <strong>gated plantation communities</strong> (Sea Pines, Palmetto Dunes, Hilton Head Plantation). You will stop at a guard gate and will need your rental address or reservation confirmation.',
+    },
+    {
+      kind: 'callout',
+      label: 'Gated community tip',
+      html: 'Print or screenshot your villa confirmation before arrival. Sea Pines charges a $10 per-vehicle fee for day visitors but waives it for guests staying inside the plantation. Have your property address ready at the gate.',
+    },
+    {
+      kind: 'h2',
+      text: 'Getting Around Once You Are There',
+    },
+    {
+      kind: 'p',
+      html: 'The island is 12 miles long and 5 miles wide. Everything worth doing is reachable by car in under 20 minutes. The bike path network (more than 60 miles of paved trails) means you can leave the car for anything inside a plantation or along the main corridors — but the car stays essential for restaurant runs and cross-island moves.',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Bike rentals:</strong> Available inside most plantations and near Coligny. Bikes make sense for flat, local errands — Sea Pines to Harbour Town, Forest Beach to Coligny.',
+        '<strong>Rideshare:</strong> Uber and Lyft exist but availability is spotty on Friday nights and during events. Do not plan a dinner reservation around a rideshare pickup.',
+        '<strong>Golf carts:</strong> Legal on some roads and allowed inside all plantations. If your villa comes with a golf cart, use it — it is the best way to move around Sea Pines and Palmetto Dunes.',
+      ],
+    },
+    {
+      kind: 'faq',
+      label: 'Navigation FAQ',
+      items: [
+        {
+          q: 'Is there a toll to get onto Hilton Head Island?',
+          a: 'No. The causeway and bridge are toll-free in both directions.',
+        },
+        {
+          q: 'Do I need a car on Hilton Head Island?',
+          a: 'Almost always yes. The island has no public transit, and rideshare availability is unreliable during peak hours and events. The one exception: if you are staying in a walkable spot near Coligny and your entire trip stays in the Forest Beach/Coligny corridor.',
+        },
+        {
+          q: 'How do I get into a gated plantation like Sea Pines?',
+          a: 'Tell the gate guard the address where you are staying. Guests are waved through. Day visitors pay a $10 per-vehicle access fee (Sea Pines charges this; Palmetto Dunes does not).',
+        },
+        {
+          q: 'What is the fastest route from Savannah to Hilton Head?',
+          a: 'I-95 N to Exit 8, then US-278 E straight to the island. About 40 minutes from the SAV airport terminal. No tolls.',
+        },
+      ],
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 33) Hilton Head Weather & Packing Guide
+// ---------------------------------------------------------------------------
+
+const postWeatherPackingGuide: Post = {
+  slug: 'hilton-head-weather-packing-guide',
+  title: 'Hilton Head Weather & Packing Guide: What to Bring for Every Month',
+  excerpt:
+    'Hilton Head runs hot from May through October and mild the rest of the year. Here is what the weather actually feels like — and exactly what to pack for your trip.',
+  description:
+    'Hilton Head Island weather by season: temperatures, humidity, rain, hurricane risk, and month-by-month packing lists. What locals actually bring versus what tourists over-pack.',
+  category: 'Planning',
+  readTime: '9 min',
+  publishedAt: '2026-04-27',
+  author: 'Hilton Ahead',
+  featuredOrder: 33,
+  relatedNeighborhoods: [],
+  keywords: [
+    'hilton head weather',
+    'hilton head packing list',
+    'what to pack for hilton head',
+    'hilton head weather by month',
+    'hilton head island temperature',
+    'hilton head humidity',
+    'hilton head hurricane season tips',
+    'hilton head april weather',
+    'hilton head june weather',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: 'Hilton Head sits at 32° North latitude — the same band as Casablanca and Savannah. The climate is subtropical: long, hot, humid summers, a legitimately pleasant spring and fall, and mild winters that are cooler than most visitors expect. If you are packing for a Hilton Head trip, the two things that catch people off guard are <strong>how oppressive the humidity gets in July and August</strong> and <strong>how cool evenings can run in April and October</strong>.',
+    },
+    {
+      kind: 'h2',
+      text: 'Season-by-Season Weather Overview',
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head monthly weather at a glance',
+      headers: ['Month', 'High (°F)', 'Low (°F)', 'Ocean Temp', 'Rain Risk', 'Crowd Level'],
+      rows: [
+        ['January', '60°', '40°', '55°', 'Low', 'Very Low'],
+        ['February', '63°', '42°', '56°', 'Low', 'Very Low'],
+        ['March', '69°', '49°', '59°', 'Moderate', 'Low'],
+        ['April', '76°', '56°', '65°', 'Moderate', 'Medium (Heritage Week)'],
+        ['May', '83°', '63°', '72°', 'Moderate', 'Medium'],
+        ['June', '89°', '70°', '79°', 'High (afternoon storms)', 'High'],
+        ['July', '92°', '74°', '83°', 'High (daily storms)', 'Peak'],
+        ['August', '91°', '74°', '84°', 'High (daily storms)', 'Peak'],
+        ['September', '86°', '69°', '81°', 'High (hurricane risk)', 'Medium'],
+        ['October', '77°', '58°', '74°', 'Moderate', 'Medium'],
+        ['November', '69°', '50°', '65°', 'Low', 'Low'],
+        ['December', '62°', '43°', '57°', 'Low', 'Very Low'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Spring (March – May): The Sweet Spot',
+    },
+    {
+      kind: 'p',
+      html: 'Spring is when locals and repeat visitors book their trips. Temperatures are warm enough for the beach by May (ocean hits 70°+ by late April), crowds are manageable, and the island is green from recent rain. April brings the <strong>RBC Heritage PGA Tour event</strong> at Harbour Town — book well in advance that week. May is our personal favorite month: 83° highs, empty beaches at sunrise, and restaurants that still have tables.',
+    },
+    {
+      kind: 'h3',
+      text: 'Spring Packing List',
+    },
+    {
+      kind: 'ul',
+      items: [
+        'Light layers for evenings (a zip fleece or thin jacket — you will need it after sunset in March and April)',
+        'Swimwear (ocean is cool in March, comfortable by May)',
+        'Comfortable walking shoes for Harbour Town and Bluffton',
+        'Light rain jacket — spring fronts bring short, heavy showers',
+        'Golf attire if applicable (Heritage week dress code at Harbour Town)',
+        'Sunscreen SPF 50+: UV index climbs fast even in mild weather',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Summer (June – August): Hot, Humid, and Worth It',
+    },
+    {
+      kind: 'p',
+      html: 'Summer on Hilton Head is tropical. Highs in the low 90s, humidity that makes 90° feel like 100°, and afternoon thunderstorms that roll in almost every day between 2 and 5 p.m. The pattern is predictable: <strong>mornings are clear and beautiful</strong>, early afternoons get heavy, storms roll through, evenings clear out again. Beach activities front-load to 8 a.m.–noon; restaurants and marina activities pick up at 6 p.m. The ocean is bathwater warm and the sea oats are at their peak.',
+    },
+    {
+      kind: 'h3',
+      text: 'Summer Packing List',
+    },
+    {
+      kind: 'ul',
+      items: [
+        'Lightweight, breathable fabrics (linen, moisture-wicking athletic wear)',
+        'Rash guards for kids and adults — sun exposure is intense, and a rash guard is more practical than constant reapplication',
+        'Reef-safe SPF 50+ sunscreen in quantity: you will use it',
+        'Water shoes (beach entrances have shells and occasional jellyfish)',
+        'Compact umbrella or small packable rain poncho for afternoon storms',
+        'Insect repellent: marshside dining and evening walks attract no-see-ums after rain',
+        'Light dress or resort-casual outfit for dinner (most restaurants are smart casual)',
+      ],
+    },
+    {
+      kind: 'callout',
+      label: 'Heat management tip',
+      html: 'Plan active beach time before noon. The heat index peaks 1–4 p.m. and afternoon storms are almost daily in July. The real golden hours are <strong>7–10 a.m.</strong> (empty beach, low sun angle) and <strong>6–8 p.m.</strong> (sunset on the west side of the island or Harbour Town).',
+    },
+    {
+      kind: 'h2',
+      text: 'Fall (September – November): Warm and Quiet',
+    },
+    {
+      kind: 'p',
+      html: 'September is the second half of summer — still hot, ocean at its warmest, but crowds thinning after Labor Day. October is underrated: 77° highs, 74° ocean temps, no crowds, and restaurants returning to their best form after peak-season exhaustion. The catch: <strong>September sits squarely in hurricane season</strong>. We recommend <a href="/blog/hilton-head-hurricane-season-travel-insurance">travel insurance with named-storm coverage</a> for any September trip.',
+    },
+    {
+      kind: 'h3',
+      text: 'Fall Packing List',
+    },
+    {
+      kind: 'ul',
+      items: [
+        'Swimwear still essential through October — ocean stays warm',
+        'Light jacket or fleece for November evenings',
+        'Sunscreen still required (UV index stays high through October)',
+        'Travel insurance documentation if traveling in September (hurricane contingency)',
+        'Layers: October days are warm, evenings can dip into the high 50s',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Winter (December – February): The Snowbird Season',
+    },
+    {
+      kind: 'p',
+      html: 'Winter on Hilton Head is mild compared to most of the country — highs in the low 60s, lows in the 40s, very little rain, zero crowds. It is not a beach-swimming month, but it is excellent for golf, long bike rides, oyster roasts, and exploring Bluffton at a pace impossible in summer. See our full <a href="/blog/hilton-head-winter-guide">winter guide</a> for snowbird logistics.',
+    },
+    {
+      kind: 'h3',
+      text: 'Winter Packing List',
+    },
+    {
+      kind: 'ul',
+      items: [
+        'A real jacket: 40° mornings are common in January and February',
+        'Layers for afternoons that warm to 60°+',
+        'Golf attire (winter golf is the hidden gem of Hilton Head)',
+        'Comfortable walking shoes — the island is still walkable and beautiful',
+        'No swimwear needed unless you are using a heated resort pool',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Hurricane Season: What Travelers Actually Need to Know',
+    },
+    {
+      kind: 'p',
+      html: 'Hurricane season runs June 1 through November 30, with the statistical peak from mid-August through mid-October. Hilton Head sits on a barrier island — any category 3+ storm tracking inland across the Georgia/Carolina coast will trigger <strong>mandatory evacuation orders</strong>. In practice, direct hits are rare (the island has been under serious hurricane threat perhaps a dozen times in the past 30 years), but the risk is real enough to plan for.',
+    },
+    {
+      kind: 'ul',
+      items: [
+        'Buy <strong>cancel-for-any-reason (CFAR)</strong> travel insurance if traveling June–October. Standard trip-interruption policies often exclude named storms.',
+        'Watch the National Hurricane Center (nhc.noaa.gov) from about 5 days out if you see a system forming in the Atlantic or Gulf.',
+        'If an evacuation order is issued, leave early. US-278 to the mainland is one road and traffic backs up badly.',
+        'Villa rental contracts typically do not automatically refund for evacuations — your travel insurance should cover the shortfall.',
+      ],
+    },
+    {
+      kind: 'faq',
+      label: 'Weather FAQ',
+      items: [
+        {
+          q: 'What is the best weather month on Hilton Head?',
+          a: 'May and October are the locals\' picks. May brings warm temperatures (low 80s), a swimmable ocean (70°+), light crowds, and no hurricane risk. October is equally pleasant — still warm, ocean at 74°, and the island is almost empty compared to summer.',
+        },
+        {
+          q: 'Does it rain a lot on Hilton Head?',
+          a: 'Summer brings daily afternoon thunderstorms — usually 2–5 p.m. They are short (30–60 minutes) and predictable. Plan morning beach time, duck inside for the afternoon storm, and come back out for sunset. Spring and fall have occasional frontal rain. Winter is the driest season.',
+        },
+        {
+          q: 'How bad is the humidity on Hilton Head in summer?',
+          a: 'It is genuinely oppressive from July through mid-August. Heat index regularly hits 100–105°F. Anyone sensitive to heat should either visit in spring/fall or plan to limit outdoor exposure to mornings and evenings in peak summer.',
+        },
+        {
+          q: 'Is Hilton Head good in April?',
+          a: 'Yes, with one caveat: book early if traveling during the RBC Heritage tournament (mid-April). Accommodation prices double and the island fills. The week before or after Heritage is excellent — warm, green, and quiet.',
+        },
+      ],
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 34) First-Timer's Guide to Hilton Head Island
+// ---------------------------------------------------------------------------
+
+const postFirstTimerGuide: Post = {
+  slug: 'first-time-hilton-head-guide',
+  title: 'First-Timer\'s Guide to Hilton Head Island: Everything You Need to Know Before You Go',
+  excerpt:
+    'The 12 things that will make or break your first Hilton Head trip — which part of the island to base in, how the gated plantation system works, and what the locals know that the reviews do not say.',
+  description:
+    'Complete first-timer\'s guide to Hilton Head Island, SC. Where to stay, how the plantations work, what to do first, best beaches, dining picks, and the seven mistakes first-time visitors make.',
+  category: 'Planning',
+  readTime: '10 min',
+  publishedAt: '2026-04-27',
+  author: 'Hilton Ahead',
+  featuredOrder: 34,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
+  keywords: [
+    'first time hilton head',
+    'hilton head island guide',
+    'hilton head tips for first timers',
+    'what to know before going to hilton head',
+    'hilton head vacation guide',
+    'hilton head island what to do',
+    'hilton head island overview',
+    'hilton head beginner guide',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: 'Hilton Head Island is 12 miles long and 5 miles wide, connected to the South Carolina mainland by a single two-lane causeway. It has 12 miles of beach, 24 golf courses, more than 200 miles of bike paths, and a land-use code that bans chains, billboard signs, and anything that would disrupt the oak canopy. First-timers are often surprised by how <em>quiet</em> it feels — no neon, no strip malls, no Boardwalk.',
+    },
+    {
+      kind: 'callout',
+      label: 'The most important thing to understand first',
+      html: 'Hilton Head is organized into <strong>gated plantation communities</strong>. Most of the island\'s best beaches, golf courses, and rental villas are inside one of these gates. Where you stay determines what is walkable, bikeable, and driveable — so choosing your neighborhood is the most important planning decision you will make.',
+    },
+    {
+      kind: 'h2',
+      text: 'The Neighborhoods (Choose Wisely)',
+    },
+    {
+      kind: 'p',
+      html: 'There are four main areas first-timers should understand. Read the full comparison in our <a href="/blog/sea-pines-vs-palmetto-dunes">Sea Pines vs. Palmetto Dunes guide</a>, but here is the short version:',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Sea Pines (South End):</strong> The most prestigious address. Home to Harbour Town, the lighthouse, and the Heritage golf course. Best for: couples, golfers, and anyone who wants to bike everywhere. Book 6+ months out for summer.',
+        '<strong>Palmetto Dunes (Mid-island):</strong> Three golf courses, 11 miles of lagoons, and the Omni resort. Best for: families, groups, and anyone who wants a resort experience with a room service option.',
+        '<strong>Forest Beach / Coligny (Mid-south):</strong> The only walkable, ungated part of the island. Coligny Plaza shopping, the most casual dining strip, and budget-friendlier rentals. Best for: first-timers who want to ditch the car occasionally.',
+        '<strong>Shelter Cove (Mid-island):</strong> Marina district, live music at night, date-night restaurants. Best for: couples who want waterfront energy rather than pure beach.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'The Plantation System (What the Gate Actually Means)',
+    },
+    {
+      kind: 'p',
+      html: 'Every gated plantation has a security checkpoint. As a guest, you drive up, give the gate guard the address where you are staying, and you are waved through. There is no hassle — it is designed to be easy for guests and to keep out day-tripper traffic. <strong>Sea Pines charges a $10 per-vehicle day fee for non-guests</strong>; all other plantations are free to enter as a guest.',
+    },
+    {
+      kind: 'p',
+      html: 'Some plantations also operate their own beach access, pool clubs, and golf courses that are exclusive to guests and property owners. This is what makes a Sea Pines villa so different from a Forest Beach rental — the villa comes with access to the plantation\'s private amenities.',
+    },
+    {
+      kind: 'h2',
+      text: 'Five Things to Do Your First 48 Hours',
+    },
+    {
+      kind: 'ol',
+      items: [
+        '<strong>Sunrise on the beach.</strong> Any beach. Hilton Head faces east, which means the Atlantic sunrise is directly in front of you. Set an alarm. You will not regret it.',
+        '<strong>Harbour Town at golden hour.</strong> The marina, the lighthouse, the candy-striped lighthouse reflection on the water. Go between 5 and 7 p.m. Get a drink at the Quarterdeck and sit outside.',
+        '<strong>Bike the Sea Pines perimeter trail.</strong> Even if you are not staying in Sea Pines, a day pass gets you in. The south-end loop from Harbour Town to South Beach is 5 miles of flat, shaded trail through maritime forest.',
+        '<strong>Oysters at Skull Creek.</strong> Skull Creek Boathouse or Hudson\'s on the Docks. Wednesday through Sunday, raw bar open, sunset table, local oysters. Book a table; do not show up and hope.',
+        '<strong>Bluffton day trip.</strong> Old Town Bluffton is 20 minutes off-island and looks nothing like Hilton Head. May River waterfront, artisan shops, excellent barbecue. Go on a weekday morning when it is quiet.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'The Seven Mistakes First-Timers Make',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Booking without knowing which plantation they are in.</strong> "Hilton Head oceanfront villa" covers a 12-mile range of addresses. Know whether you are in Sea Pines, Palmetto Dunes, or Forest Beach before you confirm.',
+        '<strong>Not renting a car.</strong> Uber/Lyft exist but are unreliable at peak hours. You need a car.',
+        '<strong>Planning outdoor activities during the 2–5 p.m. window in summer.</strong> That is the daily storm window. Stay inside or book it for morning.',
+        '<strong>Skipping the bike trails.</strong> More than 60 miles of paved paths. The rental bikes at the plantation offices are usually cheaper than the storefronts on the main road.',
+        '<strong>Eating only at the resort.</strong> The best food is not at the resort restaurants. Skull Creek Boathouse, Poseidon, and Salty Dog Cafe near South Beach are the dinners your trip will be remembered by.',
+        '<strong>Going to Coligny Beach mid-afternoon in July.</strong> It is packed wall to wall. Go to any plantation beach access — they are quieter, cleaner, and the water is the same ocean.',
+        '<strong>Not booking restaurants in advance.</strong> The top tables (Hudson\'s, Poseidon, Harbourmaster Grille) book out 1–2 weeks out in summer. Call when you book your villa.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What Hilton Head Is Not',
+    },
+    {
+      kind: 'p',
+      html: 'It is not Myrtle Beach. There are no carnival rides, no chain restaurants with animatronic sharks, no beach bars with neon signs. The island actively regulates its aesthetics — signs have to blend with the tree canopy, chain restaurants cannot operate within a plantation gate, and the speed limit is 35 mph across most of the island.',
+    },
+    {
+      kind: 'p',
+      html: 'That is the point. Hilton Head is a resort island that has been <em>deliberately</em> kept quiet. If you are looking for nightlife, you will find it at Shelter Cove on weekends. If you are looking for Daytona, you are in the wrong place.',
+    },
+    {
+      kind: 'h2',
+      text: 'Should You Hire a Local Planner?',
+    },
+    {
+      kind: 'p',
+      html: 'That depends on your group and budget. The island is easy to navigate independently if you do the research. Where local knowledge makes the biggest difference: <strong>choosing the right villa building</strong> (not all "oceanfront" properties are equal — some have a view, some face a parking lot), <strong>getting restaurant reservations the hotels can\'t get you</strong>, and <strong>knowing which activities are worth the money and which are tourist traps</strong>.',
+    },
+    {
+      kind: 'p',
+      html: 'Our <a href="/services">planning services</a> start at $295 for a 30-minute discovery call plus a written itinerary. If this is your first trip and you want it to go right, that\'s the fastest way to compress two years of local knowledge into your specific dates.',
+    },
+    {
+      kind: 'faq',
+      label: 'First-Timer FAQ',
+      items: [
+        {
+          q: 'How many days do you need on Hilton Head?',
+          a: 'Three to four days is the minimum to feel the island properly. A week gives you enough time to slow down, explore both ends, do a Bluffton day trip, and eat your way through the best restaurants. We do not recommend two-night trips — the drive time each way makes it feel rushed.',
+        },
+        {
+          q: 'Is Hilton Head family-friendly?',
+          a: 'Very. It is one of the better family beach destinations in the Southeast — flat, calm water on the south end, excellent bike trails, dolphin tours, and enough kid-friendly activities to fill a week without resorting to chain restaurants or water parks.',
+        },
+        {
+          q: 'Is Hilton Head expensive?',
+          a: 'Peak summer (July 4th through Labor Day) is genuinely expensive — oceanfront villa rates run $5,000–$15,000 per week. Spring and fall are significantly cheaper. Dining ranges from casual (Fish Camp at $25/person) to splurge (Poseidon at $80+/person). Budget realistically for car rental and villa access fees.',
+        },
+        {
+          q: 'What is Hilton Head known for?',
+          a: 'Golf (24 courses including the Heritage PGA Tour course at Harbour Town), beaches (12 miles, some of the widest on the East Coast), bike trails (60+ miles of paved paths), and a low-key, anti-commercial aesthetic that keeps chains and billboards off the island.',
+        },
+      ],
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -6130,6 +6772,10 @@ export const posts: Post[] = [
   postCompassItinerary,
   postWeddingVenuesByVibe,
   postPublicBeachAccess,
+  postAirportGuide,
+  postGettingToHHI,
+  postWeatherPackingGuide,
+  postFirstTimerGuide,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
@@ -6261,6 +6907,22 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
   'hilton-head-kayaking-guide': {
     posts: ['hilton-head-dolphin-tours', 'hilton-head-fishing-guide', 'shelter-cove-guide'],
     industries: ['water-activities', 'family-activities'],
+  },
+  'hilton-head-airport-guide': {
+    posts: ['how-to-get-to-hilton-head-island', 'hilton-head-weekend-getaway', 'hilton-head-3-day-itinerary'],
+    industries: ['vacation-rentals'],
+  },
+  'how-to-get-to-hilton-head-island': {
+    posts: ['hilton-head-airport-guide', 'first-time-hilton-head-guide', 'hilton-head-weekend-getaway'],
+    industries: ['vacation-rentals'],
+  },
+  'hilton-head-weather-packing-guide': {
+    posts: ['best-time-to-visit-hilton-head', 'hilton-head-hurricane-season-travel-insurance', 'first-time-hilton-head-guide'],
+    industries: ['water-activities', 'family-activities'],
+  },
+  'first-time-hilton-head-guide': {
+    posts: ['how-to-get-to-hilton-head-island', 'sea-pines-vs-palmetto-dunes', 'hilton-head-3-day-itinerary'],
+    industries: ['vacation-rentals', 'restaurants'],
   },
 };
 
