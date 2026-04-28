@@ -397,19 +397,20 @@ export default function IslandFlyover() {
 
       {/*
         pointer-events-none lets clicks fall through to the SVG bubbles in the
-        layer below — without this the heading container intercepts clicks on
-        bubbles 3–5 because its intrinsic height extends well above its bottom
-        anchor. The heading has no interactive children, so this is safe.
+        layer below — the heading has no interactive children, so this is safe.
       */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] mx-auto flex max-w-[1280px] flex-col items-start justify-end px-5 pb-24 text-sand md:pb-32">
-        <div className="text-sand/65">
-          <WaveLine width={120} />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-[3] mx-auto flex max-w-[1280px] flex-col items-center justify-start px-5 pt-12 text-center text-white md:pt-16"
+        style={{ textShadow: '0 2px 18px rgba(10, 41, 48, 0.55)' }}
+      >
+        <div className="text-white/70">
+          <WaveLine width={96} />
         </div>
-        <h2 className="display mt-5 max-w-[820px] text-balance text-[34px] leading-[1.04] tracking-[-0.025em] text-sand sm:text-[44px] md:text-[64px] lg:text-[80px]">
+        <h2 className="display mt-3 max-w-[760px] text-balance text-[26px] leading-[1.05] tracking-[-0.025em] !text-white sm:text-[34px] md:text-[48px] lg:text-[60px]">
           Twelve miles of island,{' '}
           <span className="display-italic text-gold">one aerial pass.</span>
         </h2>
-        <p className="mt-5 max-w-[520px] text-[14px] leading-[1.7] text-sand/85 md:text-[16px]">
+        <p className="mt-4 max-w-[480px] text-[13px] leading-[1.65] text-white/90 md:text-[15px]">
           From Harbour Town to Port Royal Sound, every villa we book and every
           tee time we hold.
         </p>
