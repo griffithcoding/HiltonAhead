@@ -2046,6 +2046,322 @@ const postBestTime: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 9.5) 2026 Hurricane Forecast — why it's a smart year to book shoulder season
+// ---------------------------------------------------------------------------
+
+const postHurricaneForecast2026: Post = {
+  slug: 'hilton-head-2026-hurricane-forecast',
+  title:
+    "The 2026 Hurricane Forecast: Why This Is a Smart Year to Book Hilton Head",
+  excerpt:
+    "Below-average season expected. Colorado State and Tropical Storm Risk both call for fewer storms than the 30-year norm thanks to a strong El Niño. Here's how to read it, and how to book around it.",
+  description:
+    "The 2026 Atlantic hurricane forecast is below-average. CSU and TSR call for ~75% of normal activity. What that means for booking Hilton Head Aug-Oct, and the four logistics every visitor should plan for anyway.",
+  category: 'Planning',
+  readTime: '8 min',
+  publishedAt: '2026-04-30',
+  author: 'Hilton Ahead',
+  featuredOrder: 1.5,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
+  keywords: [
+    'Hilton Head hurricane season 2026',
+    'Hilton Head 2026 hurricane forecast',
+    'is it safe to visit Hilton Head in hurricane season',
+    'Hilton Head September October hurricane',
+    'Atlantic hurricane forecast 2026',
+    'CSU hurricane forecast 2026',
+    'El Niño 2026 hurricane',
+    'Hilton Head shoulder season',
+    'Hilton Head fall booking',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Every spring we get the same call from clients eyeballing September and October trips: \"Should we even bother booking? Isn't it hurricane season?\" The honest answer for 2026 is the most encouraging it's been in five years. Both major Atlantic forecasters — Colorado State University and the British firm Tropical Storm Risk — released April outlooks calling for a meaningfully below-average season. Here's what the numbers actually say, what they mean for a Hilton Head trip, and the four logistics every shoulder-season visitor should plan for regardless.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>Book the September-October shoulder season with confidence.</strong> 2026 is forecast at <strong>~75% of normal Atlantic activity</strong> with US major-hurricane landfall odds at <strong>32% vs the 43% historical average</strong>. Pair that with the standard playbook — refundable lodging, trip insurance, and a flexible booking window — and you get fall water temps, light crowds, and 30-40% lower rates without taking on outsized weather risk.",
+    },
+    {
+      kind: 'h2',
+      text: "What the 2026 forecasts actually say",
+    },
+    {
+      kind: 'p',
+      html: "There are two forecasts that matter. <strong>Colorado State University</strong> publishes the most-cited seasonal outlook in April, then revises through August. <strong>Tropical Storm Risk</strong> (TSR), a UK private forecasting firm, runs an independent model. When both call the same direction, you can read it with reasonable confidence. For 2026, both called below-average, and the reason is the same: a strong El Niño event has reset the Pacific, and El Niño years drive elevated vertical wind shear across the Atlantic basin, which shears apart developing storms before they can organize.",
+    },
+    {
+      kind: 'table',
+      caption: "April 2026 Atlantic hurricane outlooks vs. 30-year average",
+      headers: ['Forecaster', 'Named storms', 'Hurricanes', 'Major hurricanes', 'Activity vs. avg'],
+      rows: [
+        ['Colorado State University (Apr 2026)', '13', '6', '2', '~75%'],
+        ['Tropical Storm Risk (Apr 9, 2026)',    '12', '5', '1', '~54% (ACE 66)'],
+        ['1991-2020 historical average',         '14.4', '7.2', '3.2', '100%'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Two things to pull out of that table. First, the major-hurricane count is the number that matters most for landfall risk. CSU sees 2 majors; TSR sees 1. Both are below the 30-year norm of 3.2. Second, TSR's <strong>ACE index</strong> (Accumulated Cyclone Energy, basically a season-long power score) lands at 66 — about 54% of average. That's not just fewer storms, it's weaker storms.",
+    },
+    {
+      kind: 'callout',
+      label: "What CSU says about US landfall odds",
+      html: "Tropical Storm Risk projects a <strong>32% chance</strong> of a major hurricane making US landfall in 2026 (long-term average: 43%). For the Caribbean, the forecast still gives a 35% chance of a major landfall, so any Caribbean leg of a trip carries higher risk than the Carolina coast.",
+    },
+    {
+      kind: 'h2',
+      text: "What this means for Hilton Head specifically",
+    },
+    {
+      kind: 'p',
+      html: "Hilton Head Island sits on the South Carolina coast, just inside the typical Atlantic hurricane track. Direct hits are historically rare. The last storm to do material damage to the island was <strong>Hurricane Matthew in October 2016</strong>, which prompted a mandatory evacuation and downed thousands of trees but caused no fatalities and no destroyed structures in the resort areas. Since then, the closest call was Dorian in 2019, which tracked offshore. The island has cleared the past six seasons without a meaningful direct impact.",
+    },
+    {
+      kind: 'p',
+      html: "Statistically, the highest-risk window on the SC coast is <strong>mid-August through mid-October</strong>, with September the single peak month. That overlaps almost perfectly with the shoulder-season pricing window — which is why the trip-cost discount exists in the first place. Insurance carriers price the risk; lodging operators discount the demand. Both are reading the same signal.",
+    },
+    {
+      kind: 'h2',
+      text: "How to book around it (the four-part playbook)",
+    },
+    {
+      kind: 'h3',
+      text: '1. Pick lodging with a flexible cancellation policy',
+    },
+    {
+      kind: 'p',
+      html: "Most Hilton Head villa rentals default to a 30-60 day cancellation window with hurricane-clause language baked in. <strong>Read the actual hurricane clause before booking.</strong> The good ones refund 100% if a National Hurricane Center cone touches Beaufort County within 72 hours of arrival. The bad ones offer credit only, valid for 12 months. Two- and three-night stays at <a href=\"/blog/2026-best-places-to-stay-hilton-head\">resort hotels</a> are usually more flexible than weeklong villa contracts. If you're doing a long stay during peak season, this clause is the difference between a $4,000 vacation and a $4,000 storage fee.",
+    },
+    {
+      kind: 'h3',
+      text: '2. Add Cancel-For-Any-Reason (CFAR) trip insurance',
+    },
+    {
+      kind: 'p',
+      html: "Standard travel insurance pays out if a hurricane <em>actually</em> makes landfall during your trip. CFAR pays out if you decide not to come — for any reason — typically with a 75% reimbursement of trip costs and a 48-72 hour pre-trip cutoff. CFAR runs about 10-12% of trip cost vs 4-7% for standard. For a $5,000 family trip in September, that's roughly $250 extra for genuine peace of mind. Cheap insurance against the kind of \"the cone is wobbling\" anxiety that ruins the week before a vacation.",
+    },
+    {
+      kind: 'h3',
+      text: '3. Build flexibility into your travel dates',
+    },
+    {
+      kind: 'p',
+      html: "If you can move your arrival by 48-72 hours either way, you can almost always dodge a storm. Hurricane tracks become reliable about 4-5 days out. Visitors who lose trips to a storm are usually the ones with locked-in flights and a single arrival day. Drive markets — Atlanta, Charlotte, Charleston, Raleigh — have a structural advantage here. So do guests <a href=\"/blog/best-time-to-visit-hilton-head\">booking shoulder-season weeks</a> with refundable lodging.",
+    },
+    {
+      kind: 'h3',
+      text: '4. Know the evacuation logistics before you need them',
+    },
+    {
+      kind: 'p',
+      html: "Hilton Head has one road off the island: <strong>US 278</strong>. The William Hilton Parkway bridge crosses Mackay and Skull Creeks to the mainland, then connects to I-95 at Exit 8. Mandatory evacuations are called by the Beaufort County Emergency Management Department roughly 36-48 hours before storm impact, with contraflow on I-26 west out of Charleston. If an evacuation is called, leave immediately rather than waiting — the bottleneck on US 278 forms within 4-6 hours of an order. (Side note for 2026 visitors: there are no current bridge construction disruptions. The <a href=\"/blog/hilton-head-2026-bridge-construction\">US 278 replacement project</a> is in design phase, with construction not expected before 2028.)",
+    },
+    {
+      kind: 'h2',
+      text: "The four-window decision frame",
+    },
+    {
+      kind: 'p',
+      html: "If you're using the 2026 forecast to pick a window, here's how the math actually plays:",
+    },
+    {
+      kind: 'table',
+      caption: "Hilton Head 2026 booking windows: weather, rates, hurricane risk",
+      headers: ['Window', 'Hurricane risk', 'Rate vs. summer', 'Best for'],
+      rows: [
+        ['June 1 - Aug 14',  'Low (early season)',          'Peak',      'School-calendar families'],
+        ['Aug 15 - Sep 30',  'Highest (peak window)',       '-15 to -25%', 'Flexible drive-market couples'],
+        ['Oct 1 - Oct 31',   'Moderate (declining)',        '-30 to -40%', 'Best overall: water still 73°F, light crowds'],
+        ['Nov 1 - Nov 30',   'Very low (season effectively closed Nov 30)', '-40 to -50%', 'Off-season weekenders, golf'],
+      ],
+    },
+    {
+      kind: 'callout',
+      label: "If we were booking right now",
+      html: "We'd book the <strong>second or third week of October</strong>. Water temps still hit 73°F, hurricane risk is sharply lower than September, lodging rates run 35-40% below July, and you can still get dinner reservations the day-of. Couples especially. Pair it with our <a href=\"/blog/best-time-to-visit-hilton-head\">month-by-month weather guide</a> if you want to compare across the calendar.",
+    },
+    {
+      kind: 'h2',
+      text: "What can change between now and August",
+    },
+    {
+      kind: 'p',
+      html: "The April outlooks are the least accurate of the year. CSU explicitly notes their April forecast is historically less reliable than the June and August updates because Atlantic and Pacific conditions can shift meaningfully through early summer. The El Niño signal is the dominant factor right now, and that pattern is well-established — but if El Niño collapses faster than expected by July, the outlook can revise upward. Watch for the <strong>August 5 update</strong> from CSU, which is the most predictive of the season's actual activity. We track it and update this post when revisions land.",
+    },
+    {
+      kind: 'h2',
+      text: "If you want a custom answer",
+    },
+    {
+      kind: 'p',
+      html: "The right window depends on who's traveling, what they want to do, and how flexible they are. We've planned 100+ Hilton Head trips through hurricane season, and the question we ask first is always: \"how many work-from-anywhere days do you have for a flex window?\" Two days of arrival flexibility plus refundable lodging plus CFAR insurance gets the risk down to noise. <a href=\"/itinerary\">Tell us the trip</a> and we'll map it against the next six months of forecast updates and rate movement. The guide is free.",
+    },
+    {
+      kind: 'faq',
+      label: "FAQ",
+      items: [
+        {
+          q: "Is it safe to visit Hilton Head during hurricane season?",
+          a: "Yes, with sensible logistics. Hurricane season runs June 1 - November 30. Direct hurricane impacts on Hilton Head are historically rare — the last meaningful damage was Hurricane Matthew in October 2016. The 2026 forecast is below-average. Book lodging with a strong hurricane clause, add CFAR trip insurance, and build 48-72 hours of arrival flexibility.",
+        },
+        {
+          q: "What is the worst month for hurricanes on Hilton Head?",
+          a: "September. The peak of Atlantic hurricane season runs roughly September 10-20, when SST and atmospheric conditions are most favorable for storm development. October risk drops sharply, especially after October 15.",
+        },
+        {
+          q: "Will the 2026 hurricane season be bad?",
+          a: "No. As of April 2026, both Colorado State University and Tropical Storm Risk forecast a below-average season — about 75% of normal activity — driven by a strong El Niño in the Pacific. CSU forecasts 13 named storms, 6 hurricanes, and 2 majors. TSR forecasts 12 named storms, 5 hurricanes, and 1 major.",
+        },
+        {
+          q: "Should I buy hurricane trip insurance for a Hilton Head trip?",
+          a: "If you're traveling between mid-August and mid-October, yes. Standard trip insurance (4-7% of trip cost) covers actual storm impact. Cancel-For-Any-Reason coverage (10-12%) covers the broader anxiety window — typically reimbursing 75% of trip costs if you cancel up to 48 hours before arrival.",
+        },
+        {
+          q: "What happens if a hurricane is approaching during my Hilton Head stay?",
+          a: "Beaufort County calls mandatory evacuations 36-48 hours before storm impact. Leave immediately when called — US 278 is the only road off the island and bottlenecks within hours of an evacuation order. Contraflow runs on I-26 west out of Charleston. Most lodging contracts refund 100% if an evacuation order is in effect during your stay.",
+        },
+      ],
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 9.7) US 278 Bridge — anti-FUD post for 2026 visitors
+// ---------------------------------------------------------------------------
+
+const postBridge2026Debunker: Post = {
+  slug: 'hilton-head-2026-bridge-construction',
+  title:
+    "Will the US 278 Bridge Project Affect Your 2026 Hilton Head Trip? No.",
+  excerpt:
+    "The Mackay Creek bridge replacement is real, the funding gap is real, but construction won't start until 2028. Here's what's actually happening in 2026, and the one logistics note worth knowing.",
+  description:
+    "The US 278 / William Hilton Parkway bridge replacement is in design phase only. No construction in 2026. Current geotech work is barge-based, zero traffic impact. Full breakdown of the project status.",
+  category: 'Planning',
+  readTime: '6 min',
+  publishedAt: '2026-04-30',
+  author: 'Hilton Ahead',
+  featuredOrder: 1.8,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes'],
+  keywords: [
+    'Hilton Head bridge construction 2026',
+    'US 278 bridge Hilton Head',
+    'William Hilton Parkway construction',
+    'Hilton Head traffic 2026',
+    'Mackay Creek bridge',
+    'Hilton Head bridge project status',
+    'driving to Hilton Head 2026',
+    'Hilton Head bridge replacement timeline',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "The most common 2026 question we're getting from drive-market clients is some version of: \"I read that they're tearing down the bridge to Hilton Head — is my trip going to be a nightmare?\" Short answer: no, and the longer answer is worth understanding because the project is real and will eventually matter. Here's the actual status of the US 278 / William Hilton Parkway bridge replacement project as of late April 2026, and what it means for trips this year.",
+    },
+    {
+      kind: 'callout',
+      label: 'The short answer',
+      html: "<strong>No bridge construction will affect 2026 Hilton Head visitors.</strong> The project is in <strong>design phase (60% complete)</strong>, with construction not expected to start before <strong>2028</strong> due to a $190M funding gap. Current geotech exploration work is <strong>barge-based</strong>, occurring outside the travel lanes. Zero current traffic impact.",
+    },
+    {
+      kind: 'h2',
+      text: "What the project actually is",
+    },
+    {
+      kind: 'p',
+      html: "US 278 (William Hilton Parkway) is the only road on and off Hilton Head Island. It crosses two creeks — Mackay Creek and Skull Creek — via twin bridges built in 1956 and 1982. The 1956 eastbound span (the older of the two) has been flagged as structurally deficient by SCDOT for years. The current $311M plan replaces the eastbound bridge first, then later expands the corridor approaches on both ends. The full corridor plan totals eight projects from Jenkins Island to Jarvis Creek, aimed at congestion, safety, and emergency-evacuation capacity.",
+    },
+    {
+      kind: 'h2',
+      text: "Where the project actually is (April 2026)",
+    },
+    {
+      kind: 'p',
+      html: "Three things to know about the current state:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "<strong>Design is 60% complete</strong> as of late April 2026. SCDOT presented an updated corridor master-plan briefing to Hilton Head Town Council on April 29, 2026.",
+        "<strong>Construction has not been funded.</strong> Beaufort County is short approximately $190M of the $311M total cost and is currently evaluating whether to proceed without federal funding. If they do, construction could start as early as 2028.",
+        "<strong>Current on-site activity is barge-based geotechnical exploration only.</strong> Crews are taking soil samples from the water, not the road. The geotech work occurs outside US 278 travel lanes and has no traffic impact.",
+      ],
+    },
+    {
+      kind: 'callout',
+      label: "What this means for your 2026 trip",
+      html: "Drive on, drive off. Same as always. The bridge is structurally monitored by SCDOT and remains fully open. There is no lane closure schedule, no detour, and no construction equipment in the travel lanes through the entire 2026 season.",
+    },
+    {
+      kind: 'h2',
+      text: "The one logistics note worth knowing for 2026",
+    },
+    {
+      kind: 'p',
+      html: "Even without construction, US 278 has predictable congestion windows. <strong>Saturday turnover days</strong> (the peak inbound day for weeklong rentals) routinely show 20-45 minute backups eastbound between roughly 11 a.m. and 4 p.m. June through August. The bottleneck is the Bluffton Parkway / Highway 46 merge, not the bridge itself. If you're driving in on a summer Saturday, either arrive before 10 a.m. or after 5 p.m. — both windows clear quickly. Outbound Sunday traffic mirrors the same pattern westbound.",
+    },
+    {
+      kind: 'h2',
+      text: "When the bridge work will actually matter",
+    },
+    {
+      kind: 'p',
+      html: "Realistically, this is a <strong>2029-2031 problem, not a 2026 problem</strong>. Even on the optimistic timeline (county proceeds without federal funding, breaks ground in 2028), construction is projected to take 2.5 years. Expect approach-lane work, occasional weekend closures of one direction with detours via the parallel westbound bridge, and full corridor disruption sometime in the early 2030s. We'll update this post as funding decisions and timelines firm up. If you're planning a major Hilton Head investment — second home, multi-year vacation rental — the timeline is worth tracking. If you're booking a 2026 family week, it's noise.",
+    },
+    {
+      kind: 'h2',
+      text: "What's not changing in 2026",
+    },
+    {
+      kind: 'ul',
+      items: [
+        "Both eastbound and westbound US 278 bridge spans remain fully open all year.",
+        "No lane closures are scheduled through 2026 hurricane season (June-November).",
+        "The evacuation route remains intact and unimpeded.",
+        "The toll-free crossing remains free. (There has been no public discussion of tolling the bridge to fund the replacement.)",
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "Plan your drive",
+    },
+    {
+      kind: 'p',
+      html: "If you're driving in from Atlanta, Charlotte, Charleston, or Raleigh, the airport-vs-drive math <strong>strongly favors driving in 2026</strong> — airfares are up 17.3% year over year per the US Travel Association's March Travel Price Index, while gas prices have remained relatively stable. <a href=\"/itinerary\">Send us your trip details</a> and we'll factor real arrival timing — including which side of the Saturday turnover wave to land on — into the itinerary.",
+    },
+    {
+      kind: 'faq',
+      label: "FAQ",
+      items: [
+        {
+          q: "Is the Hilton Head bridge closing in 2026?",
+          a: "No. The US 278 bridge replacement project is in design phase only. Construction is not expected to start before 2028. Both bridge spans remain fully open through 2026.",
+        },
+        {
+          q: "When will the new Hilton Head bridge be built?",
+          a: "Design is 60% complete as of April 2026. Construction is unfunded and unscheduled — Beaufort County is currently short approximately $190M. If they proceed without federal funding, construction could start in 2028 and take roughly 2.5 years to complete.",
+        },
+        {
+          q: "Will there be Hilton Head traffic delays from bridge construction in 2026?",
+          a: "No. Current geotechnical exploration is barge-based and occurs outside US 278 travel lanes. There are no scheduled lane closures or detours. Normal Saturday turnover-day congestion still applies on summer weekends.",
+        },
+        {
+          q: "How will the bridge replacement be paid for?",
+          a: "The $311M project has a $190M funding shortfall. The Beaufort County Council is currently weighing whether to proceed without federal funds. No tolls have been proposed; the bridge would remain free. Funding decisions are expected during 2026.",
+        },
+        {
+          q: "What's the best time to drive across the bridge to Hilton Head?",
+          a: "On summer Saturdays (the peak rental turnover day), arrive before 10 a.m. or after 5 p.m. to avoid the eastbound bottleneck at Bluffton Parkway / Hwy 46. Mid-week travel is unrestricted.",
+        },
+      ],
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // 10) RBC Heritage 2026 travel guide
 // ---------------------------------------------------------------------------
 
@@ -2184,6 +2500,11 @@ const postRbcHeritage: Post = {
     {
       kind: 'p',
       html: "Heritage is one of the most walkable, well-run PGA Tour events. Course access is better than Augusta, the crowds more polite than Phoenix, the backdrop more photogenic than pretty much anywhere. Plaid jackets, lighthouse, Atlantic sunset on the 18th. Worth a bucket-list week.",
+    },
+    {
+      kind: 'callout',
+      label: "Planning for 2027?",
+      html: "The 2027 RBC Heritage runs <strong>April 12-18, 2027</strong>. We're publishing a <a href=\"/guides/2027-rbc-heritage\">free 2027 Heritage Survival Kit</a> in February 2027 — tickets, parking, lodging, dinner reservations, the full week-by-week playbook. Reserve your copy now and we'll send it the moment it drops.",
     },
   ],
 };
@@ -5633,6 +5954,8 @@ export const posts: Post[] = [
   postShelterCove,
   postGolfTrip,
   postBestTime,
+  postHurricaneForecast2026,
+  postBridge2026Debunker,
   postRbcHeritage,
   postWithKids,
   postBestBeaches,
@@ -5768,6 +6091,14 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
   'hilton-head-dog-friendly-guide': {
     posts: ['best-hilton-head-beaches', 'forest-beach-guide', 'hilton-head-with-kids'],
     industries: ['family-activities', 'restaurants'],
+  },
+  'hilton-head-2026-hurricane-forecast': {
+    posts: ['best-time-to-visit-hilton-head', 'hilton-head-2026-bridge-construction', '2026-best-places-to-stay-hilton-head'],
+    industries: ['vacation-rentals'],
+  },
+  'hilton-head-2026-bridge-construction': {
+    posts: ['hilton-head-2026-hurricane-forecast', 'best-time-to-visit-hilton-head', 'hilton-head-weekend-getaway'],
+    industries: ['vacation-rentals'],
   },
   'hilton-head-weekend-getaway': {
     posts: ['hilton-head-3-day-itinerary', 'best-time-to-visit-hilton-head', '2026-best-places-to-stay-hilton-head'],
