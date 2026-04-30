@@ -21,6 +21,12 @@ export const hero = {
     href: '#why-hilton-head',
     label: 'Why Hilton Head',
   },
+  /** Editorial third CTA — small announcement-style link beside the secondary. */
+  tertiaryCta: {
+    href: '/guides/2027-rbc-heritage',
+    eyebrow: 'Free guide',
+    label: '2027 RBC Heritage Survival Kit',
+  },
   /** Trust signals beneath the lede, tightly kerned and small-caps. */
   proofLine: [
     '255+ trips advised',

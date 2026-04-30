@@ -16,6 +16,7 @@ export const footerLinks = {
     {
       label: 'Plan Your Trip',
       links: [
+        { href: '/guides/2027-rbc-heritage', label: '2027 Heritage Kit (free)' },
         { href: '/hilton-head-honeymoon', label: 'Honeymoon' },
         { href: '/hilton-head-weddings', label: 'Weddings' },
         { href: '/hilton-head-golf-packages', label: 'Golf Packages' },
