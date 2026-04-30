@@ -7,7 +7,6 @@ import { trackLead } from '@/app/lib/analytics'
 
 const TIERS = [
   { value: 'standard', label: 'Standard Listing — Free' },
-  { value: 'featured', label: 'Featured Partner — Highlighted placement' },
   { value: 'exclusive', label: 'Exclusive / Sponsorship — Custom arrangement' },
   { value: 'unsure', label: "Not sure yet — just exploring" },
 ]
@@ -204,7 +203,7 @@ export default function BusinessInquiryForm({
 
       <Field
         label="Interested in…"
-        hint="Free standard listings are always available. Featured partnerships have dedicated placement and editorial profile."
+        hint="Free standard listings are always available. Exclusive sponsorships are custom-built around your goals."
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {TIERS.map(({ value, label }) => (

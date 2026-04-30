@@ -21,11 +21,11 @@ export const metadata: Metadata = generatePageMetadata({
 const pageFaqs = [
   {
     question: 'How are businesses selected for the Hilton Head Local Guide?',
-    answer: "We curate every listing editorially — no pay-to-play standard listings. We evaluate businesses based on local reputation, consistency, and visitor experience. Featured Partner placements are a paid opportunity that gives businesses premium visibility while keeping standard listings merit-based.",
+    answer: "We curate every listing editorially — no pay-to-play. We evaluate businesses based on local reputation, consistency, and visitor experience. Rankings stay merit-based regardless of any commercial relationship.",
   },
   {
     question: 'Can my business get listed in the Hilton Head Local Guide?',
-    answer: "Yes. Standard listings are available at no cost — reach out via the Get Featured page and we'll review your business. Featured Partner placements offer premium placement, a larger editorial profile, and priority positioning within your industry category.",
+    answer: "Yes. Standard listings are available at no cost — reach out via our contact page and we'll review your business. We aim to respond to qualified inquiries within 1–2 business days.",
   },
   {
     question: 'How current is the business information?',

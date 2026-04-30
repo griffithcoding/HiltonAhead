@@ -33,7 +33,6 @@ export const metadata: Metadata = generatePageMetadata({
 const TIER_LABELS = {
   signature: 'Signature Partner',
   curated: 'Curated Partner',
-  featured: 'Featured Partner',
 } as const;
 
 export default function PartnersPage() {
@@ -91,14 +90,6 @@ export default function PartnersPage() {
                 partners={grouped.curated}
               />
             )}
-            {grouped.featured.length > 0 && (
-              <TierSection
-                label={TIER_LABELS.featured}
-                subtitle="Reliable operators worth knowing."
-                partners={grouped.featured}
-                compact
-              />
-            )}
           </div>
         ) : (
           // ——— Graceful empty-state ———
@@ -111,10 +102,9 @@ export default function PartnersPage() {
                   <span className="display-italic">inaugural partner roster.</span>
                 </h2>
                 <p className="mt-5 max-w-[560px] text-[15px] leading-[1.75] text-ink-soft md:text-[17px]">
-                  As of 2026, we\u2019re opening three Signature, six Curated, and
-                  twelve Featured slots per year. If you run a Hilton Head
-                  business and want to be in front of our readers, we\u2019d love
-                  to talk.
+                  As of 2026, we&apos;re opening three Signature and six Curated
+                  slots per year. If you run a Hilton Head business and want to
+                  be in front of our readers, we&apos;d love to talk.
                 </p>
               </div>
               <Link

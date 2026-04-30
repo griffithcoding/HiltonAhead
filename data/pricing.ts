@@ -159,7 +159,6 @@ export const B2B_TIERS: Tier[] = [
       'Top-3 industry-page placement',
       '1 dedicated blog inclusion per year',
       '2 newsletter mentions per year',
-      '"Featured Partner" badge',
       '/local hub homepage rotation',
     ],
     idealFor: 'Established businesses with marketing budget; multi-location operators.',

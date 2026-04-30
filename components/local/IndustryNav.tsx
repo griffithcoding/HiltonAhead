@@ -54,19 +54,16 @@ export default function IndustryNav({ businesses, featuredBusiness }: Props) {
         <span className="mr-1 shrink-0 self-center text-xs font-semibold uppercase tracking-widest text-ink-soft">
           Jump to:
         </span>
-        {allBusinesses.map(({ id, name, featured }) => (
+        {allBusinesses.map(({ id, name }) => (
           <button
             key={id}
             onClick={() => scrollTo(id)}
             className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-200 ${
               activeId === id
                 ? 'border-ocean bg-ocean text-sand shadow-md'
-                : featured
-                  ? 'border-gold/50 bg-gold/10 text-gold-deep hover:bg-gold/20'
-                  : 'border-rule-soft bg-sand text-ink-soft hover:border-ocean/40 hover:text-ocean'
+                : 'border-rule-soft bg-sand text-ink-soft hover:border-ocean/40 hover:text-ocean'
             }`}
           >
-            {featured && '⭐ '}
             {name}
           </button>
         ))}

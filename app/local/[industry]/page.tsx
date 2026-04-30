@@ -12,9 +12,7 @@ import { generatePageMetadata } from '@/app/lib/metadata'
 import { getBreadcrumbSchema, getFaqSchema } from '@/app/lib/metadata'
 import { brand } from '@/data/brand'
 import BusinessCard from '@/components/local/BusinessCard'
-import FeaturedBusinessCard from '@/components/local/FeaturedBusinessCard'
 import IndustryNav from '@/components/local/IndustryNav'
-import GetFeaturedBanner from '@/components/local/GetFeaturedBanner'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url
 
@@ -87,9 +85,14 @@ export default async function IndustryPage({
   const industry = getIndustryBySlug(slug)
   if (!industry) notFound()
 
+  // Featured Partner program is retired on the front end — surface every
+  // business as a regular listing so nothing disappears from the directory.
   const featured = getFeaturedBusiness(slug)
-  const regulars = getRegularBusinesses(slug)
-  const hasBusinesses = !!featured || regulars.length > 0
+  const regulars = [
+    ...(featured ? [featured] : []),
+    ...getRegularBusinesses(slug),
+  ]
+  const hasBusinesses = regulars.length > 0
 
   const breadcrumbs = [
     { name: 'Home', path: '/' },
@@ -103,19 +106,15 @@ export default async function IndustryPage({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: industry.h1,
-        numberOfItems: (featured ? 1 : 0) + regulars.length,
-        itemListElement: [featured, ...regulars]
-          .filter(Boolean)
-          .map((b, i) => ({
-            '@type': 'ListItem',
-            position: i + 1,
-            name: b!.name,
-            url: `${siteUrl}/local/${slug}#${b!.id}`,
-          })),
+        numberOfItems: regulars.length,
+        itemListElement: regulars.map((b, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: b.name,
+          url: `${siteUrl}/local/${slug}#${b.id}`,
+        })),
       }
     : null
-
-  const featuredSchema = featured ? buildLocalBusinessSchema(featured, slug) : null
 
   return (
     <>
@@ -128,14 +127,10 @@ export default async function IndustryPage({
               getBreadcrumbSchema(breadcrumbs),
               getFaqSchema(industry.faqs),
               itemListSchema,
-              featuredSchema,
             ].filter(Boolean)
           ),
         }}
       />
-
-      {/* Sticky "Get Featured" button */}
-      <GetFeaturedBanner variant="sticky" />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-ink via-ocean-deep to-ocean px-5 py-16 md:py-24">
@@ -182,32 +177,20 @@ export default async function IndustryPage({
           <>
             {/* Scroll nav */}
             <div className="mb-10">
-              <IndustryNav
-                businesses={regulars}
-                featuredBusiness={featured}
-              />
+              <IndustryNav businesses={regulars} />
             </div>
 
-            {/* Featured Partner */}
-            {featured && (
-              <div className="mb-12">
-                <FeaturedBusinessCard business={featured} />
+            {/* Grid of listings */}
+            <div className="mb-16">
+              <h2 className="display mb-6 text-2xl font-medium text-ink md:text-3xl">
+                Top {industry.name.toLowerCase()} on Hilton Head Island
+              </h2>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {regulars.map((business) => (
+                  <BusinessCard key={business.id} business={business} />
+                ))}
               </div>
-            )}
-
-            {/* Grid of regular listings */}
-            {regulars.length > 0 && (
-              <div className="mb-16">
-                <h2 className="display mb-6 text-2xl font-medium text-ink md:text-3xl">
-                  Top {industry.name.toLowerCase()} on Hilton Head Island
-                </h2>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {regulars.map((business) => (
-                    <BusinessCard key={business.id} business={business} />
-                  ))}
-                </div>
-              </div>
-            )}
+            </div>
           </>
         ) : (
           /* Coming soon state for industries without listings yet */
@@ -221,18 +204,13 @@ export default async function IndustryPage({
               reach out and we&apos;ll add your listing to the first published batch.
             </p>
             <Link
-              href="/local/get-featured"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-bold uppercase tracking-widest text-sand shadow-md transition-all hover:bg-ocean"
             >
-              ⭐ Submit your listing
+              Submit your listing
             </Link>
           </div>
         )}
-
-        {/* Get Featured Banner */}
-        <div className="mb-16">
-          <GetFeaturedBanner industryName={industry.name} />
-        </div>
 
         {/* FAQ */}
         <section className="mx-auto max-w-2xl">

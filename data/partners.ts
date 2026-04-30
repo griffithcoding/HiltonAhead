@@ -136,7 +136,8 @@ export const sponsorshipTiers: SponsorshipTier[] = [
     tagline:
       'Honest editorial mention in a tier list + monthly reach + co-branded travel assets.',
     benefits: [
-      'Everything in Featured Partner',
+      'Logo + 75-word blurb in the footer of every page on hiltonahead.com',
+      'Listing on the Partners page',
       'One mention in our restaurant, stays, or activities tier list (placement stays merit-based; we never rank by payment)',
       'Featured in one monthly newsletter per month',
       'Co-branded "Insider\u2019s Weekend at [Partner]" 2-day itinerary template (yours to distribute)',
@@ -156,7 +157,7 @@ export const sponsorshipTiers: SponsorshipTier[] = [
     tagline:
       'Top-of-footer placement, dedicated editorial, and a co-branded referred-guest Stripe checkout.',
     benefits: [
-      'Everything in Curated Partner',
+      'Everything in Curated Partner, plus:',
       'Dedicated 1,500-word editorial post written by our team (one per year)',
       'Featured newsletter placement in every issue',
       'Co-branded referred-guest Stripe Checkout product on your page (revenue-share)',

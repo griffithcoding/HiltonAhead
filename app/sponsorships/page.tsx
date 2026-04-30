@@ -12,7 +12,7 @@ import { brand } from '@/data/brand';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Partner With Us: Sponsor Hilton Ahead',
   description:
-    'Three sponsorship tiers for Hilton Head businesses. Featured at $100/mo, Curated at $400/mo, Signature at $1,000/mo. Limited slots per year.',
+    'Sponsorship tiers for Hilton Head businesses. Curated at $400/mo and Signature at $1,000/mo. Limited slots per year.',
   path: '/sponsorships',
   keywords: [
     'Hilton Head advertising',
@@ -129,7 +129,7 @@ export default function SponsorshipsPage() {
           <SectionHead
             number="№ 02"
             eyebrow="Tiers"
-            plain="Three ways"
+            plain="Two ways"
             italic="to partner."
           />
           <p className="mt-6 max-w-[620px] text-[15px] leading-[1.7] text-ink-soft md:text-[17px]">
@@ -137,8 +137,8 @@ export default function SponsorshipsPage() {
             it until the next cycle. Pay annually; cancel before year 2.
           </p>
 
-          <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-6">
-            {sponsorshipTiers.map((t, i) => {
+          <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-6">
+            {sponsorshipTiers.filter((t) => t.tier !== 'featured').map((t, i) => {
               const available =
                 slotsRemaining[t.tier as keyof typeof slotsRemaining];
               const isPremium = t.tier === 'signature';
