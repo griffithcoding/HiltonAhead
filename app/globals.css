@@ -3,35 +3,36 @@
 /*
  * =========================================================================
  *  HILTON AHEAD — Design System v2
- *  Saturated Lowcountry · Island-forward
+ *  Lowcountry Mist · Editorial · Fog blue over oyster
  *
- *  A warm sand paper field anchored by deep Atlantic teal, with sunset
- *  coral as the signature accent and palm green + golden hour as support.
- *  Photography-heavy, hand-crafted motifs (seals, stamps, polaroids),
- *  dramatic type scale. Fraunces display serif + Instrument Sans UI.
+ *  An oyster-paper field anchored by slate-teal type, with fog blue as
+ *  the dominant atmospheric tone and cigar coral as the one sharp
+ *  accent. Marsh green + muted gold as support. Photography-heavy,
+ *  hand-crafted motifs (seals, stamps, polaroids), dramatic type scale.
+ *  Fraunces display serif + Instrument Sans UI.
  *
  *  Fonts are loaded via next/font in app/layout.tsx.
  * =========================================================================
  */
 
 :root {
-  /* ——— Palette (saturated, island-forward) ——— */
-  --sand:         #F5E8D0;   /* primary page bg — warm sand */
-  --sand-deep:    #ECD8B2;   /* secondary surfaces */
-  --sand-soft:    #FBF3E2;   /* lifted surface */
-  --ocean:        #0E6F7C;   /* deep Atlantic teal — dominant */
-  --ocean-deep:   #0A4B55;   /* shadow / text-on-sand */
-  --ocean-light:  #8FC3C8;   /* hover / atmospheric */
-  --coral:        #FF7A5C;   /* signature sunset accent */
-  --coral-deep:   #E8623F;   /* hover */
-  --palm:         #2F4A3A;   /* palm green / support */
-  --palm-light:   #6B8568;   /* muted support */
-  --gold:         #E8A74B;   /* golden hour */
-  --gold-deep:    #B8834A;   /* muted gold for rules */
-  --ink:          #0A2930;   /* deep ocean ink — primary text */
-  --ink-soft:     #3D5860;   /* body text */
-  --rule-soft:    rgba(10, 41, 48, 0.14);
-  --shadow-ink:   rgba(10, 41, 48, 0.12);
+  /* ——— Palette (Lowcountry Mist — fog blue + oyster + marsh) ——— */
+  --sand:         #F5F2EC;   /* primary page bg — oyster */
+  --sand-deep:    #E5DFD3;   /* secondary surfaces — deeper oyster */
+  --sand-soft:    #FAF8F2;   /* lifted surface — porcelain */
+  --ocean:        #9BB5C4;   /* fog blue — light blue primary */
+  --ocean-deep:   #243945;   /* slate teal — text-on-sand, shadow */
+  --ocean-light:  #C9D9E1;   /* atmospheric / hover tint */
+  --coral:        #C97A66;   /* cigar coral — the one sharp accent */
+  --coral-deep:   #B36450;   /* hover */
+  --palm:         #4A6358;   /* marsh green — support */
+  --palm-light:   #7A9080;   /* muted marsh */
+  --gold:         #C9A268;   /* muted gold (mist-coded) */
+  --gold-deep:    #A0824D;   /* darker gold for rules */
+  --ink:          #0E2128;   /* deep slate ink — primary text */
+  --ink-soft:     #4A5C66;   /* cool gray-blue body text */
+  --rule-soft:    rgba(14, 33, 40, 0.14);
+  --shadow-ink:   rgba(14, 33, 40, 0.12);
 
   /* ——— Legacy aliases kept so existing hooks still resolve ——— */
   --background:   var(--sand);
@@ -98,11 +99,11 @@ html, body {
 }
 
 body {
-  /* Warm atmosphere — subtle coral and gold wash over sand paper */
+  /* Mist atmosphere — quiet cigar-coral and slate-teal washes over oyster */
   background-image:
-    radial-gradient(1000px 700px at 90% -10%, rgba(255, 122, 92, 0.12), transparent 60%),
-    radial-gradient(1200px 800px at -5% 105%, rgba(14, 111, 124, 0.10), transparent 55%),
-    radial-gradient(800px 500px at 50% 50%, rgba(232, 167, 75, 0.05), transparent 60%),
+    radial-gradient(1000px 700px at 90% -10%, rgba(201, 122, 102, 0.10), transparent 60%),
+    radial-gradient(1200px 800px at -5% 105%, rgba(36, 57, 69, 0.08), transparent 55%),
+    radial-gradient(800px 500px at 50% 50%, rgba(201, 162, 104, 0.04), transparent 60%),
     linear-gradient(180deg, var(--sand-soft) 0%, var(--sand) 30%, var(--sand) 100%);
 }
 
