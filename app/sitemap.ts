@@ -30,6 +30,7 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/sponsorships', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/founder', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/press', changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/guides/2027-rbc-heritage', changeFrequency: 'monthly', priority: 0.85 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
