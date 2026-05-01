@@ -69,7 +69,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="rise rise-delay-4 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="rise rise-delay-4 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:flex-wrap">
             <Link
               href={brand.cta.bookingPagePath}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral"
@@ -84,6 +84,18 @@ export default function Hero() {
               {hero.secondaryCta.label}
               <span aria-hidden="true">↓</span>
             </a>
+            {hero.tertiaryCta && (
+              <Link
+                href={hero.tertiaryCta.href}
+                className="group inline-flex items-center gap-3 rounded-full border border-coral/40 bg-coral/5 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-coral-deep transition hover:border-coral hover:bg-coral/10"
+              >
+                <span className="rounded-full bg-coral px-2 py-0.5 text-[9px] tracking-[0.18em] text-sand">
+                  {hero.tertiaryCta.eyebrow}
+                </span>
+                <span>{hero.tertiaryCta.label}</span>
+                <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+              </Link>
+            )}
           </div>
 
           <div className="rise rise-delay-5 mt-10 flex flex-wrap items-center gap-3 gap-y-3">
