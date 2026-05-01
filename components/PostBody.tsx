@@ -1,4 +1,9 @@
+import { Suspense } from 'react';
 import type { PostBlock } from '@/data/posts';
+import TripWindowFinder from '@/components/tools/TripWindowFinder';
+import LiveWeather from '@/components/tools/LiveWeather';
+import TideForecast from '@/components/tools/TideForecast';
+import HurricaneStatus from '@/components/tools/HurricaneStatus';
 
 /**
  * Renders a Post's `body` array of content blocks.
@@ -46,8 +51,57 @@ export default function PostBody({ blocks }: { blocks: PostBlock[] }) {
             return <FaqBlock key={i} block={block} />;
           case 'tier':
             return <TierBlock key={i} block={block} />;
+          case 'embed':
+            return <EmbedBlock key={i} block={block} />;
         }
       })}
+    </div>
+  );
+}
+
+function EmbedBlock({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'embed' }>;
+}) {
+  switch (block.component) {
+    case 'trip-window-finder':
+      return (
+        <div className="not-prose my-12 min-h-[420px]">
+          <TripWindowFinder />
+        </div>
+      );
+    case 'live-weather':
+      return (
+        <div className="not-prose my-12 min-h-[260px]">
+          <Suspense fallback={<EmbedSkeleton label="Loading live conditions" />}>
+            <LiveWeather />
+          </Suspense>
+        </div>
+      );
+    case 'tide-forecast':
+      return (
+        <div className="not-prose my-12 min-h-[360px]">
+          <Suspense fallback={<EmbedSkeleton label="Loading 7-day tide forecast" />}>
+            <TideForecast />
+          </Suspense>
+        </div>
+      );
+    case 'hurricane-status':
+      return (
+        <div className="not-prose my-8">
+          <Suspense fallback={null}>
+            <HurricaneStatus />
+          </Suspense>
+        </div>
+      );
+  }
+}
+
+function EmbedSkeleton({ label }: { label: string }) {
+  return (
+    <div className="border border-ink/10 bg-cream-deep/30 px-5 py-6 text-[12px] uppercase tracking-[0.14em] text-ink-soft">
+      {label}…
     </div>
   );
 }
