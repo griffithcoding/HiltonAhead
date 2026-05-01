@@ -17,12 +17,14 @@ type Nav = {
 export const nav: Nav = {
   links: [
     { href: '/services', label: 'Services' },
-    { href: '/blog', label: 'Local Guide' },
     { href: '/local', label: 'Businesses' },
     {
       href: '/about',
       label: 'About',
-      children: [{ href: '/founder', label: 'Founder' }],
+      children: [
+        { href: '/founder', label: 'Founder' },
+        { href: '/blog', label: 'Local Guide' },
+      ],
     },
     { href: '/contact', label: 'Contact' },
   ],
