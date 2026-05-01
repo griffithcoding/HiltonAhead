@@ -26,6 +26,7 @@ import {
   getAdjacentPosts,
   getRelatedPosts,
   getRelatedIndustries,
+  flattenBlocks,
   type Post,
 } from '@/data/posts';
 import { getNeighborhoodBySlug } from '@/data/neighborhoods';
@@ -101,8 +102,11 @@ export default async function BlogPostPage({
     { name: post.title, path: `/blog/${post.slug}` },
   ]);
 
-  // ——— Extra schemas derived from the post's tier blocks ———
-  const tierBlocks = post.body.filter(
+  // ——— Extra schemas derived from the post's tier + faq blocks ———
+  // Use flattenBlocks so blocks nested inside `section` collapsibles are
+  // still picked up for schema generation.
+  const allBlocks = flattenBlocks(post.body);
+  const tierBlocks = allBlocks.filter(
     (b): b is Extract<typeof post.body[number], { kind: 'tier' }> =>
       b.kind === 'tier',
   );
@@ -202,7 +206,7 @@ export default async function BlogPostPage({
 
   // FAQPage schema — aggregates every faq block in the post. Google can
   // award FAQ rich results and "People Also Ask" placements from this.
-  const faqItems = post.body
+  const faqItems = allBlocks
     .filter((b): b is Extract<typeof post.body[number], { kind: 'faq' }> =>
       b.kind === 'faq',
     )
