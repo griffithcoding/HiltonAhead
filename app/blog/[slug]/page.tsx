@@ -79,7 +79,7 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const { prev, next } = getAdjacentPosts(slug);
-  const heroPhoto = CATEGORY_PHOTOS[post.category] ?? photos.hero;
+  const heroPhoto = post.coverImage ?? CATEGORY_PHOTOS[post.category] ?? photos.hero;
 
   const relatedPosts = getRelatedPosts(slug);
   const relatedIndustries = getRelatedIndustries(slug)
@@ -166,7 +166,7 @@ export default async function BlogPostPage({
         )
       : [];
 
-  // Place schema for Neighborhoods posts
+  // Place schema for Neighborhoods posts and the destination-level "best time" post.
   const placeSchema =
     post.category === 'Neighborhoods'
       ? getPlaceSchema({
@@ -176,7 +176,15 @@ export default async function BlogPostPage({
           latitude: 32.2163,
           longitude: -80.7526,
         })
-      : null;
+      : post.slug === 'best-time-to-visit-hilton-head'
+        ? getPlaceSchema({
+            name: 'Hilton Head Island',
+            description: post.description,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/blog/${post.slug}`,
+            latitude: 32.2163,
+            longitude: -80.7526,
+          })
+        : null;
 
   // Event schema for Golf / RBC Heritage post
   const eventSchema =

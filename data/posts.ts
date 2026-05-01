@@ -36,6 +36,14 @@ export type PostBlock =
         meta?: string;
         blurb: string;
       }>;
+    }
+  | {
+      kind: 'embed';
+      component:
+        | 'trip-window-finder'
+        | 'live-weather'
+        | 'tide-forecast'
+        | 'hurricane-status';
     };
 
 export type Post = {
@@ -67,6 +75,12 @@ export type Post = {
    *   'sea-pines' | 'palmetto-dunes' | 'forest-beach' | 'shelter-cove'
    */
   relatedNeighborhoods?: string[];
+  /**
+   * Optional hero image override. Falls back to the category default in
+   * app/blog/[slug]/page.tsx when omitted. Use only when a post deserves
+   * a more specific photo than its category map provides.
+   */
+  coverImage?: { src: string; alt: string };
   body: PostBlock[];
 };
 
@@ -1756,10 +1770,14 @@ const postBestTime: Post = {
   category: 'Planning',
   readTime: '11 min',
   publishedAt: '2026-03-02',
-  updatedAt: '2026-04-24',
+  updatedAt: '2026-05-01',
   author: 'Hilton Ahead',
   featuredOrder: 2.5,
   relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
+  coverImage: {
+    src: 'https://images.unsplash.com/photo-1631845085830-10c38cc98ac8?auto=format&fit=crop&w=1800&q=80',
+    alt: 'Harbour Town Lighthouse and dock at golden hour, Hilton Head Island',
+  },
   keywords: [
     'Hilton Head weather',
     'Hilton Head weather by month',
@@ -1787,6 +1805,14 @@ const postBestTime: Post = {
       html: "<strong>The best time to visit Hilton Head is mid-October.</strong> Ocean water still averages 73\u00b0F, days sit at a dry 75-80\u00b0F, hurricane risk has passed, and lodging rates run 30-40% below summer peak. If school calendars lock you into summer, book mid-June. For golf, <a href=\"/hilton-head-golf-packages\">early May or late October</a>. For families at <a href=\"/hilton-head-spring-break\">spring break</a>, the second half of March.",
     },
     {
+      kind: 'embed',
+      component: 'trip-window-finder',
+    },
+    {
+      kind: 'embed',
+      component: 'live-weather',
+    },
+    {
       kind: 'h2',
       text: "Hilton Head weather at a glance",
     },
@@ -1812,6 +1838,10 @@ const postBestTime: Post = {
         ['November',  '70\u00b0F', '50\u00b0F', '65\u00b0F', '6',  'Low (Thanksgiving spike)'],
         ['December',  '62\u00b0F', '43\u00b0F', '58\u00b0F', '7',  'Low (holidays lift)'],
       ],
+    },
+    {
+      kind: 'p',
+      html: "Browse a single month for a deeper read on weather, what&apos;s open, and what to pack: <a href=\"/hilton-head-weather/january\">January</a>, <a href=\"/hilton-head-weather/february\">February</a>, <a href=\"/hilton-head-weather/march\">March</a>, <a href=\"/hilton-head-weather/april\">April</a>, <a href=\"/hilton-head-weather/may\">May</a>, <a href=\"/hilton-head-weather/june\">June</a>, <a href=\"/hilton-head-weather/july\">July</a>, <a href=\"/hilton-head-weather/august\">August</a>, <a href=\"/hilton-head-weather/september\">September</a>, <a href=\"/hilton-head-weather/october\">October</a>, <a href=\"/hilton-head-weather/november\">November</a>, <a href=\"/hilton-head-weather/december\">December</a>.",
     },
     {
       kind: 'p',
@@ -1844,6 +1874,10 @@ const postBestTime: Post = {
     {
       kind: 'p',
       html: "If summer is your only option. Book 5-6 months out for villa inventory, 3-4 for resort rooms, and target the first week of June or the last week of August for slightly softer pricing. Rent bikes for the kids. The heat becomes tolerable on a shaded bike path. Dinner reservations require 2-3 weeks lead time at S-tier restaurants. Afternoon thunderstorms clock in between 3 and 5 p.m. like a Swiss train. Plan beach time for morning, storms for nap time.",
+    },
+    {
+      kind: 'embed',
+      component: 'tide-forecast',
     },
     {
       kind: 'h3',
@@ -1931,8 +1965,12 @@ const postBestTime: Post = {
       text: "Hurricane season on Hilton Head: the honest numbers",
     },
     {
+      kind: 'embed',
+      component: 'hurricane-status',
+    },
+    {
       kind: 'p',
-      html: "Atlantic hurricane season officially runs <strong>June 1 to November 30</strong>. Actual risk to Hilton Head is concentrated in <strong>late August through mid-October</strong>, with the historical peak around September 10. In the last 10 years, only two hurricanes have caused island-wide closures (Matthew in 2016, Irma in 2017). Dorian in 2019 and Idalia in 2023 triggered evacuations that turned out largely precautionary.",
+      html: "Atlantic hurricane season officially runs <strong>June 1 to November 30</strong>. Actual risk to Hilton Head is concentrated in <strong>late August through mid-October</strong>, with the historical peak around September 10. In the last 10 years, only two hurricanes have caused island-wide closures (Matthew in 2016, Irma in 2017). Dorian in 2019 and Idalia in 2023 triggered evacuations that turned out largely precautionary. For this year specifically, see our <a href=\"/blog/hilton-head-2026-hurricane-forecast\">2026 hurricane forecast</a>, which breaks down CSU and TSR April outlooks plus the four travel windows we use to weigh storm risk against rates.",
     },
     {
       kind: 'p',
