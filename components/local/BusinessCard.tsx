@@ -1,5 +1,6 @@
 import type { Business } from '@/data/localBusinesses'
-import Link from 'next/link'
+import TrackedPhoneLink from './TrackedPhoneLink'
+import TrackedWebsiteLink from './TrackedWebsiteLink'
 
 interface Props {
   business: Business
@@ -79,10 +80,50 @@ export default function BusinessCard({ business }: Props) {
           {business.tagline}
         </p>
 
+        {/* Local quote — pull-quote style when set */}
+        {business.localQuote && (
+          <blockquote className="mb-3 border-l-2 border-coral pl-3 text-[13px] italic leading-snug text-ink-soft">
+            &ldquo;{business.localQuote}&rdquo;
+          </blockquote>
+        )}
+
         {/* Review excerpt */}
-        <p className="mb-4 flex-1 text-sm leading-relaxed text-ink-soft line-clamp-3">
+        <p className="mb-3 flex-1 text-sm leading-relaxed text-ink-soft line-clamp-3">
           {business.review}
         </p>
+
+        {/* Best for */}
+        {business.bestFor && (
+          <p className="mb-3 text-xs leading-snug text-ink-soft">
+            <span className="font-semibold text-ink">Best for:</span> {business.bestFor}
+          </p>
+        )}
+
+        {/* Practical chips — gate pass, parking, pet-friendly */}
+        {(business.gatePass || business.parking || business.petFriendly) && (
+          <div className="mb-3 flex flex-wrap gap-1.5">
+            {business.gatePass === 'sea-pines' && (
+              <span className="rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-widest text-gold-deep">
+                Sea Pines gate pass
+              </span>
+            )}
+            {business.gatePass === 'palmetto-dunes' && (
+              <span className="rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-widest text-gold-deep">
+                Palmetto Dunes gate pass
+              </span>
+            )}
+            {business.parking && (
+              <span className="rounded-full border border-rule-soft bg-sand-deep px-2 py-0.5 text-[10px] font-medium uppercase tracking-widest text-ink-soft">
+                🅿 {business.parking}
+              </span>
+            )}
+            {business.petFriendly && (
+              <span className="rounded-full border border-rule-soft bg-sand-deep px-2 py-0.5 text-[10px] font-medium uppercase tracking-widest text-ink-soft">
+                🐕 Pet friendly
+              </span>
+            )}
+          </div>
+        )}
 
         {/* Address + phone */}
         <div className="mb-4 space-y-1 border-t border-rule-soft pt-4 text-xs text-ink-soft">
@@ -95,12 +136,14 @@ export default function BusinessCard({ business }: Props) {
           {business.phone && (
             <p className="flex items-center gap-1.5">
               <span className="shrink-0 text-ocean">📞</span>
-              <a
-                href={`tel:${business.phone.replace(/\D/g, '')}`}
+              <TrackedPhoneLink
+                businessId={business.id}
+                industrySlug={business.industrySlug}
+                phone={business.phone}
                 className="transition-colors hover:text-coral"
               >
                 {business.phone}
-              </a>
+              </TrackedPhoneLink>
             </p>
           )}
           {business.hours && (
@@ -114,10 +157,10 @@ export default function BusinessCard({ business }: Props) {
         {/* CTA */}
         <div className="flex items-center gap-3">
           {business.website ? (
-            <a
-              href={business.website}
-              target="_blank"
-              rel="noopener noreferrer"
+            <TrackedWebsiteLink
+              businessId={business.id}
+              industrySlug={business.industrySlug}
+              url={business.website}
               className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-xs font-semibold uppercase tracking-widest text-sand transition-colors duration-200 hover:bg-ocean"
             >
               Visit site
@@ -134,7 +177,7 @@ export default function BusinessCard({ business }: Props) {
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
-            </a>
+            </TrackedWebsiteLink>
           ) : null}
           {/* Social links */}
           <div className="ml-auto flex items-center gap-2">

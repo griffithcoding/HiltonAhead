@@ -26,8 +26,10 @@ const unsplash = (id: string, w = 1800, q = 80) =>
 const hero        = { src: unsplash('1507525428034-b723cf961d3e', 2200, 82), alt: 'Golden hour over Hilton Head dunes and sea oats' };
 // [HH] Harbour Town Lighthouse — Nikhil Mistry
 const lighthouse  = { src: unsplash('1633647251095-fe1fec4e4c50', 1800, 80), alt: 'Harbour Town Lighthouse, Sea Pines — Hilton Head Island' };
-const mossOak     = { src: unsplash('1533104816931-20fa691ff6ca', 1800, 80), alt: 'Spanish moss draped from a Lowcountry live oak' };
-const marsh       = { src: unsplash('1506260408121-e353d10b87c7', 1800, 80), alt: 'Coastal grass rolling toward the horizon at dusk' };
+// Spanish moss draped from a Southern live oak — Connor McManus (Unsplash). Replaces a CDN-rotated ID that began returning a Santorini village.
+const mossOak     = { src: unsplash('1769714638235-ce4a94d2e26f', 1800, 80), alt: 'Spanish moss draped from a Lowcountry live oak' };
+// Salt marsh with spartina grass and tidal pools at golden hour — JD Doyle (Unsplash). Replaces a CDN-rotated ID that began returning rolling green hills.
+const marsh       = { src: unsplash('1584066984932-73be0879c0c1', 1800, 80), alt: 'Spartina grass and tidal pools across a salt marsh at golden hour' };
 const boardwalk   = { src: unsplash('1506929562872-bb421503ef21', 1800, 80), alt: 'Wooden boardwalk through coastal sea oats' };
 // [HH] Harbour Town marina dock with boats and lighthouse — Nikolay Loubet
 const dock        = { src: unsplash('1631845085760-638f42d1b2e9', 1800, 80), alt: 'Harbour Town marina dock at twilight, Hilton Head Island' };
@@ -37,7 +39,8 @@ const beachMorning= { src: unsplash('1519046904884-53103b34b206', 1800, 80), alt
 
 // ——— Additional island shots for collages, polaroid walls, rails ———
 const palms       = { src: unsplash('1552733407-5d5c46c3bb3b', 1600, 80), alt: 'Palm trees against a warm coastal sky' };
-const oysters     = { src: unsplash('1559827260-dc66d52bef19', 1600, 80), alt: 'Fresh-shucked oysters with lemon' };
+// Plate of fresh oysters on the half shell — Nihar Reddy Jangam (Unsplash). Replaces a CDN-rotated ID that began returning an ocean wave.
+const oysters     = { src: unsplash('1769816042382-969141ce4b67', 1600, 80), alt: 'Fresh-shucked oysters on the half shell' };
 // [HH] Sailboats at Harbour Town marina — Camylla Battani
 const harborBoats = { src: unsplash('1539112416716-92d1f870a487', 1600, 80), alt: 'Sailboats at Harbour Town marina, Sea Pines — Hilton Head' };
 const beachAerial = { src: unsplash('1540541338287-41700207dee6', 1600, 80), alt: 'Oceanfront pool overlooking the Atlantic' };
@@ -45,6 +48,8 @@ const beachAerial = { src: unsplash('1540541338287-41700207dee6', 1600, 80), alt
 const bikePath    = { src: unsplash('1748821454217-37110c80ac11', 1600, 80), alt: 'Harbour Town shops below the lighthouse, Hilton Head' };
 // [HH] Sunset on a Hilton Head pier — Nikhil Mistry
 const surfSoft    = { src: unsplash('1634948601598-dfe5fa67a48c', 1600, 80), alt: 'Sunset on a Hilton Head pier' };
+// Lowcountry tidal creek winding through golden marsh — Brian Urso (Unsplash). Stand-in for Broad Creek imagery until press-kit shoot.
+const broadCreek  = { src: unsplash('1760526664194-fc5745a576ec', 1600, 80), alt: 'Tidal creek winding through golden Lowcountry marsh at low tide' };
 const coastalOak  = { src: unsplash('1523712999610-f77fbcfc3843', 1600, 80), alt: 'Sunlight filtering through a tall tree canopy' };
 // [HH] Harbour Town Lighthouse and dock at golden hour — Nikolay Loubet
 const sundown     = { src: unsplash('1631845085830-10c38cc98ac8', 1600, 80), alt: 'Harbour Town Lighthouse and dock at golden hour, Hilton Head' };
@@ -60,7 +65,8 @@ const golfFairway   = { src: unsplash('1535131749006-b7f58c99034b', 1800, 82), a
 const golfTeeBox    = { src: unsplash('1523712999610-f77fbcfc3843', 1800, 82), alt: 'Sunlight filtering through coastal pines along a fairway' };
 const ceremonyArbor = { src: unsplash('1519741497674-611481863552', 1800, 82), alt: 'Empty wedding arbor on a coastal lawn at golden hour' };
 const setTable      = { src: unsplash('1530103862676-de8c9debad1d', 1800, 82), alt: 'Long banquet table set under string lights with no guests' };
-const coastalAerial = { src: unsplash('1506260408121-e353d10b87c7', 1800, 82), alt: 'Wide aerial of barrier-island marsh and coastline at dusk' };
+// Aerial of tidal marsh with creek braids cutting through spartina — Mike Erskine (Unsplash). Replaces a CDN-rotated ID that began returning rolling green hills.
+const coastalAerial = { src: unsplash('1749670293761-4990fc7f0a1f', 1800, 82), alt: 'Aerial of tidal marsh creeks braiding through spartina grass' };
 const lagoonAerial  = { src: unsplash('1571939228382-b2f2b585ce15', 1800, 82), alt: 'Aerial of resort lagoons threaded between palm trees' };
 const marinaDawn    = { src: unsplash('1518495973542-4542c06a5843', 1800, 82), alt: 'Marina at dawn, sailboats at rest on glassy water' };
 const dunesPath     = { src: unsplash('1506929562872-bb421503ef21', 1800, 82), alt: 'Wooden dune crossover path bending toward the Atlantic' };
@@ -70,7 +76,7 @@ const dunesPath     = { src: unsplash('1506929562872-bb421503ef21', 1800, 82), a
 // Charlie's L'Etoile Verte, etc.) once licensed. Currently curated Unsplash shots
 // chosen to read as Lowcountry / coastal-Southern dining.
 const customItinerariesFood = [
-  { src: unsplash('1559827260-dc66d52bef19', 1400, 82), alt: 'Fresh-shucked oysters on ice with lemon' },
+  { src: unsplash('1769816042382-969141ce4b67', 1400, 82), alt: 'Fresh-shucked oysters on the half shell' },
   { src: unsplash('1565299624946-b28f40a0ae38', 1400, 82), alt: 'Shrimp and grits in a cast-iron skillet' },
   { src: unsplash('1467003909585-2f8a72700288', 1400, 82), alt: 'Seared scallops plated with greens' },
   { src: unsplash('1485921325833-c519f76c4927', 1400, 82), alt: 'Wood-grilled fish with charred lemon' },
@@ -99,6 +105,7 @@ export const photos = {
   beachAerial,
   bikePath,
   surfSoft,
+  broadCreek,
   coastalOak,
   sundown,
   teaTable,
@@ -152,7 +159,7 @@ export const photos = {
   heroCollage: [
     { ...hero,       caption: 'Forest Beach, dusk',      label: '01' },
     { ...lighthouse, caption: 'Harbour Town, marina',    label: '02' },
-    { ...mossOak,    caption: 'Sea Pines, golden hour',  label: '03' },
+    { ...bikePath,   caption: 'Harbour Town · the lighthouse', label: '03' },
   ],
 
   /** Look-book photo rail — 6 island moods */
@@ -170,7 +177,7 @@ export const photos = {
     { ...lighthouse, caption: 'Harbour Town · ’96' },
     { ...boardwalk,  caption: 'Coligny · 7:04 a.m.'    },
     { ...dock,       caption: 'Harbour Town, low tide' },
-    { ...marsh,      caption: 'Broad Creek · August'   },
+    { ...broadCreek, caption: 'Broad Creek · August'   },
   ],
 
   /**
