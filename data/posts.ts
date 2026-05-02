@@ -12,7 +12,8 @@ export type PostEmbedComponent =
   | 'CourseMatchQuiz'
   | 'CourseMap'
   | 'StayAndPlayEstimator'
-  | 'HeritageCountdown';
+  | 'HeritageCountdown'
+  | 'TeeTimeFinder';
 
 export type PostBlock =
   | { kind: 'p'; html: string }
@@ -3857,6 +3858,10 @@ const postGolfCoursesRanked: Post = {
     {
       kind: 'embed',
       component: 'CourseMatchQuiz',
+    },
+    {
+      kind: 'embed',
+      component: 'TeeTimeFinder',
     },
     {
       kind: 'section',

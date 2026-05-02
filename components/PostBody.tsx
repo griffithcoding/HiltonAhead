@@ -5,6 +5,7 @@ import HeritageCountdown from '@/components/tools/HeritageCountdown';
 import CourseMatchQuiz from '@/components/tools/CourseMatchQuiz';
 import CourseMap from '@/components/tools/CourseMap';
 import StayAndPlayEstimator from '@/components/tools/StayAndPlayEstimator';
+import TeeTimeFinder from '@/components/tools/TeeTimeFinder';
 
 /**
  * Renders a Post's `body` array of content blocks.
@@ -312,6 +313,8 @@ function EmbedBlock({
       return <CourseMap />;
     case 'StayAndPlayEstimator':
       return <StayAndPlayEstimator />;
+    case 'TeeTimeFinder':
+      return <TeeTimeFinder />;
   }
 }
 
