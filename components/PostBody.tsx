@@ -1,4 +1,9 @@
+import { Suspense, type ReactNode } from 'react';
 import type { PostBlock } from '@/data/posts';
+import TripWindowFinder from '@/components/tools/TripWindowFinder';
+import LiveWeather from '@/components/tools/LiveWeather';
+import TideForecast from '@/components/tools/TideForecast';
+import HurricaneStatus from '@/components/tools/HurricaneStatus';
 
 /**
  * Renders a Post's `body` array of content blocks.
@@ -8,46 +13,137 @@ import type { PostBlock } from '@/data/posts';
 export default function PostBody({ blocks }: { blocks: PostBlock[] }) {
   return (
     <div className="prose-blog">
-      {blocks.map((block, i) => {
-        switch (block.kind) {
-          case 'h2':
-            return <h2 key={i}>{block.text}</h2>;
-          case 'h3':
-            return <h3 key={i}>{block.text}</h3>;
-          case 'p':
-            return (
-              <p key={i} dangerouslySetInnerHTML={{ __html: block.html }} />
-            );
-          case 'ul':
-            return (
-              <ul key={i}>
-                {block.items.map((item, j) => (
-                  <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
-                ))}
-              </ul>
-            );
-          case 'ol':
-            return (
-              <ol key={i}>
-                {block.items.map((item, j) => (
-                  <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
-                ))}
-              </ol>
-            );
-          case 'callout':
-            return <Callout key={i} label={block.label} html={block.html} />;
-          case 'quote':
-            return (
-              <Quote key={i} html={block.html} attribution={block.attribution} />
-            );
-          case 'table':
-            return <DataTable key={i} block={block} />;
-          case 'faq':
-            return <FaqBlock key={i} block={block} />;
-          case 'tier':
-            return <TierBlock key={i} block={block} />;
-        }
-      })}
+      {blocks.map((block, i) => renderBlock(block, i))}
+    </div>
+  );
+}
+
+function renderBlock(block: PostBlock, key: number | string): ReactNode {
+  switch (block.kind) {
+    case 'h2':
+      return <h2 key={key}>{block.text}</h2>;
+    case 'h3':
+      return <h3 key={key}>{block.text}</h3>;
+    case 'p':
+      return (
+        <p key={key} dangerouslySetInnerHTML={{ __html: block.html }} />
+      );
+    case 'ul':
+      return (
+        <ul key={key}>
+          {block.items.map((item, j) => (
+            <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
+          ))}
+        </ul>
+      );
+    case 'ol':
+      return (
+        <ol key={key}>
+          {block.items.map((item, j) => (
+            <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
+          ))}
+        </ol>
+      );
+    case 'callout':
+      return <Callout key={key} label={block.label} html={block.html} />;
+    case 'quote':
+      return (
+        <Quote key={key} html={block.html} attribution={block.attribution} />
+      );
+    case 'table':
+      return <DataTable key={key} block={block} />;
+    case 'faq':
+      return <FaqBlock key={key} block={block} />;
+    case 'tier':
+      return <TierBlock key={key} block={block} />;
+    case 'embed':
+      return <EmbedBlock key={key} block={block} />;
+    case 'section':
+      return <SectionBlock key={key} block={block} />;
+  }
+}
+
+function SectionBlock({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'section' }>;
+}) {
+  return (
+    <details
+      className="not-prose group my-6 border-t border-ink/15 [&[open]]:pb-2"
+      {...(block.defaultOpen ? { open: true } : {})}
+    >
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 hover:bg-cream-deep/30 md:py-6">
+        <div className="flex-1">
+          {block.eyebrow && (
+            <div className="eyebrow text-sunset">{block.eyebrow}</div>
+          )}
+          <h2 className="display mt-1.5 text-[22px] leading-[1.2] text-ink md:text-[28px]">
+            {block.title}
+          </h2>
+          {block.summary && (
+            <p className="mt-2 max-w-[640px] text-[13px] leading-[1.6] text-ink-soft md:text-[14px]">
+              {block.summary}
+            </p>
+          )}
+        </div>
+        <span
+          aria-hidden="true"
+          className="mt-2 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-ink/30 text-[13px] text-ink transition-transform group-open:rotate-45 md:h-8 md:w-8"
+        >
+          +
+        </span>
+      </summary>
+      <div className="prose-blog pt-2 pb-6">
+        {block.blocks.map((child, i) => renderBlock(child, i))}
+      </div>
+    </details>
+  );
+}
+
+function EmbedBlock({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'embed' }>;
+}) {
+  switch (block.component) {
+    case 'trip-window-finder':
+      return (
+        <div className="not-prose my-12 min-h-[420px]">
+          <TripWindowFinder />
+        </div>
+      );
+    case 'live-weather':
+      return (
+        <div className="not-prose my-12 min-h-[260px]">
+          <Suspense fallback={<EmbedSkeleton label="Loading live conditions" />}>
+            <LiveWeather />
+          </Suspense>
+        </div>
+      );
+    case 'tide-forecast':
+      return (
+        <div className="not-prose my-12 min-h-[360px]">
+          <Suspense fallback={<EmbedSkeleton label="Loading 7-day tide forecast" />}>
+            <TideForecast />
+          </Suspense>
+        </div>
+      );
+    case 'hurricane-status':
+      return (
+        <div className="not-prose my-8">
+          <Suspense fallback={null}>
+            <HurricaneStatus />
+          </Suspense>
+        </div>
+      );
+  }
+}
+
+function EmbedSkeleton({ label }: { label: string }) {
+  return (
+    <div className="border border-ink/10 bg-cream-deep/30 px-5 py-6 text-[12px] uppercase tracking-[0.14em] text-ink-soft">
+      {label}…
     </div>
   );
 }
