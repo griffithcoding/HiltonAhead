@@ -3,10 +3,12 @@
 /*
  * =========================================================================
  *  HILTON AHEAD — Design System v2
- *  Saturated Lowcountry · Island-forward
+ *  Glass Aqua · Pristine Caribbean · Sun-on-shallow-water
  *
- *  A warm sand paper field anchored by deep Atlantic teal, with sunset
- *  coral as the signature accent and palm green + golden hour as support.
+ *  A porcelain field lit by glass-aqua primary and lagoon-teal depth,
+ *  with shell-pink accents and palm green + shell gold as support.
+ *  A specular highlight blooms from the upper-left of the page body to
+ *  fake the sun-glint reflection of light over a clear flat at low tide.
  *  Photography-heavy, hand-crafted motifs (seals, stamps, polaroids),
  *  dramatic type scale. Fraunces display serif + Instrument Sans UI.
  *
@@ -15,23 +17,23 @@
  */
 
 :root {
-  /* ——— Palette (saturated, island-forward) ——— */
-  --sand:         #F5E8D0;   /* primary page bg — warm sand */
-  --sand-deep:    #ECD8B2;   /* secondary surfaces */
-  --sand-soft:    #FBF3E2;   /* lifted surface */
-  --ocean:        #0E6F7C;   /* deep Atlantic teal — dominant */
-  --ocean-deep:   #0A4B55;   /* shadow / text-on-sand */
-  --ocean-light:  #8FC3C8;   /* hover / atmospheric */
-  --coral:        #FF7A5C;   /* signature sunset accent */
-  --coral-deep:   #E8623F;   /* hover */
-  --palm:         #2F4A3A;   /* palm green / support */
-  --palm-light:   #6B8568;   /* muted support */
-  --gold:         #E8A74B;   /* golden hour */
-  --gold-deep:    #B8834A;   /* muted gold for rules */
-  --ink:          #0A2930;   /* deep ocean ink — primary text */
-  --ink-soft:     #3D5860;   /* body text */
-  --rule-soft:    rgba(10, 41, 48, 0.14);
-  --shadow-ink:   rgba(10, 41, 48, 0.12);
+  /* ——— Palette (Glass Aqua — pristine Caribbean) ——— */
+  --sand:         #FCFAF5;   /* porcelain page bg */
+  --sand-deep:    #F0EBE0;   /* secondary surfaces */
+  --sand-soft:    #FFFEFA;   /* lifted surface */
+  --ocean:        #7BD8E0;   /* glass aqua — light blue primary */
+  --ocean-deep:   #0F7080;   /* lagoon teal — text-on-sand, shadow */
+  --ocean-light:  #E0F5F4;   /* spray / atmospheric */
+  --coral:        #EFB8AA;   /* shell pink — the soft accent */
+  --coral-deep:   #D89B8A;   /* hover */
+  --palm:         #42685B;   /* palm green / support */
+  --palm-light:   #6E8A7E;   /* muted palm */
+  --gold:         #D9C58C;   /* shell gold */
+  --gold-deep:    #AB9C66;   /* muted gold for rules */
+  --ink:          #0E2A38;   /* deep ocean ink — primary text */
+  --ink-soft:     #4A5C66;   /* cool gray-blue body text */
+  --rule-soft:    rgba(14, 42, 56, 0.14);
+  --shadow-ink:   rgba(14, 42, 56, 0.12);
 
   /* ——— Legacy aliases kept so existing hooks still resolve ——— */
   --background:   var(--sand);
@@ -98,11 +100,14 @@ html, body {
 }
 
 body {
-  /* Warm atmosphere — subtle coral and gold wash over sand paper */
+  /* Caribbean glass — sun glinting on shallow water.
+     The first radial is a specular highlight (almost-white cyan) that
+     blooms from the upper-left to mimic sun reflecting off a flat sea. */
   background-image:
-    radial-gradient(1000px 700px at 90% -10%, rgba(255, 122, 92, 0.12), transparent 60%),
-    radial-gradient(1200px 800px at -5% 105%, rgba(14, 111, 124, 0.10), transparent 55%),
-    radial-gradient(800px 500px at 50% 50%, rgba(232, 167, 75, 0.05), transparent 60%),
+    radial-gradient(900px 500px at 12% 8%, rgba(225, 248, 252, 0.55), transparent 65%),
+    radial-gradient(1000px 700px at 90% -10%, rgba(239, 184, 170, 0.10), transparent 60%),
+    radial-gradient(1200px 800px at -5% 105%, rgba(15, 112, 128, 0.10), transparent 55%),
+    radial-gradient(800px 500px at 50% 50%, rgba(217, 197, 140, 0.05), transparent 60%),
     linear-gradient(180deg, var(--sand-soft) 0%, var(--sand) 30%, var(--sand) 100%);
 }
 
