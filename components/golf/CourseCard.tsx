@@ -79,6 +79,23 @@ export default function CourseCard({
           </p>
         )}
 
+        {course.flyover && (
+          <details className="group/fly mt-1 border-t border-ink/10 pt-3">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[11px] font-medium uppercase tracking-[0.16em] text-coral marker:hidden">
+              <span className="inline-flex items-center gap-2">
+                <span aria-hidden="true" className="text-[14px] leading-none">▸</span>
+                Take the flyover · 60 sec
+              </span>
+              <span aria-hidden="true" className="text-[10px] tracking-[0.14em] text-ink-soft transition-transform group-open/fly:rotate-180">
+                ↓
+              </span>
+            </summary>
+            <p className="mt-3 text-[13px] leading-[1.65] text-ink-soft">
+              {course.flyover}
+            </p>
+          </details>
+        )}
+
         <a
           href={bookingUrl}
           target="_blank"
