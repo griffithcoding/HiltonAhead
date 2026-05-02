@@ -1,3 +1,4 @@
+import { Suspense, type ReactNode } from 'react';
 import type { PostBlock } from '@/data/posts';
 import { getCourseBySlug } from '@/data/golfCourses';
 import CourseCard from '@/components/golf/CourseCard';
@@ -6,6 +7,10 @@ import CourseMatchQuiz from '@/components/tools/CourseMatchQuiz';
 import CourseMap from '@/components/tools/CourseMap';
 import StayAndPlayEstimator from '@/components/tools/StayAndPlayEstimator';
 import TeeTimeFinder from '@/components/tools/TeeTimeFinder';
+import TripWindowFinder from '@/components/tools/TripWindowFinder';
+import LiveWeather from '@/components/tools/LiveWeather';
+import TideForecast from '@/components/tools/TideForecast';
+import HurricaneStatus from '@/components/tools/HurricaneStatus';
 
 /**
  * Renders a Post's `body` array of content blocks.
@@ -20,7 +25,7 @@ export default function PostBody({ blocks }: { blocks: PostBlock[] }) {
   );
 }
 
-function renderBlock(block: PostBlock, key: number | string): React.ReactNode {
+function renderBlock(block: PostBlock, key: number | string): ReactNode {
   switch (block.kind) {
     case 'h2':
       return <h2 key={key}>{block.text}</h2>;
@@ -65,22 +70,103 @@ function renderBlock(block: PostBlock, key: number | string): React.ReactNode {
   }
 }
 
-/**
- * Walks a (possibly nested-via-`section`) block list and returns a
- * flat array of all blocks. Used by the blog page template's schema
- * gatherers (FAQ, Tier ItemList, Reviews) so JSON-LD still emits when
- * those blocks are buried inside collapsible sections.
- */
-export function flattenBlocks(blocks: PostBlock[]): PostBlock[] {
-  const out: PostBlock[] = [];
-  for (const b of blocks) {
-    if (b.kind === 'section') {
-      out.push(...flattenBlocks(b.blocks));
-    } else {
-      out.push(b);
-    }
+function SectionBlock({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'section' }>;
+}) {
+  return (
+    <details
+      open={block.defaultOpen ?? false}
+      className="group not-prose my-10 border-y border-ink/15"
+    >
+      <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 py-6 marker:hidden">
+        <div className="min-w-0">
+          {block.eyebrow && (
+            <div className="eyebrow text-coral">{block.eyebrow}</div>
+          )}
+          <h2 className="display mt-1.5 text-[24px] leading-[1.15] text-ink md:text-[30px]">
+            {block.title}
+          </h2>
+          {block.summary && (
+            <p className="mt-1.5 max-w-[640px] text-[13.5px] leading-[1.55] text-ink-soft md:text-[14.5px]">
+              {block.summary}
+            </p>
+          )}
+        </div>
+        <span
+          aria-hidden="true"
+          className="relative mt-2 h-4 w-4 shrink-0"
+        >
+          <span className="absolute left-0 top-[7px] h-[1.5px] w-full bg-ink" />
+          <span className="absolute left-[7px] top-0 h-full w-[1.5px] bg-ink transition-transform duration-200 group-open:rotate-90 group-open:opacity-0" />
+        </span>
+      </summary>
+      <div className="prose-blog pb-8">
+        {block.blocks.map((child, i) => renderBlock(child, i))}
+      </div>
+    </details>
+  );
+}
+
+function EmbedBlock({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'embed' }>;
+}) {
+  switch (block.component) {
+    // Golf / Heritage page tools (PascalCase ids)
+    case 'HeritageCountdown':
+      return <HeritageCountdown />;
+    case 'CourseMatchQuiz':
+      return <CourseMatchQuiz />;
+    case 'CourseMap':
+      return <CourseMap />;
+    case 'StayAndPlayEstimator':
+      return <StayAndPlayEstimator />;
+    case 'TeeTimeFinder':
+      return <TeeTimeFinder />;
+    // Best-time-to-visit tools (kebab-case ids — the original best-time
+    // tools shipped with this naming and we keep it for data compatibility)
+    case 'trip-window-finder':
+      return (
+        <div className="not-prose my-12 min-h-[420px]">
+          <TripWindowFinder />
+        </div>
+      );
+    case 'live-weather':
+      return (
+        <div className="not-prose my-12 min-h-[260px]">
+          <Suspense fallback={<EmbedSkeleton label="Loading live conditions" />}>
+            <LiveWeather />
+          </Suspense>
+        </div>
+      );
+    case 'tide-forecast':
+      return (
+        <div className="not-prose my-12 min-h-[360px]">
+          <Suspense fallback={<EmbedSkeleton label="Loading 7-day tide forecast" />}>
+            <TideForecast />
+          </Suspense>
+        </div>
+      );
+    case 'hurricane-status':
+      return (
+        <div className="not-prose my-8">
+          <Suspense fallback={null}>
+            <HurricaneStatus />
+          </Suspense>
+        </div>
+      );
   }
-  return out;
+}
+
+function EmbedSkeleton({ label }: { label: string }) {
+  return (
+    <div className="border border-ink/10 bg-cream-deep/30 px-5 py-6 text-[12px] uppercase tracking-[0.14em] text-ink-soft">
+      {label}…
+    </div>
+  );
 }
 
 function DataTable({
@@ -296,63 +382,5 @@ function TierBlock({
         </ol>
       )}
     </section>
-  );
-}
-
-function EmbedBlock({
-  block,
-}: {
-  block: Extract<PostBlock, { kind: 'embed' }>;
-}) {
-  switch (block.component) {
-    case 'HeritageCountdown':
-      return <HeritageCountdown />;
-    case 'CourseMatchQuiz':
-      return <CourseMatchQuiz />;
-    case 'CourseMap':
-      return <CourseMap />;
-    case 'StayAndPlayEstimator':
-      return <StayAndPlayEstimator />;
-    case 'TeeTimeFinder':
-      return <TeeTimeFinder />;
-  }
-}
-
-function SectionBlock({
-  block,
-}: {
-  block: Extract<PostBlock, { kind: 'section' }>;
-}) {
-  return (
-    <details
-      open={block.defaultOpen ?? false}
-      className="group not-prose my-10 border-y border-ink/15"
-    >
-      <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 py-6 marker:hidden">
-        <div className="min-w-0">
-          {block.eyebrow && (
-            <div className="eyebrow text-coral">{block.eyebrow}</div>
-          )}
-          <h2 className="display mt-1.5 text-[24px] leading-[1.15] text-ink md:text-[30px]">
-            {block.title}
-          </h2>
-          {block.summary && (
-            <p className="mt-1.5 max-w-[640px] text-[13.5px] leading-[1.55] text-ink-soft md:text-[14.5px]">
-              {block.summary}
-            </p>
-          )}
-        </div>
-        <span
-          aria-hidden="true"
-          className="relative mt-2 h-4 w-4 shrink-0"
-        >
-          <span className="absolute left-0 top-[7px] h-[1.5px] w-full bg-ink" />
-          <span className="absolute left-[7px] top-0 h-full w-[1.5px] bg-ink transition-transform duration-200 group-open:rotate-90 group-open:opacity-0" />
-        </span>
-      </summary>
-      <div className="prose-blog pb-8">
-        {block.blocks.map((child, i) => renderBlock(child, i))}
-      </div>
-    </details>
   );
 }

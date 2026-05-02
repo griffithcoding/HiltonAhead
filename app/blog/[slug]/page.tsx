@@ -6,7 +6,7 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import NewsletterSignup from '@/components/NewsletterSignup';
-import PostBody, { flattenBlocks } from '@/components/PostBody';
+import PostBody from '@/components/PostBody';
 import { Divider } from '@/components/ui/Ornament';
 import { photos } from '@/data/photos';
 import {
@@ -27,6 +27,7 @@ import {
   getAdjacentPosts,
   getRelatedPosts,
   getRelatedIndustries,
+  flattenBlocks,
   type Post,
 } from '@/data/posts';
 import { golfCourses } from '@/data/golfCourses';
@@ -107,7 +108,7 @@ export default async function BlogPostPage({
     { name: post.title, path: `/blog/${post.slug}` },
   ]);
 
-  // ——— Extra schemas derived from the post's tier blocks ———
+  // ——— Extra schemas derived from the post's tier + faq blocks ———
   const tierBlocks = flatBody.filter(
     (b): b is Extract<typeof post.body[number], { kind: 'tier' }> =>
       b.kind === 'tier',
@@ -172,7 +173,7 @@ export default async function BlogPostPage({
         )
       : [];
 
-  // Place schema for Neighborhoods posts
+  // Place schema for Neighborhoods posts and the destination-level "best time" post.
   const placeSchema =
     post.category === 'Neighborhoods'
       ? getPlaceSchema({
@@ -182,7 +183,15 @@ export default async function BlogPostPage({
           latitude: 32.2163,
           longitude: -80.7526,
         })
-      : null;
+      : post.slug === 'best-time-to-visit-hilton-head'
+        ? getPlaceSchema({
+            name: 'Hilton Head Island',
+            description: post.description,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/blog/${post.slug}`,
+            latitude: 32.2163,
+            longitude: -80.7526,
+          })
+        : null;
 
   // Event schema for Golf / RBC Heritage post
   const eventSchema =
