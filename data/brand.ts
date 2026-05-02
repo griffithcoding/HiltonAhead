@@ -17,8 +17,9 @@ export const brand = {
     'Custom Hilton Head itineraries built by a local insider. Villa booking, tee times, dinner reservations, and on-island concierge. Skip the tourist traps.',
 
   colors: {
-    /** Sunset coral — the one sharp accent in the Lowcountry palette. */
-    primary: '#C44A2B',
+    /** Glass aqua — the signature color of the Pristine Caribbean palette.
+     *  Used for the OG image accent + browser theme-color meta. */
+    primary: '#7BD8E0',
   },
 
   logo: {
