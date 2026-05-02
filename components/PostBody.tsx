@@ -1,5 +1,12 @@
 import { Suspense, type ReactNode } from 'react';
 import type { PostBlock } from '@/data/posts';
+import { getCourseBySlug } from '@/data/golfCourses';
+import CourseCard from '@/components/golf/CourseCard';
+import HeritageCountdown from '@/components/tools/HeritageCountdown';
+import CourseMatchQuiz from '@/components/tools/CourseMatchQuiz';
+import CourseMap from '@/components/tools/CourseMap';
+import StayAndPlayEstimator from '@/components/tools/StayAndPlayEstimator';
+import TeeTimeFinder from '@/components/tools/TeeTimeFinder';
 import TripWindowFinder from '@/components/tools/TripWindowFinder';
 import LiveWeather from '@/components/tools/LiveWeather';
 import TideForecast from '@/components/tools/TideForecast';
@@ -70,31 +77,32 @@ function SectionBlock({
 }) {
   return (
     <details
-      className="not-prose group my-6 border-t border-ink/15 [&[open]]:pb-2"
-      {...(block.defaultOpen ? { open: true } : {})}
+      open={block.defaultOpen ?? false}
+      className="group not-prose my-10 border-y border-ink/15"
     >
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 hover:bg-cream-deep/30 md:py-6">
-        <div className="flex-1">
+      <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 py-6 marker:hidden">
+        <div className="min-w-0">
           {block.eyebrow && (
-            <div className="eyebrow text-sunset">{block.eyebrow}</div>
+            <div className="eyebrow text-coral">{block.eyebrow}</div>
           )}
-          <h2 className="display mt-1.5 text-[22px] leading-[1.2] text-ink md:text-[28px]">
+          <h2 className="display mt-1.5 text-[24px] leading-[1.15] text-ink md:text-[30px]">
             {block.title}
           </h2>
           {block.summary && (
-            <p className="mt-2 max-w-[640px] text-[13px] leading-[1.6] text-ink-soft md:text-[14px]">
+            <p className="mt-1.5 max-w-[640px] text-[13.5px] leading-[1.55] text-ink-soft md:text-[14.5px]">
               {block.summary}
             </p>
           )}
         </div>
         <span
           aria-hidden="true"
-          className="mt-2 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-ink/30 text-[13px] text-ink transition-transform group-open:rotate-45 md:h-8 md:w-8"
+          className="relative mt-2 h-4 w-4 shrink-0"
         >
-          +
+          <span className="absolute left-0 top-[7px] h-[1.5px] w-full bg-ink" />
+          <span className="absolute left-[7px] top-0 h-full w-[1.5px] bg-ink transition-transform duration-200 group-open:rotate-90 group-open:opacity-0" />
         </span>
       </summary>
-      <div className="prose-blog pt-2 pb-6">
+      <div className="prose-blog pb-8">
         {block.blocks.map((child, i) => renderBlock(child, i))}
       </div>
     </details>
@@ -107,6 +115,19 @@ function EmbedBlock({
   block: Extract<PostBlock, { kind: 'embed' }>;
 }) {
   switch (block.component) {
+    // Golf / Heritage page tools (PascalCase ids)
+    case 'HeritageCountdown':
+      return <HeritageCountdown />;
+    case 'CourseMatchQuiz':
+      return <CourseMatchQuiz />;
+    case 'CourseMap':
+      return <CourseMap />;
+    case 'StayAndPlayEstimator':
+      return <StayAndPlayEstimator />;
+    case 'TeeTimeFinder':
+      return <TeeTimeFinder />;
+    // Best-time-to-visit tools (kebab-case ids — the original best-time
+    // tools shipped with this naming and we keep it for data compatibility)
     case 'trip-window-finder':
       return (
         <div className="not-prose my-12 min-h-[420px]">
@@ -294,6 +315,15 @@ function TierBlock({
 }) {
   const s = TIER_STYLES[block.accent];
 
+  // When the tier is wired to course slugs, render structured CourseCards
+  // instead of the plain numbered list. The `items` array stays in sync
+  // for schema generation in the blog page template.
+  const courses = block.courseSlugs
+    ? block.courseSlugs
+        .map((slug) => getCourseBySlug(slug))
+        .filter((c): c is NonNullable<typeof c> => !!c)
+    : null;
+
   return (
     <section className="not-prose my-12 border-y border-ink/20 py-10">
       <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
@@ -314,35 +344,43 @@ function TierBlock({
         </span>
       </header>
 
-      <ol className="divide-y divide-ink/10">
-        {block.items.map((item, i) => (
-          <li
-            key={i}
-            className="grid grid-cols-[auto_1fr] gap-5 py-6 md:grid-cols-[64px_1fr] md:gap-8"
-          >
-            <span
-              className={`section-number text-[24px] leading-none md:text-[32px] ${s.accent}`}
+      {courses && courses.length > 0 ? (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {courses.map((course, i) => (
+            <CourseCard key={course.slug} course={course} rank={i + 1} />
+          ))}
+        </div>
+      ) : (
+        <ol className="divide-y divide-ink/10">
+          {block.items.map((item, i) => (
+            <li
+              key={i}
+              className="grid grid-cols-[auto_1fr] gap-5 py-6 md:grid-cols-[64px_1fr] md:gap-8"
             >
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <div>
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h4 className="display text-[19px] leading-[1.2] text-ink md:text-[22px]">
-                  {item.name}
-                </h4>
-                {item.meta && (
-                  <span className="text-[11px] uppercase tracking-[0.15em] text-ink-soft">
-                    {item.meta}
-                  </span>
-                )}
+              <span
+                className={`section-number text-[24px] leading-none md:text-[32px] ${s.accent}`}
+              >
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h4 className="display text-[19px] leading-[1.2] text-ink md:text-[22px]">
+                    {item.name}
+                  </h4>
+                  {item.meta && (
+                    <span className="text-[11px] uppercase tracking-[0.15em] text-ink-soft">
+                      {item.meta}
+                    </span>
+                  )}
+                </div>
+                <p className="mt-2 max-w-[620px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                  {item.blurb}
+                </p>
               </div>
-              <p className="mt-2 max-w-[620px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
-                {item.blurb}
-              </p>
-            </div>
-          </li>
-        ))}
-      </ol>
+            </li>
+          ))}
+        </ol>
+      )}
     </section>
   );
 }

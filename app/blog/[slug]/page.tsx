@@ -19,6 +19,7 @@ import {
   getPlaceSchema,
   getEventSchema,
   getFaqSchema,
+  getSportsActivityLocationSchema,
 } from '@/app/lib/metadata';
 import {
   posts,
@@ -29,6 +30,7 @@ import {
   flattenBlocks,
   type Post,
 } from '@/data/posts';
+import { golfCourses } from '@/data/golfCourses';
 import { getNeighborhoodBySlug } from '@/data/neighborhoods';
 import { getIndustryBySlug } from '@/data/localBusinesses';
 
@@ -81,6 +83,10 @@ export default async function BlogPostPage({
 
   const { prev, next } = getAdjacentPosts(slug);
   const heroPhoto = post.coverImage ?? CATEGORY_PHOTOS[post.category] ?? photos.hero;
+  // Flat view of the post body — needed because schema gatherers must
+  // see blocks even when they're nested inside collapsible `section`
+  // blocks. Use this for any block-walking; use `post.body` for rendering.
+  const flatBody = flattenBlocks(post.body);
 
   const relatedPosts = getRelatedPosts(slug);
   const relatedIndustries = getRelatedIndustries(slug)
@@ -103,10 +109,7 @@ export default async function BlogPostPage({
   ]);
 
   // ——— Extra schemas derived from the post's tier + faq blocks ———
-  // Use flattenBlocks so blocks nested inside `section` collapsibles are
-  // still picked up for schema generation.
-  const allBlocks = flattenBlocks(post.body);
-  const tierBlocks = allBlocks.filter(
+  const tierBlocks = flatBody.filter(
     (b): b is Extract<typeof post.body[number], { kind: 'tier' }> =>
       b.kind === 'tier',
   );
@@ -206,7 +209,7 @@ export default async function BlogPostPage({
 
   // FAQPage schema — aggregates every faq block in the post. Google can
   // award FAQ rich results and "People Also Ask" placements from this.
-  const faqItems = allBlocks
+  const faqItems = flatBody
     .filter((b): b is Extract<typeof post.body[number], { kind: 'faq' }> =>
       b.kind === 'faq',
     )
@@ -216,6 +219,24 @@ export default async function BlogPostPage({
       answer: item.a.replace(/<[^>]+>/g, '').trim(),
     }));
   const faqSchema = faqItems.length > 0 ? getFaqSchema(faqItems) : null;
+
+  // SportsActivityLocation schemas — emit per course on the golf
+  // tier list post. Helps Google's knowledge graph link the page to
+  // the courses it ranks (and surfaces the page in golf-related
+  // queries about each course).
+  const sportsActivitySchemas =
+    post.slug === 'hilton-head-golf-courses-ranked'
+      ? golfCourses.map((c) =>
+          getSportsActivityLocationSchema({
+            name: c.name,
+            description: c.blurb,
+            url: c.bookingUrl,
+            sport: 'Golf',
+            locationName:
+              c.location === 'Bluffton' ? 'Bluffton, SC' : 'Hilton Head Island, SC',
+          }),
+        )
+      : [];
 
   return (
     <>
@@ -267,6 +288,13 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      {sportsActivitySchemas.map((s, i) => (
+        <script
+          key={`sport-${i}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />

@@ -36,7 +36,10 @@ export default function SponsorshipsPage() {
     signature:
       partnersMeta.slotsAvailable.signature -
       partnersMeta.slotsFilled.signature,
+    heritage:
+      partnersMeta.slotsAvailable.heritage - partnersMeta.slotsFilled.heritage,
   };
+  const heritageTier = sponsorshipTiers.find((t) => t.tier === 'heritage');
 
   return (
     <>
@@ -124,6 +127,82 @@ export default function SponsorshipsPage() {
           </div>
         </section>
 
+        {/* ——— Heritage Week marquee — limited-window SKU ——— */}
+        {heritageTier && (
+          <section className="mt-28 md:mt-36">
+            <div className="overflow-hidden rounded-md border-2 border-coral shadow-[0_24px_56px_-24px_rgba(178,34,52,0.3)]">
+              <div className="tartan-pill px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-ink">
+                <span className="hidden sm:inline">★&nbsp;&nbsp;</span>
+                Limited window · 4 slots · Apr 2027
+                <span className="hidden sm:inline">&nbsp;&nbsp;★</span>
+              </div>
+              <div className="bg-cream px-6 py-10 md:px-12 md:py-14">
+                <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_minmax(0,1fr)] lg:gap-14">
+                  <div>
+                    <div className="eyebrow text-coral">RBC Heritage 2027 · Partner SKU</div>
+                    <h2 className="display mt-3 text-[34px] leading-[1.05] text-ink md:text-[48px]">
+                      {heritageTier.name}
+                    </h2>
+                    <p className="mt-4 max-w-[560px] text-[15.5px] leading-[1.65] text-ink-soft md:text-[17px]">
+                      {heritageTier.tagline}
+                    </p>
+                    <div className="mt-6 flex flex-wrap items-baseline gap-4">
+                      <span className="display text-[42px] leading-none text-ink md:text-[52px]">
+                        ${heritageTier.price.toLocaleString()}
+                      </span>
+                      <span className="text-[13px] uppercase tracking-[0.16em] text-ink-soft">
+                        {heritageTier.priceNote ?? 'one-time'}
+                      </span>
+                    </div>
+                    <div className="mt-2 text-[13px] text-ink-soft">
+                      {heritageTier.slots} slots ·{' '}
+                      <span className="font-medium text-coral">
+                        {slotsRemaining.heritage} remaining
+                      </span>{' '}
+                      · category-exclusive
+                    </div>
+                    <div className="mt-7 flex flex-wrap gap-3">
+                      <Link
+                        href="/sponsor/heritage-2027"
+                        className="group inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-ink"
+                      >
+                        See the Heritage pitch
+                        <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
+                          →
+                        </span>
+                      </Link>
+                      <CalendlyButton
+                        url={brand.scheduling.calendly.url}
+                        variant="outline"
+                      >
+                        Book a Heritage call
+                      </CalendlyButton>
+                    </div>
+                  </div>
+                  <ul className="flex flex-col gap-3 self-center">
+                    {heritageTier.benefits.map((b, i) => (
+                      <li
+                        key={i}
+                        className="flex gap-3 text-[14px] leading-[1.55] text-ink-soft"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-2 h-px w-4 shrink-0 bg-coral"
+                        />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <p className="mt-8 max-w-[700px] border-t border-ocean-deep/15 pt-5 text-[12.5px] leading-[1.6] text-ink-soft">
+                  <strong className="text-ink">Ideal for: </strong>
+                  {heritageTier.idealFor}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ——— Tiers ——— */}
         <section id="tiers" className="mt-28 md:mt-36 scroll-mt-20">
           <SectionHead
@@ -138,7 +217,7 @@ export default function SponsorshipsPage() {
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-6">
-            {sponsorshipTiers.filter((t) => t.tier !== 'featured').map((t, i) => {
+            {sponsorshipTiers.filter((t) => t.tier !== 'featured' && t.tier !== 'heritage').map((t, i) => {
               const available =
                 slotsRemaining[t.tier as keyof typeof slotsRemaining];
               const isPremium = t.tier === 'signature';
@@ -207,12 +286,14 @@ export default function SponsorshipsPage() {
                   </div>
 
                   <div className="flex flex-col gap-3">
-                    <CheckoutButton
-                      product={t.productKey}
-                      variant={isPremium ? 'primary' : 'outline'}
-                    >
-                      Subscribe · ${t.price.toLocaleString()}/yr
-                    </CheckoutButton>
+                    {t.productKey && (
+                      <CheckoutButton
+                        product={t.productKey}
+                        variant={isPremium ? 'primary' : 'outline'}
+                      >
+                        Subscribe · ${t.price.toLocaleString()}/yr
+                      </CheckoutButton>
+                    )}
                     <CalendlyButton
                       url={brand.scheduling.calendly.url}
                       variant="link"

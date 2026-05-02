@@ -616,3 +616,31 @@ export function getEventSchema(event: {
     ...(event.url ? { url: event.url } : {}),
   }
 }
+
+/**
+ * SportsActivityLocation schema — emitted per golf course on the
+ * `/blog/hilton-head-golf-courses-ranked` page. Helps Google's
+ * knowledge graph link the article to each course's entity.
+ */
+export function getSportsActivityLocationSchema(course: {
+  name: string
+  description: string
+  url: string
+  sport: string
+  locationName: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SportsActivityLocation',
+    name: course.name,
+    description: course.description,
+    url: course.url,
+    sport: course.sport,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: course.locationName.replace(/, [A-Z]{2}$/, ''),
+      addressRegion: 'SC',
+      addressCountry: 'US',
+    },
+  }
+}

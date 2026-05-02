@@ -7,6 +7,20 @@
  * for <strong>, <em>, and <a href>.
  */
 
+/** Names of inline interactive components the `embed` block can render. */
+export type PostEmbedComponent =
+  // Golf tier-list / Heritage 2027 page (PascalCase)
+  | 'CourseMatchQuiz'
+  | 'CourseMap'
+  | 'StayAndPlayEstimator'
+  | 'HeritageCountdown'
+  | 'TeeTimeFinder'
+  // Best-time-to-visit page (kebab-case, kept for data compatibility)
+  | 'trip-window-finder'
+  | 'live-weather'
+  | 'tide-forecast'
+  | 'hurricane-status';
+
 export type PostBlock =
   | { kind: 'p'; html: string }
   | { kind: 'h2'; text: string }
@@ -36,16 +50,25 @@ export type PostBlock =
         meta?: string;
         blurb: string;
       }>;
+      /**
+       * When present, the renderer pulls structured course cards from
+       * `data/golfCourses.ts` instead of rendering the numbered text list.
+       * `items` still drives the schema/ItemList output, so keep both
+       * arrays in sync (one entry per course slug, same order).
+       */
+      courseSlugs?: string[];
     }
   | {
+      /** Inline interactive widget, dispatched by name in PostBody. */
       kind: 'embed';
-      component:
-        | 'trip-window-finder'
-        | 'live-weather'
-        | 'tide-forecast'
-        | 'hurricane-status';
+      component: PostEmbedComponent;
     }
   | {
+      /**
+       * Collapsible `<details>` section that wraps further blocks.
+       * Used to make long posts scannable. Renders an editorial header
+       * (eyebrow / title / optional summary) and an open/close indicator.
+       */
       kind: 'section';
       /** Optional small uppercase label above the title (e.g. "01 · Conditions"). */
       eyebrow?: string;
@@ -91,6 +114,12 @@ export type Post = {
   /** Order of appearance on /blog (lower = earlier). */
   featuredOrder: number;
   /**
+   * Optional hero image override. When set, replaces the category-default
+   * photograph on `/blog/[slug]`. Use for posts where the category image
+   * doesn't fit the editorial framing.
+   */
+  coverImage?: { src: string; alt: string };
+  /**
    * Neighborhood slugs this post meaningfully covers. Drives the
    * bidirectional internal-link block at the bottom of the post (blog
    * -> /hilton-head/[slug]), complementing the neighborhood -> blog
@@ -100,12 +129,6 @@ export type Post = {
    *   'sea-pines' | 'palmetto-dunes' | 'forest-beach' | 'shelter-cove'
    */
   relatedNeighborhoods?: string[];
-  /**
-   * Optional hero image override. Falls back to the category default in
-   * app/blog/[slug]/page.tsx when omitted. Use only when a post deserves
-   * a more specific photo than its category map provides.
-   */
-  coverImage?: { src: string; alt: string };
   body: PostBlock[];
 };
 
@@ -3880,9 +3903,13 @@ const postGolfCoursesRanked: Post = {
   category: 'Golf',
   readTime: '12 min',
   publishedAt: '2026-04-24',
-  updatedAt: '2026-04-24',
+  updatedAt: '2026-05-01',
   author: 'Hilton Ahead',
   featuredOrder: 3.6,
+  coverImage: {
+    src: 'https://images.unsplash.com/photo-1631845085830-10c38cc98ac8?auto=format&fit=crop&w=1800&q=82',
+    alt: 'Harbour Town Lighthouse and dock at golden hour, Hilton Head — host of the RBC Heritage',
+  },
   relatedNeighborhoods: ['sea-pines', 'palmetto-dunes'],
   keywords: [
     'Hilton Head golf courses',
@@ -3902,239 +3929,322 @@ const postGolfCoursesRanked: Post = {
       html: "Hilton Head has more championship golf per square mile than anywhere in the US except Pinehurst. Twelve courses inside a twenty-minute radius, four nationally ranked, and one (Harbour Town) that hosts the PGA Tour every April. Most visitors play one or two and leave. The optimized golf trip plays four in five days and picks each for a reason. Here is the ranked list we send to every golf group.",
     },
     {
+      kind: 'embed',
+      component: 'HeritageCountdown',
+    },
+    {
       kind: 'callout',
       label: 'The short answer',
       html: "<strong>Must-play:</strong> Harbour Town. <strong>Best ocean-view round:</strong> RTJ Oceanfront at Palmetto Dunes. <strong>Best value S-tier:</strong> Heron Point by Pete Dye. <strong>Best stay-and-play economics:</strong> Atlantic Dunes. <strong>Best Bluffton splurge:</strong> May River at Palmetto Bluff. <strong>The one to skip:</strong> Shipyard's Clipper nine (always rough), covered below.",
     },
     {
-      kind: 'h2',
-      text: 'The 2026 Hilton Head golf landscape at a glance',
+      kind: 'embed',
+      component: 'CourseMatchQuiz',
     },
     {
-      kind: 'p',
-      html: "Most Hilton Head golf is resort-play, which means you book through the resort at either the guest rate (cheaper) or the non-guest rate. Stay-and-play packages almost always beat retail green fees; we have priced dozens. Here is the compressed view:",
+      kind: 'embed',
+      component: 'TeeTimeFinder',
     },
     {
-      kind: 'table',
-      caption: 'Hilton Head + Bluffton: course-by-course snapshot',
-      headers: ['Course', 'Designer', 'Location', 'Peak green fee (retail)', 'Public/resort'],
-      rows: [
-        ['Harbour Town Golf Links', 'Pete Dye', 'Sea Pines', '$400-550', 'Sea Pines resort guests + Heritage'],
-        ['Heron Point by Pete Dye', 'Pete Dye', 'Sea Pines', '$190-250', 'Sea Pines resort guests'],
-        ['Atlantic Dunes by Davis Love III', 'Davis Love III', 'Sea Pines', '$170-230', 'Sea Pines resort guests'],
-        ['Robert Trent Jones Oceanfront', 'Robert Trent Jones', 'Palmetto Dunes', '$195-245', 'Public + Palmetto Dunes guests'],
-        ['Arthur Hills Course', 'Arthur Hills', 'Palmetto Dunes', '$165-210', 'Public + Palmetto Dunes guests'],
-        ['George Fazio Course', 'George Fazio', 'Palmetto Dunes', '$165-210', 'Public + Palmetto Dunes guests'],
-        ['Shipyard Golf Club (27 holes)', 'George Cobb / Willard Byrd', 'Shipyard', '$130-175', 'Public'],
-        ['Port Royal Golf Club (3 courses)', 'Fazio / Cobb / Jones', 'Port Royal', '$135-185', 'Public'],
-        ['Palmetto Hall (2 courses)', 'Arthur Hills / Robert Cupp', 'North island', '$125-165', 'Public'],
-        ['Oyster Reef Golf Course', 'Rees Jones', 'North island', '$120-160', 'Public'],
-        ['May River Golf Club', 'Jack Nicklaus', 'Palmetto Bluff, Bluffton', '$275-350', 'Montage Palmetto Bluff guests'],
-        ['Old South Golf Links', 'Clyde Johnston', 'Bluffton', '$90-140', 'Public'],
-      ],
-    },
-    {
-      kind: 'p',
-      html: "Stay-and-play pricing beats retail by 20-40% on every course above. Book through the resort (Sea Pines, Palmetto Dunes, Montage) and pair green fees with lodging for the best math. For Harbour Town specifically, there is no public-play equivalent; you need to be inside the gate.",
-    },
-    {
-      kind: 'tier',
-      label: 'S-Tier',
-      subtitle: 'Courses worth building a trip around.',
-      accent: 'gold',
-      items: [
+      kind: 'section',
+      eyebrow: '01 \u00b7 The lay of the land',
+      title: 'The 2026 Hilton Head golf landscape at a glance',
+      summary: '12 courses, 4 nationally ranked, 1 PGA Tour venue.',
+      blocks: [
         {
-          name: 'Harbour Town Golf Links (Sea Pines)',
-          meta: 'Pete Dye \u00b7 Par 71 \u00b7 6,973 yards \u00b7 Sea Pines resort priority',
-          blurb:
-            "The best single course in the Southeast and the crown jewel of Hilton Head golf. Host of the RBC Heritage every April. Famous for the 18th hole with the red-and-white lighthouse framing the green. Tight fairways, small greens, and a finishing stretch that rewards shot-shaping. Stay-and-play through Sea Pines Resort is the only reliable way to book; 120-day priority window for resort guests.",
+          kind: 'p',
+          html: "Most Hilton Head golf is resort-play, which means you book through the resort at either the guest rate (cheaper) or the non-guest rate. Stay-and-play packages almost always beat retail green fees; we have priced dozens. Here is the compressed view:",
         },
         {
-          name: 'Robert Trent Jones Oceanfront (Palmetto Dunes)',
-          meta: 'Robert Trent Jones \u00b7 Par 72 \u00b7 7,004 yards \u00b7 Public',
-          blurb:
-            "The 10th hole plays directly along the Atlantic, making RTJ the only course on Hilton Head with an oceanfront golf shot. Ranked top-50 resort course by Golfweek. Recently re-bunkered and greens regrassed. Best time to play: early morning for the ocean breeze and light. Pair with Arthur Hills and Fazio on a 3-day Palmetto Dunes package.",
+          kind: 'table',
+          caption: 'Hilton Head + Bluffton: course-by-course snapshot',
+          headers: ['Course', 'Designer', 'Location', 'Peak green fee (retail)', 'Public/resort'],
+          rows: [
+            ['Harbour Town Golf Links', 'Pete Dye', 'Sea Pines', '$400-550', 'Sea Pines resort guests + Heritage'],
+            ['Heron Point by Pete Dye', 'Pete Dye', 'Sea Pines', '$190-250', 'Sea Pines resort guests'],
+            ['Atlantic Dunes by Davis Love III', 'Davis Love III', 'Sea Pines', '$170-230', 'Sea Pines resort guests'],
+            ['Robert Trent Jones Oceanfront', 'Robert Trent Jones', 'Palmetto Dunes', '$195-245', 'Public + Palmetto Dunes guests'],
+            ['Arthur Hills Course', 'Arthur Hills', 'Palmetto Dunes', '$165-210', 'Public + Palmetto Dunes guests'],
+            ['George Fazio Course', 'George Fazio', 'Palmetto Dunes', '$165-210', 'Public + Palmetto Dunes guests'],
+            ['Shipyard Golf Club (27 holes)', 'George Cobb / Willard Byrd', 'Shipyard', '$130-175', 'Public'],
+            ['Port Royal Golf Club (3 courses)', 'Fazio / Cobb / Jones', 'Port Royal', '$135-185', 'Public'],
+            ['Palmetto Hall (2 courses)', 'Arthur Hills / Robert Cupp', 'North island', '$125-165', 'Public'],
+            ['Oyster Reef Golf Course', 'Rees Jones', 'North island', '$120-160', 'Public'],
+            ['May River Golf Club', 'Jack Nicklaus', 'Palmetto Bluff, Bluffton', '$275-350', 'Montage Palmetto Bluff guests'],
+            ['Old South Golf Links', 'Clyde Johnston', 'Bluffton', '$90-140', 'Public'],
+          ],
         },
         {
-          name: 'May River at Palmetto Bluff (Bluffton)',
-          meta: 'Jack Nicklaus \u00b7 Par 72 \u00b7 7,174 yards \u00b7 Montage guests',
-          blurb:
-            "Technically off-island (20 min in Bluffton) but worth the drive. Nicklaus design threading live oaks and marsh. The service level at Montage Palmetto Bluff is unmatched in the region. A round here plus one night at the Montage plus dinner at the May River Grill is the S-tier Lowcountry golf experience. $275-350 green fees.",
-        },
-        {
-          name: 'Heron Point by Pete Dye (Sea Pines)',
-          meta: 'Pete Dye \u00b7 Par 71 \u00b7 7,035 yards \u00b7 Sea Pines guests',
-          blurb:
-            "Sea Pines' second Dye course, renovated in 2007. Wider fairways than Harbour Town, slightly more forgiving, still Pete Dye-strategic. The best-value S-tier round on the island at $190-250. Most golf groups actually prefer this to Harbour Town for day-to-day play; Harbour Town is ceremony, Heron Point is golf.",
+          kind: 'p',
+          html: "Stay-and-play pricing beats retail by 20-40% on every course above. Book through the resort (Sea Pines, Palmetto Dunes, Montage) and pair green fees with lodging for the best math. For Harbour Town specifically, there is no public-play equivalent; you need to be inside the gate.",
         },
       ],
     },
     {
-      kind: 'tier',
-      label: 'A-Tier',
-      subtitle: 'Strong rounds any day.',
-      accent: 'primary',
-      items: [
+      kind: 'section',
+      eyebrow: '02 \u00b7 The crown',
+      title: 'S-Tier \u2014 courses worth building a trip around',
+      summary: 'Harbour Town, RTJ Oceanfront, May River, Heron Point.',
+      defaultOpen: true,
+      blocks: [
         {
-          name: 'Atlantic Dunes by Davis Love III (Sea Pines)',
-          meta: 'Davis Love III \u00b7 Par 72 \u00b7 7,010 yards \u00b7 Sea Pines guests',
-          blurb:
-            "The newest Sea Pines course (renovated 2016 from the old Ocean Course by Davis Love's firm). Links-style feel, exposed dunes, challenging winds. Reasonable difficulty for mid-handicappers. Best call when Heron Point is booked. $170-230 retail.",
-        },
-        {
-          name: 'Arthur Hills Course (Palmetto Dunes)',
-          meta: 'Arthur Hills \u00b7 Par 72 \u00b7 6,651 yards \u00b7 Public',
-          blurb:
-            "The most forgiving of the three Palmetto Dunes courses. Lagoon-laced layout with generous landing areas. Best for mid to high handicappers or the first round of a trip when you want to warm up. Pairs well with the tougher RTJ on Day 2.",
-        },
-        {
-          name: 'George Fazio Course (Palmetto Dunes)',
-          meta: 'George Fazio \u00b7 Par 70 \u00b7 6,873 yards \u00b7 Public',
-          blurb:
-            "Tighter than Arthur Hills, with only two par-5s (rare). Rewards accuracy over distance. Often overlooked by visitors who assume \u201CFazio\u201D means Tom Fazio (it doesn't; George was Tom's uncle). A legitimately good test; lower green fees than the bigger names.",
-        },
-        {
-          name: 'Port Royal Golf Club (3 courses)',
-          meta: 'Robert Trent Jones / George Cobb / Pete Dye \u00b7 Public',
-          blurb:
-            "Three 18-hole tracks in one location. Planters Row (RTJ) is the strongest; Robbers Row (Cobb) the most historic. Good choice when Sea Pines and Palmetto Dunes are booked or when you want variety at a lower price point. Worth it in the mid-March to mid-May sweet spot.",
-        },
-      ],
-    },
-    {
-      kind: 'tier',
-      label: 'B-Tier',
-      subtitle: 'Fine when the calendar is tight.',
-      accent: 'zinc',
-      items: [
-        {
-          name: 'Palmetto Hall Plantation',
-          meta: 'Arthur Hills / Robert Cupp \u00b7 Public \u00b7 North island',
-          blurb:
-            "Two solid courses 25 minutes north of the action. Lower green fees ($125-165), less crowded on weekdays. Good value if you're staying on the north end or if the main-island courses are booked. Otherwise, the drive is an additional tax.",
-        },
-        {
-          name: 'Oyster Reef Golf Course',
-          meta: 'Rees Jones \u00b7 Public \u00b7 North island',
-          blurb:
-            "A Rees Jones design (Robert Trent Jones' son) with a legitimate par-3 over salt marsh. Not destination-worthy on its own, but a respectable value round. Best for a group that wants more golf than Sea Pines and Palmetto Dunes can provide in a 5-day trip.",
-        },
-        {
-          name: 'Shipyard Golf Club (27 holes)',
-          meta: 'George Cobb / Willard Byrd \u00b7 Public \u00b7 Mid-island',
-          blurb:
-            "Three nines (Brigantine, Clipper, Galleon) combined into 18-hole rotations. Brigantine plus Galleon is the good round. Clipper is always the weakest nine; skip it if the tee sheet lets you. Decent value ($130-175) and convenient mid-island location.",
-        },
-        {
-          name: 'Old South Golf Links (Bluffton)',
-          meta: 'Clyde Johnston \u00b7 Public \u00b7 20 min off-island',
-          blurb:
-            "The best budget round in the region ($90-140). Clyde Johnston layout on a former rice plantation. Not a championship test but genuinely enjoyable for a mid-trip afternoon round when the S-tier courses have priced you out.",
+          kind: 'tier',
+          label: 'S-Tier',
+          subtitle: 'Courses worth building a trip around.',
+          accent: 'gold',
+          courseSlugs: [
+            'harbour-town-golf-links',
+            'rtj-oceanfront-palmetto-dunes',
+            'may-river-palmetto-bluff',
+            'heron-point-by-pete-dye',
+          ],
+          items: [
+            {
+              name: 'Harbour Town Golf Links (Sea Pines)',
+              meta: 'Pete Dye \u00b7 Par 71 \u00b7 6,973 yards \u00b7 Sea Pines resort priority',
+              blurb:
+                "The best single course in the Southeast and the crown jewel of Hilton Head golf. Host of the RBC Heritage every April. Famous for the 18th hole with the red-and-white lighthouse framing the green. Tight fairways, small greens, and a finishing stretch that rewards shot-shaping. Stay-and-play through Sea Pines Resort is the only reliable way to book; 120-day priority window for resort guests.",
+            },
+            {
+              name: 'Robert Trent Jones Oceanfront (Palmetto Dunes)',
+              meta: 'Robert Trent Jones \u00b7 Par 72 \u00b7 7,004 yards \u00b7 Public',
+              blurb:
+                "The 10th hole plays directly along the Atlantic, making RTJ the only course on Hilton Head with an oceanfront golf shot. Ranked top-50 resort course by Golfweek. Recently re-bunkered and greens regrassed. Best time to play: early morning for the ocean breeze and light. Pair with Arthur Hills and Fazio on a 3-day Palmetto Dunes package.",
+            },
+            {
+              name: 'May River at Palmetto Bluff (Bluffton)',
+              meta: 'Jack Nicklaus \u00b7 Par 72 \u00b7 7,174 yards \u00b7 Montage guests',
+              blurb:
+                "Technically off-island (20 min in Bluffton) but worth the drive. Nicklaus design threading live oaks and marsh. The service level at Montage Palmetto Bluff is unmatched in the region. A round here plus one night at the Montage plus dinner at the May River Grill is the S-tier Lowcountry golf experience. $275-350 green fees.",
+            },
+            {
+              name: 'Heron Point by Pete Dye (Sea Pines)',
+              meta: 'Pete Dye \u00b7 Par 71 \u00b7 7,035 yards \u00b7 Sea Pines guests',
+              blurb:
+                "Sea Pines' second Dye course, renovated in 2007. Wider fairways than Harbour Town, slightly more forgiving, still Pete Dye-strategic. The best-value S-tier round on the island at $190-250. Most golf groups actually prefer this to Harbour Town for day-to-day play; Harbour Town is ceremony, Heron Point is golf.",
+            },
+          ],
         },
       ],
     },
     {
-      kind: 'h2',
-      text: 'Tee-time booking priority, by course',
-    },
-    {
-      kind: 'p',
-      html: "The single biggest mistake on a Hilton Head golf trip is assuming you can book Harbour Town walk-up or 30 days out. You cannot. Here is how each course's tee sheet actually opens:",
-    },
-    {
-      kind: 'table',
-      caption: 'Hilton Head golf: when each course opens its tee sheet',
-      headers: ['Course', 'Resort-guest priority', 'Public booking', 'Booking reality (peak)'],
-      rows: [
-        ['Harbour Town Golf Links', '120 days (Sea Pines Resort only)', '30 days (rare cancellations)', 'Book Sea Pines lodging 4+ months out'],
-        ['Heron Point / Atlantic Dunes', '90 days (Sea Pines Resort)', '30 days', 'Good availability inside 45 days'],
-        ['RTJ Oceanfront / Arthur Hills / Fazio', '60 days (Palmetto Dunes stay)', '30 days (all 3 open)', 'Tee times inside 2 weeks are feasible'],
-        ['Shipyard / Port Royal / Palmetto Hall', 'No resort priority', '60 days open to public', 'Walk-up Monday-Thursday often works'],
-        ['May River (Montage)', '90 days (Montage stay only)', 'Not public', 'Stay at Montage or skip'],
-        ['Old South / Oyster Reef', 'No priority tier', '60 days open', 'Easy to book inside 1 week'],
+      kind: 'section',
+      eyebrow: '03 \u00b7 The everyday',
+      title: 'A-Tier \u2014 strong rounds any day',
+      blocks: [
+        {
+          kind: 'tier',
+          label: 'A-Tier',
+          subtitle: 'Strong rounds any day.',
+          accent: 'primary',
+          courseSlugs: [
+            'atlantic-dunes',
+            'arthur-hills-palmetto-dunes',
+            'george-fazio-palmetto-dunes',
+            'port-royal',
+          ],
+          items: [
+            {
+              name: 'Atlantic Dunes by Davis Love III (Sea Pines)',
+              meta: 'Davis Love III \u00b7 Par 72 \u00b7 7,010 yards \u00b7 Sea Pines guests',
+              blurb:
+                "The newest Sea Pines course (renovated 2016 from the old Ocean Course by Davis Love's firm). Links-style feel, exposed dunes, challenging winds. Reasonable difficulty for mid-handicappers. Best call when Heron Point is booked. $170-230 retail.",
+            },
+            {
+              name: 'Arthur Hills Course (Palmetto Dunes)',
+              meta: 'Arthur Hills \u00b7 Par 72 \u00b7 6,651 yards \u00b7 Public',
+              blurb:
+                "The most forgiving of the three Palmetto Dunes courses. Lagoon-laced layout with generous landing areas. Best for mid to high handicappers or the first round of a trip when you want to warm up. Pairs well with the tougher RTJ on Day 2.",
+            },
+            {
+              name: 'George Fazio Course (Palmetto Dunes)',
+              meta: 'George Fazio \u00b7 Par 70 \u00b7 6,873 yards \u00b7 Public',
+              blurb:
+                "Tighter than Arthur Hills, with only two par-5s (rare). Rewards accuracy over distance. Often overlooked by visitors who assume \u201CFazio\u201D means Tom Fazio (it doesn't; George was Tom's uncle). A legitimately good test; lower green fees than the bigger names.",
+            },
+            {
+              name: 'Port Royal Golf Club (3 courses)',
+              meta: 'Robert Trent Jones / George Cobb / Pete Dye \u00b7 Public',
+              blurb:
+                "Three 18-hole tracks in one location. Planters Row (RTJ) is the strongest; Robbers Row (Cobb) the most historic. Good choice when Sea Pines and Palmetto Dunes are booked or when you want variety at a lower price point. Worth it in the mid-March to mid-May sweet spot.",
+            },
+          ],
+        },
       ],
     },
     {
-      kind: 'h2',
-      text: 'Stay-and-play math, honestly',
-    },
-    {
-      kind: 'p',
-      html: "Retail green fees plus separate lodging is almost always worse economics than a stay-and-play package. A three-round Sea Pines stay-and-play (Harbour Town + Heron Point + Atlantic Dunes over 4 nights at the Inn & Club at Harbour Town) runs roughly $299-399/player/night with breakfast, rounds, and villa lodging included. Same three rounds retail plus the same lodging runs $300-450/player/night more. The stay-and-play is simply a better number.",
-    },
-    {
-      kind: 'p',
-      html: "The one exception: if your group is 8+ and you want a standalone villa, direct villa booking plus retail green fees can beat the resort package because the villa economics scale. We run the numbers both ways for every group.",
-    },
-    {
-      kind: 'h2',
-      text: 'A 4-round, 5-day Hilton Head golf trip',
-    },
-    {
-      kind: 'p',
-      html: "The optimized trip most groups ask us for:",
-    },
-    {
-      kind: 'ul',
-      items: [
-        "<strong>Day 1:</strong> Arrive, warm-up round at <strong>Atlantic Dunes</strong>. Casual, get the body moving.",
-        "<strong>Day 2:</strong> <strong>Heron Point</strong> morning. Afternoon range session or bike ride.",
-        "<strong>Day 3:</strong> <strong>Harbour Town Golf Links</strong>. The ceremony round. Book the 10 a.m. tee time, lunch at Quarterdeck after.",
-        "<strong>Day 4:</strong> Recovery day. Beach, pool, and a walk to the lighthouse.",
-        "<strong>Day 5:</strong> <strong>May River at Palmetto Bluff</strong> or <strong>RTJ Oceanfront</strong> as the finale. Different vibe, different designer, strong closing round.",
+      kind: 'section',
+      eyebrow: '04 \u00b7 The value picks',
+      title: 'B-Tier \u2014 fine when the calendar is tight',
+      blocks: [
+        {
+          kind: 'tier',
+          label: 'B-Tier',
+          subtitle: 'Fine when the calendar is tight.',
+          accent: 'zinc',
+          courseSlugs: ['palmetto-hall', 'oyster-reef', 'shipyard', 'old-south'],
+          items: [
+            {
+              name: 'Palmetto Hall Plantation',
+              meta: 'Arthur Hills / Robert Cupp \u00b7 Public \u00b7 North island',
+              blurb:
+                "Two solid courses 25 minutes north of the action. Lower green fees ($125-165), less crowded on weekdays. Good value if you're staying on the north end or if the main-island courses are booked. Otherwise, the drive is an additional tax.",
+            },
+            {
+              name: 'Oyster Reef Golf Course',
+              meta: 'Rees Jones \u00b7 Public \u00b7 North island',
+              blurb:
+                "A Rees Jones design (Robert Trent Jones' son) with a legitimate par-3 over salt marsh. Not destination-worthy on its own, but a respectable value round. Best for a group that wants more golf than Sea Pines and Palmetto Dunes can provide in a 5-day trip.",
+            },
+            {
+              name: 'Shipyard Golf Club (27 holes)',
+              meta: 'George Cobb / Willard Byrd \u00b7 Public \u00b7 Mid-island',
+              blurb:
+                "Three nines (Brigantine, Clipper, Galleon) combined into 18-hole rotations. Brigantine plus Galleon is the good round. Clipper is always the weakest nine; skip it if the tee sheet lets you. Decent value ($130-175) and convenient mid-island location.",
+            },
+            {
+              name: 'Old South Golf Links (Bluffton)',
+              meta: 'Clyde Johnston \u00b7 Public \u00b7 20 min off-island',
+              blurb:
+                "The best budget round in the region ($90-140). Clyde Johnston layout on a former rice plantation. Not a championship test but genuinely enjoyable for a mid-trip afternoon round when the S-tier courses have priced you out.",
+            },
+          ],
+        },
       ],
     },
     {
-      kind: 'p',
-      html: "For the full trip logistics including lodging, dinner reservations, and non-golf programming, see the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a> and the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages landing page</a>.",
+      kind: 'section',
+      eyebrow: '05 \u00b7 Where they sit',
+      title: 'The 12 courses, mapped',
+      summary: 'Sea Pines, Palmetto Dunes, mid-island, Bluffton \u2014 at a glance.',
+      blocks: [
+        {
+          kind: 'embed',
+          component: 'CourseMap',
+        },
+      ],
     },
     {
-      kind: 'h2',
-      text: 'Hilton Head golf courses: frequently asked questions',
+      kind: 'section',
+      eyebrow: '06 \u00b7 Logistics',
+      title: 'Tee-time booking priority, by course',
+      summary: 'When each course opens its tee sheet, and what actually books in peak.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "The single biggest mistake on a Hilton Head golf trip is assuming you can book Harbour Town walk-up or 30 days out. You cannot. Here is how each course's tee sheet actually opens:",
+        },
+        {
+          kind: 'table',
+          caption: 'Hilton Head golf: when each course opens its tee sheet',
+          headers: ['Course', 'Resort-guest priority', 'Public booking', 'Booking reality (peak)'],
+          rows: [
+            ['Harbour Town Golf Links', '120 days (Sea Pines Resort only)', '30 days (rare cancellations)', 'Book Sea Pines lodging 4+ months out'],
+            ['Heron Point / Atlantic Dunes', '90 days (Sea Pines Resort)', '30 days', 'Good availability inside 45 days'],
+            ['RTJ Oceanfront / Arthur Hills / Fazio', '60 days (Palmetto Dunes stay)', '30 days (all 3 open)', 'Tee times inside 2 weeks are feasible'],
+            ['Shipyard / Port Royal / Palmetto Hall', 'No resort priority', '60 days open to public', 'Walk-up Monday-Thursday often works'],
+            ['May River (Montage)', '90 days (Montage stay only)', 'Not public', 'Stay at Montage or skip'],
+            ['Old South / Oyster Reef', 'No priority tier', '60 days open', 'Easy to book inside 1 week'],
+          ],
+        },
+      ],
     },
     {
-      kind: 'faq',
-      label: 'Questions we hear most',
-      items: [
+      kind: 'section',
+      eyebrow: '07 \u00b7 The numbers',
+      title: 'Stay-and-play math, honestly',
+      summary: 'Run the rough total before you decide.',
+      blocks: [
         {
-          q: 'What is the best golf course on Hilton Head?',
-          a: "Harbour Town Golf Links, without serious debate. It's a PGA Tour venue, hosts the RBC Heritage every April, and has the most iconic 18th hole in the Southeast (lighthouse, Calibogue Sound, small green). Heron Point and Robert Trent Jones Oceanfront are the closest seconds; Heron Point for Pete Dye purists, RTJ for the oceanfront shot.",
+          kind: 'p',
+          html: "Retail green fees plus separate lodging is almost always worse economics than a stay-and-play package. A three-round Sea Pines stay-and-play (Harbour Town + Heron Point + Atlantic Dunes over 4 nights at the Inn & Club at Harbour Town) runs roughly $299-399/player/night with breakfast, rounds, and villa lodging included. Same three rounds retail plus the same lodging runs $300-450/player/night more. The stay-and-play is simply a better number.",
         },
         {
-          q: 'Can the public play Harbour Town Golf Links?',
-          a: "Technically yes, but reliably no. The course prioritizes Sea Pines Resort guests with a 120-day booking window. Public tee times open at 30 days and are almost always full by that point. If you want to play Harbour Town, book a stay-and-play package through Sea Pines Resort 4+ months out. Non-guests who show up looking for a walk-up round nearly always leave disappointed.",
+          kind: 'p',
+          html: "The one exception: if your group is 8+ and you want a standalone villa, direct villa booking plus retail green fees can beat the resort package because the villa economics scale. We run the numbers both ways for every group.",
         },
         {
-          q: 'How much does a round at Harbour Town cost?',
-          a: "Peak-season green fees run $400-550 for non-guests and $325-450 for Sea Pines Resort guests. Stay-and-play packages effectively net the round to $200-275 per player when bundled with 4+ nights of lodging. Heritage week (April 13-19, 2026) the course is closed to public play.",
+          kind: 'embed',
+          component: 'StayAndPlayEstimator',
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: '08 \u00b7 The blueprint',
+      title: 'A 4-round, 5-day Hilton Head golf trip',
+      blocks: [
+        {
+          kind: 'p',
+          html: "The optimized trip most groups ask us for:",
         },
         {
-          q: 'Is Robert Trent Jones Oceanfront really oceanfront?',
-          a: "The 10th hole plays directly along the Atlantic, with the beach visible from the tee. It's the only actual oceanfront golf hole on Hilton Head. The rest of the course is inland but within 300 yards of the ocean. Call it \u201Coceanfront\u201D in the literal PGA-marketing sense; not every hole is on the water.",
+          kind: 'ul',
+          items: [
+            "<strong>Day 1:</strong> Arrive, warm-up round at <strong>Atlantic Dunes</strong>. Casual, get the body moving.",
+            "<strong>Day 2:</strong> <strong>Heron Point</strong> morning. Afternoon range session or bike ride.",
+            "<strong>Day 3:</strong> <strong>Harbour Town Golf Links</strong>. The ceremony round. Book the 10 a.m. tee time, lunch at Quarterdeck after.",
+            "<strong>Day 4:</strong> Recovery day. Beach, pool, and a walk to the lighthouse.",
+            "<strong>Day 5:</strong> <strong>May River at Palmetto Bluff</strong> or <strong>RTJ Oceanfront</strong> as the finale. Different vibe, different designer, strong closing round.",
+          ],
         },
         {
-          q: 'How many golf courses are on Hilton Head Island?',
-          a: "Twelve championship-grade courses inside Hilton Head and Bluffton (20 minutes off-island). Counting the three nines at Shipyard and the three courses at Port Royal as one \u201Ccourse\u201D each, the total is 12. Within 30 minutes including Palmetto Bluff and beyond, the count exceeds 20.",
+          kind: 'p',
+          html: "For the full trip logistics including lodging, dinner reservations, and non-golf programming, see the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a> and the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages landing page</a>.",
         },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: '09 \u00b7 Questions',
+      title: 'Hilton Head golf FAQ',
+      defaultOpen: true,
+      blocks: [
         {
-          q: 'When is the best time of year to golf on Hilton Head?',
-          a: "March through May and October through early November. Course conditioning peaks in March after winter overseeding. October delivers dry, 75\u00b0F afternoons with the greens still dense. Summer golf is playable but the humidity and afternoon storms force morning-only play. Winter golf is the budget play: cooler air, slower greens, 30-40% lower green fees. See the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a>.",
-        },
-        {
-          q: 'What is a stay-and-play package on Hilton Head?',
-          a: "Bundled lodging plus green fees plus usually daily breakfast, sold by the major resorts (Sea Pines, Palmetto Dunes, Montage Palmetto Bluff). Prices run $299-399/player/night for S-tier courses and $225-325/player/night for A-tier. These beat retail pricing 20-40% and handle the booking priority simultaneously. See the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages page</a>.",
-        },
-        {
-          q: 'Which Hilton Head course is easiest for a beginner or high-handicapper?',
-          a: "Arthur Hills Course at Palmetto Dunes for a full championship layout with wider fairways and forgiving landing areas. Old South Golf Links in Bluffton at a lower price point. Oyster Reef is also reasonable. Avoid Harbour Town if you're over a 20 handicap; the small greens and demanding approach shots will frustrate you at $450 a round.",
-        },
-        {
-          q: 'Is Shipyard Golf Club worth playing?',
-          a: "Yes on the Brigantine and Galleon nines; the Clipper nine is the weakest 9 holes in the main Hilton Head course rotation and we routinely steer groups away. Shipyard's pricing ($130-175) makes it a fine value round when the bigger names are booked.",
-        },
-        {
-          q: 'How far ahead do I need to book a Hilton Head golf trip?',
-          a: "Harbour Town stays: 9-10 months out for RBC Heritage week, 4-6 months out for March-May peak. Other Sea Pines and Palmetto Dunes packages: 3-4 months out in peak. Non-resort public courses (Shipyard, Port Royal, Palmetto Hall): 2-4 weeks out is fine. For a full trip plan, see the <a href=\"/blog/hilton-head-golf-trip\">golf trip guide</a> or contact us.",
+          kind: 'faq',
+          label: 'Questions we hear most',
+          items: [
+            {
+              q: 'What is the best golf course on Hilton Head?',
+              a: "Harbour Town Golf Links, without serious debate. It's a PGA Tour venue, hosts the RBC Heritage every April, and has the most iconic 18th hole in the Southeast (lighthouse, Calibogue Sound, small green). Heron Point and Robert Trent Jones Oceanfront are the closest seconds; Heron Point for Pete Dye purists, RTJ for the oceanfront shot.",
+            },
+            {
+              q: 'Can the public play Harbour Town Golf Links?',
+              a: "Technically yes, but reliably no. The course prioritizes Sea Pines Resort guests with a 120-day booking window. Public tee times open at 30 days and are almost always full by that point. If you want to play Harbour Town, book a stay-and-play package through Sea Pines Resort 4+ months out. Non-guests who show up looking for a walk-up round nearly always leave disappointed.",
+            },
+            {
+              q: 'How much does a round at Harbour Town cost?',
+              a: "Peak-season green fees run $400-550 for non-guests and $325-450 for Sea Pines Resort guests. Stay-and-play packages effectively net the round to $200-275 per player when bundled with 4+ nights of lodging. Heritage week (April 13-19, 2026) the course is closed to public play.",
+            },
+            {
+              q: 'Is Robert Trent Jones Oceanfront really oceanfront?',
+              a: "The 10th hole plays directly along the Atlantic, with the beach visible from the tee. It's the only actual oceanfront golf hole on Hilton Head. The rest of the course is inland but within 300 yards of the ocean. Call it \u201Coceanfront\u201D in the literal PGA-marketing sense; not every hole is on the water.",
+            },
+            {
+              q: 'How many golf courses are on Hilton Head Island?',
+              a: "Twelve championship-grade courses inside Hilton Head and Bluffton (20 minutes off-island). Counting the three nines at Shipyard and the three courses at Port Royal as one \u201Ccourse\u201D each, the total is 12. Within 30 minutes including Palmetto Bluff and beyond, the count exceeds 20.",
+            },
+            {
+              q: 'When is the best time of year to golf on Hilton Head?',
+              a: "March through May and October through early November. Course conditioning peaks in March after winter overseeding. October delivers dry, 75\u00b0F afternoons with the greens still dense. Summer golf is playable but the humidity and afternoon storms force morning-only play. Winter golf is the budget play: cooler air, slower greens, 30-40% lower green fees. See the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a>.",
+            },
+            {
+              q: 'What is a stay-and-play package on Hilton Head?',
+              a: "Bundled lodging plus green fees plus usually daily breakfast, sold by the major resorts (Sea Pines, Palmetto Dunes, Montage Palmetto Bluff). Prices run $299-399/player/night for S-tier courses and $225-325/player/night for A-tier. These beat retail pricing 20-40% and handle the booking priority simultaneously. See the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages page</a>.",
+            },
+            {
+              q: 'Which Hilton Head course is easiest for a beginner or high-handicapper?',
+              a: "Arthur Hills Course at Palmetto Dunes for a full championship layout with wider fairways and forgiving landing areas. Old South Golf Links in Bluffton at a lower price point. Oyster Reef is also reasonable. Avoid Harbour Town if you're over a 20 handicap; the small greens and demanding approach shots will frustrate you at $450 a round.",
+            },
+            {
+              q: 'Is Shipyard Golf Club worth playing?',
+              a: "Yes on the Brigantine and Galleon nines; the Clipper nine is the weakest 9 holes in the main Hilton Head course rotation and we routinely steer groups away. Shipyard's pricing ($130-175) makes it a fine value round when the bigger names are booked.",
+            },
+            {
+              q: 'How far ahead do I need to book a Hilton Head golf trip?',
+              a: "Harbour Town stays: 9-10 months out for RBC Heritage week, 4-6 months out for March-May peak. Other Sea Pines and Palmetto Dunes packages: 3-4 months out in peak. Non-resort public courses (Shipyard, Port Royal, Palmetto Hall): 2-4 weeks out is fine. For a full trip plan, see the <a href=\"/blog/hilton-head-golf-trip\">golf trip guide</a> or contact us.",
+            },
+          ],
         },
       ],
     },

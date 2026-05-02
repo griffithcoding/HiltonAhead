@@ -10,7 +10,7 @@
  * component handles this automatically based on tier.
  */
 
-export type PartnerTier = 'featured' | 'curated' | 'signature';
+export type PartnerTier = 'featured' | 'curated' | 'signature' | 'heritage';
 
 export type Partner = {
   slug: string;
@@ -70,11 +70,13 @@ export const partnersMeta = {
     featured: 12,
     curated: 6,
     signature: 3,
+    heritage: 4,
   },
   slotsFilled: {
     featured: partners.filter((p) => p.tier === 'featured').length,
     curated: partners.filter((p) => p.tier === 'curated').length,
     signature: partners.filter((p) => p.tier === 'signature').length,
+    heritage: partners.filter((p) => p.tier === 'heritage').length,
   },
 };
 
@@ -93,10 +95,14 @@ export function partnersByTier() {
 export type SponsorshipTier = {
   tier: PartnerTier;
   name: string;
-  /** Annual price in USD. */
+  /** Annual price in USD. (For Heritage, this is the one-time April-window fee.) */
   price: number;
   monthlyEquivalent: number;
-  productKey: 'partner_tier_1' | 'partner_tier_2' | 'partner_tier_3';
+  /**
+   * Stripe product key for self-serve checkout. Optional — the Heritage
+   * tier is sales-led (Calendly + inquiry form), not self-serve.
+   */
+  productKey?: 'partner_tier_1' | 'partner_tier_2' | 'partner_tier_3';
   /** Short sell. */
   tagline: string;
   /** Full benefits list. */
@@ -105,9 +111,37 @@ export type SponsorshipTier = {
   idealFor: string;
   /** Slots per year we cap the tier at. */
   slots: number;
+  /**
+   * Optional cadence — yearly for ongoing tiers, "one-time" for the
+   * Heritage Week tier. Defaults to "yearly" in the renderer.
+   */
+  cadence?: 'yearly' | 'event';
+  /** Optional editorial note shown beneath the price (e.g. "April 2027 only"). */
+  priceNote?: string;
 };
 
 export const sponsorshipTiers: SponsorshipTier[] = [
+  {
+    tier: 'heritage',
+    name: 'Heritage Week Partner',
+    price: 5000,
+    monthlyEquivalent: 5000,
+    cadence: 'event',
+    priceNote: 'One-time · April 2027 window',
+    tagline:
+      'Category exclusivity in front of high-intent 2027 RBC Heritage visitors — kit, page, and Heritage-week newsletter.',
+    benefits: [
+      'Featured insert in the 2027 Heritage Kit (free PDF, delivered February 2027)',
+      'Logo + 50-word blurb on /guides/2027-rbc-heritage all year',
+      'Daily Heritage-week newsletter section (Apr 12–18, 2027)',
+      'Two Heritage-themed Instagram posts (April 2027)',
+      'Quarterly Heritage attribution report (UTM-tracked clicks + inquiries)',
+      'Category exclusivity — one slot per category, no overlap',
+    ],
+    idealFor:
+      'Lodging operators, golf concierges / stay-and-play resellers, premium restaurants near Harbour Town, and full-service transportation or concierge providers. One slot each, four total.',
+    slots: 4,
+  },
   {
     tier: 'featured',
     name: 'Featured Partner',
