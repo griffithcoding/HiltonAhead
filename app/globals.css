@@ -22,6 +22,7 @@
   --sand-deep:    #F0EBE0;   /* secondary surfaces */
   --sand-soft:    #FFFEFA;   /* lifted surface */
   --ocean:        #7BD8E0;   /* glass aqua — light blue primary */
+  --ocean-mid:    #187795;   /* clean ocean blue — masthead, mid-tones */
   --ocean-deep:   #0F7080;   /* lagoon teal — text-on-sand, shadow */
   --ocean-light:  #E0F5F4;   /* spray / atmospheric */
   --coral:        #EFB8AA;   /* shell pink — the soft accent */
@@ -66,6 +67,7 @@
   --color-sand-deep: var(--sand-deep);
   --color-sand-soft: var(--sand-soft);
   --color-ocean: var(--ocean);
+  --color-ocean-mid: var(--ocean-mid);
   --color-ocean-deep: var(--ocean-deep);
   --color-ocean-light: var(--ocean-light);
   --color-coral: var(--coral);
@@ -501,9 +503,12 @@ body {
   .flyover-ping { animation: none; opacity: 0.85; }
 }
 
-/* Masthead bar */
+/* Masthead bar — uses ocean-mid (a touch lighter, more clearly blue
+   than the lagoon-teal ocean-deep) so the top of the page reads as
+   "ocean" rather than "deep teal." Cream text on #187795 still passes
+   WCAG AA (~4.9:1) for the small masthead type. */
 .masthead-rule {
-  background: var(--ocean-deep);
+  background: var(--ocean-mid);
   color: var(--sand);
   font-family: var(--font-sans);
   font-size: 11px;
