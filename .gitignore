@@ -14,6 +14,7 @@ yarn-error.log*
 next-env.d.ts
 .vscode
 .idea
+.obsidian/
 
 # Claude Code local-machine settings
 .claude/settings.local.json
