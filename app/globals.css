@@ -277,6 +277,24 @@ body {
   transform: scale(1.015);
 }
 
+/* RBC Heritage tartan pill — subtle plaid via stacked gradients.
+   Used on CourseCard for Harbour Town and on Heritage sponsor surfaces. */
+.tartan-pill {
+  background-color: rgb(231 217 195);
+  background-image:
+    repeating-linear-gradient(0deg,
+      rgba(178, 34, 52, 0.32) 0 2px,
+      transparent 2px 6px,
+      rgba(11, 42, 53, 0.28) 6px 8px,
+      transparent 8px 14px),
+    repeating-linear-gradient(90deg,
+      rgba(178, 34, 52, 0.28) 0 2px,
+      transparent 2px 6px,
+      rgba(11, 42, 53, 0.22) 6px 8px,
+      transparent 8px 14px);
+  background-size: 14px 14px;
+}
+
 /* Full-bleed utility */
 .bleed {
   width: 100vw;

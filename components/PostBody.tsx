@@ -1,4 +1,10 @@
 import type { PostBlock } from '@/data/posts';
+import { getCourseBySlug } from '@/data/golfCourses';
+import CourseCard from '@/components/golf/CourseCard';
+import HeritageCountdown from '@/components/tools/HeritageCountdown';
+import CourseMatchQuiz from '@/components/tools/CourseMatchQuiz';
+import CourseMap from '@/components/tools/CourseMap';
+import StayAndPlayEstimator from '@/components/tools/StayAndPlayEstimator';
 
 /**
  * Renders a Post's `body` array of content blocks.
@@ -8,48 +14,72 @@ import type { PostBlock } from '@/data/posts';
 export default function PostBody({ blocks }: { blocks: PostBlock[] }) {
   return (
     <div className="prose-blog">
-      {blocks.map((block, i) => {
-        switch (block.kind) {
-          case 'h2':
-            return <h2 key={i}>{block.text}</h2>;
-          case 'h3':
-            return <h3 key={i}>{block.text}</h3>;
-          case 'p':
-            return (
-              <p key={i} dangerouslySetInnerHTML={{ __html: block.html }} />
-            );
-          case 'ul':
-            return (
-              <ul key={i}>
-                {block.items.map((item, j) => (
-                  <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
-                ))}
-              </ul>
-            );
-          case 'ol':
-            return (
-              <ol key={i}>
-                {block.items.map((item, j) => (
-                  <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
-                ))}
-              </ol>
-            );
-          case 'callout':
-            return <Callout key={i} label={block.label} html={block.html} />;
-          case 'quote':
-            return (
-              <Quote key={i} html={block.html} attribution={block.attribution} />
-            );
-          case 'table':
-            return <DataTable key={i} block={block} />;
-          case 'faq':
-            return <FaqBlock key={i} block={block} />;
-          case 'tier':
-            return <TierBlock key={i} block={block} />;
-        }
-      })}
+      {blocks.map((block, i) => renderBlock(block, i))}
     </div>
   );
+}
+
+function renderBlock(block: PostBlock, key: number | string): React.ReactNode {
+  switch (block.kind) {
+    case 'h2':
+      return <h2 key={key}>{block.text}</h2>;
+    case 'h3':
+      return <h3 key={key}>{block.text}</h3>;
+    case 'p':
+      return (
+        <p key={key} dangerouslySetInnerHTML={{ __html: block.html }} />
+      );
+    case 'ul':
+      return (
+        <ul key={key}>
+          {block.items.map((item, j) => (
+            <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
+          ))}
+        </ul>
+      );
+    case 'ol':
+      return (
+        <ol key={key}>
+          {block.items.map((item, j) => (
+            <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
+          ))}
+        </ol>
+      );
+    case 'callout':
+      return <Callout key={key} label={block.label} html={block.html} />;
+    case 'quote':
+      return (
+        <Quote key={key} html={block.html} attribution={block.attribution} />
+      );
+    case 'table':
+      return <DataTable key={key} block={block} />;
+    case 'faq':
+      return <FaqBlock key={key} block={block} />;
+    case 'tier':
+      return <TierBlock key={key} block={block} />;
+    case 'embed':
+      return <EmbedBlock key={key} block={block} />;
+    case 'section':
+      return <SectionBlock key={key} block={block} />;
+  }
+}
+
+/**
+ * Walks a (possibly nested-via-`section`) block list and returns a
+ * flat array of all blocks. Used by the blog page template's schema
+ * gatherers (FAQ, Tier ItemList, Reviews) so JSON-LD still emits when
+ * those blocks are buried inside collapsible sections.
+ */
+export function flattenBlocks(blocks: PostBlock[]): PostBlock[] {
+  const out: PostBlock[] = [];
+  for (const b of blocks) {
+    if (b.kind === 'section') {
+      out.push(...flattenBlocks(b.blocks));
+    } else {
+      out.push(b);
+    }
+  }
+  return out;
 }
 
 function DataTable({
@@ -198,6 +228,15 @@ function TierBlock({
 }) {
   const s = TIER_STYLES[block.accent];
 
+  // When the tier is wired to course slugs, render structured CourseCards
+  // instead of the plain numbered list. The `items` array stays in sync
+  // for schema generation in the blog page template.
+  const courses = block.courseSlugs
+    ? block.courseSlugs
+        .map((slug) => getCourseBySlug(slug))
+        .filter((c): c is NonNullable<typeof c> => !!c)
+    : null;
+
   return (
     <section className="not-prose my-12 border-y border-ink/20 py-10">
       <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
@@ -218,35 +257,99 @@ function TierBlock({
         </span>
       </header>
 
-      <ol className="divide-y divide-ink/10">
-        {block.items.map((item, i) => (
-          <li
-            key={i}
-            className="grid grid-cols-[auto_1fr] gap-5 py-6 md:grid-cols-[64px_1fr] md:gap-8"
-          >
-            <span
-              className={`section-number text-[24px] leading-none md:text-[32px] ${s.accent}`}
+      {courses && courses.length > 0 ? (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {courses.map((course, i) => (
+            <CourseCard key={course.slug} course={course} rank={i + 1} />
+          ))}
+        </div>
+      ) : (
+        <ol className="divide-y divide-ink/10">
+          {block.items.map((item, i) => (
+            <li
+              key={i}
+              className="grid grid-cols-[auto_1fr] gap-5 py-6 md:grid-cols-[64px_1fr] md:gap-8"
             >
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <div>
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h4 className="display text-[19px] leading-[1.2] text-ink md:text-[22px]">
-                  {item.name}
-                </h4>
-                {item.meta && (
-                  <span className="text-[11px] uppercase tracking-[0.15em] text-ink-soft">
-                    {item.meta}
-                  </span>
-                )}
+              <span
+                className={`section-number text-[24px] leading-none md:text-[32px] ${s.accent}`}
+              >
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h4 className="display text-[19px] leading-[1.2] text-ink md:text-[22px]">
+                    {item.name}
+                  </h4>
+                  {item.meta && (
+                    <span className="text-[11px] uppercase tracking-[0.15em] text-ink-soft">
+                      {item.meta}
+                    </span>
+                  )}
+                </div>
+                <p className="mt-2 max-w-[620px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                  {item.blurb}
+                </p>
               </div>
-              <p className="mt-2 max-w-[620px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
-                {item.blurb}
-              </p>
-            </div>
-          </li>
-        ))}
-      </ol>
+            </li>
+          ))}
+        </ol>
+      )}
     </section>
+  );
+}
+
+function EmbedBlock({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'embed' }>;
+}) {
+  switch (block.component) {
+    case 'HeritageCountdown':
+      return <HeritageCountdown />;
+    case 'CourseMatchQuiz':
+      return <CourseMatchQuiz />;
+    case 'CourseMap':
+      return <CourseMap />;
+    case 'StayAndPlayEstimator':
+      return <StayAndPlayEstimator />;
+  }
+}
+
+function SectionBlock({
+  block,
+}: {
+  block: Extract<PostBlock, { kind: 'section' }>;
+}) {
+  return (
+    <details
+      open={block.defaultOpen ?? false}
+      className="group not-prose my-10 border-y border-ink/15"
+    >
+      <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 py-6 marker:hidden">
+        <div className="min-w-0">
+          {block.eyebrow && (
+            <div className="eyebrow text-coral">{block.eyebrow}</div>
+          )}
+          <h2 className="display mt-1.5 text-[24px] leading-[1.15] text-ink md:text-[30px]">
+            {block.title}
+          </h2>
+          {block.summary && (
+            <p className="mt-1.5 max-w-[640px] text-[13.5px] leading-[1.55] text-ink-soft md:text-[14.5px]">
+              {block.summary}
+            </p>
+          )}
+        </div>
+        <span
+          aria-hidden="true"
+          className="relative mt-2 h-4 w-4 shrink-0"
+        >
+          <span className="absolute left-0 top-[7px] h-[1.5px] w-full bg-ink" />
+          <span className="absolute left-[7px] top-0 h-full w-[1.5px] bg-ink transition-transform duration-200 group-open:rotate-90 group-open:opacity-0" />
+        </span>
+      </summary>
+      <div className="prose-blog pb-8">
+        {block.blocks.map((child, i) => renderBlock(child, i))}
+      </div>
+    </details>
   );
 }
