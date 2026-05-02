@@ -22,7 +22,7 @@
   --sand-deep:    #F0EBE0;   /* secondary surfaces */
   --sand-soft:    #FFFEFA;   /* lifted surface */
   --ocean:        #7BD8E0;   /* glass aqua — light blue primary */
-  --ocean-mid:    #187795;   /* clean ocean blue — masthead, mid-tones */
+  --ocean-mid:    #6FC9DE;   /* beachy sky blue — masthead, brand CTA */
   --ocean-deep:   #0F7080;   /* lagoon teal — text-on-sand, shadow */
   --ocean-light:  #E0F5F4;   /* spray / atmospheric */
   --coral:        #EFB8AA;   /* shell pink — the soft accent */
@@ -521,13 +521,15 @@ body {
   .flyover-ping { animation: none; opacity: 0.85; }
 }
 
-/* Masthead bar — uses ocean-mid (a touch lighter, more clearly blue
-   than the lagoon-teal ocean-deep) so the top of the page reads as
-   "ocean" rather than "deep teal." Cream text on #187795 still passes
-   WCAG AA (~4.9:1) for the small masthead type. */
+/* Masthead bar — beachy sky blue (#6FC9DE) at 88% opacity so the
+   porcelain page bg shows through faintly, giving the strip a glassy
+   "sun-on-water" feel that matches the Glass Aqua theme.
+   Light surface, so text is ink (deep navy) instead of cream — gives
+   ~7:1 contrast (passes WCAG AA strict for small text) while reading
+   as "sky/beach" rather than "deep ocean." */
 .masthead-rule {
-  background: var(--ocean-mid);
-  color: var(--sand);
+  background: color-mix(in srgb, var(--ocean-mid) 88%, transparent);
+  color: var(--ink);
   font-family: var(--font-sans);
   font-size: 11px;
   letter-spacing: var(--track-wide);
