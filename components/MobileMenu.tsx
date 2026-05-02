@@ -133,7 +133,7 @@ export default function MobileMenu() {
             <Link
               href={brand.cta.bookingPagePath}
               onClick={() => setOpen(false)}
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-ocean-mid px-6 py-4 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-ocean-deep"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-ocean-mid px-6 py-4 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-ocean-deep hover:text-cream"
             >
               {brand.cta.label}
               <span aria-hidden="true">→</span>
