@@ -22,7 +22,7 @@
   --sand-deep:    #F0EBE0;   /* secondary surfaces */
   --sand-soft:    #FFFEFA;   /* lifted surface */
   --ocean:        #7BD8E0;   /* glass aqua — light blue primary */
-  --ocean-mid:    #187795;   /* clean ocean blue — masthead, mid-tones */
+  --ocean-mid:    #2A9CC2;   /* lighter ocean blue — masthead, mid-tones */
   --ocean-deep:   #0F7080;   /* lagoon teal — text-on-sand, shadow */
   --ocean-light:  #E0F5F4;   /* spray / atmospheric */
   --coral:        #EFB8AA;   /* shell pink — the soft accent */
@@ -503,12 +503,16 @@ body {
   .flyover-ping { animation: none; opacity: 0.85; }
 }
 
-/* Masthead bar — uses ocean-mid (a touch lighter, more clearly blue
-   than the lagoon-teal ocean-deep) so the top of the page reads as
-   "ocean" rather than "deep teal." Cream text on #187795 still passes
-   WCAG AA (~4.9:1) for the small masthead type. */
+/* Masthead bar — lighter ocean blue (#2A9CC2) at 88% opacity so the
+   porcelain page bg shows through faintly, giving the strip a glassy
+   "sun-on-water" feel that matches the Glass Aqua theme.
+   Note: cream text on this lighter + translucent bg drops below WCAG
+   AA strict (~3.0:1 vs 4.5 ideal) for the small masthead type. The
+   masthead is decorative editorial framing rather than critical info,
+   so this is an intentional aesthetic trade. Bump opacity back to ~95%
+   or darken --ocean-mid if AA strict becomes a requirement. */
 .masthead-rule {
-  background: var(--ocean-mid);
+  background: color-mix(in srgb, var(--ocean-mid) 88%, transparent);
   color: var(--sand);
   font-family: var(--font-sans);
   font-size: 11px;
