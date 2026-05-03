@@ -13,6 +13,7 @@ import { getBreadcrumbSchema, getFaqSchema } from '@/app/lib/metadata'
 import { brand } from '@/data/brand'
 import BusinessCard from '@/components/local/BusinessCard'
 import IndustryNav from '@/components/local/IndustryNav'
+import SponsorSlot from '@/components/sponsorship/SponsorSlot'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url
 
@@ -173,6 +174,13 @@ export default async function IndustryPage({
 
       {/* Main content */}
       <div className="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        {/* Direct sponsor slot — renders the active sponsor or a "your business
+            here" house ad. Returns null if no slot is registered for this
+            industry in data/sponsorships.ts. */}
+        <div className="mb-10">
+          <SponsorSlot id={`local-${slug}-pin`} />
+        </div>
+
         {hasBusinesses ? (
           <>
             {/* Scroll nav */}

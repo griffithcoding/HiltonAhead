@@ -69,6 +69,7 @@ export const metadata: Metadata = {
     'geo.placename': 'Hilton Head Island',
     'geo.position': '32.2163;-80.7526',
     'ICBM': '32.2163, -80.7526',
+    'impact-site-verification': 'd6454681-5989-459a-ae30-521046929c3a',
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? {
     verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },

@@ -28,6 +28,9 @@
  *   STRIPE_PRICE_CHARTER_RETAINER       — Charter retainer one-time
  *   STRIPE_PRICE_LISTED_YEARLY          — B2B Listed annual
  *   STRIPE_PRICE_FEATURED_YEARLY        — B2B Featured annual
+ *   STRIPE_PRICE_FEATURED_PIN_MONTHLY   — Featured Pin ad SKU (monthly)
+ *   STRIPE_PRICE_PAGE_DISPLAY_MONTHLY   — Page Display ad SKU (monthly)
+ *   STRIPE_PRICE_STORY_SPONSOR          — Story Sponsor ad SKU (one-time)
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -35,6 +38,7 @@ import Stripe from 'stripe';
 import {
   B2C_TIERS,
   B2B_TIERS,
+  AD_TIERS,
   getStripePriceId,
   type Tier,
 } from '@/data/pricing';
@@ -45,7 +49,7 @@ export const dynamic = 'force-dynamic';
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hiltonahead.com';
 
-const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS];
+const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS];
 
 function findTier(slug: string): Tier | undefined {
   return ALL_TIERS.find((t) => t.slug === slug);
@@ -152,7 +156,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
 
   const checkoutMode: 'subscription' | 'payment' =
-    tier.billing === 'subscription_yearly' ? 'subscription' : 'payment';
+    tier.billing === 'subscription_yearly' || tier.billing === 'subscription_monthly'
+      ? 'subscription'
+      : 'payment';
 
   try {
     const session = await stripe.checkout.sessions.create({

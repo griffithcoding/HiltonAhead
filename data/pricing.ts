@@ -19,11 +19,12 @@ export type TierMode = 'self-serve' | 'application-only';
 
 export type B2CTierSlug = 'compass' | 'charter' | 'heritage';
 export type B2BTierSlug = 'listed' | 'featured' | 'signature';
-export type TierSlug = B2CTierSlug | B2BTierSlug;
+export type AdTierSlug = 'featured-pin' | 'story-sponsor' | 'page-display';
+export type TierSlug = B2CTierSlug | B2BTierSlug | AdTierSlug;
 
 export interface Tier {
   slug: TierSlug;
-  audience: 'b2c' | 'b2b';
+  audience: 'b2c' | 'b2b' | 'b2b-ads';
   mode: TierMode;
   /** Display name. */
   name: string;
@@ -36,7 +37,7 @@ export interface Tier {
   /** Optional commission addendum, e.g. "+ 7% of trip cost". */
   commissionAddendum?: string;
   /** Stripe billing pattern (only for self-serve). */
-  billing?: 'one_time' | 'subscription_yearly';
+  billing?: 'one_time' | 'subscription_monthly' | 'subscription_yearly';
   /** Env var name holding the Stripe Price ID. */
   stripePriceEnv?: string;
   /** What's included — 4-7 bullets. */
@@ -189,11 +190,79 @@ export const B2B_TIERS: Tier[] = [
 ];
 
 // ============================================================================
+// B2B-Ads — direct display ad SKUs sold to local businesses (smaller, monthly,
+// self-serve). Pitched on /advertise. Distinct from the partner program above.
+// ============================================================================
+
+export const AD_TIERS: Tier[] = [
+  {
+    slug: 'featured-pin',
+    audience: 'b2b-ads',
+    mode: 'self-serve',
+    name: 'Featured Pin',
+    tagline: 'Top-of-page sponsored card on a single industry directory page.',
+    priceDisplay: '$249/mo',
+    priceUsd: 249,
+    billing: 'subscription_monthly',
+    stripePriceEnv: 'STRIPE_PRICE_FEATURED_PIN_MONTHLY',
+    includes: [
+      'Sponsored card pinned at top of one /local/[industry] page',
+      'Logo, headline, 1-line pitch, outbound link with rel=sponsored',
+      'Impression + click counts in monthly performance report',
+      'Cancel anytime, monthly billing',
+    ],
+    idealFor: 'Restaurants, golf courses, and other local operators who want top-of-page placement on a single category.',
+    accent: 'coral',
+  },
+  {
+    slug: 'story-sponsor',
+    audience: 'b2b-ads',
+    mode: 'self-serve',
+    name: 'Story Sponsor',
+    tagline: 'Brand sponsorship of a single long-form story on /stories.',
+    priceDisplay: '$895',
+    priceUsd: 895,
+    billing: 'one_time',
+    stripePriceEnv: 'STRIPE_PRICE_STORY_SPONSOR',
+    includes: [
+      'Branded sponsor block at top of one published story',
+      'One inline native mention written by our team',
+      "Sponsor logo + 'Presented by' eyebrow on the story page",
+      'Impression + click report after 30 days',
+      'One-time fee — story stays sponsored for 90 days',
+    ],
+    idealFor: 'Wedding venues, premium villa managers, and lifestyle brands aligned with one specific editorial story.',
+    accent: 'gold',
+    popular: true,
+  },
+  {
+    slug: 'page-display',
+    audience: 'b2b-ads',
+    mode: 'self-serve',
+    name: 'Page Display Slot',
+    tagline: 'Display banner on a topical landing page (golf, weddings, honeymoon, etc.).',
+    priceDisplay: '$495/mo',
+    priceUsd: 495,
+    billing: 'subscription_monthly',
+    stripePriceEnv: 'STRIPE_PRICE_PAGE_DISPLAY_MONTHLY',
+    includes: [
+      'Sponsored block on one trip-type landing page (e.g. /hilton-head-weddings)',
+      'Visible above the fold or at first natural break',
+      'Logo, headline, body, CTA — same shape as the partner cards',
+      'Impression + click report monthly',
+      'Inventory capped — one sponsor per page surface',
+    ],
+    idealFor: 'Operators with a clear category match (a wedding venue on /hilton-head-weddings, a golf academy on /golf, etc.).',
+    accent: 'ocean',
+  },
+];
+
+// ============================================================================
 // helpers
 // ============================================================================
 
 export function getTier(slug: TierSlug): Tier | undefined {
-  return [...B2C_TIERS, ...B2B_TIERS].find((t) => t.slug === slug);
+  return [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS].find((t) => t.slug === slug);
 }
 
 export function getStripePriceId(tier: Tier): string | null {

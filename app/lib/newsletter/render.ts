@@ -29,6 +29,21 @@ const SITE = 'https://www.hiltonahead.com';
 
 // ——— public types ——————————————————————————————————————————————————
 
+export interface NewsletterSponsor {
+  /** Internal id, used in tracking. URL-safe slug. */
+  sponsorId: string;
+  /** Display name shown in the eyebrow ("Presented by ..."). */
+  name: string;
+  /** Headline copy (max ~60 chars). */
+  headline: string;
+  /** Body copy (max ~180 chars). */
+  body: string;
+  /** Pre-signed click-tracking URL (built by send layer with signSponsorRedirect). */
+  trackedUrl: string;
+  /** CTA copy. */
+  ctaText: string;
+}
+
 export interface RenderedIssue {
   subject: string;
   /** HTML containing `{{UNSUBSCRIBE_URL}}` placeholder. */
@@ -85,14 +100,17 @@ function buildSubject(bundle: TopicBundle): string {
 
 // ——— main: subscriber issue ——————————————————————————————————————————
 
-export function renderIssue(bundle: TopicBundle): RenderedIssue {
+export function renderIssue(
+  bundle: TopicBundle,
+  sponsor?: NewsletterSponsor,
+): RenderedIssue {
   const subject = buildSubject(bundle);
-  const html = renderIssueHtml(bundle);
-  const text = renderIssueText(bundle);
+  const html = renderIssueHtml(bundle, sponsor);
+  const text = renderIssueText(bundle, sponsor);
   return { subject, html, text };
 }
 
-function renderIssueHtml(b: TopicBundle): string {
+function renderIssueHtml(b: TopicBundle, sponsor?: NewsletterSponsor): string {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -116,6 +134,7 @@ function renderIssueHtml(b: TopicBundle): string {
         </td></tr>
 
         ${renderHeroSection(b)}
+        ${sponsor ? renderSponsorSection(sponsor) : ''}
         ${b.newPosts.length ? renderPostsSection(b.newPosts) : ''}
         ${b.upcomingEvents.length ? renderEventsSection(b.upcomingEvents) : ''}
         ${renderMonthSection(b)}
@@ -127,6 +146,30 @@ function renderIssueHtml(b: TopicBundle): string {
   </table>
 </body>
 </html>`;
+}
+
+function renderSponsorSection(s: NewsletterSponsor): string {
+  return `
+    <tr><td style="padding:24px 24px 0 24px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${C.bgSoft};border:1px solid ${C.border};">
+        <tr><td style="padding:18px 18px 16px 18px;">
+          <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:${C.coral};font-weight:600;">
+            Presented by ${esc(s.name)}
+          </div>
+          <div style="font-family:Georgia,serif;font-size:18px;line-height:1.3;color:${C.ink};margin-top:8px;">
+            ${esc(s.headline)}
+          </div>
+          <div style="font-size:14px;line-height:1.65;color:${C.inkSoft};margin-top:8px;">
+            ${esc(s.body)}
+          </div>
+          <div style="margin-top:14px;">
+            <a href="${esc(s.trackedUrl)}" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;background:${C.ink};color:${C.bg};text-decoration:none;padding:10px 18px;border-radius:999px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;">
+              ${esc(s.ctaText)}
+            </a>
+          </div>
+        </td></tr>
+      </table>
+    </td></tr>`;
 }
 
 function renderHeroSection(b: TopicBundle): string {
@@ -308,7 +351,7 @@ function renderFooter(): string {
     </td></tr>`;
 }
 
-function renderIssueText(b: TopicBundle): string {
+function renderIssueText(b: TopicBundle, sponsor?: NewsletterSponsor): string {
   const lines: string[] = [];
   lines.push(`THE INSIDER LETTER — Week of ${b.weekOf}`);
   lines.push(`Hilton Head Island, SC`);
@@ -320,6 +363,15 @@ function renderIssueText(b: TopicBundle): string {
     if (b.seasonalAngles[0].ctaUrl) {
       lines.push(`-> ${b.seasonalAngles[0].ctaText || 'Plan it'}: ${b.seasonalAngles[0].ctaUrl}`);
     }
+    lines.push('');
+  }
+
+  if (sponsor) {
+    lines.push(`PRESENTED BY ${sponsor.name.toUpperCase()}`);
+    lines.push('-----------------------------');
+    lines.push(sponsor.headline);
+    lines.push(sponsor.body);
+    lines.push(`-> ${sponsor.ctaText}: ${sponsor.trackedUrl}`);
     lines.push('');
   }
 

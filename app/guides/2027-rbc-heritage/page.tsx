@@ -4,6 +4,8 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
+import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
@@ -137,6 +139,10 @@ export default function Heritage2027KitPage() {
                 body="One email when the 2027 kit drops. We&rsquo;ll also send the monthly Insider Letter (villas the booking sites miss, restaurant openings, hurricane-season intel). Unsubscribe in two clicks."
               />
             </div>
+
+            <div className="mt-6">
+              <AffiliateDisclosure variant="inline" />
+            </div>
           </div>
 
           {/* Right column — context card */}
@@ -205,6 +211,17 @@ export default function Heritage2027KitPage() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Affiliate: tee times around Heritage week. */}
+          <div className="mt-12">
+            <AffiliateCard
+              programId="golfnow"
+              placement="heritage-2027"
+              headline="Lock a tee time around Heritage week"
+              description="Sea Pines, Palmetto Dunes, and the public courses fill fast during Heritage week — GolfNow shows live availability across the island."
+              cta="Browse tee times →"
+            />
           </div>
         </section>
 
