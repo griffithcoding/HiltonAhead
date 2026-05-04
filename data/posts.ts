@@ -1251,7 +1251,7 @@ const postPalmettoDunes: Post = {
     },
     {
       kind: 'p',
-      html: "The oceanfront villa lanes. Mooring Buoy, Sea Oaks, Shelter Cove Way. Are where the serious bookings live. Five-bedroom houses with private pools, steps from the sand. These are rented through the resort's villa program and a small group of independent managers. Quality is high but variable; we stick to four buildings we've personally vetted.",
+      html: "The oceanfront villa lanes. Mooring Buoy, Sea Oaks, Shelter Cove Way. Are where the serious bookings live. Five-bedroom houses with private pools, steps from the sand. These are rented through the resort's villa program and a small group of independent managers. Quality is high but variable; we point clients toward four buildings we know firsthand from walking the property.",
     },
     {
       kind: 'h3',
