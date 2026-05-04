@@ -258,6 +258,114 @@ export async function sendBusinessInquiryNotification(req: BusinessInquiryEmail)
   });
 }
 
+// ——— Lead inquiries (relocation / owner / wedding) ———
+
+export type LeadType = 'relocation' | 'owner' | 'wedding';
+
+export interface LeadNotificationPayload {
+  type: LeadType;
+  email: string;
+  fullName?: string;
+  phone?: string;
+  notes?: string;
+  details?: Record<string, unknown>;
+  source: string;
+  userAgent?: string | null;
+}
+
+const LEAD_LABELS: Record<LeadType, { eyebrow: string; subjectPrefix: string; color: string }> = {
+  relocation: {
+    eyebrow: 'New relocation inquiry · /move-to-hilton-head',
+    subjectPrefix: 'New relocation lead',
+    color: '#0F7A4D',
+  },
+  owner: {
+    eyebrow: 'New owner inquiry · /sell-or-rent-your-villa',
+    subjectPrefix: 'New owner lead',
+    color: '#E8A74B',
+  },
+  wedding: {
+    eyebrow: 'New wedding inquiry · /hilton-head-wedding-inquiry',
+    subjectPrefix: 'New wedding lead',
+    color: '#C44A2B',
+  },
+};
+
+function detailRows(details?: Record<string, unknown>): string {
+  if (!details) return '';
+  return Object.entries(details)
+    .map(([k, v]) => {
+      const label = k
+        .replace(/_/g, ' ')
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+      const value = Array.isArray(v) ? v.join(', ') : String(v);
+      return fieldRow(label, value);
+    })
+    .join('');
+}
+
+export async function sendLeadNotification(req: LeadNotificationPayload) {
+  const to = process.env.RESEND_TO_EMAIL || 'hiltonahead@gmail.com';
+  const meta = LEAD_LABELS[req.type];
+  const subject = `${meta.subjectPrefix} — ${req.fullName || req.email}`;
+
+  const html = `<!doctype html>
+<html>
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+  <div style="max-width:600px;margin:0 auto;padding:32px 24px;">
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:${meta.color};font-weight:600;margin-bottom:8px;">
+      ${esc(meta.eyebrow)}
+    </div>
+    <h1 style="font-family:Georgia,serif;font-size:28px;line-height:1.15;color:#0A2930;margin:0 0 24px 0;letter-spacing:-0.02em;">
+      ${esc(req.fullName || 'A lead')}
+    </h1>
+    <table style="width:100%;border-collapse:collapse;background:#FBF3E2;border:1px solid rgba(10,41,48,0.1);padding:16px;">
+      <tbody>
+        ${fieldRow('Email', req.email)}
+        ${fieldRow('Phone', req.phone)}
+        ${detailRows(req.details)}
+        ${fieldRow('Notes', req.notes)}
+      </tbody>
+    </table>
+    <div style="margin-top:24px;font-size:12px;color:#6B7280;line-height:1.6;">
+      <strong>Reply directly</strong> to this email — it'll go to ${esc(req.email)}.
+    </div>
+    <hr style="border:0;border-top:1px solid rgba(10,41,48,0.15);margin:32px 0 16px;" />
+    <div style="font-size:11px;color:#9CA3AF;line-height:1.5;">
+      Source: ${esc(req.source)}<br/>
+      User agent: ${esc((req.userAgent || '').slice(0, 200))}
+    </div>
+  </div>
+</body>
+</html>`;
+
+  const text = [
+    `${meta.subjectPrefix} — ${req.fullName || req.email}`,
+    ``,
+    `Email: ${req.email}`,
+    req.phone ? `Phone: ${req.phone}` : '',
+    ...(req.details
+      ? Object.entries(req.details).map(
+          ([k, v]) => `${k}: ${Array.isArray(v) ? v.join(', ') : v}`,
+        )
+      : []),
+    req.notes ? `Notes: ${req.notes}` : '',
+    ``,
+    `Reply directly to this email — it'll go to ${req.email}.`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  return sendEmail({
+    to,
+    subject,
+    html,
+    text,
+    replyTo: req.email,
+    tags: [{ name: 'type', value: `lead_${req.type}` }],
+  });
+}
+
 // ——— Newsletter welcome ———
 
 /**
@@ -428,5 +536,127 @@ export async function sendNewsletterWelcome(to: string) {
     // Replies go directly to the operator inbox.
     replyTo: 'hiltonahead@gmail.com',
     tags: [{ name: 'type', value: 'newsletter_welcome' }],
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Business Portal — application + claim emails
+// ---------------------------------------------------------------------------
+
+export interface BusinessApplicationEmail {
+  businessName: string;
+  contactName: string;
+  email: string;
+  phone?: string;
+  industrySlug: string;
+  website?: string;
+  message?: string;
+  applicationId: string;
+}
+
+/** Internal: notify admin of a new /business/apply submission. */
+export async function sendBusinessApplicationNotification(
+  req: BusinessApplicationEmail,
+) {
+  const to = process.env.RESEND_TO_EMAIL || 'hiltonahead@gmail.com';
+  const subject = `[Portal] New business application: ${req.businessName}`;
+
+  const html = `
+    <h2>New business portal application</h2>
+    <p>Review and approve in Supabase, then forward the magic-link.</p>
+    <table cellpadding="6" style="border-collapse:collapse;font-family:system-ui,sans-serif;font-size:14px;">
+      ${fieldRow('Business name', req.businessName)}
+      ${fieldRow('Contact name', req.contactName)}
+      ${fieldRow('Email', req.email)}
+      ${fieldRow('Phone', req.phone)}
+      ${fieldRow('Category', req.industrySlug)}
+      ${fieldRow('Website', req.website)}
+      ${fieldRow('Application ID', req.applicationId)}
+    </table>
+    ${req.message ? `<h3 style="font-family:system-ui,sans-serif;">Message</h3><p style="font-family:system-ui,sans-serif;font-size:14px;white-space:pre-wrap;">${esc(req.message)}</p>` : ''}
+  `;
+  return sendEmail({
+    to,
+    subject,
+    html,
+    replyTo: req.email,
+    tags: [{ name: 'type', value: 'business_application' }],
+  });
+}
+
+/** Public: ack to applicant. */
+export async function sendBusinessApplicationAck(opts: {
+  to: string;
+  contactName: string;
+  businessName: string;
+}) {
+  const subject = `We received your application — ${opts.businessName}`;
+  const html = `
+    <p>Hi ${esc(opts.contactName)},</p>
+    <p>Thanks for applying to be listed on Hilton Ahead. We review every application by hand for fit (locally owned, real address on Hilton Head / Bluffton / Daufuskie, currently open).</p>
+    <p>Expect a reply within about a week. If approved, we'll send a one-time link to finish setting up your portal account.</p>
+    <p style="color:#4A5C66;font-size:13px;margin-top:24px;">— Hilton Ahead</p>
+  `;
+  return sendEmail({
+    to: opts.to,
+    subject,
+    html,
+    replyTo: 'hello@hiltonahead.com',
+    tags: [{ name: 'type', value: 'business_application_ack' }],
+  });
+}
+
+/** Public: claim verification link. */
+export async function sendClaimVerificationEmail(opts: {
+  to: string;
+  businessName: string;
+  verifyUrl: string;
+}) {
+  const subject = `Verify your claim: ${opts.businessName}`;
+  const html = `
+    <p>Someone (hopefully you) requested to claim ${esc(opts.businessName)} on Hilton Ahead.</p>
+    <p>Click the link below to verify and link your portal account. The link expires in 14 days.</p>
+    <p style="margin:24px 0;">
+      <a href="${opts.verifyUrl}" style="background:#0E2A38;color:#FCFAF5;padding:12px 20px;text-decoration:none;border-radius:999px;font-family:system-ui,sans-serif;font-size:13px;">Verify and link my account →</a>
+    </p>
+    <p style="color:#4A5C66;font-size:12px;">If you didn't request this, ignore the email — no action is taken without clicking the link.</p>
+    <p style="color:#4A5C66;font-size:12px;word-break:break-all;">Direct URL: ${esc(opts.verifyUrl)}</p>
+  `;
+  return sendEmail({
+    to: opts.to,
+    subject,
+    html,
+    replyTo: 'hello@hiltonahead.com',
+    tags: [{ name: 'type', value: 'business_claim_verify' }],
+  });
+}
+
+/** Internal: a claim came in from an email that doesn't match the listing. */
+export async function sendClaimRequestAdminNotification(opts: {
+  businessName: string;
+  businessSlug: string;
+  requesterEmail: string;
+  onFileEmail: string;
+  verifyUrl: string;
+}) {
+  const to = process.env.RESEND_TO_EMAIL || 'hiltonahead@gmail.com';
+  const subject = `[Portal] Manual review needed — claim for ${opts.businessName}`;
+  const html = `
+    <h2>Claim request — manual review needed</h2>
+    <p>The requester's email does not match the email on file for this listing.</p>
+    <table cellpadding="6" style="border-collapse:collapse;font-family:system-ui,sans-serif;font-size:14px;">
+      ${fieldRow('Business', `${opts.businessName} (${opts.businessSlug})`)}
+      ${fieldRow('Requester email', opts.requesterEmail)}
+      ${fieldRow('On-file email', opts.onFileEmail || '(none)')}
+    </table>
+    <p style="margin-top:16px;">If you decide the request is legitimate (e.g. business changed hands), forward the URL below to the requester. They'll click it, sign in via magic link to <strong>${esc(opts.requesterEmail)}</strong>, and the binding completes automatically.</p>
+    <p style="color:#4A5C66;font-size:12px;word-break:break-all;">${esc(opts.verifyUrl)}</p>
+  `;
+  return sendEmail({
+    to,
+    subject,
+    html,
+    replyTo: opts.requesterEmail,
+    tags: [{ name: 'type', value: 'business_claim_admin_review' }],
   });
 }

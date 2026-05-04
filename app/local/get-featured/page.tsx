@@ -1,8 +1,8 @@
-import { redirect } from 'next/navigation'
+import { redirect } from 'next/navigation';
 
-// The Featured Partner program has been retired on the front end. Any
-// inbound traffic to /local/get-featured is sent to the Local Directory
-// hub. Standard listing inquiries now flow through /contact.
-export default function GetFeaturedPage(): never {
-  redirect('/local')
+// The new home for "Feature Your Business" is the portal apply page.
+// Any inbound traffic to /local/get-featured (including the existing
+// nav link from data/nav.ts and any external bookmarks) is forwarded.
+export default function GetFeaturedRedirect(): never {
+  redirect('/business/apply');
 }

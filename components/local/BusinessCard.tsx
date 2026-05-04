@@ -196,6 +196,14 @@ export default function BusinessCard({ business }: Props) {
             )}
           </div>
         </div>
+        {/* Owner claim CTA — discreet footer link, single line. The portal
+            handles email-verification + binding. */}
+        <a
+          href={`/business/claim/${business.id}`}
+          className="mt-3 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.14em] text-ink-soft transition-colors hover:text-coral"
+        >
+          Own this business? Claim it →
+        </a>
       </div>
     </article>
   )
