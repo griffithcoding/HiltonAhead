@@ -41,7 +41,14 @@ function track(eventName: string, params?: Record<string, unknown>): void {
   }
 }
 
-export function trackLead(source: string, leadType: 'itinerary' | 'business_inquiry'): void {
+export type TrackedLeadType =
+  | 'itinerary'
+  | 'business_inquiry'
+  | 'relocation'
+  | 'owner'
+  | 'wedding';
+
+export function trackLead(source: string, leadType: TrackedLeadType): void {
   track('generate_lead', {
     event_category: 'engagement',
     value: 1.0,

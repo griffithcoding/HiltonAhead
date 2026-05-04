@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { insiderProof } from '@/data/insiderProof';
 import { photos } from '@/data/photos';
 import { SectionHead, Divider, WaveLine, Ticket } from '@/components/ui/Ornament';
@@ -55,19 +56,21 @@ export default function InsiderProof() {
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {neighborhoods.map((spot, i) => (
-            <article
+            <Link
               key={spot.neighborhood}
-              className="group relative aspect-[5/6] overflow-hidden rounded-md"
+              href={`/hilton-head/${spot.slug}`}
+              aria-label={`Read the ${spot.neighborhood} neighborhood guide`}
+              className="group relative block aspect-[5/6] overflow-hidden rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral"
             >
               <Image
                 src={spot.photo.src}
                 alt={spot.photo.alt}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover photo-warm"
+                className="object-cover photo-warm transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
-              {/* Gradient scrim for text legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/85 via-ocean-deep/25 to-transparent" />
+              {/* Gradient scrim for text legibility — slightly deeper on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/85 via-ocean-deep/25 to-transparent transition-colors duration-500 group-hover:from-ocean-deep/95" />
 
               {/* Numeral pinned top-left */}
               <span className="absolute left-5 top-4 section-number text-[40px] text-sand/85 md:text-[54px]">
@@ -87,11 +90,19 @@ export default function InsiderProof() {
                 <p className="mt-2 max-w-[320px] text-[13px] leading-[1.6] text-sand/85">
                   {spot.note}
                 </p>
-                <div className="display-italic mt-3 text-[12px] text-sand/65">
-                  {spot.photo.caption}
+                <div className="mt-3 flex items-center justify-between gap-3">
+                  <span className="display-italic text-[12px] text-sand/65">
+                    {spot.photo.caption}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="translate-x-[-4px] text-[11px] uppercase tracking-[0.22em] text-sand/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-coral"
+                  >
+                    Read guide →
+                  </span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

@@ -56,9 +56,18 @@ const WAYPOINTS: ReadonlyArray<Waypoint> = [
 const VB_W = 1600;
 const VB_H = 900;
 
-// Flight path — gentle S-curve from upper-left to lower-right
-const FLIGHT_PATH_D =
+// Flight path (desktop) — gentle S-curve from upper-left to lower-right.
+// Calibrated to the wide aerial crop visible on landscape / desktop viewports.
+const FLIGHT_PATH_DESKTOP =
   'M 60 250 C 320 180, 540 360, 760 410 S 1140 540, 1380 480 S 1540 600, 1560 660';
+
+// Flight path (mobile) — vertical S-curve confined to the center column.
+// On portrait phones the SVG (preserveAspectRatio="xMidYMid slice") only
+// reveals roughly x ∈ [520, 1080] of the viewBox, so the desktop path's
+// outer waypoints fall off-screen. This path stays inside that visible
+// strip and runs more vertically so all 5 stops remain on canvas.
+const FLIGHT_PATH_MOBILE =
+  'M 600 180 C 720 300, 980 360, 760 500 S 1020 720, 780 840';
 
 export default function IslandFlyover() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -70,6 +79,23 @@ export default function IslandFlyover() {
   const [playingIdx, setPlayingIdx] = useState<number>(-1);        // tracks video.currentTime
   const [activeIdx, setActiveIdx] = useState<number | null>(null); // user-clicked bubble (chip toggle)
   const [videoReady, setVideoReady] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  // Pick the path geometry that fits the current viewport. Default false on
+  // SSR / first render → desktop path; matchMedia flips it after mount with
+  // no hydration mismatch.
+  const FLIGHT_PATH_D = isMobile ? FLIGHT_PATH_MOBILE : FLIGHT_PATH_DESKTOP;
+
+  // Track the mobile breakpoint so we can swap the flight path. 767px keeps
+  // it aligned with Tailwind's `md:` boundary used elsewhere in this file.
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const mq = window.matchMedia('(max-width: 767px)');
+    const apply = () => setIsMobile(mq.matches);
+    apply();
+    mq.addEventListener('change', apply);
+    return () => mq.removeEventListener('change', apply);
+  }, []);
 
   // Lazy-load + autoplay video when in view
   useEffect(() => {
@@ -109,6 +135,8 @@ export default function IslandFlyover() {
   // Measure the path's total length and sample each waypoint's exact
   // position on the curve. Using getPointAtLength keeps bubbles ON the
   // line regardless of viewBox tweaks or path edits.
+  // Dep on FLIGHT_PATH_D so positions recompute when the mobile/desktop
+  // path swaps at the breakpoint.
   useEffect(() => {
     const p = pathRef.current;
     if (!p) return;
@@ -119,7 +147,7 @@ export default function IslandFlyover() {
       return [pt.x, pt.y] as [number, number];
     });
     setStepPositions(positions);
-  }, []);
+  }, [FLIGHT_PATH_D]);
 
   // Auto-advance: track video playback so the line marches forward through
   // the 5 stops on its own loop. Click overrides simply seek the video; this
@@ -224,7 +252,7 @@ export default function IslandFlyover() {
     <section
       ref={sectionRef}
       aria-label="Aerial flyover of Hilton Head Island"
-      className="bleed flyover-stage relative mt-28 h-[78vh] min-h-[520px] overflow-hidden md:mt-36 md:h-[82vh] md:min-h-[640px]"
+      className="bleed flyover-stage relative mt-28 h-[82vh] min-h-[560px] overflow-hidden md:mt-36 md:h-[82vh] md:min-h-[640px]"
     >
       <Image
         src={photos.coastalAerial.src}

@@ -50,6 +50,13 @@ const bikePath    = { src: unsplash('1748821454217-37110c80ac11', 1600, 80), alt
 const surfSoft    = { src: unsplash('1634948601598-dfe5fa67a48c', 1600, 80), alt: 'Sunset on a Hilton Head pier' };
 // Lowcountry tidal creek winding through golden marsh — Brian Urso (Unsplash). Stand-in for Broad Creek imagery until press-kit shoot.
 const broadCreek  = { src: unsplash('1760526664194-fc5745a576ec', 1600, 80), alt: 'Tidal creek winding through golden Lowcountry marsh at low tide' };
+// KNOWN ISSUE — `coastalOak` and `golfTeeBox` (below) share Unsplash photo
+// id `1523712999610-f77fbcfc3843` and therefore render as the SAME image
+// despite different alt text. Both render as a sun-through-pines canopy,
+// which fits each context loosely but means we can't show both side-by-side
+// (e.g., a forest preserve next to a tee-box shot) without obvious dupes.
+// TODO: replace one of the two with a press-kit photograph (golfTeeBox is
+// the better candidate to swap, since it represents a specific course).
 const coastalOak  = { src: unsplash('1523712999610-f77fbcfc3843', 1600, 80), alt: 'Sunlight filtering through a tall tree canopy' };
 // [HH] Harbour Town Lighthouse and dock at golden hour — Nikolay Loubet
 const sundown     = { src: unsplash('1631845085830-10c38cc98ac8', 1600, 80), alt: 'Harbour Town Lighthouse and dock at golden hour, Hilton Head' };

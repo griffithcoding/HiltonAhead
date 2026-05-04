@@ -38,6 +38,7 @@ export default function ItineraryForm() {
   const [interests, setInterests] = useState<string[]>([]);
   const [budget, setBudget] = useState<Budget | ''>('');
   const [notes, setNotes] = useState('');
+  const [exploringRealEstate, setExploringRealEstate] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -75,7 +76,17 @@ export default function ItineraryForm() {
           lodging: lodging || undefined,
           interests: interests.length > 0 ? interests : undefined,
           budget: budget || undefined,
-          notes: notes.trim() || undefined,
+          // Append the real-estate flag to notes so it lands in the existing
+          // pipeline without needing an itinerary_requests schema change.
+          notes:
+            [
+              notes.trim(),
+              exploringRealEstate
+                ? '[Open to a real estate intro on this trip.]'
+                : '',
+            ]
+              .filter(Boolean)
+              .join('\n\n') || undefined,
         }),
       });
       const data = await res.json();
@@ -234,6 +245,20 @@ export default function ItineraryForm() {
           placeholder="Dietary restrictions, mobility concerns, special occasions, etc."
         />
       </Field>
+
+      <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-ink/15 bg-cream/40 px-3.5 py-3 text-[13px] leading-[1.5] text-ink-soft transition hover:border-ink/40">
+        <input
+          type="checkbox"
+          checked={exploringRealEstate}
+          onChange={(e) => setExploringRealEstate(e.target.checked)}
+          className="mt-0.5 h-4 w-4 shrink-0 accent-ink"
+        />
+        <span>
+          <strong className="font-medium text-ink">Bonus: thinking about buying?</strong>{' '}
+          Tick this and we&rsquo;ll quietly add a 30-minute relocation chat to
+          your trip — no extra cost, no Realtor pressure.
+        </span>
+      </label>
 
       {error && (
         <div

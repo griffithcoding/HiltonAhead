@@ -105,9 +105,9 @@ export const tripTypes: TripTypeLanding[] = [
       'Summer gets humid and slow: tee times slide, pace is four and a half hours on a good day. Winter has two or three genuinely cold weeks. The sweet windows are mid-March to late May and mid-September to early December. We will tell you honestly if your dates are in a soft spot.',
     hero: photos.hero,
     gallery: [
-      { ...photos.lighthouse, caption: 'Harbour Town, just past dusk' },
-      { ...photos.bikePath,   caption: 'Cart path, Palmetto Dunes' },
-      { ...photos.villa,      caption: 'A Sea Pines villa we book for golf groups' },
+      { ...photos.lighthouse,  caption: 'Harbour Town, just past dusk' },
+      { ...photos.golfFairway, caption: 'Cart path, Palmetto Dunes' },
+      { ...photos.villa,       caption: 'A Sea Pines villa we book for golf groups' },
     ],
     blogPostSlug: 'hilton-head-golf-trip',
     relatedStorySlug: 'fall-golf-weekend',
@@ -415,7 +415,7 @@ export const tripTypes: TripTypeLanding[] = [
     ],
     tradeoffs:
       'Ocean swimming is out (water hovers mid-60s). Some seasonal operators (surf school, sunset sails) are closed for the year. If your kids will be crushed not to swim, pick a different week; otherwise this is the best trade we know on the calendar.',
-    hero: photos.coastalOak,
+    hero: photos.mossOak,
     gallery: [
       { ...photos.marsh,       caption: 'Marsh at low sun, November' },
       { ...photos.boardwalk,   caption: 'Boardwalk, Thanksgiving morning' },
