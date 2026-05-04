@@ -17,9 +17,19 @@
 
 export type TierMode = 'self-serve' | 'application-only';
 
-export type B2CTierSlug = 'compass' | 'charter' | 'heritage';
+export type B2CTierSlug =
+  | 'compass'
+  | 'charter'
+  | 'heritage'
+  | 'heritage-kit-vip'
+  | 'insider-club-monthly'
+  | 'insider-club-yearly';
 export type B2BTierSlug = 'listed' | 'featured' | 'signature';
-export type AdTierSlug = 'featured-pin' | 'story-sponsor' | 'page-display';
+export type AdTierSlug =
+  | 'featured-pin'
+  | 'story-sponsor'
+  | 'page-display'
+  | 'featured-villa';
 export type TierSlug = B2CTierSlug | B2BTierSlug | AdTierSlug;
 
 export interface Tier {
@@ -118,6 +128,65 @@ export const B2C_TIERS: Tier[] = [
     ],
     idealFor: 'Heritage attendees, snowbirds, $25K+ trips.',
     accent: 'gold',
+  },
+  {
+    slug: 'heritage-kit-vip',
+    audience: 'b2c',
+    mode: 'self-serve',
+    name: 'Heritage Kit · VIP edition',
+    tagline: 'Premium pre-order of the 2027 RBC Heritage Survival Kit.',
+    priceDisplay: '$79',
+    priceUsd: 79,
+    billing: 'one_time',
+    stripePriceEnv: 'STRIPE_PRICE_HERITAGE_KIT_VIP',
+    includes: [
+      'Everything in the free kit, delivered Feb 2027',
+      'Bonus chapter: hospitality tier negotiation playbook',
+      'Restaurant manager directory with intro lines you can copy/paste',
+      '90 days of access to the private Heritage-week chat',
+      'Priority text-line support during tournament week',
+    ],
+    idealFor: 'Heritage attendees spending $10K+ on the trip who want the unfiltered playbook.',
+    accent: 'gold',
+  },
+  {
+    slug: 'insider-club-monthly',
+    audience: 'b2c',
+    mode: 'self-serve',
+    name: 'Insider Club · Monthly',
+    tagline: 'Subscriber-only intel, locals chat, restaurant reservation help.',
+    priceDisplay: '$9/mo',
+    priceUsd: 9,
+    billing: 'subscription_monthly',
+    stripePriceEnv: 'STRIPE_PRICE_INSIDER_CLUB_MONTHLY',
+    includes: [
+      'Members-only monthly newsletter (unfiltered restaurant openings, hurricane-season intel)',
+      'Private Discord with the founder + repeat clients',
+      'Reservation help — we hold tables you cannot get on OpenTable',
+      'Early-warning alerts on closures, weather, and tee-time releases',
+      'Cancel anytime',
+    ],
+    idealFor: 'Repeat visitors, snowbirds, second-home owners who want a year-round line in.',
+    accent: 'ocean',
+  },
+  {
+    slug: 'insider-club-yearly',
+    audience: 'b2c',
+    mode: 'self-serve',
+    name: 'Insider Club · Yearly',
+    tagline: 'Same access, two months free.',
+    priceDisplay: '$99/yr',
+    priceUsd: 99,
+    billing: 'subscription_yearly',
+    stripePriceEnv: 'STRIPE_PRICE_INSIDER_CLUB_YEARLY',
+    includes: [
+      'Everything in the Monthly plan',
+      'Effective $8.25/mo (two months free)',
+      'Renews annually, cancel anytime',
+    ],
+    idealFor: 'Members ready to commit to a full year on the island.',
+    accent: 'coral',
+    popular: true,
   },
 ];
 
@@ -254,6 +323,26 @@ export const AD_TIERS: Tier[] = [
     ],
     idealFor: 'Operators with a clear category match (a wedding venue on /hilton-head-weddings, a golf academy on /golf, etc.).',
     accent: 'ocean',
+  },
+  {
+    slug: 'featured-villa',
+    audience: 'b2b-ads',
+    mode: 'self-serve',
+    name: 'Featured Villa',
+    tagline: 'For self-managed VRBO / Airbnb owners — promo card on relevant neighborhood pages.',
+    priceDisplay: '$149/mo',
+    priceUsd: 149,
+    billing: 'subscription_monthly',
+    stripePriceEnv: 'STRIPE_PRICE_FEATURED_VILLA_MONTHLY',
+    includes: [
+      'Featured villa card on one neighborhood page (Sea Pines, Palmetto Dunes, etc.)',
+      '4 photos, headline, 3-line pitch, direct booking link',
+      'rel="sponsored nofollow" + UTM tagging on outbound clicks',
+      'Monthly impression + click report',
+      'Cancel anytime, monthly billing',
+    ],
+    idealFor: 'Self-managed vacation rental owners who want traveler eyeballs without paying VRBO commission.',
+    accent: 'coral',
   },
 ];
 

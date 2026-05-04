@@ -34,8 +34,12 @@ export type NeighborhoodLanding = {
   hero: { src: string; alt: string };
   /** Supporting photos (3–4) for the gallery. */
   gallery: Array<{ src: string; alt: string; caption: string }>;
-  /** Slug of the long-form blog post to link out to. */
-  blogPostSlug: string;
+  /**
+   * Slug of the long-form blog post to link out to. Optional — newer
+   * neighborhood landings ship before their companion guide, and the page
+   * conditionally hides the "Read the full guide" CTAs when absent.
+   */
+  blogPostSlug?: string;
 };
 
 export const neighborhoods: NeighborhoodLanding[] = [
@@ -160,12 +164,12 @@ export const neighborhoods: NeighborhoodLanding[] = [
       { name: 'Mooring Buoy / Sea Oaks villas', note: 'Private oceanfront, 5BR' },
       { name: 'Queens Grant (interior)', note: 'Value pick, 10-min walk to beach' },
     ],
-    hero: photos.bikePath,
+    hero: photos.lagoonAerial,
     gallery: [
-      { ...photos.bikePath,  caption: 'Lagoon path' },
-      { ...photos.marsh,     caption: 'Broad Creek, morning' },
-      { ...photos.villa,     caption: 'A villa we book' },
-      { ...photos.hammock,   caption: 'Between rounds' },
+      { ...photos.lagoonAerial, caption: '11 miles of resort lagoon' },
+      { ...photos.marsh,        caption: 'Broad Creek, morning' },
+      { ...photos.villa,        caption: 'A villa we book' },
+      { ...photos.hammock,      caption: 'Between rounds' },
     ],
     blogPostSlug: 'palmetto-dunes-guide',
   },
@@ -298,6 +302,140 @@ export const neighborhoods: NeighborhoodLanding[] = [
       { ...photos.sundown,     caption: 'Sunset, looking west' },
     ],
     blogPostSlug: 'shelter-cove-guide',
+  },
+  {
+    slug: 'port-royal',
+    name: 'Port Royal',
+    tagline: {
+      plain: 'Port Royal: the north end',
+      italic: 'Hilton Head keeps to itself.',
+    },
+    metaDescription:
+      'Port Royal Plantation Hilton Head: three Robert Trent Jones courses, the Westin resort, and the quietest oceanfront on the island.',
+    keywords: [
+      'Port Royal Hilton Head',
+      'Port Royal Plantation',
+      'Westin Hilton Head Island Resort',
+      'Port Royal golf',
+      'Robber’s Row Hilton Head',
+      'Barony golf course',
+      'Hilton Head north end',
+    ],
+    hook:
+      'A 1,400-acre gated plantation on the island’s quiet north end. Three Robert Trent Jones Sr. courses, a single resort anchor (the Westin), and an oceanfront beach where you’ll walk a mile without seeing a chair rental.',
+    latitude: 32.225,
+    longitude: -80.690,
+    reasons: [
+      {
+        title: 'Three RTJ courses, one gate',
+        body:
+          'Barony, Robber’s Row, and Planter’s Row — three Robert Trent Jones Sr. designs inside the same plantation. Quietest tee sheets on the island most weeks.',
+      },
+      {
+        title: 'The Westin as your one anchor',
+        body:
+          'No competing resorts diluting the experience. The Westin’s 2024 lobby refresh, three pools, and the only oceanfront spa on the north end. Heavenly Bed for the hard sleepers.',
+      },
+      {
+        title: 'Beach you can actually find solitude on',
+        body:
+          'Port Royal’s mile of Atlantic shoreline gets a fraction of Coligny’s foot traffic. Bring a chair, walk five minutes, and you’ll have your own stretch of sand.',
+      },
+      {
+        title: 'Closest to the airport',
+        body:
+          '12 minutes from HHH (Savannah/Hilton Head Airport) and 35 from SAV. If you’re flying in for a Friday-to-Sunday golf trip, you’re tee-off-ready before lunch.',
+      },
+    ],
+    bestFor: [
+      'Golfers booking 36-hole days',
+      'Repeat visitors who’ve done Sea Pines',
+      'Travelers who want quiet over scene',
+      'Short-haul flyers (HHH-friendly)',
+    ],
+    tradeoffs:
+      'The dining inside the plantation is limited — you’ll drive 10 to 18 minutes to the island’s best dinners. Atlantic water on the north end runs a few degrees cooler with more current; better for shelling than for swimming with toddlers. And the Westin sets the tone: if a single big resort isn’t your speed, Sea Pines or Shelter Cove will fit better.',
+    properties: [
+      { name: 'The Westin Hilton Head Island Resort & Spa', note: 'Oceanfront, three pools, only resort inside the gate' },
+      { name: 'Port Royal villa rentals (private)', note: 'Single-family homes on the courses, 3 to 6 BR' },
+      { name: 'Beach Villas at Port Royal', note: 'Mid-priced 2-3BR, short walk to the sand' },
+      { name: 'Barony Beach Club', note: 'Marriott Vacation Club inventory; oceanfront 2BR' },
+    ],
+    hero: photos.marsh,
+    gallery: [
+      { ...photos.marsh,        caption: 'North end · marsh edge'      },
+      { ...photos.golfFairway,  caption: 'Robber’s Row · early tee' },
+      { ...photos.beachMorning, caption: 'Port Royal beach · 7 a.m.'   },
+      { ...photos.mossOak,      caption: 'Plantation interior · oaks'  },
+    ],
+    // No companion blog guide yet — link will hide automatically.
+  },
+  {
+    slug: 'mid-island',
+    name: 'Mid-Island',
+    tagline: {
+      plain: 'Mid-Island: the locals’',
+      italic: 'no-gate value pick.',
+    },
+    metaDescription:
+      'Mid-Island Hilton Head: Folly Field, Singleton Beach, and Bradley Beach. The best per-dollar rentals on the island, no gate fees, walkable beach access.',
+    keywords: [
+      'Mid-Island Hilton Head',
+      'Folly Field Beach',
+      'Singleton Beach Hilton Head',
+      'Bradley Beach Hilton Head',
+      'Hilton Head Beach & Tennis Resort',
+      'Hilton Head value rentals',
+      'Hilton Head no gate fee',
+    ],
+    hook:
+      'Not a plantation — a stretch of un-gated island between Sea Pines and Port Royal. Folly Field, Singleton Beach, and Bradley Beach. Where families on a third or fourth visit start booking once they realize the gate fees aren’t buying them anything.',
+    latitude: 32.183,
+    longitude: -80.722,
+    reasons: [
+      {
+        title: 'No gate, no premium',
+        body:
+          'Sea Pines charges $9 per car per day. Palmetto Dunes is bundled into rental rates. Mid-Island charges nothing — over a 7-day trip, that’s up to $150 back in your pocket.',
+      },
+      {
+        title: 'Folly Field is the local secret',
+        body:
+          'Wide, hard-packed sand, easy parking at Folly Field Road and Bradley Beach access points. A fraction of Coligny’s crowd, half the walk-in distance from most rentals.',
+      },
+      {
+        title: 'Best $/sq ft on the island',
+        body:
+          'A 3BR Folly Field beach house in shoulder season runs $2,400 to $3,200 a week. The same square footage in Sea Pines starts at $4,500. The math is hard to argue with.',
+      },
+      {
+        title: 'Errands without a hike',
+        body:
+          'Publix, the post office, the urgent care, the locals’ hardware store — all within 5 minutes. For a 10-day stay with kids, that proximity quietly saves an hour a day.',
+      },
+    ],
+    bestFor: [
+      'Repeat visitors who know the island',
+      'Multi-family or long-stay groups',
+      'Budget-conscious families',
+      'Beach-first travelers (no resort needed)',
+    ],
+    tradeoffs:
+      'Mid-Island isn’t curated — you’ll see a thirty-year-old condo block next to a renovated beach house. Property quality varies block by block, which is why we vet specific addresses rather than “Mid-Island” as a whole. There’s no resort spine, no concierge, no on-site golf. If you want full-service, look at Palmetto Dunes or Sea Pines instead.',
+    properties: [
+      { name: 'Hilton Head Beach & Tennis Resort', note: 'Direct beach, 1-2BR condos, family workhorse' },
+      { name: 'Folly Field beach houses', note: 'Single-family 3-5BR, our best value picks' },
+      { name: 'Singleton Beach condos', note: 'Quieter pocket, 2BR oceanfront, mid-tier' },
+      { name: 'Bradley Beach rentals', note: 'Walking distance to sand, residential feel' },
+    ],
+    hero: photos.villa,
+    gallery: [
+      { ...photos.villa,        caption: 'Mid-Island beach house'        },
+      { ...photos.beachMorning, caption: 'Folly Field · low tide'        },
+      { ...photos.dunesPath,    caption: 'Beach access · Singleton'      },
+      { ...photos.palms,        caption: 'Quiet block, mid-island'       },
+    ],
+    // No companion blog guide yet — link will hide automatically.
   },
 ];
 

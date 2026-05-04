@@ -223,6 +223,43 @@ export default function Heritage2027KitPage() {
               cta="Browse tee times →"
             />
           </div>
+
+          {/* VIP Kit pre-order — paid version of the free kit. */}
+          <div className="mt-8 rounded-2xl border-2 border-gold/40 bg-gold/5 p-6 md:p-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:gap-10">
+              <div>
+                <p className="eyebrow mb-2 text-sunset">VIP edition · pre-order</p>
+                <h3 className="display text-[22px] leading-[1.2] text-ink md:text-[26px]">
+                  Want the unfiltered playbook? <span className="display-italic">$79.</span>
+                </h3>
+                <p className="mt-3 text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                  Same kit, plus a hospitality-tier negotiation chapter, the
+                  restaurant manager directory with intro lines you can copy/paste,
+                  90 days of access to the private Heritage-week chat, and
+                  priority text-line support during tournament week.
+                </p>
+                <p className="mt-3 text-[12px] italic leading-[1.6] text-ink-soft/80">
+                  Delivered February 2027 alongside the free version. Refundable
+                  for 30 days from purchase if the kit hasn&rsquo;t shipped.
+                </p>
+              </div>
+              <div className="flex flex-col justify-center">
+                <form method="POST" action="/api/checkout">
+                  <input type="hidden" name="tier" value="heritage-kit-vip" />
+                  <button
+                    type="submit"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset"
+                  >
+                    Pre-order VIP — $79
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </form>
+                <p className="mt-3 text-center text-[11px] leading-[1.5] text-ink-soft/70">
+                  Lock the discounted pre-order price. Public price at launch will be $129.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <Divider ornament="compass" className="my-20 text-gold" />

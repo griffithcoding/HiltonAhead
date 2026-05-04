@@ -137,12 +137,14 @@ export default async function NeighborhoodPage({
                   →
                 </span>
               </Link>
-              <Link
-                href={`/blog/${n.blogPostSlug}`}
-                className="link-underline inline-flex items-center gap-2 px-2 py-3 text-[12px] font-medium uppercase tracking-[0.22em] text-ink"
-              >
-                Read the full guide ↓
-              </Link>
+              {n.blogPostSlug ? (
+                <Link
+                  href={`/blog/${n.blogPostSlug}`}
+                  className="link-underline inline-flex items-center gap-2 px-2 py-3 text-[12px] font-medium uppercase tracking-[0.22em] text-ink"
+                >
+                  Read the full guide ↓
+                </Link>
+              ) : null}
             </div>
           </div>
           <figure className="relative aspect-[4/5] overflow-hidden rounded-md md:aspect-auto md:h-full md:min-h-[500px]">
@@ -303,6 +305,7 @@ export default async function NeighborhoodPage({
         </section>
 
         {/* ——— Related: link to blog post ——— */}
+        {n.blogPostSlug ? (
         <section className="mt-16">
           <h3 className="eyebrow text-ink-soft">Deeper on the island</h3>
           <Link
@@ -314,6 +317,7 @@ export default async function NeighborhoodPage({
             mentions.
           </Link>
         </section>
+        ) : null}
 
         {/* \u2014\u2014\u2014 Other neighborhoods (cross-link rail) \u2014\u2014\u2014 */}
         <section aria-label="Other Hilton Head neighborhoods" className="mt-20 border-t border-ink/15 pt-12">
