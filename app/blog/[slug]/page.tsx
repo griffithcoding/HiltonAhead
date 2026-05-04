@@ -7,6 +7,8 @@ import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import PostBody from '@/components/PostBody';
+import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import { Divider } from '@/components/ui/Ornament';
 import { photos } from '@/data/photos';
 import {
@@ -365,6 +367,24 @@ export default async function BlogPostPage({
           <div className="mx-auto max-w-[720px]">
             <PostBody blocks={post.body} />
           </div>
+
+          {/* ——— Optional affiliate card (per-post opt-in) ——— */}
+          {post.affiliate && (
+            <aside
+              aria-label="Recommended booking partner"
+              className="mx-auto mt-16 max-w-[720px]"
+            >
+              <AffiliateDisclosure variant="inline" className="mb-4" />
+              <AffiliateCard
+                programId={post.affiliate.programId}
+                deeplink={post.affiliate.deeplink}
+                placement={post.affiliate.placement ?? `blog/${post.slug}`}
+                headline={post.affiliate.headline}
+                description={post.affiliate.description}
+                cta={post.affiliate.cta}
+              />
+            </aside>
+          )}
 
           {/* ——— Inline CTA ——— */}
           <div className="mx-auto mt-20 max-w-[720px] border-y border-ink/15 py-10">

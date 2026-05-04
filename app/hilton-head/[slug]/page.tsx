@@ -6,6 +6,8 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import {
   SectionHead,
   Divider,
@@ -265,6 +267,23 @@ export default async function NeighborhoodPage({
               </article>
             ))}
           </div>
+        </section>
+
+        {/* ——— Affiliate fallback (browse direct) ——— */}
+        <section
+          aria-label="Browse on Vrbo"
+          className="mt-16"
+        >
+          <h3 className="eyebrow text-coral">Or browse on your own</h3>
+          <AffiliateDisclosure variant="inline" className="mt-3 mb-5" />
+          <AffiliateCard
+            programId="vrbo"
+            deeplink={`https://www.vrbo.com/search?q=${encodeURIComponent(`${n.name} Hilton Head Island, SC`)}`}
+            placement={`neighborhood-${n.slug}`}
+            headline={`Whole-house rentals in ${n.name}`}
+            description={`Vrbo's ${n.name} inventory beyond our shortlist — useful if your dates overlap with the high-demand weeks our partners are already booked.`}
+            cta={`Browse ${n.name} on Vrbo →`}
+          />
         </section>
 
         {/* ——— CTA ——— */}
