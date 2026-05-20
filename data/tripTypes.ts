@@ -13,6 +13,7 @@
 
 import { photos } from './photos';
 import type { AffiliateProgramId } from './affiliateLinks';
+import type { AmazonProductCategoryId } from './amazonProducts';
 
 /**
  * Optional affiliate placement on a trip-type landing page. Rendered by
@@ -76,6 +77,20 @@ export type TripTypeLanding = {
    * above the fold per FTC guidance.
    */
   affiliates?: TripAffiliateSlot[];
+  /**
+   * Optional Amazon product grid category. When set, TripTypeLanding renders
+   * <AmazonProductGrid> for that category between the tradeoffs section and
+   * any affiliate cards. The grid's own header includes FTC disclosure copy.
+   *
+   * Pick the category that matches the trip's buyer-intent:
+   *   - 'beach-essentials' — generic beach gear (most beach trips)
+   *   - 'family-beach' — kids + parents shopping
+   *   - 'premium-beach' — oceanfront villa renters (higher AOV products)
+   *   - 'couples-beach' — honeymoon / couples weekend
+   *   - 'water-sports' — kayak/SUP/boat-day pages
+   *   - 'beach-reads' — slower stays where books matter
+   */
+  amazonProductCategory?: AmazonProductCategoryId;
 };
 
 export const tripTypes: TripTypeLanding[] = [
@@ -213,6 +228,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'oceanfront-villas',
+    amazonProductCategory: 'premium-beach',
     path: '/hilton-head-oceanfront-villas',
     eyebrow: 'Stay style · Hilton Head Island',
     tagline: {
@@ -276,6 +292,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'family-trip-planner',
+    amazonProductCategory: 'family-beach',
     path: '/hilton-head-family-trip-planner',
     eyebrow: 'Trip type · Hilton Head Island',
     tagline: {
@@ -350,6 +367,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'spring-break',
+    amazonProductCategory: 'beach-essentials',
     path: '/hilton-head-spring-break',
     eyebrow: 'Season · Mid-March to April',
     tagline: {
@@ -655,6 +673,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'beaches',
+    amazonProductCategory: 'beach-essentials',
     path: '/hilton-head-beaches',
     eyebrow: 'Activity · Hilton Head beaches',
     tagline: {
@@ -720,6 +739,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'honeymoon',
+    amazonProductCategory: 'couples-beach',
     path: '/hilton-head-honeymoon',
     eyebrow: 'Trip type · Couples & honeymoon',
     tagline: {
