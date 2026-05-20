@@ -69,7 +69,11 @@ const hammock     = { src: unsplash('1628214458185-a49d4fc577f3', 1400, 80), alt
 // Same Unsplash CDN pattern as the rest of the file. Swap for press-kit
 // imagery once available.
 const golfFairway   = { src: unsplash('1535131749006-b7f58c99034b', 1800, 82), alt: 'Empty Lowcountry golf fairway lined with palmetto trees at sunrise' };
-const golfTeeBox    = { src: unsplash('1523712999610-f77fbcfc3843', 1800, 82), alt: 'Sunlight filtering through coastal pines along a fairway' };
+// Wooden tee marker on a dewy fairway at sunrise — replaces a CDN id
+// (`1523712999610-f77fbcfc3843`) that was shared with `coastalOak` above
+// and caused the two photos to render as the same sun-through-canopy
+// shot despite different alt text.
+const golfTeeBox    = { src: unsplash('1561251224-be0fb13586f9', 1800, 82), alt: 'Wooden tee marker on a dewy fairway at sunrise, sun filtering through trees on the horizon' };
 const ceremonyArbor = { src: unsplash('1519741497674-611481863552', 1800, 82), alt: 'Empty wedding arbor on a coastal lawn at golden hour' };
 const setTable      = { src: unsplash('1530103862676-de8c9debad1d', 1800, 82), alt: 'Long banquet table set under string lights with no guests' };
 // Aerial of tidal marsh with creek braids cutting through spartina — Mike Erskine (Unsplash). Replaces a CDN-rotated ID that began returning rolling green hills.

@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
+import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import { Divider, SectionHead } from '@/components/ui/Ornament';
 import { photos } from '@/data/photos';
 import {
@@ -277,6 +279,32 @@ export default async function MonthPage({
           <p className="mt-6 text-[16px] leading-[1.75] text-ink-soft md:text-[17px]">
             {m.bookingNotes}
           </p>
+        </section>
+
+        {/* ——— Affiliate placements ——— */}
+        <section
+          aria-label="Booking and packing partners"
+          className="mx-auto mt-16 max-w-[820px]"
+        >
+          <h3 className="eyebrow text-coral">Book it yourself</h3>
+          <AffiliateDisclosure variant="inline" className="mt-3 mb-5" />
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+            <AffiliateCard
+              programId="booking"
+              placement={`weather-month-${m.slug}`}
+              headline={`Hilton Head stays for ${m.name}`}
+              description={`Free cancellation on most ${m.name} bookings. Filter by dates to see what’s actually available — rates trend ${m.rateIndex}% of peak July pricing.`}
+              cta="Search stays →"
+            />
+            <AffiliateCard
+              programId="amazon"
+              deeplink="https://www.amazon.com/s?k=beach+vacation+packing+essentials"
+              placement={`weather-month-${m.slug}-packing`}
+              headline={`What to pack for ${m.name}`}
+              description="The shortlist we send clients: reef-safe sunscreen, packable sun hat, beach blanket, dry-bag for boat days. Available on Amazon Prime."
+              cta="See packing essentials →"
+            />
+          </div>
         </section>
 
         {/* FAQ */}

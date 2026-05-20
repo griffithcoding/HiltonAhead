@@ -4,6 +4,8 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import {
   SectionHead,
   Divider,
@@ -189,6 +191,36 @@ export default function TripTypeLandingPage({ trip }: Props) {
             </p>
           </div>
         </section>
+
+        {/* ——— Affiliate placements (rendered only when configured) ——— */}
+        {trip.affiliates && trip.affiliates.length > 0 && (
+          <section
+            aria-label="Recommended booking partners"
+            className="mt-24"
+          >
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <h3 className="eyebrow text-coral">If you’d rather book direct</h3>
+            </div>
+            <AffiliateDisclosure variant="inline" className="mb-5" />
+            <div
+              className={`grid grid-cols-1 gap-5 ${
+                trip.affiliates.length > 1 ? 'md:grid-cols-2 md:gap-6' : ''
+              }`}
+            >
+              {trip.affiliates.map((slot) => (
+                <AffiliateCard
+                  key={`${slot.programId}-${slot.placement ?? trip.slug}`}
+                  programId={slot.programId}
+                  deeplink={slot.deeplink}
+                  placement={slot.placement ?? trip.slug}
+                  headline={slot.headline}
+                  description={slot.description}
+                  cta={slot.cta}
+                />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ——— CTA ——— */}
         <section className="mt-24 border-y border-ocean-deep/15 py-12">

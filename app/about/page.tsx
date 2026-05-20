@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
@@ -111,6 +112,16 @@ export default function AboutPage() {
 
             <p className="mt-5 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
               Either way, you text us when something changes. We handle it.
+            </p>
+
+            <p className="mt-8 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
+              Curious who&apos;s on the other end of those texts?{' '}
+              <Link
+                href="/founder"
+                className="font-medium text-coral underline decoration-coral/30 underline-offset-4 transition-colors hover:decoration-coral"
+              >
+                Read the founder&apos;s story →
+              </Link>
             </p>
           </div>
 
