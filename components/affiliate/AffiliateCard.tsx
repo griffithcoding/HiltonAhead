@@ -41,7 +41,7 @@ export default function AffiliateCard({
   const program = AFFILIATE_PROGRAMS[programId];
   if (!program) return null;
 
-  const href = withAffiliateParams(programId, deeplink);
+  const href = withAffiliateParams(programId, deeplink, placement);
   const headlineCopy = headline ?? `Book on ${program.shortName}`;
   const ctaCopy = cta ?? `Browse on ${program.shortName} →`;
   const descriptionCopy = description ?? program.pitch;

@@ -31,7 +31,7 @@ export default function AffiliateLink({
   children: React.ReactNode;
   ariaLabel?: string;
 }) {
-  const href = withAffiliateParams(programId, deeplink);
+  const href = withAffiliateParams(programId, deeplink, placement);
   return (
     <a
       href={href}
