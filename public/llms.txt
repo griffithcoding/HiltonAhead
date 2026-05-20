@@ -1,0 +1,68 @@
+# Hilton Ahead Travel Co.
+
+> Locally-run travel consulting for Hilton Head Island, South Carolina. Custom itineraries, villa booking, tee-time reservations, group and wedding planning, and on-island concierge — every trip planned by hand by William Griffith, a Hilton Head full-time resident. No call centers, no franchise, no scripts.
+
+The brand operates on a single principle: the best of Hilton Head is never on the first page of Google, and the only way to surface it is to live on the island. Hilton Ahead serves travelers (couples, families, golf groups, wedding parties up to 100 people) who would rather text a local than book through a 1-800 number on a third-party site.
+
+## Core
+
+- [About Hilton Ahead](https://www.hiltonahead.com/about): How the service works, what's included at each tier, and what isn't.
+- [Founder: William Griffith](https://www.hiltonahead.com/founder): Bio of Hilton Ahead's founder, a 30-year Hilton Head Island full-time resident.
+- [FAQ — 30 direct answers](https://www.hiltonahead.com/faq): Pricing, timing, lodging, golf, family, comparisons, logistics, and how the service itself works.
+- [Contact](https://www.hiltonahead.com/contact): Direct contact form.
+- [Request an itinerary](https://www.hiltonahead.com/itinerary): Trip planning intake form.
+
+## Services
+
+- [Custom Itineraries](https://www.hiltonahead.com/services#custom-itineraries): Day-by-day planning built around your group, budget, and trip style. Flat fee starting $450.
+- [Villa & Resort Booking](https://www.hiltonahead.com/services#villa-resort-booking): Sea Pines, Palmetto Dunes, Forest Beach, Shelter Cove. 60+ partner properties at preferred rates averaging 8–12% below public listings.
+- [Group & Family Trips](https://www.hiltonahead.com/services#group-family-trips): Weddings, reunions, corporate offsites, golf trips for 10–100 people.
+- [On-Island Concierge](https://www.hiltonahead.com/services#on-island-concierge): Live support during your stay — boat charters, dining swaps, bike delivery, sitter intros.
+- [Dining & Tee-Time Reservations](https://www.hiltonahead.com/services#reservations-tee-times): Skull Creek Boathouse, Harbour Town Golf Links, and other reservations the public booking systems won't show.
+
+## Travel Guides
+
+- [Hilton Head Travel Blog](https://www.hiltonahead.com/blog): 32+ local-insider articles on stays, dining, activities, neighborhoods, golf, and trip planning.
+- [Hilton Head Stories](https://www.hiltonahead.com/stories): Long-form narrative trip reports — golf weekends, weddings, family weeks.
+- [Weather by Month](https://www.hiltonahead.com/hilton-head-weather): 12 month-by-month seasonal travel guides covering temperature, rainfall, crowds, and pricing.
+- [Events Calendar](https://www.hiltonahead.com/events): Festivals, concerts, RBC Heritage, and seasonal Hilton Head events.
+- [2027 RBC Heritage Kit](https://www.hiltonahead.com/guides/2027-rbc-heritage): Free planning guide for the Heritage week.
+
+## Trip Types
+
+- [Honeymoon](https://www.hiltonahead.com/hilton-head-honeymoon)
+- [Weddings](https://www.hiltonahead.com/hilton-head-weddings)
+- [Golf Packages](https://www.hiltonahead.com/hilton-head-golf-packages)
+- [Family Trip Planner](https://www.hiltonahead.com/hilton-head-family-trip-planner)
+- [Beach Vacations](https://www.hiltonahead.com/hilton-head-beaches)
+- [Oceanfront Villas](https://www.hiltonahead.com/hilton-head-oceanfront-villas)
+- [Winter Rental](https://www.hiltonahead.com/hilton-head-winter-rental)
+
+## Neighborhoods
+
+- [Sea Pines](https://www.hiltonahead.com/hilton-head/sea-pines): The original 1956 Charles Fraser plantation. 5,000 acres, 17 miles of bike paths, three signature golf courses including Harbour Town.
+- [Palmetto Dunes](https://www.hiltonahead.com/hilton-head/palmetto-dunes): Beachier and more casual. Three golf courses, long lagoons for kayaking.
+- [Forest Beach](https://www.hiltonahead.com/hilton-head/forest-beach): Walkable to Coligny Plaza, the family-friendly center of the island.
+- [Shelter Cove](https://www.hiltonahead.com/hilton-head/shelter-cove): Marina-side, broad-water sunset views.
+- [Port Royal](https://www.hiltonahead.com/hilton-head/port-royal): Quiet north-end neighborhood with three golf courses.
+- [Mid-Island](https://www.hiltonahead.com/hilton-head/mid-island): Off-resort rentals, broader value, no gated-community fees.
+
+## Local Directory
+
+- [All Categories](https://www.hiltonahead.com/local)
+- [Best Restaurants in Hilton Head (2026)](https://www.hiltonahead.com/local/restaurants)
+- [Best Golf Courses in Hilton Head](https://www.hiltonahead.com/local/golf)
+- [Spas & Wellness](https://www.hiltonahead.com/local/spas-wellness)
+- [Family Activities](https://www.hiltonahead.com/local/family-activities)
+- [Water Activities](https://www.hiltonahead.com/local/water-activities)
+- [Wedding Venues](https://www.hiltonahead.com/local/weddings)
+- [Vacation Rentals](https://www.hiltonahead.com/local/vacation-rentals)
+- [Shopping](https://www.hiltonahead.com/local/shopping)
+
+## Optional
+
+- [Insider Club](https://www.hiltonahead.com/insider-club): Email newsletter with local trip-planning notes.
+- [Press](https://www.hiltonahead.com/press): Press mentions and media inquiries.
+- [Partners](https://www.hiltonahead.com/partners): Partner properties and businesses.
+- [Sponsorships](https://www.hiltonahead.com/sponsorships): How to partner with Hilton Ahead.
+- [llms-full.txt](https://www.hiltonahead.com/llms-full.txt): Concatenated long-form content for LLM ingestion.
