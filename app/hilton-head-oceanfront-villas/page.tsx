@@ -56,7 +56,7 @@ export default function HiltonHeadOceanfrontVillasPage() {
           </span>
           Booking on points instead?{' '}
           <Link
-            href="/top-marriott-stays-hilton-head"
+            href="/marriott-bonvoy-stays-hilton-head"
             className="font-semibold text-ocean-deep underline-offset-2 hover:underline"
           >
             The Marriott Bonvoy map of Hilton Head

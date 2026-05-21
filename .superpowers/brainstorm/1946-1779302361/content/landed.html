@@ -1,0 +1,199 @@
+<div style="background: #0E2A38; color: #FCFAF5; padding: 20px 28px; border-radius: 14px; margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+  <div>
+    <div style="font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; opacity: 0.6; margin-bottom: 6px;">Locked direction · v7</div>
+    <div style="font-family: Fraunces, serif; font-size: 26px; letter-spacing: -0.01em; line-height: 1.0; font-variation-settings: 'opsz' 96, 'SOFT' 80;">What we landed on</div>
+  </div>
+  <div style="font-family: Fraunces, serif; font-style: italic; font-size: 14px; color: rgba(252,250,245,0.75); font-variation-settings: 'opsz' 72,'SOFT' 100,'WONK' 1; max-width: 480px; text-align: right;">
+    Production Header preserved. Only the Hero block changes. Real Hilton Head photo. Real production copy. Everything below the hero stays as-is.
+  </div>
+</div>
+
+<style>
+  .prod { --sand:#FCFAF5; --sand-soft:#FFFEFA; --sand-deep:#F0EBE0;
+          --ocean:#7BD8E0; --ocean-mid:#6FC9DE; --ocean-deep:#0F7080; --ocean-light:#E0F5F4;
+          --coral:#EFB8AA; --coral-deep:#D89B8A; --palm:#42685B; --gold:#D9C58C; --gold-deep:#AB9C66;
+          --ink:#0E2A38; --ink-soft:#4A5C66; --rule:rgba(14,42,56,0.10);
+          font-family: 'Instrument Sans', -apple-system, system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--sand);
+          background-image:
+            radial-gradient(900px 500px at 12% 8%, rgba(225,248,252,0.55), transparent 65%),
+            radial-gradient(1000px 700px at 90% -10%, rgba(239,184,170,0.10), transparent 60%);
+          border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
+          box-shadow: 0 8px 40px rgba(14,42,56,0.06); margin-bottom: 24px; }
+  .masthead { background: color-mix(in srgb, var(--ocean-mid) 88%, transparent); color: var(--ink); }
+  .masthead-inner { max-width: 1280px; margin: 0 auto; padding: 10px 20px;
+                    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+                    display:flex; justify-content: space-between; font-weight: 500; }
+  .header-row { max-width: 1280px; margin: 0 auto; padding: 20px;
+                display: flex; justify-content: space-between; align-items: center;
+                border-bottom: 1px solid var(--rule); }
+  .wordmark { display: flex; flex-direction: column; }
+  .wordmark .name { font-family: Fraunces, serif; font-weight: 400; font-size: 30px;
+                    letter-spacing: -0.02em; line-height: 1; color: var(--ink);
+                    font-variation-settings: "opsz" 144,"SOFT" 60,"WONK" 0; }
+  .wordmark .sub { font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+                   text-transform: uppercase; color: var(--ink-soft); margin-top: 6px; }
+  .h-nav-links { display: flex; align-items: center; gap: 32px; font-size: 13px; color: var(--ink); }
+  .h-nav-cta { font-size: 12px; padding: 10px 20px; border-radius: 999px; font-weight: 500;
+               background: var(--ocean-mid); color: var(--ink); letter-spacing: 0.12em;
+               text-transform: uppercase; border: 1px solid var(--ocean-mid); }
+
+  .new-hero {
+    max-width: 1280px; margin: 0 auto; padding: 96px 20px 64px; text-align: center;
+  }
+  .nh-stamp-row { display: inline-flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+  .nh-stamp { background: var(--sand-soft); color: var(--ocean-deep); border: 1.5px solid var(--ocean-deep);
+              padding: 5px 12px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.22em;
+              text-transform: uppercase; }
+  .nh-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+                color: var(--coral); }
+  .nh-display { font-family: Fraunces, 'Times New Roman', serif; font-weight: 380;
+                letter-spacing: -0.028em; line-height: 1.02; color: var(--ink);
+                font-size: 64px; max-width: 920px; margin: 0 auto;
+                font-variation-settings: "opsz" 144,"SOFT" 70,"WONK" 0; }
+  .nh-display em { font-style: italic; color: var(--coral);
+                   font-variation-settings: "opsz" 96,"SOFT" 100,"WONK" 1; }
+  .nh-rule { width: 40px; height: 1px; background: var(--rule); margin: 36px auto 28px; }
+  .nh-lede { font-family: 'Instrument Sans'; font-size: 17px; line-height: 1.6;
+             color: var(--ink-soft); max-width: 640px; margin: 0 auto; }
+  .nh-lede::first-letter { font-family: Fraunces; font-weight: 500; font-size: 3.8em; line-height: 0.9;
+                            float: left; margin: 0.06em 0.12em 0 -0.02em; color: var(--coral);
+                            font-variation-settings: "opsz" 144,"SOFT" 100; }
+  .nh-ctas { display: inline-flex; gap: 20px; margin-top: 44px; align-items: center; flex-wrap: wrap;
+             justify-content: center; }
+  .nh-btn { font-size: 12px; padding: 14px 28px; border-radius: 999px; font-weight: 500;
+            letter-spacing: 0.22em; text-transform: uppercase; border: 1px solid transparent; }
+  .nh-btn-primary { background: var(--ocean); color: var(--sand); border-color: var(--ocean); }
+  .nh-btn-text { background: transparent; color: var(--ink); padding: 14px 4px;
+                 letter-spacing: 0.22em; border-bottom: 1px solid var(--ink); border-radius: 0;
+                 font-size: 12px; font-weight: 500; text-transform: uppercase; }
+  .nh-btn-tertiary { background: rgba(239,184,170,0.06); color: var(--coral-deep);
+                     border-color: rgba(239,184,170,0.4); padding: 8px 16px;
+                     display: inline-flex; align-items: center; gap: 12px; font-size: 11px; }
+  .nh-btn-tertiary .pill { background: var(--coral); color: var(--sand); border-radius: 999px;
+                           padding: 3px 10px; font-size: 9px; letter-spacing: 0.18em; }
+  .nh-proof { margin-top: 44px; display: inline-flex; gap: 16px; align-items: center;
+              flex-wrap: wrap; justify-content: center; }
+  .nh-proof .sig { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+                   color: var(--ink-soft); }
+  .nh-proof .sep { width: 24px; height: 1px; background: var(--ocean-deep); opacity: 0.2; }
+
+  .nh-photo-wrap { margin: 64px auto 0; max-width: 1280px; padding: 0 20px; }
+  .nh-photo { position: relative; aspect-ratio: 21/9; border-radius: 18px; overflow: hidden;
+              background:
+                linear-gradient(180deg, rgba(14,42,56,0) 50%, rgba(14,42,56,0.42) 100%),
+                url('https://images.unsplash.com/photo-1631845085830-10c38cc98ac8?auto=format&fit=crop&w=2200&q=82') center/cover;
+              box-shadow: 0 30px 80px -20px rgba(14,42,56,0.28); }
+  .nh-photo .ticket { position: absolute; top: 24px; left: 24px;
+                       background: var(--sand-soft); color: var(--ocean-deep);
+                       border: 1px solid var(--ocean-deep); padding: 5px 14px;
+                       font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; }
+  .nh-photo .place { position: absolute; bottom: 24px; left: 28px;
+                     font-family: Fraunces, serif; font-style: italic; font-size: 18px;
+                     font-variation-settings: "opsz" 96,"SOFT" 100,"WONK" 1; color: rgba(252,250,245,0.95); }
+  .nh-photo .credit { position: absolute; bottom: 24px; right: 28px;
+                      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+                      color: rgba(252,250,245,0.8); }
+
+  .nh-wave { margin-top: 80px; display: flex; justify-content: center; color: rgba(15,112,128,0.3); }
+
+  .below-fold-hint { padding: 80px 20px; max-width: 1280px; margin: 0 auto; border-top: 1px dashed var(--rule); }
+  .bf-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+                color: var(--ink-soft); margin-bottom: 12px; }
+  .bf-display { font-family: Fraunces, serif; font-size: 56px; letter-spacing: -0.025em; line-height: 1.05;
+                color: var(--ink); margin-bottom: 24px; max-width: 740px;
+                font-variation-settings: "opsz" 144,"SOFT" 60,"WONK" 0; }
+  .bf-display em { font-style: italic; color: var(--coral); }
+  .bf-tag { display: inline-block; padding: 6px 14px; background: rgba(15,112,128,0.06);
+            color: var(--ocean-deep); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+            border: 1px dashed var(--rule); border-radius: 999px; }
+  .bf-note { font-style: italic; color: var(--ink-soft); margin-top: 32px; font-size: 13px; }
+</style>
+
+<div class="prod">
+
+  <!-- LIVE PRODUCTION HEADER (rendered as-is) -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <span>Dispatch № 12</span>
+      <span style="opacity:0.7;">Hilton Head Island</span>
+      <span>Spring 2026</span>
+    </div>
+  </div>
+  <div class="header-row">
+    <div class="wordmark">
+      <span class="name">Hilton Ahead</span>
+      <span class="sub">Travel Consulting · Hilton Head Island</span>
+    </div>
+    <div class="h-nav-links">
+      <span style="color: rgba(14,42,56,0.85);">Itineraries</span>
+      <span style="color: rgba(14,42,56,0.85);">Stories</span>
+      <span style="color: rgba(14,42,56,0.85);">Local Guide ▼</span>
+      <span style="color: rgba(14,42,56,0.85);">About</span>
+      <span class="h-nav-cta">Plan my trip →</span>
+    </div>
+  </div>
+
+  <!-- NEW HERO BLOCK -->
+  <div class="new-hero">
+    <div class="nh-stamp-row">
+      <span class="nh-stamp">⛵ Est. 1956 · Atlantic</span>
+      <span class="nh-eyebrow">Travel Consulting · Planned by a Local</span>
+    </div>
+    <h1 class="nh-display">The Hilton Head <em>you thought only</em> locals knew.</h1>
+    <div class="nh-rule"></div>
+    <p class="nh-lede">Villa picks. Tee times at Harbour Town. The 7 p.m. table at Skull Creek (the one that was somehow fully booked when you called). The short list of things worth doing and the longer list of things worth skipping. We plan Hilton Head the way we plan it for family, then hand it to you.</p>
+    <div class="nh-ctas">
+      <span class="nh-btn nh-btn-primary">Plan my trip →</span>
+      <span class="nh-btn nh-btn-text">Why Hilton Head ↓</span>
+      <span class="nh-btn nh-btn-tertiary">
+        <span class="pill">Free guide</span>
+        <span>2027 RBC Heritage Survival Kit</span>
+        <span>→</span>
+      </span>
+    </div>
+    <div class="nh-proof">
+      <span class="sig">255+ trips advised</span>
+      <span class="sep"></span>
+      <span class="sig">Locally based, Hilton Head Island</span>
+    </div>
+  </div>
+
+  <div class="nh-photo-wrap">
+    <div class="nh-photo">
+      <span class="ticket">№ 01 · The Lighthouse, at last light</span>
+      <span class="place">Harbour Town · Sea Pines</span>
+      <span class="credit">Photo · Nikolay Loubet · Unsplash</span>
+    </div>
+  </div>
+
+  <div class="nh-wave">
+    <svg width="120" height="14" viewBox="0 0 120 14">
+      <path d="M0 7 Q15 0 30 7 T60 7 T90 7 T120 7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="below-fold-hint">
+    <span class="bf-tag">Below: Production sections (unchanged)</span>
+    <div class="bf-eyebrow" style="margin-top:24px;">The Island</div>
+    <h2 class="bf-display">Twelve miles of beach,<br><em>400 years of quiet.</em></h2>
+    <p class="bf-note">— WhyIsland · PhotoRail · Services · IslandFlyover · InsiderProof · LatestPosts · LocalDirectoryPreview · Testimonials · Faq · NewsletterSignup · FinalCta · Footer — all stay as production code. Only the Hero block above this line is replaced.</p>
+  </div>
+
+</div>
+
+<div style="margin-top: 20px; padding: 22px 26px; background: linear-gradient(135deg, #FCFAF5 0%, #F0EBE0 100%); border-radius: 12px; border: 1px solid rgba(14,42,56,0.06); font-size: 13.5px; line-height: 1.65;">
+  <div style="font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: #4A5C66; font-weight: 600; margin-bottom: 10px;">Recap of the locked decisions</div>
+  <ul style="margin: 0; padding-left: 18px; color: #0E2A38;">
+    <li><b>Scope</b> — only <code>components/sections/Hero.tsx</code> is replaced. Header, MobileMenu, and all other sections are untouched.</li>
+    <li><b>Data</b> — reuses <code>data/hero.ts</code> verbatim. Reuses <code>photos.sundown</code> (Nikolay Loubet, Unsplash License, real Harbour Town Lighthouse + dock).</li>
+    <li><b>Palette</b> — no new tokens. Production palette (sand, ocean, coral, ink) does the work.</li>
+    <li><b>Type</b> — Fraunces display + Instrument Sans UI, both already loaded. Three-line headline with italic coral middle line. Drop-cap lede.</li>
+    <li><b>Layout</b> — centered single column, ~96px top padding. Photo showcase 21:9 below the text block. WaveLine divider preserved.</li>
+    <li><b>CTAs</b> — primary ocean pill (Plan my trip), secondary text link (Why Hilton Head), tertiary chip (RBC Heritage Survival Kit free guide). All preserved from production.</li>
+    <li><b>Ornaments</b> — PostcardStamp and Sailboat kept in the stamp row. CompassRose / Ticket / TravelSeal removed from this component only (kept available in <code>Ornament.tsx</code>).</li>
+    <li><b>Motion</b> — existing <code>.rise</code> / <code>.rise-delay-*</code> chain extended by one step for the photo showcase.</li>
+    <li><b>Open question Q1</b> — desktop headline scale 64–72px (mockup) vs 108px (current). Decision deferred to plan review.</li>
+  </ul>
+</div>

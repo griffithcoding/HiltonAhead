@@ -1,0 +1,130 @@
+<h2>Hybrid — A's presentation, B's image</h2>
+<p class="subtitle">Centered Tavily-style hero · single cyan accent · big whitespace · the B photo lands as a full-bleed showcase below the headline · then partner rail · then three feature cards.</p>
+
+<style>
+  .h-stage { --sand:#FCFAF5; --sand-soft:#FFFEFA; --sand-deep:#F0EBE0;
+             --ocean:#7BD8E0; --ocean-mid:#6FC9DE; --ocean-deep:#0F7080; --ocean-light:#E0F5F4;
+             --coral:#EFB8AA; --palm:#42685B; --gold:#D9C58C;
+             --tavily-cyan:#AAF2FC; --tavily-sage:rgb(231,236,231);
+             --ink:#0E2A38; --ink-soft:#4A5C66; --rule:rgba(14,42,56,0.10);
+             font-family: 'Instrument Sans', -apple-system, system-ui, sans-serif;
+             color: var(--ink);
+             background: #F7F7F5;
+             border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
+             box-shadow: 0 8px 40px rgba(14,42,56,0.06);
+             margin-bottom: 24px;
+  }
+
+  .h-nav { padding: 22px 56px; display:flex; justify-content:space-between; align-items:center; }
+  .h-nav .logo { font-family: Fraunces, serif; font-size: 20px; letter-spacing:-0.01em; }
+  .h-nav .links { display:flex; gap: 28px; font-size: 13px; color: var(--ink-soft); }
+  .h-nav .cta { font-size: 12px; padding: 10px 18px; border-radius: 999px; font-weight: 600;
+                background: var(--tavily-cyan); color: var(--ocean-deep); border: 1px solid var(--ocean); }
+
+  .h-hero { padding: 88px 56px 64px; text-align: center; }
+  .h-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
+               color: var(--ink-soft); margin-bottom: 24px; }
+  .h-display { font-family: Fraunces, 'Times New Roman', serif; font-weight: 400; letter-spacing: -0.025em;
+               line-height: 1.0; color: var(--ink); font-size: 76px; max-width: 940px; margin: 0 auto;
+               font-variation-settings: "opsz" 144,"SOFT" 60,"WONK" 0; }
+  .h-display em { font-style: italic; font-variation-settings: "opsz" 72,"SOFT" 100,"WONK" 1; }
+  .h-sub { font-family: 'Instrument Sans', sans-serif; font-size: 18px; line-height: 1.55;
+           color: var(--ink-soft); margin: 28px auto 0; max-width: 620px; }
+  .h-ctas { display:flex; gap: 12px; margin-top: 36px; justify-content: center; }
+  .btn { font-size: 13px; padding: 13px 24px; border-radius: 999px; font-weight: 600; border: 1px solid transparent; }
+  .btn-primary { background: var(--tavily-cyan); color: var(--ocean-deep); border-color: var(--ocean); }
+  .btn-ghost { background: transparent; border-color: var(--rule); color: var(--ink); }
+
+  .h-photo { margin: 56px 56px 0; aspect-ratio: 21/9; border-radius: 18px; position: relative; overflow: hidden;
+             background: linear-gradient(180deg, rgba(15,112,128,0.08), rgba(15,112,128,0.28)),
+                         url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=2000') center/cover; }
+  .h-photo .stamp { position:absolute; bottom: 22px; left: 22px; background: rgba(252,250,245,0.94);
+        color: var(--ocean-deep); padding: 8px 14px; border: 1.5px solid var(--ocean-deep);
+        font-size: 10px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; backdrop-filter: blur(4px); }
+  .h-photo .float-cap { position:absolute; bottom: 22px; right: 22px; font-family: Fraunces; font-style: italic;
+        font-size: 14px; color: rgba(252,250,245,0.92); }
+
+  .h-rail { padding: 36px 56px 28px; display:flex; gap: 36px; justify-content: center; align-items: center;
+            flex-wrap: wrap; }
+  .h-rail .l { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-soft);
+               opacity: 0.7; }
+  .h-rail .label { font-family: Fraunces; font-size: 13px; font-style: italic; color: var(--ink-soft);
+                   letter-spacing: 0; text-transform: none; opacity: 1; margin-right: 12px; }
+
+  .h-features { padding: 28px 56px 72px; }
+  .h-features-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .h-feature { padding: 28px; border-radius: 14px; background: #FFFFFF; border: 1px solid var(--rule); }
+  .h-feature .ico { width: 40px; height: 40px; border-radius: 10px; background: var(--tavily-sage);
+                    color: var(--ocean-deep); margin-bottom: 16px; display:grid; place-items:center;
+                    font-family: Fraunces; font-style: italic; font-size: 18px; }
+  .h-feature h4 { font-family: 'Instrument Sans'; font-size: 15px; font-weight: 600; margin: 0 0 8px; color: var(--ink); }
+  .h-feature p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; margin: 0; }
+
+  .h-tag-bar { padding: 14px 56px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+               color: var(--ink-soft); border-bottom: 1px solid var(--rule); display:flex;
+               justify-content: space-between; opacity: 0.7; }
+</style>
+
+<div class="h-stage">
+
+  <div class="h-tag-bar">
+    <span>Hilton Head Travel Co. · Hilton Head Island, SC</span>
+    <span>Concierge · 30-min discovery call →</span>
+  </div>
+
+  <div class="h-nav">
+    <span class="logo">Hilton Ahead</span>
+    <span class="links"><span>Villas</span><span>Itineraries</span><span>Local Guide</span><span>Stories</span><span>About</span></span>
+    <span class="cta">Plan my trip</span>
+  </div>
+
+  <div class="h-hero">
+    <div class="h-eyebrow">Hilton Head Travel · Concierge Planning</div>
+    <div class="h-display">A local-built trip to <em>Hilton Head</em>,<br>without the tourist tax.</div>
+    <p class="h-sub">Custom itineraries, villa reservations, tee times, and dinner tables — sorted before you land.</p>
+    <div class="h-ctas">
+      <span class="btn btn-primary">Plan my trip</span>
+      <span class="btn btn-ghost">Read a sample itinerary</span>
+    </div>
+  </div>
+
+  <div class="h-photo">
+    <div class="stamp">Harbour Town · Sea Pines</div>
+    <div class="float-cap">— Calibogue Sound at first light</div>
+  </div>
+
+  <div class="h-rail">
+    <span class="label">Featured properties &amp; clubs —</span>
+    <span class="l">SEA PINES</span>
+    <span class="l">PALMETTO DUNES</span>
+    <span class="l">HARBOUR TOWN</span>
+    <span class="l">LONG COVE</span>
+    <span class="l">SHIPYARD</span>
+    <span class="l">PORT ROYAL</span>
+  </div>
+
+  <div class="h-features">
+    <div class="h-features-grid">
+      <div class="h-feature">
+        <div class="ico">V</div>
+        <h4>Villas booked, not browsed</h4>
+        <p>Sea Pines, Palmetto Dunes, Forest Beach — vetted, photographed, and stress-tested before they land on your shortlist.</p>
+      </div>
+      <div class="h-feature">
+        <div class="ico">G</div>
+        <h4>Tee times before the public window</h4>
+        <p>Harbour Town, Atlantic Dunes, Robert Trent Jones — booked through the on-island circuit, not the public reservation page.</p>
+      </div>
+      <div class="h-feature">
+        <div class="ico">D</div>
+        <h4>The good tables</h4>
+        <p>The Sage Room, Charbar, Nectar, Hudson's — dinner reservations the public site says are full.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top: 16px; padding: 18px 22px; background:#FFF7E6; border-left:3px solid #D9C58C; border-radius:8px; font-size:14px; line-height:1.6;">
+<b>What's locked in this draft:</b> Centered Tavily hero (A) · single cyan accent on the CTA · big whitespace · the B photo lives as a full-bleed showcase right under the headline · postcard stamp kept (subtle nod to your editorial soul) · partner property rail in Tavily style · 3 clean feature cards with pale-sage icon tiles. Subhead used variant <b>1 (Service-forward)</b> per your "less local-obsessed" note. Click to lock, or paste a tweak.
+</div>

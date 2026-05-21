@@ -24,7 +24,7 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/itinerary', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/contact', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/cost-of-hilton-head-trip', changeFrequency: 'monthly', priority: 0.9 },
-  { path: '/top-marriott-stays-hilton-head', changeFrequency: 'monthly', priority: 0.85 },
+  { path: '/marriott-bonvoy-stays-hilton-head', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/blog', changeFrequency: 'weekly', priority: 0.8 },
   { path: '/stories', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/events', changeFrequency: 'weekly', priority: 0.85 },

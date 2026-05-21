@@ -1,0 +1,193 @@
+<h2>Hybrid v2 — refined for premier coastal luxury</h2>
+<p class="subtitle">Headline 20% smaller. Type hierarchy tightened. CTA restrained (premium hotels don't shout). Photo treated like editorial art, not stock. Whitespace doing the heavy lifting — that's the luxury signal.</p>
+
+<style>
+  .lux { --sand:#FCFAF5; --sand-soft:#FFFEFA; --sand-deep:#F4EFE5;
+         --ocean:#7BD8E0; --ocean-mid:#6FC9DE; --ocean-deep:#0F7080; --ocean-light:#E0F5F4;
+         --coral:#EFB8AA; --palm:#42685B; --gold:#D9C58C; --gold-deep:#AB9C66;
+         --ink:#0E2A38; --ink-soft:#4A5C66; --rule:rgba(14,42,56,0.10); --rule-faint:rgba(14,42,56,0.06);
+         font-family: 'Instrument Sans', -apple-system, system-ui, sans-serif;
+         color: var(--ink);
+         background: #FAF7F0;
+         background-image:
+           radial-gradient(1100px 600px at 18% 6%, rgba(255,253,247,0.9), transparent 60%),
+           radial-gradient(900px 700px at 92% 10%, rgba(225,248,252,0.30), transparent 55%);
+         border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
+         box-shadow: 0 10px 60px rgba(14,42,56,0.06);
+         margin-bottom: 24px;
+  }
+
+  /* —— hairline brand bar —— */
+  .lux-tag-bar { padding: 16px 64px; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+                 color: var(--ink-soft); border-bottom: 1px solid var(--rule-faint); display:flex;
+                 justify-content: space-between; opacity: 0.85; font-weight: 500; }
+  .lux-tag-bar .dot { color: var(--gold-deep); margin: 0 8px; }
+
+  /* —— nav —— */
+  .lux-nav { padding: 24px 64px; display:flex; justify-content:space-between; align-items:center; }
+  .lux-nav .logo { font-family: Fraunces, serif; font-size: 22px; letter-spacing:-0.012em;
+                   font-variation-settings: "opsz" 96,"SOFT" 80; }
+  .lux-nav .logo em { font-style: italic; color: var(--ocean-deep); font-variation-settings: "opsz" 72,"SOFT" 100,"WONK" 1; }
+  .lux-nav .links { display:flex; gap: 32px; font-size: 13px; color: var(--ink); font-weight: 500; }
+  .lux-nav .cta { font-size: 12px; padding: 11px 22px; border-radius: 999px; font-weight: 600;
+                  background: var(--ink); color: var(--sand); letter-spacing: 0.04em;
+                  border: 1px solid var(--ink); }
+
+  /* —— hero (calm, centered, generous) —— */
+  .lux-hero { padding: 120px 64px 88px; text-align: center; position: relative; }
+
+  .lux-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.36em; text-transform: uppercase;
+                 color: var(--gold-deep); margin-bottom: 20px; display:inline-flex; align-items:center; gap: 14px; }
+  .lux-eyebrow .e-rule { width: 24px; height: 1px; background: var(--gold-deep); display: inline-block; opacity: 0.7; }
+
+  .lux-display { font-family: Fraunces, 'Times New Roman', serif; font-weight: 380; letter-spacing: -0.028em;
+                 line-height: 1.02; color: var(--ink); font-size: 61px; max-width: 880px; margin: 0 auto;
+                 font-variation-settings: "opsz" 144,"SOFT" 70,"WONK" 0; }
+  .lux-display em { font-style: italic; color: var(--ocean-deep);
+                    font-variation-settings: "opsz" 96,"SOFT" 100,"WONK" 1; padding: 0 0.04em; }
+
+  .lux-sub-rule { width: 40px; height: 1px; background: var(--rule); margin: 36px auto 28px; }
+
+  .lux-sub { font-family: 'Instrument Sans', sans-serif; font-size: 17px; line-height: 1.6;
+             color: var(--ink-soft); margin: 0 auto; max-width: 560px; font-weight: 400; }
+  .lux-sub em { font-style: italic; color: var(--ink); }
+
+  .lux-ctas { display:flex; gap: 32px; margin-top: 44px; justify-content: center; align-items: center; }
+  .lux-btn { font-size: 12.5px; padding: 14px 30px; border-radius: 999px; font-weight: 600;
+             letter-spacing: 0.06em; border: 1px solid transparent; transition: all 0.3s; }
+  .lux-btn-primary { background: var(--ink); color: var(--sand); border-color: var(--ink); }
+  .lux-btn-text { background: transparent; color: var(--ink); padding: 14px 0;
+                  font-family: 'Instrument Sans'; font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+                  border-bottom: 1px solid var(--ink); border-radius: 0;
+                  text-transform: none; }
+  .lux-btn-text .arrow { display:inline-block; margin-left: 8px; transition: transform 0.3s; }
+
+  /* —— photo, treated as art —— */
+  .lux-photo-wrap { padding: 24px 64px 0; }
+  .lux-photo { aspect-ratio: 21/9; border-radius: 4px; position: relative; overflow: hidden;
+               background: linear-gradient(180deg, rgba(15,42,56,0.0) 50%, rgba(14,42,56,0.42) 100%),
+                           url('https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=2200&q=85') center/cover;
+               box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset,
+                           0 30px 80px -20px rgba(14,42,56,0.28); }
+  .lux-photo .photo-meta { position: absolute; bottom: 28px; left: 32px; right: 32px;
+                           display:flex; justify-content: space-between; align-items: flex-end;
+                           color: rgba(252,250,245,0.92); }
+  .lux-photo .photo-meta .place { font-family: Fraunces, serif; font-style: italic; font-size: 18px;
+                                  font-variation-settings: "opsz" 96,"SOFT" 100,"WONK" 1; }
+  .lux-photo .photo-meta .note { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+                                 font-weight: 500; opacity: 0.85; }
+  .photo-caption { font-family: Fraunces, serif; font-style: italic; font-size: 12.5px; color: var(--ink-soft);
+                   text-align: right; margin-top: 14px; letter-spacing: 0.02em;
+                   font-variation-settings: "opsz" 72,"SOFT" 100,"WONK" 1; }
+
+  /* —— rail —— */
+  .lux-rail { padding: 80px 64px 48px; display:flex; gap: 44px; justify-content: center;
+              align-items: baseline; flex-wrap: wrap; }
+  .lux-rail .label { font-family: Fraunces; font-size: 13px; font-style: italic; color: var(--ink-soft);
+                     font-variation-settings: "opsz" 72,"SOFT" 100,"WONK" 1; margin-right: 8px; }
+  .lux-rail .name { font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase;
+                    color: var(--ink); font-weight: 500; opacity: 0.7; }
+
+  .lux-rule { height: 1px; background: var(--rule-faint); margin: 24px 64px 0; }
+
+  /* —— features (clean cards, ample padding, single accent) —— */
+  .lux-features { padding: 56px 64px 96px; }
+  .lux-features-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .lux-feature { padding: 36px 32px; border-radius: 6px; background: transparent;
+                 border: 1px solid var(--rule-faint); transition: background 0.3s; }
+  .lux-feature:hover { background: var(--sand-soft); }
+  .lux-feature .ico { width: 32px; height: 32px; margin-bottom: 24px; display:grid; place-items:center;
+                      font-family: Fraunces; font-style: italic; font-size: 22px;
+                      color: var(--ocean-deep); font-variation-settings: "opsz" 72,"SOFT" 100,"WONK" 1; }
+  .lux-feature h4 { font-family: Fraunces, serif; font-size: 19px; font-weight: 400; margin: 0 0 12px;
+                    color: var(--ink); letter-spacing: -0.012em; line-height: 1.15;
+                    font-variation-settings: "opsz" 96,"SOFT" 70; }
+  .lux-feature p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0; }
+</style>
+
+<div class="lux">
+
+  <div class="lux-tag-bar">
+    <span>Hilton Head Travel Co. <span class="dot">·</span> Lowcountry, SC</span>
+    <span>Concierge <span class="dot">·</span> By appointment</span>
+  </div>
+
+  <div class="lux-nav">
+    <span class="logo">Hilton <em>Ahead</em></span>
+    <span class="links"><span>Villas</span><span>Itineraries</span><span>The Guide</span><span>Stories</span><span>About</span></span>
+    <span class="cta">Plan my trip</span>
+  </div>
+
+  <div class="lux-hero">
+    <div class="lux-eyebrow">
+      <span class="e-rule"></span>
+      Concierge Planning <span class="dot" style="color:var(--gold-deep);">·</span> Hilton Head Island
+      <span class="e-rule"></span>
+    </div>
+
+    <h1 class="lux-display">A local-built trip to <em>Hilton&nbsp;Head</em>, without the tourist tax.</h1>
+
+    <div class="lux-sub-rule"></div>
+
+    <p class="lux-sub">Custom itineraries, villa reservations, tee times, and the dinner tables that matter — <em>sorted before you land</em>.</p>
+
+    <div class="lux-ctas">
+      <span class="lux-btn lux-btn-primary">Plan my trip</span>
+      <span class="lux-btn-text">Read a sample itinerary <span class="arrow">→</span></span>
+    </div>
+  </div>
+
+  <div class="lux-photo-wrap">
+    <div class="lux-photo">
+      <div class="photo-meta">
+        <span class="place">Calibogue Sound, first light</span>
+        <span class="note">No. 01 · Spring</span>
+      </div>
+    </div>
+    <p class="photo-caption">— photographed by the founder, May 2026</p>
+  </div>
+
+  <div class="lux-rail">
+    <span class="label">— in good company with —</span>
+    <span class="name">Sea Pines</span>
+    <span class="name">Palmetto Dunes</span>
+    <span class="name">Harbour Town</span>
+    <span class="name">Long Cove</span>
+    <span class="name">Shipyard</span>
+    <span class="name">Port Royal</span>
+  </div>
+
+  <div class="lux-rule"></div>
+
+  <div class="lux-features">
+    <div class="lux-features-grid">
+      <div class="lux-feature">
+        <div class="ico">i.</div>
+        <h4>Villas, vetted &mdash;<br>not just listed.</h4>
+        <p>Sea Pines, Palmetto Dunes, Forest Beach. We've stayed in them. You get the address only after it's earned the spot.</p>
+      </div>
+      <div class="lux-feature">
+        <div class="ico">ii.</div>
+        <h4>Tee times before<br>the public window.</h4>
+        <p>Harbour Town. Atlantic Dunes. Robert Trent Jones. Booked through the on-island circuit — not the public reservation page.</p>
+      </div>
+      <div class="lux-feature">
+        <div class="ico">iii.</div>
+        <h4>The tables that<br>matter, held.</h4>
+        <p>The Sage Room, Charbar, Nectar, Hudson's. Dinner reservations the public site says are full.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top: 16px; padding: 18px 22px; background:#FFF7E6; border-left:3px solid #D9C58C; border-radius:8px; font-size:13.5px; line-height:1.65;">
+<b>What changed (top-tier design principles applied):</b>
+<br>· <b>Type at 61px</b> (20% smaller) with italic Fraunces on "Hilton Head" — the destination becomes the love note, not the bullhorn.
+<br>· <b>Gold-deep eyebrow with hairline rules</b> on either side — the Aman/Belmond move. Refined, not loud.
+<br>· <b>CTA changed from bright cyan to deep ink</b>. Luxury whispers. The secondary CTA is now a quiet text link with an arrow — the only restraint move that consistently reads "expensive."
+<br>· <b>Photo treated as editorial art</b>: 21:9 cinematic crop, golden-hour shot, italic place caption inset on the image, "No. 01 · Spring" issue number on the right (like a magazine plate), and a small founder credit underneath.
+<br>· <b>"In good company with —"</b> beats "Featured properties" — the language a person uses, not a marketing manager.
+<br>· <b>Features use Roman numerals</b> (i. ii. iii.) and serif headlines with intentional line breaks — the Lowcountry-magazine reading rhythm.
+<br>· <b>Whitespace is the headline.</b> 120px top padding on the hero, 56-96px below. Premium = breathing room.
+</div>

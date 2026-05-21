@@ -1,0 +1,114 @@
+<h2>Direction B — refined hero (less local-obsessed)</h2>
+<p class="subtitle">Same presentation, same photo. Headline kept. Subhead pulled off the "I grew up here" claim — three variants below. Click the subhead version that lands.</p>
+
+<style>
+  .stage { --sand:#FCFAF5; --sand-soft:#FFFEFA; --sand-deep:#F0EBE0;
+           --ocean:#7BD8E0; --ocean-mid:#6FC9DE; --ocean-deep:#0F7080; --ocean-light:#E0F5F4;
+           --coral:#EFB8AA; --palm:#42685B; --gold:#D9C58C;
+           --ink:#0E2A38; --ink-soft:#4A5C66; --rule:rgba(14,42,56,0.14);
+           font-family: 'Instrument Sans', -apple-system, system-ui, sans-serif;
+           color: var(--ink);
+           background: var(--sand);
+           background-image:
+             radial-gradient(900px 500px at 12% 8%, rgba(225,248,252,0.55), transparent 65%),
+             radial-gradient(1000px 700px at 90% -10%, rgba(239,184,170,0.10), transparent 60%);
+           border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
+           box-shadow: 0 8px 40px rgba(14,42,56,0.06);
+           margin-bottom: 24px;
+  }
+  .stage-bar { padding: 14px 36px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+               background: color-mix(in srgb, #6FC9DE 88%, transparent); color: var(--ink);
+               display:flex; justify-content:space-between; }
+  .stage-nav { padding: 18px 36px; display:flex; justify-content:space-between; align-items:center;
+               border-bottom: 1px solid var(--rule); }
+  .stage-nav .logo { font-family: Fraunces, serif; font-size: 18px; letter-spacing:-0.01em; }
+  .stage-nav .links { display:flex; gap: 26px; font-size: 13px; color: var(--ink-soft); }
+  .stage-nav .cta { font-size: 12px; padding: 8px 16px; border-radius: 999px; font-weight: 600;
+                    background: var(--ocean-deep); color: var(--sand); }
+  .hero { display:grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items:center; padding: 64px 36px; }
+  .display { font-family: Fraunces, 'Times New Roman', serif; font-weight: 400; letter-spacing: -0.025em; line-height: 1.0;
+             color: var(--ink); font-size: 60px; }
+  .display em { font-style: italic; color: var(--coral); font-variation-settings: "opsz" 72,"SOFT" 100,"WONK" 1; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 18px; }
+  .sub { font-family: 'Instrument Sans', sans-serif; font-size: 17px; line-height: 1.55; color: var(--ink-soft); margin-top: 22px; max-width: 540px; }
+  .ctas { display:flex; gap: 12px; margin-top: 28px; }
+  .btn { font-size: 13px; padding: 12px 22px; border-radius: 999px; font-weight: 600; border: 1px solid transparent; }
+  .btn-primary { background: var(--ocean-deep); color: var(--sand); border-color: var(--ocean-deep); }
+  .btn-ghost { background: transparent; border-color: var(--rule); color: var(--ink); }
+  .hero-photo { aspect-ratio: 4/5; border-radius: 16px; background:
+        linear-gradient(180deg, rgba(15,112,128,0.15), rgba(15,112,128,0.45)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900') center/cover;
+        position: relative; }
+  .hero-photo .stamp { position:absolute; bottom: 16px; left: 16px; background: var(--sand-soft);
+        color: var(--ocean-deep); padding: 6px 12px; border: 1.5px solid var(--ocean-deep);
+        font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+
+  .variants { display:grid; grid-template-columns: 1fr; gap: 14px; }
+  .variant-card { padding: 22px 24px; border-radius: 12px; border: 2px solid rgba(0,0,0,0.08);
+                  background: #fff; cursor: pointer; transition: border-color 0.2s; }
+  .variant-card:hover { border-color: var(--ocean-deep); }
+  .variant-card .v-label { display:flex; justify-content:space-between; align-items:baseline; margin-bottom: 10px; }
+  .variant-card .v-letter { background: #0E2A38; color: #FCFAF5; width:24px; height:24px; border-radius: 6px; display:inline-grid; place-items:center; font-family: Fraunces; font-style: italic; font-size: 14px; margin-right: 10px; vertical-align: middle; }
+  .variant-card .v-name { font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
+  .variant-card .v-tag { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; }
+  .variant-card .v-text { font-family: 'Instrument Sans'; font-size: 16px; line-height: 1.55; color: var(--ink-soft); }
+  .variant-card .v-text b { color: var(--ink); }
+</style>
+
+<div class="stage">
+  <div class="stage-bar">
+    <span>Hilton Head Travel Co. · Hilton Head Island, SC</span>
+    <span>Concierge · 30-min discovery call →</span>
+  </div>
+  <div class="stage-nav">
+    <span class="logo">Hilton Ahead</span>
+    <span class="links"><span>Villas</span><span>Itineraries</span><span>Local Guide</span><span>Stories</span><span>About</span></span>
+    <span class="cta">Plan my trip</span>
+  </div>
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Est. Hilton Head — Lowcountry, SC</div>
+      <div class="display">A local-built trip to <em>Hilton Head</em>, without the tourist tax.</div>
+      <p class="sub"><i>(subhead — pick one below)</i></p>
+      <div class="ctas">
+        <span class="btn btn-primary">Plan my trip</span>
+        <span class="btn btn-ghost">Read a sample itinerary</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="stamp">Harbour Town · Sea Pines</div>
+    </div>
+  </div>
+</div>
+
+<h3 style="margin-top: 32px;">Pick the subhead — click one</h3>
+
+<div class="cards variants">
+  <div class="card variant-card" data-choice="sub-1" onclick="toggleSelect(this)">
+    <div class="v-label">
+      <span><span class="v-letter">1</span><span class="v-name">Service-forward · POV-free</span></span>
+      <span class="v-tag">Most pulled-back · cleanest fit for your note</span>
+    </div>
+    <p class="v-text">Custom itineraries, villa reservations, tee times, and dinner tables — <b>sorted before you land.</b></p>
+  </div>
+
+  <div class="card variant-card" data-choice="sub-2" onclick="toggleSelect(this)">
+    <div class="v-label">
+      <span><span class="v-letter">2</span><span class="v-name">Resident, not native</span></span>
+      <span class="v-tag">Keeps the human · drops "grew up beside it"</span>
+    </div>
+    <p class="v-text">Custom itineraries, villa reservations, tee times, and dinner tables — handled by <b>a Hilton Head resident who books these places every week</b>, not a call center.</p>
+  </div>
+
+  <div class="card variant-card" data-choice="sub-3" onclick="toggleSelect(this)">
+    <div class="v-label">
+      <span><span class="v-letter">3</span><span class="v-name">Operational credibility</span></span>
+      <span class="v-tag">Earns "local-built" through evidence, not biography</span>
+    </div>
+    <p class="v-text">Custom itineraries, villa reservations, tee times, and dinner tables — booked through <b>on-island relationships</b>, not the public reservation page.</p>
+  </div>
+</div>
+
+<div style="margin-top: 24px; padding: 16px 20px; background:#FFF7E6; border-left:3px solid #D9C58C; border-radius:8px; font-size:13px; line-height:1.6;">
+<b>Note on the H1.</b> "A local-built trip" stays accurate even with the toned-down POV — <i>local-built</i> describes the product (built on the island), not your biography. If even that feels too much, the safe rewrite is "A Hilton Head trip planned end-to-end, without the tourist tax." — say the word and I'll swap.
+</div>
