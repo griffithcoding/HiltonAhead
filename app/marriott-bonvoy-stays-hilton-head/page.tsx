@@ -17,7 +17,7 @@ import {
   getFaqSchema,
 } from '@/app/lib/metadata';
 
-const PATH = '/top-marriott-stays-hilton-head';
+const PATH = '/marriott-bonvoy-stays-hilton-head';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url;
 
 // ───────────────────────────────────────────────────────────────────────

@@ -23,7 +23,7 @@ export const footerLinks = {
         { href: '/hilton-head-family-trip-planner', label: 'Family Trips' },
         { href: '/hilton-head-beaches', label: 'Beach Vacation' },
         { href: '/hilton-head-oceanfront-villas', label: 'Oceanfront Villas' },
-        { href: '/top-marriott-stays-hilton-head', label: 'Marriott Stays' },
+        { href: '/marriott-bonvoy-stays-hilton-head', label: 'Marriott Stays' },
         { href: '/hilton-head-winter-rental', label: 'Winter Rental' },
         { href: '/hilton-head-weather', label: 'Weather by Month' },
         { href: '/events', label: 'Events Calendar' },

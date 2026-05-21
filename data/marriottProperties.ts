@@ -1,7 +1,7 @@
 /**
  * Marriott Bonvoy properties on Hilton Head Island.
  *
- * Used by /top-marriott-stays-hilton-head to render the per-property cards
+ * Used by /marriott-bonvoy-stays-hilton-head to render the per-property cards
  * + ItemList JSON-LD. Single source of truth — do not duplicate property
  * facts elsewhere in the codebase.
  *
