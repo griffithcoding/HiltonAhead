@@ -14,6 +14,20 @@ import { brand } from '@/data/brand'
 import BusinessCard from '@/components/local/BusinessCard'
 import IndustryNav from '@/components/local/IndustryNav'
 import SponsorSlot from '@/components/sponsorship/SponsorSlot'
+import AmazonProductGrid from '@/components/affiliate/AmazonProductGrid'
+import type { AmazonProductCategoryId } from '@/data/amazonProducts'
+
+/**
+ * Per-industry Amazon product category mapping. Industries not listed here
+ * render no product grid (no relevant gear to recommend).
+ */
+const INDUSTRY_TO_PRODUCT_CATEGORY: Partial<
+  Record<IndustrySlug, AmazonProductCategoryId>
+> = {
+  'water-activities': 'water-sports',
+  'family-activities': 'family-beach',
+  // 'fishing-charters-dolphin-tours': 'fishing-gear',  // enable if slug exists
+}
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url
 
@@ -239,6 +253,16 @@ export default async function IndustryPage({
             ))}
           </div>
         </section>
+
+        {/* Amazon product grid (only for industries with relevant gear) */}
+        {INDUSTRY_TO_PRODUCT_CATEGORY[slug as IndustrySlug] && (
+          <div className="mt-12">
+            <AmazonProductGrid
+              category={INDUSTRY_TO_PRODUCT_CATEGORY[slug as IndustrySlug]!}
+              placement={`local/${slug}/${INDUSTRY_TO_PRODUCT_CATEGORY[slug as IndustrySlug]}`}
+            />
+          </div>
+        )}
 
         {/* Browse other industries */}
         <section className="mt-16 border-t border-rule-soft pt-12">

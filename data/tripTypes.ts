@@ -12,6 +12,28 @@
  */
 
 import { photos } from './photos';
+import type { AffiliateProgramId } from './affiliateLinks';
+import type { AmazonProductCategoryId } from './amazonProducts';
+
+/**
+ * Optional affiliate placement on a trip-type landing page. Rendered by
+ * `components/sections/TripTypeLanding.tsx` between the tradeoffs and the
+ * concierge CTA — never replacing the concierge CTA, always alongside.
+ *
+ * Pages with at least one entry also auto-render <AffiliateDisclosure>
+ * above the fold (FTC requirement — disclosure must be near the recommendation).
+ */
+export type TripAffiliateSlot = {
+  programId: AffiliateProgramId;
+  /** Override the program's defaultDeeplink. */
+  deeplink?: string;
+  /** Analytics label. Defaults to the trip-type slug. */
+  placement?: string;
+  /** Optional UI overrides — fall back to program defaults if omitted. */
+  headline?: string;
+  description?: string;
+  cta?: string;
+};
 
 export type TripTypeLanding = {
   slug: string;
@@ -49,6 +71,26 @@ export type TripTypeLanding = {
    * end-to-end. When set, the trip-type page renders a "See the story" rail.
    */
   relatedStorySlug?: string;
+  /**
+   * Optional affiliate cards to render on the page. Up to 2 fit cleanly in
+   * the layout. When set, the page also renders an <AffiliateDisclosure>
+   * above the fold per FTC guidance.
+   */
+  affiliates?: TripAffiliateSlot[];
+  /**
+   * Optional Amazon product grid category. When set, TripTypeLanding renders
+   * <AmazonProductGrid> for that category between the tradeoffs section and
+   * any affiliate cards. The grid's own header includes FTC disclosure copy.
+   *
+   * Pick the category that matches the trip's buyer-intent:
+   *   - 'beach-essentials' — generic beach gear (most beach trips)
+   *   - 'family-beach' — kids + parents shopping
+   *   - 'premium-beach' — oceanfront villa renters (higher AOV products)
+   *   - 'couples-beach' — honeymoon / couples weekend
+   *   - 'water-sports' — kayak/SUP/boat-day pages
+   *   - 'beach-reads' — slower stays where books matter
+   */
+  amazonProductCategory?: AmazonProductCategoryId;
 };
 
 export const tripTypes: TripTypeLanding[] = [
@@ -72,7 +114,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head stay and play',
     ],
     hook:
-      'Eight golf courses inside fifteen minutes, three of them national Top-100. We book the Harbour Town tee times that never surface on the resort\u2019s public page, negotiate villa rates with the partner operators, and land the whole group at first tee with time to stretch.',
+      'Eight golf courses inside fifteen minutes, three of them national Top-100. We sequence the Harbour Town tee times, match the group to the right villa, and land the whole party at first tee with time to stretch.',
     reasons: [
       {
         title: 'Harbour Town priority',
@@ -111,6 +153,16 @@ export const tripTypes: TripTypeLanding[] = [
     ],
     blogPostSlug: 'hilton-head-golf-trip',
     relatedStorySlug: 'fall-golf-weekend',
+    affiliates: [
+      {
+        programId: 'golfnow',
+        placement: 'golf-packages',
+        headline: 'Browse tee times across Hilton Head',
+        description:
+          'Live availability for Harbour Town, Palmetto Dunes, Sea Pines, and the rest of the island’s public courses. We still book the priority Sea Pines slots ourselves — GolfNow is for the in-between rounds.',
+        cta: 'See live tee times →',
+      },
+    ],
   },
   {
     slug: 'weddings',
@@ -176,6 +228,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'oceanfront-villas',
+    amazonProductCategory: 'premium-beach',
     path: '/hilton-head-oceanfront-villas',
     eyebrow: 'Stay style · Hilton Head Island',
     tagline: {
@@ -232,6 +285,24 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.surfSoft,    caption: 'High tide, end of July' },
     ],
     blogPostSlug: '2026-best-places-to-stay-hilton-head',
+    affiliates: [
+      {
+        programId: 'booking',
+        placement: 'trip/oceanfront-villas/booking',
+        headline: 'Hilton Head oceanfront stays',
+        description:
+          'Free cancellation on most direct-beach properties. Filter by dates to see what’s actually on the dune line vs. marketed as “oceanfront.” We’ll happily review your shortlist on a discovery call.',
+        cta: 'Search oceanfront stays →',
+      },
+      {
+        programId: 'vrbo',
+        placement: 'trip/oceanfront-villas/vrbo',
+        headline: 'Oceanfront villa rentals (whole house)',
+        description:
+          'Vrbo’s oceanfront inventory — true dune-line villas with private kitchens and patios. Best for 5+ night stays and groups of 4-plus.',
+        cta: 'Browse oceanfront villas →',
+      },
+    ],
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -239,6 +310,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'family-trip-planner',
+    amazonProductCategory: 'family-beach',
     path: '/hilton-head-family-trip-planner',
     eyebrow: 'Trip type · Hilton Head Island',
     tagline: {
@@ -296,6 +368,24 @@ export const tripTypes: TripTypeLanding[] = [
     ],
     blogPostSlug: 'hilton-head-with-kids',
     relatedStorySlug: 'summer-family-week',
+    affiliates: [
+      {
+        programId: 'booking',
+        placement: 'trip/family-planner/booking',
+        headline: 'Family-friendly stays on Hilton Head',
+        description:
+          'Resort rooms and family hotels with free cancellation, broken out by Sea Pines, Palmetto Dunes, and Forest Beach. Easier than Vrbo if you want a single check-in desk and on-site amenities.',
+        cta: 'Search family stays →',
+      },
+      {
+        programId: 'vrbo',
+        placement: 'trip/family-planner/vrbo',
+        headline: 'Whole-house rentals on Hilton Head',
+        description:
+          'Multi-bedroom villas with kitchens, washer/dryers, and pools — built for families who refuse to share one bathroom. Search by dates and we’ll help narrow the shortlist.',
+        cta: 'Browse on Vrbo →',
+      },
+    ],
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -303,6 +393,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'spring-break',
+    amazonProductCategory: 'beach-essentials',
     path: '/hilton-head-spring-break',
     eyebrow: 'Season · Mid-March to April',
     tagline: {
@@ -359,6 +450,24 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.lighthouse,  caption: 'Harbour Town, pre-tournament' },
     ],
     blogPostSlug: 'best-time-to-visit-hilton-head',
+    affiliates: [
+      {
+        programId: 'booking',
+        placement: 'trip/spring-break/booking',
+        headline: 'Spring-break resort + hotel search',
+        description:
+          'Free cancellation on most stays — useful when spring weather changes plans. We steer clients away from RBC Heritage week unless that’s the trip, so filter your dates carefully.',
+        cta: 'Search spring stays →',
+      },
+      {
+        programId: 'vrbo',
+        placement: 'trip/spring-break/vrbo',
+        headline: 'Spring-break villa search',
+        description:
+          'Whole-house rentals for the mid-March through April window. Inventory is widest the week before and after the RBC Heritage; we’ll help you avoid tournament-week premiums.',
+        cta: 'Browse on Vrbo →',
+      },
+    ],
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -422,6 +531,16 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.dock,        caption: 'Creek dock, after the meal' },
     ],
     blogPostSlug: 'best-time-to-visit-hilton-head',
+    affiliates: [
+      {
+        programId: 'vrbo',
+        placement: 'thanksgiving',
+        headline: 'Thanksgiving-week villa search',
+        description:
+          'Inventory is at its widest of the year and rates run roughly half of July. Whole-house rentals with kitchens are the right shape for multi-generation Thanksgiving weeks.',
+        cta: 'Browse on Vrbo →',
+      },
+    ],
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -484,6 +603,18 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.dock,       caption: 'May River at low tide' },
       { ...photos.harborBoats,caption: 'Boats at Palmetto Bluff' },
     ],
+    affiliates: [
+      {
+        programId: 'booking',
+        placement: 'bluffton-planner',
+        deeplink:
+          'https://www.booking.com/searchresults.html?ss=Bluffton%2C+SC',
+        headline: 'Bluffton hotels and inns',
+        description:
+          'Old Town inns, Palmetto Bluff resort rooms, and a few boutique stays just off May River. Free cancellation on most properties.',
+        cta: 'See stays in Bluffton →',
+      },
+    ],
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -509,7 +640,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Sea Pines marina villa',
     ],
     hook:
-      'Harbour Town is the one-square-mile marina village at the south end of Sea Pines. Villa inventory inside this pocket is small (roughly 180 units) and the rate is the island\u2019s steepest for a reason: most guests never need to move their car. We book four buildings here consistently.',
+      'Harbour Town is the one-square-mile marina village at the south end of Sea Pines. Villa inventory inside this pocket is small (roughly 180 units) and the rate is the island\u2019s steepest for a reason: most guests never need to move their car. We point repeat guests at the four buildings worth chasing.',
     reasons: [
       {
         title: 'Walking radius beats driving radius',
@@ -547,6 +678,28 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.villa,       caption: 'Heritage Villas, private owner' },
     ],
     blogPostSlug: 'sea-pines-guide',
+    affiliates: [
+      {
+        programId: 'vrbo',
+        placement: 'harbour-town-villas',
+        deeplink:
+          'https://www.vrbo.com/search?q=Harbour+Town+Hilton+Head',
+        headline: 'Harbour Town villa rentals',
+        description:
+          'Private-owner villas inside Sea Pines — the inventory that doesn’t show up on the resort’s public reservation page. Search by dates and we’ll help vet the shortlist.',
+        cta: 'Browse on Vrbo →',
+      },
+      {
+        programId: 'booking',
+        placement: 'harbour-town-villas-hotel',
+        deeplink:
+          'https://www.booking.com/searchresults.html?ss=Sea+Pines+Resort+Hilton+Head',
+        headline: 'Or stay at Inn at Harbour Town',
+        description:
+          'Hotel-caliber service, villa-level amenities, walkable to the 18th green and Quarterdeck. Best for couples and small groups who want zero house-management overhead.',
+        cta: 'See rooms on Booking.com →',
+      },
+    ],
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -554,6 +707,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'beaches',
+    amazonProductCategory: 'beach-essentials',
     path: '/hilton-head-beaches',
     eyebrow: 'Activity · Hilton Head beaches',
     tagline: {
@@ -619,6 +773,7 @@ export const tripTypes: TripTypeLanding[] = [
   // ———————————————————————————————————————————————————————————————
   {
     slug: 'honeymoon',
+    amazonProductCategory: 'couples-beach',
     path: '/hilton-head-honeymoon',
     eyebrow: 'Trip type · Couples & honeymoon',
     tagline: {
@@ -677,6 +832,16 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.hammock, caption: 'Between rounds, South Beach' },
     ],
     blogPostSlug: 'shelter-cove-guide',
+    affiliates: [
+      {
+        programId: 'booking',
+        placement: 'honeymoon',
+        headline: 'Honeymoon stays on Hilton Head & Bluffton',
+        description:
+          'Resort and boutique-inn options for couples — the Sea Pines and Shelter Cove pockets we recommend, plus Montage Palmetto Bluff for the splurge layer. Most properties have free cancellation.',
+        cta: 'See couples-friendly stays →',
+      },
+    ],
   },
 
   // ———————————————————————————————————————————————————————————————

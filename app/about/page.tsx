@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import InsiderProof from '@/components/sections/InsiderProof';
 import { photos } from '@/data/photos';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
   getLocalBusinessSchema,
+  getPersonSchema,
 } from '@/app/lib/metadata';
 import { testimonialsMeta } from '@/data/testimonials';
 
@@ -38,6 +41,7 @@ export default function AboutPage() {
         }
       : undefined,
   );
+  const person = getPersonSchema();
 
   return (
     <>
@@ -49,11 +53,23 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
+      />
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />
 
-        <section className="mt-16 md:mt-20">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+          ]}
+          className="mt-12"
+        />
+
+        <section className="mt-8 md:mt-10">
           <SectionHead
             number="№ 01"
             eyebrow="About"
@@ -111,6 +127,16 @@ export default function AboutPage() {
 
             <p className="mt-5 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
               Either way, you text us when something changes. We handle it.
+            </p>
+
+            <p className="mt-8 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
+              Curious who&apos;s on the other end of those texts?{' '}
+              <Link
+                href="/founder"
+                className="font-medium text-coral underline decoration-coral/30 underline-offset-4 transition-colors hover:decoration-coral"
+              >
+                Read the founder&apos;s story →
+              </Link>
             </p>
           </div>
 

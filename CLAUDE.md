@@ -72,6 +72,28 @@ Events POST to `/api/directory/track` and land in `directory_events` (IP is SHA-
 ### Outreach (backlink) subsystem
 `app/admin/(gated)/outreach/` + `lib/outreach/{templates,compliance}.ts` + migration `007_outreach_crm.sql`. Tracks pitch opportunities, stages, notes, and publishes.
 
+### LLM SEO / GEO surface
+The site is engineered to be cited by ChatGPT / Claude / Gemini / Perplexity for Hilton Head travel queries. Read [the 90-day roadmap](~/.claude/plans/build-llm-seo-roadmap-generic-cerf.md) before changing anything in this section.
+
+**Crawler policy lives in `app/robots.ts`.** `LLM_USER_AGENTS` is the explicit allow-list (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot, Google-Extended, Applebot-Extended, Meta-ExternalAgent, cohere-ai, DuckAssistBot, Diffbot, +variants). Do **not** add a `Disallow: /` for any LLM crawler. If you ever need to block one, add a named rule above the catch-all `*`.
+
+**`public/llms.txt` and `public/llms-full.txt` are static, manually maintained**, and must be re-synced by hand whenever brand/founder/services/FAQ data changes meaningfully. They are NOT generated from `data/` at build time. The `llms.txt` follows the [llmstxt.org](https://llmstxt.org) spec; `llms-full.txt` is the long-form companion linked from it.
+
+**Schema helpers live in `app/lib/metadata.ts`.** This is the single entry point for every JSON-LD type the site emits. Extend, don't replace. Current types: `generatePageMetadata`, `getTravelAgencySchema`, `getLocalBusinessSchema`, `getOrganizationSchema`, `getPersonSchema`, `getFaqSchema`, `getBreadcrumbSchema`, `getServiceSchema`, `getBlogPostingSchema`, `getStoryArticleSchema`, `getStoriesCollectionSchema`, `getItemListSchema`, `getReviewSchema`, `getPlaceSchema`, `getLodgingBusinessSchema`, `getEventSchema`, `getSportsActivityLocationSchema`, `getHowToSchema`, `getSpeakableSchema`, `getWebSiteSchema`, `getDefinedTermSchema`, `getQaPageSchema`. `getWebSiteSchema()` intentionally omits `potentialAction` (SearchAction) until a real `/search?q=` handler exists — re-add when /search ships.
+
+**Site-wide schema is emitted from `app/layout.tsx`:** `getWebSiteSchema()` + `getOrganizationSchema()`. Per-page schemas (TravelAgency on homepage, FAQPage on /faq, BlogPosting on /blog/[slug], etc.) emit additionally with stable `@id` anchors (`#website`, `#organization`, `#travelagency`, `#localbusiness`, `/founder#person`) so duplicates link rather than conflict.
+
+**`data/founder.ts` is the single source of truth for the founder Person entity.** William Griffith's bio, jobTitle, knowsAbout, sameAs, and image path live here. The `getPersonSchema()` helper reads it. Update here, not in JSX.
+
+**FAQ structure in `data/faq.ts`:** `faq.items` (5 pairs) is the legacy homepage subset; `faqClusters` is the full 8-cluster matrix (30 pairs total) used on `/faq`; `faqAll` is the flat list for FAQPage schema. Add new questions to a cluster, not to `faq.items`. Per-industry FAQ subsets are nested inside `data/localBusinesses.ts` and surface on `/local/[industry]` pages.
+
+**LLM-citation UI components in `components/ui/`:**
+- `Breadcrumbs.tsx` — visible breadcrumb UI. Mirror the JSON-LD `getBreadcrumbSchema()` items array. Render on every detail page (about/founder/faq today; expand to blog/neighborhood/local/story).
+- `TldrBlock.tsx` — direct-answer block. The `.tldr-block` class is referenced by the `Speakable` JSON-LD selector contract — don't rename without also updating the schema helper callers.
+- `QuickFact.tsx` — citable factoid block (`.quick-fact` class). Use 1–3 per long-form post.
+
+**Speakable selector contract.** When emitting `getSpeakableSchema({ cssSelectors })`, the page MUST render a real DOM element matching each selector. Today's active selectors: `.faq-answer`, `.cluster-summary` (on /faq), `.tldr-block` (when TldrBlock is rendered). Adding a selector to the schema without rendering it breaks voice/AI overview previews.
+
 ## Design system
 
 Tailwind 4 with CSS-based config in `app/globals.css` (`@theme inline` block). Use the custom palette tokens, not raw hex:

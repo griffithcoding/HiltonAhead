@@ -75,9 +75,9 @@ export const neighborhoods: NeighborhoodLanding[] = [
           'South Beach Lane villas put you 90 seconds from the sand and 15 minutes on a bike to Harbour Town. Golf, dinner, sunset, all without the car.',
       },
       {
-        title: 'Partner-rate advantage',
+        title: 'Built for repeat visitors',
         body:
-          'We book four villa buildings on South Beach Lane we\u2019ve personally vetted. Resort guests also get 120-day Harbour Town tee-time priority.',
+          'We walk South Beach Lane villas in person before recommending them, and Sea Pines resort guests get 120-day Harbour Town tee-time priority we plan around.',
       },
       {
         title: 'Sunset nobody else gets',
@@ -95,7 +95,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       'You\u2019ll pay a premium for the address. The entrance gate backs up 10 a.m. to 12 p.m. in summer. And the best dinners are actually outside the plantation gates (we plan around this).',
     properties: [
       { name: 'The Inn & Club at Harbour Town', note: 'Golf-first hotel; walk to first tee' },
-      { name: 'South Beach Lane villas (private)', note: '4 buildings we book, 90 sec to sand' },
+      { name: 'South Beach Lane villas (private)', note: 'Walkable villas, 90 sec to sand' },
       { name: 'Baynard Cove & Ocean Gate', note: 'Residential-feel single-family homes' },
       { name: 'Harbour Town Villas', note: 'Marina views, short walk to lighthouse' },
     ],

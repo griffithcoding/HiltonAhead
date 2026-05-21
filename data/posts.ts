@@ -7,6 +7,25 @@
  * for <strong>, <em>, and <a href>.
  */
 
+import type { AffiliateProgramId } from './affiliateLinks';
+
+/**
+ * Optional affiliate placement at the foot of a post (between body and the
+ * inline concierge CTA). Opt-in per post — leave undefined for posts where
+ * a sponsored card would feel off-tone.
+ */
+export type PostAffiliateSlot = {
+  programId: AffiliateProgramId;
+  /** Override the program's defaultDeeplink. */
+  deeplink?: string;
+  /** Analytics label. Defaults to `blog/{slug}`. */
+  placement?: string;
+  /** Optional UI overrides — fall back to program defaults if omitted. */
+  headline?: string;
+  description?: string;
+  cta?: string;
+};
+
 /** Names of inline interactive components the `embed` block can render. */
 export type PostEmbedComponent =
   // Golf tier-list / Heritage 2027 page (PascalCase)
@@ -129,6 +148,11 @@ export type Post = {
    *   'sea-pines' | 'palmetto-dunes' | 'forest-beach' | 'shelter-cove'
    */
   relatedNeighborhoods?: string[];
+  /**
+   * Optional affiliate card rendered at the end of the post body. Leave
+   * undefined to skip — keeps the integration tasteful and per-post.
+   */
+  affiliate?: PostAffiliateSlot;
   body: PostBlock[];
 };
 
@@ -1251,7 +1275,7 @@ const postPalmettoDunes: Post = {
     },
     {
       kind: 'p',
-      html: "The oceanfront villa lanes. Mooring Buoy, Sea Oaks, Shelter Cove Way. Are where the serious bookings live. Five-bedroom houses with private pools, steps from the sand. These are rented through the resort's villa program and a small group of independent managers. Quality is high but variable; we stick to four buildings we've personally vetted.",
+      html: "The oceanfront villa lanes. Mooring Buoy, Sea Oaks, Shelter Cove Way. Are where the serious bookings live. Five-bedroom houses with private pools, steps from the sand. These are rented through the resort's villa program and a small group of independent managers. Quality is high but variable; we point clients toward four buildings we know firsthand from walking the property.",
     },
     {
       kind: 'h3',

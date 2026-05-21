@@ -6,6 +6,8 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import {
   SectionHead,
   Divider,
@@ -264,6 +266,37 @@ export default async function NeighborhoodPage({
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        {/* ——— Affiliate booking cards (browse direct) ———
+            Booking + Vrbo side-by-side. Booking's commission tier is
+            higher per stay, so it gets the first slot. Both function
+            in pre-AID fallback mode — they still hit a real Hilton
+            Head search results page, just without our tracking ID. */}
+        <section
+          aria-label="Direct booking options"
+          className="mt-16"
+        >
+          <h3 className="eyebrow text-coral">Or browse on your own</h3>
+          <AffiliateDisclosure variant="inline" className="mt-3 mb-5" />
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+            <AffiliateCard
+              programId="booking"
+              deeplink={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent(`${n.name} Hilton Head Island, SC`)}`}
+              placement={`neighborhood/${n.slug}/booking`}
+              headline={`Hotels & stays in ${n.name}`}
+              description={`Free cancellation on most ${n.name} stays. Filter by dates to see what’s actually available before you commit.`}
+              cta={`Search ${n.name} stays →`}
+            />
+            <AffiliateCard
+              programId="vrbo"
+              deeplink={`https://www.vrbo.com/search?q=${encodeURIComponent(`${n.name} Hilton Head Island, SC`)}`}
+              placement={`neighborhood/${n.slug}/vrbo`}
+              headline={`Whole-house rentals in ${n.name}`}
+              description={`Vrbo's ${n.name} inventory beyond our shortlist — useful if your dates overlap with the high-demand weeks our partners are already booked.`}
+              cta={`Browse ${n.name} on Vrbo →`}
+            />
           </div>
         </section>
 

@@ -439,8 +439,8 @@ const summerFamilyWeek: Story = {
     attribution: 'Parent, intake form',
   },
   pinPhoto: {
-    src: photos.bikePath.src,
-    alt: 'Wooden path winding through coastal pines',
+    src: photos.coastalOak.src,
+    alt: 'Sunlight filtering through tall coastal pines along a Sea Pines bike path',
     caption: 'Sea Pines · kids bike loop',
   },
 
@@ -539,7 +539,7 @@ const summerFamilyWeek: Story = {
 
   takeaways: [
     { ...photos.dunesPath,    caption: 'Coligny · the boardwalk' },
-    { ...photos.bikePath,     caption: 'Sea Pines · forest path' },
+    { ...photos.coastalOak,   caption: 'Sea Pines · forest path' },
     { ...photos.lagoonAerial, caption: 'Palmetto Dunes · resort lagoons' },
     { ...photos.beachMorning, caption: 'Forest Beach · 7 a.m.' },
     { ...photos.villa,        caption: 'The villa · 4BR oceanfront' },

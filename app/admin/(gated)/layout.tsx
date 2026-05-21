@@ -20,6 +20,7 @@ const NAV = [
   { href: '/admin/purchases', label: 'Purchases' },
   { href: '/admin/meetings', label: 'Meetings' },
   { href: '/admin/directory', label: 'Directory' },
+  { href: '/admin/affiliates', label: 'Affiliates' },
   { href: '/admin/outreach', label: 'Backlink Outreach' },
   { href: '/admin/content/syndicate', label: 'Content Syndicate' },
 ];
