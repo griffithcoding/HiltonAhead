@@ -4,9 +4,11 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
+  getPersonSchema,
 } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -26,6 +28,7 @@ export default function FounderPage() {
     { name: 'Home', path: '/' },
     { name: 'Founder', path: '/founder' },
   ]);
+  const person = getPersonSchema();
 
   return (
     <>
@@ -33,11 +36,23 @@ export default function FounderPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
+      />
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />
 
-        <section className="mt-16 md:mt-20">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Founder', path: '/founder' },
+          ]}
+          className="mt-12"
+        />
+
+        <section className="mt-8 md:mt-10">
           <SectionHead
             number="№ 01"
             eyebrow="Bio"

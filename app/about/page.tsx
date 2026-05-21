@@ -7,10 +7,12 @@ import FinalCta from '@/components/sections/FinalCta';
 import InsiderProof from '@/components/sections/InsiderProof';
 import { photos } from '@/data/photos';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
   getLocalBusinessSchema,
+  getPersonSchema,
 } from '@/app/lib/metadata';
 import { testimonialsMeta } from '@/data/testimonials';
 
@@ -39,6 +41,7 @@ export default function AboutPage() {
         }
       : undefined,
   );
+  const person = getPersonSchema();
 
   return (
     <>
@@ -50,11 +53,23 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
+      />
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />
 
-        <section className="mt-16 md:mt-20">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+          ]}
+          className="mt-12"
+        />
+
+        <section className="mt-8 md:mt-10">
           <SectionHead
             number="№ 01"
             eyebrow="About"

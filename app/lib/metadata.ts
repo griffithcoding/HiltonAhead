@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { brand } from '@/data/brand'
+import { founder } from '@/data/founder'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url
 
@@ -641,6 +642,198 @@ export function getSportsActivityLocationSchema(course: {
       addressLocality: course.locationName.replace(/, [A-Z]{2}$/, ''),
       addressRegion: 'SC',
       addressCountry: 'US',
+    },
+  }
+}
+
+/**
+ * JSON-LD Person — for the founder. The E-E-A-T anchor that LLMs
+ * (and Google's Knowledge Graph) use to attach expertise to a real
+ * named human rather than a faceless brand. Render on /about,
+ * /founder, and as `author` on every BlogPosting.
+ */
+export function getPersonSchema() {
+  const sameAs = [...founder.sameAs].filter(Boolean)
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${siteUrl}/founder#person`,
+    name: founder.name,
+    givenName: founder.givenName,
+    familyName: founder.familyName,
+    jobTitle: founder.jobTitle,
+    description: founder.shortBio,
+    url: `${siteUrl}/founder`,
+    image: founder.imagePath
+      ? `${siteUrl}${founder.imagePath}`
+      : `${siteUrl}/logo.png`,
+    knowsAbout: founder.knowsAbout,
+    worksFor: {
+      '@type': 'Organization',
+      '@id': `${siteUrl}#organization`,
+      name: brand.legalName,
+      url: siteUrl,
+    },
+    homeLocation: {
+      '@type': 'Place',
+      name: 'Hilton Head Island, SC',
+    },
+  }
+  if (founder.email) schema.email = founder.email
+  if (sameAs.length > 0) schema.sameAs = sameAs
+  return schema
+}
+
+/**
+ * JSON-LD HowTo — for procedural posts ("How to plan a Hilton Head week").
+ * Google rich results require a step list with at least 2 items.
+ */
+export function getHowToSchema(howto: {
+  name: string
+  description: string
+  totalTime?: string // ISO 8601 duration, e.g. PT2H, P3D
+  estimatedCost?: { value: number; currency: string }
+  supply?: string[]
+  tool?: string[]
+  steps: Array<{ name: string; text: string; url?: string; imageUrl?: string }>
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: howto.name,
+    description: howto.description,
+    ...(howto.totalTime ? { totalTime: howto.totalTime } : {}),
+    ...(howto.estimatedCost
+      ? {
+          estimatedCost: {
+            '@type': 'MonetaryAmount',
+            value: howto.estimatedCost.value,
+            currency: howto.estimatedCost.currency,
+          },
+        }
+      : {}),
+    ...(howto.supply && howto.supply.length > 0
+      ? {
+          supply: howto.supply.map((s) => ({
+            '@type': 'HowToSupply',
+            name: s,
+          })),
+        }
+      : {}),
+    ...(howto.tool && howto.tool.length > 0
+      ? { tool: howto.tool.map((t) => ({ '@type': 'HowToTool', name: t })) }
+      : {}),
+    step: howto.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      ...(step.url ? { url: step.url } : {}),
+      ...(step.imageUrl ? { image: step.imageUrl } : {}),
+    })),
+  }
+}
+
+/**
+ * JSON-LD Speakable — voice-assistant + AI-overview speakable selector.
+ * Caller supplies CSS selectors for the parts of the page that should be
+ * read aloud (TL;DR blocks, FAQ answers, top-of-page summaries).
+ *
+ * Wrap inside a WebPage @type since Speakable is a property, not a top-level type.
+ */
+export function getSpeakableSchema(opts: {
+  url: string
+  cssSelectors: string[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: opts.url,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: opts.cssSelectors,
+    },
+  }
+}
+
+/**
+ * JSON-LD WebSite — site-wide identity anchor.
+ *
+ * NOTE: `potentialAction` (SearchAction / sitelinks searchbox) is
+ * intentionally omitted until a real `/search?q=` handler exists.
+ * Pointing it at /blog?q= fails Google Rich Results validation because
+ * the page does not consume the `q` parameter. Add the SearchAction
+ * back when /search ships in Phase 2.
+ */
+export function getWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${siteUrl}#website`,
+    url: siteUrl,
+    name: brand.name,
+    alternateName: brand.legalName,
+    description: brand.shortDescription,
+    inLanguage: 'en-US',
+    publisher: { '@id': `${siteUrl}#organization` },
+  }
+}
+
+/**
+ * JSON-LD DefinedTerm — for /guide/[slug] glossary pages.
+ * "What is Sea Pines Plantation?" / "What is the Lowcountry?" — direct-answer
+ * content that LLMs surface in voice answers and AI overviews.
+ */
+export function getDefinedTermSchema(term: {
+  name: string
+  description: string
+  url: string
+  inDefinedTermSet?: string
+  termCode?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTerm',
+    name: term.name,
+    description: term.description,
+    url: term.url,
+    inDefinedTermSet:
+      term.inDefinedTermSet || `${siteUrl}/guide`,
+    ...(term.termCode ? { termCode: term.termCode } : {}),
+  }
+}
+
+/**
+ * JSON-LD QAPage — single-question pages. Differentiated from FAQPage,
+ * which expects multiple Q&A items. Use on dedicated answer pages and
+ * on direct-answer blog posts whose headline is a question.
+ */
+export function getQaPageSchema(qa: {
+  question: string
+  answer: string
+  url: string
+  authorName?: string
+  datePublished?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'QAPage',
+    mainEntity: {
+      '@type': 'Question',
+      name: qa.question,
+      text: qa.question,
+      answerCount: 1,
+      url: qa.url,
+      ...(qa.datePublished ? { datePublished: qa.datePublished } : {}),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: qa.answer,
+        ...(qa.authorName
+          ? {
+              author: { '@type': 'Person', name: qa.authorName },
+            }
+          : {}),
+      },
     },
   }
 }
