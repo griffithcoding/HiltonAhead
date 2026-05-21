@@ -22,7 +22,8 @@ export type AffiliateProgramId =
   | 'viator'
   | 'getyourguide'
   | 'golfnow'
-  | 'amazon';
+  | 'amazon'
+  | 'marriott';
 
 export interface AffiliateProgram {
   id: AffiliateProgramId;
@@ -37,6 +38,19 @@ export interface AffiliateProgram {
    * passing the raw URL through (no tracking, but the link still works).
    */
   trackingIdEnv: string;
+  /**
+   * Optional placement-specific tracking IDs. Maps a placement-prefix key to
+   * an env var name. When a component passes `placement="blog/post-slug"`,
+   * `withAffiliateParams()` checks each key here against the placement
+   * string (case-insensitive prefix match). First match wins; if none match
+   * (or no placement is passed), the helper falls back to `trackingIdEnv`.
+   *
+   * Amazon uses this to split clicks across per-surface tracking IDs (blog,
+   * FAQ, local directory, newsletter) within the same Associates account so
+   * surface-level attribution shows up in Amazon's earnings reports without
+   * needing multiple accounts.
+   */
+  placementTagEnv?: Record<string, string>;
   /**
    * URL parameter the network expects the tracking ID under.
    *   booking.com → aid
@@ -129,12 +143,38 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
       'https://www.golfnow.com/tee-times/area/2106-hilton-head-sc-tee-times',
     pitch: 'Tee times across Harbour Town, Palmetto Dunes, Sea Pines and more.',
   },
+  marriott: {
+    id: 'marriott',
+    name: 'Marriott Bonvoy',
+    shortName: 'Marriott',
+    brandDomain: 'marriott.com',
+    trackingIdEnv: 'AFFILIATE_MARRIOTT_AID',
+    trackingParam: 'camref',
+    staticParams: { irgwc: '1' },
+    defaultDeeplink:
+      'https://www.marriott.com/search/findHotels.mi?destinationAddress.destination=Hilton+Head+Island%2C+SC&searchType=InCity',
+    pitch:
+      'Marriott Vacation Club villas + the Westin on Hilton Head — Bonvoy points eligible.',
+  },
   amazon: {
     id: 'amazon',
     name: 'Amazon',
     shortName: 'Amazon',
     brandDomain: 'amazon.com',
     trackingIdEnv: 'AFFILIATE_AMAZON_TAG',
+    /**
+     * Per-surface attribution. Each maps to a separately-created Amazon
+     * Associates tracking ID that rolls up to the same account. The keys
+     * are matched against the `placement` prop on AffiliateCard/Link via
+     * case-insensitive prefix match — e.g. `placement="blog/spring-break"`
+     * resolves to AFFILIATE_AMAZON_TAG_BLOG.
+     */
+    placementTagEnv: {
+      blog: 'AFFILIATE_AMAZON_TAG_BLOG',
+      faq: 'AFFILIATE_AMAZON_TAG_FAQ',
+      local: 'AFFILIATE_AMAZON_TAG_LOCAL',
+      newsletter: 'AFFILIATE_AMAZON_TAG_NEWSLETTER',
+    },
     trackingParam: 'tag',
     pitch: 'Beach gear, packing essentials, and recommended reading.',
   },
