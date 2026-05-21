@@ -22,7 +22,8 @@ export type AffiliateProgramId =
   | 'viator'
   | 'getyourguide'
   | 'golfnow'
-  | 'amazon';
+  | 'amazon'
+  | 'marriott';
 
 export interface AffiliateProgram {
   id: AffiliateProgramId;
@@ -141,6 +142,19 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
     defaultDeeplink:
       'https://www.golfnow.com/tee-times/area/2106-hilton-head-sc-tee-times',
     pitch: 'Tee times across Harbour Town, Palmetto Dunes, Sea Pines and more.',
+  },
+  marriott: {
+    id: 'marriott',
+    name: 'Marriott Bonvoy',
+    shortName: 'Marriott',
+    brandDomain: 'marriott.com',
+    trackingIdEnv: 'AFFILIATE_MARRIOTT_AID',
+    trackingParam: 'camref',
+    staticParams: { irgwc: '1' },
+    defaultDeeplink:
+      'https://www.marriott.com/search/findHotels.mi?destinationAddress.destination=Hilton+Head+Island%2C+SC&searchType=InCity',
+    pitch:
+      'Marriott Vacation Club villas + the Westin on Hilton Head — Bonvoy points eligible.',
   },
   amazon: {
     id: 'amazon',
