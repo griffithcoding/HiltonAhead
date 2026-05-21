@@ -7,6 +7,7 @@ import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import AffiliateCard from '@/components/affiliate/AffiliateCard';
 import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
+import AmazonProductGrid from '@/components/affiliate/AmazonProductGrid';
 import { Divider, SectionHead } from '@/components/ui/Ornament';
 import { photos } from '@/data/photos';
 import {
@@ -280,6 +281,18 @@ export default async function MonthPage({
             {m.bookingNotes}
           </p>
         </section>
+
+        {/* ——— Amazon product grid: month-aware packing list ——— */}
+        <div className="mx-auto mt-16 max-w-[820px]">
+          <AmazonProductGrid
+            category={
+              ['may', 'june', 'july', 'august', 'september'].includes(m.slug)
+                ? 'bug-protection'
+                : 'beach-essentials'
+            }
+            placement={`weather/${m.slug}/packing`}
+          />
+        </div>
 
         {/* ——— Affiliate placements ——— */}
         <section

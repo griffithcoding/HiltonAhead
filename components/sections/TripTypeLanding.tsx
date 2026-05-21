@@ -6,6 +6,7 @@ import FinalCta from '@/components/sections/FinalCta';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import AffiliateCard from '@/components/affiliate/AffiliateCard';
 import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
+import AmazonProductGrid from '@/components/affiliate/AmazonProductGrid';
 import {
   SectionHead,
   Divider,
@@ -191,6 +192,14 @@ export default function TripTypeLandingPage({ trip }: Props) {
             </p>
           </div>
         </section>
+
+        {/* ——— Amazon product grid (gear shoppers, pre-trip buying) ——— */}
+        {trip.amazonProductCategory && (
+          <AmazonProductGrid
+            category={trip.amazonProductCategory}
+            placement={`trip/${trip.slug}/${trip.amazonProductCategory}`}
+          />
+        )}
 
         {/* ——— Affiliate placements (rendered only when configured) ——— */}
         {trip.affiliates && trip.affiliates.length > 0 && (
