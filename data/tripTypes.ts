@@ -269,6 +269,24 @@ export const tripTypes: TripTypeLanding[] = [
       { ...photos.surfSoft,    caption: 'High tide, end of July' },
     ],
     blogPostSlug: '2026-best-places-to-stay-hilton-head',
+    affiliates: [
+      {
+        programId: 'booking',
+        placement: 'trip/oceanfront-villas/booking',
+        headline: 'Hilton Head oceanfront stays',
+        description:
+          'Free cancellation on most direct-beach properties. Filter by dates to see what’s actually on the dune line vs. marketed as “oceanfront.” We’ll happily review your shortlist on a discovery call.',
+        cta: 'Search oceanfront stays →',
+      },
+      {
+        programId: 'vrbo',
+        placement: 'trip/oceanfront-villas/vrbo',
+        headline: 'Oceanfront villa rentals (whole house)',
+        description:
+          'Vrbo’s oceanfront inventory — true dune-line villas with private kitchens and patios. Best for 5+ night stays and groups of 4-plus.',
+        cta: 'Browse oceanfront villas →',
+      },
+    ],
   },
 
   // ———————————————————————————————————————————————————————————————
@@ -335,8 +353,16 @@ export const tripTypes: TripTypeLanding[] = [
     relatedStorySlug: 'summer-family-week',
     affiliates: [
       {
+        programId: 'booking',
+        placement: 'trip/family-planner/booking',
+        headline: 'Family-friendly stays on Hilton Head',
+        description:
+          'Resort rooms and family hotels with free cancellation, broken out by Sea Pines, Palmetto Dunes, and Forest Beach. Easier than Vrbo if you want a single check-in desk and on-site amenities.',
+        cta: 'Search family stays →',
+      },
+      {
         programId: 'vrbo',
-        placement: 'family-planner',
+        placement: 'trip/family-planner/vrbo',
         headline: 'Whole-house rentals on Hilton Head',
         description:
           'Multi-bedroom villas with kitchens, washer/dryers, and pools — built for families who refuse to share one bathroom. Search by dates and we’ll help narrow the shortlist.',
@@ -408,8 +434,16 @@ export const tripTypes: TripTypeLanding[] = [
     blogPostSlug: 'best-time-to-visit-hilton-head',
     affiliates: [
       {
+        programId: 'booking',
+        placement: 'trip/spring-break/booking',
+        headline: 'Spring-break resort + hotel search',
+        description:
+          'Free cancellation on most stays — useful when spring weather changes plans. We steer clients away from RBC Heritage week unless that’s the trip, so filter your dates carefully.',
+        cta: 'Search spring stays →',
+      },
+      {
         programId: 'vrbo',
-        placement: 'spring-break',
+        placement: 'trip/spring-break/vrbo',
         headline: 'Spring-break villa search',
         description:
           'Whole-house rentals for the mid-March through April window. Inventory is widest the week before and after the RBC Heritage; we’ll help you avoid tournament-week premiums.',
