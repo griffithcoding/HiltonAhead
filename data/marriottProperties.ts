@@ -61,7 +61,7 @@ export const MARRIOTT_PROPERTIES: ReadonlyArray<MarriottProperty> = [
     cashRangeUsd: { min: 450, max: 1200 },
     pointsRange: { min: 60000, max: 120000 },
     bookingUrl:
-      'https://www.marriott.com/en-us/hotels/hhhgo-marriotts-grande-ocean/overview/',
+      'https://www.marriott.com/en-us/hotels/hhhvi-marriotts-grande-ocean/overview/',
   },
   {
     slug: 'surfwatch',
@@ -85,7 +85,7 @@ export const MARRIOTT_PROPERTIES: ReadonlyArray<MarriottProperty> = [
     cashRangeUsd: { min: 380, max: 950 },
     pointsRange: { min: 50000, max: 100000 },
     bookingUrl:
-      'https://www.marriott.com/en-us/hotels/hhhsw-marriotts-surfwatch/overview/',
+      'https://www.marriott.com/en-us/hotels/hhhsf-marriotts-surfwatch/overview/',
   },
   {
     slug: 'barony-beach-club',
@@ -133,7 +133,7 @@ export const MARRIOTT_PROPERTIES: ReadonlyArray<MarriottProperty> = [
     cashRangeUsd: { min: 420, max: 1100 },
     pointsRange: { min: 55000, max: 110000 },
     bookingUrl:
-      'https://www.marriott.com/en-us/hotels/hhhms-marriotts-monarch-at-sea-pines/overview/',
+      'https://www.marriott.com/en-us/hotels/hhhmo-marriotts-monarch-at-sea-pines/overview/',
   },
   {
     slug: 'heritage-club-at-harbour-town',
@@ -157,7 +157,7 @@ export const MARRIOTT_PROPERTIES: ReadonlyArray<MarriottProperty> = [
     cashRangeUsd: { min: 320, max: 800 },
     pointsRange: { min: 45000, max: 90000 },
     bookingUrl:
-      'https://www.marriott.com/en-us/hotels/hhhhc-marriotts-heritage-club-at-harbour-town/overview/',
+      'https://www.marriott.com/en-us/hotels/hhhhr-marriotts-heritage-club/overview/',
   },
   {
     slug: 'sunset-pointe-at-shelter-cove',
@@ -181,7 +181,7 @@ export const MARRIOTT_PROPERTIES: ReadonlyArray<MarriottProperty> = [
     cashRangeUsd: { min: 280, max: 700 },
     pointsRange: { min: 40000, max: 80000 },
     bookingUrl:
-      'https://www.marriott.com/en-us/hotels/hhhsp-marriotts-sunset-pointe-at-shelter-cove/overview/',
+      'https://www.marriott.com/en-us/hotels/hhhpt-marriotts-harbour-point-and-sunset-pointe-at-shelter-cove/overview/',
   },
   {
     slug: 'westin-hilton-head-island',
