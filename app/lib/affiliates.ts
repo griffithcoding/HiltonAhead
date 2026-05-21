@@ -19,12 +19,54 @@ const TRACK_ENDPOINT = '/api/affiliate/track';
 
 const warnedMissingId = new Set<AffiliateProgramId>();
 
-function readTrackingId(programId: AffiliateProgramId): string | null {
+/**
+ * Resolve which env var to read for a given program + placement combo.
+ * If the program has a `placementTagEnv` map and the placement string
+ * prefix-matches one of its keys (case-insensitive), use the placement-
+ * specific env var. Otherwise fall back to the program's base
+ * `trackingIdEnv`.
+ */
+function resolveTrackingEnvVar(
+  programId: AffiliateProgramId,
+  placement?: string,
+): string | null {
   const program = AFFILIATE_PROGRAMS[programId];
   if (!program) return null;
-  const value = process.env[program.trackingIdEnv];
+  if (placement && program.placementTagEnv) {
+    const lower = placement.toLowerCase();
+    for (const [key, envName] of Object.entries(program.placementTagEnv)) {
+      if (lower.startsWith(key.toLowerCase())) return envName;
+    }
+  }
+  return program.trackingIdEnv;
+}
+
+function readTrackingId(
+  programId: AffiliateProgramId,
+  placement?: string,
+): string | null {
+  const program = AFFILIATE_PROGRAMS[programId];
+  if (!program) return null;
+  const envName = resolveTrackingEnvVar(programId, placement);
+  if (!envName) return null;
+
+  const value = process.env[envName];
   if (value && value.length > 0) return value;
-  if (process.env.NODE_ENV !== 'production' && !warnedMissingId.has(programId)) {
+
+  // Placement-specific var missing? Fall back to the base tag so we don't
+  // silently drop attribution. Per-surface env vars are intentionally
+  // optional — placement maps to base tag if no override is configured.
+  if (envName !== program.trackingIdEnv) {
+    const base = process.env[program.trackingIdEnv];
+    if (base && base.length > 0) return base;
+  }
+
+  // Only warn for missing *base* env var. Warning on every missing per-
+  // surface var would be noise — they're intentionally optional.
+  if (
+    process.env.NODE_ENV !== 'production' &&
+    !warnedMissingId.has(programId)
+  ) {
     warnedMissingId.add(programId);
     console.warn(
       `[affiliates] ${program.name}: ${program.trackingIdEnv} not set — links will pass through without tracking.`,
@@ -36,17 +78,23 @@ function readTrackingId(programId: AffiliateProgramId): string | null {
 /**
  * Stamp the program's tracking ID + any required static params onto the URL.
  * Falls back to the unmodified URL on parse failure or missing ID.
+ *
+ * @param placement Optional surface label (e.g. `'blog/spring-break'`,
+ *   `'faq/lodging'`). Used both for click-tracking analytics AND for
+ *   resolving a placement-specific tracking ID via the program's
+ *   `placementTagEnv` map (currently Amazon-only).
  */
 export function withAffiliateParams(
   programId: AffiliateProgramId,
   deeplink?: string,
+  placement?: string,
 ): string {
   const program = AFFILIATE_PROGRAMS[programId];
   if (!program) return deeplink ?? '';
   const targetUrl = deeplink ?? program.defaultDeeplink;
   if (!targetUrl) return '';
 
-  const trackingId = readTrackingId(programId);
+  const trackingId = readTrackingId(programId, placement);
 
   try {
     const u = new URL(targetUrl);
