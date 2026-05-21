@@ -114,7 +114,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head stay and play',
     ],
     hook:
-      'Eight golf courses inside fifteen minutes, three of them national Top-100. We book the Harbour Town tee times that never surface on the resort\u2019s public page, negotiate villa rates with the partner operators, and land the whole group at first tee with time to stretch.',
+      'Eight golf courses inside fifteen minutes, three of them national Top-100. We sequence the Harbour Town tee times, match the group to the right villa, and land the whole party at first tee with time to stretch.',
     reasons: [
       {
         title: 'Harbour Town priority',
@@ -640,7 +640,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Sea Pines marina villa',
     ],
     hook:
-      'Harbour Town is the one-square-mile marina village at the south end of Sea Pines. Villa inventory inside this pocket is small (roughly 180 units) and the rate is the island\u2019s steepest for a reason: most guests never need to move their car. We book four buildings here consistently.',
+      'Harbour Town is the one-square-mile marina village at the south end of Sea Pines. Villa inventory inside this pocket is small (roughly 180 units) and the rate is the island\u2019s steepest for a reason: most guests never need to move their car. We point repeat guests at the four buildings worth chasing.',
     reasons: [
       {
         title: 'Walking radius beats driving radius',
