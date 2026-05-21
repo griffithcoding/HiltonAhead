@@ -16,11 +16,13 @@ export const dynamic = 'force-dynamic';
 const NAV = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/leads', label: 'Leads' },
+  { href: '/admin/sales-prospects', label: 'Sales Prospects' },
   { href: '/admin/purchases', label: 'Purchases' },
   { href: '/admin/meetings', label: 'Meetings' },
   { href: '/admin/directory', label: 'Directory' },
   { href: '/admin/affiliates', label: 'Affiliates' },
   { href: '/admin/outreach', label: 'Backlink Outreach' },
+  { href: '/admin/content/syndicate', label: 'Content Syndicate' },
 ];
 
 export default async function AdminAppLayout({

@@ -6172,6 +6172,1325 @@ const postBestPizza: Post = {
 };
 
 // ---------------------------------------------------------------------------
+// 27) PLANNING. What a Hilton Head Trip Actually Costs in 2026
+// ---------------------------------------------------------------------------
+
+const postTripCost2026: Post = {
+  slug: 'hilton-head-trip-cost-2026-real-numbers',
+  title: 'What a Hilton Head Trip Actually Costs in 2026 (Real Numbers)',
+  excerpt:
+    'Four real Hilton Head 2026 trip budgets: couples weekend, family week, golf trip, and snowbird month. Actual villa, golf, food, and bridge numbers.',
+  description:
+    'Real 2026 Hilton Head trip budgets from a local planner. Villa rates by neighborhood, what golf costs, the bridge toll, and the $400 mistake first-timers make.',
+  category: 'Planning',
+  readTime: '11 min',
+  publishedAt: '2026-06-01',
+  author: 'Will Griffith',
+  featuredOrder: 100,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
+  keywords: [
+    'cost of hilton head trip',
+    'how much does a hilton head vacation cost',
+    'hilton head vacation budget',
+    'hilton head villa rental price',
+    'hilton head trip cost 2026',
+    'hilton head golf trip cost',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "I get this question every week, usually from someone who has been reading conflicting numbers on travel blogs that haven't been updated since 2022. Here is the honest version, written in May 2026 with rates we have actually quoted clients this season.",
+    },
+    {
+      kind: 'p',
+      html: "The shortcut: a real Hilton Head trip in 2026 costs anywhere from $2,800 to $9,500 depending on party size, neighborhood, and month. The bigger the group and the further from June through August, the better the math gets. If you want a per-night number you can use for back-of-envelope planning, the rate-card answer is <strong>roughly $400 to $700 per night for a 3-bedroom villa in a good location</strong>, plus golf, food, and the things people forget to budget for.",
+    },
+    {
+      kind: 'p',
+      html: "Below are four real trips at four real party sizes, with line-item numbers. After that, the four costs that surprise first-time visitors. Then the calculator we built so you can run your own scenario in 90 seconds.",
+    },
+    {
+      kind: 'h2',
+      text: 'Why averages lie',
+    },
+    {
+      kind: 'p',
+      html: "When TripAdvisor says \"average Hilton Head trip costs $1,200,\" they are averaging a $300 weekend at a Coligny motel with a $9,000 family week in Sea Pines. That number doesn't help anyone. The real costs cluster around the trip type, not the destination, so I am going to give you four typical clusters instead.",
+    },
+    {
+      kind: 'h2',
+      text: 'The four sample trips',
+    },
+    {
+      kind: 'section',
+      eyebrow: '01',
+      title: 'Couples weekend at Sea Pines — $2,840 total',
+      summary: '3 nights, mid-September, 2 adults, no golf.',
+      defaultOpen: true,
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            'Villa (3 nights, 2BR cottage on South Beach Lane): $1,560',
+            'Bridge toll into Sea Pines (1 week pass): $9',
+            'Groceries from Fresh Market for in-villa breakfast and snacks: $140',
+            'Dinner 1 — The Quarterdeck at Harbour Town, with wine: $185',
+            'Dinner 2 — Lucky Rooster, mid-island: $210',
+            'Dinner 3 — Charlie\'s L\'Etoile Verte: $245',
+            'Beach gear delivery (chairs + umbrella, Sandbox setup): $95',
+            'Bike rentals (2 bikes, 3 days, Hilton Head Bicycle Co.): $75',
+            'Gas + parking: $80',
+            'Two coffee + breakfast pastry stops at ELA\'s on the Water: $48',
+            'Buffer for two cocktails at Salty Dog: $90',
+            'Tax + service buffer (~10% of villa): $102',
+          ],
+        },
+        {
+          kind: 'p',
+          html: "This is the trip I plan most for first-time couples. September is the smartest month on Hilton Head — pre-Labor Day rates have dropped, water is still 82°F, and the dinner reservations open up. A 2BR is overkill for two but the rate gap to a 1BR isn't worth it for three nights. See more on couples logistics in the <a href=\"/blog/hilton-head-honeymoon-7-day-itinerary\">7-day honeymoon itinerary</a> or the standalone <a href=\"/hilton-head-honeymoon\">honeymoon page</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: '02',
+      title: 'Family week at Palmetto Dunes — $6,420 total',
+      summary: '7 nights, second week of June, 4 adults + 3 kids.',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            'Villa (7 nights, 4BR oceanfront row at Inverness Village): $4,200',
+            'Cleaning + booking fees: $385',
+            'Groceries (Publix delivery, Sunday + Wednesday): $510',
+            'Eat-out dinners (4 nights — Lucky Rooster, ELA\'s, Skull Creek Boathouse, Hudson\'s): $640',
+            'Beach gear week-long rental (2 umbrellas + 6 chairs + boogie boards): $215',
+            'Mini-golf at Pirate\'s Island + ice cream: $75',
+            'Tube and kayak rentals on the lagoon: $135',
+            'One dolphin tour for the kids (Outside Hilton Head): $180',
+            'Gas + the bridge: $80',
+          ],
+        },
+        {
+          kind: 'p',
+          html: "Notice the villa is two-thirds of the budget. That ratio is correct for a family week — once you have a real kitchen, breakfast and lunch costs collapse. Palmetto Dunes wins this trip because the lagoon system means the kids have free entertainment for 4+ hours a day inside the neighborhood. We dig into the math on the <a href=\"/hilton-head-family-trip-planner\">family trip planner</a> page and rank villa buildings on the <a href=\"/blog/palmetto-dunes-guide\">Palmetto Dunes guide</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: '03',
+      title: '4-guy golf trip in October — $4,950 total ($1,238 per person)',
+      summary: '4 nights, late October, 4 adults, 4 rounds of golf.',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            'The Inn & Club at Harbour Town (4 nights, two doubles): $2,160',
+            'Harbour Town Golf Links (RBC Heritage course) — 1 round: $475 pp = $1,900 group',
+            'Atlantic Dunes by Davis Love III — 1 round: $215 pp',
+            'Robert Trent Jones Oceanfront at Palmetto Dunes — 1 round: $185 pp',
+            'May River at Palmetto Bluff — 1 round: $225 pp',
+            'Caddie tips (Harbour Town caddie strongly recommended): $80 pp',
+            'Dinners (Harbour Town Bakery, Quarterdeck, Skull Creek Boathouse, in-villa steaks): $290 pp',
+            'Cigars + bourbon at the Inn bar: optional but planned for',
+          ],
+        },
+        {
+          kind: 'p',
+          html: "The Harbour Town round is the price-anchor of any HHI golf trip; the other three are negotiated through our <a href=\"/hilton-head-golf-packages\">golf package</a> rates. Late October is the perfect window — locked-in inventory, 78°F days, no afternoon thunderstorms. If you want the full breakdown of which course tier matches which group, read <a href=\"/blog/hilton-head-golf-courses-ranked\">our ranked-by-tier course list</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: '04',
+      title: '28-day snowbird at Forest Beach — $9,200 total',
+      summary: 'Full month of February, 2 adults, walk-everywhere mode.',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '28-night villa (2BR, two blocks off Coligny): $6,400',
+            'Groceries for the month (Publix + Bluffton Farmers Market): $980',
+            'Eat-out dinners (8 dinners across the month): $640',
+            'Gas (rental car drives are short — Coligny is walkable): $90',
+            'Bridge toll + occasional Bluffton drives: $30',
+            'Two greens fees at Palmetto Hall (locals\' price, $85 each): $170',
+            'Pickleball court time and a yoga drop-in: $140',
+            'Pharmacy run + dry cleaning + miscellaneous: $250',
+            'Internet upgrade on the villa (faster speed bundle): $75',
+            'Coffee + breakfast out twice a week: $425',
+          ],
+        },
+        {
+          kind: 'p',
+          html: "A Forest Beach snowbird month is the best per-night value on the island in 2026 — works out to about $329 per day, with a real kitchen and a walkable neighborhood. The <a href=\"/hilton-head-winter-rental\">winter rental page</a> walks through the logistics; we lock most of these in August for the following January through March.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What lodging actually costs in 2026',
+    },
+    {
+      kind: 'p',
+      html: "Villa rates went up roughly 6% in 2026 over 2025, slightly above general inflation. The bigger story is supply: roughly 80 short-term-rental permits expired and were not renewed under the town's new ordinance, which has tightened summer inventory more than the rate change has. Here are the realistic per-night ranges we are quoting in May 2026, by neighborhood:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        'Sea Pines, 3BR oceanfront row (peak): $750 to $1,100/night',
+        'Sea Pines, 2BR off-beach (peak): $420 to $580/night',
+        'Palmetto Dunes, 3BR oceanfront (peak): $680 to $950/night',
+        'Palmetto Dunes, 4BR lagoon villa (peak): $520 to $720/night',
+        'Forest Beach, 2BR walk-to-Coligny (peak): $340 to $480/night',
+        'Shelter Cove, 2BR harbor view (peak): $300 to $440/night',
+        'Off-peak (Jan–Mar, Nov): subtract 35 to 50% from any range above',
+      ],
+    },
+    {
+      kind: 'p',
+      html: "If you are flexible with neighborhood, the Sea Pines vs Palmetto Dunes choice can swing your week by $1,500 to $2,000 in either direction depending on what you optimize for. We wrote a side-by-side breakdown on <a href=\"/blog/sea-pines-vs-palmetto-dunes\">Sea Pines vs Palmetto Dunes</a>, and the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas page</a> lists the specific buildings we book first.",
+    },
+    {
+      kind: 'h2',
+      text: 'Golf, dining, gas, and the bridge',
+    },
+    {
+      kind: 'p',
+      html: "Golf is the single biggest variable after lodging. Harbour Town is $475 in season, $325 in shoulder season, and worth booking twice if you are here for a week. Everything else on the island runs $145 to $275 in season. A four-round golf trip in October is roughly $1,100 to $1,300 per person at the course; in May, the same trip is $1,700 to $2,100.",
+    },
+    {
+      kind: 'p',
+      html: "Dining cost out for a couple at the better restaurants — Lucky Rooster, Charlie\'s L\'Etoile Verte, ELA\'s on the Water, The Quarterdeck — runs $180 to $240 with wine. The mid-tier and seafood-shack tier (Skull Creek Boathouse, Hudson\'s, A Lowcountry Backyard) runs $90 to $140 for two. A family of four eating out runs $140 to $220 a dinner depending on tier. Plan three to four eat-out dinners per week and cook the rest. The <a href=\"/blog/hilton-head-restaurants-ranked-2026\">ranked restaurants list</a> breaks down which rooms are worth the dollar.",
+    },
+    {
+      kind: 'p',
+      html: "Gas is the same as anywhere else in coastal South Carolina. The bridge to Sea Pines is the only toll on the island and costs $9 for a 7-day pass — confused for $9 per day in most online write-ups. Parking at the beach access points (Coligny, Driessen, Folly Field) is $10 to $20 a day in season, free in winter.",
+    },
+    {
+      kind: 'h2',
+      text: 'The $400 mistake most first-timers make',
+    },
+    {
+      kind: 'p',
+      html: "Renting a car at Savannah Airport and then a separate car at Hilton Head Airport because somebody didn't realize they both serve the island. SAV is 45 minutes from the bridge and 70% cheaper for the rental, and HHH is on the island but rental inventory is thin. If you fly into HHH and rent there, expect to pay $90 to $130 a day in season for an SUV. The same SUV at SAV is $45 to $70. Multiplied across a week, that is the $400 mistake.",
+    },
+    {
+      kind: 'p',
+      html: "The second-biggest mistake is booking a non-oceanfront condo at Folly Field thinking \"it's still Hilton Head.\" Geographically it is. Functionally, you'll drive 20 minutes to every dinner reservation and lose three hours of your trip to traffic on Pope Avenue. The math doesn't work — the apparent $80/night savings disappears in gas and aggravation.",
+    },
+    {
+      kind: 'h2',
+      text: 'Use our calculator',
+    },
+    {
+      kind: 'p',
+      html: "We built a <a href=\"/cost-of-hilton-head-trip\">live cost calculator</a> that runs your specific party size, neighborhood, and month against our current quoted rates. It takes 90 seconds and gives a low-mid-high range with a confidence note. The model gets updated quarterly with what we actually quoted clients the prior quarter, so it stays calibrated to real 2026 numbers rather than blog-post averages from 2022.",
+    },
+    {
+      kind: 'faq',
+      label: 'Hilton Head trip cost FAQ',
+      items: [
+        {
+          q: 'How much does a 7-day Hilton Head trip cost in 2026 for a family of four?',
+          a: "For peak season (June through early August), $5,800 to $7,800 all-in for a family of four staying in a 3BR Palmetto Dunes or Sea Pines villa. Shoulder season (April–May, September–October) drops that to $4,200 to $5,800. Winter is $3,200 to $4,500.",
+        },
+        {
+          q: 'Is Hilton Head cheaper than Myrtle Beach?',
+          a: "No. Hilton Head villas run roughly 35–50% higher than comparable Myrtle Beach inventory in peak season. The tradeoff is what you get — gated neighborhoods, top-100 golf, and restaurants with serious chefs. If pure cost is the priority, Myrtle Beach wins. If the trip needs to be good, Hilton Head wins. We compared them directly in our <a href=\"/blog/hilton-head-vs-myrtle-beach\">Hilton Head vs Myrtle Beach</a> post.",
+        },
+        {
+          q: 'How much should I budget per day on Hilton Head?',
+          a: "Outside of lodging, plan $180 to $260 per couple per day for food, beach setups, and one paid activity. Families with kids run $260 to $360 per day all-in. Golf days add $200 to $475 per golfer on top.",
+        },
+        {
+          q: 'What is the cheapest time to visit Hilton Head?',
+          a: "First half of December and the second half of January are the lowest rates of the year — villa rates drop 50–60% from summer. Weather is roughly 60°F daytime, water is cold, but the island is calm, restaurants are open, and the value math is unbeatable.",
+        },
+        {
+          q: 'Is the bridge to Hilton Head free?',
+          a: "Yes — the bridge from US-278 onto the island is free. The only toll is the Sea Pines security gate, which is $9 for a 7-day pass per car. Non-Sea Pines parts of the island have no tolls or gates.",
+        },
+        {
+          q: 'How much does a Hilton Head villa cost per night?',
+          a: "Realistic 2026 ranges: $300 to $480 for a 2BR off-beach, $420 to $750 for a 3BR mid-tier oceanfront, and $750 to $1,200 for a premium oceanfront row in Sea Pines or Palmetto Dunes. Off-peak (Nov–Mar) is 35 to 50% lower. Heritage Week (April) is the only window where rates spike above summer peak.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Want us to run your number?',
+    },
+    {
+      kind: 'p',
+      html: "Tell us your party size, dates, and what kind of trip you want. We send back a real budget — line-itemed villa, golf, dinners, beach gear, the bridge — usually within a day. No fee until you book through us. <a href=\"/itinerary\">We'll build the plan for you</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 28) STAYS. Last-Call July Villa Availability
+// ---------------------------------------------------------------------------
+
+const postLastCallJuly: Post = {
+  slug: 'last-call-july-hilton-head-villa-availability',
+  title: "Last-Call July 2026: What's Left for Hilton Head Villa Availability",
+  excerpt:
+    "Updated weekly: the Hilton Head villas still open for July 2026, by neighborhood. Real inventory honesty, real prices, and the weeks to pivot to.",
+  description:
+    "It's June 2026. Here's what's still bookable on Hilton Head for July — by neighborhood, with prices. Plus the smart pivot to August if you're shut out.",
+  category: 'Stays',
+  readTime: '9 min',
+  publishedAt: '2026-06-02',
+  author: 'Will Griffith',
+  featuredOrder: 101,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
+  keywords: [
+    'july availability hilton head villas',
+    'last minute hilton head rentals',
+    'available villas july 2026 hilton head',
+    'palmetto dunes july availability',
+    'hilton head july 4 villa',
+    'hilton head villa rental july',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "It is the third week of May 2026 and our inbox is full of \"do you have anything left for July\" emails. Short answer: <strong>yes, but only for two specific weeks, and only in three neighborhoods</strong>. Long answer below, with what we are actually quoting today.",
+    },
+    {
+      kind: 'p',
+      html: "This is the post I would have wanted three weeks ago when the panic emails started coming in. I will update it weekly through June 30 as inventory shifts. The honest framing: most of July is gone, the Heritage hangover for premium oceanfront row is severe, and if you are a four-person family hoping to stay under $5,000 you should be looking at the second half of the month or pivoting to early August.",
+    },
+    {
+      kind: 'callout',
+      label: 'Last updated',
+      html: "May 20, 2026. The numbers below are real quotes we have given clients this week. If you want a live check on a specific date range, the fastest path is the <a href=\"/itinerary\">itinerary form</a> — we run inventory across roughly 200 buildings and reply same-day in summer.",
+    },
+    {
+      kind: 'h2',
+      text: 'The state of July 2026 inventory',
+    },
+    {
+      kind: 'p',
+      html: "July is always the tightest month on Hilton Head — peak family week, school out, water 84°F. In 2026 the squeeze is harder than 2025 because the town's short-term-rental ordinance reduced the permitted-villa pool by roughly 80 units across the island, and a handful of large management companies stopped renewing buildings they couldn't keep at standards. So even though demand is similar to last summer, the inventory denominator is smaller.",
+    },
+    {
+      kind: 'p',
+      html: "The two weeks that are still genuinely bookable: <strong>July 11–18</strong> (post-July 4 lull) and <strong>July 25 – August 1</strong> (pre-final-week sag). The two weeks that are functionally gone: July 4 week and July 18–25. We will still try if you ask, but expect to pay 25% over summer peak rates and accept whatever building has the cancellation.",
+    },
+    {
+      kind: 'h2',
+      text: "Sea Pines — what's left",
+    },
+    {
+      kind: 'p',
+      html: "Tight, but not impossible. South Beach Lane is gone for all of July except a single 4BR that came back as a cancellation late last week (call us). The oceanfront-row buildings — Beachside Tennis, Sea Crest, Turtle Lane Club — show 3 to 6 units across the entire month, all premium pricing.",
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>South Beach Lane 3BR</strong> — 1 unit, July 11–18, $1,150/night',
+        '<strong>Sea Crest oceanfront row 3BR</strong> — 2 units, July 25 – Aug 1, $980/night',
+        '<strong>Beachside Tennis 4BR villa</strong> — 1 unit, July 11–18, $1,280/night',
+        '<strong>Off-beach Harbour Town walkable 2BR</strong> — 3 units across the month, $620–$720/night',
+        '<strong>Forest pocket interior 3BR (Greenwood, Otter Road)</strong> — 6 units across July, $580–$720/night',
+      ],
+    },
+    {
+      kind: 'p',
+      html: "If your trip absolutely has to be Sea Pines, the move right now is to book the interior pocket properties and pay the gate-and-bike difference rather than insisting on oceanfront row. The <a href=\"/blog/sea-pines-guide\">Sea Pines guide</a> covers which interior buildings still feel like a real Sea Pines trip; the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas page</a> lists what we book first when there is inventory.",
+    },
+    {
+      kind: 'h2',
+      text: "Palmetto Dunes — what's left",
+    },
+    {
+      kind: 'p',
+      html: "Better than Sea Pines for July inventory, mostly because there are simply more units. Inverness Village and Mariners Watch each show 8 to 12 available weeks across the month. Oceanfront row is the constraint — Captain's Walk and Inverness Oceanfront are nearly gone.",
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Inverness Village 4BR lagoon</strong> — 6 units, scattered across July, $640–$780/night',
+        '<strong>Mariners Watch 3BR lagoon</strong> — 9 units across July, $520–$660/night',
+        '<strong>Captain\'s Walk 3BR oceanfront</strong> — 2 units, both July 25 – Aug 1, $920/night',
+        '<strong>Inverness Oceanfront 4BR row</strong> — 1 unit, July 11–18, $1,180/night',
+        '<strong>Hampton Place / Shorewood courtyard 2BR</strong> — 7 units, $420–$540/night',
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Palmetto Dunes is the right play if you have kids and need lagoon-system access, the Robert Trent Jones course in your trip, and a kitchen. The full breakdown of which Palmetto Dunes buildings we book first is on the <a href=\"/blog/palmetto-dunes-guide\">Palmetto Dunes guide</a>, and the family-trip logistics live on the <a href=\"/hilton-head-family-trip-planner\">family planner page</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'Forest Beach + Coligny walkability',
+    },
+    {
+      kind: 'p',
+      html: "Forest Beach is your best shot for July inventory under $500/night. The two- to three-block walk to Coligny means you can ditch the rental car for the week, which is a big deal in July when the south-end traffic doubles. About 14 units across the month are still bookable, plus another 6 in walking distance of Coligny but outside the Forest Beach gates proper.",
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Forest Beach 2BR, two blocks from sand</strong> — 8 units, $380–$480/night',
+        '<strong>Forest Beach 3BR with private deck</strong> — 4 units, $520–$640/night',
+        '<strong>Coligny Beach Club condo (walk to sand)</strong> — 5 units, $310–$420/night',
+        '<strong>Sailmaker oceanfront row 3BR (gated, but Forest Beach feel)</strong> — 2 units, $920/night',
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Forest Beach is the unsung hero of July inventory — under-the-radar with serious walkability. Full neighborhood notes live on the <a href=\"/blog/forest-beach-guide\">Forest Beach guide</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'When to give up and pivot to August',
+    },
+    {
+      kind: 'p',
+      html: "If you cannot get the dates or neighborhood you want, pivoting to August 8–15 is the smartest move on the board right now. The water is the same temperature, the air is the same temperature, the dinner reservations are easier, and rates drop 12 to 18% from peak July. Several buildings that are completely full in July show 3 to 6 open units that exact week.",
+    },
+    {
+      kind: 'p',
+      html: "We will not lie to you — the absolute best July weeks for kids out of school are gone. But the August pivot is mathematically better unless you have a hard school-calendar constraint.",
+    },
+    {
+      kind: 'h2',
+      text: 'How we book on your behalf',
+    },
+    {
+      kind: 'p',
+      html: "We pull inventory across roughly 200 buildings — the big rental companies, smaller boutique operators, and three private-owner programs that don't show up on the public OTAs. We send you a curated 5-property shortlist within a day, you pick, and we book direct. No upcharge.",
+    },
+    {
+      kind: 'faq',
+      label: 'July 2026 Hilton Head villa FAQ',
+      items: [
+        {
+          q: 'Is there any chance for July 4 week 2026 availability?',
+          a: "Realistically, no. July 4 is sold out across the island except for a handful of cancellation slots that we get notified about and pass to clients on a waiting list. If you want to try, get on the waiting list — but plan around the assumption you'll be redirected to July 11 or earlier in June.",
+        },
+        {
+          q: 'How much does a 3BR Hilton Head villa cost in July 2026?',
+          a: "Real range we are quoting: $580 to $1,150 per night for a 3BR. The bottom of the range is interior Sea Pines or mid-tier Palmetto Dunes; the top is oceanfront row in either neighborhood. Forest Beach 3BRs sit at $520 to $640 — best per-night value for walkability.",
+        },
+        {
+          q: 'Should I book July 2026 or pivot to August?',
+          a: "Pivot if you have any flexibility. Early-August inventory is materially better, prices are 12 to 18% lower, and the weather is identical. The only reason to insist on July is a hard school-calendar lock or a family reunion already booked around a specific week.",
+        },
+        {
+          q: 'What about September? Is that a viable backup?',
+          a: "Yes, and it's the smartest backup of all. Post-Labor Day rates drop 22 to 30%, the water is 82°F, hurricanes have not become a real concern yet (peak risk is Sept 10 to Oct 10), and dinner reservations open up dramatically. We send roughly 30% of our clients here on September weeks now.",
+        },
+        {
+          q: 'Are there last-minute deals on Hilton Head in July?',
+          a: "Almost never. Hilton Head doesn't do summer fire-sale pricing the way some destinations do — the supply is constrained and the demand stays through Labor Day. The deals come in November and the second half of January, not July.",
+        },
+        {
+          q: 'Can I book a hotel instead if villa inventory is gone?',
+          a: "Yes. The Omni Hilton Head, Sonesta Resort, and Marriott Grande Ocean all still have hotel-style availability for most of July. Rates run $380 to $620 per night for the comparable 2-queen room. Not always cheaper than a villa, but easier to book last-minute. See the <a href=\"/blog/2026-best-places-to-stay-hilton-head\">2026 stays ranking</a> for which hotels are actually in shape this year.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Let us run your dates',
+    },
+    {
+      kind: 'p',
+      html: "Send us your party size, exact date window, and budget. We run inventory against everything we have access to and come back same-day in summer with a real shortlist. <a href=\"/itinerary\">We'll build the plan for you</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 29) NEIGHBORHOODS. Sea Pines vs Palmetto Dunes vs Shelter Cove
+// ---------------------------------------------------------------------------
+
+const postThreeWayCompare: Post = {
+  slug: 'sea-pines-vs-palmetto-dunes-vs-shelter-cove',
+  title: "Sea Pines vs Palmetto Dunes vs Shelter Cove: An Honest Comparison",
+  excerpt:
+    "Three Hilton Head neighborhoods, three trip personalities. A locals' honest side-by-side on villas, beaches, dining, golf, and what you'd actually choose.",
+  description:
+    "Side-by-side: Sea Pines vs Palmetto Dunes vs Shelter Cove. Villa rates, beach access, dining proximity, and the trip personality each one fits.",
+  category: 'Neighborhoods',
+  readTime: '12 min',
+  publishedAt: '2026-06-03',
+  author: 'Will Griffith',
+  featuredOrder: 102,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'shelter-cove'],
+  keywords: [
+    'sea pines vs palmetto dunes',
+    'sea pines vs shelter cove',
+    'palmetto dunes vs shelter cove',
+    'best neighborhood hilton head',
+    'where to stay hilton head',
+    'hilton head neighborhoods compared',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "I get asked this comparison roughly four times a week. The honest answer is that the three neighborhoods solve different problems, and the right pick depends on whether you have kids, whether you golf, and how much driving you are willing to do for a dinner reservation. Below is the side-by-side I would write on a napkin if you called me.",
+    },
+    {
+      kind: 'p',
+      html: "We already have full neighborhood deep-dives — <a href=\"/blog/sea-pines-guide\">Sea Pines</a>, <a href=\"/blog/palmetto-dunes-guide\">Palmetto Dunes</a>, <a href=\"/blog/shelter-cove-guide\">Shelter Cove</a> — but this post is the comparison most people actually want before they read those.",
+    },
+    {
+      kind: 'h2',
+      text: 'The one-paragraph summary',
+    },
+    {
+      kind: 'p',
+      html: "<strong>Sea Pines</strong> is the prestige play — biggest, oldest, most polished, most expensive. Pick it if golf or a polished resort feel matters. <strong>Palmetto Dunes</strong> is the family workhorse — lagoon system, lower price, three good golf courses inside the gate. Pick it if you have kids or you want amenities-per-dollar. <strong>Shelter Cove</strong> is the dining-and-marina pick — no beach inside the neighborhood, but the best walking-distance restaurant cluster on the island. Pick it if your trip is dinners and sunsets more than beach days.",
+    },
+    {
+      kind: 'h2',
+      text: 'The grid',
+    },
+    {
+      kind: 'table',
+      caption: 'Quick comparison — Sea Pines vs Palmetto Dunes vs Shelter Cove',
+      headers: ['Factor', 'Sea Pines', 'Palmetto Dunes', 'Shelter Cove'],
+      rows: [
+        ['Size', '5,200 acres', '2,000 acres', '~200 acres'],
+        ['Beachfront', '5 miles direct', '3 miles direct', '0 miles (Broad Creek/marina)'],
+        ['Gated', 'Yes ($9/week pass)', 'Yes (free)', 'No'],
+        ['Golf courses inside', '3 (Harbour Town, Heron Point, Atlantic Dunes)', '3 (Robert Trent Jones, George Fazio, Arthur Hills)', '0'],
+        ['Top restaurant tier', 'Quarterdeck, Harbour Town Bakery & Cafe', 'ELA\'s on the Water, Java Burrito', 'Hudson\'s, Skull Creek, Poseidon, Watusi'],
+        ['Walkability', "Moderate (need a bike)", 'Moderate (golf cart)', 'High (true walking neighborhood)'],
+        ['Family-fit score (10)', '8', '10', '6'],
+        ['Couples-fit score (10)', '10', '7', '9'],
+        ['Golf-trip-fit score (10)', '10', '9', '4'],
+        ['3BR peak villa rate', '$580–$1,150', '$520–$950', '$300–$580'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Sea Pines: when it wins',
+    },
+    {
+      kind: 'p',
+      html: "Sea Pines wins for any trip where the resort itself is the experience. Harbour Town at sunset, biking the 12 miles of trails, lunch at the Quarterdeck, dinner at Charlie's L'Etoile Verte, the lighthouse. It is the only neighborhood on the island that feels like a complete world — you can functionally never leave the gates for a week and be perfectly entertained.",
+    },
+    {
+      kind: 'p',
+      html: "Best for: golf trips, honeymoons, anniversaries, big family reunions where the budget allows, and any trip where prestige factors in. Worst for: budget-driven family weeks, people who hate gated communities on principle, and anyone who plans to drive off the island most days (the $9 gate pass adds friction).",
+    },
+    {
+      kind: 'p',
+      html: "Full Sea Pines breakdown lives on the <a href=\"/blog/sea-pines-guide\">Sea Pines guide</a>; the dedicated landing is at <a href=\"/hilton-head/sea-pines\">our Sea Pines page</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'Palmetto Dunes: when it wins',
+    },
+    {
+      kind: 'p',
+      html: "Palmetto Dunes wins on amenities per dollar for anyone with kids. The 11-mile lagoon system means a kayak or tube rental keeps a 9-year-old entertained for four hours a day. The bike trails are excellent, the Robert Trent Jones Oceanfront golf course is one of the prettiest in the Lowcountry, and the dining inside Shelter Cove (right next door) is closer to the gate than Sea Pines's dining is to its own gate.",
+    },
+    {
+      kind: 'p',
+      html: "The tradeoff is that Palmetto Dunes feels slightly less polished than Sea Pines — fewer crushed-shell paths, more 1990s villa exteriors, less of the \"old money\" cohesion. None of which matters for a family week. Best for: families with kids 5-15, golfers on a budget, active-lifestyle trips. Worst for: couples-only weekends (it's overbuilt for two), and anyone who wants the polished-resort aesthetic of Sea Pines.",
+    },
+    {
+      kind: 'p',
+      html: "Full Palmetto Dunes context on the <a href=\"/blog/palmetto-dunes-guide\">guide</a> and <a href=\"/hilton-head/palmetto-dunes\">landing page</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'Shelter Cove: when it wins',
+    },
+    {
+      kind: 'p',
+      html: "Shelter Cove is the most misunderstood neighborhood on the island. It is not a beach neighborhood — it sits on Broad Creek and the marina, not the Atlantic. But what it gives up in beach access, it more than makes up in <em>walking-to-dinner</em> density: Hudson's, Skull Creek Boathouse, Poseidon, Watusi, and Tiki Hut at Coligny are all within a 3-mile circle. Add the marina, the Tuesday-night fireworks in summer, the Shelter Cove Park, and the sunset over Broad Creek — and Shelter Cove starts to feel like the Lowcountry version of a real walkable town.",
+    },
+    {
+      kind: 'p',
+      html: "Best for: couples who want dinners and sunsets and don't need to be 20 steps from the sand, foodie weekends, second-trip clients who already \"did\" Sea Pines and want something different. Worst for: golf trips (no courses inside), families whose kids absolutely need to wake up and see the ocean, and anyone who books on the assumption the marina equals the beach.",
+    },
+    {
+      kind: 'p',
+      html: "More context on the <a href=\"/blog/shelter-cove-guide\">Shelter Cove guide</a> and <a href=\"/hilton-head/shelter-cove\">landing</a>.",
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Drill-down',
+      title: 'Five common trip types — which neighborhood wins',
+      summary: 'Family week, golf trip, anniversary, foodie weekend, snowbird month.',
+      blocks: [
+        {
+          kind: 'h3',
+          text: 'Family week with kids 7–13',
+        },
+        {
+          kind: 'p',
+          html: "Palmetto Dunes wins, by a wide margin. The lagoon-system rentals, the bike paths, the proximity to Pirate's Island mini-golf, the lower villa rates, and the Robert Trent Jones course if dad wants to slip in a round — all add up. Sea Pines is a close second if budget isn't a constraint. Shelter Cove only works for this trip if your kids are older and you've made peace with driving 5 minutes to the beach each day.",
+        },
+        {
+          kind: 'h3',
+          text: '4-guy golf trip',
+        },
+        {
+          kind: 'p',
+          html: "Sea Pines, almost always. Harbour Town tee-time priority for guests, the Inn & Club's golfer-first culture, and the proximity to the airport for the late-Sunday departure. Palmetto Dunes is the value backup if the Harbour Town round can be a day-trip and the rest of the rounds are RTJ-and-Hills. Shelter Cove is wrong for a golf trip — no courses inside, longer drives to every tee.",
+        },
+        {
+          kind: 'h3',
+          text: 'Anniversary or honeymoon',
+        },
+        {
+          kind: 'p',
+          html: "Tie between Sea Pines and Shelter Cove — pick by personality. Sea Pines if you want the polish, the bike rides, the Quarterdeck. Shelter Cove if you want to walk to dinner four nights in a row and watch sunsets over Broad Creek. We send both to the <a href=\"/hilton-head-honeymoon\">honeymoon page</a> with a different recommended split.",
+        },
+        {
+          kind: 'h3',
+          text: 'Foodie weekend',
+        },
+        {
+          kind: 'p',
+          html: "Shelter Cove, alone in first place. The 3-mile walking radius covers Hudson's, Skull Creek, Poseidon, Watusi, and a 6-minute drive picks up Lucky Rooster and ELA's. Nothing else on the island has that dining density inside walking distance.",
+        },
+        {
+          kind: 'h3',
+          text: 'Snowbird month',
+        },
+        {
+          kind: 'p',
+          html: "Forest Beach actually wins this one outside our three, but among the three, Palmetto Dunes for active snowbirds (lagoon, pickleball, golf at locals' rates) and Shelter Cove for walking-around snowbirds. Sea Pines is overpriced for a long stay. Full context on the <a href=\"/hilton-head-winter-rental\">winter rental page</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: "What I'd actually book if you put a gun to my head",
+    },
+    {
+      kind: 'p',
+      html: "Sea Pines for a high-stakes trip (anniversary, milestone birthday, golf-trip-of-a-lifetime). Palmetto Dunes for a family week. Shelter Cove for any second or third trip to the island when you already know the beach and you want to try a different mode. That is the calculus that ends up in 85% of my client recommendations.",
+    },
+    {
+      kind: 'p',
+      html: "If you want the oceanfront row specifically, look at the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas page</a> — that's the subset of inventory where Sea Pines and Palmetto Dunes both shine and where Shelter Cove is by definition not in play.",
+    },
+    {
+      kind: 'faq',
+      label: 'Sea Pines vs Palmetto Dunes vs Shelter Cove FAQ',
+      items: [
+        {
+          q: 'Which is the most expensive neighborhood on Hilton Head?',
+          a: "Sea Pines, by 18 to 28% on a like-for-like 3BR comparison. The premium reflects the brand, the gated experience, Harbour Town, and the polish. The next tier down is Palmetto Dunes; Shelter Cove villas are typically 25 to 35% cheaper than Sea Pines equivalents.",
+        },
+        {
+          q: 'Does Shelter Cove have a beach?',
+          a: "Not inside the neighborhood — Shelter Cove fronts Broad Creek and the marina, not the Atlantic. The closest beach access is Coligny (5-minute drive) or the Folly Field beach park (8 minutes). Some Shelter Cove villas come with a shuttle to a designated beach drop-off; ask before booking if beach access is a make-or-break.",
+        },
+        {
+          q: 'Is Palmetto Dunes or Sea Pines better for golf?',
+          a: "Sea Pines for a single best-round trip (Harbour Town is the marquee course on the island). Palmetto Dunes for variety on a budget (three solid courses inside the gate at lower rates than Harbour Town). The honest answer for most golf trips is play both — stay Sea Pines, day-trip Palmetto Dunes for one round.",
+        },
+        {
+          q: 'Can I walk from Shelter Cove to dinner?',
+          a: "Yes, more than any other neighborhood on the island. Hudson's, Skull Creek Boathouse, Poseidon, Watusi, and Tiki Hut are all within a 1- to 3-mile walking radius. Bring comfortable shoes and you can functionally ditch the rental car for the week.",
+        },
+        {
+          q: 'Which neighborhood is best for first-time Hilton Head visitors?',
+          a: "Sea Pines for couples and small groups. Palmetto Dunes for families. Avoid Shelter Cove for a first trip unless you have explicitly decided you do not want beach-first lodging — the surprise of \"oh, the beach is a 5-minute drive away\" lands badly on a first visit.",
+        },
+        {
+          q: 'Are Sea Pines villa rates worth it over Palmetto Dunes?',
+          a: "Depends on the trip. For golf or a milestone occasion, yes. For a family week with kids who will spend most of their waking hours in the lagoon, no — Palmetto Dunes gives you the same vacation for less money. We swing about 60/40 toward Palmetto Dunes when budget is the explicit constraint.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Tell us your trip',
+    },
+    {
+      kind: 'p',
+      html: "If you want the side-by-side run against your specific dates and party, send the brief over and we'll come back with a real recommendation. We don't push you toward the more expensive option — about 35% of our client recommendations are Palmetto Dunes or Forest Beach over Sea Pines, because that's the right call. <a href=\"/itinerary\">We'll build the plan for you</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 30) GOLF. Hilton Head Golf Packages — Which Course Tier
+// ---------------------------------------------------------------------------
+
+const postGolfTiers: Post = {
+  slug: 'hilton-head-golf-packages-course-tiers',
+  title: "Hilton Head Golf Packages: Which Course Tier Is Right for Your Group",
+  excerpt:
+    "Real golf-package math by tier. Harbour Town at the top, the workhorse mid-tier rounds, and the smart fourth-round picks that punch above price.",
+  description:
+    "Hilton Head golf packages broken into four real tiers, with honest prices. Which combination fits a 4-day trip for buddies, members, or a milestone group.",
+  category: 'Golf',
+  readTime: '11 min',
+  publishedAt: '2026-06-04',
+  author: 'Will Griffith',
+  featuredOrder: 103,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes'],
+  keywords: [
+    'hilton head golf packages',
+    'harbour town golf links cost',
+    'hilton head golf trip cost',
+    'palmetto dunes golf',
+    'stay and play hilton head',
+    'best hilton head golf courses',
+    'hilton head golf tiers',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "There are 23 golf courses inside 25 minutes of Hilton Head Island, which means most groups end up planning four-round trips with no idea how to mix them. The wrong mix means you spend $400 on a course that doesn't justify the price; the right mix means every round earns its slot.",
+    },
+    {
+      kind: 'p',
+      html: "Below is the tier breakdown we use when we build a golf trip for a client. Real 2026 in-season rates, real tradeoffs, and the four-round itinerary we run for most groups. Pair this with the <a href=\"/hilton-head-golf-packages\">stay-and-play page</a> for what we negotiate on the villa side and the <a href=\"/blog/hilton-head-golf-courses-ranked\">ranked-list post</a> for full course-by-course detail.",
+    },
+    {
+      kind: 'h2',
+      text: 'The four tiers',
+    },
+    {
+      kind: 'tier',
+      label: 'S-Tier',
+      subtitle: 'The marquee round. Book one per trip.',
+      accent: 'gold',
+      items: [
+        {
+          name: 'Harbour Town Golf Links (Sea Pines)',
+          meta: 'In-season green fee: $475 · The RBC Heritage host course',
+          blurb: "There is nothing else like this on the island, or in the southeast. Pete Dye's small greens, the 18th hole into the lighthouse, the caddies who have looped here for 20 years. The price is real but the experience is real. Book it twice if your trip is golf-first; once if it's a mixed trip. Caddie strongly recommended — $80 plus tip is the local convention.",
+        },
+        {
+          name: 'May River at Palmetto Bluff (Bluffton)',
+          meta: 'In-season green fee: $295 · 20 minutes off-island',
+          blurb: "Jack Nicklaus design at Palmetto Bluff. The condition of the course is the best in the region — staff has the maintenance dialed in to a fault. Slightly less iconic than Harbour Town but in real terms a better golf experience. Worth the 20-minute drive from any villa on the island. Pair it with lunch at the River House when you finish.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'A-Tier',
+      subtitle: 'The workhorse mid-tier. Two rounds per trip from this list.',
+      accent: 'primary',
+      items: [
+        {
+          name: 'Robert Trent Jones Oceanfront (Palmetto Dunes)',
+          meta: 'In-season green fee: $245 · Inside Palmetto Dunes gate',
+          blurb: "The course everyone photographs — actual ocean view from the 10th tee. Plays harder than it looks because of the wind off the Atlantic. The best second-round play of any trip; book it for the day after Harbour Town when you want a course that's beautiful but won't crush you mentally.",
+        },
+        {
+          name: 'Atlantic Dunes by Davis Love III (Sea Pines)',
+          meta: 'In-season green fee: $215 · Inside Sea Pines',
+          blurb: "Renovated to the studs in 2016. Davis Love grew up here, and you can feel it in the routing. Generous fairways, fair greens, and one of the best practice ranges on the island. We use this for the \"day two warm-up round\" before Harbour Town or as the recovery round after.",
+        },
+        {
+          name: 'Heron Point by Pete Dye (Sea Pines)',
+          meta: 'In-season green fee: $245 · Inside Sea Pines',
+          blurb: "The other Pete Dye on the property. Less ceremonial than Harbour Town but the holes are just as well-routed. Tight off the tee, severe bunkering. Strong A-tier pick if you've already played Harbour Town and want more Dye in your trip.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'B-Tier',
+      subtitle: 'Smart fourth-round options. Lower price, real quality.',
+      accent: 'zinc',
+      items: [
+        {
+          name: 'Arthur Hills (Palmetto Dunes)',
+          meta: 'In-season green fee: $185',
+          blurb: "The least-talked-about course in Palmetto Dunes, which means it's also the least-crowded. Walkable routing, fair par-3s, doesn't try to crush you. Good fourth-round pick for a 4-man group where one player isn't 100% sold on golf.",
+        },
+        {
+          name: 'George Fazio (Palmetto Dunes)',
+          meta: 'In-season green fee: $195',
+          blurb: "Fazio's quieter design, traditionally known as the strategic-thinking course on the island. Greens are firm, par-4s tilt long. The course that rewards a course-management round, which is its own pleasure on a buddy trip.",
+        },
+        {
+          name: 'Palmetto Hall (Mid-Island, public)',
+          meta: 'In-season green fee: $145',
+          blurb: "Public-access, semi-private feel. Two courses (Arthur Hills + Robert Cupp). Best per-dollar round on the island for a mid-tier player. We use this as the budget fourth round or the relaxed-pace closer to a trip.",
+        },
+      ],
+    },
+    {
+      kind: 'tier',
+      label: 'Skip or save for later',
+      subtitle: 'Decent rounds but rarely the right call.',
+      accent: 'rose',
+      items: [
+        {
+          name: 'Old South (Bluffton)',
+          meta: 'In-season green fee: $135',
+          blurb: "Fine course. Not bad. Just not on the same plane as the courses above, and the 20-minute drive across the bridge to play a B-minus round doesn't pencil out unless the group has very specific budget constraints.",
+        },
+        {
+          name: "Eagle's Pointe (Bluffton)",
+          meta: 'In-season green fee: $125',
+          blurb: "Davis Love III also designed this one, but it's not in the same condition as Atlantic Dunes. Worth playing if you're in Bluffton anyway, but not worth a special trip from Hilton Head proper.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'The four-round itinerary we run most often',
+    },
+    {
+      kind: 'p',
+      html: "For a Thursday-arrive, Sunday-depart trip with four rounds, this is the order that works best after running it 40+ times with groups:",
+    },
+    {
+      kind: 'ol',
+      items: [
+        '<strong>Thursday afternoon</strong> — Atlantic Dunes (Sea Pines). Warm-up round. Loose, generous, no pressure. Get your legs.',
+        '<strong>Friday morning</strong> — Harbour Town Golf Links. The marquee round. 8am-9am tee time, caddies booked, post-round lunch at the Quarterdeck.',
+        '<strong>Saturday morning</strong> — Robert Trent Jones Oceanfront (Palmetto Dunes). Recovery from Harbour Town with a course that has views but doesn\'t demand perfection.',
+        '<strong>Sunday morning</strong> — May River at Palmetto Bluff (off-island). The send-off round. Best course condition you\'ll play all year, lunch at the River House before the drive back to the airport.',
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Total green-fee cost per player: ~$1,230. Total trip cost per player (villa + golf + food, mid-budget): $1,800 to $2,200 for a 4-night trip. Mid-October is the sweet spot for this exact itinerary; we shift it earlier in the spring for groups that want milder mornings.",
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Detail',
+      title: 'When the four-round itinerary changes',
+      summary: 'Member groups, mixed-skill groups, and milestone trips.',
+      blocks: [
+        {
+          kind: 'h3',
+          text: 'Member or low-handicap groups',
+        },
+        {
+          kind: 'p',
+          html: "We swap out Atlantic Dunes for Heron Point on day 1 and keep everything else the same. Heron Point is more demanding off the tee and a better intellectual warm-up before Harbour Town. Greens are similar enough in speed that the day-2 transition feels right.",
+        },
+        {
+          kind: 'h3',
+          text: 'Mixed-skill groups (one or two players who want a relaxed round)',
+        },
+        {
+          kind: 'p',
+          html: "Swap the Sunday May River round for Palmetto Hall — saves $150/player and the pace is more forgiving for the player who's struggling. Save May River for a future trip when the whole group is ready.",
+        },
+        {
+          kind: 'h3',
+          text: 'Milestone trip — 50th birthday, retirement, etc.',
+        },
+        {
+          kind: 'p',
+          html: "Two Harbour Town rounds in the week, with the second one on Sunday morning so the trip ends on the marquee course. Add a private dinner at the Quarterdeck on Saturday night, with the lighthouse outside the window. Roughly $400 extra per player but the kind of trip people talk about for ten years.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What you actually pay for in a "package"',
+    },
+    {
+      kind: 'p',
+      html: "Most golf packages on Hilton Head are not packages in the discount sense — they are bundles that lock in tee times and villa together. The discount averages 8 to 12% on the green fees and 4 to 8% on the villa. Where the value really shows up is in tee-time priority: a Sea Pines villa guest can book Harbour Town tee times 120 days out, which is a meaningful advantage in season.",
+    },
+    {
+      kind: 'p',
+      html: "We negotiate against this calendar to land your group on the first-tee sheet at the times you actually want, not whatever's left over. The villa side of the package matters too — staying at the Inn & Club at Harbour Town vs. a Palmetto Dunes villa shifts your morning drive from 0 minutes to 12, which adds up across four rounds.",
+    },
+    {
+      kind: 'faq',
+      label: 'Hilton Head golf package FAQ',
+      items: [
+        {
+          q: 'How much does a 4-round Hilton Head golf trip cost in 2026?',
+          a: "Real range: $1,100 to $1,500 per player in green fees, $400 to $800 per player in villa cost (4 nights, foursome splitting a 3BR), and $250 to $400 in food and drinks. Total per player: $1,800 to $2,500 in shoulder season, $2,400 to $3,200 in peak.",
+        },
+        {
+          q: 'How far in advance do I need to book Harbour Town?',
+          a: "120 days out for the prime spring and fall slots if you want a 7am to 9am morning tee time. Sea Pines villa guests get priority access at that window. Inside 60 days, you'll be choosing from 12pm to 2pm slots in shoulder season and almost nothing in peak.",
+        },
+        {
+          q: 'Is the Harbour Town caddie really worth it?',
+          a: "Yes. The caddies know every hole's wind tendency at every time of day, where to miss safe, and which putts break against the green's apparent slope. $80 plus tip per bag. Standard tip is another $40 to $60 per bag on top.",
+        },
+        {
+          q: 'When is the best time of year to golf Hilton Head?',
+          a: "Mid-September through early November, and mid-March through late April (excluding Heritage Week). Temperatures sit in the high-60s to mid-70s, wind is manageable, course conditions are at their best, and rates are 25 to 35% below summer peak.",
+        },
+        {
+          q: 'Can I play Harbour Town if I\'m not staying at Sea Pines?',
+          a: "Yes — Harbour Town accepts public tee times. You won't get the 120-day window or the resort-guest pricing, but you can absolutely book a round at standard public-rate green fees. Plan on 60 to 30 days out, expect afternoon tee times in peak season.",
+        },
+        {
+          q: 'Do you offer stay-and-play packages?',
+          a: "Yes — we negotiate the villa and the rounds together, lock the tee times, and arrange the logistics (cart drop, caddies, lunches). No upcharge; we make our money on the villa side. Full details on the <a href=\"/hilton-head-golf-packages\">stay-and-play page</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Build the trip',
+    },
+    {
+      kind: 'p',
+      html: "Tell us how many golfers, what dates, and what handicap range. We send back a four-round itinerary with tee times locked, villa picked, and a budget — usually within a day. <a href=\"/itinerary\">We'll build the plan for you</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 31) ACTIVITIES. Spring Break on Hilton Head — Heritage Week
+// ---------------------------------------------------------------------------
+
+const postSpringBreakHeritage: Post = {
+  slug: 'hilton-head-spring-break-heritage-week-avoid',
+  title: "Spring Break on Hilton Head: The Heritage Week to Avoid",
+  excerpt:
+    "Hilton Head spring break has one week to avoid and three weeks to book. Heritage Tournament logistics, family-week timing, and the smart pivot.",
+  description:
+    "When to book Hilton Head spring break in 2026 and 2027 — the Heritage Tournament week to avoid for family trips, and the three weeks that work.",
+  category: 'Activities',
+  readTime: '9 min',
+  publishedAt: '2026-06-05',
+  author: 'Will Griffith',
+  featuredOrder: 104,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
+  keywords: [
+    'hilton head spring break',
+    'heritage tournament 2027',
+    'rbc heritage spring break',
+    'when to book hilton head spring break',
+    'hilton head april family',
+    'hilton head spring break family',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Spring break on Hilton Head is one of the best moves on the southeastern calendar — water is warm enough by mid-April, dinner reservations open up, and rates have not yet hit summer peak. But one week ruins the math for family trips: the week of the RBC Heritage tournament. Below is the week to avoid, the three weeks to book instead, and the planning logic for booking 2027 from where we are now.",
+    },
+    {
+      kind: 'p',
+      html: "If you are golf-curious or want to attend the Heritage as a spectator, that is a different post — the <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage tournament guide</a> covers that angle. This one is about families and couples trying to do a normal spring beach week.",
+    },
+    {
+      kind: 'h2',
+      text: 'The week to avoid for family trips',
+    },
+    {
+      kind: 'p',
+      html: "<strong>The week of the RBC Heritage tournament.</strong> In 2026 that was April 13–19; in 2027 it will be <strong>April 12–18, 2027</strong>. The tournament is the PGA Tour event that follows the Masters, and it brings roughly 100,000 spectators to the island across the week. Five things happen all at once that make it the wrong week for a family trip:",
+    },
+    {
+      kind: 'ul',
+      items: [
+        'Villa rates spike 35 to 60% over the spring-break average. A 3BR Sea Pines villa that would normally rent for $580/night runs $850 to $980.',
+        'Sea Pines traffic is at its worst. The gate line backs up to US-278 between 8am and 11am, and the bike trails are packed with spectators heading to the course.',
+        'Harbour Town is closed to non-spectators all week. Restaurants in Sea Pines are at 100% reservations capacity through dinner; you cannot walk in anywhere.',
+        'Every dinner reservation on the island gets harder. Lucky Rooster, ELA\'s, Charlie\'s — all booked out two to three weeks ahead during Heritage Week.',
+        'Beach access in Sea Pines requires patience. The parking and the bike-rack space at Tower Beach get genuinely full by 10am.',
+      ],
+    },
+    {
+      kind: 'p',
+      html: "If you are bringing kids and you want a normal spring beach week with bike rides and lazy mornings, Heritage Week is the wrong call. There is no way to enjoy the tournament-week intensity unless you came specifically for the golf.",
+    },
+    {
+      kind: 'h2',
+      text: 'The three weeks to book instead',
+    },
+    {
+      kind: 'p',
+      html: "Spring break on Hilton Head has three clean windows that all beat Heritage Week for a family trip:",
+    },
+    {
+      kind: 'h3',
+      text: 'Window 1: Mid-March (March 14–21, 2026 / March 13–20, 2027)',
+    },
+    {
+      kind: 'p',
+      html: "The earliest week the water is genuinely swimmable for kids (mid-70s by late afternoon). Air temperatures are 72 to 78°F. Villa rates are at their lowest of the spring — roughly 25 to 35% below Heritage Week prices. The tradeoff: dolphin sightings drop, some restaurants are still on shoulder hours, and the wind can pick up.",
+    },
+    {
+      kind: 'h3',
+      text: 'Window 2: Late March / early April (March 28 – April 4, 2026)',
+    },
+    {
+      kind: 'p',
+      html: "Peak spring-break sweet spot. Water is 74 to 76°F, air is 76 to 82°F, all restaurants are running their full menus and full reservation books, and dolphin sightings are reliable. Rates are 12 to 20% over the mid-March price but the experience is dialed in. This is the week we book most family trips.",
+    },
+    {
+      kind: 'h3',
+      text: 'Window 3: The week after Heritage (April 19–26, 2026 / April 18–25, 2027)',
+    },
+    {
+      kind: 'p',
+      html: "The Heritage post-week is actually one of the smartest secrets on the calendar. Restaurants are emptier than they were the week before. The crowds have left. The weather has warmed up another two degrees. And rates drop back down to the late-March levels. The only downside is that the tournament infrastructure (grandstands, hospitality tents) is still being torn down in Sea Pines for the first 48 hours, so plan on slightly more traffic around Harbour Town for Monday and Tuesday.",
+    },
+    {
+      kind: 'p',
+      html: "More detail on month-by-month family timing is on the <a href=\"/hilton-head-spring-break\">spring break page</a> and the <a href=\"/hilton-head-family-trip-planner\">family planner</a>.",
+    },
+    {
+      kind: 'h2',
+      text: 'The exception — Heritage Week if you want it',
+    },
+    {
+      kind: 'p',
+      html: "If you have a golfer in the family who would love to watch the tournament live, Heritage Week becomes the right call — but you book it as a tournament trip, not a family beach trip. Stay outside of Sea Pines (we put Heritage-spectator clients in Shelter Cove or Palmetto Dunes more often than Sea Pines, because the spectator shuttle is easier and the dinner reservations are open). Book hospitality tickets six months out. Plan the beach time for the back end of the trip after the tournament finishes.",
+    },
+    {
+      kind: 'p',
+      html: "Full Heritage logistics — where to stay as a spectator, ticketing, the daily-pass strategy — are on the <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage travel guide</a>. We also have the dedicated <a href=\"/hilton-head-golf-packages\">golf package page</a> if your trip is mostly about playing rather than spectating.",
+    },
+    {
+      kind: 'h2',
+      text: 'Booking 2027 from May 2026',
+    },
+    {
+      kind: 'p',
+      html: "If you read this in May or June of 2026 and want a 2027 spring break trip, here is what is already booked, what is still open, and the right move.",
+    },
+    {
+      kind: 'h3',
+      text: 'Already filling',
+    },
+    {
+      kind: 'p',
+      html: "Sea Pines oceanfront row for the week of March 28 – April 4, 2027 is already 60% booked. Palmetto Dunes oceanfront for the same week is 40% booked. The April 19–26, 2027 post-Heritage week is roughly 30% booked across the island. Inventory will tighten quickly from here — by September, the prime weeks will be 80%+ committed.",
+    },
+    {
+      kind: 'h3',
+      text: 'What we recommend',
+    },
+    {
+      kind: 'p',
+      html: "Book by end of June 2026 if you want oceanfront row in Sea Pines or Palmetto Dunes. Off-beach interior pockets can wait until October. Forest Beach 2BRs are the most flexible — we have booked them as late as January for that April. The closer to the beach you want, the earlier you book.",
+    },
+    {
+      kind: 'callout',
+      label: 'Heritage 2027 dates',
+      html: "The RBC Heritage 2027 will run from <strong>Monday, April 12 through Sunday, April 18, 2027</strong>. Treat that as a hard \"do not book a family beach trip\" window. The weeks immediately before and after are the smart pivots.",
+    },
+    {
+      kind: 'faq',
+      label: 'Hilton Head spring break FAQ',
+      items: [
+        {
+          q: 'When is the best week for spring break on Hilton Head?',
+          a: "Late March through the first week of April, avoiding the week of the RBC Heritage golf tournament. In 2027 that means March 28 – April 4 or April 19–25 are the two top picks. Both have warm-enough water, full restaurant operations, and rates 25 to 30% below Heritage Week.",
+        },
+        {
+          q: 'Is the water warm enough to swim in March on Hilton Head?',
+          a: "By the last week of March, yes — the water hits 70°F most days, and the air sits around 74 to 78°F. Kids who would happily swim in a hotel pool will swim in the ocean. Adults sometimes find March water too cold for full swimming but fine for wading.",
+        },
+        {
+          q: 'How crowded is Hilton Head during Heritage Week?',
+          a: "Roughly 100,000 spectators come to the island across the four tournament days plus the surrounding practice rounds. Sea Pines is the epicenter. Other neighborhoods are 20 to 30% busier than a normal April week but still functional. Avoid Sea Pines unless you came for the tournament.",
+        },
+        {
+          q: 'Should I book spring break 2027 right now?',
+          a: "If you want Sea Pines or Palmetto Dunes oceanfront row, yes — book by end of June 2026. Interior pockets and Forest Beach are still flexible into the fall. After September, the rate-plus-availability math gets noticeably worse.",
+        },
+        {
+          q: 'What about Easter weekend specifically?',
+          a: "Easter 2026 was April 5; Easter 2027 is March 28. Both fall outside Heritage Week and inside our recommended windows. Easter weekend itself sees a 10 to 15% spike on Saturday and Sunday rates but the surrounding week is normal spring-break pricing.",
+        },
+        {
+          q: 'Where should we stay for spring break with kids 5 to 10?',
+          a: "Palmetto Dunes, almost always. The lagoon system is open year-round, the bike paths are full but not packed, and the family-trip restaurants (ELA's, Skull Creek, Hudson's) are at their full menus by late March. Sea Pines is a strong second; Forest Beach for budget-driven family trips.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Get the dates locked',
+    },
+    {
+      kind: 'p',
+      html: "Tell us your spring-break window (school district matters — we ask) and what kind of trip you want. We come back with two date options, two villa shortlists, and a budget. <a href=\"/itinerary\">We'll build the plan for you</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 32) PLANNING. Real Hilton Head Weather Month-by-Month
+// ---------------------------------------------------------------------------
+
+const postWeatherMonthByMonth: Post = {
+  slug: 'hilton-head-weather-month-by-month',
+  title: "The Real Hilton Head Weather Month-by-Month (From a Local)",
+  excerpt:
+    "Hilton Head weather, month by month, by someone who lives here. Real water temps, real rain risk, and which trip type fits which month.",
+  description:
+    "Real Hilton Head weather month by month — actual water temps, rain risk, hurricane window, and which trip type works best in each month.",
+  category: 'Planning',
+  readTime: '12 min',
+  publishedAt: '2026-06-06',
+  author: 'Will Griffith',
+  featuredOrder: 105,
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
+  keywords: [
+    'hilton head weather by month',
+    'best month to visit hilton head',
+    'hilton head water temperature',
+    'hilton head rain season',
+    'hilton head hurricane month',
+    'hilton head weather guide',
+  ],
+  body: [
+    {
+      kind: 'p',
+      html: "Most month-by-month Hilton Head weather pages are AI-generated tables copy-pasted from generic Lowcountry averages. The numbers in those tables are off by enough to ruin a trip — particularly the water-temperature numbers and the rain-risk averages. This is what it actually feels like here, month by month, written from living on the island.",
+    },
+    {
+      kind: 'p',
+      html: "Use this with the standalone monthly pages — <a href=\"/hilton-head-weather/january\">January</a>, <a href=\"/hilton-head-weather/march\">March</a>, <a href=\"/hilton-head-weather/april\">April</a>, <a href=\"/hilton-head-weather/june\">June</a>, <a href=\"/hilton-head-weather/october\">October</a>, <a href=\"/hilton-head-weather/december\">December</a> — for the deeper drill-downs.",
+    },
+    {
+      kind: 'h2',
+      text: 'The quick table',
+    },
+    {
+      kind: 'table',
+      caption: 'Hilton Head real weather, month by month',
+      headers: ['Month', 'High °F', 'Low °F', 'Water °F', 'Rain risk', 'Best for'],
+      rows: [
+        ['January', '58', '40', '54', 'Low', 'Snowbirds, winter rentals, golf in the 60s'],
+        ['February', '62', '42', '54', 'Low', 'Snowbirds, off-season couples, golf'],
+        ['March', '69', '49', '60', 'Low–Med', 'Spring break (late), early golf, couples'],
+        ['April', '76', '57', '67', 'Med', 'Spring break, Heritage Week, golf prime'],
+        ['May', '83', '65', '74', 'Med', 'Family pre-summer, golf, weddings'],
+        ['June', '88', '72', '80', 'High (afternoon storms)', 'Family peak start, beach prime'],
+        ['July', '91', '74', '84', 'High (afternoon storms)', 'Family peak, hot afternoons'],
+        ['August', '90', '74', '85', 'High (storms + early hurricane risk)', 'Family late peak, hottest water'],
+        ['September', '85', '69', '82', 'Med (peak hurricane risk Sep 10–Oct 10)', 'Couples, second golf prime, family if flexible'],
+        ['October', '78', '60', '76', 'Low (post-hurricane window)', 'Golf prime, couples, foodie weekends'],
+        ['November', '69', '49', '67', 'Low', 'Thanksgiving, late golf, holiday couples'],
+        ['December', '60', '42', '57', 'Low', 'Holiday couples, winter rentals begin'],
+      ],
+    },
+    {
+      kind: 'p',
+      html: "Source notes: high/low are 30-year NOAA averages for the Savannah station, the closest official station to Hilton Head Island. Water temps are NOAA buoy data for the offshore station, which runs 1 to 2°F warmer than the closer-to-shore actual swim temperature.",
+    },
+    {
+      kind: 'h2',
+      text: 'Month-by-month, the real version',
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q1',
+      title: 'January — quiet, cheap, and underrated',
+      summary: 'Snowbird month. Mid-50s water. Locked-in rates.',
+      defaultOpen: false,
+      blocks: [
+        {
+          kind: 'p',
+          html: "January on Hilton Head is the calmest month of the year. Highs run 58°F, lows around 40°F. Cold snaps drop into the high-20s for two or three nights a year and then bounce back. The water is mid-50s — you are not swimming, but you are walking the beach in a fleece and feeling deeply okay about the world. Restaurants are at 30 to 40% capacity and the dinner reservations are walk-in easy. Best for: snowbird stays, winter rentals, romantic weekend escapes. Worst for: anyone expecting to swim, anyone who needs the marina open for dolphin tours. Full details on the <a href=\"/hilton-head-weather/january\">January page</a> and the <a href=\"/hilton-head-winter-rental\">winter rental landing</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q1',
+      title: 'February — second month of the snowbird quiet',
+      summary: 'Slightly warmer than January. Same dynamics.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "February is January with a couple more degrees and slightly longer days. Highs in the low-60s, lows in the low-40s. Water still cold. The first hint of warmth happens in the last week — a 70°F day or two slips into the forecast. Best for: golf trips for cold-weather refugees, snowbirds, off-season couples weekends. Restaurants are still on shoulder hours but full menus are in operation.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q1',
+      title: 'March — the shoulder turns',
+      summary: 'Air warms up. Water still cool. Spring-break starts late month.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "March is the inflection month. The first week feels like February — high 60s, low 50s water. By the last week, highs are pushing 75°F and water is 65 to 68°F. Air-temperature spring-break weather is comfortable by mid-month; water-temperature spring-break is comfortable only in the last week. Best for: spring break families with older kids (the cooler water doesn't bother teens as much as it bothers 5-year-olds), early golf trips, and couples who want the island before the crowds arrive. Detail on the <a href=\"/hilton-head-weather/march\">March page</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q2',
+      title: 'April — the best month of the year',
+      summary: 'Heritage Week is the exception. Otherwise, the cleanest weather on the calendar.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "April is the closest the Hilton Head climate gets to perfect. Highs in the mid-70s, lows around 60°F, water 67°F by mid-month and 70°F by month-end. Air is dry, breeze is light, mornings are 64°F-and-bright. The one exception is Heritage Week — the second full week of April — which becomes a tournament week with all the side effects, see the <a href=\"/blog/hilton-head-spring-break-heritage-week-avoid\">spring break post</a>. Outside of Heritage Week, April is the best month for golf trips, the best month for couples weekends, and one of the two best months for weddings. Full details on the <a href=\"/hilton-head-weather/april\">April page</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q2',
+      title: 'May — water swimmable for everyone',
+      summary: 'The first family-friendly month. Pre-summer prices.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "May is when the water hits 74°F and stays there — the threshold where 7-year-olds will happily spend three hours in the ocean. Air temperatures are mid-80s, humidity is creeping up but not oppressive. Afternoon thunderstorms are occasional but not the every-day pattern they will be by July. Best for: families who can shift their school calendar earlier, weddings, and second-trip clients who want summer water without summer rates. Rates are 18 to 25% below June peak.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q2',
+      title: 'June — the family peak begins',
+      summary: '80°F water. 88°F days. Afternoon storms.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "June is the start of family peak season. Schools are out the second week. Water is 80°F. Air is 88°F. Afternoon thunderstorms become a near-daily 30% probability, usually between 3pm and 6pm, lasting 30 to 60 minutes. The local rhythm shifts: beach in the morning, lunch, nap or pool, beach again at 4:30pm after the storm passes. Best for: families with school-age kids, big-group reunions. Full breakdown on the <a href=\"/hilton-head-weather/june\">June page</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q3',
+      title: 'July — hottest month of the year',
+      summary: '91°F days. 84°F water. Crowds peak.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "July is the hottest month — highs 91°F, water 84°F, humidity 80%+. The morning beach window is the best time of the day; by 1pm the sand is too hot for bare feet. Afternoon thunderstorms continue. This is also the peak crowd month, with the July 4 week and the two weeks following it functionally booked out across the island. If you want July, see our <a href=\"/blog/last-call-july-hilton-head-villa-availability\">last-call July inventory post</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q3',
+      title: 'August — same as July, with hurricane risk starting',
+      summary: 'Last full peak month. Hurricane season begins to bite.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "August feels identical to July weather-wise but the hurricane risk starts climbing. The Atlantic hurricane season runs June 1 through November 30, but real Hilton Head risk window is August 20 through October 10. August trips are still typically fine, but it's the first month where checking the NOAA hurricane outlook before locking dates is genuinely worth doing. See our <a href=\"/blog/hilton-head-2026-hurricane-forecast\">hurricane forecast post</a> for the framework.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q3',
+      title: 'September — the smartest month for most people',
+      summary: 'Post-Labor Day quiet. Warm water. Lower rates.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "September is the most underrated month on the calendar. Post-Labor Day, the crowds drop by 60% overnight. Water stays at 82°F through the month. Air temperatures sit in the mid-80s with the humidity easing slightly. Rates drop 22 to 30% from summer peak. The one caveat is hurricane risk — September 10 through October 10 is the peak Atlantic hurricane window. Trip insurance matters more in this month than any other. We send roughly 30% of our annual client volume here now.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q4',
+      title: 'October — the second-best month of the year',
+      summary: 'Golf prime, foodie weekends, post-hurricane calm.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "October is April's autumn twin. Highs in the high-70s, water still 76°F through mid-month, air dry, breezes off the ocean. The post-hurricane window opens by October 10 and the rest of the month is one of the lowest-risk weather periods of the year. Best for: golf trips (this is when locals book their best rounds), couples weekends, foodie weekends, and late-season weddings. Full breakdown on the <a href=\"/hilton-head-weather/october\">October page</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q4',
+      title: 'November — Thanksgiving and the back end of the season',
+      summary: 'Mid-60s highs. Thanksgiving week is the only peak.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "November is mid-60s highs, mid-40s lows, mostly dry. The water is still 67°F early month and 60°F by month-end — wading temperature only. Thanksgiving week is the one peak window in an otherwise quiet month, with restaurants booking out three weeks ahead. Outside of Thanksgiving week, the rest of the month is one of the lowest-rate periods of the year. See the <a href=\"/hilton-head-thanksgiving\">Thanksgiving page</a> for the specific week.",
+        },
+      ],
+    },
+    {
+      kind: 'section',
+      eyebrow: 'Q4',
+      title: 'December — quiet winter, holiday couples',
+      summary: 'Low-60s highs. First weeks are off-peak. Christmas is a small peak.',
+      blocks: [
+        {
+          kind: 'p',
+          html: "December returns to January's calm pattern — low-60s highs, low-40s lows, dry. The first two weeks are the cheapest of the year on the island. Christmas week is the only winter peak — Sea Pines decorates Harbour Town with lights and families come back for the holidays. Best for: romantic winter escapes, holiday couples, and snowbird stays starting. Detail on the <a href=\"/hilton-head-weather/december\">December page</a>.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Which trip type fits which month',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Couples weekend</strong>: October > April > September > March. Mild weather, dinner reservations open, no kids.',
+        '<strong>Family week with kids</strong>: May > June > August > July. Warm water, full restaurant menus, lagoon systems open.',
+        '<strong>Golf trip</strong>: October > April > March > May. Cooler mornings, no thunderstorm pattern, peak course conditions.',
+        '<strong>Wedding</strong>: April > October > May > June. Mild temps, low rain risk, post-hurricane calm.',
+        '<strong>Snowbird month</strong>: January > February > March (late). Low rates, walking weather, light crowds.',
+        '<strong>Foodie weekend</strong>: October > November (non-Thanksgiving) > March > December. Restaurants quiet enough to walk in.',
+      ],
+    },
+    {
+      kind: 'p',
+      html: "For more trip-type specifics, see the dedicated landings — <a href=\"/hilton-head-family-trip-planner\">family planner</a>, <a href=\"/hilton-head-golf-packages\">golf packages</a>, <a href=\"/hilton-head-weddings\">weddings</a>, <a href=\"/hilton-head-honeymoon\">honeymoon</a>, <a href=\"/hilton-head-winter-rental\">winter rentals</a>, <a href=\"/hilton-head-beaches\">beaches</a>.",
+    },
+    {
+      kind: 'faq',
+      label: 'Hilton Head weather FAQ',
+      items: [
+        {
+          q: 'What is the best month to visit Hilton Head?',
+          a: "October for adults and couples; May or early June for families with kids who need warm water. April is the close second for both categories, with the caveat that Heritage Week is the exception. September is the smartest pick if you're flexible and willing to track the hurricane outlook.",
+        },
+        {
+          q: 'How warm is the water at Hilton Head in June?',
+          a: "June water averages 80°F. By the last week, it's 82°F. This is the first month of the year where the water is unambiguously swimmable for everyone in the family, including young kids who would otherwise complain about cold.",
+        },
+        {
+          q: 'When is hurricane season on Hilton Head?',
+          a: "Atlantic hurricane season runs June 1 through November 30, but the real Hilton Head risk window is mid-August through mid-October, with peak risk September 10 through October 10. We track the NOAA outlook for any client trip in that window and have written a full <a href=\"/blog/hilton-head-2026-hurricane-forecast\">hurricane planning guide</a>.",
+        },
+        {
+          q: 'Does Hilton Head get cold in winter?',
+          a: "Cold by Lowcountry standards, mild by anywhere else's standards. Highs run 58 to 62°F December through February, lows in the low 40s. A handful of nights drop into the high 20s. Most of the winter is fleece-and-beach-walk weather rather than coat-and-stay-inside weather.",
+        },
+        {
+          q: 'Is it humid in Hilton Head?',
+          a: "Yes, in summer. June through August humidity runs 75 to 85%, which compounds the heat. From October through May, humidity sits at 55 to 70% and is rarely noticeable. The first cool-air shift each fall typically arrives around October 8 to 15.",
+        },
+        {
+          q: 'What month has the least rain on Hilton Head?',
+          a: "Statistically, October and November tie for the lowest rainfall — about 2 to 2.5 inches across the month. June through August see 5 to 6 inches each, mostly from afternoon thunderstorms rather than all-day rain.",
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Pick your month and tell us',
+    },
+    {
+      kind: 'p',
+      html: "If you know roughly when you can travel, we can tell you which week inside that month is the smartest pick — based on tides, restaurant reservation patterns, hurricane outlook, and current villa inventory. <a href=\"/itinerary\">We'll build the plan for you</a>.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -6204,6 +7523,12 @@ export const posts: Post[] = [
   postDolphinTours,
   postKayakingGuide,
   postBestPizza,
+  postTripCost2026,
+  postLastCallJuly,
+  postThreeWayCompare,
+  postGolfTiers,
+  postSpringBreakHeritage,
+  postWeatherMonthByMonth,
 ].sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 export function getPostBySlug(slug: string): Post | undefined {
