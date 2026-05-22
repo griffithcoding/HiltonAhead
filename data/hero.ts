@@ -10,12 +10,12 @@ export const hero = {
   /** Display headline. `italic` is rendered in an italic serif cut. */
   title: {
     lineOne: 'The Hilton Head',
-    italic: 'you thought only',
-    lineTwo: 'locals knew.',
+    italic: 'the locals',
+    lineTwo: 'keep to themselves.',
   },
   /** Classic magazine lede — long-ish, warm, confident. */
   lede:
-    "Villa picks. Tee times at Harbour Town. The 7 p.m. table at Skull Creek (the one that was somehow fully booked when you called). The short list of things worth doing and the longer list of things worth skipping. We plan Hilton Head the way we plan it for family, then hand it to you.",
+    "The island is twelve miles long and you have seven days. Somewhere in there is the villa with the porch facing the right way, the 7 p.m. table at Skull Creek (the one that was somehow fully booked when you called), and the tee time at Harbour Town that opens up two Tuesdays before your trip if you know to ask. We plan it the way we plan it for family — every reservation, every drive time, every quiet half-hour — and hand it to you. You arrive barefoot by Tuesday.",
   primaryCtaLabel: 'Plan my trip',
   secondaryCta: {
     href: '#why-hilton-head',
@@ -46,12 +46,12 @@ export const whyIsland = {
     italic: '400 years of quiet.',
   },
   lede:
-    'Hilton Head is the rare American resort island that kept its trees. No neon, no billboards. No high-rise crush either, because the building code never let one go up. Live oaks dripping Spanish moss, sixty-odd miles of bike path, and a coastline shaped by the Atlantic rather than by developers. The Lowcountry does unhurried better than anywhere else in the South.',
+    'Hilton Head is the rare American resort island that kept its trees. No neon, no billboards, no high-rise crush — the building code never let one go up. Live oaks dripping Spanish moss, sixty-odd miles of bike path under that canopy, a coastline shaped by the Atlantic rather than by developers. By the second morning your shoulders drop two inches and you stop checking the time. The Lowcountry does unhurried better than anywhere else in the South.',
   pillars: [
     {
       title: 'The beach, honestly',
       body:
-        "Twelve miles of hard-packed sand you can bike on at low tide. No rocks, no undertow, no condo towers. The Atlantic here is forgiving. Shallow for fifty yards out, warm by mid-May, glassy most mornings.",
+        "Twelve miles of hard-packed sand you can bike on at low tide — pedal a mile north of Coligny and you'll have it almost to yourself. No rocks, no undertow, no condo towers. The Atlantic here is forgiving: shallow for fifty yards out, warm by mid-May, glassy by 6:30 a.m. You'll keep going back at sunrise even on the days you swore you'd sleep in.",
     },
     {
       title: 'A table of contents',
@@ -61,7 +61,7 @@ export const whyIsland = {
     {
       title: 'The Lowcountry palette',
       body:
-        "Moss, marsh, and magnolia. Shrimp off the boat at lunch, if you know which dock. Oysters at sunset. Bourbon on a porch after. There's a reason people who come once tend to come back.",
+        "Moss, marsh, and magnolia. Shrimp off the boat at lunch — if you know which dock. Oysters at sunset, opened in front of you on a slab of pine. Bourbon on a porch after, while the cicadas start. There's a reason the people who come once start checking flights home before the bourbon's finished.",
     },
   ],
 } as const;

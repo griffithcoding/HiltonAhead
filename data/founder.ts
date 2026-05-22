@@ -13,7 +13,7 @@ export const founder = {
   /** Short one-line attribution for blog post bylines. */
   byline: 'William Griffith — Founder, Hilton Ahead',
   /** Long-form bio used on /founder and condensed on /about. */
-  bio: 'William Griffith is the founder of Hilton Ahead Travel Co., a Hilton Head Island travel consultancy. A full-time island resident, William plans every trip himself — drives past the villas before recommending them, knows which Sea Pines bike path floods after an August storm, and keeps a working list of which Skull Creek tables catch the last ten minutes of sunset in late July. The practice is intentionally small: one trip at a time, by hand, no franchise, no call center, no scripts.',
+  bio: 'William Griffith plans your Hilton Head trip from a porch on Hilton Head. A thirty-year island resident, he drives past the villas before recommending them, knows which Sea Pines bike path floods after an August storm, and keeps a list — yes, an actual list — of which Skull Creek tables catch the last ten minutes of sunset in late July. The practice is intentionally small: one trip at a time, by hand. No franchise. No call center. No scripts. The work is the work.',
   /** Short bio for schema/og purposes (≤ 160 chars). */
   shortBio:
     'Founder of Hilton Ahead Travel Co. Hilton Head Island full-time resident planning custom local trips by hand — golf, weddings, family weeks.',

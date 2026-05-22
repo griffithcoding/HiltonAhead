@@ -73,8 +73,8 @@ export default function AboutPage() {
           <SectionHead
             number="№ 01"
             eyebrow="About"
-            plain="Travel consulting run by someone who actually"
-            italic="lives here."
+            plain="One trip, one porch,"
+            italic="thirty years of paying attention."
           />
         </section>
 

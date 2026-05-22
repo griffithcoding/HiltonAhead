@@ -8,13 +8,13 @@ export const brand = {
   domain: 'hiltonahead.com',
   url: 'https://www.hiltonahead.com',
 
-  tagline: 'Your local insider for Hilton Head travel.',
+  tagline: 'Hilton Head, the way the locals book it.',
   shortDescription:
-    'A locally-run travel consulting service for Hilton Head. Villas, tee times, dinner reservations, and the 10 things only locals know about.',
+    "A locally-run travel consultancy for Hilton Head Island. Villas chosen by porch and shade. Tee times sequenced by tide. Dinner reservations at the tables that catch the last ten minutes of light. The trip you'd plan if you'd lived here for thirty years.",
 
-  seoTitle: 'Hilton Head Travel Consulting, Planned by a Local',
+  seoTitle: 'Hilton Head Travel, Planned the Way the Locals Book It',
   seoDescription:
-    'Custom Hilton Head itineraries built by a local insider. Villa booking, tee times, dinner reservations, and on-island concierge. Skip the tourist traps.',
+    'Custom Hilton Head itineraries from a thirty-year island resident. Villas chosen by porch and shade, tee times sequenced by tide, reservations at the tables locals quietly keep. Skip the tourist research tax.',
 
   colors: {
     /** Glass aqua — the signature color of the Pristine Caribbean palette.
