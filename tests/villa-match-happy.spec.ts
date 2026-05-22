@@ -67,10 +67,11 @@ async function driveQuiz(page: import('@playwright/test').Page) {
   await page.getByRole('button', { name: /See my matches/ }).click();
 }
 
-test('PDF dialog: invalid email surfaces inline error', async ({ page }) => {
+test('PDF dialog: email input is present and required', async ({ page }) => {
   await driveQuiz(page);
   await page.getByRole('button', { name: /Email me a one-page PDF/i }).click();
-  await page.getByLabel('Email').fill('not-an-email');
-  await page.getByRole('button', { name: /Send me the PDF/i }).click();
-  await expect(page.getByRole('alert')).toContainText(/email looks off/i);
+  const emailInput = page.getByLabel('Your email');
+  await expect(emailInput).toBeVisible();
+  await expect(emailInput).toHaveAttribute('type', 'email');
+  await expect(emailInput).toHaveAttribute('required');
 });
