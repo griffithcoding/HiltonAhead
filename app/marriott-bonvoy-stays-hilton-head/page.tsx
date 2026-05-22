@@ -464,6 +464,76 @@ export default async function TopMarriottStaysHiltonHeadPage({
           </div>
         </section>
 
+        {/* When Marriott isn't the right move */}
+        <section className="mt-24 border-t border-ink/15 pt-16">
+          <h2 className="display text-[28px] leading-[1.1] text-ink md:text-[36px]">
+            When Marriott{' '}
+            <span className="display-italic">isn&rsquo;t the right move</span>
+          </h2>
+          <p className="mt-4 max-w-[680px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
+            Marriott is our default recommendation for Bonvoy-loyal travelers
+            and points-collectors. It is not always the best fit. Three
+            scenarios where we steer clients elsewhere:
+          </p>
+
+          <ol className="mt-10 space-y-7">
+            <li className="grid grid-cols-[auto_1fr] gap-5 border-t border-rule-soft pt-6">
+              <span className="section-number text-[28px] text-gold">01</span>
+              <div>
+                <h3 className="display text-[20px] leading-[1.2] text-ink md:text-[24px]">
+                  You want a specific villa, not a property
+                </h3>
+                <p className="mt-3 max-w-[720px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
+                  MVC inventory is what it is — you book a unit type, not a
+                  specific oceanfront row. If you want a particular Sea Pines
+                  villa with a private pool, or a Forest Beach unit on a specific
+                  block, a direct Vrbo rental on a privately-owned villa beats
+                  MVC availability and often the price.
+                </p>
+                <p className="mt-3 text-[13px] uppercase tracking-[0.12em] text-coral">
+                  Try Vrbo or a Sea Pines Resort direct rental instead.
+                </p>
+              </div>
+            </li>
+            <li className="grid grid-cols-[auto_1fr] gap-5 border-t border-rule-soft pt-6">
+              <span className="section-number text-[28px] text-gold">02</span>
+              <div>
+                <h3 className="display text-[20px] leading-[1.2] text-ink md:text-[24px]">
+                  You want a full-service luxury resort
+                </h3>
+                <p className="mt-3 max-w-[720px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
+                  The MVC villas are not luxury hotels — they&rsquo;re
+                  well-appointed timeshare units. If you want concierge, daily
+                  housekeeping, and resort-tier dining at every meal, only the
+                  Westin Hilton Head delivers that within Bonvoy. Outside the
+                  brand, the Sonesta Resort and the Inn at Harbour Town are
+                  stronger luxury picks.
+                </p>
+                <p className="mt-3 text-[13px] uppercase tracking-[0.12em] text-coral">
+                  Book the Westin (in Bonvoy) or Sonesta / Inn at Harbour Town (out of brand).
+                </p>
+              </div>
+            </li>
+            <li className="grid grid-cols-[auto_1fr] gap-5 border-t border-rule-soft pt-6">
+              <span className="section-number text-[28px] text-gold">03</span>
+              <div>
+                <h3 className="display text-[20px] leading-[1.2] text-ink md:text-[24px]">
+                  You&rsquo;re staying longer than 7 nights
+                </h3>
+                <p className="mt-3 max-w-[720px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
+                  MVC properties price in standard weekly rentals. If
+                  you&rsquo;re staying 10, 14, or more nights, private villa
+                  direct rentals or Sea Pines Resort multi-week pricing
+                  typically beat Marriott&rsquo;s nightly rate at any tier.
+                </p>
+                <p className="mt-3 text-[13px] uppercase tracking-[0.12em] text-coral">
+                  Book a private villa direct or via Sea Pines Resort for stays over a week.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
         {/* FAQ */}
         <section className="mt-24 border-t border-ink/15 pt-16">
           <h2 className="display text-[28px] leading-[1.1] text-ink md:text-[36px]">
