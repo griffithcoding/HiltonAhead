@@ -23,7 +23,10 @@ export type AffiliateProgramId =
   | 'getyourguide'
   | 'golfnow'
   | 'amazon'
-  | 'marriott';
+  | 'marriott'
+  | 'allianz'
+  | 'hertz'
+  | 'petermillar';
 
 export interface AffiliateProgram {
   id: AffiliateProgramId;
@@ -155,6 +158,42 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
       'https://www.marriott.com/search/findHotels.mi?destinationAddress.destination=Hilton+Head+Island%2C+SC&searchType=InCity',
     pitch:
       'Marriott Vacation Club villas + the Westin on Hilton Head — Bonvoy points eligible.',
+  },
+  allianz: {
+    id: 'allianz',
+    name: 'Allianz Travel Insurance',
+    shortName: 'Allianz',
+    brandDomain: 'allianztravelinsurance.com',
+    trackingIdEnv: 'AFFILIATE_ALLIANZ_CAMREF',
+    trackingParam: 'camref',
+    staticParams: { irgwc: '1' },
+    defaultDeeplink: 'https://www.allianztravelinsurance.com/',
+    pitch:
+      'Travel insurance for your trip — covers cancellation, medical, and baggage delay.',
+  },
+  hertz: {
+    id: 'hertz',
+    name: 'Hertz',
+    shortName: 'Hertz',
+    brandDomain: 'hertz.com',
+    trackingIdEnv: 'AFFILIATE_HERTZ_CAMREF',
+    trackingParam: 'camref',
+    staticParams: { irgwc: '1' },
+    defaultDeeplink: 'https://www.hertz.com/rentacar/reservation/',
+    pitch:
+      'Rental cars from Savannah/Hilton Head airports — book ahead for peak weeks.',
+  },
+  petermillar: {
+    id: 'petermillar',
+    name: 'Peter Millar',
+    shortName: 'Peter Millar',
+    brandDomain: 'petermillar.com',
+    trackingIdEnv: 'AFFILIATE_PETERMILLAR_CAMREF',
+    trackingParam: 'camref',
+    staticParams: { irgwc: '1' },
+    defaultDeeplink: 'https://www.petermillar.com/',
+    pitch:
+      'Heritage-week-ready apparel — golf, lifestyle, and event-week plaids.',
   },
   amazon: {
     id: 'amazon',
