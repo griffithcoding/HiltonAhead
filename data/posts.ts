@@ -5,6 +5,24 @@
  * Rendered by components/PostBody.tsx. Content is static and trusted
  * (maintained in this repo), so paragraphs may include inline HTML
  * for <strong>, <em>, and <a href>.
+ *
+ * ─────────────────────────────────────────────────────────────────────
+ * INTRO PATTERN — required for every new post.
+ * The first `kind: 'p'` block follows the [moment + problem + payoff]
+ * shape laid out in docs/brand/voice-audit-2026-05-21.md:
+ *
+ *   1. One sentence putting the reader in a moment. Time of day,
+ *      place, or body feeling. ("7:14 a.m. on Tuesday and your porch
+ *      faces an Atlantic that's glass." / "It's 71° on Hilton Head
+ *      this morning and the beach is almost empty.")
+ *   2. One sentence stating the problem the post solves.
+ *   3. One sentence promising the payoff in concrete terms — what
+ *      we'll hand the reader by the end.
+ *
+ * Voice rules: engage two senses (not just sight). Specific over
+ * superlative. Imply, don't narrate. Words to retire: best, top,
+ * premier, ultimate, curated, exclusive, unforgettable.
+ * ─────────────────────────────────────────────────────────────────────
  */
 
 import type { AffiliateProgramId } from './affiliateLinks';
@@ -186,7 +204,7 @@ const post2026Stays: Post = {
   body: [
     {
       kind: 'p',
-      html: "Here's the truth nobody tells you: where you stay on Hilton Head matters more than what you do. The island is twelve miles long, and the wrong address adds forty minutes of driving to every beach day and every dinner reservation.",
+      html: "It's 7:14 a.m. on a Tuesday and the right villa porch faces an Atlantic that's glass. The wrong one is forty minutes from any beach worth walking on. Where you stay on Hilton Head matters more than what you do — the island is twelve miles long, and the wrong pin on the map quietly costs you an hour of every day. Here's the list we actually send to clients in 2026.",
     },
     {
       kind: 'p',
@@ -489,7 +507,7 @@ const postRestaurantsRanked: Post = {
   body: [
     {
       kind: 'p',
-      html: "Every visitor's guide to Hilton Head restaurants reads the same: the same twenty places, in a different order, with the same shrimp-and-grits descriptions. This isn't that list.",
+      html: "7:38 p.m. on a Thursday in late June. The host is telling you the wait is ninety minutes, and the table you actually wanted was at the place two doors down. Every visitor's guide to Hilton Head restaurants reads the same — the same twenty places, in a different order, with the same shrimp-and-grits descriptions. This isn't that list. This is the tier list we keep in our heads when we plan a trip.",
     },
     {
       kind: 'p',
@@ -1869,7 +1887,7 @@ const postBestTime: Post = {
   body: [
     {
       kind: 'p',
-      html: "The standard advice. \"come in summer\". Is exactly wrong for most of our clients. Hilton Head Island has four genuinely different weather seasons, and picking the right window can cut your trip cost by 40%, add three hours of beach time per day, and swap a 90-minute airport-to-villa drive for a 25-minute one. Here's the honest month-by-month breakdown we walk every client through before they book.",
+      html: "It's 71° on Hilton Head this morning and the beach is almost empty. It's also a Wednesday in October — the answer most people don't think to ask. The standard advice (\"come in summer\") is exactly wrong for most of our clients. The island has four genuinely different weather seasons, and picking the right window cuts your trip cost by 40%, adds three hours of beach time per day, and swaps a 90-minute airport-to-villa drive for a 25-minute one. Here's the honest month-by-month read we walk every client through before they book.",
     },
     {
       kind: 'callout',
@@ -2894,7 +2912,7 @@ const postBestBeaches: Post = {
   body: [
     {
       kind: 'p',
-      html: "Every beach on Hilton Head is public from the high-water mark down. The island has five dedicated public access parks, four gated-community access points, and twelve miles of Atlantic shoreline. The question isn't whether you can get to the beach; it's which beach makes sense for your specific trip. Here is the local-authority breakdown.",
+      html: "Pedal a mile north of Coligny at 7 a.m. and the sand belongs to you and three early walkers. Every beach on Hilton Head is public from the high-water mark down — the island has five dedicated access parks, four gated-community access points, and twelve miles of Atlantic shoreline. The question isn't whether you can get to the beach. It's which beach makes sense for your specific trip. Here's the local-authority breakdown.",
     },
     {
       kind: 'callout',
@@ -3114,7 +3132,7 @@ const post3DayItinerary: Post = {
   body: [
     {
       kind: 'p',
-      html: "The classic mistake on a 3-day Hilton Head trip is trying to see all twelve miles of the island in one push. You can't, and forcing it means 45 minutes of driving between every meal. Better plan: pick three districts, anchor each day in one, and let the island do its thing. Here is the itinerary we send to weekenders.",
+      html: "You land Friday at noon and lift off Monday at 10 a.m. — 68 hours, two dinners, and a beach day that has to actually be a beach day. The classic mistake on a 3-day Hilton Head trip is trying to see all twelve miles in one push. You can't, and forcing it means 45 minutes of driving between every meal. Pick three districts, anchor each day in one, and let the island do its thing. Here's the itinerary we send to weekenders.",
     },
     {
       kind: 'callout',
@@ -3328,7 +3346,7 @@ const post7DayItinerary: Post = {
   body: [
     {
       kind: 'p',
-      html: "A week on Hilton Head is longer than most visitors think they need and shorter than they realize once they arrive. Seven days is enough to hit every district, play a real round of golf, do a proper Bluffton night, and still have three rest days. The mistake is trying to program all seven. Here is the plan we send clients.",
+      html: "By Wednesday the watch is on the dresser and you've stopped checking it. A week on Hilton Head is longer than most visitors think they need and shorter than they realize once they arrive — seven days is enough to hit every district, play a real round of golf, do a proper Bluffton night, and still have three rest days. The mistake is trying to program all seven. Here's the plan we send clients.",
     },
     {
       kind: 'callout',
