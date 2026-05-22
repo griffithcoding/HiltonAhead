@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import ItineraryForm from './ItineraryForm';
@@ -194,7 +195,9 @@ export default async function ItineraryPage({
           </aside>
 
           <div className="frame p-8 md:p-10">
-            <ItineraryForm />
+            <Suspense fallback={<div className="h-96 animate-pulse rounded bg-ink/5" />}>
+              <ItineraryForm />
+            </Suspense>
           </div>
         </div>
 

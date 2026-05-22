@@ -1,7 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { trackLead } from '@/app/lib/analytics';
+
+type VillaMatchPrefill = {
+  tripType?: string;
+  partySize?: number;
+  view?: string;
+  walkToBeach?: string;
+  budget?: string;
+  topMatchId?: string;
+  neighborhoodSlug?: string;
+};
+
+const VILLA_MATCH_BUDGET_MAP: Record<string, string> = {
+  value: 'Under $5k',
+  mid: '$5k to $15k',
+  premium: '$15k to $40k',
+  luxury: '$40k+',
+};
+
+function parsePrefill(raw: string | null): VillaMatchPrefill | null {
+  if (!raw) return null;
+  try {
+    return JSON.parse(decodeURIComponent(raw)) as VillaMatchPrefill;
+  } catch {
+    return null;
+  }
+}
 
 const LODGING_OPTIONS = ['Oceanfront villa', 'Resort', 'Condo', 'No preference'] as const;
 const INTERESTS = [
@@ -28,16 +55,26 @@ type Lodging = (typeof LODGING_OPTIONS)[number];
 type Budget = (typeof BUDGET_BANDS)[number];
 
 export default function ItineraryForm() {
+  const params = useSearchParams();
+  const prefill = useMemo(() => parsePrefill(params.get('prefill')), [params]);
+
+  const prefillNotes = prefill?.topMatchId
+    ? `From Villa Match: ${prefill.topMatchId.replace(/-/g, ' ')}${prefill.neighborhoodSlug ? ` · ${prefill.neighborhoodSlug.replace(/-/g, ' ')}` : ''}`
+    : '';
+
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
-  const [partySize, setPartySize] = useState('');
+  const [partySize, setPartySize] = useState(prefill?.partySize ? String(prefill.partySize) : '');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [lodging, setLodging] = useState<Lodging | ''>('');
   const [interests, setInterests] = useState<string[]>([]);
-  const [budget, setBudget] = useState<Budget | ''>('');
-  const [notes, setNotes] = useState('');
+  const [budget, setBudget] = useState<Budget | ''>(() => {
+    const mapped = prefill?.budget ? VILLA_MATCH_BUDGET_MAP[prefill.budget] : '';
+    return (mapped as Budget) || '';
+  });
+  const [notes, setNotes] = useState(prefillNotes);
   const [exploringRealEstate, setExploringRealEstate] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
