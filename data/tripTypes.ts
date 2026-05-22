@@ -114,7 +114,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head stay and play',
     ],
     hook:
-      'Eight golf courses inside fifteen minutes, three of them national Top-100. We sequence the Harbour Town tee times, match the group to the right villa, and land the whole party at first tee with time to stretch.',
+      "Eight golf courses inside fifteen minutes — three of them national Top-100 — and the group's biggest decision becomes which one to play Wednesday. We sequence the Harbour Town tee times by tide and crowd, match the foursome to a villa inside five minutes of the first tee, and have your bags in the cart by 7:42 a.m. for an 8:00 push. You're stretching at the range before the first group on Course 18 has reached the par-3.",
     reasons: [
       {
         title: 'Harbour Town priority',
@@ -183,7 +183,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head wedding group travel',
     ],
     hook:
-      'We plan the lodging, the logistics, and the guest experience around your venue. Not the ceremony. Not the flowers. The parts that make a destination wedding feel like an actual vacation for the family and friends you just flew in from three time zones.',
+      "Your photographer keeps the flowers; we keep the eighty-seven people. Lodging across the right four properties, transportation from SAV synced to flight arrivals, the rehearsal-dinner table that catches the last light over Calibogue, and a welcome bag waiting in every villa by Thursday afternoon. The parts that turn a destination wedding back into a real vacation — for the friends and family you just flew in from three time zones, and for you.",
     reasons: [
       {
         title: 'Lodging across eight to twelve properties',
@@ -247,7 +247,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head oceanfront rental',
     ],
     hook:
-      'There are roughly three hundred oceanfront villa units on Hilton Head. We regularly book maybe forty of them. The rest have some mix of old renovations, bad management, or a pool that catches every afternoon shadow after 3 p.m. Here is how we think about the short list.',
+      "The porches face two directions: into a live-oak canopy and out at an Atlantic that's flat by sunrise. There are roughly three hundred oceanfront villa units on Hilton Head. We regularly book maybe forty — we've walked the floor of every one, which means we know which 'oceanfront' is actually oceanfront and which one is a parking lot away from the dune. You'll wake up to that view by Tuesday morning.",
     reasons: [
       {
         title: 'We have walked every building',
@@ -329,7 +329,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head with kids',
     ],
     hook:
-      'A week on Hilton Head should be the parents\u2019 vacation too. We plan villas that actually fit the age mix, book the camp weeks before they sell out in February, and sort the dinner reservations that welcome kids under ten (which is not every restaurant on the island, no matter what the host says on the phone).',
+      "A week on Hilton Head should be the parents\u2019 vacation too. The villa that fits the age mix and the porch that catches the breeze. The camp week the kids talk about all August (which sells out in February if you don't know to ask). The dinner reservations that actually welcome kids under ten \u2014 not every restaurant on the island, no matter what the host says on the phone. By the third evening you're outside watching them chase fireflies and you're remembering what a vacation feels like.",
     reasons: [
       {
         title: 'Villa picked to the age mix',
@@ -794,7 +794,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head proposal',
     ],
     hook:
-      "Hilton Head is quietly one of the best couples' trips on the East Coast. Palm-lined beaches, Spanish-moss sunsets, twenty miles of bike paths, and a dinner scene that rewards reservations. We plan honeymoons, anniversaries, and milestone couples' weekends. Here is how we do it.",
+      "Hilton Head is quietly one of the best couples' trips on the East Coast — and that's the point. Palm-lined beaches you'll have to yourselves at sunrise, Spanish-moss sunsets over Calibogue, twenty miles of bike paths under a live-oak canopy, and a dinner scene that rewards a reservation we've already made for you. We plan honeymoons, anniversaries, and the milestone weekends where the watch comes off at the airport and doesn't go back on until you cross the bridge home.",
     reasons: [
       {
         title: 'The right neighborhood is Shelter Cove or Sea Pines',
