@@ -437,6 +437,68 @@ export const neighborhoods: NeighborhoodLanding[] = [
     ],
     // No companion blog guide yet — link will hide automatically.
   },
+  // — SHIPYARD —
+  {
+    slug: 'shipyard',
+    name: 'Shipyard',
+    tagline: { plain: 'Shipyard:', italic: 'gated calm on the south end.' },
+    metaDescription:
+      'Shipyard Plantation villas — a quiet gated community on the south end of Hilton Head, with golf, tennis, and easy beach access.',
+    keywords: ['Shipyard Plantation', 'Shipyard villas Hilton Head', 'Hilton Head gated community'],
+    hook:
+      'A gated residential community on the south end of the island. Quieter than Sea Pines, 30% cheaper than comparable Palmetto Dunes units, and a four-minute drive to the beach.',
+    latitude: 32.142,
+    longitude: -80.779,
+    reasons: [
+      { title: 'Value-end gated living', body: 'Security gate without the Sea Pines price premium — marsh-view villas here run 25–30% below comparable oceanfront stock.' },
+      { title: 'Golf on-property', body: 'Van der Meer Shipyard tennis complex and Shipyard Golf Club sit inside the gate.' },
+      { title: 'Quiet nights', body: 'No commercial strips inside the gate means genuinely quiet evenings — right call for families.' },
+      { title: 'Drive to the beach, not a hike', body: 'Beach club access is a 4-minute cart ride — easy, just not walkable.' },
+    ],
+    bestFor: ['families', 'golf groups', 'budget-conscious couples'],
+    tradeoffs: 'Beach is not walkable. Summer cart rentals sell out — book before you arrive.',
+    properties: [
+      { name: 'Shipyard Villas', note: 'Condo stock near the golf course; reliable mid-range' },
+      { name: 'Spinnaker', note: 'Marsh-view building with larger floor plans for families' },
+    ],
+    hero: photos.marsh,
+    gallery: [
+      { ...photos.marsh,    caption: 'Tidal marsh, Shipyard south end' },
+      { ...photos.palms,    caption: 'Shipyard entrance drive' },
+      { ...photos.villa,    caption: 'Shipyard villa with marsh view' },
+    ],
+  },
+  // — BLUFFTON —
+  {
+    slug: 'bluffton',
+    name: 'Bluffton',
+    tagline: { plain: 'Bluffton:', italic: 'Old Town at the May River.' },
+    metaDescription:
+      'Stay in Bluffton, SC — walkable Old Town, May River oysters, and Hilton Head a 12-minute drive across the bridge.',
+    keywords: ['Bluffton SC rentals', 'Old Town Bluffton', 'May River Bluffton', 'stay near Hilton Head'],
+    hook:
+      'Old Town Bluffton is the off-island alternative for travelers who want May River sunsets and great restaurants without paying oceanfront rates. Hilton Head is 12 minutes across the bridge.',
+    latitude: 32.237,
+    longitude: -80.860,
+    reasons: [
+      { title: 'May River dining', body: 'Bluffton Oyster Company, Mellow Mushroom, and the Old Town restaurant row all within walking distance.' },
+      { title: '30% under island rates', body: 'Same trip, a fraction of the villa cost — extra budget goes to dinners and excursions.' },
+      { title: 'Genuine small-town feel', body: 'Art galleries, Saturday market, and a walkable Main Street that tourists haven\'t overrun yet.' },
+      { title: 'Beach still accessible', body: '12-minute drive across the bridge — not a beach trip, but a day at the beach is easy.' },
+    ],
+    bestFor: ['food-focused couples', 'repeat visitors', 'budget-first travelers'],
+    tradeoffs: 'Beach is a 15-minute drive minimum; summer traffic adds 20–30 min. Pick this only if the beach is secondary.',
+    properties: [
+      { name: 'Old Town Bluffton rentals', note: 'Cottage-style homes near the river; walkable to dining' },
+      { name: 'Palmetto Bluff area', note: 'Luxury cottages in the Palmetto Bluff resort community' },
+    ],
+    hero: photos.broadCreek,
+    gallery: [
+      { ...photos.broadCreek, caption: 'May River tidal creek at low tide' },
+      { ...photos.mossOak,    caption: 'Live oak canopy, Old Town Bluffton' },
+      { ...photos.teaTable,   caption: 'Riverside dining on the May River' },
+    ],
+  },
 ];
 
 export function getNeighborhoodBySlug(
