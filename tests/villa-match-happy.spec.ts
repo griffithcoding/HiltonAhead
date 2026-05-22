@@ -18,3 +18,59 @@ test('selecting an option enables Next and advances', async ({ page }) => {
   await page.getByRole('button', { name: /^Next/ }).click();
   await expect(page.getByRole('heading', { name: 'How many of you?' })).toBeVisible();
 });
+
+test('completing the quiz shows a top match + 2 alts + CTAs', async ({ page }) => {
+  await page.goto('/villa-match');
+
+  // Q1
+  await page.getByRole('radio', { name: 'Family vacation' }).click();
+  await page.getByRole('button', { name: /^Next/ }).click();
+
+  // Q2 — accept default party size 4
+  await page.getByRole('button', { name: /^Next/ }).click();
+
+  // Q3
+  await page.getByRole('radio', { name: /^Ocean/ }).click();
+  await page.getByRole('button', { name: /^Next/ }).click();
+
+  // Q4
+  await page.getByRole('radio', { name: /^Must/ }).click();
+  await page.getByRole('button', { name: /^Next/ }).click();
+
+  // Q5
+  await page.getByRole('radio', { name: /^Mid/ }).click();
+  await page.getByRole('button', { name: /See my matches/ }).click();
+
+  // Results
+  await expect(page.getByText(/Your best match/i)).toBeVisible();
+  await expect(page.getByText(/Or, depending on the week/i)).toBeVisible();
+  await expect(page.getByRole('link', { name: /Start checking dates/i })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Email me a one-page PDF/i })).toBeVisible();
+});
+
+test('Start checking dates carries prefill into the itinerary form', async ({ page }) => {
+  await driveQuiz(page);
+  await page.getByRole('link', { name: /Start checking dates/i }).click();
+  await expect(page).toHaveURL(/\/itinerary\?prefill=/);
+});
+
+async function driveQuiz(page: import('@playwright/test').Page) {
+  await page.goto('/villa-match');
+  await page.getByRole('radio', { name: 'Family vacation' }).click();
+  await page.getByRole('button', { name: /^Next/ }).click();
+  await page.getByRole('button', { name: /^Next/ }).click();
+  await page.getByRole('radio', { name: /^Ocean/ }).click();
+  await page.getByRole('button', { name: /^Next/ }).click();
+  await page.getByRole('radio', { name: /^Must/ }).click();
+  await page.getByRole('button', { name: /^Next/ }).click();
+  await page.getByRole('radio', { name: /^Mid/ }).click();
+  await page.getByRole('button', { name: /See my matches/ }).click();
+}
+
+test('PDF dialog: invalid email surfaces inline error', async ({ page }) => {
+  await driveQuiz(page);
+  await page.getByRole('button', { name: /Email me a one-page PDF/i }).click();
+  await page.getByLabel('Email').fill('not-an-email');
+  await page.getByRole('button', { name: /Send me the PDF/i }).click();
+  await expect(page.getByRole('alert')).toContainText(/email looks off/i);
+});

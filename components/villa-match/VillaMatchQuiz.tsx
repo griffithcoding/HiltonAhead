@@ -8,6 +8,7 @@ import type { QuizAnswers, QuizAnswersPartial } from './types';
 import { rankMatches } from './scoring';
 import { matchArchetypes } from '@/data/matchArchetypes';
 import { trackVillaMatchEvent } from './eventsClient';
+import MatchResults from './MatchResults';
 
 const TOTAL_STEPS = QUIZ_STEPS.length;
 
@@ -56,18 +57,15 @@ export default function VillaMatchQuiz() {
   }, [done, answers]);
 
   if (done && ranked) {
-    // MatchResults lands in Task 11. Placeholder for now:
     return (
-      <div className="frame p-7 md:p-9">
-        <div className="eyebrow text-coral">Your matches</div>
-        <ul className="mt-4 space-y-2">
-          {ranked.map((m) => (
-            <li key={m.archetype.id} className="text-[15px] text-ink">
-              {m.archetype.headline}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <MatchResults
+        ranked={ranked}
+        answers={answers as QuizAnswers}
+        sessionId={sessionId}
+        onPdfRequested={() =>
+          trackVillaMatchEvent({ sessionId, eventType: 'pdf_requested' })
+        }
+      />
     );
   }
 
