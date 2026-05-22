@@ -33,7 +33,7 @@ export const faq = {
     {
       question: 'Why hire a travel consultant for Hilton Head?',
       answer:
-        'Because the best of Hilton Head is never on the first page of Google. We know which oceanfront villa has the quiet pool (the one that fills up ten minutes after the cover comes off in March). We know which Skull Creek table gets the sunset view. And we know which Harbour Town tee time actually opens up two weeks out, even when the Resy page tells you otherwise. You get a trip without the research tax.',
+        "Because the best of Hilton Head is never on the first page of Google — it's in the heads of the people who live here. We know which oceanfront villa has the pool that goes quiet by 4 p.m. (the one that fills up ten minutes after the cover comes off in March). We know which Skull Creek table catches the last ten minutes of sun in late July. And we know which Harbour Town tee time opens up two Tuesdays out, even when the booking page tells you otherwise. The result: a trip your spouse thinks took a weekend to plan, that actually took thirty years.",
     },
     {
       question: 'How is this different from Airbnb, Vrbo, or a resort concierge?',
@@ -43,7 +43,7 @@ export const faq = {
     {
       question: 'What does it cost?',
       answer:
-        'Four tiers: a $95 discovery session (credited back if you book), $450 flat for a custom itinerary, 8% of trip total (minimum $800) for full signature service with on-island concierge, and 12% (minimum $2,500) for groups and weddings. Every engagement is quoted up front. No surprise fees, no kickbacks baked into your rates.',
+        "We're paid by you, not by the properties — that's the whole reason we can recommend the right villa instead of the most-commissioned one. Four tiers: $95 discovery session (credited back if you book), $450 flat for a custom itinerary, 8% of trip total (min $800) for signature service with on-island concierge, and 12% (min $2,500) for groups and weddings. Every engagement is quoted up front. No surprise fees, no kickbacks.",
     },
     {
       question: 'How far in advance should I book?',
