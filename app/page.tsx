@@ -76,15 +76,15 @@ export default function Home() {
         <WhyIsland />
       </div>
 
+      {/* Full-bleed cinematic drone flyover — anchors immediately below the hero */}
+      <IslandFlyover />
+
       {/* Full-bleed look-book photo rail on deep-ocean field */}
       <PhotoRail />
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Services />
       </div>
-
-      {/* Full-bleed cinematic drone flyover — narrative midpoint */}
-      <IslandFlyover />
 
       <div className="mx-auto max-w-[1280px] px-5">
         <InsiderProof />
