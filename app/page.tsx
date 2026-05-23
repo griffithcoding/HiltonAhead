@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
-import WhyIsland from '@/components/sections/WhyIsland';
 import PhotoRail from '@/components/sections/PhotoRail';
 import Services from '@/components/sections/Services';
 import IslandFlyover from '@/components/sections/IslandFlyover';
@@ -73,7 +72,6 @@ export default function Home() {
       <div className="mx-auto max-w-[1280px] px-5 pb-0 pt-0">
         <Header />
         <Hero />
-        <WhyIsland />
       </div>
 
       {/* Full-bleed cinematic drone flyover — anchors immediately below the hero */}
