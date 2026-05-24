@@ -444,10 +444,13 @@ async function sendCustomerWelcome(
   tier: Tier,
 ): Promise<void> {
   const greeting = name ? `Hi ${name.split(' ')[0]},` : 'Hi —';
+  // B2C → itinerary intake; B2B → claim/portal; B2B-Ads → advertise page.
   const intakeUrl =
     tier.audience === 'b2c'
       ? `${SITE_URL}/itinerary?tier=${tier.slug}`
-      : `${SITE_URL}/local/get-featured?tier=${tier.slug}`;
+      : tier.audience === 'b2b'
+        ? `${SITE_URL}/business/apply`
+        : `${SITE_URL}/advertise`;
 
   const subject = `Welcome to Hilton Ahead — ${tier.name}`;
   const html = `<!doctype html><html><body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
