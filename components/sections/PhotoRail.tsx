@@ -16,7 +16,7 @@ export default function PhotoRail() {
       aria-label="Hilton Head mood board"
       className="bleed mt-28 bg-ocean-deep py-20 text-sand md:py-28"
     >
-      <div className="mx-auto max-w-[1400px] px-5">
+      <div className="mx-auto max-w-[1680px] px-5">
         <div className="mb-14 flex flex-col items-center justify-center text-center">
           <div className="text-sand"><WaveLine width={80} /></div>
           <div className="eyebrow eyebrow-coral mt-5">Paradise in every pixel</div>
