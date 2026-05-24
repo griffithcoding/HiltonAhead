@@ -178,6 +178,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
                 tier_slug: tier.slug,
                 tier_audience: tier.audience,
               },
+              // 14-day free trial for B2B directory tiers (listed, featured).
+              // B2C subscriptions (Insider Club) do not get a trial.
+              ...(tier.audience === 'b2b' ? { trial_period_days: 14 } : {}),
             }
           : undefined,
       allow_promotion_codes: true,

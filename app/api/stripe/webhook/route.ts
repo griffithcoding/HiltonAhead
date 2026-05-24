@@ -29,12 +29,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServiceClient } from '@/utils/supabase/service';
 import { sendEmail } from '@/app/lib/email';
-import { B2C_TIERS, B2B_TIERS, type Tier, type TierSlug } from '@/data/pricing';
+import { B2C_TIERS, B2B_TIERS, AD_TIERS, type Tier, type TierSlug } from '@/data/pricing';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS];
+const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS];
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hiltonahead.com';
@@ -231,6 +231,28 @@ async function handleCheckoutCompleted(
       sendOperatorNotification(customerEmail, customerName, tier, amountCents),
     ]);
   }
+
+  // For B2B directory tiers: upgrade the business listing tier and link
+  // the purchase row to the business. Wrapped in try/catch so a sync
+  // failure never causes the webhook to throw (which would trigger Stripe
+  // retries and duplicate welcome emails).
+  if (
+    tier.audience === 'b2b' &&
+    customerEmail &&
+    customerEmail !== 'unknown@unknown' &&
+    purchaseRow?.id
+  ) {
+    try {
+      await syncBusinessTier(
+        supabase,
+        customerEmail,
+        tier.slug,
+        purchaseRow.id as string,
+      );
+    } catch (err) {
+      console.error('[stripe-webhook] business tier sync error:', err);
+    }
+  }
 }
 
 async function logPaymentActivity(
@@ -326,10 +348,90 @@ async function handleSubscriptionDeleted(
   sub: Stripe.Subscription,
 ): Promise<void> {
   const supabase = createServiceClient();
+
+  // Fetch before updating so we can downgrade the business tier if needed.
+  const { data: purchase } = await supabase
+    .from('purchases')
+    .select('id, tier_audience, business_id')
+    .eq('stripe_subscription_id', sub.id)
+    .maybeSingle();
+
   await supabase
     .from('purchases')
     .update({ status: 'expired' })
     .eq('stripe_subscription_id', sub.id);
+
+  // Downgrade B2B business listing back to 'free' on subscription end.
+  if (purchase?.tier_audience === 'b2b' && purchase?.business_id) {
+    const { error } = await supabase
+      .from('businesses')
+      .update({ tier: 'free' })
+      .eq('id', purchase.business_id);
+
+    if (error) {
+      console.error('[stripe-webhook] business tier downgrade error:', error);
+    }
+  }
+}
+
+// ============================================================================
+// Business tier sync
+// ============================================================================
+
+/**
+ * After a B2B checkout completes, find the business by owner_email, upgrade
+ * its tier, and link the purchase row to the business for revenue reporting.
+ *
+ * If no business row matches the email the listing hasn't been claimed yet —
+ * we log a warning and skip. The operator can manually link later, or the
+ * business owner can claim their listing and the next renewal will sync.
+ */
+async function syncBusinessTier(
+  supabase: ReturnType<typeof createServiceClient>,
+  customerEmail: string,
+  tierSlug: string,
+  purchaseId: string,
+): Promise<void> {
+  const { data: business, error: lookupError } = await supabase
+    .from('businesses')
+    .select('id')
+    .ilike('owner_email', customerEmail)
+    .order('updated_at', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (lookupError) {
+    console.error('[stripe-webhook] business lookup error:', lookupError);
+    return;
+  }
+
+  if (!business) {
+    console.warn(
+      '[stripe-webhook] B2B purchase with no matching business for email:',
+      customerEmail,
+      '— listing not yet claimed or email mismatch. Purchase recorded; tier sync skipped.',
+    );
+    return;
+  }
+
+  const { error: tierError } = await supabase
+    .from('businesses')
+    .update({ tier: tierSlug })
+    .eq('id', business.id);
+
+  if (tierError) {
+    console.error('[stripe-webhook] business tier upgrade error:', tierError);
+    return;
+  }
+
+  const { error: linkError } = await supabase
+    .from('purchases')
+    .update({ business_id: business.id })
+    .eq('id', purchaseId);
+
+  if (linkError) {
+    console.error('[stripe-webhook] purchase→business link error:', linkError);
+  }
 }
 
 // ============================================================================
