@@ -136,12 +136,14 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     );
   }
 
-  // Application-only tiers route to the intake form.
+  // Application-only tiers route to the appropriate intake form.
+  // B2B (Signature) → business apply form; B2C (Heritage) → itinerary form.
   if (tier.mode !== 'self-serve') {
-    return NextResponse.redirect(
-      `${SITE_URL}/itinerary?tier=${tier.slug}`,
-      303,
-    );
+    const applyPath =
+      tier.audience === 'b2b'
+        ? `/business/apply?tier=${tier.slug}`
+        : `/itinerary?tier=${tier.slug}`;
+    return NextResponse.redirect(`${SITE_URL}${applyPath}`, 303);
   }
 
   // Build line items — fail clearly if subscription tier missing Price ID.

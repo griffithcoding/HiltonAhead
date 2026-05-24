@@ -130,9 +130,10 @@ export default async function AdminDirectoryPage({
         </h1>
         <p className="mt-3 max-w-[640px] text-[14px] leading-[1.6] text-ink-soft">
           Outbound interactions on /local business cards. Use this to identify
-          listings worth pitching for a Curated ($4,800/yr) or Signature
-          ($12,000/yr) upgrade — the upsell story is &ldquo;Hilton Ahead sent
-          you {totalPhone + totalWebsite} interactions in the last month.&rdquo;
+          listings worth pitching for a Listed ($600/yr), Featured ($1,800/yr),
+          or Signature ($4,800/yr) upgrade — the upsell story is &ldquo;Hilton
+          Ahead sent you {totalPhone + totalWebsite} interactions in the last
+          month.&rdquo;
         </p>
       </header>
 
