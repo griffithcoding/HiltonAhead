@@ -146,7 +146,7 @@ git commit -m "feat(search): install minisearch + scaffold lib/search skeleton"
 **Files:**
 - Modify: `app/lib/search/corpus.ts`
 
-- [ ] **Step 1: Add the static pages array and wire it into `buildCorpus()`**
+- [x] **Step 1: Add the static pages array and wire it into `buildCorpus()`**
 
 Replace the body of `app/lib/search/corpus.ts` with:
 
@@ -213,7 +213,7 @@ export function buildCorpus(): SearchableDoc[] {
 }
 ```
 
-- [ ] **Step 2: Typecheck passes**
+- [x] **Step 2: Typecheck passes**
 
 ```bash
 npm run typecheck
@@ -221,7 +221,7 @@ npm run typecheck
 
 Expected: 0 errors.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add app/lib/search/corpus.ts
