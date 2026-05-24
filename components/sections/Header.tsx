@@ -4,6 +4,7 @@ import { nav } from '@/data/nav';
 import { hero } from '@/data/hero';
 import AdminNavLink from '@/components/AdminNavLink';
 import MobileMenu from '@/components/MobileMenu';
+import SearchBar from '@/components/search/SearchBar';
 
 /**
  * Editorial masthead header.
@@ -92,6 +93,7 @@ export default function Header() {
             )}
             <AdminNavLink />
           </nav>
+          <SearchBar />
           <Link
             href={brand.cta.bookingPagePath}
             className="group inline-flex items-center gap-2 rounded-full border border-ocean-mid bg-ocean-mid px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-ink transition hover:bg-ocean-deep hover:border-ocean-deep hover:text-cream"
