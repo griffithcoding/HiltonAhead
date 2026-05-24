@@ -55,7 +55,7 @@
 - Create: `app/lib/search/corpus.ts`
 - Create: `app/lib/search/engine.ts`
 
-- [ ] **Step 1: Install MiniSearch**
+- [x] **Step 1: Install MiniSearch**
 
 ```bash
 npm install minisearch
@@ -63,7 +63,7 @@ npm install minisearch
 
 Expected: `package.json` gains `"minisearch": "^7.x"` in `dependencies`.
 
-- [ ] **Step 2: Create the corpus skeleton**
+- [x] **Step 2: Create the corpus skeleton**
 
 Create `app/lib/search/corpus.ts`:
 
@@ -103,7 +103,7 @@ export function buildCorpus(): SearchableDoc[] {
 }
 ```
 
-- [ ] **Step 3: Create the engine stub**
+- [x] **Step 3: Create the engine stub**
 
 Create `app/lib/search/engine.ts`:
 
@@ -124,7 +124,7 @@ export function search(_query: string, _opts?: SearchOpts): SearchHit[] {
 }
 ```
 
-- [ ] **Step 4: Typecheck passes**
+- [x] **Step 4: Typecheck passes**
 
 ```bash
 npm run typecheck
@@ -132,7 +132,7 @@ npm run typecheck
 
 Expected: 0 errors.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add package.json package-lock.json app/lib/search/corpus.ts app/lib/search/engine.ts
