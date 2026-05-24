@@ -4,6 +4,36 @@ import TrackedWebsiteLink from './TrackedWebsiteLink'
 
 interface Props {
   business: Business
+  /** Paid tier from the businesses DB table — drives badge rendering. */
+  tier?: 'listed' | 'featured' | 'signature'
+}
+
+const TIER_BADGE: Record<string, { label: string; className: string }> = {
+  signature: {
+    label: '★ Signature',
+    className: 'bg-gold/90 text-ink',
+  },
+  featured: {
+    label: '◆ Featured',
+    className: 'bg-coral/90 text-sand',
+  },
+  listed: {
+    label: '✓ Verified',
+    className: 'bg-ocean/90 text-sand',
+  },
+}
+
+function TierBadge({ tier }: { tier?: string }) {
+  if (!tier) return null
+  const cfg = TIER_BADGE[tier]
+  if (!cfg) return null
+  return (
+    <div
+      className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-semibold backdrop-blur-sm ${cfg.className}`}
+    >
+      {cfg.label}
+    </div>
+  )
 }
 
 function PriceRange({ value }: { value?: string }) {
@@ -35,7 +65,7 @@ function PlaceholderImage({ name, category }: { name: string; category: string }
   )
 }
 
-export default function BusinessCard({ business }: Props) {
+export default function BusinessCard({ business, tier }: Props) {
   const primaryCategory = business.categories[0] || 'Local Business'
 
   return (
@@ -55,6 +85,7 @@ export default function BusinessCard({ business }: Props) {
         ) : (
           <PlaceholderImage name={business.name} category={primaryCategory} />
         )}
+        <TierBadge tier={tier} />
         {/* Price range overlay */}
         {business.priceRange && (
           <div className="absolute right-3 top-3 rounded-full bg-ink/80 px-2.5 py-1 text-[11px] font-semibold text-sand backdrop-blur-sm">

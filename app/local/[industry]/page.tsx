@@ -11,6 +11,7 @@ import {
 import { generatePageMetadata } from '@/app/lib/metadata'
 import { getBreadcrumbSchema, getFaqSchema } from '@/app/lib/metadata'
 import { brand } from '@/data/brand'
+import { createClient } from '@/utils/supabase/server'
 import BusinessCard from '@/components/local/BusinessCard'
 import IndustryNav from '@/components/local/IndustryNav'
 import SponsorSlot from '@/components/sponsorship/SponsorSlot'
@@ -109,6 +110,36 @@ export default async function IndustryPage({
   ]
   const hasBusinesses = regulars.length > 0
 
+  // --- B4: Hybrid tier augmentation ---
+  // Query the businesses table for paid-tier rows in this industry.
+  // Uses the SSR anon client — "Public read of published businesses" RLS
+  // policy covers this without auth. Falls back gracefully if DB is empty.
+  const supabase = await createClient()
+  const { data: dbRows } = await supabase
+    .from('businesses')
+    .select('slug, tier')
+    .eq('industry_slug', slug)
+    .eq('status', 'published')
+    .neq('tier', 'free')
+
+  const tierMap = new Map<string, string>()
+  for (const row of dbRows ?? []) {
+    if (row.slug && row.tier) tierMap.set(row.slug, row.tier)
+  }
+
+  // Sort paid tiers to the top; within each tier maintain original order.
+  const TIER_RANK: Record<string, number> = {
+    signature: 0,
+    featured: 1,
+    listed: 2,
+    free: 3,
+  }
+  const sortedBusinesses = [...regulars].sort((a, z) => {
+    const ra = TIER_RANK[tierMap.get(a.id) ?? 'free'] ?? 3
+    const rz = TIER_RANK[tierMap.get(z.id) ?? 'free'] ?? 3
+    return ra - rz
+  })
+
   const breadcrumbs = [
     { name: 'Home', path: '/' },
     { name: 'Local Directory', path: '/local' },
@@ -121,8 +152,8 @@ export default async function IndustryPage({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: industry.h1,
-        numberOfItems: regulars.length,
-        itemListElement: regulars.map((b, i) => ({
+        numberOfItems: sortedBusinesses.length,
+        itemListElement: sortedBusinesses.map((b, i) => ({
           '@type': 'ListItem',
           position: i + 1,
           name: b.name,
@@ -199,7 +230,7 @@ export default async function IndustryPage({
           <>
             {/* Scroll nav */}
             <div className="mb-10">
-              <IndustryNav businesses={regulars} />
+              <IndustryNav businesses={sortedBusinesses} />
             </div>
 
             {/* Grid of listings */}
@@ -208,8 +239,18 @@ export default async function IndustryPage({
                 Top {industry.name.toLowerCase()} on Hilton Head Island
               </h2>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {regulars.map((business) => (
-                  <BusinessCard key={business.id} business={business} />
+                {sortedBusinesses.map((business) => (
+                  <BusinessCard
+                    key={business.id}
+                    business={business}
+                    tier={
+                      tierMap.get(business.id) as
+                        | 'listed'
+                        | 'featured'
+                        | 'signature'
+                        | undefined
+                    }
+                  />
                 ))}
               </div>
             </div>
