@@ -660,3 +660,182 @@ export async function sendClaimRequestAdminNotification(opts: {
     tags: [{ name: 'type', value: 'business_claim_admin_review' }],
   });
 }
+
+// ---------------------------------------------------------------------------
+// B2B Directory — monthly attribution proof email
+// ---------------------------------------------------------------------------
+
+export interface AttributionProofEmail {
+  to: string;
+  contactName?: string;
+  businessName: string;
+  businessSlug: string;
+  tierSlug: 'listed' | 'featured' | 'signature';
+  phoneClicks: number;
+  websiteClicks: number;
+  inquirySubmits: number;
+  /** ISO date string for subscription renewal; null for Signature (manually managed). */
+  renewalDate: string | null;
+  windowDays: number;
+}
+
+/**
+ * Monthly attribution report sent to each active B2B directory subscriber.
+ * Shows phone clicks, website visits, and inquiry submissions their listing
+ * generated in the last `windowDays` days. Fires from the attribution-proof cron.
+ */
+export async function sendAttributionProofEmail(opts: AttributionProofEmail) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hiltonahead.com';
+  const total = opts.phoneClicks + opts.websiteClicks + opts.inquirySubmits;
+  const month = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
+
+  const tierLabel =
+    opts.tierSlug === 'signature'
+      ? 'Signature Partner'
+      : opts.tierSlug === 'featured'
+      ? 'Featured Listing'
+      : 'Verified Listing';
+
+  const subject =
+    total > 0
+      ? `Your Hilton Ahead listing: ${total} interaction${total === 1 ? '' : 's'} in the last ${opts.windowDays} days`
+      : `Your Hilton Ahead listing — monthly report for ${month}`;
+
+  const renewalLine = opts.renewalDate
+    ? `<p style="font-size:12px;color:#9CA3AF;margin:20px 0 0;">
+        Subscription renews ${new Date(opts.renewalDate).toLocaleDateString('en-US', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+        })} — cancel any time before then at
+        <a href="${siteUrl}/business/portal" style="color:#6B7280;">your portal</a>.
+       </p>`
+    : '';
+
+  const zeroNote =
+    total === 0
+      ? `<p style="font-size:14px;line-height:1.7;color:#3D5860;margin:0 0 20px;">
+          No interactions were recorded this period. This can happen when a listing is
+          newly published or the directory is still building traffic in this category.
+          We'll keep your listing live and report again next month.
+         </p>`
+      : '';
+
+  const html = `<!doctype html>
+<html>
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#0A2930;">
+  <div style="max-width:600px;margin:0 auto;padding:40px 24px;">
+
+    <div style="font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:14px;">
+      ${esc(tierLabel)} · hiltonahead.com/local
+    </div>
+
+    <h1 style="font-family:Georgia,serif;font-size:30px;line-height:1.1;color:#0A2930;margin:0 0 8px 0;letter-spacing:-0.02em;">
+      ${esc(opts.businessName)}
+    </h1>
+    <p style="font-size:14px;color:#6B7280;margin:0 0 28px 0;">
+      Last ${opts.windowDays} days · ${esc(month)}
+    </p>
+
+    ${zeroNote}
+
+    <!-- Stats -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate;border-spacing:0;margin-bottom:28px;">
+      <tr>
+        <td style="width:33%;padding-right:8px;">
+          <div style="background:#FBF3E2;border:1px solid rgba(10,41,48,0.1);border-radius:8px;padding:16px 12px;text-align:center;">
+            <div style="font-family:Georgia,serif;font-size:34px;line-height:1;color:#0A2930;">${opts.phoneClicks}</div>
+            <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#6B7280;margin-top:6px;">Phone clicks</div>
+          </div>
+        </td>
+        <td style="width:33%;padding:0 4px;">
+          <div style="background:#FBF3E2;border:1px solid rgba(10,41,48,0.1);border-radius:8px;padding:16px 12px;text-align:center;">
+            <div style="font-family:Georgia,serif;font-size:34px;line-height:1;color:#0A2930;">${opts.websiteClicks}</div>
+            <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#6B7280;margin-top:6px;">Website visits</div>
+          </div>
+        </td>
+        <td style="width:33%;padding-left:8px;">
+          <div style="background:#FBF3E2;border:1px solid rgba(10,41,48,0.1);border-radius:8px;padding:16px 12px;text-align:center;">
+            <div style="font-family:Georgia,serif;font-size:34px;line-height:1;color:#0A2930;">${opts.inquirySubmits}</div>
+            <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#6B7280;margin-top:6px;">Inquiries</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    ${
+      total > 0
+        ? `<p style="font-size:15px;line-height:1.7;color:#3D5860;margin:0 0 24px 0;">
+            That's <strong style="color:#0A2930;">${total} conversation${total === 1 ? '' : 's'}</strong>
+            that started on your Hilton Ahead listing — travelers actively planning
+            a trip to the island who reached out to you directly.
+           </p>`
+        : ''
+    }
+
+    <div style="text-align:center;margin:28px 0;">
+      <a href="${siteUrl}/business/portal"
+         style="display:inline-block;background:#0A2930;color:#F5E8D0;padding:13px 26px;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border-radius:999px;">
+        View your portal →
+      </a>
+    </div>
+
+    <hr style="border:0;border-top:1px solid rgba(10,41,48,0.15);margin:28px 0 20px;" />
+
+    <p style="font-size:14px;line-height:1.7;color:#3D5860;margin:0 0 8px 0;">
+      Reply to this email with any questions — it goes straight to William.
+    </p>
+    <p style="font-size:14px;color:#3D5860;margin:0;">
+      — William Griffith<br/>
+      <span style="font-size:12px;color:#6B7280;">Founder, Hilton Ahead Travel Co.</span>
+    </p>
+
+    ${renewalLine}
+
+    <p style="font-size:11px;color:#9CA3AF;margin:24px 0 0;">
+      You're receiving this because your business is listed on
+      hiltonahead.com/local/${esc(opts.businessSlug)}.
+    </p>
+  </div>
+</body>
+</html>`;
+
+  const text = [
+    `${opts.businessName} — Hilton Ahead listing report`,
+    `Last ${opts.windowDays} days · ${month}`,
+    ``,
+    `Phone clicks:   ${opts.phoneClicks}`,
+    `Website visits: ${opts.websiteClicks}`,
+    `Inquiries:      ${opts.inquirySubmits}`,
+    `Total:          ${total}`,
+    ``,
+    total > 0
+      ? `That's ${total} conversation${total === 1 ? '' : 's'} that started on your Hilton Ahead listing.`
+      : `No interactions recorded this period — we'll report again next month.`,
+    ``,
+    `View your portal: ${siteUrl}/business/portal`,
+    ``,
+    `— William Griffith, Hilton Ahead Travel Co.`,
+    opts.renewalDate
+      ? `Renews ${new Date(opts.renewalDate).toLocaleDateString('en-US', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+        })} — cancel any time at ${siteUrl}/business/portal`
+      : ``,
+  ]
+    .filter((l) => l !== null && l !== undefined)
+    .join('\n');
+
+  return sendEmail({
+    to: opts.to,
+    subject,
+    html,
+    text,
+    replyTo: 'hiltonahead@gmail.com',
+    tags: [
+      { name: 'type', value: 'attribution_proof' },
+      { name: 'tier', value: opts.tierSlug },
+    ],
+  });
+}
