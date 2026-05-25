@@ -839,3 +839,132 @@ export async function sendAttributionProofEmail(opts: AttributionProofEmail) {
     ],
   });
 }
+
+// ---------------------------------------------------------------------------
+// E1 — Info product delivery (Workstream E)
+// ---------------------------------------------------------------------------
+
+export interface InfoProductDeliveryEmail {
+  customerEmail: string;
+  customerName: string | null;
+  tierSlug: string;
+  productName: string;
+  /** Resolved from DOWNLOAD_URL_ITINERARY_PACK_COUPLES / _GOLF env vars */
+  downloadUrl: string | null;
+}
+
+/**
+ * Send the post-purchase delivery email for a digital itinerary pack.
+ *
+ * If `downloadUrl` is null (env var not set yet), sends a "coming soon"
+ * email and notifies the operator — this allows the checkout to work
+ * before the real PDF is ready.
+ *
+ * Env vars required per product:
+ *   DOWNLOAD_URL_ITINERARY_PACK_COUPLES  — direct URL to couples PDF
+ *   DOWNLOAD_URL_ITINERARY_PACK_GOLF     — direct URL to golf PDF
+ */
+export async function sendInfoProductDelivery(opts: InfoProductDeliveryEmail) {
+  const { customerEmail, customerName, productName, downloadUrl } = opts;
+
+  const firstName = customerName?.split(' ')[0] ?? 'there';
+
+  const subject = downloadUrl
+    ? `Your ${productName} is ready to download`
+    : `Your ${productName} — download arriving shortly`;
+
+  const downloadBlock = downloadUrl
+    ? `
+    <div style="margin:32px 0;text-align:center;">
+      <a href="${downloadUrl}"
+         style="display:inline-block;background:#C44A2B;color:#F5E8D0;padding:16px 36px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:999px;">
+        Download your PDF →
+      </a>
+    </div>
+    <p style="text-align:center;font-size:12px;color:#9CA3AF;margin-top:-12px;">
+      Link: <a href="${downloadUrl}" style="color:#0F7080;">${downloadUrl}</a>
+    </p>`
+    : `
+    <div style="margin:32px 0;padding:20px;background:#FBF3E2;border:1px solid rgba(10,41,48,0.1);border-radius:12px;text-align:center;">
+      <p style="color:#0A2930;font-size:14px;line-height:1.6;margin:0;">
+        Your PDF is being prepared and will arrive in a separate email within the next few minutes.
+        If it doesn't appear, please email us at <a href="mailto:hello@hiltonahead.com" style="color:#0F7080;">hello@hiltonahead.com</a>
+        and we'll send it immediately.
+      </p>
+    </div>`;
+
+  const html = `<!doctype html>
+<html>
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+  <div style="max-width:600px;margin:0 auto;padding:40px 24px;">
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:8px;">
+      Hilton Ahead · Your purchase
+    </div>
+    <h1 style="font-family:Georgia,serif;font-size:28px;line-height:1.15;color:#0A2930;margin:0 0 16px 0;letter-spacing:-0.02em;">
+      Hi ${esc(firstName)}, your guide is ready.
+    </h1>
+    <p style="font-size:15px;line-height:1.7;color:#3D5A6A;margin:0 0 8px 0;">
+      Thank you for purchasing the <strong>${esc(productName)}</strong>.
+      ${downloadUrl ? 'Click the button below to download your PDF.' : ''}
+    </p>
+    ${downloadBlock}
+    <hr style="border:0;border-top:1px solid rgba(10,41,48,0.12);margin:32px 0;" />
+    <p style="font-size:13px;line-height:1.7;color:#6B7280;margin:0 0 16px 0;">
+      Questions? Just reply to this email or reach us at
+      <a href="mailto:hello@hiltonahead.com" style="color:#0F7080;">hello@hiltonahead.com</a>.
+      We&apos;re a small team and we actually read every message.
+    </p>
+    <p style="font-size:13px;line-height:1.7;color:#6B7280;margin:0;">
+      Want a fully custom itinerary built around your exact dates?
+      <a href="https://www.hiltonahead.com/services" style="color:#0F7080;">See our consulting services →</a>
+    </p>
+    <div style="margin-top:40px;padding-top:20px;border-top:1px solid rgba(10,41,48,0.08);">
+      <p style="font-size:11px;color:#9CA3AF;margin:0;">
+        Hilton Ahead · Hilton Head Island travel specialists<br />
+        <a href="https://www.hiltonahead.com" style="color:#9CA3AF;">hiltonahead.com</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>`;
+
+  const text = downloadUrl
+    ? [
+        `Hi ${firstName},`,
+        ``,
+        `Your ${productName} is ready. Download it here:`,
+        `${downloadUrl}`,
+        ``,
+        `Questions? Reply to this email or contact hello@hiltonahead.com.`,
+        ``,
+        `— Hilton Ahead`,
+      ].join('\n')
+    : [
+        `Hi ${firstName},`,
+        ``,
+        `Thank you for purchasing the ${productName}.`,
+        `Your PDF is being prepared and will arrive shortly.`,
+        `If you don't receive it within a few minutes, email hello@hiltonahead.com.`,
+        ``,
+        `— Hilton Ahead`,
+      ].join('\n');
+
+  return sendEmail({
+    to: customerEmail,
+    subject,
+    html,
+    text,
+    tags: [{ name: 'type', value: 'info_product_delivery' }],
+  });
+}
+
+/** Resolve download URL for an info-product tier slug. */
+export function resolveDownloadUrl(tierSlug: string): string | null {
+  const map: Record<string, string> = {
+    'itinerary-pack-couples':
+      process.env.DOWNLOAD_URL_ITINERARY_PACK_COUPLES ?? '',
+    'itinerary-pack-golf':
+      process.env.DOWNLOAD_URL_ITINERARY_PACK_GOLF ?? '',
+  };
+  return map[tierSlug] || null;
+}

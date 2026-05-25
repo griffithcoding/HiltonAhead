@@ -30,7 +30,10 @@ export type AdTierSlug =
   | 'story-sponsor'
   | 'page-display'
   | 'featured-villa';
-export type TierSlug = B2CTierSlug | B2BTierSlug | AdTierSlug;
+export type InfoProductTierSlug =
+  | 'itinerary-pack-couples'
+  | 'itinerary-pack-golf';
+export type TierSlug = B2CTierSlug | B2BTierSlug | AdTierSlug | InfoProductTierSlug;
 
 export interface Tier {
   slug: TierSlug;
@@ -347,11 +350,62 @@ export const AD_TIERS: Tier[] = [
 ];
 
 // ============================================================================
+// Info products — digital-download itinerary packs (Workstream E)
+// ============================================================================
+
+export const INFO_PRODUCT_TIERS: Tier[] = [
+  {
+    slug: 'itinerary-pack-couples',
+    audience: 'b2c',
+    mode: 'self-serve',
+    name: 'Couples Itinerary Pack',
+    tagline: 'A curated 5-day Hilton Head itinerary built for two.',
+    priceDisplay: '$49',
+    priceUsd: 49,
+    billing: 'one_time',
+    stripePriceEnv: 'STRIPE_PRICE_ITINERARY_PACK_COUPLES',
+    includes: [
+      '5-day day-by-day itinerary (~20 pages)',
+      'Top restaurant picks with reservation tips',
+      'Best beaches by mood + time of day',
+      'Sunset spots, spa picks, and hidden gems',
+      'Packing checklist + tides cheat-sheet',
+      'Instant PDF download after purchase',
+    ],
+    idealFor: 'Couples planning a first or milestone Hilton Head trip.',
+    accent: 'coral',
+  },
+  {
+    slug: 'itinerary-pack-golf',
+    audience: 'b2c',
+    mode: 'self-serve',
+    name: 'Golf Itinerary Pack',
+    tagline: 'Four days, the best courses, and every logistical detail handled.',
+    priceDisplay: '$49',
+    priceUsd: 49,
+    billing: 'one_time',
+    stripePriceEnv: 'STRIPE_PRICE_ITINERARY_PACK_GOLF',
+    includes: [
+      '4-day golf-focused itinerary (~18 pages)',
+      'Course-by-course breakdown (Harbour Town, Palmetto Dunes, Sea Pines + more)',
+      'Tee-time booking strategy + morning vs. afternoon guide',
+      'Post-round dining picks by course',
+      'Caddies, cart rules, and dress code cheat-sheet',
+      'Instant PDF download after purchase',
+    ],
+    idealFor: 'Golfers planning a dedicated Hilton Head golf trip.',
+    accent: 'gold',
+  },
+];
+
+// ============================================================================
 // helpers
 // ============================================================================
 
 export function getTier(slug: TierSlug): Tier | undefined {
-  return [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS].find((t) => t.slug === slug);
+  return [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS, ...INFO_PRODUCT_TIERS].find(
+    (t) => t.slug === slug,
+  );
 }
 
 export function getStripePriceId(tier: Tier): string | null {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
-import { B2C_TIERS, B2B_TIERS, type Tier } from '@/data/pricing';
+import { B2C_TIERS, B2B_TIERS, INFO_PRODUCT_TIERS, type Tier } from '@/data/pricing';
 import PurchaseTracker from './PurchaseTracker';
 
 export const metadata: Metadata = {
@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS];
+const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS, ...INFO_PRODUCT_TIERS];
+const INFO_PRODUCT_SLUGS = new Set(INFO_PRODUCT_TIERS.map((t) => t.slug));
 
 interface PageProps {
   searchParams: Promise<{ session_id?: string; tier?: string }>;
@@ -20,8 +21,9 @@ export default async function CheckoutSuccessPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const tier = ALL_TIERS.find((t) => t.slug === params.tier);
 
-  const intakePath = !tier || tier.audience === 'b2c'
-    ? `/itinerary${tier ? `?tier=${tier.slug}` : ''}` 
+  const isInfoProduct = !!tier && INFO_PRODUCT_SLUGS.has(tier.slug);
+  const intakePath = !tier || isInfoProduct || tier.audience === 'b2c'
+    ? `/itinerary${tier && !isInfoProduct ? `?tier=${tier.slug}` : ''}`
     : `/local/get-featured?tier=${tier.slug}`;
 
   return (
@@ -56,25 +58,47 @@ export default async function CheckoutSuccessPage({ searchParams }: PageProps) {
           </p>
 
           <div className="mt-10 border-y border-ocean-deep/15 py-8">
-            <h2 className="display text-[22px] leading-[1.2] text-ink md:text-[26px]">
-              {tier?.audience === 'b2b' ? 'Next: tell us about your business.' : 'Next: tell us about your trip.'}
-            </h2>
-            <p className="mt-3 max-w-[520px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
-              {tier?.audience === 'b2b' 
-                ? 'Three minutes of intake — business name, industry, contact, what you want featured.' 
-                : 'Three minutes of intake — dates, group size, what you want out of the trip.'}
-            </p>
-            <Link 
-              href={intakePath} 
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral"
-            >
-              {tier?.audience === 'b2b' ? 'Complete partner intake' : 'Complete trip intake'}
-              <span aria-hidden="true">→</span>
-            </Link>
+            {isInfoProduct ? (
+              <>
+                <h2 className="display text-[22px] leading-[1.2] text-ink md:text-[26px]">
+                  Check your inbox.
+                </h2>
+                <p className="mt-3 max-w-[520px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                  Your PDF is on its way to the email address you used at checkout.
+                  It usually arrives within a minute — check your spam folder if you don&apos;t see it.
+                </p>
+                <Link
+                  href="/services"
+                  className="mt-7 inline-flex items-center gap-2 rounded-full border border-ocean/30 px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-ocean transition hover:border-ocean hover:text-ocean"
+                >
+                  Want a custom itinerary? See our services
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </>
+            ) : (
+              <>
+                <h2 className="display text-[22px] leading-[1.2] text-ink md:text-[26px]">
+                  {tier?.audience === 'b2b' ? 'Next: tell us about your business.' : 'Next: tell us about your trip.'}
+                </h2>
+                <p className="mt-3 max-w-[520px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+                  {tier?.audience === 'b2b'
+                    ? 'Three minutes of intake — business name, industry, contact, what you want featured.'
+                    : 'Three minutes of intake — dates, group size, what you want out of the trip.'}
+                </p>
+                <Link
+                  href={intakePath}
+                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral"
+                >
+                  {tier?.audience === 'b2b' ? 'Complete partner intake' : 'Complete trip intake'}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </>
+            )}
           </div>
 
           <p className="mt-10 text-[13px] leading-[1.7] text-ink-soft">
-            Receipt + tax invoice via Stripe. We&apos;ll be in touch within a business day.
+            Receipt + tax invoice via Stripe.
+            {!isInfoProduct && <> We&apos;ll be in touch within a business day.</>}
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4 text-[12px]">

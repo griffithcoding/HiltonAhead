@@ -39,6 +39,7 @@ import {
   B2C_TIERS,
   B2B_TIERS,
   AD_TIERS,
+  INFO_PRODUCT_TIERS,
   getStripePriceId,
   type Tier,
 } from '@/data/pricing';
@@ -49,7 +50,7 @@ export const dynamic = 'force-dynamic';
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hiltonahead.com';
 
-const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS];
+const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS, ...INFO_PRODUCT_TIERS];
 
 function findTier(slug: string): Tier | undefined {
   return ALL_TIERS.find((t) => t.slug === slug);
