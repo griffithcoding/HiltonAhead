@@ -49,7 +49,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       // General catch-all — same disallow list as before.
-      { userAgent: '*', allow: '/', disallow: ['/api/', '/_next/', '/admin/'] },
+      { userAgent: '*', allow: '/', disallow: ['/api/', '/_next/', '/admin/', '/downloads/'] },
       // Explicit allow rules for every major LLM crawler. Listing them
       // individually (rather than relying on the wildcard) overrides any
       // upstream defaults and signals intent unambiguously to operators
@@ -57,7 +57,7 @@ export default function robots(): MetadataRoute.Robots {
       ...LLM_USER_AGENTS.map((userAgent) => ({
         userAgent,
         allow: '/',
-        disallow: ['/api/', '/_next/', '/admin/'],
+        disallow: ['/api/', '/_next/', '/admin/', '/downloads/'],
       })),
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

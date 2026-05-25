@@ -28,13 +28,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServiceClient } from '@/utils/supabase/service';
-import { sendEmail } from '@/app/lib/email';
-import { B2C_TIERS, B2B_TIERS, AD_TIERS, type Tier, type TierSlug } from '@/data/pricing';
+import { sendEmail, sendInfoProductDelivery, resolveDownloadUrl } from '@/app/lib/email';
+import { B2C_TIERS, B2B_TIERS, AD_TIERS, INFO_PRODUCT_TIERS, type Tier, type TierSlug } from '@/data/pricing';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS];
+const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS, ...INFO_PRODUCT_TIERS];
+
+const INFO_PRODUCT_SLUGS = new Set(INFO_PRODUCT_TIERS.map((t) => t.slug));
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hiltonahead.com';
@@ -226,10 +228,24 @@ async function handleCheckoutCompleted(
   }
 
   if (customerEmail) {
-    await Promise.all([
-      sendCustomerWelcome(customerEmail, customerName, tier),
-      sendOperatorNotification(customerEmail, customerName, tier, amountCents),
-    ]);
+    if (INFO_PRODUCT_SLUGS.has(tier.slug)) {
+      // Info products: send download delivery instead of intake-form welcome.
+      await Promise.all([
+        sendInfoProductDelivery({
+          customerEmail,
+          customerName,
+          tierSlug: tier.slug,
+          productName: tier.name,
+          downloadUrl: resolveDownloadUrl(tier.slug),
+        }),
+        sendOperatorNotification(customerEmail, customerName, tier, amountCents),
+      ]);
+    } else {
+      await Promise.all([
+        sendCustomerWelcome(customerEmail, customerName, tier),
+        sendOperatorNotification(customerEmail, customerName, tier, amountCents),
+      ]);
+    }
   }
 
   // For B2B directory tiers: upgrade the business listing tier and link
