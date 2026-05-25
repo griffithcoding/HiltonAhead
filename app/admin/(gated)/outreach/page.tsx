@@ -172,6 +172,12 @@ export default async function OutreachPipelinePage({
         </div>
         <div className="flex items-center gap-3">
           <Link
+            href="/admin/outreach/inbox"
+            className="rounded-sm border border-ocean-deep/20 bg-sand px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink hover:border-coral hover:text-coral"
+          >
+            Inbox
+          </Link>
+          <Link
             href="/admin/outreach/import"
             className="rounded-sm border border-ocean-deep/20 bg-sand px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink hover:border-coral hover:text-coral"
           >

@@ -5,6 +5,7 @@ import StageSelect from './StageSelect';
 import NoteForm from './NoteForm';
 import PublishForm from './PublishForm';
 import ComposeButton from './ComposeButton';
+import SequenceToggle from './SequenceToggle';
 
 export const dynamic = 'force-dynamic';
 
@@ -96,7 +97,7 @@ export default async function OpportunityDetailPage({
   const { opportunityId } = await params;
   const supabase = await createClient();
 
-  const [oppRes, activityRes] = await Promise.all([
+  const [oppRes, activityRes, engagementRes, seqActiveRes] = await Promise.all([
     supabase
       .from('outreach_opportunities')
       .select(
@@ -116,11 +117,32 @@ export default async function OpportunityDetailPage({
       .select('id, kind, actor_email, body, metadata, created_at')
       .eq('opportunity_id', opportunityId)
       .order('created_at', { ascending: false }),
+    supabase
+      .from('outreach_opp_engagement')
+      .select(
+        'open_count, click_count, bounce_count, reply_count, last_send_at, last_received_at',
+      )
+      .eq('opportunity_id', opportunityId)
+      .maybeSingle(),
+    supabase
+      .from('outreach_opportunities')
+      .select('sequence_active')
+      .eq('id', opportunityId)
+      .maybeSingle(),
   ]);
 
   if (!oppRes.data) notFound();
   const opp = oppRes.data as unknown as OppDetail;
   const activity = (activityRes.data ?? []) as ActivityRow[];
+  const engagement = (engagementRes.data ?? null) as {
+    open_count: number | null;
+    click_count: number | null;
+    bounce_count: number | null;
+    reply_count: number | null;
+    last_send_at: string | null;
+    last_received_at: string | null;
+  } | null;
+  const sequenceActive = (seqActiveRes.data?.sequence_active ?? true) as boolean;
 
   const contactName = opp.contact
     ? [opp.contact.first_name, opp.contact.last_name].filter(Boolean).join(' ').trim()
@@ -189,6 +211,42 @@ export default async function OpportunityDetailPage({
             )}
           </div>
         )}
+      </div>
+
+      {/* Engagement strip — open / click / reply counts + sequence toggle. */}
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-sm border border-ocean-deep/10 bg-sand/40 px-5 py-3">
+        <div className="flex flex-wrap items-center gap-5 text-[12px] text-ink-soft">
+          <span>
+            <span className="font-medium text-ink">
+              {engagement?.open_count ?? 0}
+            </span>{' '}
+            open{(engagement?.open_count ?? 0) === 1 ? '' : 's'}
+          </span>
+          <span>
+            <span className="font-medium text-ink">
+              {engagement?.click_count ?? 0}
+            </span>{' '}
+            click{(engagement?.click_count ?? 0) === 1 ? '' : 's'}
+          </span>
+          <span>
+            <span className="font-medium text-ink">
+              {engagement?.reply_count ?? 0}
+            </span>{' '}
+            repl{(engagement?.reply_count ?? 0) === 1 ? 'y' : 'ies'}
+          </span>
+          {(engagement?.bounce_count ?? 0) > 0 && (
+            <span className="text-coral">
+              <span className="font-medium">{engagement?.bounce_count}</span>{' '}
+              bounce{(engagement?.bounce_count ?? 0) === 1 ? '' : 's'}
+            </span>
+          )}
+          {engagement?.last_send_at && (
+            <span className="text-ink-soft">
+              · last sent {fmtDate(engagement.last_send_at)}
+            </span>
+          )}
+        </div>
+        <SequenceToggle opportunityId={opp.id} active={sequenceActive} />
       </div>
 
       <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1fr)_280px]">

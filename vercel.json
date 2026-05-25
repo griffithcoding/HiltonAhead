@@ -15,6 +15,14 @@
     {
       "path": "/api/cron/directory-churn-scan",
       "schedule": "0 10 7 * *"
+    },
+    {
+      "path": "/api/cron/outreach-sequence-tick",
+      "schedule": "0 13 * * *"
+    },
+    {
+      "path": "/api/cron/outreach-reply-poll",
+      "schedule": "*/30 * * * *"
     }
   ]
 }
