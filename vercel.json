@@ -7,6 +7,10 @@
     {
       "path": "/api/cron/attribution-proof",
       "schedule": "0 9 1 * *"
+    },
+    {
+      "path": "/api/cron/directory-prospect-scan",
+      "schedule": "0 10 * * 1"
     }
   ]
 }

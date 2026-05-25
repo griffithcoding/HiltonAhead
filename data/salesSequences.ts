@@ -30,7 +30,11 @@ export type MergeField =
   | 'kid_ages'
   | 'country_club'
   | 'unsubscribe_url'
-  | 'sender_name';
+  | 'sender_name'
+  // B2B directory fields
+  | 'business_name'
+  | 'total_interactions'
+  | 'listing_url';
 
 export type SequenceSegment =
   | 'golf'
@@ -40,7 +44,9 @@ export type SequenceSegment =
   | 'snowbird'
   | 'wedding'
   | 'corporate'
-  | 'general';
+  | 'general'
+  // B2B — local business directory upgrade pitch
+  | 'b2b';
 
 export type SequenceVariant = 'cold' | 'nurture';
 
@@ -1332,6 +1338,74 @@ ${SIGNOFF}`,
 };
 
 // ---------------------------------------------------------------------------
+// 09 — B2B Directory Upgrade (cold only — 3-touch pitch to free-tier owners)
+// ---------------------------------------------------------------------------
+
+const B2B_DIRECTORY_UPGRADE: Sequence = {
+  id: 'b2b-directory-upgrade-v1',
+  segment: 'b2b',
+  variant: 'cold',
+  name: 'B2B Directory Upgrade — 3-touch cold',
+  touches: [
+    {
+      step: 1,
+      dayOffset: 0,
+      channel: 'email',
+      subject: '{{business_name}} — {{total_interactions}} interactions from your Hilton Ahead listing',
+      body: `Quick note on {{business_name}}.
+
+In the last 30 days, Hilton Head visitors clicked your phone number, visited your website, or submitted a contact request {{total_interactions}} times through your listing on Hilton Ahead:
+{{listing_url}}
+
+Your listing is on the free tier — no paid placement, just organic discovery from visitors planning Hilton Head trips.
+
+The paid tiers (Listed at $49/mo, Featured at $99/mo, Signature at $199/mo) move your business to the top of the category grid, add a sponsored pin in the section header, and unlock a direct inquiry form that routes to your inbox.
+
+The businesses that upgrade tend to be the ones already getting organic traction — which you are.
+
+Worth a look:
+https://www.hiltonahead.com/local/get-featured
+
+${SIGNOFF}`,
+      ctaUrl: 'https://www.hiltonahead.com/local/get-featured',
+    },
+    {
+      step: 2,
+      dayOffset: 4,
+      channel: 'email',
+      subject: 'Re: {{business_name}} listing',
+      body: `Following up on {{business_name}}'s listing.
+
+{{total_interactions}} interactions in 30 days on the free tier is solid baseline traffic. The Featured tier ($99/mo) typically multiplies that 3–4x through the sponsored category pin and priority grid placement.
+
+No contract. Cancel anytime.
+
+https://www.hiltonahead.com/local/get-featured
+
+${SIGNOFF}`,
+      ctaUrl: 'https://www.hiltonahead.com/local/get-featured',
+    },
+    {
+      step: 3,
+      dayOffset: 9,
+      channel: 'email',
+      subject: 'Last note — {{business_name}}',
+      body: `Last note on this.
+
+If upgrading your Hilton Ahead listing isn't a fit for {{business_name}} right now, no problem — your free listing stays up.
+
+If you want to talk through which tier makes sense for your business, reply here and I'll lay out the numbers honestly.
+
+Otherwise I'll stop sending.
+
+${SIGNOFF}`,
+      ctaUrl: 'https://www.hiltonahead.com/local/get-featured',
+      isBreakup: true,
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Catalog
 // ---------------------------------------------------------------------------
 
@@ -1351,6 +1425,7 @@ export const SEQUENCES: Sequence[] = [
   CORPORATE_COLD,
   CORPORATE_NURTURE,
   GENERAL_COLD,
+  B2B_DIRECTORY_UPGRADE,
 ];
 
 const SEQUENCES_BY_ID = new Map<string, Sequence>(

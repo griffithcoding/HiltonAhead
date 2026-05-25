@@ -148,6 +148,10 @@ export interface MergeContext {
   country_club: string;
   sender_name: string;
   unsubscribe_url: string;
+  // B2B directory fields — populated for the b2b-directory-upgrade-v1 sequence
+  business_name: string;
+  total_interactions: string;
+  listing_url: string;
 }
 
 export function buildMergeContext(
@@ -161,6 +165,16 @@ export function buildMergeContext(
   const kidAges = typeof enrich.kid_ages === 'string' ? enrich.kid_ages : '';
   const countryClub = typeof enrich.country_club === 'string' ? enrich.country_club : '';
 
+  // B2B directory fields — set by the directory-prospect-scan cron
+  const businessName = typeof enrich.business_name === 'string' ? enrich.business_name : '';
+  const totalInteractions =
+    typeof enrich.total_interactions === 'number'
+      ? String(enrich.total_interactions)
+      : typeof enrich.total_interactions === 'string'
+        ? enrich.total_interactions
+        : '';
+  const listingUrl = typeof enrich.listing_url === 'string' ? enrich.listing_url : '';
+
   return {
     first_name: firstNameOf(row),
     feeder_city: feederCity || 'your city',
@@ -169,6 +183,9 @@ export function buildMergeContext(
     country_club: countryClub || 'your home club',
     sender_name: SENDER_NAME,
     unsubscribe_url: opts.unsubscribeUrl,
+    business_name: businessName || 'your business',
+    total_interactions: totalInteractions || '0',
+    listing_url: listingUrl,
   };
 }
 
