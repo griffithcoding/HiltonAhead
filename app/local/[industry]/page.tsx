@@ -26,7 +26,8 @@ const INDUSTRY_TO_PRODUCT_CATEGORY: Partial<
 > = {
   'water-activities': 'water-sports',
   'family-activities': 'family-beach',
-  // 'fishing-charters-dolphin-tours': 'fishing-gear',  // enable if slug exists
+  'lessons': 'water-sports',       // surf + paddleboard lessons share gear
+  // 'fishing-charters': 'fishing-gear',  // enable once fishing-gear category exists
 }
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || brand.url

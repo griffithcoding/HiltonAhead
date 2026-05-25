@@ -29,7 +29,10 @@ export type IndustrySlug =
   | 'transportation'
   | 'home-services'
   | 'fishing-charters'
-  | 'dolphin-tours';
+  | 'dolphin-tours'
+  | 'photographers'
+  | 'real-estate'
+  | 'lessons';
 
 export type Industry = {
   slug: IndustrySlug;
@@ -690,6 +693,147 @@ export const industries: Industry[] = [
         question: 'What about kayak eco-tours instead of a boat?',
         answer:
           "Outside Hilton Head's kayak eco-tour and Saltmarsh Paddle Tours are the two reputable options. You're closer to the marsh, sightings include herons and ospreys, but the ride is slower (2-3 hours total) and you need to paddle. Best for active couples or kids 8+.",
+      },
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  // New B7 industries
+  // ---------------------------------------------------------------------------
+  {
+    slug: 'photographers',
+    name: 'Photographers',
+    icon: '📸',
+    tagline: 'Family portraits, weddings, and golden-hour beach sessions.',
+    seoTitle: 'Best Photographers on Hilton Head Island, SC (2026)',
+    metaDescription:
+      'Top photographers on Hilton Head Island for family beach portraits, wedding photography, vacation sessions, and real estate imagery. Curated by locals.',
+    h1: 'Best Photographers on Hilton Head Island',
+    description:
+      "Hilton Head's beaches, Harbour Town lighthouse, and live-oak canopies are among the most photographed backdrops on the East Coast — but the quality of your photos depends as much on the photographer as the location. This is our working list of the photographers we trust for family beach portraits, wedding photography, engagement sessions, and vacation memories on the island.",
+    keywords: [
+      'hilton head photographer',
+      'hilton head beach photographer',
+      'family beach photos hilton head island',
+      'hilton head wedding photographer',
+      'vacation photographer hilton head sc',
+      'hilton head family portrait photographer',
+    ],
+    heroImage: {
+      src: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200&q=80&auto=format',
+      alt: 'Family beach portrait session at golden hour on Hilton Head Island',
+    },
+    faqs: [
+      {
+        question: 'When is the best time for beach photos on Hilton Head?',
+        answer:
+          "Golden hour — the hour before sunset — is the sweet spot for beach photography on HHI. The light is warm and directional, shadows are long, and the crowds thin out. Sunrise sessions (6–7 a.m. in summer) also work well and find the beach nearly empty. Avoid midday May–September: harsh overhead light, full beach crowds, and squinting subjects.",
+      },
+      {
+        question: 'How far in advance should I book a photographer for a Hilton Head vacation?',
+        answer:
+          "For summer and peak weeks (Memorial Day, 4th of July, Labor Day), book 2–3 months ahead. Photographers on HHI fill golden-hour slots quickly in June and July. Shoulder season (April–May, September–October) gives you 2–4 weeks of lead time in most cases.",
+      },
+      {
+        question: 'What should we wear for a family beach portrait on Hilton Head?',
+        answer:
+          'Coordinated, not matching. Soft, complementary colors — white, cream, sage, soft blue, natural linen — photograph well against sand and water. Avoid bold patterns, logos, and neon. Bring a backup outfit: kids and beach water are an unpredictable combination.',
+      },
+      {
+        question: 'Do Hilton Head photographers work inside Sea Pines or Palmetto Dunes?',
+        answer:
+          'Yes — most HHI photographers work island-wide including inside gated communities. Note that non-resident photographers entering Sea Pines require a day pass (roughly $10/car). Confirm gate-access arrangements with your photographer at booking.',
+      },
+    ],
+  },
+  {
+    slug: 'real-estate',
+    name: 'Real Estate Agents',
+    icon: '🏡',
+    tagline: 'Buying, selling, and investing in Hilton Head Island property.',
+    seoTitle: 'Best Real Estate Agents on Hilton Head Island, SC (2026)',
+    metaDescription:
+      'Top real estate agents on Hilton Head Island for buying, selling, and vacation rental investment. Specialists in Sea Pines, Palmetto Dunes, and island-wide properties.',
+    h1: 'Best Real Estate Agents on Hilton Head Island',
+    description:
+      "Hilton Head Island's real estate market moves differently than the mainland — HOA structures, gate-access communities, resort overlay rules, and vacation rental licensing vary street by street. These are the agents and firms we refer clients to when a vacation turns into a serious conversation about buying property on the island.",
+    keywords: [
+      'hilton head real estate agent',
+      'hilton head island homes for sale',
+      'buy house hilton head island',
+      'hilton head vacation rental investment',
+      'sea pines real estate',
+      'hilton head island real estate market',
+    ],
+    heroImage: {
+      src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format',
+      alt: 'Hilton Head Island waterfront property and palm trees',
+    },
+    faqs: [
+      {
+        question: 'Is Hilton Head Island a good market for vacation rental investment?',
+        answer:
+          "HHI has a strong short-term rental market — a well-located Sea Pines or Palmetto Dunes villa can generate $60,000–$120,000 in gross rental revenue annually. However, HOA restrictions, community rental caps, and licensing requirements vary significantly by development. A local agent who specializes in investment property is essential before making an offer.",
+      },
+      {
+        question: 'What is the average home price on Hilton Head Island?',
+        answer:
+          "Median single-family home prices on HHI generally run in the high six figures to low seven figures depending on location and year. Oceanfront and deep-water properties in Sea Pines routinely exceed $2M. Inland Bluffton neighborhoods start considerably lower for newer construction. Confirm current market data with a local agent.",
+      },
+      {
+        question: 'Can I buy property inside Sea Pines as a non-member?',
+        answer:
+          "Yes — you can purchase property within Sea Pines Resort without a club membership. Property owners receive a Sea Pines Property Owner's card for beach access and plantation driving privileges. Club membership (Sea Pines Country Club, Harbour Town Golf) is separate and optional.",
+      },
+      {
+        question: 'What are HOA fees like on Hilton Head Island?',
+        answer:
+          "HOA fees vary widely. Sea Pines charges an annual plantation fee plus any community-specific HOA. Resort communities like Palmetto Dunes have their own structures. Some communities also levy road, security, and amenity fees separately. A Hilton Head-specialist agent will walk you through the full fee stack before closing.",
+      },
+    ],
+  },
+  {
+    slug: 'lessons',
+    name: 'Lessons & Instructors',
+    icon: '🎾',
+    tagline: 'Tennis, surfing, golf, paddleboarding, and pickleball instruction.',
+    seoTitle: 'Best Lessons & Instructors on Hilton Head Island, SC (2026)',
+    metaDescription:
+      'Top surf lessons, tennis clinics, golf instruction, and paddleboard classes on Hilton Head Island. Suitable for all skill levels, kids and adults.',
+    h1: 'Best Lessons & Instructors on Hilton Head Island',
+    description:
+      "Hilton Head Island is one of the few places in the country where you can take a golf lesson at a PGA-caliber facility, a tennis clinic at a world-ranked academy, and a surf lesson on the Atlantic — all in the same week. This is our guide to the instructors and programs worth booking on the island.",
+    keywords: [
+      'hilton head surf lessons',
+      'hilton head tennis lessons',
+      'hilton head golf lessons',
+      'hilton head paddleboard lessons',
+      'hilton head island instructors',
+      'tennis clinics hilton head sc',
+    ],
+    heroImage: {
+      src: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1200&q=80&auto=format',
+      alt: 'Tennis court with palm trees on Hilton Head Island',
+    },
+    faqs: [
+      {
+        question: 'Where can I take surf lessons on Hilton Head Island?',
+        answer:
+          "Surf breaks on HHI are mellow — beach break, typically 1–3 feet, good for beginners. Several local instructors operate out of the northern beaches and Folly Field Beach. Sessions run 1.5–2 hours and typically include board and rash guard. Most operators can accommodate kids 8 and up.",
+      },
+      {
+        question: 'Is Van Der Meer Tennis worth booking for a vacation lesson?',
+        answer:
+          "Van Der Meer Tennis at Shipyard is one of the most respected tennis academies in the country — it has trained more top-100 ATP players than virtually any other academy. Adult clinics and private lessons are available daily. It is a genuine instruction program, not resort filler, and worth booking if tennis improvement is a real goal.",
+      },
+      {
+        question: 'Are there golf lessons for beginners on Hilton Head?',
+        answer:
+          "Yes — several academies cater to beginners and high-handicap players. The Sea Pines Golf Learning Center uses video analysis and on-course playing lessons. Plan a 30-minute private lesson before you book tee times — it typically pays for itself in saved strokes and frustration.",
+      },
+      {
+        question: 'Can kids take paddleboard or kayak lessons on Hilton Head?',
+        answer:
+          "Yes — kids 8 and up handle beginner paddleboard instruction well on the protected Palmetto Dunes lagoon or calmer sections of Broad Creek. H2O Sports at Palmetto Dunes and Hilton Head Outfitters both run kid-friendly sessions with life vest equipment included.",
       },
     ],
   },
@@ -4022,6 +4166,197 @@ const dolphinToursBusinesses: Business[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Businesses — Photographers
+// ---------------------------------------------------------------------------
+
+const photographerBusinesses: Business[] = [
+  {
+    id: 'brandon-lata-photography',
+    industrySlug: 'photographers',
+    featured: false,
+    name: 'Brandon Lata Photography',
+    tagline: 'Documentary wedding and family photography across the Lowcountry.',
+    schemaType: 'ProfessionalService',
+    categories: ['Wedding', 'Family', 'Lifestyle'],
+    review:
+      'Brandon Lata is one of the most consistently recommended photographers on Hilton Head for both wedding and family work. His approach is documentary — he sets up for light, then steps back and lets moments happen rather than manufacturing poses. His portfolio shows strong golden-hour beach sessions alongside reception work at Sea Pines and Palmetto Bluff venues.',
+    notableFor: 'Candid, story-driven photography for weddings and family sessions across HHI.',
+    address: 'Hilton Head Island', // TODO: VERIFY business address
+    city: 'Hilton Head Island',
+    website: 'https://brandonlata.com', // TODO: VERIFY
+    instagram: 'brandonlataphoto', // TODO: VERIFY
+    heroImage: { src: '', alt: 'Brandon Lata Photography — Hilton Head wedding and family photographer' },
+    bestFor: 'Couples and families who want genuine moments rather than staged portraits.',
+    lastVerified: '2026-05-24',
+  },
+  {
+    id: 'felicia-sisco-photography',
+    industrySlug: 'photographers',
+    featured: false,
+    name: 'Felicia Sisco Photography',
+    tagline: 'Beach portraits and family sessions with a light, airy Lowcountry feel.',
+    schemaType: 'ProfessionalService',
+    categories: ['Family', 'Beach Portraits', 'Maternity'],
+    review:
+      'Felicia Sisco specializes in relaxed family and lifestyle sessions — the kind where kids are running and parents are laughing, not posed in a row. She works primarily at golden hour on the Sea Pines beachfront and knows the light well. Her turnaround on galleries is fast by HHI standards, typically 2–3 weeks.',
+    notableFor: 'Relaxed golden-hour family sessions on the Sea Pines and South Beach shorelines.',
+    address: 'Hilton Head Island', // TODO: VERIFY
+    city: 'Hilton Head Island',
+    website: 'https://feliciasisco.com', // TODO: VERIFY
+    heroImage: { src: '', alt: 'Felicia Sisco Photography — family beach portraits on Hilton Head Island' },
+    bestFor: 'Families with young kids who want natural, unscripted vacation memories.',
+    lastVerified: '2026-05-24',
+  },
+  {
+    id: 'pixels-on-the-beach',
+    industrySlug: 'photographers',
+    featured: false,
+    name: 'Pixels on the Beach',
+    tagline: 'Vacation portrait specialists serving all of Hilton Head Island.',
+    schemaType: 'ProfessionalService',
+    categories: ['Vacation Portraits', 'Family', 'Engagement'],
+    review:
+      "Pixels on the Beach caters specifically to the vacation portrait market — quick turnaround, flexible scheduling, and packages designed for families who decided mid-trip they want photos. They work across the island's main beach access points and maintain availability into peak summer season longer than most local photographers.",
+    notableFor: 'Flexible scheduling and fast delivery for families who book during their stay.',
+    address: 'Hilton Head Island', // TODO: VERIFY
+    city: 'Hilton Head Island',
+    website: 'https://pixelsonthebeach.com', // TODO: VERIFY
+    heroImage: { src: '', alt: 'Pixels on the Beach — vacation portrait photography on Hilton Head Island' },
+    bestFor: 'Families looking to book a portrait session with short notice during their vacation.',
+    lastVerified: '2026-05-24',
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Businesses — Real Estate Agents
+// ---------------------------------------------------------------------------
+
+const realEstateBusinesses: Business[] = [
+  {
+    id: 'charter-one-realty',
+    industrySlug: 'real-estate',
+    featured: false,
+    name: 'Charter One Realty',
+    tagline: "Hilton Head Island's largest independent real estate firm.",
+    schemaType: 'RealEstateAgent',
+    categories: ['Buying', 'Selling', 'Vacation Rental Investment'],
+    review:
+      "Charter One Realty is the largest independent real estate brokerage on Hilton Head Island, with agents specializing in every community from Sea Pines and Palmetto Dunes to Hilton Head Plantation and Long Cove. Their depth of local inventory knowledge and investment property expertise makes them a strong first call for buyers serious about the island market.",
+    notableFor: 'Island-wide coverage and deep investment-property expertise across all HHI communities.',
+    address: 'Hilton Head Island', // TODO: VERIFY street address
+    city: 'Hilton Head Island',
+    phone: undefined, // TODO: VERIFY
+    website: 'https://charteronerealtyhi.com', // TODO: VERIFY exact domain
+    heroImage: { src: '', alt: 'Charter One Realty — Hilton Head Island real estate' },
+    bestFor: 'Buyers comparing multiple HHI communities or evaluating vacation rental investment potential.',
+    lastVerified: '2026-05-24',
+  },
+  {
+    id: 'sea-pines-real-estate',
+    industrySlug: 'real-estate',
+    featured: false,
+    name: 'Sea Pines Real Estate',
+    tagline: 'The inside track on Sea Pines Resort properties.',
+    schemaType: 'RealEstateAgent',
+    categories: ['Sea Pines', 'Resort Properties', 'Oceanfront'],
+    review:
+      'Sea Pines Real Estate operates inside the resort and handles the largest volume of Sea Pines transactions on the island. Their agents know the individual streets, the HOA structures, the beach access points, and the Harbour Town Golf Links tee-time access rules better than any outside firm. If the target is a Sea Pines villa or condo, this is the specialist.',
+    notableFor: 'Deepest expertise on Sea Pines Resort properties, HOA rules, and golf access.',
+    address: 'Sea Pines Resort, Hilton Head Island', // TODO: VERIFY
+    city: 'Hilton Head Island',
+    website: 'https://seapines.com/real-estate', // TODO: VERIFY
+    gatePass: 'sea-pines',
+    heroImage: { src: '', alt: 'Sea Pines Real Estate — resort property specialists on Hilton Head Island' },
+    bestFor: 'Buyers focused specifically on Sea Pines villas, cottages, and oceanfront condos.',
+    lastVerified: '2026-05-24',
+  },
+  {
+    id: 'dunes-real-estate',
+    industrySlug: 'real-estate',
+    featured: false,
+    name: 'Dunes Real Estate',
+    tagline: 'Palmetto Dunes and island-wide residential specialists.',
+    schemaType: 'RealEstateAgent',
+    categories: ['Palmetto Dunes', 'Buying', 'Selling'],
+    review:
+      'Dunes Real Estate has a strong presence in the Palmetto Dunes and Shelter Cove corridor, with solid coverage of the broader Hilton Head market. Their agents are well-versed in the Palmetto Dunes lagoon-front inventory — a category that attracts both vacation rental investors and full-time buyers for its walkability and resort access.',
+    notableFor: 'Palmetto Dunes specialists with strong island-wide residential coverage.',
+    address: 'Hilton Head Island', // TODO: VERIFY
+    city: 'Hilton Head Island',
+    website: 'https://dunesrealestate.com', // TODO: VERIFY exact domain
+    heroImage: { src: '', alt: 'Dunes Real Estate — Palmetto Dunes and Hilton Head Island property' },
+    bestFor: 'Buyers targeting Palmetto Dunes lagoon-front villas or the Shelter Cove area.',
+    lastVerified: '2026-05-24',
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Businesses — Lessons & Instructors
+// ---------------------------------------------------------------------------
+
+const lessonsBusinesses: Business[] = [
+  {
+    id: 'van-der-meer-tennis',
+    industrySlug: 'lessons',
+    featured: false,
+    name: 'Van Der Meer Tennis',
+    tagline: 'World-class tennis instruction at Shipyard Plantation.',
+    schemaType: 'SportsActivityLocation',
+    categories: ['Tennis', 'Pickleball', 'Junior Programs'],
+    priceRange: '$$',
+    review:
+      'Van Der Meer Tennis at Shipyard is one of the most decorated tennis academies in the world — its alumni include dozens of ATP and WTA touring pros and its adult instruction program is widely regarded as the best on the East Coast outside of major academy campuses. Adult clinics, private lessons, multi-day intensives, and junior programs run daily. Worth booking even if the trip is only a few days.',
+    notableFor: 'World-ranked tennis instruction on HHI — not resort filler, a genuine elite academy.',
+    address: 'Shipyard Plantation, Hilton Head Island', // TODO: VERIFY exact address
+    city: 'Hilton Head Island',
+    website: 'https://vandermeertennis.com', // TODO: VERIFY
+    instagram: 'vandermeertennis', // TODO: VERIFY
+    heroImage: { src: '', alt: 'Van Der Meer Tennis Academy at Shipyard Plantation, Hilton Head Island' },
+    bestFor: 'Players of any level who want real instruction improvement, not a casual hit.',
+    bookingLeadTimeDays: { peak: 14, offPeak: 3 },
+    lastVerified: '2026-05-24',
+  },
+  {
+    id: 'sea-pines-golf-learning-center',
+    industrySlug: 'lessons',
+    featured: false,
+    name: 'Sea Pines Golf Learning Center',
+    tagline: 'PGA instruction and video-analysis lessons inside Sea Pines Resort.',
+    schemaType: 'SportsActivityLocation',
+    categories: ['Golf Lessons', 'Video Analysis', 'Beginner to Advanced'],
+    priceRange: '$$',
+    review:
+      "The Sea Pines Golf Learning Center offers PGA-certified instruction alongside the resort's three championship courses. Sessions include video swing analysis, on-range drills, and optional on-course playing lessons — the playing lesson format is particularly effective for travelers who want to improve before or during a round at Harbour Town or Atlantic Dunes. Suitable for all skill levels.",
+    notableFor: 'PGA-certified instruction with video analysis adjacent to Harbour Town Golf Links.',
+    address: 'Sea Pines Resort, Hilton Head Island', // TODO: VERIFY
+    city: 'Hilton Head Island',
+    website: 'https://seapines.com/golf/lessons', // TODO: VERIFY
+    gatePass: 'sea-pines',
+    heroImage: { src: '', alt: 'Sea Pines Golf Learning Center — golf lessons on Hilton Head Island' },
+    bestFor: 'Golfers of any skill level who want a lesson timed around their HHI tee times.',
+    lastVerified: '2026-05-24',
+  },
+  {
+    id: 'hilton-head-surf-lessons',
+    industrySlug: 'lessons',
+    featured: false,
+    name: 'Hilton Head Surf Lessons',
+    tagline: 'Beginner-friendly surf instruction on the Atlantic.',
+    schemaType: 'LocalBusiness',
+    categories: ['Surf Lessons', 'Beginner', 'Kids'],
+    priceRange: '$',
+    review:
+      "HHI's surf is gentle — consistent beach break, typically 1–3 feet in summer — which makes it ideal for first-timers. Local surf instructors work out of the northern beaches, typically Folly Field and beyond, where the break is most consistent. Sessions include board and wetsuit/rash guard; instructors are accustomed to working with kids 8 and up through first-time adults.",
+    notableFor: 'Mellow Atlantic beach break well-suited to first-time surfers and kids.',
+    address: 'Folly Field Beach, Hilton Head Island', // TODO: VERIFY specific operator
+    city: 'Hilton Head Island',
+    heroImage: { src: '', alt: 'Surf lessons on Hilton Head Island Atlantic beach' },
+    bestFor: 'First-time surfers, kids 8+, and families looking for an active morning activity.',
+    lastVerified: '2026-05-24',
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Business registry
 // ---------------------------------------------------------------------------
 
@@ -4039,6 +4374,9 @@ export const allBusinesses: Business[] = [
   ...homeServicesBusinesses,
   ...fishingCharterBusinesses,
   ...dolphinToursBusinesses,
+  ...photographerBusinesses,
+  ...realEstateBusinesses,
+  ...lessonsBusinesses,
 ];
 
 // ---------------------------------------------------------------------------
