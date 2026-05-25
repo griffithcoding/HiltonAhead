@@ -20,6 +20,7 @@ export const nav: Nav = {
       href: '/services',
       label: 'Services',
       children: [
+        { href: '/villa-match', label: 'Villa Match Quiz' },
         { href: '/services#custom-itineraries', label: 'Custom Itineraries' },
         { href: '/services#villa-resort-booking', label: 'Villa & Resort Booking' },
         { href: '/services#group-family-trips', label: 'Group & Family Trips' },

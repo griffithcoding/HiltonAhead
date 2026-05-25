@@ -13,6 +13,7 @@ import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
 import Footer from '@/components/sections/Footer';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import VillaMatchEntryCard from '@/components/villa-match/VillaMatchEntryCard';
 import {
   generatePageMetadata,
   getTravelAgencySchema,
@@ -81,6 +82,7 @@ export default function Home() {
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Services />
+        <VillaMatchEntryCard variant="feature" source="homepage" />
       </div>
 
       {/* Full-bleed cinematic drone flyover — narrative midpoint */}
