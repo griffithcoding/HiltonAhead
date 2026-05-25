@@ -11,6 +11,10 @@
     {
       "path": "/api/cron/directory-prospect-scan",
       "schedule": "0 10 * * 1"
+    },
+    {
+      "path": "/api/cron/directory-churn-scan",
+      "schedule": "0 10 7 * *"
     }
   ]
 }

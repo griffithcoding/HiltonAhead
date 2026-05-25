@@ -839,3 +839,122 @@ export async function sendAttributionProofEmail(opts: AttributionProofEmail) {
     ],
   });
 }
+
+// ---------------------------------------------------------------------------
+// B8 — Churn-risk report (admin internal)
+// ---------------------------------------------------------------------------
+
+export interface ChurnRiskBusiness {
+  name: string;
+  slug: string;
+  industrySlug: string;
+  tier: string;
+  priorCount: number;
+  currentCount: number;
+  changePct: number; // negative = decline
+}
+
+export interface ChurnRiskReportEmail {
+  /** Period label shown in subject, e.g. "May 2026" */
+  monthLabel: string;
+  atRisk: ChurnRiskBusiness[];
+  totalPaidSubscribers: number;
+}
+
+export async function sendChurnRiskReport(opts: ChurnRiskReportEmail) {
+  const to = process.env.RESEND_TO_EMAIL;
+  if (!to) return { ok: false as const, skipped: true as const };
+
+  const { monthLabel, atRisk, totalPaidSubscribers } = opts;
+
+  const subject =
+    atRisk.length === 0
+      ? `Directory health: all ${totalPaidSubscribers} paid subscribers stable — ${monthLabel}`
+      : `⚠ ${atRisk.length} of ${totalPaidSubscribers} paid directory subscribers at churn risk — ${monthLabel}`;
+
+  const rowsHtml = atRisk
+    .map((b) => {
+      const arrow = b.changePct <= -50 ? '🔴' : '🟡';
+      const pct = `${b.changePct > 0 ? '+' : ''}${b.changePct}%`;
+      return `
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #E8DCC8;font-weight:600;color:#0E2A38;">${b.name}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #E8DCC8;color:#5C7A8A;font-size:12px;">${b.tier}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #E8DCC8;text-align:center;color:#5C7A8A;">${b.priorCount}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #E8DCC8;text-align:center;color:#5C7A8A;">${b.currentCount}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #E8DCC8;text-align:center;font-weight:700;color:#C0392B;">${arrow} ${pct}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #E8DCC8;">
+            <a href="https://www.hiltonahead.com/local/${b.industrySlug}#${b.slug}" style="color:#0F7080;font-size:12px;">View listing</a>
+          </td>
+        </tr>`;
+    })
+    .join('');
+
+  const noRiskHtml = `
+    <p style="color:#5C7A8A;font-size:14px;margin-top:16px;">
+      All ${totalPaidSubscribers} paid subscribers show stable or growing engagement this month. No action required.
+    </p>`;
+
+  const html = `<!doctype html>
+<html>
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:Georgia,serif;">
+  <div style="max-width:680px;margin:0 auto;padding:40px 24px;">
+    <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A7A6A;margin:0 0 24px;">
+      Hilton Ahead · Directory Health Report
+    </p>
+    <h1 style="font-size:22px;font-weight:400;color:#0E2A38;margin:0 0 8px;">
+      ${atRisk.length > 0 ? `${atRisk.length} subscriber${atRisk.length > 1 ? 's' : ''} at churn risk` : 'All subscribers stable'}
+    </h1>
+    <p style="font-size:13px;color:#5C7A8A;margin:0 0 28px;">${monthLabel} · ${totalPaidSubscribers} paid subscribers monitored</p>
+
+    ${
+      atRisk.length > 0
+        ? `<table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;font-size:13px;">
+            <thead>
+              <tr style="background:#0E2A38;color:#F5E8D0;">
+                <th style="padding:10px 12px;text-align:left;font-weight:600;letter-spacing:0.06em;">Business</th>
+                <th style="padding:10px 12px;text-align:left;font-weight:600;letter-spacing:0.06em;">Tier</th>
+                <th style="padding:10px 12px;text-align:center;font-weight:600;letter-spacing:0.06em;">Prior 30d</th>
+                <th style="padding:10px 12px;text-align:center;font-weight:600;letter-spacing:0.06em;">Current 30d</th>
+                <th style="padding:10px 12px;text-align:center;font-weight:600;letter-spacing:0.06em;">Change</th>
+                <th style="padding:10px 12px;font-weight:600;letter-spacing:0.06em;"></th>
+              </tr>
+            </thead>
+            <tbody>${rowsHtml}</tbody>
+          </table>
+          <p style="font-size:12px;color:#8A7A6A;margin-top:16px;">
+            Threshold: ≥30% drop in directory events (phone clicks + website clicks + inquiries) vs the prior 30 days.
+            Reach out before their renewal date to pre-empt cancellation.
+          </p>`
+        : noRiskHtml
+    }
+
+    <div style="margin-top:32px;padding-top:20px;border-top:1px solid #E8DCC8;">
+      <a href="https://www.hiltonahead.com/admin/directory"
+         style="display:inline-block;background:#0E2A38;color:#F5E8D0;padding:10px 20px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border-radius:999px;">
+        Open directory admin →
+      </a>
+    </div>
+  </div>
+</body>
+</html>`;
+
+  const text = atRisk.length === 0
+    ? `All ${totalPaidSubscribers} paid directory subscribers are stable for ${monthLabel}.`
+    : [
+        `CHURN RISK REPORT — ${monthLabel}`,
+        `${atRisk.length} of ${totalPaidSubscribers} paid subscribers show declining engagement.\n`,
+        ...atRisk.map(
+          (b) => `• ${b.name} (${b.tier}) — prior: ${b.priorCount}, current: ${b.currentCount} (${b.changePct}%)`
+        ),
+        '\nhttps://www.hiltonahead.com/admin/directory',
+      ].join('\n');
+
+  return sendEmail({
+    to,
+    subject,
+    html,
+    text,
+    tags: [{ name: 'type', value: 'churn_risk_report' }],
+  });
+}
