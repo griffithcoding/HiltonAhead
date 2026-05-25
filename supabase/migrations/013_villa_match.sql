@@ -2,9 +2,7 @@
 -- Villa Match quiz telemetry + lead capture.
 -- Mirrors the directory_events pattern from migration 012.
 
--- citext is already enabled by an earlier migration (admin_users uses it).
--- If a build-time check shows otherwise, uncomment the next line.
--- create extension if not exists citext;
+create extension if not exists citext;
 
 create table villa_match_events (
   id          uuid primary key default gen_random_uuid(),
