@@ -22,7 +22,7 @@
     },
     {
       "path": "/api/cron/outreach-reply-poll",
-      "schedule": "*/30 * * * *"
+      "schedule": "30 13 * * *"
     }
   ]
 }
