@@ -57,16 +57,31 @@ export interface AffiliateProgram {
   /**
    * URL parameter the network expects the tracking ID under.
    *   booking.com → aid
-   *   expedia/vrbo → siteid (EPS) / camref (Impact)
+   *   expedia/vrbo (Partnerize) → camref (also wrapped via prf.hn — see linkPattern)
    *   viator → pid (or mcid)
    *   getyourguide → partner_id
-   *   golfnow (Impact)→ irgwc=1 + clickid (handled by Impact deeplink)
+   *   golfnow / marriott / allianz / hertz / petermillar (Impact) → camref + irgwc=1
    *   amazon → tag
    */
   trackingParam: string;
   /**
+   * How `withAffiliateParams()` stamps the tracking ID onto the URL.
+   *
+   * - 'query-stamp' (default): append `?trackingParam=trackingId` plus any
+   *   staticParams to the destination URL. Used by Booking, Amazon, Viator,
+   *   GetYourGuide, and most Impact programs (GolfNow, Marriott, etc.).
+   *
+   * - 'partnerize-wrap': wrap the destination through Partnerize's redirect
+   *   service. Output shape: `https://prf.hn/click/camref:ID/destination:ENCODED_URL`.
+   *   Used by Expedia + Vrbo (and any future Partnerize-network programs).
+   *   When the tracking ID env var is unset, the helper passes the raw
+   *   destination URL through unchanged — same as query-stamp behavior.
+   */
+  linkPattern?: 'query-stamp' | 'partnerize-wrap';
+  /**
    * Optional extra static query params merged onto every deeplink. Used for
    * networks that require a "label" or "campaign" alongside the ID.
+   * Ignored when `linkPattern: 'partnerize-wrap'`.
    */
   staticParams?: Record<string, string>;
   /**
@@ -95,8 +110,11 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
     name: 'Expedia',
     shortName: 'Expedia',
     brandDomain: 'expedia.com',
-    trackingIdEnv: 'AFFILIATE_EXPEDIA_SITEID',
-    trackingParam: 'siteid',
+    // Expedia migrated to Partnerize in 2024. Tracking is via camref (publisher
+    // ID), wrapped through prf.hn — NOT the legacy EPS siteid stamping pattern.
+    trackingIdEnv: 'AFFILIATE_EXPEDIA_CAMREF',
+    trackingParam: 'camref',
+    linkPattern: 'partnerize-wrap',
     defaultDeeplink:
       'https://www.expedia.com/Hotel-Search?destination=Hilton+Head+Island%2C+SC',
     pitch: 'Bundle a flight + hotel and save on package rates.',
@@ -106,8 +124,12 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
     name: 'Vrbo',
     shortName: 'Vrbo',
     brandDomain: 'vrbo.com',
-    trackingIdEnv: 'AFFILIATE_VRBO_SITEID',
-    trackingParam: 'siteid',
+    // Vrbo is Expedia Group → same Partnerize publisher ID works on both
+    // domains. We keep the env var separate for future-proofing in case the
+    // networks split, but the value is typically identical to Expedia's.
+    trackingIdEnv: 'AFFILIATE_VRBO_CAMREF',
+    trackingParam: 'camref',
+    linkPattern: 'partnerize-wrap',
     defaultDeeplink:
       'https://www.vrbo.com/search?q=Hilton+Head+Island%2C+SC',
     pitch: 'Whole-house rentals — best for families and groups.',

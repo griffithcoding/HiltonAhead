@@ -79,6 +79,14 @@ function readTrackingId(
  * Stamp the program's tracking ID + any required static params onto the URL.
  * Falls back to the unmodified URL on parse failure or missing ID.
  *
+ * Two link patterns are supported (per program.linkPattern):
+ *   - 'query-stamp' (default): adds ?trackingParam=trackingId to the URL.
+ *   - 'partnerize-wrap': wraps the URL through Partnerize's prf.hn redirect.
+ *     Used by Expedia + Vrbo (Partnerize) — produces:
+ *     `https://prf.hn/click/camref:ID/destination:ENCODED_URL`.
+ *     Without a tracking ID the helper returns the raw destination URL so
+ *     links keep working pre-approval.
+ *
  * @param placement Optional surface label (e.g. `'blog/spring-break'`,
  *   `'faq/lodging'`). Used both for click-tracking analytics AND for
  *   resolving a placement-specific tracking ID via the program's
@@ -96,6 +104,15 @@ export function withAffiliateParams(
 
   const trackingId = readTrackingId(programId, placement);
 
+  // Partnerize redirect-wrap. Expedia + Vrbo use this.
+  if (program.linkPattern === 'partnerize-wrap') {
+    if (!trackingId) return targetUrl;
+    return `https://prf.hn/click/camref:${encodeURIComponent(
+      trackingId,
+    )}/destination:${encodeURIComponent(targetUrl)}`;
+  }
+
+  // Default: query-string stamp.
   try {
     const u = new URL(targetUrl);
     if (program.staticParams) {
