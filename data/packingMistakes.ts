@@ -159,7 +159,7 @@ export const PACKING_MISTAKES: ReadonlyArray<PackingMistake> = [
     fixShort: 'Polarized sunglasses you can afford to lose to the surf',
     deepDiveHeading: 'You will not see the dolphins without polarization',
     body:
-      "Bottlenose dolphins work the shoreline along Sea Pines and Folly Field most mornings, often within 30 yards of the wading depth. Non-polarized sunglasses turn the surf into a wall of glare and you miss the dorsal fins entirely. Polarized lenses cut the glare so you can see into the wave — fish, rays, the occasional shark, and the dolphins. Goodr makes a $25 polarized frame that doesn't slide off when you sweat and doesn't break the household budget when one pair ends up in the surf, which is the realistic outcome about half the time. Bring two pairs.",
+      "Bottlenose dolphins work the shoreline along Sea Pines and Folly Field most mornings, often within 30 yards of the wading depth. Non-polarized sunglasses turn the surf into a wall of glare and you miss the dorsal fins entirely. Polarized lenses cut the glare so you can see into the wave — fish, rays, the occasional shark, and the dolphins. Goodr makes an under-$30 polarized frame that doesn't slide off when you sweat and doesn't break the household budget when one pair ends up in the surf, which is the realistic outcome about half the time. Bring two pairs.",
     productName: 'Goodr Polarized Sunglasses',
     productSlug: 'goodr-polarized-sunglasses',
     dateAuditedAt: AUDIT_DATE,
