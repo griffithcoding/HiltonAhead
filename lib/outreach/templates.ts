@@ -109,6 +109,82 @@ Thanks either way.
 Hilton Ahead`,
   },
   {
+    id: 'swap_restaurant',
+    label: 'Resource swap — restaurant / local business',
+    linkTypes: ['partnership', 'resource_page'],
+    subject: 'Featuring {publication} on hiltonahead.com?',
+    body: `Hi {first_name},
+
+I run hiltonahead.com — a local travel-consulting site for Hilton Head Island. Our visitors are people in the active planning stage of a trip: itinerary builders, restaurant lookups, and dinner-reservation seekers. Real traffic, attribution-tracked.
+
+I'd like to feature {publication} in our restaurant directory — no charge, no commission. The listing includes a description, photos, hours, and a tracked link to your site. We push qualified visitor traffic at it organically.
+
+In exchange, a link back from your site to {our_url} would be a fair swap — most operators add it to their "Plan Your Visit" or "About the Island" section. If your site doesn't have one, no worries — happy to chat about other options.
+
+Worth a quick call, or want me to just send the listing draft for review?
+
+— Will Griffith
+Hilton Ahead
+hiltonahead.com`,
+  },
+  {
+    id: 'swap_wedding_vendor',
+    label: 'Resource swap — wedding vendor / planner',
+    linkTypes: ['partnership', 'resource_page'],
+    subject: 'Hilton Head wedding referral partnership?',
+    body: `Hi {first_name},
+
+I run hiltonahead.com — Hilton Head Island travel and local-business directory. We're seeing steady inbound from brides planning Lowcountry destination weddings: venue scouting, vendor research, group-stay coordination, the works.
+
+I'd like to feature {publication} in our wedding-vendor directory. The listing is free, includes portfolio photos, contact info, and a tracked link. It surfaces on /weddings and adjacent guides to brides actively pricing out a Hilton Head wedding.
+
+In exchange, a link from your site to {our_url} (a relevant resource page for your audience) would be a fair swap. Many planners put it under "Local Resources" or "Plan Your Day."
+
+Worth a 15-minute call — or I can send the listing draft now if easier?
+
+— Will Griffith
+Hilton Ahead
+hiltonahead.com`,
+  },
+  {
+    id: 'swap_vacation_rental',
+    label: 'Resource swap — vacation rental manager',
+    linkTypes: ['partnership', 'resource_page'],
+    subject: 'Cross-link with hiltonahead.com? (guest experience play)',
+    body: `Hi {first_name},
+
+I run hiltonahead.com — a local travel-consulting site for Hilton Head Island. Most of our visitors are within 30 days of a stay, deep in the "what should we do while we're there" phase.
+
+I'd like to feature {publication} in our vacation-rental directory — free listing, photos, tracked link to your site. Bookings flow your way; we just get a tracked outbound click. Useful asset for your existing guests too: link to us as a "What to do while you're here" resource in your welcome email or guest book, and we cover the rest.
+
+In exchange, a link from your site (footer, plan-your-visit page, or your guest portal) pointing to {our_url} would be a fair swap.
+
+Want me to send the listing draft so you can see what it looks like?
+
+— Will Griffith
+Hilton Ahead
+hiltonahead.com`,
+  },
+  {
+    id: 'swap_regional_blog',
+    label: 'Resource swap — regional travel blog / publication',
+    linkTypes: ['partnership', 'resource_page', 'niche_edit'],
+    subject: 'Citable Hilton Head data for {publication}?',
+    body: `Hi {first_name},
+
+I run hiltonahead.com — a Hilton Head Island travel and local-business publication.
+
+We just shipped a structured "Hilton Head by the Numbers" reference page — original data on the island (visitor stats, beach access, golf course inventory, seasonal pricing, etc.), formatted as a citable resource. It's the kind of page that's useful as a footnote or inline link in Lowcountry travel coverage.
+
+If you ever write about Hilton Head, feel free to cite or link {our_url} — it's there to be used.
+
+Happy to return the favor too: I can feature {publication} on our resources page or link to specific pieces of yours in relevant articles. Let me know what would be useful on your end.
+
+— Will Griffith
+Hilton Ahead
+hiltonahead.com`,
+  },
+  {
     id: 'followup_1',
     label: 'Follow-up #1 (no reply, 5 business days later)',
     linkTypes: ['guest_post', 'resource_page', 'niche_edit', 'broken_link', 'unlinked_mention', 'partnership', 'other'],
