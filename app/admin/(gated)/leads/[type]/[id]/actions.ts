@@ -4,6 +4,8 @@ import { revalidatePath } from 'next/cache';
 import { createClient } from '@/utils/supabase/server';
 import { requireAdmin } from '@/utils/supabase/admin';
 import { sendEmailFromAdmin } from '@/utils/gmail/client';
+import { renderOutreachHtml } from '@/app/lib/outreach/htmlEmail';
+import { newTrackingId } from '@/app/lib/outreach/tracking';
 
 type LeadTableKind = 'itinerary_requests' | 'newsletter_subscribers' | 'leads';
 
@@ -177,6 +179,47 @@ export async function updateNextAction(
 }
 
 // ============================================================================
+// Pause / resume the auto-followup sequence for one lead
+// ============================================================================
+export async function setLeadSequenceActiveAction(
+  type: string,
+  id: string,
+  active: boolean,
+): Promise<{ ok: boolean; error?: string }> {
+  const auth = await requireAdmin();
+  if (!auth.ok) return auth;
+
+  const table = TYPE_TO_TABLE[type];
+  if (!table || table === 'newsletter_subscribers') {
+    return { ok: false, error: 'Sequences not supported for this lead type.' };
+  }
+
+  const supabase = await createClient();
+
+  const { error } = await supabase
+    .from(table)
+    .update({ sequence_active: active })
+    .eq('id', id);
+
+  if (error) {
+    return { ok: false, error: error.message };
+  }
+
+  // Log to activity so the timeline shows the pause/resume action.
+  await supabase.from('lead_activity').insert({
+    lead_table: table,
+    lead_id: id,
+    kind: 'note',
+    actor_email: auth.user.email ?? null,
+    body: active ? 'Sequence resumed' : 'Sequence paused',
+    metadata: { sequence_active: active, source: 'manual_toggle' },
+  });
+
+  revalidateLead(type, id);
+  return { ok: true };
+}
+
+// ============================================================================
 // Gmail reply (Phase 3)
 // ============================================================================
 export async function sendGmailReply(
@@ -208,11 +251,18 @@ export async function sendGmailReply(
     return { ok: false, error: 'All fields are required.' };
   }
 
+  // Mint a tracking_id and render the HTML body (tracked open pixel +
+  // redirector-wrapped links). The plain-text body still ships as the
+  // first MIME part; HTML carries the tracking instrumentation.
+  const trackingId = newTrackingId();
+  const htmlBody = renderOutreachHtml(body, trackingId);
+
   // Send via the admin's own Gmail tokens — never the caller's.
   const sendResult = await sendEmailFromAdmin(adminEmail, {
     to,
     subject,
     body,
+    html: htmlBody,
     threadId: opts.threadId,
     inReplyTo: opts.inReplyTo,
   });
@@ -230,6 +280,7 @@ export async function sendGmailReply(
     body: subject,
     metadata: {
       to,
+      tracking_id: trackingId,
       thread_id: sendResult.threadId,
       message_id: sendResult.messageId,
       body_preview: body.slice(0, 280),

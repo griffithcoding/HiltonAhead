@@ -69,23 +69,48 @@ async function recordClick(
   req: NextRequest,
 ): Promise<void> {
   const supabase = createServiceClient();
+  const userAgent = req.headers.get('user-agent')?.slice(0, 500) || null;
+  const ipHash = hashIp(req) || null;
+  const url = originalUrl.slice(0, 2000);
 
-  const { data: activity } = await supabase
+  // Outreach first, lead activity as fallback. tracking_ids are unique
+  // across both spaces (UUIDs); first match wins.
+  const { data: outreachActivity } = await supabase
     .from('outreach_activity')
     .select('opportunity_id, contact_id')
     .eq('kind', 'email_sent')
     .filter('metadata->>tracking_id', 'eq', trackingId)
     .maybeSingle();
 
-  if (!activity?.opportunity_id) return;
+  if (outreachActivity?.opportunity_id) {
+    await supabase.from('outreach_email_events').insert({
+      opportunity_id: outreachActivity.opportunity_id,
+      contact_id: outreachActivity.contact_id,
+      tracking_id: trackingId,
+      kind: 'click',
+      url,
+      user_agent: userAgent,
+      ip_hash: ipHash,
+    });
+    return;
+  }
 
-  await supabase.from('outreach_email_events').insert({
-    opportunity_id: activity.opportunity_id,
-    contact_id: activity.contact_id,
-    tracking_id: trackingId,
-    kind: 'click',
-    url: originalUrl.slice(0, 2000),
-    user_agent: req.headers.get('user-agent')?.slice(0, 500) || null,
-    ip_hash: hashIp(req) || null,
-  });
+  const { data: leadActivity } = await supabase
+    .from('lead_activity')
+    .select('lead_table, lead_id')
+    .eq('kind', 'email_sent')
+    .filter('metadata->>tracking_id', 'eq', trackingId)
+    .maybeSingle();
+
+  if (leadActivity?.lead_table && leadActivity?.lead_id) {
+    await supabase.from('lead_email_events').insert({
+      lead_table: leadActivity.lead_table,
+      lead_id: leadActivity.lead_id,
+      tracking_id: trackingId,
+      kind: 'click',
+      url,
+      user_agent: userAgent,
+      ip_hash: ipHash,
+    });
+  }
 }
