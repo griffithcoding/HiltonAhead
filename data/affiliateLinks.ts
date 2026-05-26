@@ -213,6 +213,7 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
       faq: 'AFFILIATE_AMAZON_TAG_FAQ',
       local: 'AFFILIATE_AMAZON_TAG_LOCAL',
       newsletter: 'AFFILIATE_AMAZON_TAG_NEWSLETTER',
+      trip: 'AFFILIATE_AMAZON_TAG_TRIP', // NEW — packing list, future trip-intent surfaces
     },
     trackingParam: 'tag',
     pitch: 'Beach gear, packing essentials, and recommended reading.',
