@@ -22,15 +22,15 @@
     },
     {
       "path": "/api/cron/outreach-reply-poll",
-      "schedule": "*/30 * * * *"
-    },
-    {
-      "path": "/api/cron/lead-sequence-tick",
       "schedule": "30 13 * * *"
     },
     {
+      "path": "/api/cron/lead-sequence-tick",
+      "schedule": "30 14 * * *"
+    },
+    {
       "path": "/api/cron/lead-reply-poll",
-      "schedule": "15,45 * * * *"
+      "schedule": "0 15 * * *"
     }
   ]
 }
