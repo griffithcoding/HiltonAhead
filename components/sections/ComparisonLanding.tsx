@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { Divider, SectionHead } from '@/components/ui/Ornament';
 import TldrBlock from '@/components/ui/TldrBlock';
+import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import type { Comparison, ComparisonDimension } from '@/data/comparisons';
 import { COMPARISONS } from '@/data/comparisons';
 
@@ -211,6 +213,35 @@ export default function ComparisonLanding({ comparison }: { comparison: Comparis
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* If you'd rather book direct — affiliate cards for Hilton Head lodging
+          (both options on every comparison page point at Hilton Head, since
+          that's our destination of expertise). */}
+      <section
+        aria-label="If you'd rather book direct"
+        className="mt-24 md:mt-32"
+      >
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <h3 className="eyebrow text-coral">If you’d rather book direct</h3>
+        </div>
+        <AffiliateDisclosure variant="inline" className="mb-5" />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          <AffiliateCard
+            programId="vrbo"
+            placement={`compare/${comparison.slug}/vrbo`}
+            headline="Hilton Head whole-house rentals"
+            description="Whole-home Vrbo rentals on Hilton Head — best for families, groups, and stays of five nights or more. Kitchens, washer/dryers, multiple bedrooms."
+            cta="Search rentals →"
+          />
+          <AffiliateCard
+            programId="booking"
+            placement={`compare/${comparison.slug}/booking`}
+            headline="Hilton Head resorts and hotels"
+            description="Free cancellation on most resort and hotel stays. Cleaner option for short trips, couples, and travelers who want one check-in desk."
+            cta="Search resorts →"
+          />
+        </div>
       </section>
 
       {/* FAQ */}

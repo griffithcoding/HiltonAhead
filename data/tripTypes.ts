@@ -162,6 +162,22 @@ export const tripTypes: TripTypeLanding[] = [
           'Live availability for Harbour Town, Palmetto Dunes, Sea Pines, and the rest of the island’s public courses. We still book the priority Sea Pines slots ourselves — GolfNow is for the in-between rounds.',
         cta: 'See live tee times →',
       },
+      {
+        programId: 'booking',
+        placement: 'golf-packages/booking',
+        headline: 'Stay-and-play resort lodging',
+        description:
+          'Resort rooms at Sea Pines, Palmetto Dunes, and the Westin — the four properties whose guest tee-time priority windows are wide enough to land the top-tier courses on the trip you actually want.',
+        cta: 'Search resort stays →',
+      },
+      {
+        programId: 'vrbo',
+        placement: 'golf-packages/vrbo',
+        headline: 'Group villa rentals near the courses',
+        description:
+          'Whole-house rentals walkable or short-drive to the Sea Pines and Palmetto Dunes clubhouses — the right shape for groups of six-plus splitting the cost of a fully-stocked kitchen and three or four bedrooms.',
+        cta: 'Search group villas →',
+      },
     ],
   },
   {
@@ -540,6 +556,14 @@ export const tripTypes: TripTypeLanding[] = [
           'Inventory is at its widest of the year and rates run roughly half of July. Whole-house rentals with kitchens are the right shape for multi-generation Thanksgiving weeks.',
         cta: 'Browse on Vrbo →',
       },
+      {
+        programId: 'booking',
+        placement: 'thanksgiving/booking',
+        headline: 'Resort-room option if cooking isn’t the move',
+        description:
+          'For couples or smaller groups skipping the cook-at-home holiday, the Westin and Omni run shoulder-rate pricing through November with full Thanksgiving dining inside the resort.',
+        cta: 'Search Thanksgiving stays →',
+      },
     ],
   },
 
@@ -613,6 +637,16 @@ export const tripTypes: TripTypeLanding[] = [
         description:
           'Old Town inns, Palmetto Bluff resort rooms, and a few boutique stays just off May River. Free cancellation on most properties.',
         cta: 'See stays in Bluffton →',
+      },
+      {
+        programId: 'vrbo',
+        placement: 'bluffton-planner/vrbo',
+        deeplink:
+          'https://www.vrbo.com/vacation-rentals/usa/south-carolina/lowcountry-and-resort-islands/bluffton',
+        headline: 'Bluffton whole-house rentals',
+        description:
+          'Whole-home rentals on May River, inside Palmetto Bluff, and through Old Town — the right shape for groups visiting May River Golf Club or May River Sandbar weekends.',
+        cta: 'Search Bluffton rentals →',
       },
     ],
   },
@@ -840,6 +874,14 @@ export const tripTypes: TripTypeLanding[] = [
         description:
           'Resort and boutique-inn options for couples — the Sea Pines and Shelter Cove pockets we recommend, plus Montage Palmetto Bluff for the splurge layer. Most properties have free cancellation.',
         cta: 'See couples-friendly stays →',
+      },
+      {
+        programId: 'vrbo',
+        placement: 'honeymoon/vrbo',
+        headline: 'Private villa option for longer honeymoons',
+        description:
+          'For honeymoons of seven nights or more, a small whole-house rental on the dune line or inside Sea Pines often outshines a resort suite — kitchen, porch, and the option to host one dinner for visiting family.',
+        cta: 'Search Vrbo couples villas →',
       },
     ],
   },
