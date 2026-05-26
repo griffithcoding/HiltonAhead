@@ -83,14 +83,19 @@ function readTrackingId(
  *   - 'query-stamp' (default): adds ?trackingParam=trackingId to the URL.
  *   - 'partnerize-wrap': wraps the URL through Partnerize's prf.hn redirect.
  *     Used by Expedia + Vrbo (Partnerize) — produces:
- *     `https://prf.hn/click/camref:ID/destination:ENCODED_URL`.
+ *     `https://prf.hn/click/camref:ID[/pubref:SURFACE]/destination:ENCODED_URL`.
+ *     When `placement` is supplied, it's sanitized to `[a-z0-9_-]` and added
+ *     as a `pubref:` segment so Partnerize's click report shows per-surface
+ *     attribution (which page on hiltonahead.com drove the click).
  *     Without a tracking ID the helper returns the raw destination URL so
  *     links keep working pre-approval.
  *
  * @param placement Optional surface label (e.g. `'blog/spring-break'`,
- *   `'faq/lodging'`). Used both for click-tracking analytics AND for
- *   resolving a placement-specific tracking ID via the program's
- *   `placementTagEnv` map (currently Amazon-only).
+ *   `'faq/lodging'`, `'compare/hilton-head-vs-kiawah/vrbo'`). Used for:
+ *   (a) click-tracking analytics via `/api/affiliate/track`;
+ *   (b) resolving a placement-specific tracking ID via the program's
+ *   `placementTagEnv` map (currently Amazon-only);
+ *   (c) Partnerize `pubref:` segment for per-surface attribution.
  */
 export function withAffiliateParams(
   programId: AffiliateProgramId,
@@ -105,11 +110,30 @@ export function withAffiliateParams(
   const trackingId = readTrackingId(programId, placement);
 
   // Partnerize redirect-wrap. Expedia + Vrbo use this.
+  //
+  // Shape: https://prf.hn/click/camref:CAMREF[/pubref:SUBID]/destination:URL
+  //
+  // The optional `pubref:` segment carries the page-level placement label
+  // through to Partnerize's click report, so per-surface attribution works
+  // ("which page drove this booking?"). Partnerize's pubref accepts the
+  // RFC-3986 unreserved set plus some specials, but path-segment parsing
+  // is brittle across networks — sanitize aggressively to [a-z0-9_-] to
+  // avoid any chance the redirect mangles the destination URL.
   if (program.linkPattern === 'partnerize-wrap') {
     if (!trackingId) return targetUrl;
-    return `https://prf.hn/click/camref:${encodeURIComponent(
-      trackingId,
-    )}/destination:${encodeURIComponent(targetUrl)}`;
+    const segments = [`camref:${encodeURIComponent(trackingId)}`];
+    if (placement) {
+      const pubref = placement
+        .toLowerCase()
+        .replace(/[^a-z0-9_-]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 64); // Partnerize truncates anyway; cap to keep URLs readable
+      if (pubref.length > 0) {
+        segments.push(`pubref:${pubref}`);
+      }
+    }
+    segments.push(`destination:${encodeURIComponent(targetUrl)}`);
+    return `https://prf.hn/click/${segments.join('/')}`;
   }
 
   // Default: query-string stamp.
