@@ -112,7 +112,7 @@ export default function SearchBar() {
   }
 
   return (
-    <div ref={containerRef} className="relative w-[220px] lg:w-[280px]">
+    <div ref={containerRef} className="relative w-[160px] lg:w-[200px]">
       <div className="relative flex items-center">
         <svg
           aria-hidden="true"
@@ -132,7 +132,7 @@ export default function SearchBar() {
           onChange={(e) => setQ(e.target.value)}
           onKeyDown={onKeyDown}
           onFocus={() => q.length >= MIN_CHARS && setOpen(true)}
-          placeholder="Search posts, FAQs…"
+          placeholder="Search…"
           aria-label="Search the site"
           aria-controls={listboxId}
           aria-expanded={open}
