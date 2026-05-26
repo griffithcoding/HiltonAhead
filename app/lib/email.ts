@@ -1087,3 +1087,38 @@ export function resolveDownloadUrl(tierSlug: string): string | null {
   };
   return map[tierSlug] || null;
 }
+
+/**
+ * Notify the operator that a fresh batch of social drafts is ready (or that
+ * the generator ran with failures). Soft-fail: never throws — generator must
+ * not be killed by an email outage.
+ */
+export async function notifyAdminSocialQueue(opts: {
+  generated: number;
+  failed: number;
+  costUsd: number;
+  baseUrl: string;
+}): Promise<void> {
+  const to = process.env.RESEND_TO_EMAIL;
+  if (!to) return;
+
+  const total = opts.generated + opts.failed;
+  const subject = opts.failed > 0
+    ? `[social] ${opts.generated}/${total} drafts ready (${opts.failed} failed)`
+    : `[social] ${opts.generated} drafts ready for review`;
+
+  const queueUrl = `${opts.baseUrl}/admin/social`;
+  const html = `
+    <p>${opts.generated} draft${opts.generated === 1 ? '' : 's'} generated.</p>
+    ${opts.failed > 0 ? `<p><strong>${opts.failed} failed</strong> — see queue for details.</p>` : ''}
+    <p>Generator cost: $${opts.costUsd.toFixed(4)}</p>
+    <p><a href="${queueUrl}">Open the queue →</a></p>
+  `;
+  const text = `${subject}\nGenerator cost: $${opts.costUsd.toFixed(4)}\nQueue: ${queueUrl}`;
+
+  try {
+    await sendEmail({ to, subject, html, text });
+  } catch (err) {
+    console.error('[social.email] notifyAdminSocialQueue failed', err);
+  }
+}
