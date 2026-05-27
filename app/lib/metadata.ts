@@ -837,3 +837,67 @@ export function getQaPageSchema(qa: {
     },
   }
 }
+
+/**
+ * JSON-LD Dataset — for the by-the-numbers reference page.
+ *
+ * Eligible for Google's Dataset Search index, and tells LLMs that the
+ * page is a structured fact source rather than narrative prose. Pair
+ * with a list of `variableMeasured` entries describing each fact so the
+ * dataset reads as a real reference rather than free text.
+ */
+export function getDatasetSchema(dataset: {
+  name: string
+  description: string
+  url: string
+  keywords?: string[]
+  datePublished?: string
+  dateModified?: string
+  variableMeasured?: Array<{ name: string; description?: string }>
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: dataset.name,
+    description: dataset.description,
+    url: dataset.url,
+    ...(dataset.keywords && dataset.keywords.length > 0
+      ? { keywords: dataset.keywords.join(', ') }
+      : {}),
+    ...(dataset.datePublished ? { datePublished: dataset.datePublished } : {}),
+    ...(dataset.dateModified ? { dateModified: dataset.dateModified } : {}),
+    creator: {
+      '@type': 'Organization',
+      '@id': `${siteUrl}#organization`,
+      name: brand.name,
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${siteUrl}#organization`,
+      name: brand.name,
+      url: siteUrl,
+    },
+    isAccessibleForFree: true,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    inLanguage: 'en-US',
+    spatialCoverage: {
+      '@type': 'Place',
+      name: 'Hilton Head Island, SC',
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 32.2163,
+        longitude: -80.7526,
+      },
+    },
+    ...(dataset.variableMeasured && dataset.variableMeasured.length > 0
+      ? {
+          variableMeasured: dataset.variableMeasured.map((v) => ({
+            '@type': 'PropertyValue',
+            name: v.name,
+            ...(v.description ? { description: v.description } : {}),
+          })),
+        }
+      : {}),
+  }
+}

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
+import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
 import CostCalculator from '@/components/cost/CostCalculator';
 import {
@@ -351,6 +353,34 @@ export default function CostOfHiltonHeadTripPage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        {/* If you'd rather book direct — affiliate cards for the lodging side
+            of the cost equation. */}
+        <section
+          aria-label="If you'd rather book direct"
+          className="mt-20 md:mt-24"
+        >
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <h2 className="eyebrow text-coral">If you’d rather book direct</h2>
+          </div>
+          <AffiliateDisclosure variant="inline" className="mb-5" />
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+            <AffiliateCard
+              programId="vrbo"
+              placement="cost-of-trip/vrbo"
+              headline="Hilton Head villas and whole-house rentals"
+              description="Vrbo whole-home rentals are the price-floor on a 6+ person trip — kitchens, washer/dryers, and a yard for the cost of one hotel room."
+              cta="Search Vrbo →"
+            />
+            <AffiliateCard
+              programId="expedia"
+              placement="cost-of-trip/expedia"
+              headline="Bundle flight + hotel"
+              description="Expedia’s flight + hotel bundles often shave 15–20% off the combined cost vs. booking them apart. Worth a 30-second check before locking the trip in."
+              cta="Browse Expedia bundles →"
+            />
+          </div>
         </section>
       </div>
 

@@ -7,6 +7,7 @@ import { tripTypes } from '@/data/tripTypes'
 import { stories } from '@/data/stories'
 import { months } from '@/data/months'
 import { industries } from '@/data/localBusinesses'
+import { COMPARISONS } from '@/data/comparisons'
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
 
@@ -24,6 +25,7 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/itinerary', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/contact', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/cost-of-hilton-head-trip', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/hilton-head-by-the-numbers', changeFrequency: 'monthly', priority: 0.95 },
   { path: '/marriott-bonvoy-stays-hilton-head', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/blog', changeFrequency: 'weekly', priority: 0.8 },
   { path: '/stories', changeFrequency: 'monthly', priority: 0.85 },
@@ -108,6 +110,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.88, // high — commercial intent destination pages
   }))
 
+  // Comparison pages — "X vs Y" content is the highest-converting SEO
+  // format for travel buyers choosing between destinations or resorts.
+  const comparisonEntries: MetadataRoute.Sitemap = COMPARISONS.map((c) => ({
+    url: `${BASE_URL}/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.92,
+  }))
+
   return [
     ...staticEntries,
     ...postEntries,
@@ -118,5 +129,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceEntries,
     ...localIndexEntry,
     ...localIndustryEntries,
+    ...comparisonEntries,
   ]
 }
