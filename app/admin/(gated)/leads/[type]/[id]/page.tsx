@@ -8,6 +8,7 @@ import NextActionInput from './NextActionInput';
 import GmailPanel from './GmailPanel';
 import PurchasesPanel from './PurchasesPanel';
 import MeetingsPanel from './MeetingsPanel';
+import LeadSequenceToggle from './LeadSequenceToggle';
 
 export const dynamic = 'force-dynamic';
 
@@ -46,7 +47,7 @@ export default async function LeadDetailPage({
   const table = TYPE_TO_TABLE[type];
   const supabase = await createClient();
 
-  const [leadRes, activityRes] = await Promise.all([
+  const [leadRes, activityRes, engagementRes] = await Promise.all([
     supabase.from(table).select('*').eq('id', id).maybeSingle(),
     supabase
       .from('lead_activity')
@@ -54,11 +55,30 @@ export default async function LeadDetailPage({
       .eq('lead_table', table)
       .eq('lead_id', id)
       .order('created_at', { ascending: false }),
+    type === 'newsletter'
+      ? Promise.resolve({ data: null })
+      : supabase
+          .from('lead_engagement')
+          .select(
+            'open_count, click_count, bounce_count, reply_count, last_send_at, last_received_at, sequence_active',
+          )
+          .eq('lead_table', table)
+          .eq('lead_id', id)
+          .maybeSingle(),
   ]);
 
   if (!leadRes.data) notFound();
   const lead = leadRes.data as Record<string, unknown>;
   const activity = activityRes.data ?? [];
+  const engagement = (engagementRes?.data ?? null) as {
+    open_count: number | null;
+    click_count: number | null;
+    bounce_count: number | null;
+    reply_count: number | null;
+    last_send_at: string | null;
+    last_received_at: string | null;
+    sequence_active: boolean | null;
+  } | null;
 
   const email = (lead.email as string) || '';
   const name = (lead.full_name as string | null) || null;
@@ -155,6 +175,49 @@ export default async function LeadDetailPage({
               {formatDateTime(nextActionAt)}
             </span>
           )}
+        </div>
+      )}
+
+      {/* Engagement strip — open / click / reply counts + sequence toggle.
+          Only renders for itinerary/lead types (newsletter never has sends). */}
+      {type !== 'newsletter' && engagement && (
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-sm border border-ocean-deep/10 bg-sand/40 px-5 py-3">
+          <div className="flex flex-wrap items-center gap-5 text-[12px] text-ink-soft">
+            <span>
+              <span className="font-medium text-ink">
+                {engagement.open_count ?? 0}
+              </span>{' '}
+              open{(engagement.open_count ?? 0) === 1 ? '' : 's'}
+            </span>
+            <span>
+              <span className="font-medium text-ink">
+                {engagement.click_count ?? 0}
+              </span>{' '}
+              click{(engagement.click_count ?? 0) === 1 ? '' : 's'}
+            </span>
+            <span>
+              <span className="font-medium text-ink">
+                {engagement.reply_count ?? 0}
+              </span>{' '}
+              repl{(engagement.reply_count ?? 0) === 1 ? 'y' : 'ies'}
+            </span>
+            {(engagement.bounce_count ?? 0) > 0 && (
+              <span className="text-coral">
+                <span className="font-medium">{engagement.bounce_count}</span>{' '}
+                bounce{(engagement.bounce_count ?? 0) === 1 ? '' : 's'}
+              </span>
+            )}
+            {engagement.last_send_at && (
+              <span className="text-ink-soft">
+                · last sent {formatDateTime(engagement.last_send_at)}
+              </span>
+            )}
+          </div>
+          <LeadSequenceToggle
+            type={type}
+            id={id}
+            active={engagement.sequence_active ?? true}
+          />
         </div>
       )}
 

@@ -276,6 +276,12 @@ export default async function AdminLeadsList({
             </span>
           </h1>
         </div>
+        <Link
+          href="/admin/leads/inbox"
+          className="rounded-sm border border-ocean-deep/20 bg-sand px-4 py-2.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink hover:border-coral hover:text-coral"
+        >
+          Inbox
+        </Link>
       </div>
 
       {/* ——— Due-now chips (one-click triage) ——— */}
