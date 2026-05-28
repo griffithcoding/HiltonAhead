@@ -74,8 +74,14 @@ export async function getGmailClient(
   const tokens = await getStoredTokens(adminEmail);
   if (!tokens?.refresh_token) return null;
 
-  const clientId = process.env.GOOGLE_OAUTH_CLIENT_ID;
-  const clientSecret = process.env.GOOGLE_OAUTH_CLIENT_SECRET;
+  // Accept either the documented name or the legacy mixed-case variant.
+  // Some deploys have `Google_Client_Secret` from an earlier setup; both
+  // refer to the same OAuth credential pair, so we read whichever exists.
+  const clientId =
+    process.env.GOOGLE_OAUTH_CLIENT_ID || process.env.Google_Client_ID;
+  const clientSecret =
+    process.env.GOOGLE_OAUTH_CLIENT_SECRET ||
+    process.env.Google_Client_Secret;
   if (!clientId || !clientSecret) {
     console.warn(
       '[gmail] GOOGLE_OAUTH_CLIENT_ID / SECRET not set — cannot refresh tokens.',

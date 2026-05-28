@@ -32,3 +32,4 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 .superpowers/
+.env.vercel*
