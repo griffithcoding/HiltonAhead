@@ -10,8 +10,6 @@ import {
   partnersByTier,
   type Partner,
 } from '@/data/partners';
-import PricingTiers from '@/components/pricing/PricingTiers';
-import { B2B_TIERS } from '@/data/pricing';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Our Partners: Trusted Hilton Head Businesses',

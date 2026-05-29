@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import AdminLoginForm from './AdminLoginForm';
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default async function AdminLoginPage({
         </div>
 
         <p className="mt-8 text-[11px] uppercase tracking-[0.22em] text-ink-soft">
-          ← <a href="/" className="link-underline">Back to the site</a>
+          ← <Link href="/" className="link-underline">Back to the site</Link>
         </p>
       </div>
     </main>

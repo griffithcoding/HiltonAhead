@@ -1,7 +1,7 @@
 'use client'
 
 import type { Business } from '@/data/localBusinesses'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 
 interface Props {
   businesses: Business[]
@@ -12,9 +12,10 @@ export default function IndustryNav({ businesses, featuredBusiness }: Props) {
   const [activeId, setActiveId] = useState<string>('')
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  const allBusinesses = featuredBusiness
-    ? [featuredBusiness, ...businesses]
-    : businesses
+  const allBusinesses = useMemo(
+    () => (featuredBusiness ? [featuredBusiness, ...businesses] : businesses),
+    [featuredBusiness, businesses],
+  )
 
   useEffect(() => {
     const observer = new IntersectionObserver(
