@@ -100,7 +100,7 @@ const CROSS_LINKS = [
 export default function HiltonHeadTidesPage() {
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
-    { name: 'Local guide', path: '/blog' },
+    { name: 'Weather', path: '/hilton-head-weather' },
     { name: 'Tides', path: PATH },
   ]);
   const faqSchema = getFaqSchema(FAQS);

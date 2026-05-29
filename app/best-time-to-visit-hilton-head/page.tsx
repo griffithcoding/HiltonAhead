@@ -98,7 +98,7 @@ const CROSS_LINKS = [
 export default function BestTimeToVisitHiltonHeadPage() {
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
-    { name: 'Local guide', path: '/blog' },
+    { name: 'Weather', path: '/hilton-head-weather' },
     { name: 'Best time to visit', path: PATH },
   ]);
   const faqSchema = getFaqSchema(FAQS);
