@@ -33,3 +33,6 @@ node_modules/
 /playwright/.auth/
 .superpowers/
 .env.vercel*
+
+# Generated lint/diagnostic reports
+lint-report.txt
