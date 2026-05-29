@@ -759,11 +759,10 @@ export function getSpeakableSchema(opts: {
 /**
  * JSON-LD WebSite — site-wide identity anchor.
  *
- * NOTE: `potentialAction` (SearchAction / sitelinks searchbox) is
- * intentionally omitted until a real `/search?q=` handler exists.
- * Pointing it at /blog?q= fails Google Rich Results validation because
- * the page does not consume the `q` parameter. Add the SearchAction
- * back when /search ships in Phase 2.
+ * `potentialAction` (SearchAction / sitelinks searchbox) points at the live
+ * `/search?q=` handler (app/search/page.tsx + /api/search), which consumes the
+ * `q` parameter via the MiniSearch engine — so this passes Google Rich Results
+ * validation. Do not remove it unless `/search` stops consuming `q`.
  */
 export function getWebSiteSchema() {
   return {
@@ -776,6 +775,14 @@ export function getWebSiteSchema() {
     description: brand.shortDescription,
     inLanguage: 'en-US',
     publisher: { '@id': `${siteUrl}#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${siteUrl}/search?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   }
 }
 
