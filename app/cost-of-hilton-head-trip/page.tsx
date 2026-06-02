@@ -331,6 +331,7 @@ export default function CostOfHiltonHeadTripPage() {
               { href: '/hilton-head-oceanfront-villas', label: 'Oceanfront villa picks' },
               { href: '/hilton-head-family-trip-planner', label: 'Family trip planning' },
               { href: '/hilton-head-golf-packages', label: 'Golf trip packages' },
+              { href: '/southwest-airlines-to-hilton-head', label: 'Flying Southwest to HHI' },
               { href: '/hilton-head-weather', label: 'Weather by month' },
               { href: '/hilton-head/sea-pines', label: 'Sea Pines neighborhood' },
               { href: '/hilton-head/palmetto-dunes', label: 'Palmetto Dunes neighborhood' },

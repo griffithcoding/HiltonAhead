@@ -83,7 +83,7 @@ async function fetchHtml(url) {
     const ct = res.headers.get('content-type') || '';
     if (!ct.includes('html')) return null;
     return await res.text();
-  } catch (err) {
+  } catch {
     return null;
   }
 }

@@ -74,8 +74,14 @@ export async function getGmailClient(
   const tokens = await getStoredTokens(adminEmail);
   if (!tokens?.refresh_token) return null;
 
-  const clientId = process.env.GOOGLE_OAUTH_CLIENT_ID;
-  const clientSecret = process.env.GOOGLE_OAUTH_CLIENT_SECRET;
+  // Accept either the documented name or the legacy mixed-case variant.
+  // Some deploys have `Google_Client_Secret` from an earlier setup; both
+  // refer to the same OAuth credential pair, so we read whichever exists.
+  const clientId =
+    process.env.GOOGLE_OAUTH_CLIENT_ID || process.env.Google_Client_ID;
+  const clientSecret =
+    process.env.GOOGLE_OAUTH_CLIENT_SECRET ||
+    process.env.Google_Client_Secret;
   if (!clientId || !clientSecret) {
     console.warn(
       '[gmail] GOOGLE_OAUTH_CLIENT_ID / SECRET not set — cannot refresh tokens.',
@@ -252,8 +258,50 @@ export async function getThread(
 }
 
 /**
- * Send a plain-text email (optionally threaded to an existing
- * conversation). Returns the sent message's ID on success.
+ * Build a quoted-printable-ish base64 body chunk for one MIME part.
+ * Returns raw base64 (not URL-safe; that conversion happens once for
+ * the whole assembled message in sendEmailFromAdmin).
+ */
+function base64Body(content: string): string {
+  return Buffer.from(content, 'utf-8').toString('base64');
+}
+
+/**
+ * Build an RFC 2046 multipart/alternative body — two parts (plain + HTML)
+ * with a unique boundary. Gmail clients pick the part they prefer.
+ */
+function buildMultipartAlternative(
+  textBody: string,
+  htmlBody: string,
+): { boundary: string; body: string } {
+  const boundary = `----=_outreach_${Date.now().toString(36)}_${Math.random()
+    .toString(36)
+    .slice(2, 10)}`;
+  const body = [
+    `--${boundary}`,
+    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: base64',
+    '',
+    base64Body(textBody),
+    `--${boundary}`,
+    'Content-Type: text/html; charset=UTF-8',
+    'Content-Transfer-Encoding: base64',
+    '',
+    base64Body(htmlBody),
+    `--${boundary}--`,
+    '',
+  ].join('\r\n');
+  return { boundary, body };
+}
+
+/**
+ * Send an email (optionally threaded to an existing conversation).
+ * Returns the sent message's ID on success.
+ *
+ * Plain-text only:  pass `body`. Sends Content-Type: text/plain.
+ * Plain + HTML:     pass `body` AND `html`. Sends multipart/alternative
+ *                   so clients that prefer HTML get the tracked version
+ *                   while plain-text clients still get a readable copy.
  */
 export async function sendEmailFromAdmin(
   adminEmail: string,
@@ -261,6 +309,8 @@ export async function sendEmailFromAdmin(
     to: string;
     subject: string;
     body: string;
+    /** Optional HTML body. Pairs with `body` as multipart/alternative. */
+    html?: string;
     threadId?: string;
     inReplyTo?: string;
   },
@@ -268,21 +318,30 @@ export async function sendEmailFromAdmin(
   const gmail = await getGmailClient(adminEmail);
   if (!gmail) return { ok: false, error: 'Gmail not connected. Re-sign-in to grant access.' };
 
-  // RFC 2822 message.
-  const lines: string[] = [
+  // RFC 2822 headers shared by both modes.
+  const headers: string[] = [
     `From: ${adminEmail}`,
     `To: ${opts.to}`,
     `Subject: ${opts.subject}`,
     'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'Content-Transfer-Encoding: 7bit',
   ];
   if (opts.inReplyTo) {
-    lines.push(`In-Reply-To: ${opts.inReplyTo}`);
-    lines.push(`References: ${opts.inReplyTo}`);
+    headers.push(`In-Reply-To: ${opts.inReplyTo}`);
+    headers.push(`References: ${opts.inReplyTo}`);
   }
-  lines.push('', opts.body);
-  const raw = Buffer.from(lines.join('\r\n'))
+
+  let message: string;
+  if (opts.html) {
+    const { boundary, body } = buildMultipartAlternative(opts.body, opts.html);
+    headers.push(`Content-Type: multipart/alternative; boundary="${boundary}"`);
+    message = headers.join('\r\n') + '\r\n\r\n' + body;
+  } else {
+    headers.push('Content-Type: text/plain; charset=UTF-8');
+    headers.push('Content-Transfer-Encoding: 7bit');
+    message = headers.join('\r\n') + '\r\n\r\n' + opts.body;
+  }
+
+  const raw = Buffer.from(message)
     .toString('base64')
     .replace(/\+/g, '-')
     .replace(/\//g, '_')

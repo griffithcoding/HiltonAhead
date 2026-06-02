@@ -6,6 +6,8 @@ import { createClient } from '@/utils/supabase/server';
 import { getAdminUser } from '@/utils/supabase/admin';
 import { sendEmailFromAdmin } from '@/utils/gmail/client';
 import { appendCanSpamFooter } from '@/lib/outreach/compliance';
+import { renderOutreachHtml } from '@/app/lib/outreach/htmlEmail';
+import { newTrackingId } from '@/app/lib/outreach/tracking';
 
 // Hard daily cap — keep us safely under Gmail's 500/day free-tier limit.
 // Adjust if you upgrade to Workspace.
@@ -340,11 +342,19 @@ export async function sendOutreachEmailAction(
   // 3. Append CAN-SPAM footer (unsub link + physical address)
   const finalBody = appendCanSpamFooter(body, contact.id);
 
-  // 4. Send via Gmail API
+  // 4. Mint a tracking ID and render the HTML body (tracked open pixel +
+  //    redirector-wrapped links). The plain-text body still ships as the
+  //    first MIME part for clients that prefer it; the HTML part carries
+  //    the tracking instrumentation.
+  const trackingId = newTrackingId();
+  const htmlBody = renderOutreachHtml(finalBody, trackingId);
+
+  // 5. Send via Gmail API as multipart/alternative
   const sendResult = await sendEmailFromAdmin(adminEmail, {
     to: contact.email,
     subject,
     body: finalBody,
+    html: htmlBody,
   });
 
   if (!sendResult.ok) {
@@ -355,7 +365,8 @@ export async function sendOutreachEmailAction(
     };
   }
 
-  // 5. Log to activity timeline
+  // 6. Log to activity timeline — including tracking_id so the open/click
+  //    handlers can resolve events back to this send.
   await supabase.from('outreach_activity').insert({
     opportunity_id: opportunityId,
     contact_id: contact.id,
@@ -363,6 +374,7 @@ export async function sendOutreachEmailAction(
     actor_email: adminEmail,
     body: subject,
     metadata: {
+      tracking_id: trackingId,
       thread_id: sendResult.threadId,
       message_id: sendResult.messageId,
       to: contact.email,
@@ -393,6 +405,39 @@ export async function sendOutreachEmailAction(
     messageId: sendResult.messageId,
     threadId: sendResult.threadId,
   };
+}
+
+// ============================================================================
+// Pause / resume the auto-followup sequence
+// ============================================================================
+export async function setSequenceActiveAction(
+  opportunityId: string,
+  active: boolean,
+) {
+  const result = await getAdminUser();
+  if (!result) redirect('/admin/login');
+
+  const supabase = await createClient();
+
+  const { error } = await supabase
+    .from('outreach_opportunities')
+    .update({ sequence_active: active })
+    .eq('id', opportunityId);
+
+  if (error) {
+    throw new Error(`Sequence toggle failed: ${error.message}`);
+  }
+
+  // Log to activity so the operator sees the pause/resume in the timeline.
+  await supabase.from('outreach_activity').insert({
+    opportunity_id: opportunityId,
+    kind: 'note',
+    actor_email: result.admin.email,
+    body: active ? 'Sequence resumed' : 'Sequence paused',
+    metadata: { sequence_active: active, source: 'manual_toggle' },
+  });
+
+  revalidatePath(`/admin/outreach/${opportunityId}`);
 }
 
 // ============================================================================

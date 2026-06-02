@@ -22,7 +22,7 @@ import { mkdirSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { posts, getPostBySlug, type Post } from '@/data/posts';
+import { posts, type Post } from '@/data/posts';
 import {
   syndicatePost,
   postFromPlaceholder,

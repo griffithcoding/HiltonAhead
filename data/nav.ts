@@ -33,8 +33,11 @@ export const nav: Nav = {
       href: '/blog',
       label: 'Local Guide',
       children: [
-        { href: '/blog/best-time-to-visit-hilton-head', label: 'Best Time to Visit' },
+        { href: '/best-time-to-visit-hilton-head', label: 'Best Time to Visit' },
         { href: '/hilton-head-weather', label: 'Weather by Month' },
+        { href: '/hilton-head-tides', label: 'Tide Charts' },
+        { href: '/hilton-head-hurricane-season', label: 'Hurricane Season' },
+        { href: '/hilton-head-tee-times', label: 'Tee Times' },
         { href: '/guides/2027-rbc-heritage', label: '2027 Heritage Kit (free)' },
         { href: '/events', label: 'Events Calendar' },
         { href: '/stories', label: 'Stories' },

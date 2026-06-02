@@ -8,6 +8,7 @@ import { stories } from '@/data/stories'
 import { months } from '@/data/months'
 import { industries } from '@/data/localBusinesses'
 import { COMPARISONS } from '@/data/comparisons'
+import { itineraryPacks } from '@/data/itineraryPacks'
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
 
@@ -25,18 +26,28 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/itinerary', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/contact', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/cost-of-hilton-head-trip', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/southwest-airlines-to-hilton-head', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/hilton-head-by-the-numbers', changeFrequency: 'monthly', priority: 0.95 },
   { path: '/marriott-bonvoy-stays-hilton-head', changeFrequency: 'monthly', priority: 0.85 },
+  { path: '/hilton-honors-stays-hilton-head', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/blog', changeFrequency: 'weekly', priority: 0.8 },
   { path: '/stories', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/events', changeFrequency: 'weekly', priority: 0.85 },
   { path: '/hilton-head-weather', changeFrequency: 'monthly', priority: 0.85 },
+  { path: '/hilton-head-tides', changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/hilton-head-tee-times', changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/hilton-head-golf-courses', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/hilton-head-stay-and-play', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/hilton-head-hurricane-season', changeFrequency: 'monthly', priority: 0.85 },
+  { path: '/best-time-to-visit-hilton-head', changeFrequency: 'monthly', priority: 0.92 },
   { path: '/partners', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/sponsorships', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/founder', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/press', changeFrequency: 'monthly', priority: 0.6 },
   { path: '/guides/2027-rbc-heritage', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/hilton-head-packing-list', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/move-to-hilton-head', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/sell-or-rent-your-villa', changeFrequency: 'monthly', priority: 0.7 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -120,6 +131,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.92,
   }))
 
+  // Paid digital products — the $49 itinerary packs. Direct-revenue pages
+  // that were previously absent from the sitemap and thus under-indexed.
+  const itineraryPackEntries: MetadataRoute.Sitemap = itineraryPacks.map((p) => ({
+    url: `${BASE_URL}/itinerary-packs/${p.urlSlug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
   return [
     ...staticEntries,
     ...postEntries,
@@ -131,5 +151,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localIndexEntry,
     ...localIndustryEntries,
     ...comparisonEntries,
+    ...itineraryPackEntries,
   ]
 }

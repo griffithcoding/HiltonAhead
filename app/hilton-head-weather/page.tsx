@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/sections/Header';
+import LiveWeather from '@/components/tools/LiveWeather';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import { Divider, SectionHead } from '@/components/ui/Ornament';
@@ -66,8 +68,8 @@ export default function WeatherIndexPage() {
             </h1>
             <p className="mt-6 max-w-[560px] text-[17px] leading-[1.7] text-ink-soft md:text-[19px]">
               Pick the right window for the trip you actually want. Each month has
-              its own page with averages, water temps, what's open, and the booking
-              lead time you'll need.
+              its own page with averages, water temps, what&rsquo;s open, and the booking
+              lead time you&rsquo;ll need.
             </p>
           </div>
           <figure className="relative aspect-[4/5] overflow-hidden rounded-md md:aspect-auto md:h-full md:min-h-[420px]">
@@ -81,6 +83,13 @@ export default function WeatherIndexPage() {
             />
           </figure>
         </header>
+
+        {/* Live current conditions — National Weather Service, cached 30 min */}
+        <section className="mt-12">
+          <Suspense fallback={null}>
+            <LiveWeather />
+          </Suspense>
+        </section>
 
         <Divider ornament="compass" className="my-16 text-gold" />
 

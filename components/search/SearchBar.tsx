@@ -45,13 +45,12 @@ export default function SearchBar() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // Debounced fetch
+  // Debounced fetch. Short queries don't fetch; the dropdown's visibility is
+  // derived (`showResults` below) instead of being reset here, which keeps this
+  // effect focused on talking to the search API and avoids the cascading
+  // renders that come from setting state synchronously inside an effect.
   useEffect(() => {
-    if (q.trim().length < MIN_CHARS) {
-      setHits([]);
-      setOpen(false);
-      return;
-    }
+    if (q.trim().length < MIN_CHARS) return;
     const t = setTimeout(async () => {
       try {
         const res = await fetch(`/api/search?q=${encodeURIComponent(q)}&limit=8`);
@@ -83,6 +82,11 @@ export default function SearchBar() {
     return () => document.removeEventListener('mousedown', onClick);
   }, []);
 
+  // Only surface the results dropdown for a long-enough query. Deriving this
+  // during render (instead of storing it) lets the debounce effect skip the
+  // synchronous state reset that would otherwise trigger cascading renders.
+  const showResults = open && q.trim().length >= MIN_CHARS;
+
   function goTo(url: string) {
     setOpen(false);
     setQ('');
@@ -112,7 +116,7 @@ export default function SearchBar() {
   }
 
   return (
-    <div ref={containerRef} className="relative w-[160px] lg:w-[200px]">
+    <div ref={containerRef} className="relative w-[132px] lg:w-[168px]">
       <div className="relative flex items-center">
         <svg
           aria-hidden="true"
@@ -135,7 +139,7 @@ export default function SearchBar() {
           placeholder="Search…"
           aria-label="Search the site"
           aria-controls={listboxId}
-          aria-expanded={open}
+          aria-expanded={showResults}
           role="combobox"
           autoComplete="off"
           className="h-9 w-full rounded-full border border-ink/15 bg-cream/70 pl-9 pr-12 text-[13px] text-ink placeholder:text-ink-soft/70 focus:border-ocean-mid focus:bg-cream focus:outline-none focus:ring-2 focus:ring-ocean-mid/30 transition"
@@ -148,7 +152,7 @@ export default function SearchBar() {
         </kbd>
       </div>
 
-      {open && (
+      {showResults && (
         <div
           id={listboxId}
           role="listbox"
