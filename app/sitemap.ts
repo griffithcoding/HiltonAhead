@@ -47,6 +47,13 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/guides/2027-rbc-heritage', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/move-to-hilton-head', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/sell-or-rent-your-villa', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/vacation-rentals', changeFrequency: 'weekly', priority: 0.95 },
+  { path: '/vacation-rentals/sea-pines', changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/vacation-rentals/palmetto-dunes', changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/vacation-rentals/forest-beach', changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/vacation-rentals/shelter-cove', changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/vacation-rentals/port-royal', changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/vacation-rentals/mid-island', changeFrequency: 'weekly', priority: 0.9 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
