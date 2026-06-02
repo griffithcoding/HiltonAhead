@@ -36,7 +36,7 @@ export default function RentalsHero({
                 {idx < breadcrumb.length - 1 ? (
                   <Link href={b.href} className="hover:text-sand">{b.name}</Link>
                 ) : (
-                  <span className="text-sand/70">{b.name}</span>
+                  <span aria-current="page" className="text-sand/70">{b.name}</span>
                 )}
               </li>
             ))}

@@ -1,5 +1,3 @@
-'use client';
-
 import { stay22MapEmbedSrc, type Stay22Center } from '@/app/lib/stay22';
 
 export default function Stay22Map({

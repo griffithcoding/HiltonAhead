@@ -19,7 +19,7 @@ export default function BestForLinkRow({ area }: { area: RentalAreaContent }) {
             rel="sponsored noopener"
             className="flex items-center gap-2 rounded-full border border-rule-soft bg-sand-soft px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ocean/40 hover:text-ocean"
           >
-            {link.label} →
+            {link.label}<span aria-hidden="true"> →</span>
           </Link>
         ))}
       </div>

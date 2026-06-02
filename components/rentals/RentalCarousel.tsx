@@ -30,7 +30,7 @@ export default function RentalCarousel({
             type="button"
             aria-label="Previous photo"
             onClick={() => go(-1)}
-            className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-ink/60 px-3 py-1.5 text-sand hover:bg-ink/80"
+            className="absolute left-2 top-1/2 -translate-y-1/2 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-ink/60 text-sand hover:bg-ink/80"
           >
             ‹
           </button>
@@ -38,14 +38,14 @@ export default function RentalCarousel({
             type="button"
             aria-label="Next photo"
             onClick={() => go(1)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-ink/60 px-3 py-1.5 text-sand hover:bg-ink/80"
+            className="absolute right-2 top-1/2 -translate-y-1/2 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-ink/60 text-sand hover:bg-ink/80"
           >
             ›
           </button>
           <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1.5">
-            {photos.map((_, n) => (
+            {photos.map((url, n) => (
               <span
-                key={n}
+                key={url}
                 className={`h-1.5 w-1.5 rounded-full ${
                   n === i ? 'bg-sand' : 'bg-sand/40'
                 }`}

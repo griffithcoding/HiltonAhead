@@ -40,7 +40,10 @@ export default function RentalCard({ rental }: { rental: CatalogRental }) {
         </p>
 
         {typeof rental.rating === 'number' && (
-          <p className="text-sm text-ink-soft" aria-label="guest rating">
+          <p
+            className="text-sm text-ink-soft"
+            aria-label={`Guest rating: ${rental.rating.toFixed(1)} out of 5${rental.reviewCount ? `, ${rental.reviewCount} reviews` : ''}`}
+          >
             ★ {rental.rating.toFixed(1)}
             {rental.reviewCount ? ` (${rental.reviewCount} reviews)` : ''}
           </p>
@@ -48,9 +51,9 @@ export default function RentalCard({ rental }: { rental: CatalogRental }) {
 
         {rental.amenities.length > 0 && (
           <ul className="flex flex-wrap gap-2">
-            {rental.amenities.slice(0, 4).map((a) => (
+            {rental.amenities.slice(0, 4).map((a, idx) => (
               <li
-                key={a}
+                key={`${idx}-${a}`}
                 className="rounded-full bg-ocean-light/40 px-3 py-1 text-xs font-medium text-ocean-deep"
               >
                 {a}
@@ -70,7 +73,7 @@ export default function RentalCard({ rental }: { rental: CatalogRental }) {
             rel="sponsored noopener"
             className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-sand transition-colors hover:bg-ocean"
           >
-            View on {SOURCE_LABEL[rental.source]} →
+            View on {SOURCE_LABEL[rental.source]}<span aria-hidden="true"> →</span>
           </Link>
         </div>
       </div>
