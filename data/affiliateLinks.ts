@@ -26,7 +26,8 @@ export type AffiliateProgramId =
   | 'marriott'
   | 'allianz'
   | 'hertz'
-  | 'petermillar';
+  | 'petermillar'
+  | 'southwest';
 
 export interface AffiliateProgram {
   id: AffiliateProgramId;
@@ -76,8 +77,16 @@ export interface AffiliateProgram {
    *   Used by Expedia + Vrbo (and any future Partnerize-network programs).
    *   When the tracking ID env var is unset, the helper passes the raw
    *   destination URL through unchanged — same as query-stamp behavior.
+   *
+   * - 'prebuilt-link': the program's "tracking ID" env var holds a COMPLETE,
+   *   pre-generated tracking link (e.g. an Impact vanity redirect like
+   *   `https://swa.eyjo.net/yZ9j72`). There are no params to stamp and no
+   *   deeplink to construct — the helper returns the env var value as-is, or
+   *   falls back to the committed `defaultDeeplink`, then the brand homepage.
+   *   Used by single-destination programs where the network only hands you a
+   *   finished link (Southwest/Points.com, Hilton Honors, etc.).
    */
-  linkPattern?: 'query-stamp' | 'partnerize-wrap';
+  linkPattern?: 'query-stamp' | 'partnerize-wrap' | 'prebuilt-link';
   /**
    * Optional extra static query params merged onto every deeplink. Used for
    * networks that require a "label" or "campaign" alongside the ID.
@@ -216,6 +225,25 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
     defaultDeeplink: 'https://www.petermillar.com/',
     pitch:
       'Heritage-week-ready apparel — golf, lifestyle, and event-week plaids.',
+  },
+  southwest: {
+    id: 'southwest',
+    name: 'Southwest Airlines (Rapid Rewards)',
+    shortName: 'Southwest',
+    brandDomain: 'southwest.com',
+    // Impact / Points.com hands you a finished vanity tracking link, not a
+    // deeplink to stamp. The env var holds that full URL; `defaultDeeplink`
+    // carries the same link committed so the card earns even before the env
+    // var is set in Vercel. Rotate by editing either one.
+    // VERIFY: confirm the link's destination in Impact's "Create a link" tool
+    // points to the Rapid Rewards "Buy Points" flow — that is the only action
+    // the Points.com program pays commission on (flight bookings earn $0).
+    trackingIdEnv: 'AFFILIATE_SOUTHWEST_LINK',
+    trackingParam: '', // unused for prebuilt-link
+    linkPattern: 'prebuilt-link',
+    defaultDeeplink: 'https://swa.eyjo.net/yZ9j72',
+    pitch:
+      'Southwest flies nonstop into Savannah/Hilton Head (SAV) — two free checked bags and no change fees. Short on points for an award flight? Buy or top up Rapid Rewards.',
   },
   amazon: {
     id: 'amazon',

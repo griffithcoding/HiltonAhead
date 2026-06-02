@@ -32,6 +32,7 @@ export const footerLinks = {
         { href: '/hilton-head-tides', label: 'Tide Charts' },
         { href: '/best-time-to-visit-hilton-head', label: 'Best Time to Visit' },
         { href: '/hilton-head-hurricane-season', label: 'Hurricane Season' },
+        { href: '/southwest-airlines-to-hilton-head', label: 'Fly Southwest to HHI' },
         { href: '/events', label: 'Events Calendar' },
       ],
     },
