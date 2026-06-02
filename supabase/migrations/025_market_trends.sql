@@ -45,7 +45,7 @@ create table if not exists public.real_estate_inquiries (
   email text not null,
   phone text,
   message text,
-  intent text,            -- 'buying' | 'selling' | 'both' | 'browsing'
+  intent text check (intent in ('buying', 'selling', 'both', 'browsing')), -- 'buying' | 'selling' | 'both' | 'browsing'
   source_url text,
   ip_hash text            -- SHA-256, mirrors directory_events
 );
@@ -61,3 +61,8 @@ create policy "Anyone can submit a real estate inquiry"
 create policy "No public read of inquiries"
   on public.real_estate_inquiries for select
   using (public.is_admin());
+
+create policy "Admins manage real estate inquiries"
+  on public.real_estate_inquiries for all
+  using (public.is_admin())
+  with check (public.is_admin());
