@@ -82,6 +82,22 @@ export default function Home() {
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Services />
+        <aside
+          aria-label="Hilton Head packing list cross-link"
+          className="mx-auto mt-12 max-w-[760px] border-l-2 border-coral bg-cream/40 px-5 py-4 text-[14px] leading-snug text-ink-soft md:mt-16 md:py-5 md:text-[15px]"
+        >
+          <span className="font-semibold uppercase tracking-[0.12em] text-coral">
+            Before you pack ·{' '}
+          </span>
+          First-timer gear traps Hilton Head will punish you for —{' '}
+          <a
+            href="/hilton-head-packing-list"
+            className="font-semibold text-ink underline-offset-2 hover:underline"
+          >
+            the 10-mistake packing list
+          </a>
+          .
+        </aside>
       </div>
 
       <div className="mx-auto max-w-[1280px] px-5">

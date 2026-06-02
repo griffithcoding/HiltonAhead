@@ -46,6 +46,22 @@ export default function HiltonHeadFamilyTripPlannerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
       />
       <TripTypeLandingPage trip={trip} />
+
+      <aside className="mx-auto -mt-8 mb-16 max-w-[1080px] px-5">
+        <div className="rounded-2xl border border-rule-soft bg-cream/40 px-5 py-4 text-[14px] text-ink-soft md:px-6 md:py-5 md:text-[15px]">
+          <span className="font-semibold uppercase tracking-[0.12em] text-coral">
+            Pack smart ·{' '}
+          </span>
+          Family-trip gear traps locals warn first-timers about —{' '}
+          <a
+            href="/hilton-head-packing-list"
+            className="font-semibold text-ocean-deep underline-offset-2 hover:underline"
+          >
+            the 10-mistake packing list
+          </a>
+          .
+        </div>
+      </aside>
     </>
   );
 }

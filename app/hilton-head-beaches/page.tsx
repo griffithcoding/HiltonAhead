@@ -50,6 +50,17 @@ export default function HiltonHeadBeachesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(place) }}
       />
       <TripTypeLandingPage trip={trip} />
+
+      <p className="mx-auto mt-10 max-w-[760px] text-[14px] leading-[1.7] text-ink-soft">
+        Before the gear breakdown by category, our short version of the day:{' '}
+        <a
+          href="/hilton-head-packing-list"
+          className="font-semibold text-ink underline-offset-2 hover:underline"
+        >
+          the 10-mistake packing list
+        </a>
+        .
+      </p>
     </>
   );
 }
