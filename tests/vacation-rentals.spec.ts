@@ -17,7 +17,7 @@ test.describe('Vacation Rentals surface', () => {
     await expect(page.locator('.tldr-block')).toBeVisible();
     // At least one outbound booking link, correctly marked sponsored + new tab
     const cta = page.getByRole('link', { name: /View on/i }).first();
-    await expect(cta).toHaveAttribute('rel', /sponsored/);
+    await expect(cta).toHaveAttribute('rel', /sponsored.*noopener|noopener.*sponsored/);
     await expect(cta).toHaveAttribute('target', '_blank');
     // FAQ answers use the speakable selector
     await expect(page.locator('.faq-answer').first()).toBeVisible();
