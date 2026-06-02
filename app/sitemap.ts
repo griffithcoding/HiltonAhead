@@ -29,6 +29,7 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/southwest-airlines-to-hilton-head', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/hilton-head-by-the-numbers', changeFrequency: 'monthly', priority: 0.95 },
   { path: '/marriott-bonvoy-stays-hilton-head', changeFrequency: 'monthly', priority: 0.85 },
+  { path: '/hilton-honors-stays-hilton-head', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/blog', changeFrequency: 'weekly', priority: 0.8 },
   { path: '/stories', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/events', changeFrequency: 'weekly', priority: 0.85 },

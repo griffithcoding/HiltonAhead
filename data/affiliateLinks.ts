@@ -27,7 +27,8 @@ export type AffiliateProgramId =
   | 'allianz'
   | 'hertz'
   | 'petermillar'
-  | 'southwest';
+  | 'southwest'
+  | 'hilton';
 
 export interface AffiliateProgram {
   id: AffiliateProgramId;
@@ -244,6 +245,24 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
     defaultDeeplink: 'https://swa.eyjo.net/yZ9j72',
     pitch:
       'Southwest flies nonstop into Savannah/Hilton Head (SAV) — two free checked bags and no change fees. Short on points for an award flight? Buy or top up Rapid Rewards.',
+  },
+  hilton: {
+    id: 'hilton',
+    name: 'Hilton Honors (via Impact)',
+    shortName: 'Hilton.com',
+    brandDomain: 'hilton.com',
+    // Impact hands over a single finished vanity tracking link, not a deeplink
+    // to stamp — same 'prebuilt-link' shape as Southwest. The env var / committed
+    // defaultDeeplink carries the full link; every Hilton CTA routes through it.
+    // VERIFY: confirm the link's destination in Impact (ideally the Hilton Head
+    // Island search results) — per-property deep links require generating a
+    // separate Impact link per property and are not wired today.
+    trackingIdEnv: 'AFFILIATE_HILTON_LINK',
+    trackingParam: '', // unused for prebuilt-link
+    linkPattern: 'prebuilt-link',
+    defaultDeeplink: 'https://hilton.ijrn.net/MKBkgK',
+    pitch:
+      'Hilton-family hotels on Hilton Head and in Bluffton — Hilton Honors points eligible. Oceanfront villas at Ocean Oak, value rooms from Spark to Garden Inn.',
   },
   amazon: {
     id: 'amazon',

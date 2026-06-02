@@ -27,6 +27,7 @@ export const footerLinks = {
         { href: '/hilton-head-beaches', label: 'Beach Vacation' },
         { href: '/hilton-head-oceanfront-villas', label: 'Oceanfront Villas' },
         { href: '/marriott-bonvoy-stays-hilton-head', label: 'Marriott Stays' },
+        { href: '/hilton-honors-stays-hilton-head', label: 'Hilton Honors Stays' },
         { href: '/hilton-head-winter-rental', label: 'Winter Rental' },
         { href: '/hilton-head-weather', label: 'Weather by Month' },
         { href: '/hilton-head-tides', label: 'Tide Charts' },
