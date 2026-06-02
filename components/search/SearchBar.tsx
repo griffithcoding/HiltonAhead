@@ -116,7 +116,7 @@ export default function SearchBar() {
   }
 
   return (
-    <div ref={containerRef} className="relative w-[220px] lg:w-[280px]">
+    <div ref={containerRef} className="relative w-[132px] lg:w-[168px]">
       <div className="relative flex items-center">
         <svg
           aria-hidden="true"

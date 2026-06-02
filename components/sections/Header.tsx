@@ -93,19 +93,21 @@ export default function Header() {
             )}
             <AdminNavLink />
           </nav>
-          <SearchBar />
-          <Link
-            href={brand.cta.bookingPagePath}
-            className="group inline-flex items-center gap-2 rounded-full border border-ocean-mid bg-ocean-mid px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-ink transition hover:bg-ocean-deep hover:border-ocean-deep hover:text-cream"
-          >
-            {brand.cta.label}
-            <span
-              aria-hidden="true"
-              className="transition-transform group-hover:translate-x-0.5"
+          <div className="flex items-center gap-4 whitespace-nowrap">
+            <SearchBar />
+            <Link
+              href={brand.cta.bookingPagePath}
+              className="group inline-flex items-center gap-2 rounded-full border border-ocean-mid bg-ocean-mid px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-ink transition hover:bg-ocean-deep hover:border-ocean-deep hover:text-cream"
             >
-              →
-            </span>
-          </Link>
+              {brand.cta.label}
+              <span
+                aria-hidden="true"
+                className="transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </Link>
+          </div>
         </div>
 
         {/* Mobile hamburger (md:hidden, owned by the component) */}
