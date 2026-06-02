@@ -54,7 +54,12 @@ export function stay22MapEmbedSrc(center: Stay22Center): string {
   return `${STAY22_EMBED_BASE}?${params.toString()}`;
 }
 
-/** Build a Stay22 "Allez" search deeplink centered on a neighborhood. */
+/**
+ * Build a Stay22 "Allez" search deeplink centered on a neighborhood.
+ *
+ * Do not pass raw float coordinates through `extra` — use the `center` param
+ * (avoids float-precision artifacts in the query string).
+ */
 export function stay22SearchDeeplink(
   center: Stay22Center,
   extra: Record<string, string | number> = {},

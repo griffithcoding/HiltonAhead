@@ -30,6 +30,11 @@ test.describe('stay22 helpers', () => {
     expect(src).toContain(`aid=${STAY22_AID}`);
   });
 
+  test('stay22MapEmbedSrc uses zoom=13 when zoom is omitted', () => {
+    const src = stay22MapEmbedSrc({ lat: 32.134, lng: -80.808 });
+    expect(src).toContain('zoom=13');
+  });
+
   test('stay22SearchDeeplink merges params', () => {
     const url = stay22SearchDeeplink(
       { lat: 32.134, lng: -80.808 },

@@ -32,7 +32,7 @@ export const RENTAL_NEIGHBORHOODS: readonly RentalNeighborhoodSlug[] = [
   'shelter-cove',
   'port-royal',
   'mid-island',
-] as const;
+];
 
 export type CatalogRental = {
   /** Stable unique id, e.g. 'sp-south-beach-villa-1'. Used in URLs/anchors. */
@@ -164,10 +164,10 @@ export const rentalsCatalog: ReadonlyArray<CatalogRental> = [
 
 export function rentalsByNeighborhood(
   slug: RentalNeighborhoodSlug,
-): CatalogRental[] {
+): ReadonlyArray<CatalogRental> {
   return rentalsCatalog.filter((r) => r.neighborhood === slug);
 }
 
-export function allRentals(): CatalogRental[] {
+export function allRentals(): ReadonlyArray<CatalogRental> {
   return [...rentalsCatalog];
 }

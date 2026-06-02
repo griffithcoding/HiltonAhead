@@ -317,10 +317,11 @@ export const rentalAreas: Readonly<
   'mid-island': midIsland,
 };
 
-export function getRentalArea(
-  slug: string,
-): RentalAreaContent | undefined {
-  return (rentalAreas as Record<string, RentalAreaContent>)[slug];
+export function getRentalArea(slug: string): RentalAreaContent | undefined {
+  if (slug in rentalAreas) {
+    return rentalAreas[slug as RentalNeighborhoodSlug];
+  }
+  return undefined;
 }
 
 export function allRentalAreas(): RentalAreaContent[] {
