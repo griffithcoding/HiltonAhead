@@ -25,6 +25,7 @@ export const nav: Nav = {
         { href: '/services#group-family-trips', label: 'Group & Family Trips' },
         { href: '/services#on-island-concierge', label: 'On-Island Concierge' },
         { href: '/services#reservations-tee-times', label: 'Dining & Tee Times' },
+        { href: '/hilton-head-packing-list', label: 'Packing List' },
         { href: '/itinerary', label: 'Request Itinerary' },
       ],
     },
