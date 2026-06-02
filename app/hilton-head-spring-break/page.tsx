@@ -46,6 +46,22 @@ export default function HiltonHeadSpringBreakPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
       />
       <TripTypeLandingPage trip={trip} />
+
+      <aside className="mx-auto -mt-8 mb-16 max-w-[1080px] px-5">
+        <div className="rounded-2xl border border-rule-soft bg-cream/40 px-5 py-4 text-[14px] text-ink-soft md:px-6 md:py-5 md:text-[15px]">
+          <span className="font-semibold uppercase tracking-[0.12em] text-coral">
+            Spring break pack ·{' '}
+          </span>
+          Wind on the dunes, no-see-ums by May — what locals carry, in{' '}
+          <a
+            href="/hilton-head-packing-list"
+            className="font-semibold text-ocean-deep underline-offset-2 hover:underline"
+          >
+            the 10-mistake packing list
+          </a>
+          .
+        </div>
+      </aside>
     </>
   );
 }

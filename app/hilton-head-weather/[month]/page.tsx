@@ -283,6 +283,16 @@ export default async function MonthPage({
         </section>
 
         {/* ——— Amazon product grid: month-aware packing list ——— */}
+        <p className="mx-auto mt-10 max-w-[760px] text-[14px] leading-[1.7] text-ink-soft">
+          Looking for the gear-by-category breakdown? Start with{' '}
+          <a
+            href="/hilton-head-packing-list"
+            className="font-semibold text-ink underline-offset-2 hover:underline"
+          >
+            the 10-mistake packing list
+          </a>{' '}
+          — what first-timers get wrong, and what to bring instead.
+        </p>
         <div className="mx-auto mt-16 max-w-[820px]">
           <AmazonProductGrid
             category={
