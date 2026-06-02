@@ -36,6 +36,7 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/founder', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/press', changeFrequency: 'monthly', priority: 0.6 },
   { path: '/guides/2027-rbc-heritage', changeFrequency: 'monthly', priority: 0.85 },
+  { path: '/hilton-head-packing-list', changeFrequency: 'monthly', priority: 0.9 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
