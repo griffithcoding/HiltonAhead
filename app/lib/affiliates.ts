@@ -107,6 +107,16 @@ export function withAffiliateParams(
   const targetUrl = deeplink ?? program.defaultDeeplink;
   if (!targetUrl) return '';
 
+  // Prebuilt full link. Southwest/Points.com + Hilton Honors use this — the
+  // network hands you a finished vanity tracking URL with nothing to stamp.
+  // Return the env-var link if set, else the committed defaultDeeplink, else
+  // the brand homepage. Never throws; always yields a usable href.
+  if (program.linkPattern === 'prebuilt-link') {
+    const envLink = process.env[program.trackingIdEnv];
+    if (envLink && envLink.length > 0) return envLink;
+    return targetUrl || `https://www.${program.brandDomain}`;
+  }
+
   const trackingId = readTrackingId(programId, placement);
 
   // Partnerize redirect-wrap. Expedia + Vrbo use this.

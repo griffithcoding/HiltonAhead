@@ -5,7 +5,7 @@ const path = require('path');
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
   HeadingLevel, BorderStyle, WidthType, ShadingType, AlignmentType,
-  LevelFormat, PageBreak,
+  LevelFormat,
 } = require('docx');
 
 // ------- constants -------
@@ -55,12 +55,6 @@ const numbered = (text) =>
   new Paragraph({
     numbering: { reference: 'numbers', level: 0 },
     children: [new TextRun(text)],
-  });
-
-const numberedRun = (runs) =>
-  new Paragraph({
-    numbering: { reference: 'numbers', level: 0 },
-    children: runs,
   });
 
 // Build a table where:

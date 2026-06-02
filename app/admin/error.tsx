@@ -60,6 +60,12 @@ export default function AdminTopError({
         >
           Retry
         </button>
+        {/*
+          Intentional full-page navigation. A hard reload fully escapes the
+          crashed admin layout; a soft <Link> nav could re-run the same broken
+          import/auth code that triggered this boundary.
+        */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a
           href="/"
           className="rounded-full border border-ocean-deep/30 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-ink hover:border-ink"

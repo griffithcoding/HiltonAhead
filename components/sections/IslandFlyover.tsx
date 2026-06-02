@@ -182,14 +182,18 @@ export default function IslandFlyover() {
       typeof window !== 'undefined' &&
       window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-    if (reduced) {
-      setStepIdx(WAYPOINTS.length - 1);
-      return;
-    }
-
     let raf: number | null = null;
+    // Compute the furthest-revealed waypoint for the current scroll position.
+    // Reduced-motion users skip the scroll choreography and get the whole path
+    // revealed at once. Keeping every setStepIdx inside this helper (rather than
+    // a bare call in the effect body) keeps the effect about wiring up
+    // listeners, not synchronously cascading renders.
     const update = () => {
       raf = null;
+      if (reduced) {
+        setStepIdx(WAYPOINTS.length - 1);
+        return;
+      }
       const rect = section.getBoundingClientRect();
       const vh = window.innerHeight || 800;
       const startY = vh * 0.95;
@@ -209,6 +213,8 @@ export default function IslandFlyover() {
     };
 
     update();
+    if (reduced) return;
+
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     return () => {
