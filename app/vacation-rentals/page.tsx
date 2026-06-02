@@ -58,11 +58,13 @@ export default function VacationRentalsHubPage() {
   const areas = allRentalAreas();
   const topRentals = allRentals().slice(0, 12);
 
+  const breadcrumbItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Vacation Rentals', path: '/vacation-rentals' },
+  ];
+
   const jsonLd = [
-    getBreadcrumbSchema([
-      { name: 'Home', path: '/' },
-      { name: 'Vacation Rentals', path: '/vacation-rentals' },
-    ]),
+    getBreadcrumbSchema(breadcrumbItems),
     getItemListSchema(
       'Hilton Head vacation-rental neighborhoods',
       areas.map((a) => ({ name: a.name, description: a.vibe })),
@@ -87,10 +89,7 @@ export default function VacationRentalsHubPage() {
         intro="Curated villas, condos, and homes by neighborhood — with a live map of every available stay, honest price bands, and local picks."
         imageSrc="/rentals/hero.jpg"
         imageAlt="Hilton Head Island oceanfront villas"
-        breadcrumb={[
-          { name: 'Home', href: '/' },
-          { name: 'Vacation Rentals', href: '/vacation-rentals' },
-        ]}
+        breadcrumb={breadcrumbItems.map((b) => ({ name: b.name, href: b.path }))}
       />
 
       <div className="mx-auto max-w-6xl px-5 py-12 md:py-16">
@@ -157,8 +156,8 @@ export default function VacationRentalsHubPage() {
             Hilton Head rentals FAQ
           </h2>
           <div className="space-y-px">
-            {HUB_FAQ.map(({ question, answer }, i) => (
-              <details key={i} className="group border-b border-rule-soft py-4 open:pb-5">
+            {HUB_FAQ.map(({ question, answer }) => (
+              <details key={question} className="group border-b border-rule-soft py-4 open:pb-5">
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-sm font-semibold text-ink">
                   <span>{question}</span>
                   <span className="mt-0.5 shrink-0 text-ocean transition-transform group-open:rotate-45">+</span>
