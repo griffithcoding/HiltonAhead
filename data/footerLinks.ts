@@ -53,6 +53,18 @@ export const footerLinks = {
       ],
     },
     {
+      label: 'Vacation Rentals',
+      links: [
+        { href: '/vacation-rentals', label: 'All Rentals' },
+        { href: '/vacation-rentals/sea-pines', label: 'Sea Pines' },
+        { href: '/vacation-rentals/palmetto-dunes', label: 'Palmetto Dunes' },
+        { href: '/vacation-rentals/forest-beach', label: 'Forest Beach' },
+        { href: '/vacation-rentals/shelter-cove', label: 'Shelter Cove' },
+        { href: '/vacation-rentals/port-royal', label: 'Port Royal' },
+        { href: '/vacation-rentals/mid-island', label: 'Mid-Island' },
+      ],
+    },
+    {
       label: 'Explore',
       links: [
         { href: '/about', label: 'About' },
