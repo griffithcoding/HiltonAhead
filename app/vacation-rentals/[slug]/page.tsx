@@ -15,6 +15,7 @@ import {
   allRentalAreas,
 } from '@/data/vacationRentals';
 import { rentalsByNeighborhood } from '@/data/rentalsCatalog';
+import MarketTrendsSection from '@/components/real-estate/MarketTrendsSection';
 import RentalsHero from '@/components/rentals/RentalsHero';
 import RentalGrid from '@/components/rentals/RentalGrid';
 import BestForLinkRow from '@/components/rentals/BestForLinkRow';
@@ -170,10 +171,8 @@ export default async function NeighborhoodRentalsPage({
           </div>
         </section>
 
-        {/* ──────────────────────────────────────────────────────────────
-            PHASE B INSERTION POINT — <MarketTrendsSection slug={area.slug} />
-            goes here (Task B12). Renders price-tier map + charts + Realtor form.
-           ────────────────────────────────────────────────────────────── */}
+        {/* Real estate market trends */}
+        <MarketTrendsSection slug={area.slug} />
 
         {/* FAQ */}
         <section className="mx-auto mb-16 max-w-2xl">

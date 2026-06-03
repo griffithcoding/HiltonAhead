@@ -1,4 +1,4 @@
-import { createClient } from '@/utils/supabase/server';
+import { createClient as createSbClient } from '@supabase/supabase-js';
 
 export type MarketTrendRow = {
   neighborhood_slug: string;
@@ -10,6 +10,17 @@ export type MarketTrendRow = {
   yoy_pct: number | null;
 };
 
+/**
+ * Cookieless anon client — safe in SSG (generateStaticParams / no cookies()).
+ * market_trends has public-read RLS so no session is needed.
+ */
+function publicReadClient() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  return createSbClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
+}
+
 /** Latest market-trend row per neighborhood in ONE query (for the island map). */
 export async function getLatestMarketTrendsForSlugs(
   slugs: string[],
@@ -17,7 +28,8 @@ export async function getLatestMarketTrendsForSlugs(
   const out = new Map<string, MarketTrendRow>();
   if (slugs.length === 0) return out;
   try {
-    const supabase = await createClient();
+    const supabase = publicReadClient();
+    if (!supabase) return out;
     const { data, error } = await supabase
       .from('market_trends')
       .select('neighborhood_slug, month, median_sale_price, median_ppsf, median_dom, homes_sold, yoy_pct')
@@ -44,7 +56,8 @@ export async function getMarketTrends(
   limit = 24,
 ): Promise<MarketTrendRow[]> {
   try {
-    const supabase = await createClient();
+    const supabase = publicReadClient();
+    if (!supabase) return [];
     const { data, error } = await supabase
       .from('market_trends')
       .select('neighborhood_slug, month, median_sale_price, median_ppsf, median_dom, homes_sold, yoy_pct')
