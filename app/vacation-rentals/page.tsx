@@ -10,6 +10,7 @@ import {
 } from '@/app/lib/metadata';
 import { allRentalAreas } from '@/data/vacationRentals';
 import { allRentals } from '@/data/rentalsCatalog';
+import { photos } from '@/data/photos';
 import RentalsHero from '@/components/rentals/RentalsHero';
 import RentalGrid from '@/components/rentals/RentalGrid';
 import Stay22Map from '@/components/rentals/Stay22Map';
@@ -87,7 +88,7 @@ export default function VacationRentalsHubPage() {
         eyebrow="🏝️ Hilton Head Island"
         h1="Hilton Head Vacation Rentals"
         intro="Curated villas, condos, and homes by neighborhood — with a live map of every available stay, honest price bands, and local picks."
-        imageSrc="/rentals/hero.jpg"
+        imageSrc={photos.hero.src}
         imageAlt="Hilton Head Island oceanfront villas"
         breadcrumb={breadcrumbItems.map((b) => ({ name: b.name, href: b.path }))}
       />

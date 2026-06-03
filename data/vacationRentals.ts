@@ -9,6 +9,7 @@
  */
 
 import type { RentalNeighborhoodSlug } from '@/data/rentalsCatalog';
+import { photos } from '@/data/photos';
 
 export type RentalAreaContent = {
   readonly slug: RentalNeighborhoodSlug;
@@ -42,7 +43,7 @@ const seaPines: RentalAreaContent = {
   metaDescription:
     'Browse curated Sea Pines vacation rentals on Hilton Head: oceanfront villas, walkable South Beach condos, and golf homes — with a live map, price bands, and local picks.',
   h1: 'Sea Pines Vacation Rentals',
-  heroImage: { src: '/rentals/sea-pines/hero.jpg', alt: 'Sea Pines oceanfront villas at golden hour' },
+  heroImage: { src: photos.beachAerial.src, alt: 'Sea Pines oceanfront villas at golden hour' },
   // lat/lng from data/neighborhoods.ts sea-pines entry
   geofence: { center: { lat: 32.134, lng: -80.808 }, zoom: 13 },
   tldr:
@@ -102,7 +103,7 @@ const palmettoDunes: RentalAreaContent = {
   metaDescription:
     'Curated Palmetto Dunes vacation rentals on Hilton Head: lagoon-view condos, oceanfront villas, three golf courses, and the free resort trolley — with a live map and price bands.',
   h1: 'Palmetto Dunes Vacation Rentals',
-  heroImage: { src: '/rentals/palmetto-dunes/hero.jpg', alt: 'Palmetto Dunes lagoon and villas' },
+  heroImage: { src: photos.lagoonAerial.src, alt: 'Palmetto Dunes lagoon and villas' },
   // lat/lng from data/neighborhoods.ts palmetto-dunes entry
   geofence: { center: { lat: 32.19, lng: -80.741 }, zoom: 13 },
   tldr:
@@ -145,7 +146,7 @@ const forestBeach: RentalAreaContent = {
   metaDescription:
     'Curated Forest Beach vacation rentals: walk-to-Coligny condos and beach flats on Hilton Head, with a live map, price bands, and local picks. The most walkable beach pocket.',
   h1: 'Forest Beach Vacation Rentals',
-  heroImage: { src: '/rentals/forest-beach/hero.jpg', alt: 'Forest Beach near Coligny Plaza' },
+  heroImage: { src: photos.dunesPath.src, alt: 'Forest Beach near Coligny Plaza' },
   // lat/lng from data/neighborhoods.ts forest-beach entry
   geofence: { center: { lat: 32.141, lng: -80.788 }, zoom: 14 },
   tldr:
@@ -187,7 +188,7 @@ const shelterCove: RentalAreaContent = {
   metaDescription:
     'Curated Shelter Cove vacation rentals on Hilton Head: marina-front condos near Harbourfest fireworks and dining, with a live map and price bands.',
   h1: 'Shelter Cove Vacation Rentals',
-  heroImage: { src: '/rentals/shelter-cove/hero.jpg', alt: 'Shelter Cove marina at dusk' },
+  heroImage: { src: photos.marinaDawn.src, alt: 'Shelter Cove marina at dusk' },
   // lat/lng from data/neighborhoods.ts shelter-cove entry
   geofence: { center: { lat: 32.182, lng: -80.731 }, zoom: 14 },
   tldr:
@@ -229,7 +230,7 @@ const portRoyal: RentalAreaContent = {
   metaDescription:
     'Curated Port Royal vacation rentals on Hilton Head: quiet gated homes and villas near tennis and golf, with a live map and price bands. Great for larger groups.',
   h1: 'Port Royal Vacation Rentals',
-  heroImage: { src: '/rentals/port-royal/hero.jpg', alt: 'Port Royal gated community home' },
+  heroImage: { src: photos.villa.src, alt: 'Port Royal gated community home' },
   // lat/lng from data/neighborhoods.ts port-royal entry
   geofence: { center: { lat: 32.225, lng: -80.690 }, zoom: 13 },
   tldr:
@@ -271,7 +272,7 @@ const midIsland: RentalAreaContent = {
   metaDescription:
     'Curated mid-island Hilton Head vacation rentals near Folly Field and Singleton beaches: central, well-priced villas with a live map and price bands.',
   h1: 'Mid-Island Vacation Rentals',
-  heroImage: { src: '/rentals/mid-island/hero.jpg', alt: 'Mid-island Hilton Head villa near Folly Field' },
+  heroImage: { src: photos.beachMorning.src, alt: 'Mid-island Hilton Head villa near Folly Field' },
   // lat/lng from data/neighborhoods.ts mid-island entry
   geofence: { center: { lat: 32.183, lng: -80.722 }, zoom: 13 },
   tldr:

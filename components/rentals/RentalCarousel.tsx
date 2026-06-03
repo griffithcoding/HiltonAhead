@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { photos as photoLib } from '@/data/photos';
 
 export default function RentalCarousel({
   photoUrls,
@@ -10,7 +11,7 @@ export default function RentalCarousel({
   title: string;
 }) {
   const [i, setI] = useState(0);
-  const photos = photoUrls.length > 0 ? photoUrls : ['/rentals/placeholder.jpg'];
+  const photos = photoUrls.length > 0 ? photoUrls : [photoLib.villa.src];
   const count = photos.length;
   const go = (delta: number) => setI((prev) => (prev + delta + count) % count);
 

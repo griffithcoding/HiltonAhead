@@ -8,12 +8,18 @@
  * Enterprise/Roam, Booking.com Affiliate API) replaces this module, it MUST
  * return objects matching `CatalogRental` so RentalCard/RentalGrid don't change.
  *
- * PHOTOS: host in /public/rentals/<neighborhood>/<id>-<n>.jpg. Do NOT hotlink
- * Airbnb/Booking/VRBO image URLs (TOS exposure). See public/rentals/LICENSING.md.
+ * PHOTOS: representative licensed imagery (Unsplash) from data/photos.ts,
+ * mapped per property type via RENTAL_SCENES below — legal, free, renders at
+ * scale. These depict the property *type*, not the exact unit; the embedded
+ * Stay22 map shows real listing photos. Do NOT hotlink Airbnb/Booking/VRBO
+ * image URLs (TOS exposure). Swap RENTAL_SCENES for a licensed listing API
+ * later — CatalogRental shape stays stable.
  *
  * PRICING: use bands ("$450–650 / night summer"), never a hard nightly rate —
  * we don't control live pricing and bands age gracefully.
  */
+
+import { photos } from '@/data/photos';
 
 export type RentalSource = 'booking' | 'vrbo' | 'airbnb' | 'hotels' | 'direct';
 
@@ -61,6 +67,21 @@ export type CatalogRental = {
 };
 
 /**
+ * Representative photo sets by property type — real licensed Unsplash URLs from
+ * data/photos.ts. Each catalog entry references one set. To add listings at
+ * scale, pick the closest scene; no new assets required. Representative of the
+ * property *type*, not the exact unit (the Stay22 map shows real listing photos).
+ */
+const RENTAL_SCENES = {
+  oceanfront: [photos.beachAerial.src, photos.hero.src, photos.dunesPath.src, photos.surfSoft.src],
+  lagoonCondo: [photos.lagoonAerial.src, photos.palms.src, photos.villa.src, photos.broadCreek.src],
+  beachWalk: [photos.dunesPath.src, photos.boardwalk.src, photos.beachMorning.src, photos.surfSoft.src],
+  marinaCondo: [photos.harborBoats.src, photos.marinaDawn.src, photos.dock.src, photos.sundown.src],
+  soundHome: [photos.villa.src, photos.hammock.src, photos.broadCreek.src, photos.marsh.src],
+  midIslandVilla: [photos.villa.src, photos.palms.src, photos.bikePath.src, photos.hammock.src],
+} as const;
+
+/**
  * SEED DATA — 6 representative entries to ship a non-empty grid. Expand to
  * ~6 per neighborhood (36 total) during the curation pass (owner task, tracked
  * in the spec's open-items table). Replace placeholder photoUrls with real
@@ -71,7 +92,7 @@ export const rentalsCatalog: ReadonlyArray<CatalogRental> = [
     id: 'sp-south-beach-villa-1',
     neighborhood: 'sea-pines',
     title: '3BR Oceanfront Villa · South Beach Lane',
-    photoUrls: ['/rentals/sea-pines/sp-south-beach-villa-1-1.jpg'],
+    photoUrls: RENTAL_SCENES.oceanfront,
     beds: 3,
     baths: 2,
     pricePerNightBand: '$520–780 / night summer · $290–420 shoulder',
@@ -87,7 +108,7 @@ export const rentalsCatalog: ReadonlyArray<CatalogRental> = [
     id: 'pd-shelter-cove-condo-1',
     neighborhood: 'palmetto-dunes',
     title: '2BR Lagoon-View Condo · Palmetto Dunes',
-    photoUrls: ['/rentals/palmetto-dunes/pd-shelter-cove-condo-1-1.jpg'],
+    photoUrls: RENTAL_SCENES.lagoonCondo,
     beds: 2,
     baths: 2,
     pricePerNightBand: '$310–460 / night summer · $190–280 shoulder',
@@ -103,7 +124,7 @@ export const rentalsCatalog: ReadonlyArray<CatalogRental> = [
     id: 'fb-coligny-flat-1',
     neighborhood: 'forest-beach',
     title: '1BR Walk-to-Coligny Flat',
-    photoUrls: ['/rentals/forest-beach/fb-coligny-flat-1-1.jpg'],
+    photoUrls: RENTAL_SCENES.beachWalk,
     beds: 1,
     baths: 1,
     pricePerNightBand: '$220–340 / night summer · $140–210 shoulder',
@@ -118,7 +139,7 @@ export const rentalsCatalog: ReadonlyArray<CatalogRental> = [
     id: 'sc-marina-condo-1',
     neighborhood: 'shelter-cove',
     title: '2BR Marina-Front Condo · Shelter Cove',
-    photoUrls: ['/rentals/shelter-cove/sc-marina-condo-1-1.jpg'],
+    photoUrls: RENTAL_SCENES.marinaCondo,
     beds: 2,
     baths: 2,
     pricePerNightBand: '$280–420 / night summer · $170–260 shoulder',
@@ -133,7 +154,7 @@ export const rentalsCatalog: ReadonlyArray<CatalogRental> = [
     id: 'pr-sound-home-1',
     neighborhood: 'port-royal',
     title: '4BR Sound-Side Home · Port Royal',
-    photoUrls: ['/rentals/port-royal/pr-sound-home-1-1.jpg'],
+    photoUrls: RENTAL_SCENES.soundHome,
     beds: 4,
     baths: 3,
     sqft: 2400,
@@ -149,7 +170,7 @@ export const rentalsCatalog: ReadonlyArray<CatalogRental> = [
     id: 'mi-mid-island-villa-1',
     neighborhood: 'mid-island',
     title: '3BR Villa near Folly Field',
-    photoUrls: ['/rentals/mid-island/mi-mid-island-villa-1-1.jpg'],
+    photoUrls: RENTAL_SCENES.midIslandVilla,
     beds: 3,
     baths: 2,
     pricePerNightBand: '$300–450 / night summer · $180–270 shoulder',
