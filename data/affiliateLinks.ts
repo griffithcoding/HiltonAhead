@@ -28,7 +28,8 @@ export type AffiliateProgramId =
   | 'hertz'
   | 'petermillar'
   | 'southwest'
-  | 'hilton';
+  | 'hilton'
+  | 'stay22';
 
 export interface AffiliateProgram {
   id: AffiliateProgramId;
@@ -263,6 +264,18 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
     defaultDeeplink: 'https://hilton.ijrn.net/MKBkgK',
     pitch:
       'Hilton-family hotels on Hilton Head and in Bluffton — Hilton Honors points eligible. Oceanfront villas at Ocean Oak, value rooms from Spark to Garden Inn.',
+  },
+  stay22: {
+    id: 'stay22',
+    name: 'Stay22 (Booking · VRBO · Airbnb · Hotels)',
+    shortName: 'Stay22',
+    brandDomain: 'stay22.com',
+    trackingIdEnv: 'NEXT_PUBLIC_STAY22_AID',
+    trackingParam: 'aid',
+    linkPattern: 'query-stamp',
+    defaultDeeplink: 'https://www.stay22.com/allez?lat=32.16&lng=-80.75',
+    pitch:
+      'One search across Booking.com, VRBO, Airbnb, and Hotels.com for Hilton Head stays — the widest vacation-rental inventory on the island.',
   },
   amazon: {
     id: 'amazon',

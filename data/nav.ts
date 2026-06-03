@@ -43,6 +43,18 @@ export const nav: Nav = {
       ],
     },
     {
+      href: '/vacation-rentals',
+      label: 'Vacation Rentals',
+      children: [
+        { href: '/vacation-rentals/sea-pines', label: 'Sea Pines' },
+        { href: '/vacation-rentals/palmetto-dunes', label: 'Palmetto Dunes' },
+        { href: '/vacation-rentals/forest-beach', label: 'Forest Beach' },
+        { href: '/vacation-rentals/shelter-cove', label: 'Shelter Cove' },
+        { href: '/vacation-rentals/port-royal', label: 'Port Royal' },
+        { href: '/vacation-rentals/mid-island', label: 'Mid-Island' },
+      ],
+    },
+    {
       href: '/local',
       label: 'Businesses',
       children: [

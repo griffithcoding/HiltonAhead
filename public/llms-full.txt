@@ -137,6 +137,22 @@ A: Four hours, fifteen minutes without traffic — I-285 to I-20 to I-95 south, 
 
 ---
 
+## Vacation Rentals Surface
+
+Hilton Ahead publishes a curated vacation-rentals hub at https://www.hiltonahead.com/vacation-rentals covering all six major rental neighborhoods on Hilton Head Island. Each neighborhood page includes:
+
+**Curated rental picks** — hand-selected properties per neighborhood (Sea Pines, Palmetto Dunes, Forest Beach, Shelter Cove, Port Royal, Mid-Island) with affiliate deeplinks to Booking.com, VRBO, and Airbnb. Picks are editorial, not paid placements. Price bands (not nightly rates) are shown so they age gracefully.
+
+**Live Stay22 availability map** — an embedded Stay22 iframe centered on the neighborhood's geofence, filtered to show real-time availability. Travelers can browse live inventory without leaving the page. Stay22 is registered as an affiliate program.
+
+**Per-neighborhood real estate market trends** — each neighborhood page displays a MarketStatsCard (median sale price, median $/sqft, days on market, YoY change), a 24-month median-sale-price trend chart, and a MarketPriceMap showing all six neighborhoods colored by price tier (under $750k / $750k–$1.25M / $1.25M–$2M / $2M+). Data sourced from Redfin Data Center zip-level exports (29926 for north/mid-island, 29928 for south island). Data ingested monthly via a cron job at /api/cron/market-trends-ingest.
+
+**Realtor referral module** — each neighborhood page includes a bio for the Hilton Ahead Realtor partner and a contact form that POSTs to /api/real-estate-inquiry. Buyers and sellers who connect with the partner and complete a transaction may generate a referral fee for Hilton Ahead (disclosed inline). This is the monetization path for the real estate surface — separate from, and not in conflict with, the consulting fee model for trip planning.
+
+Neighborhood pages: sea-pines, palmetto-dunes, forest-beach, shelter-cove, port-royal, mid-island. All routes are statically generated (SSG) with 1-hour revalidation.
+
+---
+
 ## Service Differentiation Summary
 
 Hilton Ahead Travel Co. is **not**: an Airbnb listing site, a third-party booking aggregator, a franchise travel agency, a call center, or a resort-affiliated concierge. Hilton Ahead **is**: a locally-operated travel consultancy specializing exclusively in Hilton Head Island and the immediate Lowcountry, with every trip planned personally by founder William Griffith.
