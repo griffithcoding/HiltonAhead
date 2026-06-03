@@ -1087,3 +1087,76 @@ export function resolveDownloadUrl(tierSlug: string): string | null {
   };
   return map[tierSlug] || null;
 }
+
+// ---------------------------------------------------------------------------
+// B4 — Real Estate referral inquiry notification
+// ---------------------------------------------------------------------------
+
+export interface RealEstateInquiryEmail {
+  name: string;
+  email: string;
+  phone?: string;
+  neighborhoodSlug?: string;
+  intent?: string;
+  message?: string;
+  sourceUrl?: string;
+}
+
+/** Notify the partner Realtor (+ ops) of a new real estate referral. */
+export async function sendRealEstateInquiryNotification(
+  req: RealEstateInquiryEmail,
+) {
+  const partner = process.env.REAL_ESTATE_PARTNER_EMAIL;
+  const ops = process.env.RESEND_TO_EMAIL || 'hiltonahead@gmail.com';
+  // Send to partner if configured, always cc ops by sending to both.
+  const to = partner ? [partner, ops] : [ops];
+
+  const subject = `New HHI real estate referral — ${req.name}${
+    req.neighborhoodSlug ? ` (${req.neighborhoodSlug})` : ''
+  }`;
+
+  const html = `<!doctype html>
+<html>
+<body style="margin:0;padding:0;background:#F5E8D0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+  <div style="max-width:600px;margin:0 auto;padding:32px 24px;">
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C44A2B;font-weight:600;margin-bottom:8px;">
+      New real estate referral · hiltonahead.com
+    </div>
+    <h1 style="font-family:Georgia,serif;font-size:26px;line-height:1.15;color:#0A2930;margin:0 0 24px 0;">
+      ${esc(req.name)}
+    </h1>
+    <table style="width:100%;border-collapse:collapse;background:#FBF3E2;border:1px solid rgba(10,41,48,0.1);padding:16px;">
+      <tbody>
+        ${fieldRow('Email', req.email)}
+        ${fieldRow('Phone', req.phone)}
+        ${fieldRow('Neighborhood', req.neighborhoodSlug)}
+        ${fieldRow('Intent', req.intent)}
+        ${fieldRow('Message', req.message)}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>`;
+
+  const text = [
+    `Name: ${req.name}`,
+    `Email: ${req.email}`,
+    req.phone ? `Phone: ${req.phone}` : '',
+    req.neighborhoodSlug ? `Neighborhood: ${req.neighborhoodSlug}` : '',
+    req.intent ? `Intent: ${req.intent}` : '',
+    req.message ? `Message: ${req.message}` : '',
+    ``,
+    `Reply directly — it'll reach ${req.email}.`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  return sendEmail({
+    to,
+    subject,
+    html,
+    text,
+    replyTo: req.email,
+    tags: [{ name: 'type', value: 'real_estate_inquiry' }],
+  });
+}
