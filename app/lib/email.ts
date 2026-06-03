@@ -1132,8 +1132,13 @@ export async function sendRealEstateInquiryNotification(
         ${fieldRow('Neighborhood', req.neighborhoodSlug)}
         ${fieldRow('Intent', req.intent)}
         ${fieldRow('Message', req.message)}
+        ${fieldRow('Source page', req.sourceUrl)}
       </tbody>
     </table>
+
+    <div style="margin-top:24px;font-size:12px;color:#6B7280;line-height:1.6;">
+      <strong>Reply directly</strong> to this email — it'll reach ${esc(req.email)}.
+    </div>
   </div>
 </body>
 </html>`;
@@ -1145,6 +1150,7 @@ export async function sendRealEstateInquiryNotification(
     req.neighborhoodSlug ? `Neighborhood: ${req.neighborhoodSlug}` : '',
     req.intent ? `Intent: ${req.intent}` : '',
     req.message ? `Message: ${req.message}` : '',
+    req.sourceUrl ? `Source: ${req.sourceUrl}` : '',
     ``,
     `Reply directly — it'll reach ${req.email}.`,
   ]

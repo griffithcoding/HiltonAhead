@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/utils/supabase/server';
 import { sendRealEstateInquiryNotification } from '@/app/lib/email';
@@ -50,7 +51,6 @@ export async function POST(req: NextRequest) {
     req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
   let ipHash: string | null = null;
   try {
-    const { createHash } = await import('node:crypto');
     ipHash = createHash('sha256').update(ip).digest('hex');
   } catch {
     ipHash = null;

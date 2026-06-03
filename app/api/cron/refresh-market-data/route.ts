@@ -55,9 +55,24 @@ async function handle(req: NextRequest) {
   const url = `${base}/zip_code_market_tracker.tsv000`;
 
   try {
-    const res = await fetch(url, { headers: { 'User-Agent': 'HiltonAhead/1.0' } });
-    if (!res.ok) throw new Error(`Redfin fetch ${res.status}`);
-    const text = await res.text();
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 50_000); // < maxDuration (60s)
+    let text: string;
+    try {
+      const res = await fetch(url, {
+        headers: { 'User-Agent': 'HiltonAhead/1.0' },
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Redfin fetch ${res.status}`);
+      // Advisory guard — Redfin zip TSV text is ~5-15 MB; reject absurd sizes to avoid OOM.
+      const contentLength = Number(res.headers.get('content-length') ?? '0');
+      if (contentLength > 50 * 1024 * 1024) {
+        throw new Error(`Redfin file too large: ${contentLength} bytes`);
+      }
+      text = await res.text();
+    } finally {
+      clearTimeout(timeoutId);
+    }
 
     const parsed = Papa.parse<RedfinRow>(text, {
       header: true,
@@ -149,7 +164,8 @@ async function handle(req: NextRequest) {
 
 function num(v: string | undefined): number | null {
   if (!v) return null;
-  const n = Number(v.replace(/[^0-9.\-]/g, ''));
+  // Assumes Redfin numeric columns use '.' decimal separator and no thousands separators.
+  const n = Number(v.replace(/[^0-9.-]/g, ''));
   return Number.isFinite(n) ? n : null;
 }
 function int(v: string | undefined): number | null {
