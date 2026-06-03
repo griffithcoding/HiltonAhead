@@ -47,10 +47,10 @@ export default function RealtorReferralForm({ neighborhoodSlug }: { neighborhood
   return (
     <form onSubmit={onSubmit} className="space-y-4 rounded-2xl border border-rule-soft bg-sand-soft p-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <input name="name" required placeholder="Name" className="rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" />
-        <input name="email" type="email" required placeholder="Email" className="rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" />
-        <input name="phone" placeholder="Phone (optional)" className="rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" />
-        <select name="intent" className="rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" defaultValue="">
+        <input name="name" required placeholder="Name" aria-label="Your name" className="rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" />
+        <input name="email" type="email" required placeholder="Email" aria-label="Email address" className="rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" />
+        <input name="phone" placeholder="Phone (optional)" aria-label="Phone number (optional)" className="rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" />
+        <select name="intent" aria-label="What you're interested in" className="rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" defaultValue="">
           <option value="" disabled>I&apos;m interested in…</option>
           <option value="buying">Buying</option>
           <option value="selling">Selling</option>
@@ -58,7 +58,7 @@ export default function RealtorReferralForm({ neighborhoodSlug }: { neighborhood
           <option value="browsing">Just browsing</option>
         </select>
       </div>
-      <textarea name="message" rows={3} placeholder="Anything specific you're looking for?" className="w-full rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" />
+      <textarea name="message" rows={3} placeholder="Anything specific you're looking for?" aria-label="Message" className="w-full rounded-xl border border-rule-soft bg-white px-4 py-2.5 text-sm" />
       <button
         type="submit"
         disabled={status === 'sending'}
