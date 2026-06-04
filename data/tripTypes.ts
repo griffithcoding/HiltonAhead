@@ -163,20 +163,12 @@ export const tripTypes: TripTypeLanding[] = [
         cta: 'See live tee times →',
       },
       {
-        programId: 'booking',
-        placement: 'golf-packages/booking',
-        headline: 'Stay-and-play resort lodging',
+        programId: 'stay22',
+        placement: 'golf-packages/stay22',
+        headline: 'Compare stay-and-play lodging',
         description:
-          'Resort rooms at Sea Pines, Palmetto Dunes, and the Westin — the four properties whose guest tee-time priority windows are wide enough to land the top-tier courses on the trip you actually want.',
-        cta: 'Search resort stays →',
-      },
-      {
-        programId: 'vrbo',
-        placement: 'golf-packages/vrbo',
-        headline: 'Group villa rentals near the courses',
-        description:
-          'Whole-house rentals walkable or short-drive to the Sea Pines and Palmetto Dunes clubhouses — the right shape for groups of six-plus splitting the cost of a fully-stocked kitchen and three or four bedrooms.',
-        cta: 'Search group villas →',
+          'One search across Booking, Vrbo, Airbnb, and Hotels.com for rooms and villas near the Sea Pines and Palmetto Dunes clubhouses — resort rooms for the priority tee sheet, whole-house rentals for groups splitting a kitchen.',
+        cta: 'Compare golf-trip stays →',
       },
     ],
   },
@@ -303,20 +295,12 @@ export const tripTypes: TripTypeLanding[] = [
     blogPostSlug: '2026-best-places-to-stay-hilton-head',
     affiliates: [
       {
-        programId: 'booking',
-        placement: 'trip/oceanfront-villas/booking',
-        headline: 'Hilton Head oceanfront stays',
+        programId: 'stay22',
+        placement: 'trip/oceanfront-villas/stay22',
+        headline: 'Compare oceanfront stays',
         description:
-          'Free cancellation on most direct-beach properties. Filter by dates to see what’s actually on the dune line vs. marketed as “oceanfront.” We’ll happily review your shortlist on a discovery call.',
-        cta: 'Search oceanfront stays →',
-      },
-      {
-        programId: 'vrbo',
-        placement: 'trip/oceanfront-villas/vrbo',
-        headline: 'Oceanfront villa rentals (whole house)',
-        description:
-          'Vrbo’s oceanfront inventory — true dune-line villas with private kitchens and patios. Best for 5+ night stays and groups of 4-plus.',
-        cta: 'Browse oceanfront villas →',
+          'One map across Booking, Vrbo, Airbnb, and Hotels.com for dune-line villas and oceanfront resort rooms — filter by dates to see what’s genuinely on the sand versus marketed as “oceanfront.”',
+        cta: 'Compare oceanfront stays →',
       },
     ],
   },
@@ -386,20 +370,12 @@ export const tripTypes: TripTypeLanding[] = [
     relatedStorySlug: 'summer-family-week',
     affiliates: [
       {
-        programId: 'booking',
-        placement: 'trip/family-planner/booking',
-        headline: 'Family-friendly stays on Hilton Head',
+        programId: 'stay22',
+        placement: 'trip/family-planner/stay22',
+        headline: 'Compare family stays',
         description:
-          'Resort rooms and family hotels with free cancellation, broken out by Sea Pines, Palmetto Dunes, and Forest Beach. Easier than Vrbo if you want a single check-in desk and on-site amenities.',
-        cta: 'Search family stays →',
-      },
-      {
-        programId: 'vrbo',
-        placement: 'trip/family-planner/vrbo',
-        headline: 'Whole-house rentals on Hilton Head',
-        description:
-          'Multi-bedroom villas with kitchens, washer/dryers, and pools — built for families who refuse to share one bathroom. Search by dates and we’ll help narrow the shortlist.',
-        cta: 'Browse on Vrbo →',
+          'One search across Booking, Vrbo, Airbnb, and Hotels.com — multi-bedroom villas with kitchens and pools next to family hotels with a single check-in desk, priced side by side for your dates.',
+        cta: 'Compare family stays →',
       },
     ],
   },
@@ -468,20 +444,12 @@ export const tripTypes: TripTypeLanding[] = [
     blogPostSlug: 'best-time-to-visit-hilton-head',
     affiliates: [
       {
-        programId: 'booking',
-        placement: 'trip/spring-break/booking',
-        headline: 'Spring-break resort + hotel search',
+        programId: 'stay22',
+        placement: 'trip/spring-break/stay22',
+        headline: 'Compare spring-break stays',
         description:
-          'Free cancellation on most stays — useful when spring weather changes plans. We steer clients away from RBC Heritage week unless that’s the trip, so filter your dates carefully.',
-        cta: 'Search spring stays →',
-      },
-      {
-        programId: 'vrbo',
-        placement: 'trip/spring-break/vrbo',
-        headline: 'Spring-break villa search',
-        description:
-          'Whole-house rentals for the mid-March through April window. Inventory is widest the week before and after the RBC Heritage; we’ll help you avoid tournament-week premiums.',
-        cta: 'Browse on Vrbo →',
+          'One search across Booking, Vrbo, Airbnb, and Hotels.com for the mid-March through April window. Inventory is widest the week before and after RBC Heritage — filter your dates to skip tournament-week premiums.',
+        cta: 'Compare spring stays →',
       },
     ],
   },
@@ -549,20 +517,12 @@ export const tripTypes: TripTypeLanding[] = [
     blogPostSlug: 'best-time-to-visit-hilton-head',
     affiliates: [
       {
-        programId: 'vrbo',
-        placement: 'thanksgiving',
-        headline: 'Thanksgiving-week villa search',
+        programId: 'stay22',
+        placement: 'thanksgiving/stay22',
+        headline: 'Compare Thanksgiving-week stays',
         description:
-          'Inventory is at its widest of the year and rates run roughly half of July. Whole-house rentals with kitchens are the right shape for multi-generation Thanksgiving weeks.',
-        cta: 'Browse on Vrbo →',
-      },
-      {
-        programId: 'booking',
-        placement: 'thanksgiving/booking',
-        headline: 'Resort-room option if cooking isn’t the move',
-        description:
-          'For couples or smaller groups skipping the cook-at-home holiday, the Westin and Omni run shoulder-rate pricing through November with full Thanksgiving dining inside the resort.',
-        cta: 'Search Thanksgiving stays →',
+          'One search across Booking, Vrbo, Airbnb, and Hotels.com. Inventory is at its widest of the year and rates run roughly half of July — whole-house rentals for multi-gen weeks, resort rooms if cooking isn’t the move.',
+        cta: 'Compare Thanksgiving stays →',
       },
     ],
   },
@@ -629,24 +589,13 @@ export const tripTypes: TripTypeLanding[] = [
     ],
     affiliates: [
       {
-        programId: 'booking',
-        placement: 'bluffton-planner',
-        deeplink:
-          'https://www.booking.com/searchresults.html?ss=Bluffton%2C+SC',
-        headline: 'Bluffton hotels and inns',
+        programId: 'stay22',
+        placement: 'bluffton-planner/stay22',
+        deeplink: 'https://www.stay22.com/allez?lat=32.237&lng=-80.860',
+        headline: 'Compare Bluffton stays',
         description:
-          'Old Town inns, Palmetto Bluff resort rooms, and a few boutique stays just off May River. Free cancellation on most properties.',
-        cta: 'See stays in Bluffton →',
-      },
-      {
-        programId: 'vrbo',
-        placement: 'bluffton-planner/vrbo',
-        deeplink:
-          'https://www.vrbo.com/vacation-rentals/usa/south-carolina/lowcountry-and-resort-islands/bluffton',
-        headline: 'Bluffton whole-house rentals',
-        description:
-          'Whole-home rentals on May River, inside Palmetto Bluff, and through Old Town — the right shape for groups visiting May River Golf Club or May River Sandbar weekends.',
-        cta: 'Search Bluffton rentals →',
+          'One search across Booking, Vrbo, Airbnb, and Hotels.com for Old Town inns, Palmetto Bluff rooms, and May River whole-house rentals — the right base for May River Golf Club and Sandbar weekends.',
+        cta: 'Compare Bluffton stays →',
       },
     ],
   },
@@ -714,24 +663,13 @@ export const tripTypes: TripTypeLanding[] = [
     blogPostSlug: 'sea-pines-guide',
     affiliates: [
       {
-        programId: 'vrbo',
-        placement: 'harbour-town-villas',
-        deeplink:
-          'https://www.vrbo.com/search?q=Harbour+Town+Hilton+Head',
-        headline: 'Harbour Town villa rentals',
+        programId: 'stay22',
+        placement: 'harbour-town-villas/stay22',
+        deeplink: 'https://www.stay22.com/allez?lat=32.139&lng=-80.812',
+        headline: 'Compare Harbour Town & Sea Pines stays',
         description:
-          'Private-owner villas inside Sea Pines — the inventory that doesn’t show up on the resort’s public reservation page. Search by dates and we’ll help vet the shortlist.',
-        cta: 'Browse on Vrbo →',
-      },
-      {
-        programId: 'booking',
-        placement: 'harbour-town-villas-hotel',
-        deeplink:
-          'https://www.booking.com/searchresults.html?ss=Sea+Pines+Resort+Hilton+Head',
-        headline: 'Or stay at Inn at Harbour Town',
-        description:
-          'Hotel-caliber service, villa-level amenities, walkable to the 18th green and Quarterdeck. Best for couples and small groups who want zero house-management overhead.',
-        cta: 'See rooms on Booking.com →',
+          'One search across Booking, Vrbo, Airbnb, and Hotels.com for private-owner villas inside Sea Pines and the Inn at Harbour Town — the inventory the resort’s public reservation page doesn’t always show.',
+        cta: 'Compare Sea Pines stays →',
       },
     ],
   },
@@ -868,20 +806,12 @@ export const tripTypes: TripTypeLanding[] = [
     blogPostSlug: 'shelter-cove-guide',
     affiliates: [
       {
-        programId: 'booking',
-        placement: 'honeymoon',
-        headline: 'Honeymoon stays on Hilton Head & Bluffton',
+        programId: 'stay22',
+        placement: 'honeymoon/stay22',
+        headline: 'Compare couples’ stays',
         description:
-          'Resort and boutique-inn options for couples — the Sea Pines and Shelter Cove pockets we recommend, plus Montage Palmetto Bluff for the splurge layer. Most properties have free cancellation.',
-        cta: 'See couples-friendly stays →',
-      },
-      {
-        programId: 'vrbo',
-        placement: 'honeymoon/vrbo',
-        headline: 'Private villa option for longer honeymoons',
-        description:
-          'For honeymoons of seven nights or more, a small whole-house rental on the dune line or inside Sea Pines often outshines a resort suite — kitchen, porch, and the option to host one dinner for visiting family.',
-        cta: 'Search Vrbo couples villas →',
+          'One search across Booking, Vrbo, Airbnb, and Hotels.com — Sea Pines and Shelter Cove resort rooms next to private dune-line villas, priced side by side for the dates you want.',
+        cta: 'Compare honeymoon stays →',
       },
     ],
   },

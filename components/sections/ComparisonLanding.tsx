@@ -215,31 +215,24 @@ export default function ComparisonLanding({ comparison }: { comparison: Comparis
         </ul>
       </section>
 
-      {/* If you'd rather book direct — affiliate cards for Hilton Head lodging
-          (both options on every comparison page point at Hilton Head, since
-          that's our destination of expertise). */}
+      {/* If you'd rather book it yourself — one Stay22 card that compares
+          live prices across Booking, Vrbo, Airbnb, and Hotels.com for
+          Hilton Head, our destination of expertise. */}
       <section
-        aria-label="If you'd rather book direct"
+        aria-label="If you'd rather book it yourself"
         className="mt-24 md:mt-32"
       >
         <div className="mb-6 flex items-center justify-between gap-4">
-          <h3 className="eyebrow text-coral">If you’d rather book direct</h3>
+          <h3 className="eyebrow text-coral">If you’d rather book it yourself</h3>
         </div>
         <AffiliateDisclosure variant="inline" className="mb-5" />
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+        <div className="max-w-[640px]">
           <AffiliateCard
-            programId="vrbo"
-            placement={`compare/${comparison.slug}/vrbo`}
-            headline="Hilton Head whole-house rentals"
-            description="Whole-home Vrbo rentals on Hilton Head — best for families, groups, and stays of five nights or more. Kitchens, washer/dryers, multiple bedrooms."
-            cta="Search rentals →"
-          />
-          <AffiliateCard
-            programId="booking"
-            placement={`compare/${comparison.slug}/booking`}
-            headline="Hilton Head resorts and hotels"
-            description="Free cancellation on most resort and hotel stays. Cleaner option for short trips, couples, and travelers who want one check-in desk."
-            cta="Search resorts →"
+            programId="stay22"
+            placement={`compare/${comparison.slug}/stay22`}
+            headline="Compare every Hilton Head booking site"
+            description="One map across Booking, Vrbo, Airbnb, and Hotels.com — live prices side by side for the same dates, so you can see what each site actually charges before you commit."
+            cta="Compare stays →"
           />
         </div>
       </section>
