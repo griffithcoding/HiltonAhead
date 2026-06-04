@@ -56,15 +56,38 @@ function dayKey(dateString: string): string {
   return dateString.split(' ')[0];
 }
 
+/**
+ * Today's 7-day tide outlook (used by the live tides widget).
+ */
 export async function getHiltonHeadTides(): Promise<TidePayload> {
+  return fetchTidesRange(todayYYYYMMDD(), 168);
+}
+
+/**
+ * Tides for an arbitrary future (or past) date. NOAA tide predictions are
+ * astronomical and available for years — so the Beach Day Planner can return
+ * real tides for any trip date. `beginYYYYMMDD` like "20260704"; `days`
+ * window (default 1) → events for that day.
+ */
+export async function getTidesForDate(
+  beginYYYYMMDD: string,
+  days = 1,
+): Promise<TidePayload> {
+  return fetchTidesRange(beginYYYYMMDD, Math.max(24, days * 24));
+}
+
+async function fetchTidesRange(
+  beginYYYYMMDD: string,
+  rangeHours: number,
+): Promise<TidePayload> {
   try {
-    const begin = todayYYYYMMDD();
+    const begin = beginYYYYMMDD;
     const url = new URL(
       'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter',
     );
     url.searchParams.set('product', 'predictions');
     url.searchParams.set('begin_date', begin);
-    url.searchParams.set('range', '168'); // 7 days × 24 hr
+    url.searchParams.set('range', String(rangeHours));
     url.searchParams.set('datum', 'MLLW');
     url.searchParams.set('interval', 'hilo');
     url.searchParams.set('format', 'json');

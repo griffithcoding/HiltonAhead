@@ -36,6 +36,7 @@ export const nav: Nav = {
         { href: '/best-time-to-visit-hilton-head', label: 'Best Time to Visit' },
         { href: '/hilton-head-weather', label: 'Weather by Month' },
         { href: '/hilton-head-tides', label: 'Tide Charts' },
+        { href: '/hilton-head-beach-day-planner', label: 'Beach Day Planner' },
         { href: '/hilton-head-hurricane-season', label: 'Hurricane Season' },
         { href: '/hilton-head-tee-times', label: 'Tee Times' },
         { href: '/guides/2027-rbc-heritage', label: '2027 Heritage Kit (free)' },
