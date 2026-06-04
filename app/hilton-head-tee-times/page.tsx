@@ -129,6 +129,7 @@ export default function HiltonHeadTeeTimesPage() {
         {/* Hero */}
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Golf"
             plain="Hilton Head"

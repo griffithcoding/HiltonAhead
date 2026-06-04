@@ -187,6 +187,7 @@ export default function HiltonHonorsStaysHiltonHeadPage() {
         {/* Hero */}
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Lodging · Hilton Honors"
             plain="Hilton on Hilton Head —"

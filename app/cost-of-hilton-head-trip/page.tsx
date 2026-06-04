@@ -19,7 +19,7 @@ import {
 } from '@/data/costEstimates';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'How Much Does a Hilton Head Trip Cost? 2026 Real Numbers',
+  title: 'Cost of a Hilton Head Trip: Real Numbers',
   description:
     'A complete cost breakdown for a Hilton Head Island trip in 2026. Lodging tiers, food, activities, transport — by party size, by season, by trip length. Plus a free calculator.',
   path: '/cost-of-hilton-head-trip',
@@ -101,6 +101,7 @@ export default function CostOfHiltonHeadTripPage() {
         {/* Hero */}
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Trip planning"
             plain="How much does a Hilton Head trip"

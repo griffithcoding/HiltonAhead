@@ -64,6 +64,7 @@ export default function BlogIndexPage() {
 
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Local Guide"
             plain="Written by someone who"

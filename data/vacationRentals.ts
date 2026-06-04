@@ -39,7 +39,7 @@ export type RentalAreaContent = {
 const seaPines: RentalAreaContent = {
   slug: 'sea-pines',
   name: 'Sea Pines',
-  seoTitle: 'Sea Pines Vacation Rentals — Villas & Homes (2026) | Hilton Ahead',
+  seoTitle: 'Sea Pines Vacation Rentals: Villas & Homes',
   metaDescription:
     'Browse curated Sea Pines vacation rentals on Hilton Head: oceanfront villas, walkable South Beach condos, and golf homes — with a live map, price bands, and local picks.',
   h1: 'Sea Pines Vacation Rentals',
@@ -99,7 +99,7 @@ const seaPines: RentalAreaContent = {
 const palmettoDunes: RentalAreaContent = {
   slug: 'palmetto-dunes',
   name: 'Palmetto Dunes',
-  seoTitle: 'Palmetto Dunes Vacation Rentals — Villas & Condos (2026) | Hilton Ahead',
+  seoTitle: 'Palmetto Dunes Vacation Rentals: Villas & Condos',
   metaDescription:
     'Curated Palmetto Dunes vacation rentals on Hilton Head: lagoon-view condos, oceanfront villas, three golf courses, and the free resort trolley — with a live map and price bands.',
   h1: 'Palmetto Dunes Vacation Rentals',
@@ -142,9 +142,9 @@ const palmettoDunes: RentalAreaContent = {
 const forestBeach: RentalAreaContent = {
   slug: 'forest-beach',
   name: 'Forest Beach',
-  seoTitle: 'Forest Beach Vacation Rentals — Walk-to-Coligny Condos (2026) | Hilton Ahead',
+  seoTitle: 'Forest Beach Vacation Rentals: Walk-to-Coligny',
   metaDescription:
-    'Curated Forest Beach vacation rentals: walk-to-Coligny condos and beach flats on Hilton Head, with a live map, price bands, and local picks. The most walkable beach pocket.',
+    'Forest Beach vacation rentals on Hilton Head: walk-to-Coligny condos and beach flats. Live map, price bands, local picks. The most walkable beach pocket.',
   h1: 'Forest Beach Vacation Rentals',
   heroImage: { src: photos.dunesPath.src, alt: 'Forest Beach near Coligny Plaza' },
   // lat/lng from data/neighborhoods.ts forest-beach entry
@@ -184,7 +184,7 @@ const forestBeach: RentalAreaContent = {
 const shelterCove: RentalAreaContent = {
   slug: 'shelter-cove',
   name: 'Shelter Cove',
-  seoTitle: 'Shelter Cove Vacation Rentals — Marina Condos (2026) | Hilton Ahead',
+  seoTitle: 'Shelter Cove Vacation Rentals: Marina Condos',
   metaDescription:
     'Curated Shelter Cove vacation rentals on Hilton Head: marina-front condos near Harbourfest fireworks and dining, with a live map and price bands.',
   h1: 'Shelter Cove Vacation Rentals',
@@ -226,7 +226,7 @@ const shelterCove: RentalAreaContent = {
 const portRoyal: RentalAreaContent = {
   slug: 'port-royal',
   name: 'Port Royal',
-  seoTitle: 'Port Royal Vacation Rentals — Gated Homes & Villas (2026) | Hilton Ahead',
+  seoTitle: 'Port Royal Vacation Rentals: Gated Homes & Villas',
   metaDescription:
     'Curated Port Royal vacation rentals on Hilton Head: quiet gated homes and villas near tennis and golf, with a live map and price bands. Great for larger groups.',
   h1: 'Port Royal Vacation Rentals',
@@ -268,7 +268,7 @@ const portRoyal: RentalAreaContent = {
 const midIsland: RentalAreaContent = {
   slug: 'mid-island',
   name: 'Mid-Island',
-  seoTitle: 'Mid-Island Vacation Rentals — Central Hilton Head (2026) | Hilton Ahead',
+  seoTitle: 'Mid-Island Vacation Rentals: Central Hilton Head',
   metaDescription:
     'Curated mid-island Hilton Head vacation rentals near Folly Field and Singleton beaches: central, well-priced villas with a live map and price bands.',
   h1: 'Mid-Island Vacation Rentals',

@@ -61,6 +61,7 @@ export default function GetFeaturedPage() {
         {/* Hero */}
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Local Directory"
             plain="Put your business in front of"

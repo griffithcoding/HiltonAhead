@@ -72,6 +72,7 @@ export default function FaqPage() {
 
         <section className="mt-8 md:mt-10">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Frequently Asked"
             plain="Direct answers to the"

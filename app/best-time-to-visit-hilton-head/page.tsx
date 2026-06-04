@@ -19,7 +19,7 @@ import { brand } from '@/data/brand';
 const PATH = '/best-time-to-visit-hilton-head';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Best Time to Visit Hilton Head: Interactive Month Finder (2026)',
+  title: 'Best Time to Visit Hilton Head: Month Finder',
   description:
     'Rank all 12 months for your Hilton Head trip by what matters to you — warm water, light crowds, low rates, hurricane risk, and daylight. Plus a season-by-season breakdown of when to go.',
   path: PATH,
@@ -127,6 +127,7 @@ export default function BestTimeToVisitHiltonHeadPage() {
 
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Trip planning"
             plain="Best time to visit"

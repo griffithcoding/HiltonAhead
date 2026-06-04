@@ -133,6 +133,7 @@ export default function HiltonHeadHurricaneSeasonPage() {
 
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Storm safety"
             plain="Hilton Head"
