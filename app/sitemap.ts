@@ -35,6 +35,7 @@ const STATIC_ROUTES: ReadonlyArray<{
   { path: '/events', changeFrequency: 'weekly', priority: 0.85 },
   { path: '/hilton-head-weather', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/hilton-head-tides', changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/hilton-head-beach-day-planner', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/hilton-head-tee-times', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/hilton-head-golf-courses', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/hilton-head-stay-and-play', changeFrequency: 'monthly', priority: 0.9 },

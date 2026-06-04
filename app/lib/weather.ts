@@ -41,6 +41,7 @@ export type WeatherPayload =
 type RawPeriod = {
   name: string;
   isDaytime: boolean;
+  startTime?: string;
   temperature: number;
   temperatureUnit: string;
   windSpeed: string;
@@ -48,6 +49,46 @@ type RawPeriod = {
   shortForecast: string;
   icon: string;
 };
+
+/**
+ * Daytime forecast for a specific ISO date ("2026-07-04") IF it falls within
+ * the NWS ~7-day window. Returns null when out of range or on error — the
+ * Beach Day Planner then falls back to seasonal averages (data/months.ts).
+ */
+export async function getForecastForDate(
+  isoDate: string,
+): Promise<{ tempHigh: number; shortForecast: string; windSummary: string } | null> {
+  try {
+    const pointsRes = await fetch(`https://api.weather.gov/points/${LAT},${LON}`, {
+      headers: { 'User-Agent': USER_AGENT, Accept: 'application/geo+json' },
+      next: { revalidate: 86400 },
+    });
+    if (!pointsRes.ok) return null;
+    const forecastUrl: string | undefined = (await pointsRes.json())?.properties
+      ?.forecast;
+    if (!forecastUrl) return null;
+    const fRes = await fetch(forecastUrl, {
+      headers: { 'User-Agent': USER_AGENT, Accept: 'application/geo+json' },
+      next: { revalidate: 1800 },
+    });
+    if (!fRes.ok) return null;
+    const periods: RawPeriod[] = (await fRes.json())?.properties?.periods ?? [];
+    const match = periods.find(
+      (p) =>
+        p.isDaytime &&
+        typeof p.startTime === 'string' &&
+        p.startTime.startsWith(isoDate),
+    );
+    if (!match) return null;
+    return {
+      tempHigh: match.temperature,
+      shortForecast: match.shortForecast,
+      windSummary: `${match.windSpeed} ${match.windDirection}`.trim(),
+    };
+  } catch {
+    return null;
+  }
+}
 
 export async function getHiltonHeadWeather(): Promise<WeatherPayload> {
   try {
