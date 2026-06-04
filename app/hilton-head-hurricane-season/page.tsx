@@ -197,11 +197,11 @@ export default function HiltonHeadHurricaneSeasonPage() {
               cta="Get a quote →"
             />
             <AffiliateCard
-              programId="booking"
-              placement="hurricane-season/booking"
-              headline="Book a refundable stay"
-              description="Free-cancellation rates let you rebook or cancel without losing money if a storm threatens your dates. Filter for refundable when you book."
-              cta="Find refundable stays →"
+              programId="stay22"
+              placement="hurricane-season/stay22"
+              headline="Compare refundable stays"
+              description="One search across Booking, Vrbo, Airbnb, and Hotels.com — filter for free-cancellation rates so you can rebook or cancel without losing money if a storm threatens your dates."
+              cta="Compare refundable stays →"
             />
           </div>
         </section>
