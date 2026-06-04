@@ -621,3 +621,32 @@ body {
   transition: color 0.3s ease;
 }
 .prose-blog a:hover { color: var(--coral); }
+
+/* ========================================================================
+ * Print — used by the Itinerary Builder "Print" button so a shared/built
+ * plan prints cleanly. Hides chrome (.print-hide: header, controls, share
+ * bar, cross-links, final CTA, footer) and forces backgrounds/colors so the
+ * day cards and cost summary survive the print color stripper.
+ * ======================================================================== */
+@media print {
+  .print-hide { display: none !important; }
+
+  /* Print the real colors of cards/blocks, not blanked-out backgrounds. */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Keep day cards and the cost summary from splitting across pages. */
+  article,
+  details {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Open swap lists collapse anyway (their toggles are hidden), but ensure
+     no stray expanded panel prints. */
+  details[open] > ul { display: none !important; }
+
+  @page { margin: 0.5in; }
+}
