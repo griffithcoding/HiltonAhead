@@ -91,6 +91,24 @@ export const footerLinks = {
       ],
     },
     {
+      label: 'Compare',
+      links: [
+        { href: '/best-hilton-head-resort-comparison', label: 'Best HHI Resort' },
+        { href: '/hilton-head-vs-charleston', label: 'HHI vs Charleston' },
+        { href: '/hilton-head-vs-kiawah', label: 'HHI vs Kiawah' },
+        { href: '/hilton-head-vs-myrtle-beach', label: 'HHI vs Myrtle Beach' },
+        { href: '/sea-pines-vs-palmetto-dunes', label: 'Sea Pines vs Palmetto Dunes' },
+        { href: '/westin-vs-omni-hilton-head', label: 'Westin vs Omni' },
+      ],
+    },
+    {
+      label: 'Itinerary Packs',
+      links: [
+        { href: '/itinerary-packs/couples-hilton-head', label: 'Couples Itinerary' },
+        { href: '/itinerary-packs/golf-hilton-head', label: 'Golf Itinerary' },
+      ],
+    },
+    {
       label: 'Island',
       links: [
         { href: '/hilton-head/sea-pines', label: 'Sea Pines' },
