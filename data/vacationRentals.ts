@@ -142,7 +142,7 @@ const palmettoDunes: RentalAreaContent = {
 const forestBeach: RentalAreaContent = {
   slug: 'forest-beach',
   name: 'Forest Beach',
-  seoTitle: 'Forest Beach Vacation Rentals: Walk-to-Coligny',
+  seoTitle: 'Forest Beach Rentals: Walk to Coligny',
   metaDescription:
     'Forest Beach vacation rentals on Hilton Head: walk-to-Coligny condos and beach flats. Live map, price bands, local picks. The most walkable beach pocket.',
   h1: 'Forest Beach Vacation Rentals',

@@ -6631,7 +6631,7 @@ const postLastCallJuly: Post = {
 
 const postThreeWayCompare: Post = {
   slug: 'sea-pines-vs-palmetto-dunes-vs-shelter-cove',
-  title: "Sea Pines vs Palmetto Dunes vs Shelter Cove: An Honest Comparison",
+  title: "Sea Pines vs Palmetto Dunes vs Shelter Cove",
   excerpt:
     "Three Hilton Head neighborhoods, three trip personalities. A locals' honest side-by-side on villas, beaches, dining, golf, and what you'd actually choose.",
   description:
