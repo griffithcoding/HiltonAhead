@@ -280,22 +280,13 @@ export default async function NeighborhoodPage({
         >
           <h3 className="eyebrow text-coral">Or browse on your own</h3>
           <AffiliateDisclosure variant="inline" className="mt-3 mb-5" />
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          <div className="max-w-[640px]">
             <AffiliateCard
-              programId="booking"
-              deeplink={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent(`${n.name} Hilton Head Island, SC`)}`}
-              placement={`neighborhood/${n.slug}/booking`}
-              headline={`Hotels & stays in ${n.name}`}
-              description={`Free cancellation on most ${n.name} stays. Filter by dates to see what’s actually available before you commit.`}
-              cta={`Search ${n.name} stays →`}
-            />
-            <AffiliateCard
-              programId="vrbo"
-              deeplink={`https://www.vrbo.com/search?q=${encodeURIComponent(`${n.name} Hilton Head Island, SC`)}`}
-              placement={`neighborhood/${n.slug}/vrbo`}
-              headline={`Whole-house rentals in ${n.name}`}
-              description={`Vrbo's ${n.name} inventory beyond our shortlist — useful if your dates overlap with the high-demand weeks our partners are already booked.`}
-              cta={`Browse ${n.name} on Vrbo →`}
+              programId="stay22"
+              placement={`neighborhood/${n.slug}/stay22`}
+              headline={`Compare ${n.name} stays`}
+              description={`One search across Booking, Vrbo, Airbnb, and Hotels.com for ${n.name} — live prices side by side so you can see what each site actually charges before you commit.`}
+              cta={`Compare ${n.name} stays →`}
             />
           </div>
         </section>

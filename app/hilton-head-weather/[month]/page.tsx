@@ -313,11 +313,11 @@ export default async function MonthPage({
           <AffiliateDisclosure variant="inline" className="mt-3 mb-5" />
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
             <AffiliateCard
-              programId="booking"
+              programId="stay22"
               placement={`weather-month-${m.slug}`}
-              headline={`Hilton Head stays for ${m.name}`}
-              description={`Free cancellation on most ${m.name} bookings. Filter by dates to see what’s actually available — rates trend ${m.rateIndex}% of peak July pricing.`}
-              cta="Search stays →"
+              headline={`Compare Hilton Head stays for ${m.name}`}
+              description={`One search across Booking, Vrbo, Airbnb, and Hotels.com for ${m.name} — rates trend ${m.rateIndex}% of peak July pricing, so compare live prices for your dates.`}
+              cta="Compare stays →"
             />
             <AffiliateCard
               programId="amazon"

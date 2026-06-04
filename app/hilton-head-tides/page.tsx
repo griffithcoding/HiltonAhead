@@ -256,11 +256,11 @@ export default function HiltonHeadTidesPage() {
           <AffiliateDisclosure variant="inline" className="mb-5 mt-6" />
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
             <AffiliateCard
-              programId="booking"
-              placement="tides/booking"
-              headline="Stay steps from the sand"
-              description="Oceanfront and near-beach hotels on Hilton Head with free cancellation on most stays — so you can plan your days around the tide, not the front desk."
-              cta="Browse beach stays →"
+              programId="stay22"
+              placement="tides/stay22"
+              headline="Compare beachfront stays"
+              description="One search across Booking, Vrbo, Airbnb, and Hotels.com for oceanfront and near-beach Hilton Head stays — plan your days around the tide, not the front desk."
+              cta="Compare beach stays →"
             />
             <AffiliateCard
               programId="allianz"

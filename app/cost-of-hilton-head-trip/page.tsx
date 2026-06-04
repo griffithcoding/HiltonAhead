@@ -357,30 +357,23 @@ export default function CostOfHiltonHeadTripPage() {
           </ul>
         </section>
 
-        {/* If you'd rather book direct — affiliate cards for the lodging side
-            of the cost equation. */}
+        {/* If you'd rather book it yourself — one Stay22 card comparing live
+            prices across Booking, Vrbo, Airbnb, and Hotels.com. */}
         <section
-          aria-label="If you'd rather book direct"
+          aria-label="If you'd rather book it yourself"
           className="mt-20 md:mt-24"
         >
           <div className="mb-6 flex items-center justify-between gap-4">
-            <h2 className="eyebrow text-coral">If you’d rather book direct</h2>
+            <h2 className="eyebrow text-coral">If you’d rather book it yourself</h2>
           </div>
           <AffiliateDisclosure variant="inline" className="mb-5" />
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          <div className="max-w-[640px]">
             <AffiliateCard
-              programId="vrbo"
-              placement="cost-of-trip/vrbo"
-              headline="Hilton Head villas and whole-house rentals"
-              description="Vrbo whole-home rentals are the price-floor on a 6+ person trip — kitchens, washer/dryers, and a yard for the cost of one hotel room."
-              cta="Search Vrbo →"
-            />
-            <AffiliateCard
-              programId="expedia"
-              placement="cost-of-trip/expedia"
-              headline="Bundle flight + hotel"
-              description="Expedia’s flight + hotel bundles often shave 15–20% off the combined cost vs. booking them apart. Worth a 30-second check before locking the trip in."
-              cta="Browse Expedia bundles →"
+              programId="stay22"
+              placement="cost-of-trip/stay22"
+              headline="Compare booking sites before you lock it in"
+              description="One search across Booking, Vrbo, Airbnb, and Hotels.com for your dates — the fastest way to see whether a villa or a resort room actually costs less for the week you want."
+              cta="Compare prices →"
             />
           </div>
         </section>

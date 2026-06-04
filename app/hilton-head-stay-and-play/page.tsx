@@ -154,20 +154,13 @@ export default function HiltonHeadStayAndPlayPage() {
         {/* Lodging options (affiliate) */}
         <section aria-label="Book your lodging" className="mt-6">
           <AffiliateDisclosure variant="inline" className="mb-5" />
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
             <AffiliateCard
-              programId="vrbo"
-              placement="stay-and-play/vrbo"
-              headline="Villas for the foursome"
-              description="Whole-home rentals are the value play for a golf group — bedrooms for everyone, a kitchen, and space to unwind after the round."
-              cta="Search Vrbo villas →"
-            />
-            <AffiliateCard
-              programId="booking"
-              placement="stay-and-play/booking"
-              headline="Resort rooms near the courses"
-              description="Prefer a resort with on-site golf and dining? Compare rooms with free cancellation on most stays."
-              cta="Browse resorts →"
+              programId="stay22"
+              placement="stay-and-play/stay22"
+              headline="Compare lodging near the courses"
+              description="One search across Booking, Vrbo, Airbnb, and Hotels.com — whole-home rentals with bedrooms for the foursome, or a resort with on-site golf and dining, priced side by side."
+              cta="Compare stays →"
             />
             <AffiliateCard
               programId="golfnow"

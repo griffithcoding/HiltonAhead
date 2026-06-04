@@ -245,20 +245,13 @@ export default function BestTimeToVisitHiltonHeadPage() {
         <section aria-label="Book your window" className="mt-20 md:mt-24">
           <h2 className="eyebrow text-coral">Found your window? Book it</h2>
           <AffiliateDisclosure variant="inline" className="mb-5 mt-6" />
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          <div className="max-w-[640px]">
             <AffiliateCard
-              programId="vrbo"
-              placement="best-time/vrbo"
-              headline="Villas for your dates"
-              description="Whole-home rentals are the value floor for families and groups — and the best inventory in shoulder season goes early. Lock your week."
-              cta="Search Vrbo →"
-            />
-            <AffiliateCard
-              programId="booking"
-              placement="best-time/booking"
-              headline="Hotels & resorts"
-              description="Compare oceanfront and near-beach hotels with free cancellation on most stays — easy to grab a shoulder-season rate before it moves."
-              cta="Browse stays →"
+              programId="stay22"
+              placement="best-time/stay22"
+              headline="Compare stays for your dates"
+              description="One search across Booking, Vrbo, Airbnb, and Hotels.com — the best shoulder-season inventory goes early, so compare live prices and lock your week."
+              cta="Compare stays →"
             />
           </div>
         </section>
