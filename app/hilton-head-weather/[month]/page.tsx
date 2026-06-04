@@ -41,7 +41,7 @@ export async function generateMetadata({
 
   return generatePageMetadata({
     title: `Hilton Head Weather in ${m.name}: Temps, Crowds, What to Pack`,
-    description: `Hilton Head weather in ${m.name}: ${m.avgHigh}°F days, ${m.avgLow}°F nights, ${m.waterTemp}°F water. Crowds, rates, what's open, and what to pack.`,
+    description: `Hilton Head Island weather in ${m.name}: ${m.avgHigh}°F days, ${m.avgLow}°F nights, ${m.waterTemp}°F ocean water, ${m.crowdLevel} crowds. Rates, what's open, packing tips & local advice.`,
     path: `/hilton-head-weather/${m.slug}`,
     keywords: [
       `Hilton Head weather ${m.name}`,
