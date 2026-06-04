@@ -54,6 +54,7 @@ export default function FounderPage() {
 
         <section className="mt-8 md:mt-10">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Bio"
             plain="HiltonAhead&rsquo;s"

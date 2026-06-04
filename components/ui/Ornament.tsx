@@ -94,6 +94,11 @@ export function Divider({
 
 /**
  * Editorial section header — № number + eyebrow + display title.
+ *
+ * Heading level is configurable via `as` (defaults to `h2`).
+ * On a top-of-page hero usage where SectionHead is the page's primary
+ * heading, pass `as="h1"` so the document has exactly one h1 — required
+ * for SEO and AI/LLM citation parsing.
  */
 export function SectionHead({
   number,
@@ -102,6 +107,7 @@ export function SectionHead({
   italic,
   align = 'left',
   tone = 'ink',
+  as = 'h2',
 }: {
   number: string;
   eyebrow: string;
@@ -109,20 +115,22 @@ export function SectionHead({
   italic?: string;
   align?: 'left' | 'center';
   tone?: 'ink' | 'cream';
+  as?: 'h1' | 'h2' | 'h3';
 }) {
   const text = tone === 'cream' ? 'text-sand' : 'text-ink';
   const muted = tone === 'cream' ? 'text-sand/70' : 'text-ink-soft';
   const alignClass = align === 'center' ? 'text-center items-center' : 'items-start';
+  const HeadingTag = as;
   return (
     <header className={`flex flex-col gap-4 ${alignClass}`}>
       <div className="flex items-baseline gap-4">
         <span className="section-number text-[34px] md:text-[44px]">{number}</span>
         <span className={`eyebrow ${muted}`}>{eyebrow}</span>
       </div>
-      <h2 className={`display max-w-[760px] text-[36px] md:text-[52px] lg:text-[60px] ${text}`}>
+      <HeadingTag className={`display max-w-[760px] text-[36px] md:text-[52px] lg:text-[60px] ${text}`}>
         {plain}{' '}
         {italic && <span className="display-italic font-normal">{italic}</span>}
-      </h2>
+      </HeadingTag>
     </header>
   );
 }

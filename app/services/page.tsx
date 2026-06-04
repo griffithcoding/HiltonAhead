@@ -113,6 +113,7 @@ export default function ServicesPage() {
 
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Services"
             plain="Everything we do for you,"

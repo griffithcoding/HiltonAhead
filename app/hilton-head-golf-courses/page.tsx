@@ -20,7 +20,7 @@ import { brand } from '@/data/brand';
 const PATH = '/hilton-head-golf-courses';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Golf Courses: Map, Tiers & Course Finder (2026)',
+  title: 'Hilton Head Golf Courses: Map & Quiz',
   description:
     'All 12 Hilton Head & Bluffton golf courses on one map, plus a 30-second quiz that ranks them for your handicap, scenery, budget, and trip length. Harbour Town, Palmetto Dunes, May River and more.',
   path: PATH,
@@ -124,6 +124,7 @@ export default function HiltonHeadGolfCoursesPage() {
 
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Golf"
             plain="Hilton Head"

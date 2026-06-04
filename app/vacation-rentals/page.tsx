@@ -42,7 +42,7 @@ const HUB_FAQ = [
 ];
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Vacation Rentals — Villas, Condos & Homes by Neighborhood (2026)',
+  title: 'Hilton Head Vacation Rentals by Neighborhood',
   description:
     'Browse Hilton Head Island vacation rentals by neighborhood: Sea Pines, Palmetto Dunes, Forest Beach, Shelter Cove, Port Royal, and mid-island. Curated picks, a live map, price bands, amenities, and reviews.',
   path: '/vacation-rentals',

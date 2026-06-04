@@ -20,7 +20,7 @@ import { brand } from '@/data/brand';
 const PATH = '/hilton-head-tides';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Tides: Live 7-Day Tide Chart & Times (2026)',
+  title: 'Hilton Head Tides: 7-Day Tide Chart',
   description:
     'Live Hilton Head Island tide chart — high and low tide times for the next 7 days from NOAA, plus when to hit the beach, find shells, and book dolphin tours around the tide.',
   path: PATH,
@@ -130,6 +130,7 @@ export default function HiltonHeadTidesPage() {
         {/* Hero */}
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Beach & tides"
             plain="Hilton Head"

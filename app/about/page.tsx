@@ -71,6 +71,7 @@ export default function AboutPage() {
 
         <section className="mt-8 md:mt-10">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="About"
             plain="One trip, one porch,"

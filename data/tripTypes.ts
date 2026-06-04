@@ -578,7 +578,7 @@ export const tripTypes: TripTypeLanding[] = [
       plain: 'Bluffton travel planning,',
       italic: 'eighteen minutes off the island.',
     },
-    seoTitle: 'Bluffton Travel Planner: Old Town, Palmetto Bluff, Lodging',
+    seoTitle: 'Bluffton Travel: Old Town & Palmetto Bluff',
     metaDescription:
       'Bluffton travel planning for couples and foodie weekends. Old Town boutique stays, Palmetto Bluff, and a quieter alternative to Hilton Head Island lodging.',
     keywords: [
@@ -748,7 +748,7 @@ export const tripTypes: TripTypeLanding[] = [
       plain: 'The best Hilton Head beaches,',
       italic: 'ranked by use case.',
     },
-    seoTitle: 'Hilton Head Beaches: Access, Parking, and the Best Picks',
+    seoTitle: 'Hilton Head Beaches: Access, Parking & Picks',
     metaDescription:
       "A local's guide to Hilton Head beaches. Coligny, Alder Lane, Folly Field, Burkes, and Driessen. Parking, access, and which beach for which trip.",
     keywords: [
@@ -814,7 +814,7 @@ export const tripTypes: TripTypeLanding[] = [
       plain: 'A Hilton Head honeymoon,',
       italic: 'planned for two.',
     },
-    seoTitle: 'Hilton Head Honeymoon: Couples Getaway Planning by a Local',
+    seoTitle: 'Hilton Head Honeymoon: Local Planning Guide',
     metaDescription:
       "A local's guide to a Hilton Head honeymoon or couples getaway. S-tier villas, romantic dinners, sunset sails, and the quiet pockets that feel made for two.",
     keywords: [

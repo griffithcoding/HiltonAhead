@@ -56,6 +56,7 @@ export default function PressPage() {
 
         <section className="mt-16 md:mt-20">
           <SectionHead
+            as="h1"
             number="№ 01"
             eyebrow="Press"
             plain="Hilton Head Travel,"
