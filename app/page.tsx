@@ -7,7 +7,6 @@ import IslandFlyover from '@/components/sections/IslandFlyover';
 import InsiderProof from '@/components/sections/InsiderProof';
 import LatestPosts from '@/components/sections/LatestPosts';
 import LocalDirectoryPreview from '@/components/sections/LocalDirectoryPreview';
-import Testimonials from '@/components/sections/Testimonials';
 import Faq from '@/components/sections/Faq';
 import FinalCta from '@/components/sections/FinalCta';
 import Footer from '@/components/sections/Footer';
@@ -104,7 +103,6 @@ export default function Home() {
         <InsiderProof />
         <LatestPosts />
         <LocalDirectoryPreview />
-        <Testimonials />
         <Faq />
       </div>
 
