@@ -137,7 +137,7 @@ function EmbedBlock({
     case 'live-weather':
       return (
         <div className="not-prose my-12 min-h-[260px]">
-          <Suspense fallback={<EmbedSkeleton label="Loading live conditions" />}>
+          <Suspense fallback={<LiveWeatherFallback />}>
             <LiveWeather />
           </Suspense>
         </div>
@@ -145,7 +145,7 @@ function EmbedBlock({
     case 'tide-forecast':
       return (
         <div className="not-prose my-12 min-h-[360px]">
-          <Suspense fallback={<EmbedSkeleton label="Loading 7-day tide forecast" />}>
+          <Suspense fallback={<TideForecastFallback />}>
             <TideForecast />
           </Suspense>
         </div>
@@ -166,6 +166,42 @@ function EmbedSkeleton({ label }: { label: string }) {
     <div className="border border-ink/10 bg-cream-deep/30 px-5 py-6 text-[12px] uppercase tracking-[0.14em] text-ink-soft">
       {label}…
     </div>
+  );
+}
+
+// Fallbacks for live data embeds. Rendered while the upstream NWS/NOAA
+// fetch streams in via Suspense. They contain the same factual content
+// (typical conditions, tide pattern) the live data will display, so any
+// crawler indexing the streamed-but-incomplete HTML still gets useful,
+// keyword-relevant content instead of a "Loading…" spinner.
+function LiveWeatherFallback() {
+  return (
+    <section className="border border-ink/15 bg-cream-deep/30 px-6 py-6">
+      <div className="eyebrow text-sunset">Live Hilton Head conditions</div>
+      <p className="mt-3 text-[14px] leading-[1.6] text-ink">
+        Hilton Head weather averages 58&deg;F in January, 81&deg;F in May,
+        90&deg;F in July, and 77&deg;F in October. Ocean temperature peaks at
+        84&deg;F in July&ndash;August and stays swimmable (73&deg;F) through
+        mid-October. Live current-conditions feed loading from the National
+        Weather Service&hellip;
+      </p>
+    </section>
+  );
+}
+
+function TideForecastFallback() {
+  return (
+    <section className="border border-ink/15 bg-cream-deep/30 px-6 py-6">
+      <div className="eyebrow text-sunset">Hilton Head 7-day tide forecast</div>
+      <p className="mt-3 text-[14px] leading-[1.6] text-ink">
+        Hilton Head sees two high and two low tides per day on a roughly
+        12-hour 25-minute cycle. Tide range averages 6&ndash;8 feet, with
+        spring tides near the new and full moon running 8&ndash;9 feet.
+        Best dolphin-watching is mid-incoming tide; best shrimping and
+        shell-finding is the hour around low tide. Live NOAA 7-day
+        prediction loading&hellip;
+      </p>
+    </section>
   );
 }
 
