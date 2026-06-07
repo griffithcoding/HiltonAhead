@@ -19,9 +19,9 @@ import { brand } from '@/data/brand';
 const PATH = '/best-time-to-visit-hilton-head';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Best Time to Visit Hilton Head: Month Finder',
+  title: 'Best Time to Visit Hilton Head: Month-by-Month Guide (2026)',
   description:
-    'Rank all 12 months for your Hilton Head trip by what matters to you — warm water, light crowds, low rates, hurricane risk, and daylight. Plus a season-by-season breakdown of when to go.',
+    "The best time to visit Hilton Head is mid-October — 73°F water, empty beaches, lodging 30-40% off summer peak. Rank all 12 months by what matters to you and read the honest season-by-season breakdown.",
   path: PATH,
   keywords: [
     'best time to visit hilton head',
@@ -30,11 +30,13 @@ export const metadata: Metadata = generatePageMetadata({
     'hilton head best month',
     'least crowded time hilton head',
     'hilton head weather by month',
+    'best month hilton head',
+    'hilton head shoulder season',
   ],
 });
 
 const TLDR =
-  "The best time to visit Hilton Head Island is April–May or September–October — shoulder-season windows with warm weather, swimmable water, lighter crowds, and lodging rates well below the July peak. Summer (June–August) is hottest, busiest, and priciest; winter (December–February) is quiet and cheap with cool ocean water. Use the finder below to rank all 12 months against what you care about most — water temperature, crowds, rates, hurricane risk, and daylight.";
+  "The best time to visit Hilton Head is mid-October. Ocean water still averages 73°F, days sit at a dry 75-80°F, hurricane risk has passed, and lodging rates run 30-40% below summer peak. Close runners-up: early May (golf, couples), mid-June (families locked to school calendars), and early December (budget). Use the finder below to rank all 12 months against your priorities — water temperature, crowds, rates, hurricane risk, and daylight.";
 
 const INTRO =
   "There's no universal best month — only the best month for your priorities. A honeymooning couple, a golf foursome, and a family of five each want a different week. Set your priorities below and let the finder rank the year; then read the season-by-season notes underneath.";
@@ -84,14 +86,34 @@ const FAQS = [
     answer:
       "It depends on what you're avoiding. For crowds and high prices, skip the first three weeks of July and Easter/RBC Heritage week in April. For cold water, skip December–March. For hurricane peace of mind, the lowest-risk months are the winter and early summer; September carries the highest storm odds.",
   },
+  {
+    question: 'When is the best time to visit Hilton Head with kids?',
+    answer:
+      "Mid-June, before the July heat-plus-humidity peak and before peak villa rates. Water has hit 80°F, school is out for most US districts, and the island is busy but not yet full. Families who can travel off the school calendar should pick the second half of September instead — water still 80°F, crowds gone, rates 25-30% lower.",
+  },
+  {
+    question: 'Is May or September better for Hilton Head?',
+    answer:
+      "September wins for water (80°F vs May's 74°F) and crowds (post-Labor Day exodus vs May's pre-summer build). May wins for storm risk (effectively zero vs September's hurricane peak around the 10th) and pollen-free outdoor activity. For couples or golfers, pick May. For beach families with trip insurance, pick the second half of September.",
+  },
+  {
+    question: 'What is the off-season at Hilton Head?',
+    answer:
+      "Two distinct off-seasons. The deep off-season runs early January through mid-March — lodging rates 50-55% below summer, restaurants open but on reduced hours, ocean too cold to swim. The soft off-season runs mid-November through mid-December (excluding Thanksgiving) — mild 60-70°F days, lodging 40-45% off summer, holiday lights at Harbour Town in early December.",
+  },
+  {
+    question: 'Is Hilton Head crowded in October?',
+    answer:
+      "No. Crowds drop noticeably after Labor Day and again after Columbus Day weekend. By mid-October, beach access is easy, you can get same-week dinner reservations at most A-tier restaurants, and the Cross Island Parkway moves freely. The only October crowd spike is Columbus Day weekend (Oct 12, 2026) for families using the long weekend.",
+  },
 ];
 
 const CROSS_LINKS = [
-  { href: '/blog/best-time-to-visit-hilton-head', label: 'Full month-by-month guide' },
   { href: '/hilton-head-weather', label: 'Weather by month' },
   { href: '/hilton-head-tides', label: 'Tide charts' },
   { href: '/hilton-head-hurricane-season', label: 'Hurricane season' },
   { href: '/cost-of-hilton-head-trip', label: 'What a trip costs' },
+  { href: '/hilton-head-packing-list', label: 'Packing list' },
   { href: '/itinerary', label: 'Plan a trip with us' },
 ];
 

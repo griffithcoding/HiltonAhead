@@ -134,15 +134,14 @@ export default function WeatherIndexPage() {
         <section className="mx-auto mt-20 max-w-[820px] border-t border-ocean-deep/15 pt-12 text-center">
           <p className="text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
             For the full year-round narrative with hurricane-season specifics,
-            water-temperature deep dive, and packing-by-season notes, see the
-            long-form{' '}
+            water-temperature deep dive, and packing-by-season notes, see our{' '}
             <Link
-              href="/blog/best-time-to-visit-hilton-head"
+              href="/best-time-to-visit-hilton-head"
               className="link-underline text-ink"
             >
-              Hilton Head weather and best time to visit guide
-            </Link>
-            .
+              best time to visit Hilton Head
+            </Link>{' '}
+            guide.
           </p>
         </section>
       </div>

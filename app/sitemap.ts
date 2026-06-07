@@ -68,12 +68,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.priority,
   }))
 
-  const postEntries: MetadataRoute.Sitemap = posts.map((p) => ({
-    url: `${BASE_URL}/blog/${p.slug}`,
-    lastModified: new Date(p.updatedAt || p.publishedAt),
-    changeFrequency: 'monthly' as const,
-    priority: p.featuredOrder <= 3 ? 0.9 : 0.7,
-  }))
+  // Exclude the deprecated /blog/best-time-to-visit-hilton-head — it 301s to
+  // /best-time-to-visit-hilton-head (handled in next.config.ts). 301 URLs do
+  // not belong in sitemaps; Google penalizes their inclusion.
+  const postEntries: MetadataRoute.Sitemap = posts
+    .filter((p) => p.slug !== 'best-time-to-visit-hilton-head')
+    .map((p) => ({
+      url: `${BASE_URL}/blog/${p.slug}`,
+      lastModified: new Date(p.updatedAt || p.publishedAt),
+      changeFrequency: 'monthly' as const,
+      priority: p.featuredOrder <= 3 ? 0.9 : 0.7,
+    }))
 
   const neighborhoodEntries: MetadataRoute.Sitemap = neighborhoods.map((n) => ({
     url: `${BASE_URL}/hilton-head/${n.slug}`,
