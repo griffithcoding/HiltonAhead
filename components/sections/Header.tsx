@@ -43,72 +43,68 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav (md+) */}
-        <div className="hidden flex-wrap items-center gap-6 text-[13px] md:flex lg:gap-8">
-          <nav className="flex items-center gap-6 whitespace-nowrap lg:gap-8">
-            {nav.links.map((link) =>
-              link.children && link.children.length > 0 ? (
-                <div
-                  key={link.href}
-                  className="group relative"
-                >
-                  <Link
-                    href={link.href}
-                    className="link-underline inline-flex items-center gap-1.5 text-ink/85 hover:text-ink"
-                    aria-haspopup="true"
-                  >
-                    {link.label}
-                    <span
-                      aria-hidden="true"
-                      className="text-[8px] leading-none opacity-60 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
-                    >
-                      ▼
-                    </span>
-                  </Link>
-                  <div
-                    role="menu"
-                    aria-label={`${link.label} submenu`}
-                    className="invisible absolute left-1/2 top-full z-40 mt-3 min-w-[180px] -translate-x-1/2 rounded-md border border-ink/10 bg-cream p-1.5 opacity-0 shadow-[0_12px_32px_-16px_rgba(11,42,53,0.25)] transition-[opacity,visibility] duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
-                  >
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        role="menuitem"
-                        className="block rounded-sm px-3 py-2 text-[13px] text-ink/85 transition-colors hover:bg-ink/[0.04] hover:text-ink"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
+        <nav className="hidden items-center gap-6 whitespace-nowrap text-[13px] md:flex lg:gap-8">
+          {nav.links.map((link) =>
+            link.children && link.children.length > 0 ? (
+              <div
+                key={link.href}
+                className="group relative"
+              >
                 <Link
-                  key={link.href}
                   href={link.href}
-                  className="link-underline text-ink/85 hover:text-ink"
+                  className="link-underline inline-flex items-center gap-1.5 text-ink/85 hover:text-ink"
+                  aria-haspopup="true"
                 >
                   {link.label}
+                  <span
+                    aria-hidden="true"
+                    className="text-[8px] leading-none opacity-60 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                  >
+                    ▼
+                  </span>
                 </Link>
-              ),
-            )}
-            <AdminNavLink />
-          </nav>
-          <div className="flex items-center gap-4 whitespace-nowrap">
-            <SearchBar />
-            <Link
-              href={brand.cta.bookingPagePath}
-              className="group inline-flex items-center gap-2 rounded-full border border-ocean-mid bg-ocean-mid px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-ink transition hover:bg-ocean-deep hover:border-ocean-deep hover:text-cream"
-            >
-              {brand.cta.label}
-              <span
-                aria-hidden="true"
-                className="transition-transform group-hover:translate-x-0.5"
+                <div
+                  role="menu"
+                  aria-label={`${link.label} submenu`}
+                  className="invisible absolute left-1/2 top-full z-40 mt-3 min-w-[180px] -translate-x-1/2 rounded-md border border-ink/10 bg-cream p-1.5 opacity-0 shadow-[0_12px_32px_-16px_rgba(11,42,53,0.25)] transition-[opacity,visibility] duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+                >
+                  {link.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      role="menuitem"
+                      className="block rounded-sm px-3 py-2 text-[13px] text-ink/85 transition-colors hover:bg-ink/[0.04] hover:text-ink"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="link-underline text-ink/85 hover:text-ink"
               >
-                →
-              </span>
-            </Link>
-          </div>
-        </div>
+                {link.label}
+              </Link>
+            ),
+          )}
+          <AdminNavLink />
+          <SearchBar />
+          <Link
+            href={brand.cta.bookingPagePath}
+            className="group inline-flex items-center gap-2 rounded-full border border-ocean-mid bg-ocean-mid px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-ink transition hover:bg-ocean-deep hover:border-ocean-deep hover:text-cream"
+          >
+            {brand.cta.label}
+            <span
+              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-0.5"
+            >
+              →
+            </span>
+          </Link>
+        </nav>
 
         {/* Mobile hamburger (md:hidden, owned by the component) */}
         <MobileMenu />
