@@ -90,7 +90,7 @@ const FAQS = [
 
 const CROSS_LINKS = [
   { href: '/hilton-head-weather', label: 'Weather by month' },
-  { href: '/blog/best-time-to-visit-hilton-head', label: 'Best time to visit' },
+  { href: '/best-time-to-visit-hilton-head', label: 'Best time to visit Hilton Head' },
   { href: '/hilton-head-beaches', label: 'Hilton Head beaches' },
   { href: '/hilton-head/sea-pines', label: 'Sea Pines neighborhood' },
   { href: '/hilton-head/forest-beach', label: 'Forest Beach neighborhood' },

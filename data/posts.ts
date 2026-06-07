@@ -7538,7 +7538,12 @@ export const posts: Post[] = [
   postForestBeach,
   postShelterCove,
   postGolfTrip,
-  postBestTime,
+  // postBestTime intentionally excluded from the posts array.
+  // The /blog/best-time-to-visit-hilton-head URL 301s to the canonical
+  // /best-time-to-visit-hilton-head (see next.config.ts redirects). The
+  // post data is preserved above for historical reference but excluded
+  // here so the blog index, related-posts grids, and homepage's
+  // LatestPosts section don't render cards that immediately redirect.
   postHurricaneForecast2026,
   postBridge2026Debunker,
   postRbcHeritage,

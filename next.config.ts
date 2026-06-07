@@ -28,6 +28,19 @@ const nextConfig: NextConfig = {
 
     return rewrites;
   },
+  async redirects() {
+    return [
+      // Cannibalization cleanup: /blog/best-time-to-visit-hilton-head and
+      // /best-time-to-visit-hilton-head were two pages targeting the same
+      // primary keyword. The top-level URL is the canonical (matches the
+      // site nav, footer, and sitemap convention); the blog post 301s in.
+      {
+        source: '/blog/best-time-to-visit-hilton-head',
+        destination: '/best-time-to-visit-hilton-head',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

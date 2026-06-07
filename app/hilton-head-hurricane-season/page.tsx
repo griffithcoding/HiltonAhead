@@ -93,7 +93,7 @@ const FAQS = [
 ];
 
 const CROSS_LINKS = [
-  { href: '/best-time-to-visit-hilton-head', label: 'Best time to visit' },
+  { href: '/best-time-to-visit-hilton-head', label: 'Best time to visit Hilton Head' },
   { href: '/hilton-head-weather', label: 'Weather by month' },
   { href: '/hilton-head-tides', label: 'Tide charts' },
   { href: '/hilton-head-winter-rental', label: 'Off-season rentals' },

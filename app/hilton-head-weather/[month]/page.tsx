@@ -123,7 +123,7 @@ export default async function MonthPage({
           </Link>
           <span aria-hidden="true" className="h-px w-4 bg-ocean-deep/20" />
           <Link
-            href="/blog/best-time-to-visit-hilton-head"
+            href="/hilton-head-weather"
             className="transition-colors hover:text-coral"
           >
             Hilton Head Weather
@@ -199,6 +199,16 @@ export default async function MonthPage({
           <div className="eyebrow text-coral">Should you visit in {m.name}?</div>
           <p className="mt-3 text-[15px] leading-[1.7] text-ink md:text-[16px]">
             {m.recommendation}
+          </p>
+          <p className="mt-3 text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
+            Comparing {m.name} against the rest of the calendar? See the full{' '}
+            <Link
+              href="/best-time-to-visit-hilton-head"
+              className="link-underline text-ink"
+            >
+              best time to visit Hilton Head
+            </Link>{' '}
+            guide for the year-round breakdown.
           </p>
         </section>
 
@@ -417,7 +427,7 @@ export default async function MonthPage({
           <p className="text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
             For the full year-round picture, see the{' '}
             <Link
-              href="/blog/best-time-to-visit-hilton-head"
+              href="/best-time-to-visit-hilton-head"
               className="link-underline text-ink"
             >
               Hilton Head weather guide and best time to visit
