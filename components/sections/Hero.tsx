@@ -113,13 +113,17 @@ export default function Hero() {
 
         {/* ——— RIGHT: layered photo collage ——— */}
         <div className="relative min-h-[400px] sm:min-h-[480px] md:min-h-[620px]">
-          {/* Primary photograph — off-center main plate */}
-          <figure className="rise rise-delay-1 absolute left-[8%] top-0 h-[72%] w-[80%] overflow-hidden rounded-md shadow-[0_30px_80px_-20px_rgba(10,41,48,0.4)]">
+          {/* Primary photograph — off-center main plate.
+              No `.rise` wrapper: this is the LCP candidate on mobile and the
+              opacity:0 → 1 animation defers Chromium's LCP measurement past
+              the image-paint time, costing ~1-2s of LCP. */}
+          <figure className="absolute left-[8%] top-0 h-[72%] w-[80%] overflow-hidden rounded-md shadow-[0_30px_80px_-20px_rgba(10,41,48,0.4)]">
             <Image
               src={primary.src}
               alt={primary.alt}
               fill
               priority
+              fetchPriority="high"
               sizes="(max-width: 1024px) 90vw, 40vw"
               className="object-cover photo-warm"
             />

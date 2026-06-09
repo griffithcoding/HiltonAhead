@@ -89,6 +89,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${fraunces.variable} ${instrumentSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans text-ink">
+        {/* Resource hints for the two image CDNs we rely on. React 19 hoists
+            these to <head> at SSR; the early DNS + TLS handshake shaves
+            ~200-500ms off the LCP image fetch (hero is Unsplash). */}
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.pexels.com" crossOrigin="" />
+
         {/* Site-wide JSON-LD: WebSite (with SearchAction sitelinks searchbox)
             and Organization (Knowledge Graph anchor). Page-level pages can
             still emit more specific schemas (TravelAgency, Article, etc.). */}
