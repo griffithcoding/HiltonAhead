@@ -58,15 +58,35 @@ Build the missing send model for `newsletter_subscribers`, mirroring the proven 
 
 **No phone calls anywhere in this loop.** Replies land in the existing inbox (`lead-reply-poll` pattern); answer by email. Calendly link in signature for the few who *want* to talk — their choice, not a gate.
 
-### Play 2 — Claim the social surface + run the calendar that's already written ($0, ~4 hrs/wk)
+### Play 2 — Launch the social surface ($0, ~4 hrs/wk) — runbook, not advice
 
-The content is sitting in `docs/sales-ops/content-calendar/social-rolling/` (4 weeks, current week = week-02-jun08-14) + `social-playbooks/`. Nothing has been posted because no accounts exist.
+Everything needed already exists in-repo. The decisions are made; this is execution:
 
-1. **Claim handles this week:** Instagram, Facebook, Pinterest, LinkedIn (`@hiltonahead` or nearest). Same NAP/bio from `data/brand.ts` everywhere, link to site.
-2. **One commit:** populate `brand.ts` socials + `founder.ts` `sameAs` → every Person/Organization schema block on the site instantly gains KG anchors. Re-sync `llms.txt` per CLAUDE.md rule.
-3. **Platform priority for a travel niche:** **Pinterest first** (it's a travel search engine with compounding pins, not a feed — "when to book Hilton Head" timeline, restaurant tier list, best-month chart are ready-made pins), Instagram second (Reels from existing photo assets), Facebook third (HHI visitor groups are where the planning questions actually get asked — answer, don't spam), LinkedIn last (B2B/partner surface, week-XX/linkedin.md files already drafted).
-4. **Repurpose, don't create:** every post links to a tool or guide with UTM (`?utm_source=pinterest&utm_medium=social`). The GA4 instrumentation (84 files) already segments source.
-5. **Cadence:** 3 posts/wk/platform max — the calendar files define them. Sustainability beats volume.
+- **Handle (decided in `brand.ts` comments):** `@hiltonaheadtravel`. **Platforms:** Pinterest, Instagram, Facebook, LinkedIn. **Skip TikTok + Twitter** — `brand.ts` documents why (wrong audience for the price point). The calendar's `tiktok.md` / `youtube-shorts.md` files are deprioritized; recycle their reel scripts into IG Reels later.
+- **Per-platform playbooks:** `docs/sales-ops/social-playbooks/` — the Pinterest playbook alone contains the username, 160-char bio copy, 12 board names, posting windows, and **20 ready-to-pin pieces**.
+- **Per-week post copy:** `social-rolling/week-NN/` — 7 platform files per week with full captions, hashtags, image briefs, UTM-tagged CTAs, and posting times. Current week: `week-02-jun08-14` (theme: last-call July villas; first post was slotted Tue Jun 9, 7:15am).
+
+**Launch sequence (one week, ~6 hrs total):**
+
+| Day | Action | Source |
+|---|---|---|
+| 1 (~90 min) | Claim `@hiltonaheadtravel` on Pinterest (business acct) + Instagram (business) + Facebook Page + LinkedIn Company Page. Bio = Pinterest playbook's 160-char copy; photo = `brand.logo` mark on Glass Aqua; link = deep page per playbook, not bare homepage | `social-playbooks/`, `data/brand.ts` |
+| 2 (~1 hr, dev) | **The sameAs commit:** fill `brand.ts` `social.{instagram,facebook,linkedin}` + add `pinterest`; fill `founder.ts` `sameAs` (his personal LinkedIn at minimum); add Pinterest domain-claim meta tag to `app/layout.tsx`; re-sync `public/llms.txt` + `llms-full.txt` (CLAUDE.md rule — they don't auto-sync). Every Person/Organization schema block on the site gains KG anchors the moment this deploys. | `data/brand.ts:65`, `data/founder.ts:37` |
+| 3 (~1 hr) | Create the 12 Pinterest boards from the playbook list; pin the first 5 of the 20 ready-made pieces (tier list, when-to-book timeline, Sea Pines vs Palmetto Dunes, best-month chart, cost-of-trip) | Pinterest playbook §boards, §ready-to-pin |
+| 4 (~45 min) | Post IG #1 + FB cross-post from `week-02/instagram.md` (the July-availability carousel — copy, hashtags, 8-slide brief, all written) | `week-02-jun08-14/` |
+| 5 (~30 min) | LinkedIn post from `week-02/linkedin.md`; answer 2 questions in HHI visitor Facebook groups linking a guide (answer first, link second — never spam) | `week-02/`, `week-02/facebook.md` |
+| 6–7 | Nothing. The bar is sustainability, not launch-week heroics. | — |
+
+**Steady state (the Sunday 30-min batch + ~3 hrs/wk):**
+- **Pinterest 5 pins/wk** — the playbook says 15–20; that's a team cadence, not a solo one. Five compounding pins beat twenty abandoned ones; scale only if Month-2 analytics earn it. Work down the 20-piece list, then 1 pin per new/updated guide.
+- **Instagram 3/wk + Facebook cross-post** — straight from the week files (they're already written through week-04, Jun 28).
+- **LinkedIn 1/wk** — the file exists per week.
+- **Reddit** (`week-NN/reddit.md` exists): answer-mining only — r/hiltonhead and trip-planning threads, cite the guide when it genuinely answers. No self-promo posts.
+- Every link carries the calendar's UTM convention (`utm_source=instagram&utm_medium=organic&utm_campaign=weekNN-*`) — GA4 source segmentation is already instrumented; lead source flows into the CRM.
+
+**Two E-E-A-T riders while you're in there:** `founder.imagePath` is empty — shoot one decent headshot, wire it (Person schema + bylines need a face). `founder.sameAs` should list William's *personal* profiles; `brand.social` lists the company's. Both feed different schema entities — don't cross them.
+
+**Calendar gap to watch:** the rolling calendar ends at `week-04-jun22-28`. Drafting weeks 05–08 before Jun 22 is a content task (reuse `02-post-briefs.md` system) — put it on the week-3 Sunday batch or the engine stalls at exactly the moment the habit forms.
 
 ### Play 3 — One gated lead magnet to bridge social → list (1 dev day, after 1+2)
 
