@@ -47,7 +47,7 @@ The `(gated)` route group is gated by `app/admin/(gated)/layout.tsx`, which call
 Google OAuth via Supabase; callback at `app/auth/callback/route.ts`. Admin allowlist lives in the `admin_users` table with case-insensitive email match. An entry in `admin_users` is the gate — being signed in is not enough. The `is_admin()` SQL helper from migration `003_admin_crm.sql` is the canonical RLS check.
 
 ### Migrations
-`supabase/migrations/*.sql`, applied via the Supabase CLI or pasted into the SQL editor. **Numbering quirk:** there are two `002_*` files (`002_newsletter_subscribers.sql` and `002_business_inquiries.sql`). When adding a migration, use the next number that doesn't clash with either branch. Latest is `012_directory_events.sql`. Migrations include their own RLS policies.
+`supabase/migrations/*.sql`, applied via the Supabase CLI or pasted into the SQL editor. **Numbering quirk:** several numbers have duplicate-prefix collisions — `002` (`002_newsletter_subscribers.sql` + `002_business_inquiries.sql`), `014` (`014_directory_events_payload_and_events.sql` + `014_sponsor_events.sql`), and `023` (`023_outreach_email_engine.sql` + `023_social_attribution_columns.sql`); `011` is skipped entirely. Don't trust the highest filename — run `ls supabase/migrations/` and pick the next number that clashes with nothing. Latest is `025_market_trends.sql`, so the next free number is `026`. Migrations include their own RLS policies.
 
 ### Itinerary form pipeline
 Public form at `/itinerary` POSTs to `/api/itinerary` → inserts into `itinerary_requests` (anon-only insert, no read by design) and emails via Resend. Reading submissions requires the service role; that's how the admin Leads dashboard sees them.
