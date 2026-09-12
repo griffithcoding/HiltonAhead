@@ -15,7 +15,7 @@ export const hero = {
   },
   /** Classic magazine lede — long-ish, warm, confident. */
   lede:
-    "The island is twelve miles long and you have seven days. Somewhere in there is the villa with the porch facing the right way, the 7 p.m. table at Skull Creek (the one that was somehow fully booked when you called), and the tee time at Harbour Town that opens up two Tuesdays before your trip if you know to ask. We plan it the way we plan it for family — every reservation, every drive time, every quiet half-hour — and hand it to you. You arrive barefoot by Tuesday.",
+    "The island is twelve miles long and you have seven days. Somewhere in there is the villa with the porch facing the right way, the 7 p.m. table at Skull Creek (the one that was somehow fully booked when you called), and the tee time at Harbour Town that opens up two Tuesdays before your trip if you know to ask. We plan it the way we plan it for family — every reservation, every drive time, every quiet half-hour — and hand it to you.",
   primaryCtaLabel: 'Plan my trip',
   secondaryCta: {
     href: '#why-hilton-head',
