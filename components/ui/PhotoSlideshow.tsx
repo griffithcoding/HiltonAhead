@@ -11,6 +11,13 @@ interface PhotoSlideshowProps {
   sizes?: string;
   /** Applied to each <Image>; caller controls object-fit/filter classes. */
   className?: string;
+  /**
+   * Whether the first photo should be priority-loaded (preload + high fetch
+   * priority). Default false. Set true ONLY when this slideshow is the
+   * above-the-fold LCP element on the page; otherwise it hijacks Next.js's
+   * image-preload slot away from the actual hero image.
+   */
+  priority?: boolean;
 }
 
 /**
@@ -26,6 +33,7 @@ export default function PhotoSlideshow({
   intervalMs = 4500,
   sizes,
   className = '',
+  priority = false,
 }: PhotoSlideshowProps) {
   const [index, setIndex] = useState(0);
   const pausedRef = useRef(false);
@@ -59,7 +67,8 @@ export default function PhotoSlideshow({
           alt={photo.alt}
           fill
           sizes={sizes}
-          priority={i === 0}
+          priority={priority && i === 0}
+          loading={priority && i === 0 ? undefined : 'lazy'}
           className={`${className} transition-opacity duration-[800ms] ease-out`}
           style={{ opacity: i === index ? 1 : 0 }}
           aria-hidden={i === index ? undefined : true}
