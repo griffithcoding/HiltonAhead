@@ -6,6 +6,7 @@ import FinalCta from '@/components/sections/FinalCta';
 import AffiliateCard from '@/components/affiliate/AffiliateCard';
 import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
+import { servicesEnabled } from '@/data/features';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
@@ -35,7 +36,7 @@ export const metadata: Metadata = generatePageMetadata({
 export default function SouthwestToHiltonHeadPage() {
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
-    { name: 'Trip planning', path: '/services' },
+    ...(servicesEnabled ? [{ name: 'Trip planning', path: '/services' }] : []),
     { name: 'Flying Southwest to Hilton Head', path: '/southwest-airlines-to-hilton-head' },
   ]);
   const faqSchema = getFaqSchema(SOUTHWEST_FAQS);
@@ -203,7 +204,6 @@ export default function SouthwestToHiltonHeadPage() {
               { href: '/hilton-head-family-trip-planner', label: 'Family trip planning' },
               { href: '/hilton-head-hurricane-season', label: 'Hurricane season' },
               { href: '/hilton-head-oceanfront-villas', label: 'Oceanfront villas' },
-              { href: '/hilton-head-golf-packages', label: 'Golf packages' },
             ].map((l) => (
               <li key={l.href}>
                 <Link

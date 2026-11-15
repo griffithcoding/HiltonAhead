@@ -198,7 +198,7 @@ export const industries: Industry[] = [
       },
       {
         question: 'Can I book a golf package on Hilton Head?',
-        answer: 'Yes — most Hilton Head travel consultants including Hilton Ahead specialize in building golf packages combining villa accommodation with pre-booked tee times at multiple courses. Booking these together (rather than separately) typically saves money and ensures preferred tee times.',
+        answer: 'Yes — many Hilton Head villa and golf companies sell packages combining villa accommodation with pre-booked tee times at multiple courses. Booking these together (rather than separately) typically saves money and ensures preferred tee times.',
       },
     ],
   },
@@ -282,7 +282,7 @@ export const industries: Industry[] = [
       },
       {
         question: 'Does Hilton Head have a wedding planning concierge service?',
-        answer: 'Hilton Ahead offers group travel and wedding concierge services — coordinating guest accommodations, villa rentals for the wedding party, and on-island logistics. Contact us via the itinerary form to discuss your event.',
+        answer: 'Yes. Several Hilton Head venues and independent planners handle group travel and wedding logistics — guest accommodations, villa rentals for the wedding party, and on-island transportation. Browse the wedding businesses in this directory to compare options.',
       },
     ],
   },
@@ -352,8 +352,8 @@ export const industries: Industry[] = [
     },
     faqs: [
       {
-        question: 'Is it better to book a Hilton Head villa directly or through a travel consultant?',
-        answer: 'For a standard 1-week booking, direct booking with the management company is fine. For group trips, wedding parties, multi-villa bookings, or specific requests (golf-adjacent, pet-friendly, fenced yard), working with a consultant like Hilton Ahead saves time — we maintain relationships with multiple firms and can compare inventory across companies quickly.',
+        question: 'Is it better to book a Hilton Head villa directly or through a booking site?',
+        answer: 'For a standard 1-week booking, direct booking with the management company is fine. For group trips, wedding parties, multi-villa bookings, or specific requests (golf-adjacent, pet-friendly, fenced yard), comparing inventory across several management companies saves time, since firms differ in availability, fees, and cancellation terms.',
       },
       {
         question: 'Which vacation rental companies have the best oceanfront inventory on Hilton Head?',

@@ -48,7 +48,7 @@ function htmlPage(title: string, message: string, ok: boolean): Response {
   <div class="card">
     <h1>${title}</h1>
     <p>${message}</p>
-    <p><a href="https://hiltonahead.com">Hilton Ahead — local Hilton Head Island travel consulting</a></p>
+    <p><a href="https://hiltonahead.com">Hilton Ahead — local Hilton Head Island travel guide</a></p>
   </div>
 </body>
 </html>`;

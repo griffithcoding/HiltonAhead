@@ -650,7 +650,7 @@ function buildPinterest(post: Post): SyndicatedAsset[] {
 // ——— Reddit (3 variants — value-first, with disclosure) ————————————————
 
 const REDDIT_DISCLOSURE =
-  'Disclosure: I run hiltonahead.com, a local Hilton Head travel consulting site. Happy to share specifics off-thread.';
+  'Disclosure: I run hiltonahead.com, a local Hilton Head travel guide site. Happy to share specifics off-thread.';
 
 function buildReddit(post: Post, ctaUrl: string): SyndicatedAsset[] {
   const specifics = detectSpecifics(post);

@@ -1,3 +1,4 @@
+import { tripPlanningEnabled } from '@/data/features';
 import Link from 'next/link';
 import KenBurnsImage from '@/components/ui/KenBurnsImage';
 import Reveal from '@/components/ui/Reveal';
@@ -59,6 +60,7 @@ export default function AftermathChapter({
         ))}
       </div>
 
+      {tripPlanningEnabled && (
       <div className="mt-24 border-y border-ocean-deep/15 py-14">
         <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-center">
           <div>
@@ -96,6 +98,7 @@ export default function AftermathChapter({
           </div>
         </div>
       </div>
+      )}
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { tripPlanningEnabled } from '@/data/features'
 import { brand } from '@/data/brand'
 import { founder } from '@/data/founder'
 
@@ -28,7 +29,7 @@ interface PageMetadataOptions {
 }
 
 const DEFAULT_OG_IMAGE = `${siteUrl}/opengraph-image`
-const DEFAULT_OG_ALT = 'Hilton Ahead — Hilton Head travel consulting, planned by a local'
+const DEFAULT_OG_ALT = 'Hilton Ahead — independent Hilton Head Island travel guide, written by a local'
 
 export function generatePageMetadata({
   title,
@@ -128,16 +129,20 @@ export function getTravelAgencySchema() {
       { '@type': 'Place', name: 'Palmetto Dunes' },
       { '@type': 'Place', name: 'Forest Beach' },
     ],
-    serviceType: [
-      'Custom Itineraries',
-      'Villa Booking',
-      'Resort Booking',
-      'Group Travel Planning',
-      'Wedding Travel',
-      'On-Island Concierge',
-      'Dining Reservations',
-      'Golf Tee Times',
-    ],
+    ...(tripPlanningEnabled
+      ? {
+          serviceType: [
+            'Custom Itineraries',
+            'Villa Booking',
+            'Resort Booking',
+            'Group Travel Planning',
+            'Wedding Travel',
+            'On-Island Concierge',
+            'Dining Reservations',
+            'Golf Tee Times',
+          ],
+        }
+      : {}),
     knowsAbout: [
       'Hilton Head Island',
       'Sea Pines Resort',

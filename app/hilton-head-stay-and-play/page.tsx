@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
@@ -22,7 +23,7 @@ const PATH = '/hilton-head-stay-and-play';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Hilton Head Stay & Play: Golf Package Cost Estimator (2026)',
   description:
-    'Estimate a Hilton Head stay-and-play golf package — lodging plus tee times for your group, by nights, rounds, and season. See the package vs. retail savings, then have us book it to the dollar.',
+    'Estimate a Hilton Head stay-and-play golf package — lodging plus tee times for your group, by nights, rounds, and season. See the package vs. retail savings.',
   path: PATH,
   keywords: [
     'hilton head stay and play',
@@ -72,20 +73,22 @@ const FAQS = [
     answer:
       "Shoulder season — January–February, August, and November — carries the lowest multiplier on both golf and lodging. Peak spring and fall cost more; RBC Heritage week in April is the most expensive window of the year and sells out far in advance.",
   },
-  {
-    question: 'Can you book the whole stay-and-play trip for me?',
-    answer:
-      "Yes. The estimator gives you the rough number; our itinerary service prices it to the dollar, negotiates the lodging and tee times, and hands you a finished plan — a flat $450 build fee, with the planning guidance free either way. Hit 'Have us book it' on the estimator to start.",
-  },
+  ...(tripPlanningEnabled
+    ? [
+      {
+        question: 'Can you book the whole stay-and-play trip for me?',
+        answer:
+          "Yes. The estimator gives you the rough number; our itinerary service prices it to the dollar, negotiates the lodging and tee times, and hands you a finished plan — a flat build fee quoted up front, with the planning guidance free either way. Hit 'Have us book it' on the estimator to start.",
+      },
+      ]
+    : []),
 ];
 
 const CROSS_LINKS = [
-  { href: '/hilton-head-golf-packages', label: 'Curated golf packages' },
   { href: '/hilton-head-tee-times', label: 'Book tee times' },
   { href: '/hilton-head-golf-courses', label: 'Compare courses' },
   { href: '/cost-of-hilton-head-trip', label: 'Full trip cost' },
   { href: '/hilton-head/sea-pines', label: 'Sea Pines (Harbour Town)' },
-  { href: '/itinerary', label: 'Have us build it' },
 ];
 
 export default function HiltonHeadStayAndPlayPage() {

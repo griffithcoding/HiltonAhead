@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
+import { golfPackagesPageEnabled } from '@/data/features';
 import TripTypeLandingPage from '@/components/sections/TripTypeLanding';
 import {
   generatePageMetadata,
@@ -22,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function HiltonHeadGolfPackagesPage() {
+  if (!golfPackagesPageEnabled) redirect('/');
   const trip = getTripTypeBySlug(SLUG);
   if (!trip) notFound();
 

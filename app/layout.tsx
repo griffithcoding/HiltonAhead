@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   description: brand.seoDescription,
   keywords: [
-    'Hilton Head travel', 'Hilton Head travel consultant', 'Hilton Head vacation planner',
+    'Hilton Head travel', 'Hilton Head travel guide', 'Hilton Head vacation guide',
     'Hilton Head itinerary', 'Hilton Head villa rental', 'Hilton Head golf trip',
-    'Hilton Head concierge', 'Sea Pines villa', 'Palmetto Dunes rental',
+    'Hilton Head local tips', 'Sea Pines villa', 'Palmetto Dunes rental',
     'Hilton Head local guide', 'Lowcountry travel',
   ],
   authors: [{ name: brand.name, url: siteUrl }],

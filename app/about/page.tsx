@@ -6,7 +6,7 @@ import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
 import InsiderProof from '@/components/sections/InsiderProof';
 import { photos } from '@/data/photos';
-import { SectionHead, Divider } from '@/components/ui/Ornament';
+import { Divider } from '@/components/ui/Ornament';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import {
   generatePageMetadata,
@@ -15,16 +15,17 @@ import {
   getPersonSchema,
 } from '@/app/lib/metadata';
 import { testimonialsMeta } from '@/data/testimonials';
+import { tripPlanningEnabled } from '@/data/features';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'About: Local Travel Consulting for Hilton Head',
+  title: 'About: An Independent Travel Guide to Hilton Head',
   description:
-    'Hilton Ahead is a locally-run travel consulting service on Hilton Head Island. 255+ trips advised, real relationships with the properties and restaurants.',
+    'Hilton Ahead is a locally-run travel guide to Hilton Head Island: honest picks for where to stay, eat, play golf, and spend a beach day, from a thirty-year island resident.',
   path: '/about',
   keywords: [
-    'Hilton Head local travel agent',
+    'Hilton Head local travel guide',
     'Hilton Head travel expert',
-    'Hilton Head vacation consultant',
+    'Hilton Head insider guide',
   ],
 });
 
@@ -69,17 +70,9 @@ export default function AboutPage() {
           className="mt-12"
         />
 
-        <section className="mt-8 md:mt-10">
-          <SectionHead
-            as="h1"
-            number="№ 01"
-            eyebrow="About"
-            plain="One trip, one porch,"
-            italic="thirty years of paying attention."
-          />
-        </section>
+        <h1 className="sr-only">About Hilton Ahead</h1>
 
-        <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-20">
+        <div className="mt-10 grid grid-cols-1 gap-14 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-20">
           <div>
             <p className="dropcap max-w-[600px] text-[17px] leading-[1.75] text-ink-soft md:text-[18px]">
               Most &ldquo;Hilton Head travel experts&rdquo; you&apos;ll find online are
@@ -97,14 +90,16 @@ export default function AboutPage() {
             </p>
 
             <p className="mt-6 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
-              That local depth is the only reason this service works. Google
-              can tell you the top ten things to do. We can tell you which five
+              That local depth is the whole point of this site. Google
+              can tell you the top ten things to do. We try to tell you which five
               actually match your group, which three are worth skipping, and
               which one to add that isn&apos;t on any list yet.
             </p>
 
             <Divider ornament="palmetto" className="my-12 text-gold" />
 
+            {tripPlanningEnabled ? (
+              <>
             <h2 className="display text-[28px] leading-[1.1] text-ink md:text-[36px]">
               How <span className="display-italic">we work.</span>
             </h2>
@@ -129,6 +124,21 @@ export default function AboutPage() {
             <p className="mt-5 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
               Either way, you text us when something changes. We handle it.
             </p>
+              </>
+            ) : (
+              <>
+                <h2 className="display text-[28px] leading-[1.1] text-ink md:text-[36px]">
+                  How this <span className="display-italic">site works.</span>
+                </h2>
+
+                <p className="mt-5 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
+                  Every guide, villa pick, and restaurant note here comes from
+                  time spent on the island. Some links lead to booking partners
+                  such as Booking.com, VRBO, and Airbnb; if you book through
+                  one, we may earn a commission at no extra cost to you.
+                </p>
+              </>
+            )}
 
             <p className="mt-8 max-w-[600px] text-[15px] leading-[1.75] text-ink-soft">
               Curious who&apos;s on the other end of those texts?{' '}
@@ -151,10 +161,12 @@ export default function AboutPage() {
                 className="object-cover photo-warm"
               />
               <figcaption className="display-italic mt-3 text-[13px] text-ink-soft">
-                A Sea Pines villa we book often
+                A Sea Pines villa
               </figcaption>
             </figure>
 
+            {tripPlanningEnabled && (
+              <>
             <div className="border-t border-ink/15 pt-8">
               <h3 className="eyebrow text-sunset">What you get</h3>
               <ul className="mt-5 space-y-4 text-[14px] leading-[1.65] text-ink-soft">
@@ -211,6 +223,8 @@ export default function AboutPage() {
                 </li>
               </ul>
             </div>
+              </>
+            )}
           </aside>
         </div>
 

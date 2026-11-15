@@ -6,6 +6,7 @@ import { brand } from '@/data/brand';
 import { itineraryPacks, getPackByUrlSlug } from '@/data/itineraryPacks';
 import { INFO_PRODUCT_TIERS, getStripePriceId } from '@/data/pricing';
 import BuyButton from '@/components/info-products/BuyButton';
+import { consumerProductsEnabled } from '@/data/features';
 
 export const revalidate = 3600;
 
@@ -13,6 +14,7 @@ export const revalidate = 3600;
 // Static params
 // ---------------------------------------------------------------------------
 export function generateStaticParams() {
+  if (!consumerProductsEnabled) return [];
   return itineraryPacks.map((p) => ({ pack: p.urlSlug }));
 }
 
@@ -24,6 +26,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ pack: string }>;
 }): Promise<Metadata> {
+  if (!consumerProductsEnabled) return {};
   const { pack: slug } = await params;
   const pack = getPackByUrlSlug(slug);
   if (!pack) return {};
@@ -43,6 +46,7 @@ export default async function ItineraryPackPage({
 }: {
   params: Promise<{ pack: string }>;
 }) {
+  if (!consumerProductsEnabled) notFound();
   const { pack: slug } = await params;
   const pack = getPackByUrlSlug(slug);
   if (!pack) notFound();

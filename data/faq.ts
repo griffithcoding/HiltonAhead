@@ -10,9 +10,13 @@
  * long enough to stand alone in an LLM citation, short enough to read.
  */
 
+import { tripPlanningEnabled } from './features';
+
 export type FaqItem = {
   question: string;
   answer: string;
+  /** Optional citations, rendered as links under the answer on /faq. */
+  sources?: ReadonlyArray<{ label: string; url: string }>;
 };
 
 export type FaqCluster = {
@@ -22,14 +26,7 @@ export type FaqCluster = {
   items: ReadonlyArray<FaqItem>;
 };
 
-export const faq = {
-  eyebrow: 'Common Questions',
-  heading: {
-    plain: 'Everything you want to know, and',
-    accent: 'a few things you didn\'t.',
-  },
-  /** Legacy homepage list — keep ≤ 5 for above-the-fold density. */
-  items: [
+const consultingFaqItems: ReadonlyArray<FaqItem> = [
     {
       question: 'Why hire a travel consultant for Hilton Head?',
       answer:
@@ -55,14 +52,46 @@ export const faq = {
       answer:
         'Yes. Weddings, reunions, corporate offsites, and golf trips up to 100 people. Group work is where having a local really pays off: vendor coordination, transportation, dietary restrictions, and tee-time blocks all move through one contact.',
     },
-  ],
+];
+
+const guideFaqItems: ReadonlyArray<FaqItem> = [
+    {
+      question: 'Why use a local guide for Hilton Head?',
+      answer:
+        "Because the best of Hilton Head is never on the first page of Google — it's in the heads of the people who live here. Which oceanfront villa has the pool that goes quiet by 4 p.m. (the one that fills up ten minutes after the cover comes off in March). Which Skull Creek table catches the last ten minutes of sun in late July. Which Harbour Town tee time opens up two Tuesdays out, even when the booking page tells you otherwise. That local read is what the guides on this site are built from.",
+    },
+    {
+      question: 'How is this different from Airbnb, Vrbo, or a resort concierge?',
+      answer:
+        "Those sites show you what's bookable, not what's good. A resort concierge only knows their property. This site covers the whole island and is written for travelers, not for the listings.",
+    },
+    {
+      question: 'Is this site free to use?',
+      answer:
+        "Yes. The guides, maps, and tools are free. Some links lead to booking partners such as Booking.com, VRBO, and Airbnb; if you book through one, we may earn a commission at no extra cost to you.",
+    },
+    {
+      question: 'How far in advance should I book?',
+      answer:
+        'For summer (June to August), four to six months out is ideal for villa inventory. For fall golf trips and spring break, two to three months. Last-minute we still take, but your options narrow quickly.',
+    },
+];
+
+export const faq = {
+  eyebrow: 'Common Questions',
+  heading: {
+    plain: 'Everything you want to know, and',
+    accent: 'a few things you didn\'t.',
+  },
+  /** Legacy homepage list — keep ≤ 5 for above-the-fold density. */
+  items: tripPlanningEnabled ? consultingFaqItems : guideFaqItems,
 } as const;
 
 /**
  * Full FAQ matrix. Used on /faq and as filtered subsets elsewhere.
  * Order within a cluster: most-asked first.
  */
-export const faqClusters: ReadonlyArray<FaqCluster> = [
+const allFaqClusters: ReadonlyArray<FaqCluster> = [
   {
     slug: 'pricing',
     title: 'Pricing & Service Tiers',
@@ -157,7 +186,21 @@ export const faqClusters: ReadonlyArray<FaqCluster> = [
       {
         question: 'How many golf courses are on Hilton Head Island?',
         answer:
-          "Twenty-four, with another fifteen within a 30-minute drive in Bluffton and the surrounding Lowcountry. The Top-tier shortlist most groups want: Harbour Town, Heron Point, and Atlantic Dunes (Sea Pines); Palmetto Dunes' Robert Trent Jones, George Fazio, and Arthur Hills; Palmetto Hall; May River at Palmetto Bluff; and Colleton River.",
+          "Twenty-four, with another fifteen or so within a 30-minute drive in Bluffton and the surrounding Lowcountry. Published counts vary with how \"on the island\" is drawn (Fodor\u2019s and GolfPass both list 24 championship courses on the island; GolfLink counts 25). The Top-tier shortlist most groups want: Harbour Town, Heron Point, and Atlantic Dunes (Sea Pines); Palmetto Dunes' Robert Trent Jones, George Fazio, and Arthur Hills; Palmetto Hall; May River at Palmetto Bluff; and Colleton River.",
+        sources: [
+          {
+            label: 'Fodor\u2019s',
+            url: 'https://www.fodors.com/world/north-america/usa/south-carolina/hilton-head-and-the-low-country/things-to-do/sports-activities/golf-293178050',
+          },
+          {
+            label: 'GolfPass',
+            url: 'https://www.golfpass.com/travel-advisor/destinations/133-hilton-head-sc',
+          },
+          {
+            label: 'GolfLink',
+            url: 'https://golflink.com/golf-courses/sc/hilton-head-island',
+          },
+        ],
       },
       {
         question: 'What is the best Hilton Head golf course for a 12-person group?',
@@ -270,6 +313,55 @@ export const faqClusters: ReadonlyArray<FaqCluster> = [
     ],
   },
 ];
+
+/**
+ * While tripPlanningEnabled is false the consulting-only Q&As are left out
+ * (the pricing cluster, the standalone tee-time question) and the "about"
+ * cluster uses guide-site wording. Flip the flag in data/features.ts to bring
+ * the original matrix back untouched.
+ */
+const consultingOnlyQuestions = new Set<string>(['Do you book tee times for non-clients?']);
+
+const aboutClusterGuide: FaqCluster = {
+  slug: 'about',
+  title: 'About Hilton Ahead',
+  description: 'Who runs Hilton Ahead and what this site is.',
+  items: [
+    {
+      question: 'Who runs Hilton Ahead Travel Co.?',
+      answer:
+        "William Griffith, a Hilton Head Island full-time resident and the founder. The guides and recommendations on this site come from his own time on the island — there is no franchise and no call center.",
+    },
+    {
+      question: 'Where is Hilton Ahead based?',
+      answer:
+        "On Hilton Head Island, South Carolina. There is no public storefront; the contact page is the best way to reach us.",
+    },
+    {
+      question: 'Is Hilton Ahead an Airbnb or a booking site?',
+      answer:
+        "No. Hilton Ahead is an independent travel guide. We don't list rentals or take bookings ourselves. We point you to Airbnb, Vrbo, direct villa companies, and resort booking sites, and we may earn a commission if you book through some of those links.",
+    },
+    {
+      question: 'Do you cover trips outside Hilton Head?',
+      answer:
+        "No. This site is intentionally local-only — Hilton Head, Bluffton, Daufuskie, and the immediate Lowcountry. The whole reason it works is depth in one place.",
+    },
+  ],
+};
+
+export const faqClusters: ReadonlyArray<FaqCluster> = tripPlanningEnabled
+  ? allFaqClusters
+  : allFaqClusters
+      .filter((c) => c.slug !== 'pricing')
+      .map((c) =>
+        c.slug === 'about'
+          ? aboutClusterGuide
+          : {
+              ...c,
+              items: c.items.filter((i) => !consultingOnlyQuestions.has(i.question)),
+            },
+      );
 
 /** Flat list — useful for FAQPage schema and full-page renders. */
 export const faqAll: ReadonlyArray<FaqItem> = faqClusters.flatMap(

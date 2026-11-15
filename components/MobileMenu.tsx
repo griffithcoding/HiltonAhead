@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import { brand } from '@/data/brand';
 import { nav } from '@/data/nav';
 import AdminNavLink from '@/components/AdminNavLink';
@@ -130,6 +131,7 @@ export default function MobileMenu() {
               <AdminNavLink />
             </div>
 
+            {tripPlanningEnabled && (
             <Link
               href={brand.cta.bookingPagePath}
               onClick={() => setOpen(false)}
@@ -138,9 +140,10 @@ export default function MobileMenu() {
               {brand.cta.label}
               <span aria-hidden="true">→</span>
             </Link>
+            )}
 
             <p className="mt-6 text-[12px] leading-[1.7] text-ink-soft">
-              Travel Consulting · Hilton Head Island, SC
+              Independent travel guide · Hilton Head Island, SC
             </p>
           </nav>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
@@ -169,6 +170,7 @@ export default function HiltonHeadPackingListPage() {
         </section>
 
         {/* ——— Final CTA ——— */}
+        {tripPlanningEnabled && (
         <section className="mt-20 mb-24 border-t border-rule-soft pt-12 md:mt-24 md:mb-32">
           <p className="text-[11px] uppercase tracking-[0.18em] text-coral">
             One more thing
@@ -193,6 +195,7 @@ export default function HiltonHeadPackingListPage() {
             </Link>
           </div>
         </section>
+        )}
 
         <Footer />
       </div>

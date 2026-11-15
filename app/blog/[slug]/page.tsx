@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Header from '@/components/sections/Header';
@@ -387,6 +388,7 @@ export default async function BlogPostPage({
           )}
 
           {/* ——— Inline CTA ——— */}
+          {tripPlanningEnabled && (
           <div className="mx-auto mt-20 max-w-[720px] border-y border-ink/15 py-10">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div>
@@ -413,6 +415,7 @@ export default async function BlogPostPage({
               </Link>
             </div>
           </div>
+          )}
 
           {/* ——— Bidirectional internal links to neighborhood landing pages ——— */}
           {post.relatedNeighborhoods && post.relatedNeighborhoods.length > 0 && (

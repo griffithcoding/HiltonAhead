@@ -1,5 +1,6 @@
 'use client';
 
+import { tripPlanningEnabled } from '@/data/features';
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { months, type MonthData } from '@/data/months';
@@ -152,11 +153,13 @@ export default function TripWindowFinder() {
         ))}
       </div>
 
-      <p className="mt-6 text-[12px] leading-[1.6] text-ink-soft">
-        Want help locking in a week? Tell us the trip and we&apos;ll map it
-        against the next six months of island calendar — flat $450 itinerary,
-        guide is free either way.
-      </p>
+      {tripPlanningEnabled && (
+        <p className="mt-6 text-[12px] leading-[1.6] text-ink-soft">
+          Want help locking in a week? Tell us the trip and we&apos;ll map it
+          against the next six months of island calendar — flat-fee itinerary
+          quoted up front, guide is free either way.
+        </p>
+      )}
 
       <style>{`
         .finder-range {
@@ -220,6 +223,7 @@ function RankedMonth({ rank, entry }: { rank: number; entry: Scored }) {
       <p className="mt-2 text-[12px] leading-[1.55] text-ink-soft">
         Air {month.avgHigh}°F · Water {month.waterTemp}°F · Rates {month.rateIndex}% of July peak
       </p>
+      {tripPlanningEnabled && (
       <Link
         href={`/itinerary?month=${month.slug}`}
         className="link-underline mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink"
@@ -227,6 +231,7 @@ function RankedMonth({ rank, entry }: { rank: number; entry: Scored }) {
         Plan a {month.name} trip
         <span aria-hidden="true">→</span>
       </Link>
+      )}
       <Link
         href={`/hilton-head-weather/${month.slug}`}
         className="mt-2 block text-[11px] uppercase tracking-[0.14em] text-ink-soft hover:text-coral"

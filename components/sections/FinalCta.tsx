@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import { brand } from '@/data/brand';
 import { photos } from '@/data/photos';
 import { TravelSeal, WaveLine } from '@/components/ui/Ornament';
@@ -9,6 +10,7 @@ import { TravelSeal, WaveLine } from '@/components/ui/Ornament';
  * display headline, vintage travel seal overlay, and a wave divider.
  */
 export default function FinalCta() {
+  if (!tripPlanningEnabled) return null;
   return (
     <section
       id="contact-cta"

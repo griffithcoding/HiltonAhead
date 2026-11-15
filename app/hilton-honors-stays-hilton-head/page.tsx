@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
@@ -633,12 +634,14 @@ function PropertyCard({ property: p }: { property: HiltonProperty }) {
           cta="See on Hilton.com →"
           description="Live rates and award nights for Hilton Head and Bluffton — Hilton Honors points eligible."
         />
+        {tripPlanningEnabled && (
         <Link
           href={concierge}
           className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 bg-transparent px-5 py-2.5 text-[12px] font-semibold uppercase tracking-widest text-ink transition-all hover:border-coral hover:text-coral"
         >
           Have us book it for you →
         </Link>
+        )}
       </div>
     </article>
   );

@@ -4,6 +4,7 @@
  */
 
 import { brand } from '@/data/brand';
+import { servicesEnabled, tripPlanningEnabled } from '@/data/features';
 import { posts, type PostBlock } from '@/data/posts';
 import { faqAll, faqClusters } from '@/data/faq';
 
@@ -24,8 +25,8 @@ const STATIC_PAGES: ReadonlyArray<Omit<SearchableDoc, 'id' | 'type'>> = [
   { url: '/services', title: 'Services', body: 'Custom itineraries, villa and resort booking, group and family trips, on-island concierge, dining and tee-time reservations.', tags: ['services', 'concierge', 'itinerary'], weight: 1.5 },
   { url: '/itinerary', title: 'Request a Custom Itinerary', body: 'Send a request and a local insider returns a day-by-day plan within 24 hours.', tags: ['itinerary', 'plan', 'concierge'], weight: 1.8 },
   { url: '/contact', title: 'Contact', body: 'Reach William Griffith directly to plan your Hilton Head trip.', tags: ['contact'], weight: 1.2 },
-  { url: '/about', title: 'About', body: 'A locally-run travel consulting service for Hilton Head Island.', tags: ['about'], weight: 1.0 },
-  { url: '/founder', title: 'Founder', body: 'William Griffith — full-time Hilton Head resident and travel consultant.', tags: ['founder', 'william griffith'], weight: 1.0 },
+  { url: '/about', title: 'About', body: 'A locally-run travel guide to Hilton Head Island.', tags: ['about'], weight: 1.0 },
+  { url: '/founder', title: 'Founder', body: 'William Griffith — full-time Hilton Head resident and founder of Hilton Ahead.', tags: ['founder', 'william griffith'], weight: 1.0 },
   { url: '/faq', title: 'Frequently Asked Questions', body: 'Common questions covering booking, pricing, on-island logistics, weather, and weddings.', tags: ['faq', 'questions'], weight: 1.1 },
   { url: '/partners', title: 'Partners', body: 'Curated local partner network across villas, dining, golf, charters, weddings, and spas.', tags: ['partners'], weight: 0.8 },
   { url: '/sponsorships', title: 'Partner With Us', body: 'Sponsorship tiers for Hilton Head businesses ready to join the partner network.', tags: ['sponsorship', 'business'], weight: 0.8 },
@@ -37,7 +38,11 @@ const STATIC_PAGES: ReadonlyArray<Omit<SearchableDoc, 'id' | 'type'>> = [
   { url: '/blog', title: 'Local Guide', body: 'Long-form blog posts on Hilton Head travel, golf, beaches, dining, and neighborhoods.', tags: ['blog', 'guide'], weight: 1.0 },
   { url: '/stories', title: 'Stories', body: 'Place-as-protagonist editorial pieces — long-form scroll-driven narratives.', tags: ['stories', 'editorial'], weight: 0.9 },
   { url: '/guides/2027-rbc-heritage', title: '2027 RBC Heritage Kit', body: 'Free guide to the 2027 RBC Heritage tournament — tickets, lodging, parking, and on-course tips.', tags: ['heritage', 'golf', 'tournament', '2027'], weight: 1.4 },
-];
+].filter(
+  (p) =>
+    (servicesEnabled || p.url !== '/services') &&
+    (tripPlanningEnabled || p.url !== '/itinerary'),
+);
 
 function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();

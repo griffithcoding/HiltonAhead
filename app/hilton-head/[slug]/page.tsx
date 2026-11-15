@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Header from '@/components/sections/Header';
@@ -127,6 +128,7 @@ export default async function NeighborhoodPage({
               {n.hook}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              {tripPlanningEnabled && (
               <Link
                 href="/itinerary"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral"
@@ -139,6 +141,7 @@ export default async function NeighborhoodPage({
                   →
                 </span>
               </Link>
+              )}
               {n.blogPostSlug ? (
                 <Link
                   href={`/blog/${n.blogPostSlug}`}
@@ -171,8 +174,8 @@ export default async function NeighborhoodPage({
           <SectionHead
             number="№ 01"
             eyebrow={`Why ${n.name}`}
-            plain="Four reasons we book"
-            italic={`here often.`}
+            plain="Four reasons to"
+            italic="stay here."
           />
           <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14">
             {n.reasons.map((r, i) => (
@@ -243,7 +246,7 @@ export default async function NeighborhoodPage({
         <section className="mt-24">
           <SectionHead
             number="№ 02"
-            eyebrow="Where we book you"
+            eyebrow="Where to stay"
             plain="Properties we've vetted"
             italic="in person."
           />
@@ -292,6 +295,7 @@ export default async function NeighborhoodPage({
         </section>
 
         {/* ——— CTA ——— */}
+        {tripPlanningEnabled && (
         <section className="mt-24 border-y border-ocean-deep/15 py-12">
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div>
@@ -327,6 +331,7 @@ export default async function NeighborhoodPage({
             </Link>
           </div>
         </section>
+        )}
 
         {/* ——— Related: link to blog post ——— */}
         {n.blogPostSlug ? (

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { servicesEnabled, tripPlanningEnabled } from '@/data/features';
 import { Divider, SectionHead } from '@/components/ui/Ornament';
 import TldrBlock from '@/components/ui/TldrBlock';
 import AffiliateCard from '@/components/affiliate/AffiliateCard';
@@ -294,6 +295,7 @@ export default function ComparisonLanding({ comparison }: { comparison: Comparis
       )}
 
       {/* Final concierge CTA */}
+      {tripPlanningEnabled && (
       <section className="mt-24 md:mt-32 rounded-md border border-coral/30 bg-coral/5 p-8 md:p-10">
         <p className="eyebrow text-sunset">Still picking?</p>
         <h2 className="mt-3 font-display text-[28px] leading-tight text-ink md:text-[36px]">
@@ -311,14 +313,17 @@ export default function ComparisonLanding({ comparison }: { comparison: Comparis
           >
             Get a recommendation
           </Link>
-          <Link
-            href="/services"
-            className="inline-flex items-center justify-center rounded-sm border border-ink/40 px-6 py-3 text-[14px] uppercase tracking-[0.16em] text-ink hover:border-coral hover:text-coral transition-colors"
-          >
-            See pricing
-          </Link>
+          {servicesEnabled && (
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-sm border border-ink/40 px-6 py-3 text-[14px] uppercase tracking-[0.16em] text-ink hover:border-coral hover:text-coral transition-colors"
+            >
+              See pricing
+            </Link>
+          )}
         </div>
       </section>
+      )}
     </main>
   );
 }

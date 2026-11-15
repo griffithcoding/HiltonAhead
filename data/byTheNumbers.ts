@@ -18,6 +18,9 @@
  *     want when quoting the fact.
  */
 
+import { tripPlanningEnabled } from './features';
+
+
 export type FactCategory =
   | 'geography'
   | 'history'
@@ -108,6 +111,18 @@ export const CATEGORIES: ReadonlyArray<CategoryMeta> = [
       "Loggerheads nest on the beach from May to October. Bottlenose dolphins live here year-round. The salt marsh out behind the island is the second-most-productive ecosystem in North America per acre, after the rainforest.",
   },
 ];
+
+/** Consulting-only claim (client savings). Shown only while tripPlanningEnabled. */
+const lodgingSavingsFact: Fact = {
+  id: 'lodging-savings',
+  category: 'lodging',
+  number: '8–12%',
+  label: 'Average Hilton Ahead client savings below public listings',
+  context:
+    'Driven by direct partner-property relationships. On a $4,000 villa week the savings typically more than cover the consulting fee.',
+  source: 'Hilton Ahead Travel Co.',
+  sourceUrl: 'https://www.hiltonahead.com/services',
+};
 
 export const FACTS: ReadonlyArray<Fact> = [
   // ─────────────────────────────────────────── Geography
@@ -330,7 +345,7 @@ export const FACTS: ReadonlyArray<Fact> = [
     label: 'Vacation rental units island-wide',
     context:
       'Includes villas, condos, single-family homes, and resort rooms. Sea Pines and Palmetto Dunes together account for roughly half.',
-    source: 'Hilton Ahead client research, 2026',
+    source: 'Hilton Ahead research, 2026',
   },
   {
     id: 'lodging-resorts',
@@ -350,16 +365,7 @@ export const FACTS: ReadonlyArray<Fact> = [
       "Premium widens in July–August and narrows in March and November. 'Oceanview' (not on the dune line) typically saves 15–25% with no meaningful loss of beach access for a 2-night couples trip.",
     source: 'Hilton Ahead market analysis, 2026',
   },
-  {
-    id: 'lodging-savings',
-    category: 'lodging',
-    number: '8–12%',
-    label: 'Average Hilton Ahead client savings below public listings',
-    context:
-      'Driven by direct partner-property relationships. On a $4,000 villa week the savings typically more than cover the consulting fee.',
-    source: 'Hilton Ahead Travel Co.',
-    sourceUrl: 'https://www.hiltonahead.com/services',
-  },
+  ...(tripPlanningEnabled ? [lodgingSavingsFact] : []),
 
   // ─────────────────────────────────────────── Golf
   {
@@ -367,8 +373,11 @@ export const FACTS: ReadonlyArray<Fact> = [
     category: 'golf',
     number: '24 courses',
     label: 'Golf courses on Hilton Head Island',
-    source: 'Hilton Head Island Visitor & Convention Bureau',
-    sourceUrl: 'https://www.hiltonheadisland.org/golf',
+    context:
+      'Counts vary by source: Fodor\u2019s and GolfPass list 24 championship courses on the island, GolfLink counts 25, and the island visitor bureau cites 26+ championship courses across the wider area.',
+    source: 'Fodor\u2019s, GolfPass',
+    sourceUrl:
+      'https://www.fodors.com/world/north-america/usa/south-carolina/hilton-head-and-the-low-country/things-to-do/sports-activities/golf-293178050',
   },
   {
     id: 'golf-near',
@@ -377,7 +386,9 @@ export const FACTS: ReadonlyArray<Fact> = [
     label: 'Courses in Bluffton & immediate Lowcountry within 30 minutes',
     context:
       'Including May River at Palmetto Bluff, Colleton River, Belfair, Berkeley Hall, Oldfield, Hampton Hall, and Old Tabby Links.',
-    source: 'Hilton Head Island VCB',
+    source: 'Fodor\u2019s (16 in the outlying area)',
+    sourceUrl:
+      'https://www.fodors.com/world/north-america/usa/south-carolina/hilton-head-and-the-low-country/things-to-do/sports-activities/golf-293178050',
   },
   {
     id: 'golf-harbour-town',

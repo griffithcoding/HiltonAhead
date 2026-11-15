@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
@@ -255,8 +256,7 @@ export default async function TopMarriottStaysHiltonHeadPage({
 
           <p className="mt-6 text-[16px] leading-[1.75] text-ink-soft md:text-[17px]">
             Most Bonvoy roundups on Hilton Head read like Marriott&rsquo;s own
-            site with extra steps. This is different. We book at these
-            properties for clients every season — the notes below are which
+            site with extra steps. This is different. The notes below are which
             ones earn the points, which ones earn the cash, and which one you
             should actually pick for your trip. Honest about each tradeoff.
           </p>
@@ -474,7 +474,7 @@ export default async function TopMarriottStaysHiltonHeadPage({
           <p className="mt-4 max-w-[680px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
             Marriott is our default recommendation for Bonvoy-loyal travelers
             and points-collectors. It is not always the best fit. Three
-            scenarios where we steer clients elsewhere:
+            scenarios where we'd look elsewhere:
           </p>
 
           <ol className="mt-10 space-y-7">
@@ -574,6 +574,7 @@ export default async function TopMarriottStaysHiltonHeadPage({
         </section>
 
         {/* Closing CTA */}
+        {tripPlanningEnabled && (
         <section className="mt-20">
           <div className="rounded-3xl border border-ocean-deep/20 bg-ocean-deep/5 px-6 py-10 text-center md:px-12 md:py-14">
             <p className="eyebrow text-coral">Skip the guesswork</p>
@@ -597,6 +598,7 @@ export default async function TopMarriottStaysHiltonHeadPage({
             </div>
           </div>
         </section>
+        )}
 
         {/* Cross-links */}
         <section className="mt-20">
@@ -765,12 +767,14 @@ function PropertyCard({ property: p }: { property: MarriottProperty }) {
           cta="Check Marriott availability →"
           description={`Direct to Marriott.com — Bonvoy points eligible. ${p.neighborhood}.`}
         />
+        {tripPlanningEnabled && (
         <Link
           href={concierge}
           className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 bg-transparent px-5 py-2.5 text-[12px] font-semibold uppercase tracking-widest text-ink transition-all hover:border-coral hover:text-coral"
         >
           Have us book it for you →
         </Link>
+        )}
       </div>
     </article>
   );

@@ -61,7 +61,7 @@ export default function PartnersPage() {
             italic="actually recommend."
           />
           <p className="mt-6 max-w-[640px] text-[17px] leading-[1.7] text-ink-soft md:text-[18px]">
-            Every name on this page is a business we&apos;d point clients
+            Every name on this page is a business we&apos;d point travelers
             toward whether they paid us or not. Our partner program makes that
             relationship formal. We earn a small sponsorship fee, they get
             access to our readers, and our tier-list rankings remain 100%
@@ -140,12 +140,12 @@ export default function PartnersPage() {
               {
                 title: 'Not kickbacks on your trip',
                 body:
-                  'Client fees go one way: from client to us. We don\u2019t take commissions from villa companies or restaurants that affect your rates. Partner fees are separate advertising spend, billed annually, shown publicly.',
+                  'We don\u2019t take commissions from villa companies or restaurants that affect your rates. Partner fees are separate advertising spend, billed annually, shown publicly.',
               },
               {
                 title: 'Not a blanket endorsement',
                 body:
-                  'Being in our partner program means we know the business, not that every product they offer is the right fit for every client. We still recommend selectively.',
+                  'Being in our partner program means we know the business, not that every product they offer is the right fit for every traveler. We still recommend selectively.',
               },
             ].map((item) => (
               <article key={item.title} className="flex flex-col gap-3">

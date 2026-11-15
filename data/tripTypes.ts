@@ -11,6 +11,8 @@
  * for SEO weight instead of burying it under /trip-types/.
  */
 
+import { golfPackagesPageEnabled } from '@/data/features';
+
 import { photos } from './photos';
 import type { AffiliateProgramId } from './affiliateLinks';
 import type { AmazonProductCategoryId } from './amazonProducts';
@@ -101,7 +103,7 @@ export const tripTypes: TripTypeLanding[] = [
       plain: 'Hilton Head golf packages,',
       italic: 'planned by someone who plays here.',
     },
-    seoTitle: 'Hilton Head Golf Packages: Planned by a Local',
+    seoTitle: 'Hilton Head Golf Packages: A Local\u2019s Guide',
     metaDescription:
       'Custom Hilton Head golf trip packages. Harbour Town tee-time priority, Palmetto Dunes three-course mix, villas inside five minutes of first tee.',
     keywords: [
@@ -119,7 +121,7 @@ export const tripTypes: TripTypeLanding[] = [
       {
         title: 'Harbour Town priority',
         body:
-          'Sea Pines Resort villa guests get 120-day Harbour Town tee-time priority. We book villa + course as a package so your group actually lands on the first-tee sheet at RBC Heritage calibre.',
+          'Sea Pines Resort villa guests get 120-day Harbour Town tee-time priority. Book the villa and the course as a package so your group actually lands on the first-tee sheet at RBC Heritage calibre.',
       },
       {
         title: 'Three courses on one plantation',
@@ -149,7 +151,7 @@ export const tripTypes: TripTypeLanding[] = [
     gallery: [
       { ...photos.lighthouse,  caption: 'Harbour Town, just past dusk' },
       { ...photos.golfFairway, caption: 'Cart path, Palmetto Dunes' },
-      { ...photos.villa,       caption: 'A Sea Pines villa we book for golf groups' },
+      { ...photos.villa,       caption: 'A Sea Pines villa that suits golf groups' },
     ],
     blogPostSlug: 'hilton-head-golf-trip',
     relatedStorySlug: 'fall-golf-weekend',
@@ -179,7 +181,7 @@ export const tripTypes: TripTypeLanding[] = [
       plain: 'Hilton Head weddings,',
       italic: 'planned around the guest experience.',
     },
-    seoTitle: 'Hilton Head Wedding Planning: Lodging, Logistics, Guests',
+    seoTitle: 'Hilton Head Weddings: Lodging, Logistics, Guests',
     metaDescription:
       'Hilton Head wedding weekends planned from the local side. Group lodging across 8 to 12 properties, airport shuttles, welcome bags, rehearsal logistics.',
     keywords: [
@@ -268,9 +270,9 @@ export const tripTypes: TripTypeLanding[] = [
           'True-oceanfront (sand-edge patio) runs $7k-$14k a week in peak. Ocean-view (first row inland) runs 40% less and is often the smarter pick for families who do not want a tidepool two steps from the crib.',
       },
       {
-        title: 'Flat fee, not commissions',
+        title: 'Compare the direct rate',
         body:
-          'We charge a flat planning fee. Whatever rate the property gives you is what you pay — no hidden booking commissions on top, no incentive for us to steer you toward a higher-rate stay.',
+          'Whatever rate the management company or resort quotes is what you pay. Check it against the listing-site price for the same dates before you book; the gap is often small, and the direct booking usually has clearer cancellation terms.',
       },
       {
         title: 'The pool problem',
@@ -317,7 +319,7 @@ export const tripTypes: TripTypeLanding[] = [
       plain: 'A Hilton Head family trip,',
       italic: 'without the parent-as-concierge shift.',
     },
-    seoTitle: 'Hilton Head Family Vacation Planner: Villas, Camps, Logistics',
+    seoTitle: 'Hilton Head Family Vacation Guide: Villas, Camps, Logistics',
     metaDescription:
       'Hilton Head family trip planning. Villa picks by age range, kids\u2019 camp intel, dinner reservations that actually welcome children, and a text line when plans change.',
     keywords: [
@@ -334,12 +336,12 @@ export const tripTypes: TripTypeLanding[] = [
       {
         title: 'Villa picked to the age mix',
         body:
-          'Twin toddlers is a different villa search than two teenagers. We match bedrooms, pool depth, distance-to-sand, and whether a sleepwalking four-year-old will end up in the marsh. Real criteria, not vibes.',
+          'Twin toddlers is a different villa search than two teenagers. Match bedrooms, pool depth, distance-to-sand, and whether a sleepwalking four-year-old will end up in the marsh. Real criteria, not vibes.',
       },
       {
         title: 'Camp and activity bookings, months out',
         body:
-          'Palmetto Dunes tennis summer camp fills in mid-February. Sandbox sailing camp sells out in March. The good surf camp has eight spots per session. We book these before the calendar invite hits your inbox.',
+          'Palmetto Dunes tennis summer camp fills in mid-February. Sandbox sailing camp sells out in March. The good surf camp has eight spots per session. Book these before the calendar invite hits your inbox.',
       },
       {
         title: 'Kid-welcoming dinners that are still good',
@@ -419,12 +421,12 @@ export const tripTypes: TripTypeLanding[] = [
       {
         title: 'Easter-week specifics',
         body:
-          'Easter week is consistently the busiest non-summer week. We book it six-plus months out, and the villas left by March are almost always the ones that were not booked for a reason.',
+          'Easter week is consistently the busiest non-summer week. Book it six-plus months out; the villas left by March are almost always the ones that were not booked for a reason.',
       },
       {
         title: 'Weather honestly',
         body:
-          'March has a 30% chance of a three-day Atlantic low. April is drier. Pack rain gear either way and a plan for two-plus rain days (we will send you the indoor list).',
+          'March has a 30% chance of a three-day Atlantic low. April is drier. Pack rain gear either way and a plan for two-plus rain days (keep an indoor list handy).',
       },
     ],
     bestFor: [
@@ -434,7 +436,7 @@ export const tripTypes: TripTypeLanding[] = [
       'First visits where summer would feel overwhelming',
     ],
     tradeoffs:
-      'If you need guaranteed pool weather and 80-plus degrees every day, pick May or later. The Atlantic does not really warm up for swimming until the second week of April. Hotel/villa rates on the tournament week (mid-April) are bad enough that we steer most clients to the week before or after.',
+      'If you need guaranteed pool weather and 80-plus degrees every day, pick May or later. The Atlantic does not really warm up for swimming until the second week of April. Hotel/villa rates on the tournament week (mid-April) are bad enough that most visitors do better with the week before or after.',
     hero: photos.beachMorning,
     gallery: [
       { ...photos.marsh,       caption: 'Marsh in early April' },
@@ -477,7 +479,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head fall trip',
     ],
     hook:
-      'Thanksgiving week on Hilton Head is consistently mid-60s, sometimes 75, the restaurants are open, and a Sea Pines oceanfront villa runs half of what the same unit costs in July. Yet the island runs 40% empty. We build Thanksgiving weeks for roughly twenty families a year and the pattern does not change.',
+      'Thanksgiving week on Hilton Head is consistently mid-60s, sometimes 75, the restaurants are open, and a Sea Pines oceanfront villa runs half of what the same unit costs in July. Yet the island runs 40% empty. The pattern holds year after year.',
     reasons: [
       {
         title: 'Villa rates are halved',
@@ -550,7 +552,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Bluffton couples trip',
     ],
     hook:
-      'Bluffton is eighteen minutes off the north end of Hilton Head and runs at sixty cents on the Hilton Head dollar for lodging. Old Town Bluffton has a denser restaurant pocket per square mile than the island itself. For adult trips, foodie weekends, and multi-night Palmetto Bluff stays, we plan as much Bluffton as we do Hilton Head.',
+      'Bluffton is eighteen minutes off the north end of Hilton Head and runs at sixty cents on the Hilton Head dollar for lodging. Old Town Bluffton has a denser restaurant pocket per square mile than the island itself. For adult trips, foodie weekends, and multi-night Palmetto Bluff stays, plan on as much Bluffton as Hilton Head.',
     reasons: [
       {
         title: 'Sixty cents on the dollar',
@@ -565,12 +567,12 @@ export const tripTypes: TripTypeLanding[] = [
       {
         title: 'Adults-first atmosphere',
         body:
-          'Palmetto Bluff\u2019s vibe is wedding-resort, not family-resort. Old Town Bluffton is a nineteenth-century fishing village with wine bars. We book these for couples, milestone anniversaries, and honeymoons that want Hilton Head nature without the Spring-Break-Central-Ocean-Drive energy.',
+          'Palmetto Bluff\u2019s vibe is wedding-resort, not family-resort. Old Town Bluffton is a nineteenth-century fishing village with wine bars. These suit couples, milestone anniversaries, and honeymoons that want Hilton Head nature without the Spring-Break-Central-Ocean-Drive energy.',
       },
       {
         title: 'Day-tripping to the island',
         body:
-          'You still get the beach: eighteen minutes in the car. We plan the "two days in Bluffton, three days on Hilton Head" split often, usually with the Bluffton nights being the ones you remember at dinner.',
+          'You still get the beach: eighteen minutes in the car. The "two days in Bluffton, three days on Hilton Head" split works well, usually with the Bluffton nights being the ones you remember at dinner.',
       },
     ],
     bestFor: [
@@ -631,7 +633,7 @@ export const tripTypes: TripTypeLanding[] = [
           'From a Harbour Town villa, 18th-hole golf, Quarterdeck sunset, the marina shops, and three restaurants are a five-to-eight-minute walk. Park the car Friday, retrieve it Sunday. That is rare on this island.',
       },
       {
-        title: 'The four buildings we book',
+        title: 'The four buildings worth knowing',
         body:
           'Harbour Town Villas (marina-view), Inn at Harbour Town (hotel-caliber service, villa amenities), Club Cottages (detached, 3-4BR), and select private owners in Heritage Villas. Each solves a different group size.',
       },
@@ -705,17 +707,17 @@ export const tripTypes: TripTypeLanding[] = [
       {
         title: 'Right beach for the right trip',
         body:
-          'Coligny, Alder Lane, Folly Field, Burkes, Fish Haul, and Driessen each have a use case. A 6-year-old learning to boogie-board belongs on Folly Field (calm, shallow). A surfer belongs on Burkes. A couple on a sunrise walk belongs on Fish Haul. We match beach to trip.',
+          'Coligny, Alder Lane, Folly Field, Burkes, Fish Haul, and Driessen each have a use case. A 6-year-old learning to boogie-board belongs on Folly Field (calm, shallow). A surfer belongs on Burkes. A couple on a sunrise walk belongs on Fish Haul. Match the beach to the trip.',
       },
       {
         title: 'Parking and access, honestly',
         body:
-          'Coligny Beach Park has free parking but fills by 9:30 a.m. in July. Every other access charges $1-2/hour via meter or app. Alder Lane has the shortest boardwalk-to-sand on the island. We send clients the exact lot that works for their villa.',
+          'Coligny Beach Park has free parking but fills by 9:30 a.m. in July. Every other access charges $1-2/hour via meter or app. Alder Lane has the shortest boardwalk-to-sand on the island. Check which lot is closest to your villa before you go.',
       },
       {
         title: 'Tide timing changes the whole day',
         body:
-          'Hard-packed low-tide sand is the best biking and running surface on the East Coast. High tide cuts usable beach to 6-8 feet in some stretches. We plan beach days around the tide chart, not the clock.',
+          'Hard-packed low-tide sand is the best biking and running surface on the East Coast. High tide cuts usable beach to 6-8 feet in some stretches. Plan beach days around the tide chart, not the clock.',
       },
       {
         title: 'What the CVB will not tell you',
@@ -752,7 +754,7 @@ export const tripTypes: TripTypeLanding[] = [
       plain: 'A Hilton Head honeymoon,',
       italic: 'planned for two.',
     },
-    seoTitle: 'Hilton Head Honeymoon: Local Planning Guide',
+    seoTitle: 'Hilton Head Honeymoon: A Local\u2019s Guide',
     metaDescription:
       "A local's guide to a Hilton Head honeymoon or couples getaway. S-tier villas, romantic dinners, sunset sails, and the quiet pockets that feel made for two.",
     keywords: [
@@ -766,17 +768,17 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head proposal',
     ],
     hook:
-      "Hilton Head is quietly one of the best couples' trips on the East Coast — and that's the point. Palm-lined beaches you'll have to yourselves at sunrise, Spanish-moss sunsets over Calibogue, twenty miles of bike paths under a live-oak canopy, and a dinner scene that rewards a reservation we've already made for you. We plan honeymoons, anniversaries, and the milestone weekends where the watch comes off at the airport and doesn't go back on until you cross the bridge home.",
+      "Hilton Head is quietly one of the best couples' trips on the East Coast — and that's the point. Palm-lined beaches you'll have to yourselves at sunrise, Spanish-moss sunsets over Calibogue, twenty miles of bike paths under a live-oak canopy, and a dinner scene that rewards a reservation made ahead. It suits honeymoons, anniversaries, and the milestone weekends where the watch comes off at the airport and doesn't go back on until you cross the bridge home.",
     reasons: [
       {
         title: 'The right neighborhood is Shelter Cove or Sea Pines',
         body:
-          'Shelter Cove is marina-centric, quieter, and built for adults. Sea Pines gives you Harbour Town, the lighthouse, and four S-tier restaurants within a mile. Both work; we match the couple to the pocket. See the <a href="/hilton-head/shelter-cove">Shelter Cove guide</a> and <a href="/hilton-head/sea-pines">Sea Pines guide</a>.',
+          'Shelter Cove is marina-centric, quieter, and built for adults. Sea Pines gives you Harbour Town, the lighthouse, and four S-tier restaurants within a mile. Both work; pick the pocket that fits the couple. See the <a href="/hilton-head/shelter-cove">Shelter Cove guide</a> and <a href="/hilton-head/sea-pines">Sea Pines guide</a>.',
       },
       {
         title: 'The dinner sequence matters',
         body:
-          "A four-night honeymoon should run: night 1 casual waterfront (Skull Creek), night 2 fine dining (Michael Anthony's or Red Fish), night 3 Bluffton escape (FARM), night 4 sunset sail with charcuterie. We book the sequence, not just individual dinners.",
+          "A four-night honeymoon should run: night 1 casual waterfront (Skull Creek), night 2 fine dining (Michael Anthony's or Red Fish), night 3 Bluffton escape (FARM), night 4 sunset sail with charcuterie. Book the sequence, not just individual dinners.",
       },
       {
         title: 'Palmetto Bluff is the splurge layer',
@@ -786,7 +788,7 @@ export const tripTypes: TripTypeLanding[] = [
       {
         title: 'The proposal playbook',
         body:
-          "Three proven spots: the 18th-hole deck at Quarterdeck (Harbour Town, sunset), the dune overlook at South Beach (private, quiet), or a sunset sail out of Palmetto Bay Marina. We coordinate the photographer, the reservation, and the after-drink without the surprise leaking.",
+          "Three proven spots: the 18th-hole deck at Quarterdeck (Harbour Town, sunset), the dune overlook at South Beach (private, quiet), or a sunset sail out of Palmetto Bay Marina. Line up the photographer, the reservation, and the after-drink without the surprise leaking.",
       },
     ],
     bestFor: [
@@ -841,7 +843,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head January rental',
     ],
     hook:
-      "Hilton Head November through March is a secret. Days run 55-68°F, nights 40-50°F, rates drop 50-55% below summer, and the island stays just busy enough that restaurants, bike shops, and grocery delivery keep full hours. We plan 30, 60, and 90-day winter stays for snowbirds and remote workers every year. Here is how.",
+      "Hilton Head November through March is a secret. Days run 55-68°F, nights 40-50°F, rates drop 50-55% below summer, and the island stays just busy enough that restaurants, bike shops, and grocery delivery keep full hours. Plenty of snowbirds and remote workers do 30, 60, and 90-day winter stays. Here is how.",
     reasons: [
       {
         title: 'Monthly villa rates run $3-8k',
@@ -916,13 +918,14 @@ export function getRelatedTripTypes(slug: string): TripTypeLanding[] {
   const slugs = TRIP_TYPE_RELATIONS[slug] ?? [];
   return slugs
     .filter((s) => s !== slug)
+    .filter((s) => golfPackagesPageEnabled || s !== 'golf-packages')
     .map((s) => getTripTypeBySlug(s))
     .filter((t): t is TripTypeLanding => !!t);
 }
 
 /**
  * Friendly display name for a trip type. Strips the colon-suffix from
- * the SEO title (e.g., "Hilton Head Golf Packages: Planned by a Local"
+ * the SEO title (e.g., "Hilton Head Golf Packages: A Local\u2019s Guide"
  * -> "Hilton Head Golf Packages").
  */
 export function getTripTypeDisplayName(t: TripTypeLanding): string {

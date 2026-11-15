@@ -41,7 +41,7 @@ I run hiltonahead.com, a local travel-consulting site for Hilton Head Island. I'
 If any of those resonate, I'll send a full outline before writing a word. Either way, appreciate your time.
 
 — Will Griffith
-Hilton Ahead — local travel consulting
+Hilton Ahead — local travel guide
 hiltonahead.com`,
   },
   {

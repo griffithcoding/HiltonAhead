@@ -98,7 +98,6 @@ const CROSS_LINKS = [
   { href: '/hilton-head-tides', label: 'Tide charts' },
   { href: '/hilton-head-winter-rental', label: 'Off-season rentals' },
   { href: '/cost-of-hilton-head-trip', label: 'What a trip costs' },
-  { href: '/itinerary', label: 'Plan a trip with us' },
 ];
 
 export default function HiltonHeadHurricaneSeasonPage() {

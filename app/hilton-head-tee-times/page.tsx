@@ -88,7 +88,6 @@ const FAQS = [
 ];
 
 const CROSS_LINKS = [
-  { href: '/hilton-head-golf-packages', label: 'Golf trip packages' },
   { href: '/local/golf', label: 'All golf courses' },
   { href: '/guides/2027-rbc-heritage', label: '2027 RBC Heritage kit' },
   { href: '/hilton-head/sea-pines', label: 'Sea Pines (Harbour Town)' },

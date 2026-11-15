@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import { brand } from '@/data/brand';
 import { hero } from '@/data/hero';
 import { photos } from '@/data/photos';
@@ -70,6 +71,7 @@ export default function Hero() {
           </div>
 
           <div className="rise rise-delay-4 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:flex-wrap">
+            {tripPlanningEnabled && (
             <Link
               href={brand.cta.bookingPagePath}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral"
@@ -77,6 +79,7 @@ export default function Hero() {
               {hero.primaryCtaLabel}
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
+            )}
             <a
               href={hero.secondaryCta.href}
               className="link-underline inline-flex items-center gap-2 px-2 py-2 text-[12px] font-medium uppercase tracking-[0.22em] text-ink"

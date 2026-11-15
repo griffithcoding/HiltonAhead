@@ -116,7 +116,7 @@ export default function HiltonHeadWeddingInquiryPage() {
             },
             {
               h: 'We’ve worked with all of them',
-              b: 'The photographers know our concierge clients. The venues take our calls. The planners answer the same day.',
+              b: 'The photographers know us. The venues take our calls. The planners answer the same day.',
             },
           ].map(({ h, b }) => (
             <div key={h} className="rounded-2xl border border-rule-soft bg-sand-soft p-5">

@@ -86,7 +86,6 @@ const FAQS = [
 const CROSS_LINKS = [
   { href: '/hilton-head-tee-times', label: 'Book tee times' },
   { href: '/hilton-head-stay-and-play', label: 'Stay & play cost' },
-  { href: '/hilton-head-golf-packages', label: 'Golf trip packages' },
   { href: '/local/golf', label: 'Golf directory' },
   { href: '/guides/2027-rbc-heritage', label: '2027 RBC Heritage kit' },
   { href: '/hilton-head/sea-pines', label: 'Sea Pines (Harbour Town)' },

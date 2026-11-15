@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { tripPlanningEnabled } from '@/data/features';
 import { createClient } from '@/utils/supabase/server';
 import { sendItineraryNotification } from '@/app/lib/email';
 
@@ -48,6 +49,12 @@ function clampStringArray(a: unknown, max: number, itemMax: number): string[] | 
  *      500 if both failed.
  */
 export async function POST(req: NextRequest) {
+  if (!tripPlanningEnabled) {
+    return NextResponse.json(
+      { ok: false, error: 'Itinerary requests are not being accepted right now.' },
+      { status: 503 },
+    );
+  }
   let body: unknown;
   try {
     body = await req.json();

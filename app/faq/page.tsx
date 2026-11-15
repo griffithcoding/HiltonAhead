@@ -12,18 +12,23 @@ import {
 } from '@/app/lib/metadata';
 import { faqAll, faqClusters } from '@/data/faq';
 import { brand } from '@/data/brand';
+import { tripPlanningEnabled } from '@/data/features';
 
 const FAQ_PATH = '/faq';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Travel FAQ — Pricing, Timing, Lodging, Golf',
+  title: tripPlanningEnabled
+    ? 'Hilton Head Travel FAQ — Pricing, Timing, Lodging, Golf'
+    : 'Hilton Head Travel FAQ — Timing, Lodging, Golf, Getting Around',
   description:
-    'Direct answers to the questions travelers ask before booking a Hilton Head trip. Pricing, booking windows, neighborhood differences, golf access, family travel, and how Hilton Ahead works.',
+  tripPlanningEnabled
+    ? 'Direct answers to the questions travelers ask before booking a Hilton Head trip. Pricing, booking windows, neighborhood differences, golf access, family travel, and how Hilton Ahead works.'
+    : 'Direct answers to the questions travelers ask before booking a Hilton Head trip. Booking windows, neighborhood differences, golf access, family travel, and how Hilton Ahead works.',
   path: FAQ_PATH,
   keywords: [
     'Hilton Head FAQ',
     'Hilton Head travel questions',
-    'Hilton Head pricing',
+    tripPlanningEnabled ? 'Hilton Head pricing' : 'Hilton Head trip questions',
     'Hilton Head villa rental questions',
     'Hilton Head golf trip questions',
   ],
@@ -80,8 +85,10 @@ export default function FaqPage() {
           />
 
           <p className="mt-8 max-w-[680px] text-[16px] leading-[1.75] text-ink-soft md:text-[17px]">
-            Thirty answers, no fluff. Pricing, timing, lodging, golf, family
-            travel, comparisons, logistics, and how the service itself works.
+            {faqAll.length} answers, no fluff.{' '}
+            {tripPlanningEnabled
+              ? 'Pricing, timing, lodging, golf, family travel, comparisons, logistics, and how the service itself works.'
+              : 'Timing, lodging, golf, family travel, comparisons, logistics, and about Hilton Ahead.'}
             If your question isn&rsquo;t here, the contact form is the fastest
             way to reach a real person on the island.
           </p>
@@ -155,9 +162,29 @@ export default function FaqPage() {
 
                       <div className="mt-5 grid grid-cols-[auto_1fr] gap-5 pl-0 md:pl-12">
                         <span aria-hidden="true" className="hidden md:block" />
-                        <p className="faq-answer max-w-[680px] text-[15px] leading-[1.75] text-ink-soft">
-                          {item.answer}
-                        </p>
+                        <div>
+                          <p className="faq-answer max-w-[680px] text-[15px] leading-[1.75] text-ink-soft">
+                            {item.answer}
+                          </p>
+                          {item.sources && item.sources.length > 0 && (
+                            <p className="mt-3 max-w-[680px] text-[11px] uppercase leading-[1.8] tracking-[0.18em] text-ink-soft/80">
+                              Sources:{' '}
+                              {item.sources.map((src, i) => (
+                                <span key={src.url}>
+                                  {i > 0 && ', '}
+                                  <a
+                                    href={src.url}
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    className="link-underline"
+                                  >
+                                    {src.label}
+                                  </a>
+                                </span>
+                              ))}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </details>
                   ))}

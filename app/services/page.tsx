@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
@@ -14,6 +15,7 @@ import {
 } from '@/app/lib/metadata';
 import PricingTiers from '@/components/pricing/PricingTiers';
 import { B2C_TIERS } from '@/data/pricing';
+import { consumerProductsEnabled, servicesEnabled } from '@/data/features';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Services: Hilton Head Travel Consulting',
@@ -76,6 +78,9 @@ const SERVICES_FAQ = [
 ];
 
 export default function ServicesPage() {
+  // Switched off in data/features.ts — send visitors and old inbound links home.
+  if (!servicesEnabled) redirect('/');
+
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
@@ -129,7 +134,9 @@ export default function ServicesPage() {
 
         <Divider ornament="compass" className="my-14 text-gold" />
 
-        {/* ——— Pricing tiers (B2C) ——— */}
+        {/* ——— Pricing tiers (B2C) — hidden while data/features.ts switch is off ——— */}
+        {consumerProductsEnabled && (
+        <>
         <section id="pricing" className="scroll-mt-24">
           <SectionHead
             number="№ 02"
@@ -161,9 +168,11 @@ export default function ServicesPage() {
         </section>
 
         <Divider ornament="palmetto" className="my-20 text-gold" />
+        </>
+        )}
 
         <SectionHead
-          number="№ 03"
+          number={consumerProductsEnabled ? '№ 03' : '№ 02'}
           eyebrow="What we actually do"
           plain="The five services,"
           italic="line by line."
@@ -210,7 +219,7 @@ export default function ServicesPage() {
         {/* ——— FAQ ——— */}
         <section className="mt-20">
           <SectionHead
-            number="№ 04"
+            number={consumerProductsEnabled ? '№ 04' : '№ 03'}
             eyebrow="FAQ"
             plain="Questions we"
             italic="hear most."

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import Image from 'next/image';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
@@ -196,6 +197,7 @@ export default function EventsPage() {
         ))}
 
         {/* Closing CTA */}
+        {tripPlanningEnabled && (
         <section className="mx-auto mt-24 max-w-[820px] border-y border-ocean-deep/15 py-12 text-center">
           <div className="eyebrow text-coral">Plan around the calendar</div>
           <h2 className="display mt-4 text-[28px] leading-[1.1] text-ink md:text-[36px]">
@@ -223,6 +225,7 @@ export default function EventsPage() {
             </Link>
           </div>
         </section>
+        )}
       </div>
 
       <FinalCta />

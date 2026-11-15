@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { consumerProductsEnabled } from '@/data/features';
 import { B2C_TIERS, getStripePriceId, type Tier } from '@/data/pricing';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import { brand } from '@/data/brand';
@@ -51,6 +53,8 @@ function MembershipButton({ tier }: { tier: Tier }) {
 }
 
 export default function InsiderClubPage() {
+  if (!consumerProductsEnabled) notFound();
+
   const tiers = B2C_TIERS.filter(
     (t) => t.slug === 'insider-club-monthly' || t.slug === 'insider-club-yearly',
   );

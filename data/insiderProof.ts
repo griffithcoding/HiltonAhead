@@ -1,3 +1,9 @@
+import { tripPlanningEnabled } from './features';
+import { neighborhoods } from './neighborhoods';
+import { posts } from './posts';
+import { stories } from './stories';
+import { allBusinesses } from './localBusinesses';
+
 export const insiderProof = {
   eyebrow: 'Local Expertise',
   heading: {
@@ -6,12 +12,19 @@ export const insiderProof = {
   },
   subheading:
     'Not a call center in another state. Not a booking engine. A person who drove past that villa this morning.',
-  stats: [
-    { label: 'Years on island', value: '6' },
-    { label: 'Trips advised', value: '255+' },
-    { label: 'Partner properties', value: '63' },
-    { label: 'Avg. client savings vs. retail', value: '11%' },
-  ],
+  stats: tripPlanningEnabled
+    ? [
+        { label: 'Years on island', value: '6' },
+        { label: 'Trips advised', value: '255+' },
+        { label: 'Partner properties', value: '63' },
+        { label: 'Avg. client savings vs. retail', value: '11%' },
+      ]
+    : [
+        { label: 'Years on island', value: '6' },
+        { label: 'Neighborhood guides', value: String(neighborhoods.length) },
+        { label: 'Local guides & stories', value: String(posts.length + stories.length) },
+        { label: 'Local businesses listed', value: String(allBusinesses.length) },
+      ],
   /**
    * `slug` matches an entry in `data/neighborhoods.ts` — every card on the
    * homepage links to `/hilton-head/${slug}` so the photo wall is a real

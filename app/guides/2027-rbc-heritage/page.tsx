@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { consumerProductsEnabled, servicesEnabled, tripPlanningEnabled } from '@/data/features';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import NewsletterSignup from '@/components/NewsletterSignup';
@@ -47,7 +48,7 @@ const KIT_INCLUDES: Array<{ title: string; blurb: string }> = [
   {
     title: 'Dinner reservations 60 days out',
     blurb:
-      'The week sells out 6–8 weeks ahead. The 12 restaurants we book first, in priority order, with the names of the managers who hold tables for us.',
+      'The week sells out 6–8 weeks ahead. The 12 restaurants to book first, in priority order, with the names of the managers who hold tables.',
   },
   {
     title: 'Tee times around the tournament',
@@ -157,8 +158,8 @@ export default function Heritage2027KitPage() {
               piece.
             </p>
             <p className="mt-4 text-[15px] leading-[1.7] text-ink-soft">
-              The kit is the playbook we use ourselves with concierge
-              clients. Free for newsletter subscribers because the people
+              The kit is the playbook we use ourselves. Free for newsletter
+              subscribers because the people
               we want to help most are the ones planning their first or
               second Heritage trip.
             </p>
@@ -167,7 +168,7 @@ export default function Heritage2027KitPage() {
                 Built by
               </div>
               <p className="mt-2 text-[14px] leading-[1.6] text-ink">
-                Hilton Ahead &mdash; a one-person concierge run by a Hilton
+                Hilton Ahead &mdash; a one-person travel guide run by a Hilton
                 Head local who&rsquo;s walked Harbour Town since the early
                 &rsquo;90s.{' '}
                 <Link
@@ -224,7 +225,8 @@ export default function Heritage2027KitPage() {
             />
           </div>
 
-          {/* VIP Kit pre-order — paid version of the free kit. */}
+          {/* VIP Kit pre-order — paid version of the free kit. Hidden while data/features.ts switch is off. */}
+          {consumerProductsEnabled && (
           <div className="mt-8 rounded-2xl border-2 border-gold/40 bg-gold/5 p-6 md:p-8">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:gap-10">
               <div>
@@ -260,28 +262,35 @@ export default function Heritage2027KitPage() {
               </div>
             </div>
           </div>
+          )}
         </section>
 
         <Divider ornament="compass" className="my-20 text-gold" />
 
         {/* ========== UPSELL FOOTER ========== */}
         <section className="mb-20">
+          {tripPlanningEnabled && (
           <SectionHead
             number="No 02"
             eyebrow="Want it done for you"
             plain="Heritage week,"
             italic="planned end-to-end."
           />
+          )}
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:gap-16">
+            {tripPlanningEnabled && (
             <div>
               <p className="text-[16px] leading-[1.75] text-ink-soft md:text-[17px]">
                 The kit is everything we know, free. If you&rsquo;d rather
                 not run the playbook yourself &mdash; if you want tickets,
                 lodging, dinner reservations, transportation, and tee times
                 all booked for you, with one local on call &mdash; that&rsquo;s
-                the concierge service. It runs $495 (Charter) or as a
-                custom Heritage-week build for groups of six or more.
+                the concierge service. It&rsquo;s available as{' '}
+                {consumerProductsEnabled
+                  ? 'the Charter tier or as a custom Heritage-week build'
+                  : 'a custom Heritage-week build'}{' '}
+                for groups of six or more — quoted up front either way.
               </p>
               <p className="mt-5 text-[16px] leading-[1.75] text-ink-soft md:text-[17px]">
                 The kit pays for itself in dinner reservations alone.
@@ -302,14 +311,17 @@ export default function Heritage2027KitPage() {
                     &rarr;
                   </span>
                 </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 rounded-full border border-ink/30 px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition hover:border-ink hover:bg-ink hover:text-cream"
-                >
-                  Compare services
-                </Link>
+                {servicesEnabled && (
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-2 rounded-full border border-ink/30 px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition hover:border-ink hover:bg-ink hover:text-cream"
+                  >
+                    Compare services
+                  </Link>
+                )}
               </div>
             </div>
+            )}
 
             <aside className="rounded-2xl border border-ink/10 bg-cream/60 p-7">
               <div className="eyebrow text-sunset">FYI</div>

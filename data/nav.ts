@@ -1,3 +1,5 @@
+import { servicesEnabled } from '@/data/features';
+
 type NavChild = {
   readonly href: string;
   readonly label: string;
@@ -14,8 +16,18 @@ type Nav = {
   readonly statusPill: { readonly label: string };
 };
 
-export const nav: Nav = {
+const baseNav: Nav = {
   links: [
+    {
+      href: '/about',
+      label: 'About',
+      children: [
+        { href: '/founder', label: 'Founder' },
+        { href: '/press', label: 'Press' },
+        { href: '/partners', label: 'Partners' },
+        { href: '/sponsorships', label: 'Partner With Us' },
+      ],
+    },
     {
       href: '/services',
       label: 'Services',
@@ -69,17 +81,14 @@ export const nav: Nav = {
         { href: '/local/get-featured', label: 'Feature Your Business' },
       ],
     },
-    {
-      href: '/about',
-      label: 'About',
-      children: [
-        { href: '/founder', label: 'Founder' },
-        { href: '/press', label: 'Press' },
-        { href: '/partners', label: 'Partners' },
-        { href: '/sponsorships', label: 'Partner With Us' },
-      ],
-    },
     { href: '/contact', label: 'Contact' },
   ],
   statusPill: { label: 'Booking Summer 2026' },
+};
+
+// The "Services" category (and its dropdown, which also held Packing List and
+// Request Itinerary) is hidden while servicesEnabled is false (data/features.ts).
+export const nav: Nav = {
+  ...baseNav,
+  links: baseNav.links.filter((l) => servicesEnabled || l.href !== '/services'),
 };

@@ -6,7 +6,7 @@ export const hero = {
     cadence: 'Spring 2026',
   },
   /** Eyebrow shown just above the display headline. */
-  eyebrow: 'Travel Consulting · Planned by a Local',
+  eyebrow: 'Independent Travel Guide · Written by a Local',
   /** Display headline. `italic` is rendered in an italic serif cut. */
   title: {
     lineOne: 'The Hilton Head',
@@ -15,7 +15,7 @@ export const hero = {
   },
   /** Classic magazine lede — long-ish, warm, confident. */
   lede:
-    "The island is twelve miles long and you have seven days. Somewhere in there is the villa with the porch facing the right way, the 7 p.m. table at Skull Creek (the one that was somehow fully booked when you called), and the tee time at Harbour Town that opens up two Tuesdays before your trip if you know to ask. We plan it the way we plan it for family — every reservation, every drive time, every quiet half-hour — and hand it to you. You arrive barefoot by Tuesday.",
+    "The island is twelve miles long and you have seven days. Somewhere in there is the villa with the porch facing the right way, the 7 p.m. table at Skull Creek (the one that was somehow fully booked when you called), and the tee time at Harbour Town that opens up two Tuesdays before your trip if you know to ask. This site lays it out the way we would for family — every reservation, every drive time, every quiet half-hour.",
   primaryCtaLabel: 'Plan my trip',
   secondaryCta: {
     href: '#why-hilton-head',
@@ -29,7 +29,7 @@ export const hero = {
   },
   /** Trust signals beneath the lede, tightly kerned and small-caps. */
   proofLine: [
-    '255+ trips advised',
+    'Written by a Hilton Head resident',
     'Locally based, Hilton Head Island',
   ],
 } as const;

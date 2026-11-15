@@ -77,7 +77,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       {
         title: 'Built for repeat visitors',
         body:
-          'We walk South Beach Lane villas in person before recommending them, and Sea Pines resort guests get 120-day Harbour Town tee-time priority we plan around.',
+          'We walk South Beach Lane villas in person before recommending them, and Sea Pines resort guests get 120-day Harbour Town tee-time priority, so plan around it.',
       },
       {
         title: 'Sunset nobody else gets',
@@ -92,7 +92,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       'Anniversaries & proposals',
     ],
     tradeoffs:
-      'You\u2019ll pay a premium for the address. The entrance gate backs up 10 a.m. to 12 p.m. in summer. And the best dinners are actually outside the plantation gates (we plan around this).',
+      'You\u2019ll pay a premium for the address. The entrance gate backs up 10 a.m. to 12 p.m. in summer. And the best dinners are actually outside the plantation gates (plan around this).',
     properties: [
       { name: 'The Inn & Club at Harbour Town', note: 'Golf-first hotel; walk to first tee' },
       { name: 'South Beach Lane villas (private)', note: 'Walkable villas, 90 sec to sand' },
@@ -104,7 +104,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
       { ...photos.lighthouse,  caption: 'Harbour Town · 7 p.m.' },
       { ...photos.mossOak,     caption: 'Forest preserve, interior' },
       { ...photos.bikePath,    caption: '17 mi of bike path' },
-      { ...photos.villa,       caption: 'A Sea Pines villa we book' },
+      { ...photos.villa,       caption: 'A Sea Pines villa' },
     ],
     blogPostSlug: 'sea-pines-guide',
   },
@@ -168,7 +168,7 @@ export const neighborhoods: NeighborhoodLanding[] = [
     gallery: [
       { ...photos.lagoonAerial, caption: '11 miles of resort lagoon' },
       { ...photos.marsh,        caption: 'Broad Creek, morning' },
-      { ...photos.villa,        caption: 'A villa we book' },
+      { ...photos.villa,        caption: 'A villa on the lagoon' },
       { ...photos.hammock,      caption: 'Between rounds' },
     ],
     blogPostSlug: 'palmetto-dunes-guide',

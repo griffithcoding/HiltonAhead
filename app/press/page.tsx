@@ -148,13 +148,13 @@ export default function PressPage() {
             </li>
             <li>
               <strong className="text-ink">Founder:</strong> William
-              Griffith — Hilton Head Island resident, 255+ trips
-              advised.
+              Griffith — Hilton Head Island resident since the
+              early &rsquo;90s.
             </li>
             <li>
-              <strong className="text-ink">Specialties:</strong> custom
-              itineraries, villa booking, on-island concierge, dining and
-              tee-time reservations, golf and wedding travel.
+              <strong className="text-ink">Specialties:</strong> Hilton
+              Head villas and resorts, dining, golf and tee times, beaches,
+              weddings and group travel.
             </li>
             <li>
               <strong className="text-ink">Coverage:</strong> Hilton Head

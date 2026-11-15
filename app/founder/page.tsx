@@ -64,9 +64,9 @@ export default function FounderPage() {
 
         <div className="mt-14 max-w-[680px]">
           <p className="dropcap text-[17px] leading-[1.75] text-ink-soft md:text-[18px]">
-            William Griffith is the founder of Hilton Ahead, a travel
-            consultancy specializing in advising travelers to experience
-            Hilton Head to the fullest. I live on Hilton Head Island
+            William Griffith is the founder of Hilton Ahead, an independent
+            travel guide to Hilton Head, written to help travelers
+            experience the island to the fullest. I live on Hilton Head Island
             full-time, drive past the villas before I recommend them, and
             keep a working list of which restaurants will hold a seven
             o&rsquo;clock table for somebody I vouch for. The point of this
@@ -90,23 +90,7 @@ export default function FounderPage() {
             yourself, you name it. There is just no way to know which Sea
             Pines bike path floods after an August storm or which Skull
             Creek table catches the last ten minutes of sunset in late
-            July. I plan one trip at a time, by hand, for people who&rsquo;d
-            rather text a local than book through a 1-800 number found an
-            hour into visiting a third-party site. If that&rsquo;s you, the
-            form on the{' '}
-            <Link
-              href="/contact"
-              className="link-underline text-ink hover:text-sunset"
-            >
-              contact page
-            </Link>{' '}
-            comes straight to me.
-          </p>
-
-          <p className="mt-6 text-[15px] leading-[1.75] text-ink-soft md:text-[16px]">
-            I work with all kinds of groups &mdash; golf outings, wedding
-            planning, long weekends to see the Salty Dog Cafe after
-            exploring Harbour Town, whichever. Let&rsquo;s go!
+            July.
           </p>
 
           <Divider ornament="palmetto" className="my-12 text-gold" />

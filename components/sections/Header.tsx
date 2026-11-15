@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { tripPlanningEnabled } from '@/data/features';
 import { brand } from '@/data/brand';
 import { nav } from '@/data/nav';
 import { hero } from '@/data/hero';
@@ -38,7 +39,7 @@ export default function Header() {
             {brand.name}
           </span>
           <span className="eyebrow mt-1.5 hidden text-ink-soft sm:block">
-            Travel Consulting · Hilton Head Island
+            Independent travel guide · Hilton Head Island
           </span>
         </Link>
 
@@ -92,6 +93,7 @@ export default function Header() {
           )}
           <AdminNavLink />
           <SearchBar />
+          {tripPlanningEnabled && (
           <Link
             href={brand.cta.bookingPagePath}
             className="group inline-flex items-center gap-2 rounded-full border border-ocean-mid bg-ocean-mid px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-ink transition hover:bg-ocean-deep hover:border-ocean-deep hover:text-cream"
@@ -104,6 +106,7 @@ export default function Header() {
               →
             </span>
           </Link>
+          )}
         </nav>
 
         {/* Mobile hamburger (md:hidden, owned by the component) */}

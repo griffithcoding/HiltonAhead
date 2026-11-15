@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import LeadInquiryForm, { type LeadField } from '@/components/leads/LeadInquiryForm';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import { brand } from '@/data/brand';
@@ -132,16 +131,6 @@ export default function MoveToHiltonHeadPage() {
           />
         </div>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-[12px] leading-relaxed text-ink-soft/80">
-          Just visiting?{' '}
-          <Link href="/itinerary" className="underline hover:text-ink">
-            Plan a trip first →
-          </Link>{' '}
-          · Already an owner?{' '}
-          <Link href="/sell-or-rent-your-villa" className="underline hover:text-ink">
-            Selling or renting →
-          </Link>
-        </p>
       </section>
 
       <section className="border-t border-rule-soft bg-sand-soft/40 px-5 py-12 md:py-16">

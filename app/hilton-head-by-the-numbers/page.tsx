@@ -168,7 +168,7 @@ export default function ByTheNumbersPage() {
               physical and demographic claims. Resort and PGA Tour sources are
               cited for golf-specific data. Numbers attributed to{' '}
               <em>Hilton Ahead Travel Co.</em> are derived from the firm&apos;s own
-              market research and client data, 2024–2026. Updated{' '}
+              market research and local data, 2024–2026. Updated{' '}
               {new Date(UPDATED_AT).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',

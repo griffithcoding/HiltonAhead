@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 import { brand } from '@/data/brand'
 
-export const alt = `${brand.name} — Hilton Head Travel Consulting`
+export const alt = `${brand.name} — Hilton Head Travel Guide`
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -45,7 +45,7 @@ export default function OgImage() {
               {brand.name.toUpperCase()}
             </div>
             <div style={{ fontSize: '18px', color: '#a1a1aa', marginTop: '4px' }}>
-              Hilton Head Travel · Planned by a Local
+              Hilton Head Travel Guide · Written by a Local
             </div>
           </div>
         </div>

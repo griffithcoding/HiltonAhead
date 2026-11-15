@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import CalendlyButton from '@/components/CalendlyButton';
+import { tripPlanningEnabled } from '@/data/features';
 import { brand } from '@/data/brand';
 import { photos } from '@/data/photos';
 import { SectionHead } from '@/components/ui/Ornament';
@@ -19,14 +20,10 @@ export const metadata: Metadata = generatePageMetadata({
     'Get in touch with Hilton Ahead. Based on Hilton Head Island, SC. We respond within one business day.',
   path: '/contact',
   keywords: [
-    'contact Hilton Head travel consultant',
-    'Hilton Head travel agent contact',
-    'Hilton Head itinerary request',
-    'Hilton Head travel planner contact',
-    'Hilton Head vacation planning help',
-    'Hilton Head concierge contact',
-    'book a Hilton Head trip',
-    'Hilton Head trip quote',
+    'contact Hilton Ahead',
+    'Hilton Head travel guide contact',
+    'Hilton Head local travel tips',
+    'Hilton Head travel questions',
   ],
 });
 
@@ -56,21 +53,20 @@ export default function ContactPage() {
             as="h1"
             number="№ 01"
             eyebrow="Contact"
-            plain="Let's talk about"
-            italic="your trip."
+            plain="Get in"
+            italic="touch."
           />
         </section>
 
         <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-20">
           <div>
             <p className="dropcap max-w-[560px] text-[17px] leading-[1.7] text-ink-soft md:text-[18px]">
-              The fastest way to get a quote is to fill out the itinerary
-              request form. It takes about three minutes and gives us what we
-              need to come back with a real plan. For everything else, email
-              works.
+              Corrections, questions, partnership ideas, or a local business
+              you think belongs in the directory: email works best.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-5">
+              {tripPlanningEnabled && (
               <Link
                 href={brand.cta.bookingPagePath}
                 className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream transition hover:bg-sunset"
@@ -83,12 +79,15 @@ export default function ContactPage() {
                   →
                 </span>
               </Link>
+              )}
+              {tripPlanningEnabled && (
               <CalendlyButton
                 url={brand.scheduling.calendly.url}
                 variant="outline"
               >
                 Book a call
               </CalendlyButton>
+              )}
               {brand.contact.email ? (
                 <a
                   href={`mailto:${brand.contact.email}`}

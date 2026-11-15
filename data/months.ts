@@ -84,10 +84,10 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Hard freezes happen 1-3 nights per month',
     ],
     headline: 'The cheapest, quietest month on Hilton Head.',
-    intro: "January is when Hilton Head exhales. Rates bottom at 40-45% of July peak, the bike paths are cool and dry, and the only crowds are at the four or five restaurants that locals frequent year-round. It is the month we book most of our snowbird long-stays.",
+    intro: "January is when Hilton Head exhales. Rates bottom at 40-45% of July peak, the bike paths are cool and dry, and the only crowds are at the four or five restaurants that locals frequent year-round. It is the month most snowbird long-stays begin.",
     whatItFeelsLike: "Days run sunny and cool, averaging 58°F with frequent 65°F afternoons. Mornings start at 41°F (warm jacket weather) and ease into shorts-and-sweater range by 11 a.m. Skies are clear about two-thirds of days. The Atlantic is too cold to swim at 55°F, but the beach itself is wide and empty, the hard-packed sand at low tide stretches for miles, and you will share it with two or three other people.",
-    recommendation: "Yes, if you want a quiet escape from a colder Northeast or Midwest winter and you can amortize the travel over at least a week. No, if you need pool weather or ocean swimming. Most snowbirds we book stay 30 days; a handful do 60 or 90.",
-    whatsOpen: "All 12+ golf courses, all major restaurants (3-4 close one night a week, usually Monday), the Coastal Discovery Museum, all bike rentals, kayak tours (the 7 a.m. slot is genuinely spectacular in winter mist), Pinckney Island, the Sea Pines Forest Preserve, and every grocery and pharmacy. Surf school is closed until May; one or two of the six sunset-sail operators reduce hours.",
+    recommendation: "Yes, if you want a quiet escape from a colder Northeast or Midwest winter and you can amortize the travel over at least a week. No, if you need pool weather or ocean swimming. Most snowbirds stay 30 days; a handful do 60 or 90.",
+    whatsOpen: "The island\u2019s golf courses, all major restaurants (3-4 close one night a week, usually Monday), the Coastal Discovery Museum, all bike rentals, kayak tours (the 7 a.m. slot is genuinely spectacular in winter mist), Pinckney Island, the Sea Pines Forest Preserve, and every grocery and pharmacy. Surf school is closed until May; one or two of the six sunset-sail operators reduce hours.",
     packing: "Jeans, long-sleeve tees, a real sweater, a windbreaker for the beach walk, waterproof shoes, one dinner-out outfit. A swimsuit is optional (villa hot tubs only). Skip the flip-flops; pack closed-toe shoes for cool mornings.",
     bestActivities: [
       'Long bike rides on the hard-packed beach at low tide',
@@ -113,7 +113,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'What is open on Hilton Head in January?',
-        a: 'Almost everything year-round operations. All major restaurants (a few close one night/week), all 12+ golf courses, bike rentals, kayak tours, the Coastal Discovery Museum, gyms, and groceries. Seasonal items like surf school resume in May.',
+        a: 'Almost everything year-round operations. All major restaurants (a few close one night/week), the island\u2019s golf courses, bike rentals, kayak tours, the Coastal Discovery Museum, gyms, and groceries. Seasonal items like surf school resume in May.',
       },
     ],
   },
@@ -145,7 +145,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
     intro: "February is January with a sweater traded for a long-sleeve tee. Average high climbs to 61°F, the daylight stretches another 35 minutes, and the island starts visibly waking up. Course conditioning improves week over week as overseeding sets and dew-set greens firm up.",
     whatItFeelsLike: "Mornings still start cool (43°F average low), afternoons feel genuinely mild, and the sun-to-cloud ratio is better than January. Wind off the water can be sharp on overcast days. Locals call this “porch weather” — the days you sit outside with coffee and a book without quite needing a heater.",
     recommendation: "Yes for couples, snowbirds, and golfers willing to layer up at the 7 a.m. tee time. The Valentine’s week (Feb 12-16) sees a real bump in couples’ traffic; book by January if that is your target window. Off-Valentine’s, February is January cheap with February light.",
-    whatsOpen: "Same as January — all 12+ golf courses, all major restaurants (3-4 still close one night/week), bike rentals, kayak tours, Coastal Discovery Museum, gyms, groceries. Whale-watching charters out of Savannah become available late month as the right-whale migration passes offshore.",
+    whatsOpen: "Same as January — the island\u2019s golf courses, all major restaurants (3-4 still close one night/week), bike rentals, kayak tours, Coastal Discovery Museum, gyms, groceries. Whale-watching charters out of Savannah become available late month as the right-whale migration passes offshore.",
     packing: "Layers. Long-sleeve tees, a quarter-zip, a windbreaker, jeans. Add one dressier outfit for Valentine’s dinner if applicable. A swimsuit is still mostly optional.",
     bestActivities: [
       "Valentine's dinner at Michael Anthony's, Red Fish, or May River Grill",
@@ -167,7 +167,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'Can you golf on Hilton Head in February?',
-        a: 'Yes. All 12+ courses are open, green fees run 30-40% below summer, and conditioning steadily improves through the month. Mornings can be cold (40s) so a 9 or 10 a.m. tee time is more comfortable than a sunrise round.',
+        a: 'Yes. The island\u2019s courses are open, green fees run 30-40% below summer, and conditioning steadily improves through the month. Mornings can be cold (40s) so a 9 or 10 a.m. tee time is more comfortable than a sunrise round.',
       },
       {
         q: 'Are restaurants busy in February?',
@@ -432,7 +432,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Coligny gridlock on weekends',
     ],
     headline: 'The hottest month, the warmest water, the highest rates.',
-    intro: "July is Hilton Head at full volume. Average high 90°F, water 84°F, and humidity that turns the morning bike ride into a sauna by 9 a.m. It’s also the most expensive month and the only week most school-calendar families can travel. We book it heavily.",
+    intro: "July is Hilton Head at full volume. Average high 90°F, water 84°F, and humidity that turns the morning bike ride into a sauna by 9 a.m. It’s also the most expensive month and the only week most school-calendar families can travel.",
     whatItFeelsLike: "Genuinely tropical. Mornings start steamy. Afternoons require either AC or saltwater. The 3-5 p.m. thunderstorm is a daily ritual — plan for it, embrace it, watch from the screened porch with a beer. Evenings stay warm (75°F+) and the daylight runs until past 8:30.",
     recommendation: "Yes if July is your only family window. Book 6 months ahead for oceanfront, 4 months for resorts. Avoid July 4th week (peak-on-peak; rates lift another 20% on top of already-peak July). The first or last week of July are slightly easier on inventory.",
     whatsOpen: "Everything, all hours, full staffing. The Sea Pines trolley runs every 10 minutes. Restaurants run two seatings. Charters depart hourly. Bike shops can run out of inventory by 9 a.m. on weekends.",
@@ -457,7 +457,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'Is July 4th worth it on Hilton Head?',
-        a: "Skull Creek's fireworks show is excellent. The crowds and traffic around it are not. We generally steer clients to the week before or after July 4th for the same beach experience without the gridlock. If you must be here for the Fourth, stay walkable from your destination and don't move the car.",
+        a: "Skull Creek's fireworks show is excellent. The crowds and traffic around it are not. The week before or after July 4th gives you the same beach experience without the gridlock. If you must be here for the Fourth, stay walkable from your destination and don't move the car.",
       },
       {
         q: 'How much does a July week on Hilton Head cost?',
@@ -548,7 +548,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Trip insurance recommended',
     ],
     headline: 'After Labor Day, the island empties. Water is still 80°F.',
-    intro: "September is the most underrated month on the Hilton Head calendar. The first week is still peak (Labor Day weekend caps the summer crush), but from week 2 onward, families are back at school, the beaches go quiet, and the water stays at 80°F well into October. We book this window heavily for couples and empty-nesters.",
+    intro: "September is the most underrated month on the Hilton Head calendar. The first week is still peak (Labor Day weekend caps the summer crush), but from week 2 onward, families are back at school, the beaches go quiet, and the water stays at 80°F well into October. It is a favorite window for couples and empty-nesters.",
     whatItFeelsLike: "Late summer with the lid coming off. Mornings begin to cool slightly. Beaches become genuinely empty after Labor Day (Sept 7, 2026). Locals come out of their air conditioning. The long-season businesses start to relax. Hurricane forecasts dominate the local news but actual storm impacts on the island are rare.",
     recommendation: "Strongly yes for couples and adults-only trips after Sept 8. The combination of warm water, empty beaches, and 30% off summer pricing is genuinely the best deal on the calendar before October. Hurricane risk is real but historically low; trip insurance is worth the 5-7% premium.",
     whatsOpen: "Everything year-round operations. Surf school and a couple of sunset-sail operators reduce schedule mid-month. Restaurants stay full. Golf shifts to peak shoulder-season conditions; conditioning improves week over week through the month.",

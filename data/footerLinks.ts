@@ -1,6 +1,8 @@
-export const footerLinks = {
+import { consumerProductsEnabled, servicesEnabled, tripPlanningEnabled } from '@/data/features';
+
+const baseFooterLinks = {
   tagline:
-    'Local-run travel consulting for Hilton Head Island. Villas, tee times, reservations, on-island concierge.',
+    'An independent, locally-run travel guide to Hilton Head Island. Villas, golf, dining, beaches.',
   locationTagline: 'Made on Hilton Head Island, SC',
   columns: [
     {
@@ -20,7 +22,6 @@ export const footerLinks = {
         { href: '/guides/2027-rbc-heritage', label: '2027 Heritage Kit (free)' },
         { href: '/hilton-head-honeymoon', label: 'Honeymoon' },
         { href: '/hilton-head-weddings', label: 'Weddings' },
-        { href: '/hilton-head-golf-packages', label: 'Golf Packages' },
         { href: '/hilton-head-tee-times', label: 'Tee Times' },
         { href: '/hilton-head-golf-courses', label: 'Golf Courses' },
         { href: '/hilton-head-stay-and-play', label: 'Stay & Play' },
@@ -86,7 +87,6 @@ export const footerLinks = {
       label: 'Living Here',
       links: [
         { href: '/move-to-hilton-head', label: 'Moving to Hilton Head' },
-        { href: '/sell-or-rent-your-villa', label: 'Sell or Rent Your Villa' },
         { href: '/hilton-head-wedding-inquiry', label: 'Wedding Inquiry' },
       ],
     },
@@ -121,3 +121,27 @@ export const footerLinks = {
     },
   ],
 } as const;
+
+interface FooterLink {
+  href: string;
+  label: string;
+}
+interface FooterColumn {
+  label: string;
+  links: readonly FooterLink[];
+}
+
+// Consumer-product links (Insider Club, Itinerary Packs) are hidden while
+// consumerProductsEnabled is false (data/features.ts).
+const hiddenFooterHrefs = ['/insider-club', '/itinerary-packs/'];
+const isHidden = (l: FooterLink) =>
+  (!consumerProductsEnabled && hiddenFooterHrefs.some((h) => l.href.startsWith(h))) ||
+  (!tripPlanningEnabled && l.href === '/itinerary');
+
+const footerColumns: FooterColumn[] = (baseFooterLinks.columns as readonly FooterColumn[])
+  .map((col) => ({ ...col, links: col.links.filter((l) => !isHidden(l)) }))
+  .filter((col) => col.links.length > 0)
+  // Whole "Services" column hidden while servicesEnabled is false.
+  .filter((col) => servicesEnabled || col.label !== 'Services');
+
+export const footerLinks = { ...baseFooterLinks, columns: footerColumns };

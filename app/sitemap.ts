@@ -9,6 +9,13 @@ import { months } from '@/data/months'
 import { industries } from '@/data/localBusinesses'
 import { COMPARISONS } from '@/data/comparisons'
 import { itineraryPacks } from '@/data/itineraryPacks'
+import {
+  consumerProductsEnabled,
+  servicesEnabled,
+  tripPlanningEnabled,
+  sellOrRentPageEnabled,
+  golfPackagesPageEnabled,
+} from '@/data/features'
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
 
@@ -61,7 +68,12 @@ const STATIC_ROUTES: ReadonlyArray<{
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((r) => ({
+  const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.filter(
+    (r) =>
+      (servicesEnabled || r.path !== '/services') &&
+      (tripPlanningEnabled || r.path !== '/itinerary') &&
+      (sellOrRentPageEnabled || r.path !== '/sell-or-rent-your-villa'),
+  ).map((r) => ({
     url: `${BASE_URL}${r.path === '/' ? '' : r.path}`,
     lastModified: now,
     changeFrequency: r.changeFrequency,
@@ -87,7 +99,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.95, // high — these are conversion-focused SEO landing pages
   }))
 
-  const tripTypeEntries: MetadataRoute.Sitemap = tripTypes.map((t) => ({
+  const tripTypeEntries: MetadataRoute.Sitemap = tripTypes
+    .filter((t) => golfPackagesPageEnabled || t.slug !== 'golf-packages')
+    .map((t) => ({
     url: `${BASE_URL}${t.path}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
@@ -111,12 +125,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  const serviceEntries: MetadataRoute.Sitemap = services.items.map((s) => ({
-    url: `${BASE_URL}/services#${s.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  const serviceEntries: MetadataRoute.Sitemap = servicesEnabled
+    ? services.items.map((s) => ({
+        url: `${BASE_URL}/services#${s.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      }))
+    : []
 
   // Local business directory
   const localIndexEntry: MetadataRoute.Sitemap = [
@@ -146,12 +162,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Paid digital products — the $49 itinerary packs. Direct-revenue pages
   // that were previously absent from the sitemap and thus under-indexed.
-  const itineraryPackEntries: MetadataRoute.Sitemap = itineraryPacks.map((p) => ({
-    url: `${BASE_URL}/itinerary-packs/${p.urlSlug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.85,
-  }))
+  // Omitted while consumer products are switched off (data/features.ts).
+  const itineraryPackEntries: MetadataRoute.Sitemap = consumerProductsEnabled
+    ? itineraryPacks.map((p) => ({
+        url: `${BASE_URL}/itinerary-packs/${p.urlSlug}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.85,
+      }))
+    : []
 
   return [
     ...staticEntries,

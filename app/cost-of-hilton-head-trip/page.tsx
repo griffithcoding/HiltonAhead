@@ -7,6 +7,7 @@ import AffiliateCard from '@/components/affiliate/AffiliateCard';
 import AffiliateDisclosure from '@/components/affiliate/AffiliateDisclosure';
 import { SectionHead, Divider } from '@/components/ui/Ornament';
 import CostCalculator from '@/components/cost/CostCalculator';
+import { servicesEnabled } from '@/data/features';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
@@ -79,7 +80,7 @@ const FAQS = [
 export default function CostOfHiltonHeadTripPage() {
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
-    { name: 'Trip planning', path: '/services' },
+    ...(servicesEnabled ? [{ name: 'Trip planning', path: '/services' }] : []),
     { name: 'Cost of a trip', path: '/cost-of-hilton-head-trip' },
   ]);
   const faqSchema = getFaqSchema(FAQS);
@@ -136,7 +137,7 @@ export default function CostOfHiltonHeadTripPage() {
             Most Hilton Head cost articles bury you in average daily rates
             from listing sites that aren&rsquo;t what most travelers
             actually pay. This is different. Below is a working calculator
-            built on real partner-property rates we book against, with the
+            built on real rate data, with the
             full math shown — pick the inputs that match your trip and you
             get a realistic range in seconds.
           </p>
@@ -259,8 +260,8 @@ export default function CostOfHiltonHeadTripPage() {
           </h2>
           <p className="mt-4 max-w-[680px] text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
             Without compromising the trip. These are the moves we
-            recommend on consulting calls when clients ask &ldquo;how do
-            we do this for less&rdquo;.
+            recommend to anyone asking &ldquo;how do we do this for
+            less&rdquo;.
           </p>
 
           <ol className="mt-8 space-y-6">
@@ -331,7 +332,6 @@ export default function CostOfHiltonHeadTripPage() {
             {[
               { href: '/hilton-head-oceanfront-villas', label: 'Oceanfront villa picks' },
               { href: '/hilton-head-family-trip-planner', label: 'Family trip planning' },
-              { href: '/hilton-head-golf-packages', label: 'Golf trip packages' },
               { href: '/southwest-airlines-to-hilton-head', label: 'Flying Southwest to HHI' },
               { href: '/hilton-head-weather', label: 'Weather by month' },
               { href: '/hilton-head/sea-pines', label: 'Sea Pines neighborhood' },

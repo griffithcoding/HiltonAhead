@@ -3,6 +3,7 @@ import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
 import PhotoRail from '@/components/sections/PhotoRail';
 import Services from '@/components/sections/Services';
+import { servicesEnabled } from '@/data/features';
 import IslandFlyover from '@/components/sections/IslandFlyover';
 import InsiderProof from '@/components/sections/InsiderProof';
 import LatestPosts from '@/components/sections/LatestPosts';
@@ -22,17 +23,17 @@ import { faq } from '@/data/faq';
 import { testimonialsMeta } from '@/data/testimonials';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Travel Consulting, Planned by a Local',
+  title: 'Hilton Head Travel Guide, Written by a Local',
   description:
-    'Custom Hilton Head itineraries built by a local insider. Villa booking, tee times, dinner reservations, and on-island concierge. Skip the tourist traps.',
+    'Hilton Head travel guides from a local insider: where to stay, where to eat, tee times, beaches and the details the brochures skip. Skip the tourist traps.',
   path: '/',
   keywords: [
-    'Hilton Head travel consultant',
-    'Hilton Head vacation planner',
+    'Hilton Head travel guide',
+    'Hilton Head vacation guide',
     'Hilton Head itinerary',
-    'Hilton Head villa booking',
+    'Hilton Head villa rentals',
     'Hilton Head local guide',
-    'Hilton Head concierge',
+    'Hilton Head local tips',
   ],
 });
 
@@ -80,7 +81,7 @@ export default function Home() {
       <PhotoRail />
 
       <div className="mx-auto max-w-[1280px] px-5">
-        <Services />
+        {servicesEnabled && <Services />}
         <aside
           aria-label="Hilton Head packing list cross-link"
           className="mx-auto mt-12 max-w-[760px] border-l-2 border-coral bg-cream/40 px-5 py-4 text-[14px] leading-snug text-ink-soft md:mt-16 md:py-5 md:text-[15px]"

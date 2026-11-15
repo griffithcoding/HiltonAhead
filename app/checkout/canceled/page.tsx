@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
+import { servicesEnabled, tripPlanningEnabled } from '@/data/features';
 import { B2C_TIERS, B2B_TIERS, type Tier } from '@/data/pricing';
 
 export const metadata: Metadata = {
@@ -35,17 +36,19 @@ export default async function CheckoutCanceledPage({ searchParams }: PageProps) 
               <>
                 You backed out before completing the {tier.name} purchase.
                 Nothing was charged. The button is still there if you change
-                your mind, or you can take a free first step instead.
+                your mind.
               </>
             ) : (
               <>
                 You backed out before completing checkout. Nothing was charged.
-                Try again, or take a free first step instead.
+                You can try again whenever you’re ready.
               </>
             )}
           </p>
 
+          {(tripPlanningEnabled || servicesEnabled) ? (
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {tripPlanningEnabled && (
             <Link
               href="/itinerary"
               className="group flex flex-col gap-3 rounded-md border border-ocean-deep/20 bg-sand-soft p-6 transition-colors hover:border-coral hover:bg-cream"
@@ -61,6 +64,8 @@ export default async function CheckoutCanceledPage({ searchParams }: PageProps) 
                 Open the form →
               </span>
             </Link>
+            )}
+            {servicesEnabled && (
             <Link
               href={tier ? `/services#${tier.slug}` : '/services'}
               className="group flex flex-col gap-3 rounded-md border border-ocean-deep/20 bg-sand-soft p-6 transition-colors hover:border-coral hover:bg-cream"
@@ -76,7 +81,16 @@ export default async function CheckoutCanceledPage({ searchParams }: PageProps) 
                 Back to pricing →
               </span>
             </Link>
+            )}
           </div>
+          ) : (
+            <Link
+              href="/"
+              className="link-underline mt-10 inline-block text-[12px] font-medium uppercase tracking-[0.22em] text-ink"
+            >
+              Back to Hilton Ahead →
+            </Link>
+          )}
 
           <p className="mt-10 text-[13px] leading-[1.7] text-ink-soft">
             Questions? Email us at{' '}

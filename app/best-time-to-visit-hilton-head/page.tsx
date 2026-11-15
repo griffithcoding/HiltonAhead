@@ -114,7 +114,6 @@ const CROSS_LINKS = [
   { href: '/hilton-head-hurricane-season', label: 'Hurricane season' },
   { href: '/cost-of-hilton-head-trip', label: 'What a trip costs' },
   { href: '/hilton-head-packing-list', label: 'Packing list' },
-  { href: '/itinerary', label: 'Plan a trip with us' },
 ];
 
 export default function BestTimeToVisitHiltonHeadPage() {

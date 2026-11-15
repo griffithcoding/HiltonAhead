@@ -302,7 +302,7 @@ export const COMPARISONS: ReadonlyArray<Comparison> = [
         values: ['Can add Savannah (45 min) or Charleston (2 hr)', 'Can add Kiawah (45 min) or Hilton Head (2 hr)'],
         advantage: 'tie',
         commentary:
-          'Both work as a base for the Lowcountry corridor. A 7-night trip of 5 nights Hilton Head + 2 nights Charleston is one of the most-requested itineraries we plan.',
+          'Both work as a base for the Lowcountry corridor. A 7-night trip of 5 nights Hilton Head + 2 nights Charleston is one of the most popular itineraries on the island.',
       },
     ],
     faqs: [

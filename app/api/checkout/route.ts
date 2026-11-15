@@ -43,6 +43,7 @@ import {
   getStripePriceId,
   type Tier,
 } from '@/data/pricing';
+import { consumerProductsEnabled } from '@/data/features';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -50,7 +51,14 @@ export const dynamic = 'force-dynamic';
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.hiltonahead.com';
 
-const ALL_TIERS: Tier[] = [...B2C_TIERS, ...B2B_TIERS, ...AD_TIERS, ...INFO_PRODUCT_TIERS];
+// Consumer travel products (B2C tiers + itinerary packs) are only purchasable
+// while consumerProductsEnabled is true (data/features.ts). B2B and ad tiers
+// are always available.
+const ALL_TIERS: Tier[] = [
+  ...(consumerProductsEnabled ? [...B2C_TIERS, ...INFO_PRODUCT_TIERS] : []),
+  ...B2B_TIERS,
+  ...AD_TIERS,
+];
 
 function findTier(slug: string): Tier | undefined {
   return ALL_TIERS.find((t) => t.slug === slug);

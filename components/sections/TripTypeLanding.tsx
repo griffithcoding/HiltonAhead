@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { servicesEnabled, tripPlanningEnabled } from '@/data/features';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import FinalCta from '@/components/sections/FinalCta';
@@ -49,10 +50,14 @@ export default function TripTypeLandingPage({ trip }: Props) {
           <Link href="/" className="transition-colors hover:text-coral">
             Home
           </Link>
-          <span aria-hidden="true" className="h-px w-4 bg-ocean-deep/20" />
-          <Link href="/services" className="transition-colors hover:text-coral">
-            Services
-          </Link>
+          {servicesEnabled && (
+            <>
+              <span aria-hidden="true" className="h-px w-4 bg-ocean-deep/20" />
+              <Link href="/services" className="transition-colors hover:text-coral">
+                Services
+              </Link>
+            </>
+          )}
           <span aria-hidden="true" className="h-px w-4 bg-ocean-deep/20" />
           <span className="text-coral">{trip.seoTitle.split(':')[0]}</span>
         </nav>
@@ -78,6 +83,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
               {trip.hook}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              {tripPlanningEnabled && (
               <Link
                 href="/itinerary"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-ocean px-7 py-4 text-[12px] font-medium uppercase tracking-[0.22em] text-sand transition hover:bg-coral"
@@ -90,6 +96,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
                   →
                 </span>
               </Link>
+              )}
               {trip.blogPostSlug && (
                 <Link
                   href={`/blog/${trip.blogPostSlug}`}
@@ -232,6 +239,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
         )}
 
         {/* ——— CTA ——— */}
+        {tripPlanningEnabled && (
         <section className="mt-24 border-y border-ocean-deep/15 py-12">
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div>
@@ -265,6 +273,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
             </Link>
           </div>
         </section>
+        )}
 
         {/* ——— Related story link (if any) ——— */}
         {trip.relatedStorySlug && (() => {
@@ -345,8 +354,8 @@ export default function TripTypeLandingPage({ trip }: Props) {
                 Other ways to visit
               </h2>
               <p className="mt-3 max-w-[560px] text-[14px] leading-[1.7] text-ink-soft">
-                Different trip, different priorities. These are the other
-                Hilton Head trip types we plan most often.
+                Different trip, different priorities. These are other
+                popular Hilton Head trip types.
               </p>
               <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((rt) => (
@@ -362,7 +371,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
                         {rt.hook}
                       </span>
                       <span className="mt-auto pt-2 text-[11px] uppercase tracking-[0.18em] text-ink-soft group-hover:text-coral">
-                        See how we plan it →
+                        Read the guide →
                       </span>
                     </Link>
                   </li>

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
+import { sellOrRentPageEnabled } from '@/data/features';
 import LeadInquiryForm, { type LeadField } from '@/components/leads/LeadInquiryForm';
 import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import { brand } from '@/data/brand';
@@ -61,6 +63,7 @@ const FIELDS: readonly LeadField[] = [
 ] as const;
 
 export default function SellOrRentYourVillaPage() {
+  if (!sellOrRentPageEnabled) redirect('/');
   const breadcrumbs = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
     { name: 'Sell or Rent Your Villa', path: '/sell-or-rent-your-villa' },

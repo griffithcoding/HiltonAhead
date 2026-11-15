@@ -247,13 +247,9 @@ export default function CostCalculator() {
       </div>
 
       <p className="mt-6 text-[12px] leading-snug text-ink-soft/70">
-        Estimates use 2026 partner-rate ranges (25th–75th percentile of what
-        we actually book). Real quotes vary with specific property, exact
-        dates, and group composition. Want a real quote? The{' '}
-        <a href="/itinerary" className="link-underline text-coral hover:text-sunset">
-          itinerary form
-        </a>{' '}
-        comes back with one inside one business day.
+        Estimates use 2026 partner-rate ranges (25th–75th percentile of typical
+        bookings). Real prices vary with specific property, exact dates, and
+        group composition.
       </p>
     </div>
   );

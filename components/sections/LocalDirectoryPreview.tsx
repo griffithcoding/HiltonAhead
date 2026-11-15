@@ -19,7 +19,7 @@ export default function LocalDirectoryPreview() {
           number="№ 06"
           eyebrow="The Local Directory"
           plain="The businesses we send"
-          italic="our own clients to."
+          italic="our own family to."
         />
         <Link
           href="/local"

@@ -315,7 +315,7 @@ const post2026Stays: Post = {
           name: 'Redacted VRBO program. Forest Beach mid-rise',
           meta: 'Management change Q4 2025',
           blurb:
-            "The previous manager sold to a larger operator late last year. Service quality has cratered since. We've pulled four clients out mid-trip. Happy to name it on a planning call; we won't put it in print.",
+            "The previous manager sold to a larger operator late last year. Service quality has cratered since. ",
         },
         {
           name: 'Any oceanfront condo building north of Folly Field',
@@ -374,11 +374,6 @@ const post2026Stays: Post = {
         "<strong>Thanksgiving & Christmas week:</strong> Surprisingly open and surprisingly cheap. The weather is genuinely pleasant (55-65°F). One of the best-value windows on the island.",
         "<strong>Spring break (mid-March to mid-April):</strong> Book in November if you want anything oceanfront.",
       ],
-    },
-    {
-      kind: 'callout',
-      label: "When it's worth hiring us",
-      html: "If your trip is under $4k total, you don't need a consultant. Use this list, book direct, and email us with specific questions. If your trip is $8k+ or involves a group of 8+, we probably save you more than our fee through vendor relationships and rate negotiation. Honest answer every time.",
     },
     {
       kind: 'h2',
@@ -473,7 +468,7 @@ const post2026Stays: Post = {
     },
     {
       kind: 'p',
-      html: "Where you stay shapes your trip more than any other single decision. If you want us to match the right property to your group, calendar, and budget, see the <a href=\"/itinerary\">$450 itinerary service</a> or jump to the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas planner</a>. For timing questions, the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a> walks through all 12 months with rates, crowds, and water temps.",
+      html: "Where you stay shapes your trip more than any other single decision. For the details, jump to the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas planner</a>. For timing questions, the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a> walks through all 12 months with rates, crowds, and water temps.",
     },
   ],
 };
@@ -659,11 +654,6 @@ const postRestaurantsRanked: Post = {
       ],
     },
     {
-      kind: 'callout',
-      label: "When we get involved",
-      html: "For clients on a full trip plan, we hold the 7pm Skull Creek table before you arrive. Same for Red Fish and Michael Anthony's. This alone is why a lot of our clients think our fee pays for itself.",
-    },
-    {
       kind: 'h2',
       text: "Lunch is the sleeper meal",
     },
@@ -760,7 +750,7 @@ const postRestaurantsRanked: Post = {
     },
     {
       kind: 'p',
-      html: "Dinner reservations are the hardest-to-solve piece of a Hilton Head trip. If you want us to lock in the four S-tier tables before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes reservation handling. For everyday casual options outside the tier list, browse <a href=\"/local/restaurants\">our restaurants directory</a>. For timing questions, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a> shows which weeks have the tightest booking windows.",
+      html: "Dinner reservations are the hardest-to-solve piece of a Hilton Head trip. For everyday casual options outside the tier list, browse <a href=\"/local/restaurants\">our restaurants directory</a>. For timing questions, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather and best time guide</a> shows which weeks have the tightest booking windows.",
     },
   ],
 };
@@ -1046,7 +1036,7 @@ const postThingsToDoRanked: Post = {
     },
     {
       kind: 'p',
-      html: "A good Hilton Head week balances two or three booked activities with four or five open days. If you want us to lock Captain Mark, the 7 a.m. kayak slot, and the right fishing captain before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes activity bookings. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> maps each activity to its best month, and our <a href=\"/events\">Hilton Head events calendar</a> shows what's on while you're here.",
+      html: "A good Hilton Head week balances two or three booked activities with four or five open days. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> maps each activity to its best month, and our <a href=\"/events\">Hilton Head events calendar</a> shows what's on while you're here.",
     },
   ],
 };
@@ -1815,7 +1805,7 @@ const postGolfTrip: Post = {
     },
     {
       kind: 'p',
-      html: "Peak-season (April or July) versions of the same trip run 30-40% higher. For prebuilt stay-and-play options, see our <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages</a>.",
+      html: "Peak-season (April or July) versions of the same trip run 30-40% higher. For prebuilt stay-and-play options, see the <a href=\"/hilton-head-stay-and-play\">stay-and-play estimator</a>.",
     },
     {
       kind: 'h2',
@@ -1833,7 +1823,7 @@ const postGolfTrip: Post = {
     {
       kind: 'callout',
       label: "When we step in",
-      html: "For golf trips, we add value in four specific ways: (1) we have tee-time holds at Harbour Town through a partnership, (2) we book the group-rate dinners before you arrive, (3) we handle the villa selection to match the golf schedule, (4) we manage transportation. A typical corporate outing saves $2k-$4k vs. retail through us, plus four hours of logistics.",
+      html: "For golf trips, the logistics are where groups lose time and money: tee-time holds at Harbour Town, group-rate dinners booked before you arrive, villa selection that matches the golf schedule, and transportation.",
     },
     {
       kind: 'h2',
@@ -1887,12 +1877,12 @@ const postBestTime: Post = {
   body: [
     {
       kind: 'p',
-      html: "<strong>The best time to visit Hilton Head is mid-October.</strong> Ocean water still averages 73°F, days sit at a dry 75-80°F, hurricane risk has passed, and lodging rates run 30-40% below the summer peak. The standard advice (\"come in summer\") is exactly wrong for most of our clients. The island has four genuinely different weather seasons, and picking the right window cuts trip cost ~40%, adds three hours of beach time per day, and swaps a 90-minute airport-to-villa drive for a 25-minute one. Here's the honest month-by-month read we walk every client through before they book.",
+      html: "<strong>The best time to visit Hilton Head is mid-October.</strong> Ocean water still averages 73°F, days sit at a dry 75-80°F, hurricane risk has passed, and lodging rates run 30-40% below the summer peak. The standard advice (\"come in summer\") is exactly wrong for most travelers. The island has four genuinely different weather seasons, and picking the right window cuts trip cost ~40%, adds three hours of beach time per day, and swaps a 90-minute airport-to-villa drive for a 25-minute one. Here's the honest month-by-month read before you book.",
     },
     {
       kind: 'callout',
       label: 'The short answer',
-      html: "<strong>Pick October first.</strong> If school calendars lock you into summer, book mid-June. For golf, <a href=\"/hilton-head-golf-packages\">early May or late October</a>. For families at <a href=\"/hilton-head-spring-break\">spring break</a>, the second half of March. For couples on a budget, early December. These are the five windows we come back to over and over &mdash; the rest of this guide explains why.",
+      html: "<strong>Pick October first.</strong> If school calendars lock you into summer, book mid-June. For golf, early May or late October. For families at <a href=\"/hilton-head-spring-break\">spring break</a>, the second half of March. For couples on a budget, early December. These are the five windows we come back to over and over &mdash; the rest of this guide explains why.",
     },
     {
       kind: 'embed',
@@ -1959,7 +1949,7 @@ const postBestTime: Post = {
         },
         {
           kind: 'p',
-          html: "This is our default recommendation for <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages</a>. Course conditioning is post-winter pristine, overnight lows still dew-set the greens, and rates run 25-35% below summer peaks. Pollen is the one catch. Oak pollen peaks in late March; pack Zyrtec if you're reactive. Avoid the second week of April unless you're specifically coming for Heritage.",
+          html: "This is our default recommendation for Hilton Head golf trips. Course conditioning is post-winter pristine, overnight lows still dew-set the greens, and rates run 25-35% below summer peaks. Pollen is the one catch. Oak pollen peaks in late March; pack Zyrtec if you're reactive. Avoid the second week of April unless you're specifically coming for Heritage.",
         },
         {
           kind: 'h3',
@@ -2126,7 +2116,7 @@ const postBestTime: Post = {
         {
           kind: 'callout',
           label: "What we actually recommend",
-          html: "For most clients we plan <strong>October</strong> first. For families locked into school calendars, <strong>mid-June</strong>. For <a href=\"/hilton-head-golf-packages\">golf</a>, <strong>early May or late October</strong>. For couples on a budget, <strong>early December</strong>. For a <a href=\"/hilton-head-weddings\">Hilton Head wedding</a>, late April or mid-October for the weather and photography sweet spot. These are the five windows we come back to over and over.",
+          html: "For most travelers, <strong>October</strong> first. For families locked into school calendars, <strong>mid-June</strong>. For golf, <strong>early May or late October</strong>. For couples on a budget, <strong>early December</strong>. For a <a href=\"/hilton-head-weddings\">Hilton Head wedding</a>, late April or mid-October for the weather and photography sweet spot. These are the five windows we come back to over and over.",
         },
       ],
     },
@@ -2219,7 +2209,7 @@ const postBestTime: Post = {
     },
     {
       kind: 'p',
-      html: "Weather is the cheapest trip-planning lever you can pull. Shifting a family beach week from July to early June cuts villa cost by 30% without changing a single reservation. Moving a golf trip from March to early May trades pollen for warmer water and the same tee-sheet prices. Tell us the trip and we'll map it against the next six months of island calendar — the <a href=\"/itinerary\">full itinerary service</a> is $450 flat, and the guide is free either way.",
+      html: "Weather is the cheapest trip-planning lever you can pull. Shifting a family beach week from July to early June cuts villa cost by 30% without changing a single reservation. Moving a golf trip from March to early May trades pollen for warmer water and the same tee-sheet prices.",
     },
   ],
 };
@@ -2376,7 +2366,7 @@ const postHurricaneForecast2026: Post = {
     },
     {
       kind: 'p',
-      html: "The right window depends on who's traveling, what they want to do, and how flexible they are. We've planned 100+ Hilton Head trips through hurricane season, and the question we ask first is always: \"how many work-from-anywhere days do you have for a flex window?\" Two days of arrival flexibility plus refundable lodging plus CFAR insurance gets the risk down to noise. <a href=\"/itinerary\">Tell us the trip</a> and we'll map it against the next six months of forecast updates and rate movement. The guide is free.",
+      html: "The right window depends on who's traveling, what they want to do, and how flexible they are. The question to ask first is always: \"how many work-from-anywhere days do you have for a flex window?\" Two days of arrival flexibility plus refundable lodging plus CFAR insurance gets the risk down to noise.",
     },
     {
       kind: 'faq',
@@ -2509,7 +2499,7 @@ const postBridge2026Debunker: Post = {
     },
     {
       kind: 'p',
-      html: "If you're driving in from Atlanta, Charlotte, Charleston, or Raleigh, the airport-vs-drive math <strong>strongly favors driving in 2026</strong> — airfares are up 17.3% year over year per the US Travel Association's March Travel Price Index, while gas prices have remained relatively stable. <a href=\"/itinerary\">Send us your trip details</a> and we'll factor real arrival timing — including which side of the Saturday turnover wave to land on — into the itinerary.",
+      html: "If you're driving in from Atlanta, Charlotte, Charleston, or Raleigh, the airport-vs-drive math <strong>strongly favors driving in 2026</strong> — airfares are up 17.3% year over year per the US Travel Association's March Travel Price Index, while gas prices have remained relatively stable. Factor in arrival timing too — which side of the Saturday turnover wave you land on makes a difference.",
     },
     {
       kind: 'faq',
@@ -2627,7 +2617,7 @@ const postRbcHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "Better: have us arrange a private car or rideshare from your lodging. Total spend is $60-80 round trip; we recover that in Heritage-week time.",
+      html: "Better: arrange a private car or rideshare from your lodging. Total spend is $60-80 round trip; you recover that in Heritage-week time.",
     },
     {
       kind: 'h2',
@@ -2665,7 +2655,7 @@ const postRbcHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "Groups of 6-20 use Heritage as an entertaining week. Our corporate Heritage package includes: 18th-hole hospitality passes, a villa base, private transport, three reserved dinners, and a round at Atlantic Dunes on Friday. Runs $6k-9k per person. We book these 8-12 months out.",
+      html: "Groups of 6-20 use Heritage as an entertaining week. A typical corporate Heritage week includes: 18th-hole hospitality passes, a villa base, private transport, three reserved dinners, and a round at Atlantic Dunes on Friday. Plan on $6k-9k per person all-in for a week like this, and book 8-12 months out.",
     },
     {
       kind: 'callout',
@@ -2890,7 +2880,7 @@ const postWithKids: Post = {
     },
     {
       kind: 'p',
-      html: "A typical family-of-4 summer week through us: 3BR oceanfront villa in Palmetto Dunes, bikes delivered day 1, Captain Mark cruise pre-booked, Skull Creek 5:30 pm reservation for Tuesday, Gregg Russell Thursday night, kayak clinic Saturday morning. Total trip $6,200-8,500 all in. Our fee: $450 flat for the itinerary, or 8% of trip total if you want us to book the villa and handle concierge. Saves ~10 hrs of research and gets you the restaurant tables you can't get yourself. For the broader breakdown of <a href=\"/hilton-head-family-trip-planner\">Hilton Head family vacations</a> — neighborhoods, budgets, and trip lengths — see the family trip planner.",
+      html: "A typical family-of-4 summer week: 3BR oceanfront villa in Palmetto Dunes, bikes delivered day 1, Captain Mark cruise pre-booked, Skull Creek 5:30 pm reservation for Tuesday, Gregg Russell Thursday night, kayak clinic Saturday morning. Total trip $6,200-8,500 all in. For the broader breakdown of <a href=\"/hilton-head-family-trip-planner\">Hilton Head family vacations</a> — neighborhoods, budgets, and trip lengths — see the family trip planner.",
     },
   ],
 };
@@ -3112,7 +3102,7 @@ const postBestBeaches: Post = {
     },
     {
       kind: 'p',
-      html: "The beach is the reason most people come to Hilton Head, but the wrong address turns a beach-focused week into a drive-to-the-beach week. If you want us to match your group to the right lodging for the beach you actually want, the <a href=\"/itinerary\">$450 itinerary service</a> handles it. For oceanfront villa specifics, see the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas planner</a>; for the broader trip frame, our <a href=\"/hilton-head-beaches\">Hilton Head beach vacation guide</a> covers villa-to-sand logistics. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> walks through water temperatures month by month.",
+      html: "The beach is the reason most people come to Hilton Head, but the wrong address turns a beach-focused week into a drive-to-the-beach week. For oceanfront villa specifics, see the <a href=\"/hilton-head-oceanfront-villas\">oceanfront villas planner</a>; for the broader trip frame, our <a href=\"/hilton-head-beaches\">Hilton Head beach vacation guide</a> covers villa-to-sand logistics. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> walks through water temperatures month by month.",
     },
   ],
 };
@@ -3326,7 +3316,7 @@ const post3DayItinerary: Post = {
     },
     {
       kind: 'p',
-      html: "A 3-day Hilton Head trip lives or dies on the four reservations above. If you want us to lock the villa, the Saturday dinner, the sunset sail, and the bike delivery before you land, the <a href=\"/itinerary\">$450 itinerary service</a> handles it. For longer trips, see the <a href=\"/blog/hilton-head-7-day-itinerary\">7-day itinerary</a>.",
+      html: "A 3-day Hilton Head trip lives or dies on the four reservations above. For longer trips, see the <a href=\"/blog/hilton-head-7-day-itinerary\">7-day itinerary</a>.",
     },
   ],
 };
@@ -3526,7 +3516,7 @@ const post7DayItinerary: Post = {
     },
     {
       kind: 'p',
-      html: "A Hilton Head week lives or dies on the villa pick, the three dinners, and the signature activity. Everything else can be flex. If you want us to lock those four things before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> handles it. For shorter trips, see the <a href=\"/blog/hilton-head-3-day-itinerary\">3-day itinerary</a>.",
+      html: "A Hilton Head week lives or dies on the villa pick, the three dinners, and the signature activity. Everything else can be flex. For shorter trips, see the <a href=\"/blog/hilton-head-3-day-itinerary\">3-day itinerary</a>.",
     },
   ],
 };
@@ -3843,7 +3833,7 @@ const postSeaPinesVsPalmettoDunes: Post = {
         "<strong>Couples, honeymoon, anniversary:</strong> Sea Pines. Better dining, Harbour Town sunset, more romantic feel. See the <a href=\"/hilton-head-honeymoon\">honeymoon planner</a>.",
         "<strong>Family with kids 6-14:</strong> Palmetto Dunes. Better programming, shorter beach walk, kids\u2019 camp infrastructure. See the <a href=\"/hilton-head-family-trip-planner\">family trip planner</a>.",
         "<strong>Family with kids under 6:</strong> Palmetto Dunes (Omni kids\u2019 pool and sitter service). Sea Pines works if you're in a villa with a private pool.",
-        "<strong>Golf trip, serious:</strong> Sea Pines for Harbour Town access. See the <a href=\"/hilton-head-golf-packages\">golf packages page</a>.",
+        "<strong>Golf trip, serious:</strong> Sea Pines for Harbour Town access. See the <a href=\"/hilton-head-stay-and-play\">stay-and-play estimator</a>.",
         "<strong>Golf trip, variety focus:</strong> Palmetto Dunes for three courses off one tee sheet.",
         "<strong>Tennis or pickleball trip:</strong> Palmetto Dunes, no question.",
         "<strong>First-time Hilton Head visit:</strong> Sea Pines. It is what people mean when they say Hilton Head.",
@@ -3938,11 +3928,11 @@ const postSeaPinesVsPalmettoDunes: Post = {
     },
     {
       kind: 'h2',
-      text: 'Not sure? We can match you',
+      text: 'Not sure which to pick?',
     },
     {
       kind: 'p',
-      html: "The Sea Pines vs Palmetto Dunes question is the most common planning-call opener we get. If you want us to match your trip to the right gate, the <a href=\"/itinerary\">$450 itinerary service</a> includes the neighborhood pick and villa short-list. For lodging-specific guidance, see the <a href=\"/blog/2026-best-places-to-stay-hilton-head\">2026 best places to stay</a>.",
+      html: "The Sea Pines vs Palmetto Dunes question is the most common question first-time visitors ask. For lodging-specific guidance, see the <a href=\"/blog/2026-best-places-to-stay-hilton-head\">2026 best places to stay</a>.",
     },
   ],
 };
@@ -4248,7 +4238,7 @@ const postGolfCoursesRanked: Post = {
         },
         {
           kind: 'p',
-          html: "For the full trip logistics including lodging, dinner reservations, and non-golf programming, see the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a> and the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages landing page</a>.",
+          html: "For the full trip logistics including lodging, dinner reservations, and non-golf programming, see the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a> and the <a href=\"/hilton-head-stay-and-play\">stay-and-play estimator</a>.",
         },
       ],
     },
@@ -4288,7 +4278,7 @@ const postGolfCoursesRanked: Post = {
             },
             {
               q: 'What is a stay-and-play package on Hilton Head?',
-              a: "Bundled lodging plus green fees plus usually daily breakfast, sold by the major resorts (Sea Pines, Palmetto Dunes, Montage Palmetto Bluff). Prices run $299-399/player/night for S-tier courses and $225-325/player/night for A-tier. These beat retail pricing 20-40% and handle the booking priority simultaneously. See the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages page</a>.",
+              a: "Bundled lodging plus green fees plus usually daily breakfast, sold by the major resorts (Sea Pines, Palmetto Dunes, Montage Palmetto Bluff). Prices run $299-399/player/night for S-tier courses and $225-325/player/night for A-tier. These beat retail pricing 20-40% and handle the booking priority simultaneously. See the <a href=\"/hilton-head-stay-and-play\">stay-and-play estimator</a>.",
             },
             {
               q: 'Which Hilton Head course is easiest for a beginner or high-handicapper?',
@@ -4312,7 +4302,7 @@ const postGolfCoursesRanked: Post = {
     },
     {
       kind: 'p',
-      html: "A Hilton Head golf trip lives or dies on the Harbour Town tee time, the stay-and-play structure, and the non-golf nights (S-tier dinners matter). If you want us to handle the whole thing, the <a href=\"/hilton-head-golf-packages\">Hilton Head golf packages</a> page is the trip-type planner, and the <a href=\"/itinerary\">$450 itinerary service</a> includes the 4-round schedule plus lodging plus dinner reservations. For the full trip overview, see the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a>.",
+      html: "A Hilton Head golf trip lives or dies on the Harbour Town tee time, the stay-and-play structure, and the non-golf nights (S-tier dinners matter). To price a stay-and-play package, use the <a href=\"/hilton-head-stay-and-play\">stay-and-play estimator</a>. For the full trip overview, see the <a href=\"/blog/hilton-head-golf-trip\">Hilton Head golf trip guide</a>.",
     },
   ],
 };
@@ -4444,7 +4434,7 @@ const postRomanticRestaurants: Post = {
     },
     {
       kind: 'p',
-      html: "Three proven spots that we've coordinated for clients. Each pairs naturally with a pre-dinner drink and flows into one of the S-tier restaurants above. (For full ceremony venues, see our <a href=\"/hilton-head-weddings\">Hilton Head wedding planning</a> page.)",
+      html: "Three proven spots. Each pairs naturally with a pre-dinner drink and flows into one of the S-tier restaurants above. (For full ceremony venues, see our <a href=\"/hilton-head-weddings\">Hilton Head wedding planning</a> page.)",
     },
     {
       kind: 'h3',
@@ -4452,7 +4442,7 @@ const postRomanticRestaurants: Post = {
     },
     {
       kind: 'p',
-      html: "West-facing over Calibogue Sound. Arrive 45 minutes before sunset with a drink, walk to the end of the deck, execute there. Calendar-accurate: in June, sunset is 8:29 p.m.; in October, 6:50 p.m. Pair with dinner at <strong>CQ's Restaurant</strong> (3 min walk) or drive to <strong>Michael Anthony's</strong> (15 min). Photographers know this spot; we connect clients with one if they want.",
+      html: "West-facing over Calibogue Sound. Arrive 45 minutes before sunset with a drink, walk to the end of the deck, execute there. Calendar-accurate: in June, sunset is 8:29 p.m.; in October, 6:50 p.m. Pair with dinner at <strong>CQ's Restaurant</strong> (3 min walk) or drive to <strong>Michael Anthony's</strong> (15 min). Local photographers know this spot.",
     },
     {
       kind: 'h3',
@@ -4543,7 +4533,7 @@ const postRomanticRestaurants: Post = {
     },
     {
       kind: 'p',
-      html: "A four-night honeymoon should run a restaurant sequence, not a random list. We plan them as: night 1 waterfront casual (Skull Creek), night 2 fine dining (Michael Anthony's or Red Fish), night 3 Bluffton escape (FARM or May River Grill), night 4 sunset sail with wine. If you want us to book the sequence and coordinate the proposal logistics, the <a href=\"/hilton-head-honeymoon\">Hilton Head honeymoon planner</a> covers the full package.",
+      html: "A four-night honeymoon should run a restaurant sequence, not a random list. Plan it as: night 1 waterfront casual (Skull Creek), night 2 fine dining (Michael Anthony's or Red Fish), night 3 Bluffton escape (FARM or May River Grill), night 4 sunset sail with wine. For the full honeymoon picture, see the <a href=\"/hilton-head-honeymoon\">Hilton Head honeymoon guide</a>.",
     },
   ],
 };
@@ -4820,7 +4810,7 @@ const postWinterGuide: Post = {
     },
     {
       kind: 'p',
-      html: "Winter long-stays are the quietest deal on the Hilton Head calendar. If you want us to match you to the right neighborhood, villa, and length of stay, the <a href=\"/hilton-head-winter-rental\">Hilton Head winter rental planner</a> is the landing page; the <a href=\"/itinerary\">$450 itinerary service</a> covers full long-stay logistics (villa short-list, utilities, delivery setup, local gym and medical contacts). For weather specifics by month, see the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a>.",
+      html: "Winter long-stays are the quietest deal on the Hilton Head calendar. For neighborhoods, villas, and length of stay, see the <a href=\"/hilton-head-winter-rental\">Hilton Head winter rental guide</a>. For weather specifics by month, see the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a>.",
     },
   ],
 };
@@ -4964,7 +4954,7 @@ const postFishingGuide: Post = {
         {
           name: 'Offshore full-day boats',
           meta: 'Offshore / Gulf Stream',
-          blurb: 'For Gulf Stream offshore trips, you want a purpose-built offshore boat (35+ feet) with twin engines. Booking these 3–4 weeks ahead in summer is smart — the best captains fill up fast. We handle this as part of our concierge service.',
+          blurb: 'For Gulf Stream offshore trips, you want a purpose-built offshore boat (35+ feet) with twin engines. Booking these 3–4 weeks ahead in summer is smart — the best captains fill up fast.',
         },
       ],
     },
@@ -5020,7 +5010,7 @@ const postFishingGuide: Post = {
         },
         {
           q: 'How far in advance should I book?',
-          a: "Summer (June–August): 2–4 weeks ahead, especially for weekend dates. Fall inshore season (September–November): 1–2 weeks is usually fine. Offshore full-day trips in prime season should be booked a month out. We can handle charter booking as part of our concierge service.",
+          a: "Summer (June–August): 2–4 weeks ahead, especially for weekend dates. Fall inshore season (September–November): 1–2 weeks is usually fine. Offshore full-day trips in prime season should be booked a month out.",
         },
       ],
     },
@@ -5030,7 +5020,7 @@ const postFishingGuide: Post = {
     },
     {
       kind: 'p',
-      html: "Fishing charters are one of the items we handle most often for clients — finding the right captain for your group's skill level, coordinating timing with other activities, and making sure you're fishing the right species window for your travel dates. Browse the <a href=\"/local/water-activities\">local charter and tour operators</a> we recommend, or, if you want us to build a trip around a fishing day (or two), the <a href=\"/itinerary\">itinerary service</a> is the right place to start.",
+      html: "Fishing charters are worth planning around — finding the right captain for your group's skill level, coordinating timing with other activities, and making sure you're fishing the right species window for your travel dates. Browse the <a href=\"/local/water-activities\">local charter and tour operators</a> we recommend.",
     },
   ],
 };
@@ -5245,14 +5235,6 @@ const postDogFriendly: Post = {
           a: "Dogs must be on a leash on all public beaches and in all public parks and common areas. The exception is the Chaplin Community Park off-leash enclosure. Voice control is technically allowed on the beach October–March but leash is still safer near crowds.",
         },
       ],
-    },
-    {
-      kind: 'h2',
-      text: 'Finding a dog-friendly villa',
-    },
-    {
-      kind: 'p',
-      html: "Finding the right pet-friendly villa — ground-floor access, walkable to the beach, fenced outdoor space — takes more than a VRBO filter. If you want us to shortlist options for your dog's size, travel dates, and neighborhood preference, the <a href=\"/itinerary\">itinerary service</a> covers villa matching as part of the full planning package.",
     },
   ],
 };
@@ -5470,14 +5452,6 @@ const postWeekendGetaway: Post = {
         },
       ],
     },
-    {
-      kind: 'h2',
-      text: 'Plan it properly',
-    },
-    {
-      kind: 'p',
-      html: "A long weekend works best with a little upfront planning — the right villa, one dinner reservation, and one activity booked. If you want us to handle the logistics, the <a href=\"/itinerary\">itinerary service</a> is built for exactly this: 30 minutes on a call, a custom plan for your dates, and everything confirmed before you leave the driveway.",
-    },
   ],
 };
 
@@ -5562,7 +5536,7 @@ const postDolphinTours: Post = {
         {
           name: 'Private charter (custom)',
           meta: 'Best for groups, special occasions',
-          blurb: 'Book the whole boat and the captain runs your itinerary — dolphins, lighthouse, sandbar stop, sunset finish. Worth it for groups of 6+ where the per-person math is similar to a private. We arrange these as part of the concierge service.',
+          blurb: 'Book the whole boat and the captain runs your itinerary — dolphins, lighthouse, sandbar stop, sunset finish. Worth it for groups of 6+ where the per-person math is similar to a private.',
         },
       ],
     },
@@ -5721,7 +5695,7 @@ const postDolphinTours: Post = {
     },
     {
       kind: 'p',
-      html: "A dolphin tour is one of the easier activities to slot into a Hilton Head trip — but the right tour, at the right time of day, with the right captain, is a different experience than picking the first option off a hotel concierge brochure. If you want us to handle that piece (and pair it intelligently with the rest of your week), the <a href=\"/itinerary\">itinerary service</a> includes operator selection and timing as part of the standard plan. For a 3-day version of the trip, see the <a href=\"/blog/hilton-head-3-day-itinerary\">Hilton Head 3-day itinerary</a>.",
+      html: "A dolphin tour is one of the easier activities to slot into a Hilton Head trip — but the right tour, at the right time of day, with the right captain, is a different experience than picking the first option off a hotel concierge brochure. For a 3-day version of the trip, see the <a href=\"/blog/hilton-head-3-day-itinerary\">Hilton Head 3-day itinerary</a>.",
     },
   ],
 };
@@ -5979,10 +5953,6 @@ const postKayakingGuide: Post = {
       kind: 'p',
       html: "Kayaking is not a fill-time activity on Hilton Head — it's a hero activity, and most groups want to slot exactly one paddle into a 4–7 day trip. The pattern that works: <strong>kayak in the morning of day 2 or 3</strong>, after a beach day on day 1, before the bigger commitments (golf, dolphin tour, dinner reservations) later in the week. If you're staying near <a href=\"/hilton-head/shelter-cove\">Shelter Cove</a> or <a href=\"/hilton-head/sea-pines\">Sea Pines</a>, the launches are within 10 minutes of your villa.",
     },
-    {
-      kind: 'p',
-      html: "If you want help picking the route, the operator, and the time of day to match conditions during your dates — that's exactly what the <a href=\"/itinerary\">itinerary service</a> handles. Tell us who's paddling, what level of adventure they're up for, and we map it to the right launch and the right captain.",
-    },
   ],
 };
 
@@ -6197,11 +6167,6 @@ const postBestPizza: Post = {
         },
       ],
     },
-    { kind: 'h2', text: 'Want help with the rest of the trip?' },
-    {
-      kind: 'p',
-      html: "Pizza is one decision out of about forty when you plan a Hilton Head week. Restaurants for the bigger dinners, tee times, beach gear, neighborhood selection — the <a href=\"/itinerary\">itinerary service</a> handles all of it as one plan. Tell us your dates, group, and what kind of trip you want, and we send back a full week with reservations made.",
-    },
   ],
 };
 
@@ -6332,7 +6297,7 @@ const postTripCost2026: Post = {
         },
         {
           kind: 'p',
-          html: "The Harbour Town round is the price-anchor of any HHI golf trip; the other three are negotiated through our <a href=\"/hilton-head-golf-packages\">golf package</a> rates. Late October is the perfect window — locked-in inventory, 78°F days, no afternoon thunderstorms. If you want the full breakdown of which course tier matches which group, read <a href=\"/blog/hilton-head-golf-courses-ranked\">our ranked-by-tier course list</a>.",
+          html: "The Harbour Town round is the price-anchor of any HHI golf trip; the other three usually price better inside a <a href=\"/hilton-head-stay-and-play\">stay-and-play package</a>. Late October is the perfect window — locked-in inventory, 78°F days, no afternoon thunderstorms. If you want the full breakdown of which course tier matches which group, read <a href=\"/blog/hilton-head-golf-courses-ranked\">our ranked-by-tier course list</a>.",
         },
       ],
     },
@@ -6453,14 +6418,6 @@ const postTripCost2026: Post = {
         },
       ],
     },
-    {
-      kind: 'h2',
-      text: 'Want us to run your number?',
-    },
-    {
-      kind: 'p',
-      html: "Tell us your party size, dates, and what kind of trip you want. We send back a real budget — line-itemed villa, golf, dinners, beach gear, the bridge — usually within a day. No fee until you book through us. <a href=\"/itinerary\">We'll build the plan for you</a>.",
-    },
   ],
 };
 
@@ -6501,7 +6458,7 @@ const postLastCallJuly: Post = {
     {
       kind: 'callout',
       label: 'Last updated',
-      html: "May 20, 2026. The numbers below are real quotes we have given clients this week. If you want a live check on a specific date range, the fastest path is the <a href=\"/itinerary\">itinerary form</a> — we run inventory across roughly 200 buildings and reply same-day in summer.",
+      html: "May 20, 2026. The numbers below are real quotes pulled this week. For a live check on a specific date range, compare current availability directly with the management companies.",
     },
     {
       kind: 'h2',
@@ -6593,20 +6550,12 @@ const postLastCallJuly: Post = {
       html: "We will not lie to you — the absolute best July weeks for kids out of school are gone. But the August pivot is mathematically better unless you have a hard school-calendar constraint.",
     },
     {
-      kind: 'h2',
-      text: 'How we book on your behalf',
-    },
-    {
-      kind: 'p',
-      html: "We pull inventory across roughly 200 buildings — the big rental companies, smaller boutique operators, and three private-owner programs that don't show up on the public OTAs. We send you a curated 5-property shortlist within a day, you pick, and we book direct. No upcharge.",
-    },
-    {
       kind: 'faq',
       label: 'July 2026 Hilton Head villa FAQ',
       items: [
         {
           q: 'Is there any chance for July 4 week 2026 availability?',
-          a: "Realistically, no. July 4 is sold out across the island except for a handful of cancellation slots that we get notified about and pass to clients on a waiting list. If you want to try, get on the waiting list — but plan around the assumption you'll be redirected to July 11 or earlier in June.",
+          a: "Realistically, no. July 4 is sold out across the island except for a handful of cancellation slots that open up through cancellations. If you want to try, ask the rental companies to put you on their waiting lists — but plan around the assumption you'll be redirected to July 11 or earlier in June.",
         },
         {
           q: 'How much does a 3BR Hilton Head villa cost in July 2026?',
@@ -6618,7 +6567,7 @@ const postLastCallJuly: Post = {
         },
         {
           q: 'What about September? Is that a viable backup?',
-          a: "Yes, and it's the smartest backup of all. Post-Labor Day rates drop 22 to 30%, the water is 82°F, hurricanes have not become a real concern yet (peak risk is Sept 10 to Oct 10), and dinner reservations open up dramatically. We send roughly 30% of our clients here on September weeks now.",
+          a: "Yes, and it's the smartest backup of all. Post-Labor Day rates drop 22 to 30%, the water is 82°F, hurricanes have not become a real concern yet (peak risk is Sept 10 to Oct 10), and dinner reservations open up dramatically.",
         },
         {
           q: 'Are there last-minute deals on Hilton Head in July?',
@@ -6629,14 +6578,6 @@ const postLastCallJuly: Post = {
           a: "Yes. The Omni Hilton Head, Sonesta Resort, and Marriott Grande Ocean all still have hotel-style availability for most of July. Rates run $380 to $620 per night for the comparable 2-queen room. Not always cheaper than a villa, but easier to book last-minute. See the <a href=\"/blog/2026-best-places-to-stay-hilton-head\">2026 stays ranking</a> for which hotels are actually in shape this year.",
         },
       ],
-    },
-    {
-      kind: 'h2',
-      text: 'Let us run your dates',
-    },
-    {
-      kind: 'p',
-      html: "Send us your party size, exact date window, and budget. We run inventory against everything we have access to and come back same-day in summer with a real shortlist. <a href=\"/itinerary\">We'll build the plan for you</a>.",
     },
   ],
 };
@@ -6842,14 +6783,6 @@ const postThreeWayCompare: Post = {
         },
       ],
     },
-    {
-      kind: 'h2',
-      text: 'Tell us your trip',
-    },
-    {
-      kind: 'p',
-      html: "If you want the side-by-side run against your specific dates and party, send the brief over and we'll come back with a real recommendation. We don't push you toward the more expensive option — about 35% of our client recommendations are Palmetto Dunes or Forest Beach over Sea Pines, because that's the right call. <a href=\"/itinerary\">We'll build the plan for you</a>.",
-    },
   ],
 };
 
@@ -6886,7 +6819,7 @@ const postGolfTiers: Post = {
     },
     {
       kind: 'p',
-      html: "Below is the tier breakdown we use when we build a golf trip for a client. Real 2026 in-season rates, real tradeoffs, and the four-round itinerary we run for most groups. Pair this with the <a href=\"/hilton-head-golf-packages\">stay-and-play page</a> for what we negotiate on the villa side and the <a href=\"/blog/hilton-head-golf-courses-ranked\">ranked-list post</a> for full course-by-course detail.",
+      html: "Below is the tier breakdown for building a golf trip. Real 2026 in-season rates, real tradeoffs, and a four-round itinerary that works for most groups. Pair this with the <a href=\"/hilton-head-stay-and-play\">stay-and-play estimator</a> for the villa side and the <a href=\"/blog/hilton-head-golf-courses-ranked\">ranked-list post</a> for full course-by-course detail.",
     },
     {
       kind: 'h2',
@@ -7063,19 +6996,7 @@ const postGolfTiers: Post = {
           q: 'Can I play Harbour Town if I\'m not staying at Sea Pines?',
           a: "Yes — Harbour Town accepts public tee times. You won't get the 120-day window or the resort-guest pricing, but you can absolutely book a round at standard public-rate green fees. Plan on 60 to 30 days out, expect afternoon tee times in peak season.",
         },
-        {
-          q: 'Do you offer stay-and-play packages?',
-          a: "Yes — we negotiate the villa and the rounds together, lock the tee times, and arrange the logistics (cart drop, caddies, lunches). No upcharge; we make our money on the villa side. Full details on the <a href=\"/hilton-head-golf-packages\">stay-and-play page</a>.",
-        },
       ],
-    },
-    {
-      kind: 'h2',
-      text: 'Build the trip',
-    },
-    {
-      kind: 'p',
-      html: "Tell us how many golfers, what dates, and what handicap range. We send back a four-round itinerary with tee times locked, villa picked, and a budget — usually within a day. <a href=\"/itinerary\">We'll build the plan for you</a>.",
     },
   ],
 };
@@ -7182,7 +7103,7 @@ const postSpringBreakHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "Full Heritage logistics — where to stay as a spectator, ticketing, the daily-pass strategy — are on the <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage travel guide</a>. We also have the dedicated <a href=\"/hilton-head-golf-packages\">golf package page</a> if your trip is mostly about playing rather than spectating.",
+      html: "Full Heritage logistics — where to stay as a spectator, ticketing, the daily-pass strategy — are on the <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage travel guide</a>. If your trip is mostly about playing rather than spectating, start with the <a href=\"/hilton-head-stay-and-play\">stay-and-play estimator</a>.",
     },
     {
       kind: 'h2',
@@ -7242,14 +7163,6 @@ const postSpringBreakHeritage: Post = {
           a: "Palmetto Dunes, almost always. The lagoon system is open year-round, the bike paths are full but not packed, and the family-trip restaurants (ELA's, Skull Creek, Hudson's) are at their full menus by late March. Sea Pines is a strong second; Forest Beach for budget-driven family trips.",
         },
       ],
-    },
-    {
-      kind: 'h2',
-      text: 'Get the dates locked',
-    },
-    {
-      kind: 'p',
-      html: "Tell us your spring-break window (school district matters — we ask) and what kind of trip you want. We come back with two date options, two villa shortlists, and a budget. <a href=\"/itinerary\">We'll build the plan for you</a>.",
     },
   ],
 };
@@ -7481,7 +7394,7 @@ const postWeatherMonthByMonth: Post = {
     },
     {
       kind: 'p',
-      html: "For more trip-type specifics, see the dedicated landings — <a href=\"/hilton-head-family-trip-planner\">family planner</a>, <a href=\"/hilton-head-golf-packages\">golf packages</a>, <a href=\"/hilton-head-weddings\">weddings</a>, <a href=\"/hilton-head-honeymoon\">honeymoon</a>, <a href=\"/hilton-head-winter-rental\">winter rentals</a>, <a href=\"/hilton-head-beaches\">beaches</a>.",
+      html: "For more trip-type specifics, see the dedicated landings — <a href=\"/hilton-head-family-trip-planner\">family planner</a>, <a href=\"/hilton-head-weddings\">weddings</a>, <a href=\"/hilton-head-honeymoon\">honeymoon</a>, <a href=\"/hilton-head-winter-rental\">winter rentals</a>, <a href=\"/hilton-head-beaches\">beaches</a>.",
     },
     {
       kind: 'faq',
@@ -7512,14 +7425,6 @@ const postWeatherMonthByMonth: Post = {
           a: "Statistically, October and November tie for the lowest rainfall — about 2 to 2.5 inches across the month. June through August see 5 to 6 inches each, mostly from afternoon thunderstorms rather than all-day rain.",
         },
       ],
-    },
-    {
-      kind: 'h2',
-      text: 'Pick your month and tell us',
-    },
-    {
-      kind: 'p',
-      html: "If you know roughly when you can travel, we can tell you which week inside that month is the smartest pick — based on tides, restaurant reservation patterns, hurricane outlook, and current villa inventory. <a href=\"/itinerary\">We'll build the plan for you</a>.",
     },
   ],
 };

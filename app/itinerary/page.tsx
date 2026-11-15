@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
+import { tripPlanningEnabled } from '@/data/features';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import ItineraryForm from './ItineraryForm';
@@ -72,6 +74,7 @@ export default async function ItineraryPage({
 }: {
   searchParams: Promise<{ from?: string; payment?: string }>;
 }) {
+  if (!tripPlanningEnabled) redirect('/');
   const params = await searchParams;
   const fromCalendly = params.from === 'calendly';
   const paymentStatus = params.payment;

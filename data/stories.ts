@@ -239,7 +239,7 @@ const fallGolfWeekend: Story = {
     { ...photos.marinaDawn,  caption: 'Sea Pines marina · Sunday morning' },
   ],
   aftermathIntro:
-    'Eight guys, three courses, zero blown tee times, one phone rescued from a salt marsh. We plan four to six fall weekends like this every year — the calendar fills by July.',
+    'Eight guys, three courses, zero blown tee times, one phone rescued from a salt marsh. Fall weekends like this book up fast — the calendar fills by July.',
 };
 
 // ---------------------------------------------------------------------------
@@ -546,7 +546,7 @@ const summerFamilyWeek: Story = {
     { ...photos.harborBoats,  caption: 'Shelter Cove · sailing camp' },
   ],
   aftermathIntro:
-    'Two parents. Four kids. One grandmother. Eight days. The whole week ran inside fifteen minutes of the villa and the parents actually got the trip too. We plan twenty to thirty family weeks like this every summer.',
+    'Two parents. Four kids. One grandmother. Eight days. The whole week ran inside fifteen minutes of the villa and the parents actually got the trip too. Family weeks like this are the island\u2019s summer standard.',
 };
 
 // ---------------------------------------------------------------------------

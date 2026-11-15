@@ -1,5 +1,6 @@
 'use client';
 
+import { tripPlanningEnabled } from '@/data/features';
 import { useMemo, useState } from 'react';
 import { golfCourses } from '@/data/golfCourses';
 
@@ -87,8 +88,8 @@ export default function StayAndPlayEstimator() {
         </h3>
         <p className="mt-2 max-w-[560px] text-[14px] leading-[1.6] text-ink-soft">
           Rough math using average green fees across the 12 courses, typical
-          lodging rates, and seasonal multipliers. Real numbers vary; the
-          itinerary service prices to the dollar.
+          lodging rates, and seasonal multipliers. Real numbers vary
+          {tripPlanningEnabled ? '; the itinerary service prices to the dollar.' : '.'}
         </p>
       </header>
 
@@ -153,6 +154,7 @@ export default function StayAndPlayEstimator() {
           Rough estimate. Includes tee fees, carts, lodging, and 1–2 nights of
           dining at $65–$125 per golfer. Excludes flights, transfers, and tip.
         </p>
+        {tripPlanningEnabled && (
         <a
           href={`/itinerary?${itineraryQs}`}
           className="inline-flex shrink-0 items-center gap-2 rounded-full border border-ink bg-ink px-5 py-3 text-[11px] font-medium uppercase tracking-[0.15em] text-cream transition hover:bg-coral hover:border-coral"
@@ -160,6 +162,7 @@ export default function StayAndPlayEstimator() {
           Have us book it · $450
           <span aria-hidden="true">→</span>
         </a>
+        )}
       </div>
     </section>
   );
