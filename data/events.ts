@@ -38,6 +38,13 @@ export type EventEntry = {
   recurring?: boolean;
   /** If true, show in the "marquee" hero block at top of page. */
   isHighlight?: boolean;
+  /**
+   * Slug of this event's next edition in data/events2027.ts. When set, /events
+   * shows that edition's date instead of startDate/endDate (which stay as the
+   * previous edition's record), or its expected timing if no date is posted.
+   * The next edition's dates live only in events2027.ts.
+   */
+  nextEditionSlug?: string;
 };
 
 export const events: EventEntry[] = [
@@ -55,6 +62,7 @@ export const events: EventEntry[] = [
     url: 'https://rbcheritage.com/',
     recurring: true,
     isHighlight: true,
+    nextEditionSlug: 'rbc-heritage-2027',
   },
   {
     slug: 'wine-and-food-festival-2026',
@@ -64,9 +72,10 @@ export const events: EventEntry[] = [
     location: 'Multiple venues, Hilton Head Island',
     category: 'marquee',
     description:
-      "A week of tastings, winemaker dinners, and the signature Public Tasting at Honey Horn. Now in its 41st year. Tickets sell out 4-6 weeks ahead. Pair with a Sea Pines or Palmetto Dunes stay for the easiest logistics.",
+      "Eleven days of tastings, winemaker dinners, and the signature Public Tasting at Honey Horn. Tickets sell out 4-6 weeks ahead. Pair with a Sea Pines or Palmetto Dunes stay for the easiest logistics.",
     recurring: true,
     isHighlight: true,
+    nextEditionSlug: 'wine-and-food-festival-2027',
   },
   {
     slug: 'concours-delegance-2026',
@@ -76,9 +85,10 @@ export const events: EventEntry[] = [
     location: 'Honey Horn / Port Royal',
     category: 'marquee',
     description:
-      "Four-day automotive showcase featuring concours classes, the Car Club Showcase, the Motoring Festival, and the Sunday gala on the lawn at Honey Horn. Draws collectors and enthusiasts from across the country. Lodging tightens the prior week; book 3-4 months ahead.",
+      "Multi-day automotive showcase featuring concours classes, the Car Club Showcase, the Motoring Festival, and the Sunday gala on the lawn at Honey Horn. Draws collectors and enthusiasts from across the country. Lodging tightens the prior week; book 3-4 months ahead.",
     recurring: true,
     isHighlight: true,
+    nextEditionSlug: 'concours-2027',
   },
 
   // ——— SEASONAL FESTIVALS ——————————————————————————————————————————

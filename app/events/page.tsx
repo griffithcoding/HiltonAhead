@@ -17,6 +17,7 @@ import {
   getHighlightEvents,
   type EventEntry,
 } from '@/data/events';
+import { events2027 } from '@/data/events2027';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Hilton Head Events 2026: The Local Calendar',
@@ -78,23 +79,73 @@ function formatRange(start: string, end: string): string {
   return `${formatDate(start)} – ${formatDate(end)}`;
 }
 
+type Edition = {
+  start: string;
+  end: string;
+  label: string;
+  /** False when no 2027 date is posted. Those stay out of Event JSON-LD. */
+  confirmed: boolean;
+};
+
+/**
+ * The edition an entry displays. With `nextEditionSlug` that is the next
+ * edition from data/events2027.ts (the dates live only there), shown instead
+ * of the entry's own dates; otherwise the entry's own dates.
+ */
+function editionOf(e: EventEntry): Edition {
+  const next = e.nextEditionSlug
+    ? events2027.find((x) => x.slug === e.nextEditionSlug)
+    : undefined;
+  if (!next) {
+    return {
+      start: e.startDate,
+      end: e.endDate,
+      label: formatRange(e.startDate, e.endDate),
+      confirmed: true,
+    };
+  }
+  if (next.startDate && next.endDate) {
+    const range = formatRange(next.startDate, next.endDate);
+    const confirmed = next.status === 'confirmed';
+    return {
+      start: next.startDate,
+      end: next.endDate,
+      label: confirmed ? range : `${range} (unconfirmed)`,
+      confirmed,
+    };
+  }
+  // Not posted yet: show the usual timing, labeled as expected. The sort date
+  // only orders rows within a category.
+  return {
+    start: next.sortDate,
+    end: next.sortDate,
+    label: `${next.sortDate.slice(0, 4)}: ${next.dateLabel}`,
+    confirmed: false,
+  };
+}
+
 export default function EventsPage() {
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
     { name: 'Events', path: '/events' },
   ]);
 
-  // One Event JSON-LD per event for rich result eligibility.
-  const eventSchemas = events.map((e) =>
-    getEventSchema({
-      name: e.name,
-      description: e.description,
-      startDate: e.startDate,
-      endDate: e.endDate,
-      locationName: e.venue || e.location,
-      url: e.url,
-    }),
-  );
+  // One Event JSON-LD per event for rich result eligibility, using the dates
+  // shown on the page. Events with no posted date get none.
+  const eventSchemas = events.flatMap((e) => {
+    const edition = editionOf(e);
+    if (!edition.confirmed) return [];
+    return [
+      getEventSchema({
+        name: e.name,
+        description: e.description,
+        startDate: edition.start,
+        endDate: edition.end,
+        locationName: e.venue || e.location,
+        url: e.url,
+      }),
+    ];
+  });
 
   const highlights = getHighlightEvents();
 
@@ -104,7 +155,7 @@ export default function EventsPage() {
     label: CATEGORY_LABELS[cat],
     items: events
       .filter((e) => e.category === cat)
-      .sort((a, b) => a.startDate.localeCompare(b.startDate)),
+      .sort((a, b) => editionOf(a).start.localeCompare(editionOf(b).start)),
   })).filter((g) => g.items.length > 0);
 
   return (
@@ -238,7 +289,7 @@ function HighlightCard({ event }: { event: EventEntry }) {
   return (
     <article className="flex flex-col border-t border-coral/40 pt-6">
       <div className="eyebrow text-coral">
-        {formatRange(event.startDate, event.endDate)}
+        {editionOf(event).label}
       </div>
       <h3 className="display mt-3 text-[26px] leading-[1.12] text-ink md:text-[30px]">
         {event.name}
@@ -266,7 +317,7 @@ function EventRow({ event }: { event: EventEntry }) {
     <li className="grid grid-cols-1 gap-4 py-6 md:grid-cols-[200px_minmax(0,1fr)_auto] md:gap-8 md:py-7">
       <div>
         <div className="eyebrow text-coral">
-          {formatRange(event.startDate, event.endDate)}
+          {editionOf(event).label}
         </div>
         <div className="mt-1 text-[12px] text-ink-soft">{event.location}</div>
       </div>
