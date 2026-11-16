@@ -1,13 +1,15 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { brand } from '@/data/brand';
+import { preLaunchGateEnabled } from '@/data/features';
 
 /**
  * ——— Pre-launch gate ———————————————————————————————————————————————
  *
- * The public site is not ready to show yet. Every public route returns a
- * 503 "coming soon" page until `SITE_OFFLINE=false` is set in the Vercel
- * project (or this block is deleted at launch).
+ * When `preLaunchGateEnabled` (data/features.ts) is true, every public route
+ * returns a 503 "coming soon" page until `SITE_OFFLINE=false` is set in the
+ * Vercel project. While that flag is false the gate is off and the site is
+ * live. The flag is a code constant so it can be flipped without Vercel access.
  *
  * Deliberately 503 and NOT `noindex` / `Disallow: /`: 503 is the signal
  * Google documents for temporary unavailability and it preserves existing
@@ -29,8 +31,12 @@ const PREVIEW_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
 /** Prefixes that stay live while the gate is up. */
 const ALWAYS_ALLOWED = ['/admin', '/auth', '/api', '/_next'];
 
-/** Gate is ON by default — the site is off until we explicitly turn it on. */
+/**
+ * With `preLaunchGateEnabled` on, the gate is ON by default — the site is off
+ * until `SITE_OFFLINE=false` is set. With the flag off the gate never applies.
+ */
 function siteIsOffline(): boolean {
+  if (!preLaunchGateEnabled) return false;
   if (process.env.NODE_ENV === 'development') return false;
   return process.env.SITE_OFFLINE !== 'false';
 }

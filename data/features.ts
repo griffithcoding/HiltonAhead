@@ -97,3 +97,21 @@ export const tripPlanningEnabled = false;
  */
 export const sellOrRentPageEnabled = false;
 export const golfPackagesPageEnabled = false;
+
+/**
+ * preLaunchGateEnabled
+ * --------------------
+ * Controls the pre-launch "coming soon" gate in proxy.ts.
+ *
+ * While false (the current setting) the gate is off and the public site is
+ * live. Admin, auth and API routes are never gated either way.
+ *
+ * TO PUT THE GATE BACK: set this to true and redeploy. proxy.ts then serves
+ * the 503 coming-soon page on every public route, exactly as before, unless
+ * the SITE_OFFLINE env var is set to `false` (see .env.example). The owner
+ * preview link (?preview=<SITE_PREVIEW_SECRET>) works while the gate is up.
+ *
+ * This is a code constant, not an env var, on purpose: flipping it does not
+ * require access to the hosting dashboard.
+ */
+export const preLaunchGateEnabled = false;
