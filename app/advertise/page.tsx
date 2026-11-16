@@ -60,7 +60,7 @@ export default function AdvertisePage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-ink via-ocean-deep to-ocean px-5 py-16 md:py-24">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
         <div className="relative mx-auto max-w-3xl text-center">
-          <p className="eyebrow mb-3 text-coral">For Hilton Head operators</p>
+          <p className="eyebrow mb-3 !text-black">For Hilton Head operators</p>
           <h1 className="display mb-5 text-4xl font-medium text-sand md:text-5xl lg:text-6xl">
             Reach travelers planning a Hilton Head trip — right now.
           </h1>
