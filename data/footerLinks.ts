@@ -38,6 +38,7 @@ const baseFooterLinks = {
         { href: '/hilton-head-hurricane-season', label: 'Hurricane Season' },
         { href: '/southwest-airlines-to-hilton-head', label: 'Fly Southwest to HHI' },
         { href: '/events', label: 'Events Calendar' },
+        { href: '/guides/2027-events', label: '2027 Events Guide' },
       ],
     },
     {

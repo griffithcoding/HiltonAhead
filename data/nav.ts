@@ -53,6 +53,7 @@ const baseNav: Nav = {
         { href: '/hilton-head-tee-times', label: 'Tee Times' },
         { href: '/guides/2027-rbc-heritage', label: '2027 Heritage Kit (free)' },
         { href: '/events', label: 'Events Calendar' },
+        { href: '/guides/2027-events', label: '2027 Events Guide' },
         { href: '/stories', label: 'Stories' },
       ],
     },
