@@ -71,8 +71,7 @@ export default function FounderPage() {
             keep a working list of which restaurants will hold a seven
             o&rsquo;clock table for somebody I vouch for. The point of this
             practice isn&rsquo;t to look like a booking site. It&rsquo;s to
-            give you the honest local read on a place I actually know and
-            have been a part of since the early &rsquo;90s.
+            give you the honest local read on a place I actually know.
           </p>
 
           <p className="mt-6 text-[15px] leading-[1.75] text-ink-soft md:text-[16px]">

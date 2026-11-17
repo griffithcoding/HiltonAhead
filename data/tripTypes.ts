@@ -69,8 +69,8 @@ export type TripTypeLanding = {
   /** Slug of the long-form blog post to link out to (if any). */
   blogPostSlug?: string;
   /**
-   * Slug of a /stories/[slug] page that shows a real trip of this type
-   * end-to-end. When set, the trip-type page renders a "See the story" rail.
+   * Slug of a /stories/[slug] sample itinerary for this trip type. When
+   * set, the trip-type page renders a "See a sample itinerary" rail.
    */
   relatedStorySlug?: string;
   /**

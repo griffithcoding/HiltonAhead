@@ -23,7 +23,7 @@ const PAGE_URL = `${brand.url}${PATH}`;
 export const metadata: Metadata = generatePageMetadata({
   title: 'Hilton Head Packing List: 10 Mistakes First-Timers Make',
   description:
-    "The 10 things first-time Hilton Head visitors get wrong — and what to bring instead. Written by a 30-year island local. Wind-rated umbrella, wide-tire beach cart, reef-safe sunscreen, and seven more.",
+    "The 10 things first-time Hilton Head visitors get wrong — and what to bring instead. Written by an island local. Wind-rated umbrella, wide-tire beach cart, reef-safe sunscreen, and seven more.",
   path: PATH,
   keywords: [
     'Hilton Head packing list',
@@ -93,7 +93,7 @@ export default function HiltonHeadPackingListPage() {
           </h1>
           <p className="mt-5 text-[15px] leading-[1.7] text-ink-soft md:text-[16px]">
             Ten things first-time visitors get wrong, and what to bring
-            instead. Written from thirty years on the island. We earn a few
+            instead. Written from the island. We earn a few
             dollars from these Amazon links — full disclosure below.
           </p>
           <AffiliateDisclosure variant="banner" className="mt-6" />

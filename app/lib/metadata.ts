@@ -568,9 +568,9 @@ export function getStoriesCollectionSchema(stories: Array<{
     '@type': 'CollectionPage',
     '@id': url,
     url,
-    name: 'Hilton Head Stories',
+    name: 'Hilton Head Sample Itineraries',
     description:
-      'Real Hilton Head trips, planned end-to-end. Long-form, place-as-protagonist narratives of golf weekends, weddings, and family weeks on the island.',
+      'Sample Hilton Head itineraries. Long-form, illustrative walkthroughs of golf weekends, weddings, and family weeks on the island.',
     inLanguage: 'en-US',
     isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}#website`, url: siteUrl },
     mainEntity: {

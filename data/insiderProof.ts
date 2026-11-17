@@ -22,7 +22,7 @@ export const insiderProof = {
     : [
         { label: 'Years on island', value: '6' },
         { label: 'Neighborhood guides', value: String(neighborhoods.length) },
-        { label: 'Local guides & stories', value: String(posts.length + stories.length) },
+        { label: 'Local guides & sample itineraries', value: String(posts.length + stories.length) },
         { label: 'Local businesses listed', value: String(allBusinesses.length) },
       ],
   /**

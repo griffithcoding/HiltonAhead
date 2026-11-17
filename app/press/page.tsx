@@ -143,13 +143,11 @@ export default function PressPage() {
           <ul className="mt-6 space-y-4 text-[14px] leading-[1.65] text-ink-soft md:text-[15px]">
             <li>
               <strong className="text-ink">Founded:</strong> Hilton Head
-              Island, SC — full-time local presence since the early
-              &rsquo;90s.
+              Island, SC — full-time local presence.
             </li>
             <li>
               <strong className="text-ink">Founder:</strong> William
-              Griffith — Hilton Head Island resident since the
-              early &rsquo;90s.
+              Griffith — full-time Hilton Head Island resident.
             </li>
             <li>
               <strong className="text-ink">Specialties:</strong> Hilton

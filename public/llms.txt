@@ -7,7 +7,7 @@ The brand operates on a single principle: the best of Hilton Head is never on th
 ## Core
 
 - [About Hilton Ahead](https://www.hiltonahead.com/about): Who Hilton Ahead is and how the site works.
-- [Founder: William Griffith](https://www.hiltonahead.com/founder): Bio of Hilton Ahead's founder, a 30-year Hilton Head Island full-time resident.
+- [Founder: William Griffith](https://www.hiltonahead.com/founder): Bio of Hilton Ahead's founder, a full-time Hilton Head Island resident.
 - [FAQ — 25 direct answers](https://www.hiltonahead.com/faq): Timing, lodging, golf, family, comparisons, logistics, and about Hilton Ahead.
 - [Contact](https://www.hiltonahead.com/contact): Direct contact form.
 
@@ -27,7 +27,7 @@ The brand operates on a single principle: the best of Hilton Head is never on th
 ## Travel Guides
 
 - [Hilton Head Travel Blog](https://www.hiltonahead.com/blog): 32+ local-insider articles on stays, dining, activities, neighborhoods, golf, and trip logistics.
-- [Hilton Head Stories](https://www.hiltonahead.com/stories): Long-form narrative trip reports — golf weekends, weddings, family weeks.
+- [Hilton Head Sample Itineraries](https://www.hiltonahead.com/stories): Long-form sample itineraries (illustrative, not records of specific trips) — golf weekends, weddings, family weeks.
 - [Weather by Month](https://www.hiltonahead.com/hilton-head-weather): 12 month-by-month seasonal travel guides covering temperature, rainfall, crowds, and pricing.
 - [Events Calendar](https://www.hiltonahead.com/events): Festivals, concerts, RBC Heritage, and seasonal Hilton Head events.
 - [2027 RBC Heritage Kit](https://www.hiltonahead.com/guides/2027-rbc-heritage): Free planning guide for the Heritage week.

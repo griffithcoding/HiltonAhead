@@ -41,7 +41,7 @@ export default async function StoryRoute(
 
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
-    { name: 'Stories', path: '/stories' },
+    { name: 'Sample Itineraries', path: '/stories' },
     { name: story.title.plain.replace(/[,.]$/, ''), path: `/stories/${story.slug}` },
   ]);
   const article = getStoryArticleSchema({

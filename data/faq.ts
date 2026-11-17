@@ -30,7 +30,7 @@ const consultingFaqItems: ReadonlyArray<FaqItem> = [
     {
       question: 'Why hire a travel consultant for Hilton Head?',
       answer:
-        "Because the best of Hilton Head is never on the first page of Google — it's in the heads of the people who live here. We know which oceanfront villa has the pool that goes quiet by 4 p.m. (the one that fills up ten minutes after the cover comes off in March). We know which Skull Creek table catches the last ten minutes of sun in late July. And we know which Harbour Town tee time opens up two Tuesdays out, even when the booking page tells you otherwise. The result: a trip your spouse thinks took a weekend to plan, that actually took thirty years.",
+        "Because the best of Hilton Head is never on the first page of Google — it's in the heads of the people who live here. We know which oceanfront villa has the pool that goes quiet by 4 p.m. (the one that fills up ten minutes after the cover comes off in March). We know which Skull Creek table catches the last ten minutes of sun in late July. And we know which Harbour Town tee time opens up two Tuesdays out, even when the booking page tells you otherwise. The result: a trip your spouse thinks took a weekend to plan, that actually took years of living here.",
     },
     {
       question: 'How is this different from Airbnb, Vrbo, or a resort concierge?',

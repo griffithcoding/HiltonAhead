@@ -5,7 +5,7 @@
  * `/hilton-head-packing-list` page (skim table + deep-dive sections).
  *
  * Voice contract (per spec §8):
- *   - 30-year HHI resident voice; no exclamation marks; no "BEST" superlatives
+ *   - HHI resident voice; no exclamation marks; no "BEST" superlatives
  *   - Each `body` paragraph cites at least one specific local detail
  *   - Anchor copy (in JSX) is the product/brand name, never "click here"
  *   - Do NOT cite specific prices in body — Amazon TOS bans this. Use ranges

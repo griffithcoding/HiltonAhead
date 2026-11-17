@@ -44,7 +44,7 @@ export default function StoryPage({ story }: Props) {
           </Link>
           <span aria-hidden="true" className="h-px w-4 bg-ocean-deep/20" />
           <Link href="/stories" className="transition-colors hover:text-coral">
-            Stories
+            Sample Itineraries
           </Link>
           <span aria-hidden="true" className="h-px w-4 bg-ocean-deep/20" />
           <span className="text-coral">
@@ -102,7 +102,7 @@ export default function StoryPage({ story }: Props) {
         <section className="mx-auto mt-32 max-w-[1280px] px-5 md:mt-44">
           <h2 className="display text-[26px] leading-[1.2] text-ink md:text-[32px]">
             Other{' '}
-            <span className="display-italic text-coral">stories.</span>
+            <span className="display-italic text-coral">sample itineraries.</span>
           </h2>
           <ul className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
             {others.map((s) => (
@@ -112,7 +112,7 @@ export default function StoryPage({ story }: Props) {
                   className="group flex h-full flex-col gap-2 rounded-2xl border border-ink/15 bg-cream/40 px-6 py-5 transition-colors hover:border-coral hover:bg-cream"
                 >
                   <span className="text-[10px] uppercase tracking-[0.28em] text-coral">
-                    Story № {s.storyNumber} · {KIND_LABEL[s.kind]}
+                    Sample itinerary № {s.storyNumber} · {KIND_LABEL[s.kind]}
                   </span>
                   <span className="display mt-1 text-[20px] leading-[1.2] text-ink group-hover:text-coral md:text-[22px]">
                     {s.title.plain}{' '}
