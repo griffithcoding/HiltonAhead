@@ -70,7 +70,7 @@ export default function FounderPage() {
             full-time, drive past the villas before I recommend them, and
             keep a working list of which restaurants will hold a seven
             o&rsquo;clock table for somebody I vouch for. The point of this
-            practice isn&rsquo;t to look like a travel agency. It&rsquo;s to
+            practice isn&rsquo;t to look like a booking site. It&rsquo;s to
             give you the honest local read on a place I actually know and
             have been a part of since the early &rsquo;90s.
           </p>
