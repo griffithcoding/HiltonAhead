@@ -94,9 +94,13 @@ export const tripPlanningEnabled = false;
  * Individual page switches. While false the page redirects (307) to the
  * homepage and is removed from the sitemap. Inbound links were removed from
  * the footer, cross-link lists and blog text; restore those from git history.
+ *
+ * /hilton-head-golf-packages is ON: it was rebuilt as a price-comparison
+ * guide (green fee vs. package rate per course, from data/golfCourses.ts)
+ * with booking links, and no longer sells a planning service.
  */
 export const sellOrRentPageEnabled = false;
-export const golfPackagesPageEnabled = false;
+export const golfPackagesPageEnabled = true;
 
 /**
  * preLaunchGateEnabled

@@ -101,11 +101,11 @@ export const tripTypes: TripTypeLanding[] = [
     path: '/hilton-head-golf-packages',
     tagline: {
       plain: 'Hilton Head golf packages,',
-      italic: 'planned by someone who plays here.',
+      italic: 'compared by someone who plays here.',
     },
-    seoTitle: 'Hilton Head Golf Packages: A Local\u2019s Guide',
+    seoTitle: 'Hilton Head Golf Packages: Prices Compared',
     metaDescription:
-      'Custom Hilton Head golf trip packages. Harbour Town tee-time priority, Palmetto Dunes three-course mix, villas inside five minutes of first tee.',
+      'Green fees vs. stay-and-play package rates at all 12 Hilton Head and Bluffton golf courses, three sample lineups priced both ways, and where to book each one.',
     keywords: [
       'Hilton Head golf packages',
       'Hilton Head golf trip',
@@ -116,7 +116,7 @@ export const tripTypes: TripTypeLanding[] = [
       'Hilton Head stay and play',
     ],
     hook:
-      "Eight golf courses inside fifteen minutes — three of them national Top-100 — and the group's biggest decision becomes which one to play Wednesday. We sequence the Harbour Town tee times by tide and crowd, match the foursome to a villa inside five minutes of the first tee, and have your bags in the cart by 7:42 a.m. for an 8:00 push. You're stretching at the range before the first group on Course 18 has reached the par-3.",
+      "Eight golf courses inside fifteen minutes — three of them national Top-100 — and the group's biggest decision becomes which one to play Wednesday. This guide compares green fees with package rates at every course, so you can see what the bundle saves before you book.",
     reasons: [
       {
         title: 'Harbour Town priority',
@@ -161,7 +161,7 @@ export const tripTypes: TripTypeLanding[] = [
         placement: 'golf-packages',
         headline: 'Browse tee times across Hilton Head',
         description:
-          'Live availability for Harbour Town, Palmetto Dunes, Sea Pines, and the rest of the island’s public courses. We still book the priority Sea Pines slots ourselves — GolfNow is for the in-between rounds.',
+          'Live availability for Harbour Town, Palmetto Dunes, Sea Pines, and the rest of the island’s public courses, often below the pro-shop walk-up rate.',
         cta: 'See live tee times →',
       },
       {
