@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { tripPlanningEnabled } from '../data/features';
 
 const PATH = '/hilton-head-packing-list';
 
@@ -10,7 +11,19 @@ test('packing-list page loads with all major sections', async ({ page }) => {
   ).toBeVisible();
   await expect(page.getByRole('note', { name: /affiliate disclosure/i })).toBeVisible();
   await expect(page.getByText(/reef-safe/i).first()).toBeVisible();
-  await expect(page.getByRole('link', { name: /plan my trip/i })).toBeVisible();
+
+  // The closing "Plan my trip" section is gated by tripPlanningEnabled
+  // (data/features.ts). While the flag is off, no link to the trip-planning
+  // offer may render anywhere on the page, header included.
+  if (tripPlanningEnabled) {
+    await expect(
+      page
+        .locator('section', { hasText: /shopping for a trip/i })
+        .getByRole('link', { name: /plan my trip/i }),
+    ).toBeVisible();
+  } else {
+    await expect(page.getByRole('link', { name: /plan my trip/i })).toHaveCount(0);
+  }
 });
 
 test('skim table renders 10 rows on desktop with Amazon links', async ({ page }) => {

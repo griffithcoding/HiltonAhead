@@ -54,8 +54,14 @@ test.describe('Vacation Rentals surface', () => {
     const cta = page.getByRole('link', { name: /View on/i }).first();
     await expect(cta).toHaveAttribute('rel', /sponsored.*noopener|noopener.*sponsored/);
     await expect(cta).toHaveAttribute('target', '_blank');
-    // FAQ answers use the speakable selector
-    await expect(page.locator('.faq-answer').first()).toBeVisible();
+    // FAQ answers use the speakable selector. Each answer sits in a collapsed
+    // <details>, so it is in the DOM on load and visible once its question
+    // is opened.
+    const firstFaq = page.locator('details', { has: page.locator('.faq-answer') }).first();
+    const firstAnswer = firstFaq.locator('.faq-answer');
+    await expect(firstAnswer).toBeAttached();
+    await firstFaq.locator('summary').click();
+    await expect(firstAnswer).toBeVisible();
   });
 
   test('nav contains the Vacation Rentals item', async ({ page }) => {
