@@ -55,14 +55,14 @@ export default function FounderPage() {
         />
 
         {founder.imagePath && (
-          <figure className="mx-auto mt-10 w-[220px] md:mt-12 md:w-[280px]">
+          <figure className="mx-auto mt-10 w-[132px] md:mt-12 md:w-[168px]">
             <div className="relative aspect-[4/5] overflow-hidden rounded-md shadow-[0_30px_80px_-20px_rgba(10,41,48,0.4)]">
               <Image
                 src={founder.imagePath}
                 alt={`${founder.name}, founder of Hilton Ahead`}
                 fill
                 priority
-                sizes="(max-width: 768px) 220px, 280px"
+                sizes="(max-width: 768px) 132px, 168px"
                 className="object-cover"
               />
             </div>
