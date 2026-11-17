@@ -1,9 +1,5 @@
-'use client';
-
-import {
-  withAffiliateParams,
-  trackAffiliateClick,
-} from '@/app/lib/affiliates';
+import { withAffiliateParams } from '@/app/lib/affiliates';
+import AffiliateAnchor from '@/components/affiliate/AffiliateAnchor';
 import type { AffiliateProgramId } from '@/data/affiliateLinks';
 
 /**
@@ -13,6 +9,9 @@ import type { AffiliateProgramId } from '@/data/affiliateLinks';
  *
  * Use inside body copy for contextual mentions. For prominent boxed CTAs
  * use <AffiliateCard> instead.
+ *
+ * Server component on purpose: the tracking IDs are server-only env vars, so
+ * the stamped URL is built here and handed to the client <AffiliateAnchor>.
  */
 export default function AffiliateLink({
   programId,
@@ -33,15 +32,14 @@ export default function AffiliateLink({
 }) {
   const href = withAffiliateParams(programId, deeplink, placement);
   return (
-    <a
+    <AffiliateAnchor
       href={href}
-      target="_blank"
-      rel="sponsored nofollow noopener noreferrer"
+      programId={programId}
+      placement={placement}
       className={className}
-      aria-label={ariaLabel}
-      onClick={() => trackAffiliateClick(programId, placement, href)}
+      ariaLabel={ariaLabel}
     >
       {children}
-    </a>
+    </AffiliateAnchor>
   );
 }

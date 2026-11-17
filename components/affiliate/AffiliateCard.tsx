@@ -1,9 +1,5 @@
-'use client';
-
-import {
-  withAffiliateParams,
-  trackAffiliateClick,
-} from '@/app/lib/affiliates';
+import { withAffiliateParams } from '@/app/lib/affiliates';
+import AffiliateAnchor from '@/components/affiliate/AffiliateAnchor';
 import {
   AFFILIATE_PROGRAMS,
   type AffiliateProgramId,
@@ -17,6 +13,9 @@ import {
  * Always pair the page that hosts one of these with <AffiliateDisclosure /> at
  * the top. The disclosure is required by the FTC; the card itself is the
  * money-maker.
+ *
+ * Server component on purpose: the tracking IDs are server-only env vars, so
+ * the stamped URL is built here and handed to the client <AffiliateAnchor>.
  */
 export default function AffiliateCard({
   programId,
@@ -69,15 +68,14 @@ export default function AffiliateCard({
         {descriptionCopy}
       </p>
       <div className="mt-4">
-        <a
+        <AffiliateAnchor
           href={href}
-          target="_blank"
-          rel="sponsored nofollow noopener noreferrer"
-          onClick={() => trackAffiliateClick(programId, placement, href)}
+          programId={programId}
+          placement={placement}
           className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-sand transition-all hover:bg-ocean"
         >
           {ctaCopy}
-        </a>
+        </AffiliateAnchor>
       </div>
       <p className="mt-3 text-[11px] leading-snug text-ink-soft/70">
         We may earn a commission if you book through this link, at no extra cost
