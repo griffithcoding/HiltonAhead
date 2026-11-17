@@ -34,7 +34,7 @@ export const founder = {
   /** External-presence URLs for schema.org `sameAs`. Filtered when blank. */
   sameAs: [] as string[],
   /** Optional headshot path; falls back to brand logo if blank. */
-  imagePath: '',
+  imagePath: '/founder/william-griffith.webp',
   email: brand.contact.email,
 } as const;
 
