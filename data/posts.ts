@@ -201,6 +201,13 @@ const post2026Stays: Post = {
     'Palmetto Dunes rentals',
     'new hotels Hilton Head',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare the places on this list',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for Hilton Head resorts and villas. Put in your dates and see which of these are open, and at what rate.',
+    cta: 'Compare Hilton Head stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -499,6 +506,13 @@ const postRestaurantsRanked: Post = {
     'Hilton Head dining',
     'where to eat Hilton Head 2026',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Stay close to the tables you want',
+    description:
+      'Where you stay decides how far dinner is. One search across Booking, Vrbo, Airbnb, and Hotels.com lets you pick a base near the restaurants you plan to book.',
+    cta: 'Compare Hilton Head stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -781,6 +795,13 @@ const postThingsToDoRanked: Post = {
     'Hilton Head kayak',
     "Hilton Head with kids",
   ],
+  affiliate: {
+    programId: 'viator',
+    headline: 'Book the tours on this list',
+    description:
+      'Dolphin cruises, boat trips, and guided activities out of Hilton Head on Viator, with instant confirmation.',
+    cta: 'Browse Hilton Head tours →',
+  },
   body: [
     {
       kind: 'p',
@@ -1067,6 +1088,14 @@ const postSeaPines: Post = {
     'Sea Pines restaurants',
     'Hilton Head neighborhoods',
   ],
+  affiliate: {
+    programId: 'stay22',
+    deeplink: 'https://www.stay22.com/allez?lat=32.134&lng=-80.808',
+    headline: 'Compare Sea Pines stays',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for villas, condos, and resort rooms inside the Sea Pines gate.',
+    cta: 'Compare Sea Pines stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -1236,6 +1265,14 @@ const postPalmettoDunes: Post = {
     'Hilton Head family vacation',
     'Marriott Grande Ocean',
   ],
+  affiliate: {
+    programId: 'stay22',
+    deeplink: 'https://www.stay22.com/allez?lat=32.19&lng=-80.741',
+    headline: 'Compare Palmetto Dunes stays',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for villas and resort rooms around the Palmetto Dunes lagoons and beach.',
+    cta: 'Compare Palmetto Dunes stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -1397,6 +1434,14 @@ const postForestBeach: Post = {
     'Forest Beach rentals',
     'walkable Hilton Head neighborhoods',
   ],
+  affiliate: {
+    programId: 'stay22',
+    deeplink: 'https://www.stay22.com/allez?lat=32.141&lng=-80.788',
+    headline: 'Compare Forest Beach stays',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for condos and villas within a walk of Coligny.',
+    cta: 'Compare Forest Beach stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -1554,6 +1599,14 @@ const postShelterCove: Post = {
     "Ela's On The Water",
     'Shelter Cove dining',
   ],
+  affiliate: {
+    programId: 'stay22',
+    deeplink: 'https://www.stay22.com/allez?lat=32.182&lng=-80.731',
+    headline: 'Compare Shelter Cove stays',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for condos and villas around the Shelter Cove marina.',
+    cta: 'Compare Shelter Cove stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -1705,6 +1758,13 @@ const postGolfTrip: Post = {
     'Hilton Head tee times',
     'golf trip Hilton Head 2026',
   ],
+  affiliate: {
+    programId: 'golfnow',
+    headline: 'Compare tee times for your dates',
+    description:
+      'Open tee times across Hilton Head\'s public and resort courses on GolfNow, often below the pro-shop walk-up rate.',
+    cta: 'See tee times on GolfNow →',
+  },
   body: [
     {
       kind: 'p',
@@ -2243,6 +2303,13 @@ const postHurricaneForecast2026: Post = {
     'Hilton Head shoulder season',
     'Hilton Head fall booking',
   ],
+  affiliate: {
+    programId: 'allianz',
+    headline: 'Cover the trip before you book it',
+    description:
+      'Travel insurance covers trip cancellation, interruption, and weather delays, which matters most for an August to October stay.',
+    cta: 'Get a quote →',
+  },
   body: [
     {
       kind: 'p',
@@ -2425,6 +2492,13 @@ const postBridge2026Debunker: Post = {
     'driving to Hilton Head 2026',
     'Hilton Head bridge replacement timeline',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare Hilton Head stays for your dates',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for villas and resort rooms across the island.',
+    cta: 'Compare Hilton Head stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -2556,6 +2630,13 @@ const postRbcHeritage: Post = {
     'RBC Heritage lodging',
     'Hilton Head PGA Tour',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare Heritage-week stays',
+    description:
+      'Lodging inside Sea Pines books far ahead for tournament week. One search across Booking, Vrbo, Airbnb, and Hotels.com shows what is still open on the island and in Bluffton.',
+    cta: 'Compare Heritage-week stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -2704,6 +2785,13 @@ const postWithKids: Post = {
     'family beach vacation South Carolina',
     'Hilton Head family resort',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare family villas and condos',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for whole-house rentals and resort condos with kitchens and pools.',
+    cta: 'Compare family stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -2915,6 +3003,14 @@ const postBestBeaches: Post = {
     'Hilton Head beach parking',
     'Hilton Head family beach',
   ],
+  affiliate: {
+    programId: 'amazon',
+    deeplink: 'https://www.amazon.com/s?k=wind+resistant+beach+umbrella+sand+anchor',
+    headline: 'Bring an umbrella that holds in the wind',
+    description:
+      'The afternoon sea breeze flattens cheap umbrellas. A vented canopy with a screw-in sand anchor is the piece of beach gear worth buying before you come.',
+    cta: 'See wind-rated umbrellas on Amazon →',
+  },
   body: [
     {
       kind: 'p',
@@ -3135,6 +3231,13 @@ const post3DayItinerary: Post = {
     'Hilton Head short trip',
     '3 days in Hilton Head',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Find a base for three days',
+    description:
+      'On a short trip, where you stay matters more than usual. One search across Booking, Vrbo, Airbnb, and Hotels.com for villas and resort rooms on your dates.',
+    cta: 'Compare Hilton Head stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -3349,6 +3452,13 @@ const post7DayItinerary: Post = {
     'Hilton Head family week itinerary',
     'Hilton Head activities week',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare week-long villa rentals',
+    description:
+      'A week is long enough to want a kitchen. One search across Booking, Vrbo, Airbnb, and Hotels.com for whole-house rentals and condos.',
+    cta: 'Compare week-long stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -3546,6 +3656,13 @@ const postHHvsMyrtleBeach: Post = {
     'Hilton Head Myrtle Beach comparison',
     'South Carolina beach comparison',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'See what Hilton Head costs for your dates',
+    description:
+      'Leaning Hilton Head? One search across Booking, Vrbo, Airbnb, and Hotels.com puts a real number on villas and resort rooms for your week.',
+    cta: 'Compare Hilton Head stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -3743,6 +3860,13 @@ const postSeaPinesVsPalmettoDunes: Post = {
     'which Hilton Head community',
     'Hilton Head gated community comparison',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare stays in both',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com, covering Sea Pines and Palmetto Dunes. Put in your dates and see what each has open.',
+    cta: 'Compare stays on the map →',
+  },
   body: [
     {
       kind: 'p',
@@ -3971,6 +4095,13 @@ const postGolfCoursesRanked: Post = {
     'Hilton Head golf tee times',
     'Shipyard Golf Club',
   ],
+  affiliate: {
+    programId: 'golfnow',
+    headline: 'Lock tee times at the courses you picked',
+    description:
+      'Open tee times across Hilton Head\'s public and resort courses on GolfNow, often below the pro-shop walk-up rate.',
+    cta: 'See tee times on GolfNow →',
+  },
   body: [
     {
       kind: 'p',
@@ -4335,6 +4466,13 @@ const postRomanticRestaurants: Post = {
     'best anniversary restaurant Hilton Head',
     'Palmetto Bluff wedding proposal',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare stays for two',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for oceanfront rooms and small villas, for an anniversary or honeymoon trip.',
+    cta: 'Compare stays for two →',
+  },
   body: [
     {
       kind: 'p',
@@ -4569,6 +4707,13 @@ const postWinterGuide: Post = {
     'Hilton Head winter activities',
     "what's open Hilton Head winter",
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare winter rentals',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for villas and condos, whether you want a long weekend or a full month.',
+    cta: 'Compare winter rentals →',
+  },
   body: [
     {
       kind: 'p',
@@ -4841,6 +4986,13 @@ const postFishingGuide: Post = {
     'best time to fish hilton head',
     'hilton head fishing guide 2026',
   ],
+  affiliate: {
+    programId: 'viator',
+    headline: 'Browse charters and boat tours',
+    description:
+      'Charters, dolphin cruises, and boat tours out of Hilton Head on Viator, with instant confirmation.',
+    cta: 'Browse on Viator →',
+  },
   body: [
     {
       kind: 'p',
@@ -5051,6 +5203,13 @@ const postDogFriendly: Post = {
     'pet friendly hilton head island',
     'dog friendly hilton head vacation',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Find a pet-friendly rental',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for villas and condos. Filter for pet-friendly before you fall for a listing.',
+    cta: 'Compare Hilton Head rentals →',
+  },
   body: [
     {
       kind: 'p',
@@ -5265,6 +5424,13 @@ const postWeekendGetaway: Post = {
     'savannah and hilton head weekend',
     'hilton head road trip from atlanta',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare stays for a weekend',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for resort rooms and villas that take two- and three-night stays.',
+    cta: 'Compare weekend stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -5481,6 +5647,13 @@ const postDolphinTours: Post = {
     'sunset dolphin tour hilton head',
     'hilton head dolphin tour 2026',
   ],
+  affiliate: {
+    programId: 'viator',
+    headline: 'Book a dolphin tour',
+    description:
+      'Dolphin cruises and small-boat tours out of Hilton Head on Viator, with instant confirmation.',
+    cta: 'Browse dolphin tours →',
+  },
   body: [
     {
       kind: 'p',
@@ -5727,6 +5900,12 @@ const postKayakingGuide: Post = {
     'hilton head kayak rental',
     'hilton head kayaking guide 2026',
   ],
+  affiliate: {
+    programId: 'viator',
+    headline: 'Book a guided paddle',
+    description: 'Kayak and boat tours around Hilton Head on Viator, with instant confirmation.',
+    cta: 'Browse tours on Viator →',
+  },
   body: [
     {
       kind: 'p',
@@ -6195,6 +6374,13 @@ const postTripCost2026: Post = {
     'hilton head trip cost 2026',
     'hilton head golf trip cost',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Price your own lodging',
+    description:
+      'Lodging is the biggest line in a Hilton Head budget. One search across Booking, Vrbo, Airbnb, and Hotels.com for villas and resort rooms on your dates.',
+    cta: 'Compare Hilton Head stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -6446,6 +6632,13 @@ const postLastCallJuly: Post = {
     'hilton head july 4 villa',
     'hilton head villa rental july',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Check what is still open',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com for live availability on villas and resort rooms for your dates.',
+    cta: 'Check availability →',
+  },
   body: [
     {
       kind: 'p',
@@ -6607,6 +6800,13 @@ const postThreeWayCompare: Post = {
     'where to stay hilton head',
     'hilton head neighborhoods compared',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare stays in all three',
+    description:
+      'One search across Booking, Vrbo, Airbnb, and Hotels.com, covering Sea Pines, Palmetto Dunes, and Shelter Cove. Put in your dates and see what each has open.',
+    cta: 'Compare stays on the map →',
+  },
   body: [
     {
       kind: 'p',
@@ -6812,6 +7012,13 @@ const postGolfTiers: Post = {
     'best hilton head golf courses',
     'hilton head golf tiers',
   ],
+  affiliate: {
+    programId: 'golfnow',
+    headline: 'Compare tee times by course',
+    description:
+      'Open tee times across Hilton Head\'s public and resort courses on GolfNow, often below the pro-shop walk-up rate.',
+    cta: 'See tee times on GolfNow →',
+  },
   body: [
     {
       kind: 'p',
@@ -7026,6 +7233,13 @@ const postSpringBreakHeritage: Post = {
     'hilton head april family',
     'hilton head spring break family',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'Compare spring-break stays',
+    description:
+      'Spring weeks book early. One search across Booking, Vrbo, Airbnb, and Hotels.com shows what is open for your dates.',
+    cta: 'Compare spring stays →',
+  },
   body: [
     {
       kind: 'p',
@@ -7192,6 +7406,13 @@ const postWeatherMonthByMonth: Post = {
     'hilton head hurricane month',
     'hilton head weather guide',
   ],
+  affiliate: {
+    programId: 'stay22',
+    headline: 'See what your month costs',
+    description:
+      'Rates move with the weather. One search across Booking, Vrbo, Airbnb, and Hotels.com for villas and resort rooms in the month you are considering.',
+    cta: 'Compare Hilton Head stays →',
+  },
   body: [
     {
       kind: 'p',
