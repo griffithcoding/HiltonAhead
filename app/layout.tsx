@@ -91,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col font-sans text-ink">
         {/* Site-wide JSON-LD: WebSite (with SearchAction sitelinks searchbox)
             and Organization (Knowledge Graph anchor). Page-level pages can
-            still emit more specific schemas (TravelAgency, Article, etc.). */}
+            still emit more specific schemas (Article, FAQPage, etc.). */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}

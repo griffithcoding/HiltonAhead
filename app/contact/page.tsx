@@ -11,7 +11,6 @@ import { SectionHead } from '@/components/ui/Ornament';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
-  getLocalBusinessSchema,
 } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -32,17 +31,12 @@ export default function ContactPage() {
     { name: 'Home', path: '/' },
     { name: 'Contact', path: '/contact' },
   ]);
-  const localBusiness = getLocalBusinessSchema();
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
       />
 
       <div className="mx-auto max-w-[1280px] px-5">
