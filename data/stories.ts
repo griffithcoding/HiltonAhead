@@ -99,9 +99,9 @@ const fallGolfWeekend: Story = {
   date: 'October 2025',
   publishedAt: '2025-11-04T10:00:00-05:00',
 
-  seoTitle: 'A Hilton Head Fall Golf Weekend, Planned to the Half Hour',
+  seoTitle: 'Hilton Head Fall Golf Weekend: A Sample Itinerary',
   metaDescription:
-    'Eight college roommates, three Hilton Head courses, two villas, one perfectly paced October weekend. The day-by-day, costs, and what made the trip work.',
+    'A sample itinerary: eight college roommates, three Hilton Head courses, two villas, one well-paced October weekend. The day-by-day, costs, and what makes the trip work.',
   keywords: [
     'Hilton Head golf weekend',
     'Harbour Town golf',
@@ -118,7 +118,7 @@ const fallGolfWeekend: Story = {
     italic: 'planned to the half hour.',
   },
   hook:
-    'Late October. Eight college roommates twenty-five years out, thirty-six holes a day, two villas a block apart inside the Sea Pines gate. Here is how the weekend actually ran — Friday’s wheels-down to Sunday’s wheels-up, on the half hour.',
+    'Late October. Eight college roommates twenty-five years out, thirty-six holes a day, two villas a block apart inside the Sea Pines gate. Here is how a weekend like this can run — Friday’s wheels-down to Sunday’s wheels-up, on the half hour.',
   cover: {
     src: photos.golfFairway.src,
     alt: 'Empty Lowcountry golf fairway lined with palmetto trees at sunrise',
@@ -253,9 +253,9 @@ const octoberVillaWedding: Story = {
   date: 'October 2025',
   publishedAt: '2025-11-12T10:00:00-05:00',
 
-  seoTitle: 'An October Villa Wedding on Hilton Head — A Weekend, Planned',
+  seoTitle: 'Hilton Head Villa Wedding Weekend: A Sample Itinerary',
   metaDescription:
-    'Sixty-two guests, thirty-eight villas, one Saturday Sea Pines beach ceremony. The full lodging-and-logistics weekend, day by day, by a local Hilton Head wedding planner.',
+    'A sample itinerary: sixty-two guests, thirty-eight villas, one Saturday Sea Pines beach ceremony. The full lodging-and-logistics weekend, day by day.',
   keywords: [
     'Hilton Head wedding weekend',
     'Sea Pines wedding',
@@ -272,7 +272,7 @@ const octoberVillaWedding: Story = {
     italic: 'planned around the guests.',
   },
   hook:
-    'Sixty-two guests, three flight cities, one Saturday afternoon ceremony at a Sea Pines beachfront under live oaks. Here is how the weekend actually ran for the people who flew in — welcome bag to airport van.',
+    'Sixty-two guests, three flight cities, one Saturday afternoon ceremony at a Sea Pines beachfront under live oaks. Here is how a weekend like this can run for the people who fly in — welcome bag to airport van.',
   cover: {
     src: photos.ceremonyArbor.src,
     alt: 'Empty wedding arbor on a coastal lawn at golden hour',
@@ -406,9 +406,9 @@ const summerFamilyWeek: Story = {
   date: 'July 2025',
   publishedAt: '2025-08-08T10:00:00-04:00',
 
-  seoTitle: 'A Summer Family Week on Hilton Head — Eight Days, Day by Day',
+  seoTitle: 'Hilton Head Summer Family Week: A Sample 8-Day Itinerary',
   metaDescription:
-    'Two parents, four kids ages 4 to 13, one grandmother, eight days at Palmetto Dunes. The full Hilton Head family week — camps, dinners, rainy-day plays, and the parents got a vacation too.',
+    'A sample itinerary: two parents, four kids ages 4 to 13, one grandmother, eight days at Palmetto Dunes. The full Hilton Head family week — camps, dinners, rainy-day plays, and a vacation for the parents too.',
   keywords: [
     'Hilton Head family week',
     'Palmetto Dunes family vacation',

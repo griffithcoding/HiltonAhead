@@ -11,16 +11,14 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
-  getLocalBusinessSchema,
   getPersonSchema,
 } from '@/app/lib/metadata';
-import { testimonialsMeta } from '@/data/testimonials';
 import { tripPlanningEnabled } from '@/data/features';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'About: An Independent Travel Guide to Hilton Head',
   description:
-    'Hilton Ahead is a locally-run travel guide to Hilton Head Island: honest picks for where to stay, eat, play golf, and spend a beach day, from a thirty-year island resident.',
+    'Hilton Ahead is a locally-run travel guide to Hilton Head Island: honest picks for where to stay, eat, play golf, and spend a beach day, from a full-time island resident.',
   path: '/about',
   keywords: [
     'Hilton Head local travel guide',
@@ -34,14 +32,6 @@ export default function AboutPage() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
   ]);
-  const localBusiness = getLocalBusinessSchema(
-    testimonialsMeta.hasRealTestimonials
-      ? {
-          ratingValue: testimonialsMeta.ratingValue,
-          reviewCount: testimonialsMeta.reviewCount,
-        }
-      : undefined,
-  );
   const person = getPersonSchema();
 
   return (
@@ -49,10 +39,6 @@ export default function AboutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
       />
       <script
         type="application/ld+json"

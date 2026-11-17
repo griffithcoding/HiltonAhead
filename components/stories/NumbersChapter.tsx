@@ -27,8 +27,8 @@ export default function NumbersChapter({ stats, intro }: NumbersChapterProps) {
           <SectionHead
             number="№ 06"
             eyebrow="The numbers"
-            plain="What it actually"
-            italic="took."
+            plain="What it"
+            italic="takes."
             align="center"
           />
         </Reveal>

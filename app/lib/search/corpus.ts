@@ -36,7 +36,7 @@ const STATIC_PAGES: ReadonlyArray<Omit<SearchableDoc, 'id' | 'type'>> = [
   { url: '/hilton-head-weather', title: 'Hilton Head Weather by Month', body: '12-month climate, water temperature, and crowd guide for Hilton Head Island.', tags: ['weather', 'month', 'climate'], weight: 1.2 },
   { url: '/events', title: 'Events Calendar', body: 'Marquee, recurring, food, sports, arts, seasonal, and holiday events on Hilton Head Island.', tags: ['events', 'calendar'], weight: 1.1 },
   { url: '/blog', title: 'Local Guide', body: 'Long-form blog posts on Hilton Head travel, golf, beaches, dining, and neighborhoods.', tags: ['blog', 'guide'], weight: 1.0 },
-  { url: '/stories', title: 'Stories', body: 'Place-as-protagonist editorial pieces — long-form scroll-driven narratives.', tags: ['stories', 'editorial'], weight: 0.9 },
+  { url: '/stories', title: 'Sample Itineraries', body: 'Long-form sample itineraries — illustrative golf weekends, weddings, and family weeks.', tags: ['stories', 'sample itineraries', 'itinerary', 'editorial'], weight: 0.9 },
   { url: '/guides/2027-rbc-heritage', title: '2027 RBC Heritage Kit', body: 'Free guide to the 2027 RBC Heritage tournament — tickets, lodging, parking, and on-course tips.', tags: ['heritage', 'golf', 'tournament', '2027'], weight: 1.4 },
 ].filter(
   (p) =>

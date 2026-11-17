@@ -18,8 +18,8 @@ export default function SettingChapter({ settings, intro }: SettingChapterProps)
           <SectionHead
             number="№ 03"
             eyebrow="The setting"
-            plain="Where it"
-            italic="happened."
+            plain="Where it's"
+            italic="set."
             align="center"
           />
         </Reveal>

@@ -25,6 +25,7 @@ const baseFooterLinks = {
         { href: '/hilton-head-tee-times', label: 'Tee Times' },
         { href: '/hilton-head-golf-courses', label: 'Golf Courses' },
         { href: '/hilton-head-stay-and-play', label: 'Stay & Play' },
+        { href: '/hilton-head-golf-packages', label: 'Golf Packages' },
         { href: '/hilton-head-family-trip-planner', label: 'Family Trips' },
         { href: '/hilton-head-beaches', label: 'Beach Vacation' },
         { href: '/hilton-head-oceanfront-villas', label: 'Oceanfront Villas' },

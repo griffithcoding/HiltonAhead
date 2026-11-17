@@ -21,7 +21,7 @@ export default function CoverChapter({
 }: CoverChapterProps) {
   return (
     <section
-      aria-label="Story cover"
+      aria-label="Sample itinerary cover"
       className="bleed relative -mt-10 h-[92vh] min-h-[560px] overflow-hidden md:min-h-[680px]"
     >
       <KenBurnsImage
@@ -39,7 +39,7 @@ export default function CoverChapter({
       <div className="absolute right-5 top-8 hidden text-sand/85 md:block lg:right-12 lg:top-12">
         <TravelSeal
           size={140}
-          topText="HILTON AHEAD · STORIES"
+          topText="HILTON AHEAD · SAMPLE ITINERARY"
           bottomText={`· ${date.toUpperCase()} ·`}
           motif="compass"
         />
@@ -49,7 +49,7 @@ export default function CoverChapter({
       <div className="absolute left-5 top-8 flex items-center gap-3 text-sand md:left-10 md:top-12">
         <span className="h-px w-10 bg-sand/70" />
         <span className="text-[10px] uppercase tracking-[0.32em] text-sand/85">
-          Story № {storyNumber} · {kindLabel}
+          Sample itinerary № {storyNumber} · {kindLabel}
         </span>
       </div>
 
@@ -68,6 +68,12 @@ export default function CoverChapter({
         <Reveal delay={400}>
           <p className="mt-7 max-w-[640px] text-[15px] leading-[1.7] text-sand/85 md:text-[18px]">
             {hook}
+          </p>
+        </Reveal>
+        <Reveal delay={520}>
+          <p className="mt-5 max-w-[640px] text-[12px] leading-[1.6] text-sand/70 md:text-[13px]">
+            This is a sample itinerary: an illustrative trip showing how a
+            visit like this can run, not a record of a specific group.
           </p>
         </Reveal>
       </div>

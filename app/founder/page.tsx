@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
@@ -10,6 +11,7 @@ import {
   getBreadcrumbSchema,
   getPersonSchema,
 } from '@/app/lib/metadata';
+import { founder } from '@/data/founder';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Founder: William Griffith — Hilton Ahead Travel Co.',
@@ -19,7 +21,7 @@ export const metadata: Metadata = generatePageMetadata({
   keywords: [
     'Hilton Ahead founder',
     'William Griffith Hilton Head',
-    'Hilton Head local travel agent',
+    'Hilton Head local guide',
   ],
 });
 
@@ -52,7 +54,25 @@ export default function FounderPage() {
           className="mt-12"
         />
 
-        <section className="mt-8 md:mt-10">
+        {founder.imagePath && (
+          <figure className="mx-auto mt-10 w-[132px] md:mt-12 md:w-[168px]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-md shadow-[0_30px_80px_-20px_rgba(10,41,48,0.4)]">
+              <Image
+                src={founder.imagePath}
+                alt={`${founder.name}, founder of Hilton Ahead`}
+                fill
+                priority
+                sizes="(max-width: 768px) 132px, 168px"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="eyebrow mt-4 text-center text-ink-soft">
+              {founder.name}
+            </figcaption>
+          </figure>
+        )}
+
+        <section className="mt-10 md:mt-12">
           <SectionHead
             as="h1"
             number="№ 01"
@@ -70,9 +90,8 @@ export default function FounderPage() {
             full-time, drive past the villas before I recommend them, and
             keep a working list of which restaurants will hold a seven
             o&rsquo;clock table for somebody I vouch for. The point of this
-            practice isn&rsquo;t to look like a travel agency. It&rsquo;s to
-            give you the honest local read on a place I actually know and
-            have been a part of since the early &rsquo;90s.
+            practice isn&rsquo;t to look like a booking site. It&rsquo;s to
+            give you the honest local read on a place I actually know.
           </p>
 
           <p className="mt-6 text-[15px] leading-[1.75] text-ink-soft md:text-[16px]">

@@ -275,13 +275,13 @@ export default function TripTypeLandingPage({ trip }: Props) {
         </section>
         )}
 
-        {/* ——— Related story link (if any) ——— */}
+        {/* ——— Related sample itinerary link (if any) ——— */}
         {trip.relatedStorySlug && (() => {
           const story = getStoryBySlug(trip.relatedStorySlug);
           if (!story) return null;
           return (
             <section
-              aria-label="See the story"
+              aria-label="See the sample itinerary"
               className="mt-20 overflow-hidden rounded-md bg-ocean-deep text-sand"
             >
               <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
@@ -300,12 +300,12 @@ export default function TripTypeLandingPage({ trip }: Props) {
                   <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/60 to-transparent" />
                   <div className="absolute left-4 top-4">
                     <Ticket className="!bg-sand !text-ocean-deep">
-                      Story № {story.storyNumber}
+                      Sample itinerary № {story.storyNumber}
                     </Ticket>
                   </div>
                 </Link>
                 <div className="flex flex-col justify-center gap-5 p-8 md:p-12 lg:p-16">
-                  <span className="eyebrow text-coral">See the story</span>
+                  <span className="eyebrow text-coral">See a sample itinerary</span>
                   <h3 className="display text-[28px] leading-[1.1] text-sand md:text-[36px]">
                     {story.title.plain}{' '}
                     <span className="display-italic text-gold">
@@ -319,7 +319,7 @@ export default function TripTypeLandingPage({ trip }: Props) {
                     href={`/stories/${story.slug}`}
                     className="link-underline mt-2 inline-block text-[12px] font-medium uppercase tracking-[0.22em] text-sand"
                   >
-                    Read the full story →
+                    Read the sample itinerary →
                   </Link>
                 </div>
               </div>

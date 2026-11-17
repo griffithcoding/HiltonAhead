@@ -10,11 +10,11 @@ export const brand = {
 
   tagline: 'Hilton Head, the way the locals book it.',
   shortDescription:
-    "A locally-run travel guide to Hilton Head Island. Villas chosen by porch and shade. Tee times sequenced by tide. Dinner tables that catch the last ten minutes of light. The island as you'd know it if you'd lived here for thirty years.",
+    "A locally-run travel guide to Hilton Head Island. Villas chosen by porch and shade. Tee times sequenced by tide. Dinner tables that catch the last ten minutes of light. The island as you'd know it if you lived here.",
 
   seoTitle: 'Hilton Head Travel Guide, the Way the Locals Do It',
   seoDescription:
-    'Hilton Head travel guides from a thirty-year island resident. Villas chosen by porch and shade, tee times sequenced by tide, reservations at the tables locals quietly keep. Skip the tourist research tax.',
+    'Hilton Head travel guides from a full-time island resident. Villas chosen by porch and shade, tee times sequenced by tide, reservations at the tables locals quietly keep. Skip the tourist research tax.',
 
   colors: {
     /** Glass aqua — the signature color of the Pristine Caribbean palette.

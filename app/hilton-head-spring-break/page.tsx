@@ -4,7 +4,7 @@ import TripTypeLandingPage from '@/components/sections/TripTypeLanding';
 import {
   generatePageMetadata,
   getBreadcrumbSchema,
-  getServiceSchema,
+  getGuidePageSchema,
 } from '@/app/lib/metadata';
 import { getTripTypeBySlug } from '@/data/tripTypes';
 
@@ -29,8 +29,8 @@ export default function HiltonHeadSpringBreakPage() {
     { name: 'Home', path: '/' },
     { name: 'Spring Break', path: trip.path },
   ]);
-  const service = getServiceSchema({
-    name: 'Hilton Head Spring Break Planning',
+  const guidePage = getGuidePageSchema({
+    name: trip.seoTitle,
     description: trip.metaDescription,
     path: trip.path,
   });
@@ -43,7 +43,7 @@ export default function HiltonHeadSpringBreakPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(guidePage) }}
       />
       <TripTypeLandingPage trip={trip} />
 

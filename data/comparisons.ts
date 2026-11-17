@@ -90,7 +90,7 @@ export const COMPARISONS: ReadonlyArray<Comparison> = [
     slug: 'hilton-head-vs-kiawah',
     metaTitle: 'Hilton Head vs Kiawah: Honest 2026 Comparison',
     metaDescription:
-      'Hilton Head vs Kiawah Island — which to pick for golf, families, couples, dining, and price. A 30-year Hilton Head local walks through every dimension.',
+      'Hilton Head vs Kiawah Island — which to pick for golf, families, couples, dining, and price. A Hilton Head local walks through every dimension.',
     h1Plain: 'Hilton Head',
     h1Italic: 'vs. Kiawah.',
     h1: 'Hilton Head vs. Kiawah',

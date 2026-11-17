@@ -21,13 +21,13 @@ import { stories } from '@/data/stories';
 const KIND_LABEL = { event: 'AN EVENT', stay: 'A STAY' } as const;
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Stories: Real Trips, Planned End-to-End',
+  title: 'Hilton Head Sample Itineraries: Golf, Weddings, Family Weeks',
   description:
-    'Long-form, scroll-driven Hilton Head stories. Golf weekends, weddings, and family weeks — itineraries, route maps, the numbers, and what made each one work.',
+    'Long-form Hilton Head sample itineraries. Golf weekends, weddings, and family weeks — the day-by-day, route maps, the numbers, and what makes each one work.',
   path: '/stories',
   keywords: [
-    'Hilton Head trip stories',
-    'Hilton Head itinerary stories',
+    'Hilton Head sample itineraries',
+    'Hilton Head itinerary examples',
     'Hilton Head golf weekend story',
     'Hilton Head wedding weekend story',
     'Hilton Head family vacation example',
@@ -38,7 +38,7 @@ export const metadata: Metadata = generatePageMetadata({
 export default function StoriesIndexPage() {
   const breadcrumb = getBreadcrumbSchema([
     { name: 'Home', path: '/' },
-    { name: 'Stories', path: '/stories' },
+    { name: 'Sample Itineraries', path: '/stories' },
   ]);
   const collection = getStoriesCollectionSchema(
     stories.map((s) => ({
@@ -70,7 +70,7 @@ export default function StoriesIndexPage() {
             Home
           </Link>
           <span aria-hidden="true" className="h-px w-4 bg-ocean-deep/20" />
-          <span className="text-coral">Stories</span>
+          <span className="text-coral">Sample Itineraries</span>
         </nav>
 
         {/* Hero */}
@@ -86,20 +86,20 @@ export default function StoriesIndexPage() {
                 />
               </span>
               <span className="eyebrow eyebrow-coral">
-                Real trips, planned by us
+                Sample itineraries
               </span>
             </div>
             <h1 className="display mt-6 text-balance text-[40px] leading-[1.04] tracking-[-0.025em] text-ink sm:text-[52px] md:text-[80px] lg:text-[96px]">
-              The trips,{' '}
+              Sample itineraries,{' '}
               <span className="display-italic text-coral">told properly.</span>
             </h1>
             <p className="mt-6 max-w-[580px] text-[16px] leading-[1.7] text-ink-soft md:text-[18px]">
-              Long-form walkthroughs of real Hilton Head events and stays we
-              planned end-to-end. The route, the timing, the venues, the
-              numbers, and the moment that made each one work.
+              Long-form sample itineraries for Hilton Head events and stays.
+              The route, the timing, the venues, and the numbers. Each one is
+              an illustrative trip, not a record of a specific group.
             </p>
             <div className="mt-7 flex flex-wrap gap-3 text-[11px] text-ink-soft">
-              <Ticket>{stories.length} stories</Ticket>
+              <Ticket>{stories.length} sample itineraries</Ticket>
               <Ticket>Updated quarterly</Ticket>
               <Ticket>No people in any frame</Ticket>
             </div>
@@ -115,7 +115,7 @@ export default function StoriesIndexPage() {
               priority
             />
             <div className="absolute left-4 top-4">
-              <Ticket>Story № 01 · {stories[0].articleSection.toUpperCase()}</Ticket>
+              <Ticket>Sample itinerary № 01 · {stories[0].articleSection.toUpperCase()}</Ticket>
             </div>
           </figure>
         </header>
@@ -127,7 +127,7 @@ export default function StoriesIndexPage() {
           <SectionHead
             number="The shelf"
             eyebrow="Read each in fifteen minutes"
-            plain="Three stories,"
+            plain="Three sample itineraries,"
             italic="three different islands."
           />
 
@@ -162,7 +162,7 @@ export default function StoriesIndexPage() {
                     </Link>
                     <div className={flip ? 'md:order-1' : ''}>
                       <span className="eyebrow eyebrow-coral">
-                        {s.articleSection} · {s.date}
+                        Sample itinerary · {s.articleSection} · {s.date}
                       </span>
                       <h3 className="display mt-4 text-[28px] leading-[1.1] text-ink md:text-[40px]">
                         <Link

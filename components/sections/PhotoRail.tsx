@@ -49,14 +49,6 @@ export default function PhotoRail() {
             </figure>
           ))}
         </div>
-
-        <div className="mt-14 flex items-center justify-center gap-5 text-sand/60">
-          <span className="h-px w-16 bg-sand/30" />
-          <span className="display-italic text-[14px] text-sand/80">
-            Every frame, on-island. Every frame, ours.
-          </span>
-          <span className="h-px w-16 bg-sand/30" />
-        </div>
       </div>
     </section>
   );

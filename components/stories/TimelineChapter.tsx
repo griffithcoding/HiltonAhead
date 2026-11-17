@@ -24,7 +24,7 @@ export default function TimelineChapter({ timeline }: TimelineChapterProps) {
           number="№ 05"
           eyebrow="The timeline"
           plain="How the days"
-          italic="actually ran."
+          italic="can run."
           align="center"
         />
       </Reveal>

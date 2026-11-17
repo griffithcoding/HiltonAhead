@@ -87,6 +87,7 @@ const FAQS = [
 const CROSS_LINKS = [
   { href: '/hilton-head-tee-times', label: 'Book tee times' },
   { href: '/hilton-head-golf-courses', label: 'Compare courses' },
+  { href: '/hilton-head-golf-packages', label: 'Golf packages & prices' },
   { href: '/cost-of-hilton-head-trip', label: 'Full trip cost' },
   { href: '/hilton-head/sea-pines', label: 'Sea Pines (Harbour Town)' },
 ];
