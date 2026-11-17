@@ -6,8 +6,20 @@ on:
     branches: [ main, master ]
 jobs:
   test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
+    # A healthy run takes a few minutes; fail fast if the app or a test hangs.
+    timeout-minutes: 20
+    # Pinned: ubuntu-latest now resolves to Ubuntu 26.04, which the Playwright
+    # version in package-lock.json (1.59.1) cannot install browsers on. Move
+    # this forward together with a @playwright/test upgrade.
+    runs-on: ubuntu-24.04
+    env:
+      # playwright.config.ts builds and serves the production app (webServer).
+      # Keep the pre-launch gate in proxy.ts off for that server even if
+      # preLaunchGateEnabled (data/features.ts) is ever turned back on.
+      SITE_OFFLINE: 'false'
+      # `next build` type-checks the whole project and runs out of memory at
+      # Node's default ~2 GB heap limit.
+      NODE_OPTIONS: --max-old-space-size=4096
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
