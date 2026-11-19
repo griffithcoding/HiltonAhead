@@ -147,6 +147,9 @@ body {
 }
 .eyebrow-coral { color: var(--coral); }
 .eyebrow-ocean { color: var(--ocean); }
+/* For eyebrows on the dark ink footer. A `text-*` utility cannot do this:
+   `.eyebrow` is unlayered, so its colour beats Tailwind's layered utilities. */
+.eyebrow-cream { color: color-mix(in oklab, var(--cream) 60%, transparent); }
 
 .section-number {
   font-family: var(--font-display);

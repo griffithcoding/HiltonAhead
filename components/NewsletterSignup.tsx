@@ -130,7 +130,7 @@ export default function NewsletterSignup({
     return (
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div>
-          <div className="eyebrow text-cream/60">{title}</div>
+          <div className="eyebrow eyebrow-cream">{title}</div>
           <p className="mt-2 text-[13px] leading-[1.65] text-cream/75">
             {blurb}
           </p>
