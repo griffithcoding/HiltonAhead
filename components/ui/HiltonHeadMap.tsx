@@ -209,7 +209,7 @@ export default function HiltonHeadMap({
         {/* Geographic labels */}
         <g
           fill={ink}
-          fontFamily="var(--font-display), Times New Roman, serif"
+          fontFamily="var(--font-display), Helvetica, sans-serif"
           fontStyle="italic"
           opacity="0.55"
         >
@@ -279,7 +279,7 @@ export default function HiltonHeadMap({
                   fill={ink}
                   opacity="0.6"
                   textAnchor={anchor}
-                  fontFamily="var(--font-display), Times, serif"
+                  fontFamily="var(--font-display), Helvetica, sans-serif"
                   fontStyle="italic"
                 >
                   {route[i].time}
@@ -318,7 +318,7 @@ export default function HiltonHeadMap({
           fontSize="11"
           fill={ink}
           opacity="0.45"
-          fontFamily="var(--font-mono), ui-monospace, monospace"
+          fontFamily="var(--font-sans), Helvetica, sans-serif"
           letterSpacing="0.18em"
         >
           32.21° N · 80.75° W

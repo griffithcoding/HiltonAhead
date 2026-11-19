@@ -28,7 +28,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="hidden md:block">
-            <div className="eyebrow text-cream/60">A dispatch</div>
+            <div className="eyebrow eyebrow-cream">A dispatch</div>
             <div className="display-italic mt-2 text-[20px] text-cream/90">
               from {brand.contact.location}
             </div>
@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="grid gap-12 pt-12 md:grid-cols-[1fr_1fr_1fr_1.6fr]">
           {footerLinks.columns.map((col) => (
             <div key={col.label}>
-              <div className="eyebrow text-cream/60">{col.label}</div>
+              <div className="eyebrow eyebrow-cream">{col.label}</div>
               <ul className="mt-4 space-y-2.5 text-[13px]">
                 {col.links.map((l) => (
                   <li key={l.href}>

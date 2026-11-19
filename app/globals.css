@@ -10,7 +10,7 @@
  *  A specular highlight blooms from the upper-left of the page body to
  *  fake the sun-glint reflection of light over a clear flat at low tide.
  *  Photography-heavy, hand-crafted motifs (seals, stamps, polaroids),
- *  dramatic type scale. Fraunces display serif + Instrument Sans UI.
+ *  dramatic type scale. One typeface: Instrument Sans for headings and UI.
  *
  *  Fonts are loaded via next/font in app/layout.tsx.
  * =========================================================================
@@ -49,6 +49,12 @@
   --sunset-soft:  var(--coral-deep);
   --moss:         var(--palm-light);
   --sage:         var(--ocean-light);
+
+  /* ——— Typeface ———
+     The site uses one typeface, Instrument Sans (`--font-sans`, loaded via
+     next/font in app/layout.tsx). Headings read `--font-display`, which
+     points at the same font. */
+  --font-display: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* ——— Typographic scale ——— */
   --lh-tight:   1.0;
@@ -89,7 +95,7 @@
   --color-cream-soft: var(--sand-soft);
 
   --font-sans: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-display: var(--font-display), "Times New Roman", Times, serif;
+  --font-display: var(--font-display);
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -118,7 +124,9 @@ body {
   color: var(--sand);
 }
 
-/* ——— Display headings (Fraunces variable) ——— */
+/* ——— Display headings ———
+   Headings use the same typeface as body text. `--font-display` (set in
+   :root) is the one place to point headings at a different font again. */
 .display, h1.display, h2.display, h3.display {
   font-family: var(--font-display);
   font-weight: 400;
@@ -126,14 +134,12 @@ body {
   letter-spacing: -0.025em;
   line-height: var(--lh-tight);
   color: var(--ink);
-  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 0;
 }
 
 .display-italic {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
-  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
 }
 
 /* ——— Editorial primitives ——— */
@@ -147,11 +153,13 @@ body {
 }
 .eyebrow-coral { color: var(--coral); }
 .eyebrow-ocean { color: var(--ocean); }
+/* For eyebrows on the dark ink footer. A `text-*` utility cannot do this:
+   `.eyebrow` is unlayered, so its colour beats Tailwind's layered utilities. */
+.eyebrow-cream { color: color-mix(in oklab, var(--cream) 60%, transparent); }
 
 .section-number {
   font-family: var(--font-display);
   font-style: italic;
-  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
   color: var(--coral);
   letter-spacing: -0.01em;
   line-height: 1;
@@ -185,7 +193,6 @@ body {
 .dropcap::first-letter {
   font-family: var(--font-display);
   font-weight: 500;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
   font-size: 4.5em;
   line-height: 0.9;
   float: left;
@@ -207,7 +214,6 @@ body {
 .polaroid .polaroid-caption {
   font-family: var(--font-display);
   font-style: italic;
-  font-variation-settings: "opsz" 72, "SOFT" 100;
   color: var(--ink-soft);
   text-align: center;
   font-size: 14px;
@@ -427,7 +433,7 @@ body {
   border: 1px solid var(--rule-soft);
   padding: 28px 30px;
   position: relative;
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-sans), sans-serif;
   font-size: 14.5px;
   line-height: 1.7;
   color: var(--ink);
@@ -504,7 +510,7 @@ body {
   pointer-events: none;
 }
 .flyover-readout {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-sans), sans-serif;
   font-size: 11px;
   letter-spacing: 0.18em;
   color: rgba(245, 232, 208, 0.92);
@@ -544,7 +550,6 @@ body {
  * ======================================================================== */
 .prose-blog h2 {
   font-family: var(--font-display);
-  font-variation-settings: "opsz" 96, "SOFT" 60;
   font-weight: 500;
   font-size: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
   letter-spacing: -0.02em;
@@ -561,7 +566,6 @@ body {
   color: var(--ink);
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
 }
 .prose-blog p {
   font-family: var(--font-sans);
@@ -608,7 +612,6 @@ body {
   font-style: italic;
   font-size: 0.9em;
   color: var(--coral);
-  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
 }
 .prose-blog strong { color: var(--ink); font-weight: 600; }
 .prose-blog em { font-style: italic; }

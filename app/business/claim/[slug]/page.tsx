@@ -68,7 +68,7 @@ export default async function ClaimBusinessPage({
         <div className="mt-6 border-l-2 border-ocean-deep bg-ocean-light/30 px-4 py-3 text-[13.5px] leading-[1.5] text-ink">
           <strong>The listing&rsquo;s contact email:</strong>{' '}
           {hasContactOnFile ? (
-            <span className="font-mono text-ink-soft">
+            <span className="text-ink-soft">
               {maskEmail(suggestedEmail)}
             </span>
           ) : (

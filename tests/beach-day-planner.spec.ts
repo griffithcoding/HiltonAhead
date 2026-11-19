@@ -3,12 +3,12 @@ import { test, expect } from '@playwright/test';
 /**
  * Smoke test for /hilton-head-beach-day-planner.
  *
- * playwright.config.ts has no webServer / baseURL configured, so this expects
- * a server already running on localhost:3000 (`npm run dev` or `npm run start`).
+ * playwright.config.ts sets baseURL and a webServer: Playwright reuses a server
+ * already running on localhost:3000, or builds and starts the app itself.
  * Run with: npx playwright test tests/beach-day-planner.spec.ts
  */
 
-const URL = 'http://localhost:3000/hilton-head-beach-day-planner';
+const URL = '/hilton-head-beach-day-planner';
 
 test('renders the page with a beach-day title', async ({ page }) => {
   const res = await page.goto(URL);
