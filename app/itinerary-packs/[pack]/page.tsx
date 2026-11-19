@@ -169,7 +169,7 @@ export default async function ItineraryPackPage({
             <ol className="space-y-2">
               {pack.previewSections.map((section, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-ink-soft">
-                  <span className="shrink-0 font-mono text-xs text-ocean/60">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="shrink-0 text-xs text-ocean/60">{String(i + 1).padStart(2, '0')}</span>
                   <span>{section}</span>
                 </li>
               ))}

@@ -78,7 +78,6 @@ function comingSoonPage(): NextResponse {
     color: #FF7A5C;
   }
   h1 {
-    font-family: Fraunces, Georgia, "Times New Roman", serif;
     font-weight: 400; font-size: clamp(2rem, 7vw, 3rem);
     line-height: 1.08; margin: 1.25rem 0 0; letter-spacing: -.02em;
   }

@@ -146,7 +146,7 @@ export default function SearchBar() {
         />
         <kbd
           aria-hidden="true"
-          className="pointer-events-none absolute right-3 rounded border border-ink/15 bg-cream px-1.5 py-0.5 text-[10px] font-medium tracking-wider text-ink-soft"
+          className="pointer-events-none absolute right-3 rounded border border-ink/15 bg-cream px-1.5 py-0.5 font-sans text-[10px] font-medium tracking-wider text-ink-soft"
         >
           ⌘K
         </kbd>

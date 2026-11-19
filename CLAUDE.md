@@ -100,7 +100,7 @@ Tailwind 4 with CSS-based config in `app/globals.css` (`@theme inline` block). U
 
 `sand`, `sand-deep`, `sand-soft`, `ocean`, `ocean-deep`, `ocean-light`, `coral`, `coral-deep`, `palm`, `palm-light`, `gold`, `gold-deep`, `ink`, `ink-soft`.
 
-Fonts via `next/font` in `app/layout.tsx`: Fraunces (display, with `opsz`/`SOFT`/`WONK` axes) + Instrument Sans (UI).
+One typeface, loaded via `next/font` in `app/layout.tsx`: Instrument Sans, for headings and UI alike. Headings read `--font-display`, which `app/globals.css` points at the same font. Public pages use no serif or monospace face.
 
 ## Routing notes
 

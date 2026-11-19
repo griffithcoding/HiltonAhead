@@ -1,18 +1,10 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, Instrument_Sans } from 'next/font/google'
+import { Instrument_Sans } from 'next/font/google'
 import { brand } from '@/data/brand'
 import { getOrganizationSchema, getWebSiteSchema } from '@/app/lib/metadata'
 import './globals.css'
-
-const fraunces = Fraunces({ 
-  variable: '--font-display', 
-  subsets: ['latin'], 
-  display: 'swap', 
-  axes: ['opsz', 'SOFT', 'WONK'], 
-  style: ['normal', 'italic'], 
-})
 
 const instrumentSans = Instrument_Sans({ 
   variable: '--font-sans', 
@@ -87,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const websiteSchema = getWebSiteSchema()
   const orgSchema = getOrganizationSchema()
   return (
-    <html lang="en" className={`${fraunces.variable} ${instrumentSans.variable} h-full antialiased`}>
+    <html lang="en" className={`${instrumentSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans text-ink">
         {/* Site-wide JSON-LD: WebSite (with SearchAction sitelinks searchbox)
             and Organization (Knowledge Graph anchor). Page-level pages can
