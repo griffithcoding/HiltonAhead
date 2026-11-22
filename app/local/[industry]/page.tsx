@@ -135,11 +135,48 @@ export default async function IndustryPage({
     listed: 2,
     free: 3,
   }
-  const sortedBusinesses = [...regulars].sort((a, z) => {
-    const ra = TIER_RANK[tierMap.get(a.id) ?? 'free'] ?? 3
-    const rz = TIER_RANK[tierMap.get(z.id) ?? 'free'] ?? 3
-    return ra - rz
-  })
+  // --- Owner edits from the business portal (/business) ---
+  // Rows an owner has saved carry owner_edited_at (migration 026). Overlay
+  // their factual fields on the static entry; everything else (review,
+  // photos, categories) stays editorial. Separate query on purpose: if the
+  // column doesn't exist yet this fails alone and tier sorting still works.
+  const { data: ownerRows } = await supabase
+    .from('businesses')
+    .select(
+      'slug, name, tagline, address, city, phone, website, hours, instagram, facebook, parking, dress_code, pet_friendly',
+    )
+    .eq('industry_slug', slug)
+    .eq('status', 'published')
+    .not('owner_edited_at', 'is', null)
+
+  const ownerEdits = new Map((ownerRows ?? []).map((r) => [r.slug, r]))
+
+  const sortedBusinesses = [...regulars]
+    .sort((a, z) => {
+      const ra = TIER_RANK[tierMap.get(a.id) ?? 'free'] ?? 3
+      const rz = TIER_RANK[tierMap.get(z.id) ?? 'free'] ?? 3
+      return ra - rz
+    })
+    .map((b) => {
+      const o = ownerEdits.get(b.id)
+      if (!o) return b
+      return {
+        ...b,
+        name: o.name || b.name,
+        tagline: o.tagline ?? b.tagline,
+        address: o.address ?? b.address,
+        city: o.city ?? b.city,
+        // Owner-cleared optional fields are removed, not reverted.
+        phone: o.phone ?? undefined,
+        website: o.website ?? undefined,
+        hours: o.hours ?? undefined,
+        instagram: o.instagram ?? undefined,
+        facebook: o.facebook ?? undefined,
+        parking: o.parking ?? undefined,
+        dressCode: o.dress_code ?? undefined,
+        petFriendly: o.pet_friendly ?? undefined,
+      }
+    })
 
   const breadcrumbs = [
     { name: 'Home', path: '/' },

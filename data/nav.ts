@@ -13,6 +13,8 @@ type NavLink = {
 
 type Nav = {
   readonly links: ReadonlyArray<NavLink>;
+  /** Always-visible entry to the business owner portal (/business). */
+  readonly businessPortal: { readonly href: string; readonly label: string };
   readonly statusPill: { readonly label: string };
 };
 
@@ -80,10 +82,16 @@ const baseNav: Nav = {
         { href: '/local/spas-wellness', label: 'Spas & Wellness' },
         { href: '/local/vacation-rentals', label: 'Vacation Rentals' },
         { href: '/local/get-featured', label: 'Feature Your Business' },
+        // Same target as businessPortal below. Header shows this item only
+        // below xl, where the top-level pill doesn't fit; MobileMenu skips it
+        // because the drawer has its own button.
+        { href: '/business', label: 'Business Login' },
       ],
     },
     { href: '/contact', label: 'Contact' },
   ],
+  // /business redirects to /business/login when the visitor isn't signed in.
+  businessPortal: { href: '/business', label: 'Business Login' },
   statusPill: { label: 'Booking Summer 2026' },
 };
 

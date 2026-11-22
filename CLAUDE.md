@@ -37,6 +37,11 @@ The `(gated)` route group is gated by `app/admin/(gated)/layout.tsx`, which call
 
 **Server actions live in `app/admin/(gated)/**/actions.ts`. Every exported server action MUST start with `requireAdmin()` from `utils/supabase/admin.ts`.** The `(gated)` route group only guards navigation — it does not protect direct POSTs to server-action endpoints.
 
+### Business owner portal at `app/business/`
+Directory businesses sign in at `/business/login` (magic link or Google) and are gated by `app/business/(gated)/layout.tsx` via `getBusinessOwner()` (`utils/supabase/businessOwner.ts`). `/business` shows per-listing monthly phone/website/inquiry counts; `/business/listing/[id]` is the profile editor. Data layer: `app/lib/businessPortal.ts`. Server actions in `app/business/(gated)/actions.ts` MUST call `requireBusinessOwner()` and check the target id is in the returned list.
+
+Owners can only write the factual columns granted in migration `026` (name, tagline, address, city, phone, website, hours, socials, parking, dress code, pet-friendly). Saving sets `owner_edited_at`; `/local/[industry]` overlays those fields from the DB for rows where it is set, and renders everything else from `data/localBusinesses.ts`. Stats come from the owner-scoped SQL function `business_portal_stats()`. The nav entry is `nav.businessPortal` in `data/nav.ts`.
+
 ### Supabase clients — three variants, pick the right one
 - `utils/supabase/client.ts` — browser client. Only for client components.
 - `utils/supabase/server.ts` (`createClient`) — SSR client using anon key + user cookies. Use in server components, server actions, and route handlers acting as the signed-in user.
@@ -47,7 +52,7 @@ The `(gated)` route group is gated by `app/admin/(gated)/layout.tsx`, which call
 Google OAuth via Supabase; callback at `app/auth/callback/route.ts`. Admin allowlist lives in the `admin_users` table with case-insensitive email match. An entry in `admin_users` is the gate — being signed in is not enough. The `is_admin()` SQL helper from migration `003_admin_crm.sql` is the canonical RLS check.
 
 ### Migrations
-`supabase/migrations/*.sql`, applied via the Supabase CLI or pasted into the SQL editor. **Numbering quirk:** several numbers have duplicate-prefix collisions — `002` (`002_newsletter_subscribers.sql` + `002_business_inquiries.sql`), `014` (`014_directory_events_payload_and_events.sql` + `014_sponsor_events.sql`), and `023` (`023_outreach_email_engine.sql` + `023_social_attribution_columns.sql`); `011` is skipped entirely. Don't trust the highest filename — run `ls supabase/migrations/` and pick the next number that clashes with nothing. Latest is `025_market_trends.sql`, so the next free number is `026`. Migrations include their own RLS policies.
+`supabase/migrations/*.sql`, applied via the Supabase CLI or pasted into the SQL editor. **Numbering quirk:** several numbers have duplicate-prefix collisions — `002` (`002_newsletter_subscribers.sql` + `002_business_inquiries.sql`), `014` (`014_directory_events_payload_and_events.sql` + `014_sponsor_events.sql`), and `023` (`023_outreach_email_engine.sql` + `023_social_attribution_columns.sql`); `011` is skipped entirely. Don't trust the highest filename — run `ls supabase/migrations/` and pick the next number that clashes with nothing. Latest is `026_business_portal_editor.sql`, so the next free number is `027`. Migrations include their own RLS policies.
 
 ### Itinerary form pipeline
 Public form at `/itinerary` POSTs to `/api/itinerary` → inserts into `itinerary_requests` (anon-only insert, no read by design) and emails via Resend. Reading submissions requires the service role; that's how the admin Leads dashboard sees them.

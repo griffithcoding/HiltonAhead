@@ -111,7 +111,9 @@ export default function MobileMenu() {
                 </Link>
                 {link.children && link.children.length > 0 && (
                   <div className="-mt-2 mb-3 ml-1 flex flex-col gap-1 pl-3 border-l border-ink/10">
-                    {link.children.map((child) => (
+                    {link.children
+                      .filter((child) => child.href !== nav.businessPortal.href)
+                      .map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
@@ -130,6 +132,15 @@ export default function MobileMenu() {
             <div className="mt-2 py-2" onClick={() => setOpen(false)}>
               <AdminNavLink />
             </div>
+
+            {/* Business owner portal — always visible */}
+            <Link
+              href={nav.businessPortal.href}
+              onClick={() => setOpen(false)}
+              className="mt-6 inline-flex items-center justify-center rounded-full border border-ink/25 px-6 py-4 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition hover:border-ink hover:bg-ink hover:text-cream"
+            >
+              {nav.businessPortal.label}
+            </Link>
 
             {tripPlanningEnabled && (
             <Link

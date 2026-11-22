@@ -13,7 +13,7 @@ import SearchBar from '@/components/search/SearchBar';
  * Main row: wordmark on left, nav on right, CTA as editorial button.
  *
  * Mobile (<md): hamburger drawer (MobileMenu). Desktop nav is hidden.
- * Desktop (md+): inline nav with links + AdminNavLink + CTA.
+ * Desktop (md+): inline nav with links + AdminNavLink + Business Login + CTA.
  */
 export default function Header() {
   return (
@@ -44,7 +44,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav (md+) */}
-        <nav className="hidden items-center gap-6 whitespace-nowrap text-[13px] md:flex lg:gap-8">
+        <nav className="hidden items-center gap-6 whitespace-nowrap text-[13px] md:flex lg:gap-8 xl:gap-6">
           {nav.links.map((link) =>
             link.children && link.children.length > 0 ? (
               <div
@@ -74,7 +74,9 @@ export default function Header() {
                       key={child.href}
                       href={child.href}
                       role="menuitem"
-                      className="block rounded-sm px-3 py-2 text-[13px] text-ink/85 transition-colors hover:bg-ink/[0.04] hover:text-ink"
+                      className={`block rounded-sm px-3 py-2 text-[13px] text-ink/85 transition-colors hover:bg-ink/[0.04] hover:text-ink${
+                        child.href === nav.businessPortal.href ? ' xl:hidden' : ''
+                      }`}
                     >
                       {child.label}
                     </Link>
@@ -93,6 +95,14 @@ export default function Header() {
           )}
           <AdminNavLink />
           <SearchBar />
+          {/* xl+: top-level pill. md–xl: lives in the Businesses dropdown
+              (the pill would wrap the wordmark at those widths). */}
+          <Link
+            href={nav.businessPortal.href}
+            className="hidden rounded-full border border-ink/25 px-3 py-2 text-[11px] font-medium uppercase tracking-[0.12em] text-ink transition hover:border-ink hover:bg-ink hover:text-cream xl:inline-flex"
+          >
+            {nav.businessPortal.label}
+          </Link>
           {tripPlanningEnabled && (
           <Link
             href={brand.cta.bookingPagePath}
