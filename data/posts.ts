@@ -766,287 +766,404 @@ const postRestaurantsRanked: Post = {
 };
 
 // ---------------------------------------------------------------------------
-// 3) TIER LIST. Things to do
+// 3) PILLAR: Things to do in Hilton Head (tier list)
 // ---------------------------------------------------------------------------
 
-const postThingsToDoRanked: Post = {
-  slug: 'hilton-head-things-to-do-ranked-2026',
-  title: "Things to Do on Hilton Head, Ranked: The 2026 Tier List",
+// Pillar page for "things to do in Hilton Head" (22.2k/mo, KD 7 — Nov 2026).
+// Evergreen slug: the 2026 edition lived at
+// /blog/hilton-head-things-to-do-ranked-2026, which now 301s here (see
+// next.config.ts). Refresh facts in place each year; never re-add a year
+// to the slug.
+//
+// Facts (prices, hours, fees) verified Nov 2026 against operator / Town /
+// USFWS pages via search; the tier rankings and "skip" calls are the
+// owner's first-hand recommendations carried over from the 2026 edition.
+// Coverage deliberately includes the places Google lists in its "Top
+// sights" panel for the query (Coligny, Harbour Town Lighthouse, Coastal
+// Discovery Museum, Sea Pines Forest Preserve, Fish Haul, Mitchelville,
+// Stoney-Baynard Ruins, Audubon Newhall, Lawton Stables, etc.).
+
+const TTD_SRC = {
+  gate: 'https://seapinesliving.com/gate-access/visitors/',
+  lighthouse: 'https://harbourtownlighthouse.com/',
+  lawton: 'https://lawtonstables.com/activities/trail-ride/',
+  cdm: 'https://www.coastaldiscovery.org/explore/exhibits/butterflies/',
+  cdmSchedule: 'https://www.coastaldiscovery.org/program-schedule/',
+  pinckney: 'https://www.fws.gov/refuge/pinckney-island/visit-us',
+  pathways: 'https://www.hiltonheadislandsc.gov/pathways',
+  mitchelville: 'https://www.exploremitchelville.org/',
+  coligny: 'https://www.hiltonheadislandsc.gov/business_detail_T4_R196.php',
+  daufuskie: 'https://islandheadhhi.com/daufuskie-island-to-hilton-head/',
+  kayak: 'https://outsidehiltonhead.com/activity/guided-kayak-nature-tour/',
+  dolphin: 'https://cruisehiltonhead.com/tours/dolphin-watch-nature-cruise/',
+  sandbox: 'https://thesandbox.org/',
+  minigolf: 'https://piratescove.net/locations/south-carolina/hilton-head-island/',
+} as const;
+
+const ttdExt = (href: string, text: string) =>
+  `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+
+const postThingsToDo: Post = {
+  slug: 'things-to-do-in-hilton-head',
+  title: 'Things to Do in Hilton Head: 2027 Local Guide',
   excerpt:
-    "The activities worth doing, the activities worth skipping, and the one tourist trap everyone falls for. A local's tier list for 2026.",
+    'The best things to do in Hilton Head, ranked by a local: what is worth your time, what is free, what works for kids, couples and rainy days — and the tourist traps to skip.',
   description:
-    "Ranked: the best things to do on Hilton Head Island in 2026. Beaches, boats, bikes, tours, and the tourist traps worth skipping.",
+    'The best things to do in Hilton Head, ranked by a local: beaches, dolphins, bikes, Sea Pines, free and rainy-day picks, plus the tourist traps to skip.',
   category: 'Activities',
-  readTime: '9 min',
+  readTime: '14 min',
   publishedAt: '2026-01-30',
-  updatedAt: '2026-04-15',
+  updatedAt: '2026-11-25',
   author: 'Hilton Ahead',
   featuredOrder: 3,
-  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
+  relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach', 'shelter-cove'],
   keywords: [
-    'things to do Hilton Head',
-    'Hilton Head activities',
-    'Hilton Head dolphin tour',
-    'Hilton Head bike rental',
-    'Hilton Head kayak',
-    "Hilton Head with kids",
+    'things to do in Hilton Head',
+    'best things to do in Hilton Head',
+    'things to do in Hilton Head with family',
+    'fun things to do in Hilton Head',
+    'free things to do in Hilton Head',
+    'things to do in Hilton Head for adults',
+    'things to do in Hilton Head on a rainy day',
+    'things to do in Sea Pines',
   ],
   body: [
     {
       kind: 'p',
-      html: "The \"Top 10 Things to Do on Hilton Head\" lists are stuffed with filler. They have to fill the list even if #8 is a waste of three hours. This one isn't. If an activity is in C-tier, we'll tell you why.",
+      html: `The best <strong>things to do in Hilton Head</strong> are simple ones: a bike ride on the hard sand at low tide, a dolphin cruise out of Shelter Cove, sunset at Harbour Town, a morning in the Sea Pines Forest Preserve, and an afternoon at the free Coastal Discovery Museum. Most "top 10" lists pad themselves out to hit a round number. This one is ranked by a local who plans trips here, with the honest calls on what to skip.`,
+    },
+    {
+      kind: 'p',
+      html: 'Prices, hours and fees below were checked in November 2026. Jump to <a href="#what-are-the-best-free-things-to-do-in-hilton-head">free things</a>, <a href="#what-are-the-best-things-to-do-in-hilton-head-with-kids">with kids</a>, <a href="#what-are-fun-things-to-do-in-hilton-head-for-adults-and-couples">for adults</a>, <a href="#what-can-you-do-in-hilton-head-on-a-rainy-day">rainy days</a>, <a href="#what-is-there-to-do-in-sea-pines">Sea Pines</a> or <a href="#which-hilton-head-activities-should-you-skip">what to skip</a>.',
+    },
+    {
+      kind: 'h2',
+      text: 'What are the best things to do in Hilton Head?',
+    },
+    {
+      kind: 'p',
+      html: 'The three things worth doing on every trip are a low-tide bike ride along the beach, a dolphin cruise with an operator who actually finds dolphins, and an early walk through the Sea Pines Forest Preserve. After those, add a kayak tour, a sunset sail and the Coastal Discovery Museum as time allows.',
     },
     {
       kind: 'tier',
       label: 'S-Tier',
-      subtitle: "Do these. Every trip.",
+      subtitle: 'Do these. Every trip.',
       accent: 'gold',
       items: [
         {
-          name: 'Sunrise walk to Dragon Tree (Sea Pines)',
-          meta: "Free · 45 min · South Forest Beach or Sea Pines access",
-          blurb:
-            "The oldest live oak on the island, dripping Spanish moss, glowing at 7am. Walk there before the beach fills. Takes 15 min from Harbour Town. Easiest \"core memory\" on the island, costs nothing.",
+          name: 'Low-tide bike ride from Coligny toward Sea Pines',
+          meta: 'Bike rental about $20-30/day · 2 hours · Time it to low tide',
+          blurb: `The single best way to understand Hilton Head. At low tide the beach is wide, flat, hard-packed sand you can ride for miles. Rent near Coligny, ride south, and turn around when your legs say so. Back on land there are ${ttdExt(TTD_SRC.pathways, '64 miles of public pathways')} for the rest of the week. Check the <a href="/hilton-head-tides">tide chart</a> the night before.`,
         },
         {
-          name: 'Dolphin cruise with Captain Mark (Harbour Town)',
-          meta: "$85/adult · 90 min · Private charter recommended",
-          blurb:
-            "The biggest quality gap between operators is enormous. Captain Mark runs small-group cruises that actually find dolphins and actually teach you about them. Everybody else does the same loop and calls it a day. Ask for him by name. Full breakdown of every operator and tour style in our <a href=\"/blog/hilton-head-dolphin-tours\">Hilton Head dolphin tours guide</a>.",
+          name: 'Dolphin cruise with Captain Mark’s (Shelter Cove)',
+          meta: 'About $30-36/adult · 1 hr 45 min · Departs Shelter Cove Harbour',
+          blurb: `The quality gap between dolphin operators is enormous; ask for ${ttdExt(TTD_SRC.dolphin, 'Captain Mark’s Dolphin Cruise')} by name. The crews actually find dolphins and explain what you are seeing. Full breakdown of every operator and tour style in our <a href="/blog/hilton-head-dolphin-tours">Hilton Head dolphin tours guide</a>.`,
         },
         {
-          name: 'Bike ride from Coligny to Sea Pines (beach at low tide)',
-          meta: "Free · 2 hours · Rent from Hilton Head Bicycle",
-          blurb:
-            "The single best way to understand Hilton Head geographically. Rent at Coligny, ride the hard sand at low tide south to Sea Pines, grab lunch at South Beach Marina, ride back. Don't skip this.",
+          name: 'Early morning in the Sea Pines Forest Preserve',
+          meta: '$10/car Sea Pines gate pass · 1-2 hours · Go before 9 a.m.',
+          blurb: 'More than 600 acres of maritime forest, boardwalks over the wetlands, the occasional alligator and almost nobody else before 9 a.m. There is no separate admission, but you need the Sea Pines gate pass to get in. Pair it with the Stoney-Baynard Ruins and lunch at South Beach Marina.',
         },
       ],
     },
     {
       kind: 'tier',
       label: 'A-Tier',
-      subtitle: "Strong additions if you have the time.",
+      subtitle: 'Strong additions if you have the time.',
       accent: 'primary',
       items: [
         {
-          name: 'Kayak or paddleboard Broad Creek (Outside Hilton Head)',
-          meta: "$55/person · 2 hours · Calibogue Cue trip is the upgrade",
-          blurb:
-            "Outside Hilton Head (the local outfitter) runs small-group creek tours. The 7am slot is magical. Fog, herons, and zero boat traffic. Skip the bigger operators; they bunch groups of 20. See the <a href=\"/blog/hilton-head-kayaking-guide\">Hilton Head kayaking guide</a> for every route, tour-vs-rental call, and the bioluminescence option in summer.",
+          name: 'Guided kayak tour on Broad Creek (Outside Hilton Head)',
+          meta: '$45 adult / $30 child · 2 hours · Departs Shelter Cove',
+          blurb: `${ttdExt(TTD_SRC.kayak, 'Outside Hilton Head')} runs small guided nature tours on Broad Creek. Take the earliest slot you can get: fog, herons and no boat traffic. See the <a href="/blog/hilton-head-kayaking-guide">Hilton Head kayaking guide</a> for every route and the tour-versus-rental call.`,
         },
         {
           name: 'Sunset sail on a private charter',
-          meta: "$500-$1,200 · 2 hours · Calibogue Sound",
-          blurb:
-            "A splurge that's worth it for couples and groups of 4. We book through two captains we trust. The public sunset cruises feel like a bus; a private sail feels like the Caribbean.",
+          meta: '$500-1,200 for up to 6 · 2 hours · Calibogue Sound',
+          blurb: 'A splurge that is worth it for couples and groups of four or more. Public sunset cruises feel like a bus; a private sail on Calibogue Sound feels like the Caribbean. We book through two captains we trust.',
         },
         {
-          name: 'Coastal Discovery Museum',
-          meta: "Free · 1-2 hours · Indigo Run",
-          blurb:
-            "Genuinely interesting for kids 8+. The butterfly garden in summer is underrated. Not a full-day activity, but a solid rainy-afternoon move.",
-        },
-        {
-          name: 'Fishing charter (offshore half-day)',
-          meta: "$900-$1,400 · 4-6 hours · 4 person max typical",
-          blurb:
-            "Worth it for the dads' trip or a father-daughter thing. We work with two captains. Both have private docks and actually find fish. The marina-board operators are hit-or-miss.",
+          name: 'Coastal Discovery Museum at Honey Horn',
+          meta: 'Free · 1-2 hours · Butterfly habitat May-October',
+          blurb: `Free admission and parking, Lowcountry and Gullah history, and the ${ttdExt(TTD_SRC.cdm, 'butterfly habitat')} with guided tours in peak season (May-October). Genuinely good for kids 8+, and the island’s best rainy-afternoon move.`,
         },
         {
           name: 'Pinckney Island National Wildlife Refuge',
-          meta: "Free · 2-3 hours · Hike and birding",
-          blurb:
-            "A 15-minute drive off-island for a genuinely wild experience. Alligators, egrets, no tourists. Weekday mornings only.",
+          meta: 'Free · 2-3 hours · Sunrise to sunset',
+          blurb: `Just off US-278 between the two bridges as you leave the island. ${ttdExt(TTD_SRC.pinckney, 'Entry is free')}, it is open sunrise to sunset, and bikes are allowed on about 14 miles of trails. Egrets, alligators, no crowds. There are no restrooms or water, so plan for it.`,
+        },
+        {
+          name: 'Offshore fishing charter (half day)',
+          meta: '$900-1,400 · 4-6 hours · Usually 4 people max',
+          blurb: 'Worth it for a dads’ trip or a parent-and-kid outing. We work with two captains with private docks who actually find fish; the marina-board operators are hit-or-miss.',
         },
       ],
     },
     {
       kind: 'tier',
       label: 'B-Tier',
-      subtitle: "Good in the right context.",
+      subtitle: 'Good in the right context.',
       accent: 'zinc',
       items: [
         {
-          name: 'Gregg Russell kids concert (Harbour Town Liberty Oak)',
-          meta: "Free · Nightly in summer · Bring bug spray",
-          blurb:
-            "A genuine island institution. Kids love it; adults tolerate it. Worth one night if you have children under 10. Bring chairs. The oak gets crowded.",
+          name: 'Harbour Town Lighthouse',
+          meta: '$8 (5 and under free) · 30 min · 10 a.m. to sundown',
+          blurb: `The view from the top is real; the exhibits on the way up are dated. Go early (no line) or just before sunset, and skip rainy afternoons when the stairwell bottlenecks. Current hours and admission are on the ${ttdExt(TTD_SRC.lighthouse, 'lighthouse site')}.`,
         },
         {
-          name: 'Harbour Town Lighthouse climb',
-          meta: "$5 · 15 min · Spiral staircase, 114 steps",
-          blurb:
-            "The view is real, the exhibits are dated. Go for the photo at the top, not the museum. Avoid on rainy afternoons. The line is brutal.",
+          name: 'Gregg Russell under the Liberty Oak (Harbour Town)',
+          meta: 'Free · Summer evenings · Bring chairs and bug spray',
+          blurb: 'An island institution: free outdoor family concerts under the Liberty Oak on summer evenings. Kids love it; adults tolerate it happily. Worth one night with children under 10. It is inside Sea Pines, so the gate pass applies.',
+        },
+        {
+          name: 'Trail ride at Lawton Stables (Sea Pines)',
+          meta: 'From $100 · 1 hour · Ages 8+',
+          blurb: `A beautiful ride through the forest preserve; kids love it and it photographs well. Riders must be ${ttdExt(TTD_SRC.lawton, '8 or older')}, and there are pony rides for younger children.`,
         },
         {
           name: 'Tennis or pickleball clinics (Palmetto Dunes, Sea Pines)',
-          meta: "$60-$150/session · 1-2 hours",
-          blurb:
-            "Palmetto Dunes tennis is as good as any resort program in the country. Sea Pines pickleball has exploded. Book a clinic with a named pro; the rec staff is a mixed bag.",
-        },
-        {
-          name: 'Horseback riding (Lawton Stables, Sea Pines)',
-          meta: "$95/person · 1 hour · Ages 8+",
-          blurb:
-            "Beautiful ride through the Sea Pines forest preserve. Not scenic enough for adults without kids. Kids love it. It's photographable.",
+          meta: '$60-150/session · 1-2 hours',
+          blurb: 'Palmetto Dunes tennis is as good as any resort program in the country, and Sea Pines pickleball has exploded. Book a clinic with a named pro; the general rec staff is a mixed bag.',
         },
       ],
+    },
+    {
+      kind: 'h2',
+      text: 'What are the best free things to do in Hilton Head?',
+    },
+    {
+      kind: 'p',
+      html: 'The beaches, the Coastal Discovery Museum, Pinckney Island refuge and Mitchelville Freedom Park cost nothing, and Coligny Beach Park still has free parking. Anything inside Sea Pines (the Forest Preserve, Harbour Town, the Stoney-Baynard Ruins) needs the $10-per-car gate pass unless you are staying there.',
+    },
+    {
+      kind: 'ul',
+      items: [
+        `<strong>Coligny Beach Park:</strong> the island’s main public beach, with ${ttdExt(TTD_SRC.coligny, 'free parking')}, restrooms, outdoor showers and seasonal lifeguards. Other Town beach lots charge non-residents $3/hour on weekdays and $5/hour on weekends from March 1 through Labor Day.`,
+        `<strong>Mitchelville Freedom Park:</strong> the site of Mitchelville, a self-governing town founded by formerly enslaved people during the Civil War, at the north end of the island. ${ttdExt(TTD_SRC.mitchelville, 'Free')}, with interpretive trails along Port Royal Sound.`,
+        '<strong>Coastal Discovery Museum:</strong> free admission and parking at Honey Horn (Mon-Sat 9-4:30, Sun 11-4:30).',
+        '<strong>Pinckney Island NWR:</strong> free, sunrise to sunset, bikes welcome.',
+        '<strong>Audubon Newhall Preserve:</strong> a quiet native-plant preserve off Palmetto Bay Road with short walking trails and no crowds.',
+        '<strong>Jarvis Creek Park and Lowcountry Celebration Park:</strong> open lawns and walking paths (Jarvis Creek has a fitness trail) — useful with small kids between beach sessions.',
+        '<strong>Shelter Cove Harbour at sunset:</strong> free to walk, and on summer evenings there is usually live music on the waterfront.',
+        '<strong>Fish Haul Beach:</strong> the low-tide sandbars and tidal pools on the north end are some of the best shelling and birding on the island (check the Town’s seasonal beach-parking rules before you go).',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What are the best things to do in Hilton Head with kids?',
+    },
+    {
+      kind: 'p',
+      html: 'For families, build each day around one beach session and one easy activity: a dolphin cruise, a kayak tour, a Lawton Stables ride (ages 8+) or an hour of mini golf. Keep afternoons loose; kids melt down when the day has five booked things in it.',
+    },
+    {
+      kind: 'ul',
+      items: [
+        `<strong>The Sandbox Children’s Museum</strong> (80 Nassau St): hands-on play for young kids and a reliable rainy-day save. ${ttdExt(TTD_SRC.sandbox, 'Check current hours')}.`,
+        `<strong>Mini golf:</strong> ${ttdExt(TTD_SRC.minigolf, 'Pirate’s Island Adventure Golf')} (36 holes) and Legendary Golf are the two the kids ask about.`,
+        '<strong>Dolphin cruise:</strong> 1 hr 45 min is about the right length for kids; bring snacks.',
+        '<strong>Gregg Russell at the Liberty Oak:</strong> free summer evening concerts in Harbour Town.',
+        '<strong>Coastal Discovery Museum butterfly habitat:</strong> May through October.',
+        '<strong>Beach days:</strong> Coligny for facilities and lifeguards; Folly Field and Driessen for space; the Palmetto Dunes lagoons for crabbing.',
+      ],
+    },
+    {
+      kind: 'p',
+      html: 'Our <a href="/blog/hilton-head-with-kids">Hilton Head with kids guide</a> has a full meltdown-proof seven-day plan, and the <a href="/local/family-activities">family activities directory</a> lists every kid-friendly operator.',
+    },
+    {
+      kind: 'h2',
+      text: 'What are fun things to do in Hilton Head for adults and couples?',
+    },
+    {
+      kind: 'p',
+      html: 'For adults, the best Hilton Head days pair one outdoor splurge (a private sunset sail, an offshore fishing charter or a round of golf) with a long dinner. Couples should book the sunset sail and one waterfront dinner first; everything else can stay flexible.',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Private sunset sail</strong> on Calibogue Sound (see A-tier above).',
+        '<strong>Golf:</strong> Harbour Town Golf Links if you want the bucket-list round, or one of the island’s other courses for better value. Our <a href="/hilton-head-golf-courses">course guide</a> ranks them, and <a href="/hilton-head-tee-times">tee times</a> links to every booking page.',
+        '<strong>Tastings:</strong> Hilton Head Distillery and Island Winery are both on the island and make an easy rainy or late afternoon.',
+        '<strong>Daufuskie Island day trip:</strong> the Island Head ferry runs from Broad Creek Marina to Daufuskie in about 45 minutes (' + ttdExt(TTD_SRC.daufuskie, 'schedule') + '). Rent a golf cart there, explore the island’s Gullah history and empty beaches, and eat lunch on the water.',
+        `<strong>Gullah Heritage Trail Tour:</strong> about 2.5 hours from the Coastal Discovery Museum, and the best way to understand the island’s history before the resorts (${ttdExt(TTD_SRC.cdmSchedule, 'check the current schedule')}).`,
+        '<strong>Dinner:</strong> our <a href="/blog/hilton-head-romantic-restaurants">romantic restaurants guide</a> and <a href="/blog/hilton-head-restaurants-ranked-2026">ranked restaurant list</a> cover where to book.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What can you do in Hilton Head on a rainy day?',
+    },
+    {
+      kind: 'p',
+      html: 'On a rainy day, go to the Coastal Discovery Museum, The Sandbox Children’s Museum, the Arts Center of Coastal Carolina, or a distillery or winery tasting. Summer storms usually blow through in 30 to 60 minutes, so plan the beach for mornings and keep the indoor options for 3-5 p.m.',
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Coastal Discovery Museum</strong> (free; indoor exhibits plus covered butterfly habitat in season).',
+        '<strong>The Sandbox Children’s Museum</strong> for kids under 10.',
+        '<strong>Arts Center of Coastal Carolina</strong> for a matinee; see the <a href="/events">events calendar</a> for the season.',
+        '<strong>Shelter Cove Towne Centre</strong> for shopping and lunch under cover.',
+        '<strong>Hilton Head Distillery or Island Winery</strong> for adults.',
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'What is there to do in Sea Pines?',
+    },
+    {
+      kind: 'p',
+      html: `Sea Pines packs Harbour Town and its lighthouse, the Forest Preserve, Lawton Stables, the Stoney-Baynard Ruins, South Beach Marina and miles of beach into one gated community. Non-guests pay ${ttdExt(TTD_SRC.gate, '$10 per car per day')} at the gate (cash only, valid 7 a.m. to 11 p.m.), so plan to do several of these in the same visit.`,
+    },
+    {
+      kind: 'ul',
+      items: [
+        '<strong>Harbour Town:</strong> the lighthouse, the Liberty Oak, the marina and the 18th green of Harbour Town Golf Links.',
+        '<strong>Sea Pines Forest Preserve and Lawton Stables:</strong> trails, boardwalks and trail rides (S-tier and B-tier above).',
+        '<strong>Stoney-Baynard Ruins:</strong> the tabby ruins of a plantation house, a 10-minute stop with real history.',
+        '<strong>South Beach Marina:</strong> lunch on the water at the island’s quieter southern tip.',
+        '<strong>Sea Pines beaches:</strong> wide, calm and less crowded than Coligny.',
+      ],
+    },
+    {
+      kind: 'p',
+      html: 'Our <a href="/hilton-head/sea-pines">Sea Pines guide</a> covers where to stay inside the gates (which removes the gate fee entirely).',
+    },
+    {
+      kind: 'h2',
+      text: 'How should you spend one day in Hilton Head?',
+    },
+    {
+      kind: 'p',
+      html: 'With one day, ride the beach at the morning low tide, spend midday in Sea Pines (Forest Preserve, then lunch at Harbour Town or South Beach), and end with a sunset dolphin cruise or dinner at Shelter Cove. That covers the beach, the forest, the marina and the water in a single loop.',
+    },
+    {
+      kind: 'ol',
+      items: [
+        '<strong>7-9 a.m.:</strong> bike the beach at low tide from Coligny.',
+        '<strong>9:30-11 a.m.:</strong> Sea Pines Forest Preserve (gate pass).',
+        '<strong>11:30 a.m.-2 p.m.:</strong> Harbour Town: the lighthouse, the Liberty Oak, lunch.',
+        '<strong>2-5 p.m.:</strong> beach or pool; Coastal Discovery Museum if it rains.',
+        '<strong>Evening:</strong> sunset cruise or dinner at Shelter Cove.',
+      ],
+    },
+    {
+      kind: 'p',
+      html: 'Staying longer? The <a href="/blog/hilton-head-3-day-itinerary">3-day itinerary</a> and <a href="/blog/hilton-head-7-day-itinerary">7-day itinerary</a> build on this loop.',
+    },
+    {
+      kind: 'h2',
+      text: 'Which Hilton Head activities should you skip?',
+    },
+    {
+      kind: 'p',
+      html: 'Skip the pirate-themed dinner cruise, Segway tours, jump-scare "haunted history" tours and any paid seashell tour. Each has a better, cheaper version on the island.',
     },
     {
       kind: 'tier',
       label: 'C-Tier. Skip',
-      subtitle: "What you'll be tempted by and shouldn't do.",
+      subtitle: 'What you will be tempted by and shouldn’t do.',
       accent: 'rose',
       items: [
         {
           name: 'Pirate-themed dinner cruise',
-          meta: "$85/adult · 90 min · Shelter Cove",
-          blurb:
-            "The boat is fine. The food is not. The entertainment is loud. If you must, do the afternoon sightseeing version. No food, no theater, same boat.",
+          meta: 'Shelter Cove',
+          blurb: 'The boat is fine. The food is not, and the entertainment is loud. If you must, do the afternoon sightseeing version: same boat, no dinner theater.',
         },
         {
           name: 'Segway island tours',
-          meta: "$95/person · 90 min",
-          blurb:
-            "You're riding past strip malls. There's a better bike version of this for $35.",
+          meta: '90 min',
+          blurb: 'You mostly ride past strip malls. A rented bike on the beach at low tide is better and far cheaper.',
         },
         {
-          name: 'Most \"haunted history\" ghost tours',
-          meta: "$40/person · 75 min",
-          blurb:
-            "The island is 400 years of Indigenous, Gullah, and Civil War history. The ghost tour reduces it to cheap jump-scares. Pay for a real history tour at the Coastal Discovery Museum instead.",
+          name: 'Jump-scare "haunted history" ghost tours',
+          meta: '75 min',
+          blurb: 'The island has centuries of Native American, Gullah and Civil War history. Ghost tours reduce it to cheap scares; take the Gullah Heritage Trail Tour or visit Mitchelville instead.',
         },
         {
-          name: 'Any \"pick your own seashell\" commercial tour',
-          meta: "$60/person · 2 hours",
-          blurb:
-            "Seashells are free. You can pick them yourself, at low tide, from your hotel. This is the purest tourist trap on the island.",
+          name: 'Any paid "pick your own seashell" tour',
+          meta: '2 hours',
+          blurb: 'Seashells are free. Walk Fish Haul Beach or any beach at low tide and pick them up yourself. The purest tourist trap on the island.',
         },
       ],
     },
     {
       kind: 'h2',
-      text: "Activity strategy for a 7-day trip",
+      text: 'When is the best time of year for each activity?',
     },
     {
       kind: 'p',
-      html: "A good week on Hilton Head looks like this:",
-    },
-    {
-      kind: 'ul',
-      items: [
-        "<strong>Day 1:</strong> Arrive, beach, dinner nearby. Don't over-program day 1.",
-        "<strong>Day 2:</strong> Bike ride + lunch at South Beach Marina. Afternoon beach.",
-        "<strong>Day 3:</strong> Morning kayak or dolphin cruise. Lazy afternoon.",
-        "<strong>Day 4:</strong> Golf or tennis morning (one member). Beach day for the rest. Dinner in Bluffton.",
-        "<strong>Day 5:</strong> Sunrise walk to Dragon Tree. Coastal Discovery Museum if weather turns. Sunset sail.",
-        "<strong>Day 6:</strong> Flex day. Fishing charter, pickleball clinic, or pool-and-book day.",
-        "<strong>Day 7:</strong> Harbour Town morning, ham biscuit, photo at the lighthouse, then fly home.",
-      ],
-    },
-    {
-      kind: 'callout',
-      label: "What we actually do for you",
-      html: "We pre-book the activities that matter (Captain Mark's dolphin cruise, the 7am kayak slot, the good fishing captain) and leave the flex days flex. Nothing is worse than a five-activity day where the kids melt down by 2pm.",
-    },
-    {
-      kind: 'h2',
-      text: "Best time of year, by activity",
-    },
-    {
-      kind: 'ul',
-      items: [
-        "<strong>Beach:</strong> Late May through early October. Water is swimmable.",
-        "<strong>Golf:</strong> March-May and September-November. Perfect weather, course conditions.",
-        "<strong>Fishing:</strong> April-June for inshore, August-October for offshore.",
-        "<strong>Biking:</strong> Year-round. Shoulder seasons (April, October) are ideal.",
-        "<strong>Dolphin cruises:</strong> Year-round. Summer is highest-density; fall trips are quieter and still productive.",
-        "<strong>Birding / Pinckney:</strong> October-March. Migration windows are spectacular.",
-      ],
-    },
-    {
-      kind: 'h2',
-      text: 'Activity booking lead times and costs',
-    },
-    {
-      kind: 'p',
-      html: "The fastest-booking activities go four to six weeks ahead of peak-week dates. Everything else is one-to-two-weeks or walk-in. A compressed view:",
+      html: 'Beach days are best from late May through early October, golf from March to May and September to November, and birding at Pinckney from October to March. Biking and dolphin cruises work year-round.',
     },
     {
       kind: 'table',
-      caption: 'Hilton Head activities: booking window, season, and typical cost',
-      headers: ['Activity', 'Booking lead time (peak)', 'Best season', 'Typical cost'],
+      caption: 'Hilton Head activities: cost, booking lead time and best season (prices checked Nov 2026)',
+      headers: ['Activity', 'Typical cost', 'Book ahead (peak weeks)', 'Best season'],
       rows: [
-        ['Private dolphin cruise (Captain Mark)', '4-6 weeks', 'Year-round', '$85/adult'],
-        ['Private sunset sail (charter)', '3-4 weeks', 'April-October', '$500-1,200'],
-        ['Offshore fishing charter', '4-6 weeks', 'April-October', '$900-1,400'],
-        ['Kayak Broad Creek (Outside HH)', '1-2 weeks', 'Year-round (7 a.m. slot best)', '$55/person'],
-        ['Bike rental', 'Walk-in most days', 'Year-round', '$20-30/day'],
-        ['Horseback ride (Lawton Stables)', '1 week', 'Year-round (ages 8+)', '$95/person'],
-        ['Harbour Town Lighthouse climb', 'Walk-in', 'Year-round', '$5'],
-        ['Coastal Discovery Museum', 'Walk-in', 'Year-round (rainy-day fallback)', 'Free'],
-        ['Pinckney Island Refuge', 'Walk-in (weekday morning)', 'October-March', 'Free'],
-        ['Tennis or pickleball clinic', '1-2 weeks', 'Year-round', '$60-150/session'],
-        ['RBC Heritage grounds pass', '9-10 months', 'April 12-18, 2027', '$100/day ($25 practice days)'],
+        ['Beach bike ride', '$20-30/day rental', 'Walk-in', 'Year-round (time to low tide)'],
+        ['Dolphin cruise (Captain Mark’s)', 'About $30-36/adult', '1-2 weeks; more in summer', 'Year-round'],
+        ['Kayak tour (Outside Hilton Head)', '$45 adult / $30 child', '1-2 weeks', 'Year-round; early slots best'],
+        ['Private sunset sail', '$500-1,200 for up to 6', '3-4 weeks', 'April-October'],
+        ['Offshore fishing charter', '$900-1,400', '4-6 weeks', 'April-October'],
+        ['Lawton Stables trail ride', 'From $100 (ages 8+)', '1 week', 'Year-round'],
+        ['Harbour Town Lighthouse', '$8 (5 and under free)', 'Walk-in', 'Year-round'],
+        ['Sea Pines gate pass', '$10/car/day, cash', 'Not needed', 'Year-round'],
+        ['Coastal Discovery Museum', 'Free', 'Walk-in', 'Year-round; butterflies May-Oct'],
+        ['Pinckney Island NWR', 'Free', 'Walk-in', 'October-March for birds'],
+        ['RBC Heritage', '$100/day grounds ($25 practice days)', '9-10 months for lodging', 'April 12-18, 2027'],
       ],
-    },
-    {
-      kind: 'h2',
-      text: 'Hilton Head activities: frequently asked questions',
-    },
-    {
-      kind: 'faq',
-      label: 'Questions we hear most',
-      items: [
-        {
-          q: 'What is the single best thing to do on Hilton Head Island?',
-          a: 'For most visitors: a dawn bike ride on the hard sand at low tide, from Coligny to Sea Pines. Free, 90 minutes, and the single most Hilton Head moment on the island. Rent from Hilton Head Bicycle the afternoon before so you can start at sunrise.',
-        },
-        {
-          q: 'What are the best free things to do on Hilton Head?',
-          a: 'The sunrise walk to Dragon Tree (the oldest live oak on the island), the Coligny-to-Sea Pines low-tide beach bike ride, Pinckney Island National Wildlife Refuge (15 minutes off-island), the Coastal Discovery Museum, Harbour Town sunset, and beach days at Coligny or Forest Beach. None of these cost a dollar.',
-        },
-        {
-          q: 'What is the best dolphin tour on Hilton Head?',
-          a: "Captain Mark\u2019s small-group dolphin cruise out of Harbour Town. The quality gap between operators is enormous; Captain Mark actually finds dolphins, actually teaches you about them, and keeps groups small. Everybody else runs the same loop with 40-person boats. Ask for him by name when booking. For the full operator breakdown by tour style (catamaran, sunset, zodiac, kayak), see our <a href=\"/blog/hilton-head-dolphin-tours\">Hilton Head dolphin tours guide</a>.",
-        },
-        {
-          q: 'How much does a Hilton Head sunset sail cost?',
-          a: 'Public sunset cruises run $45-65/person on 30-person boats. A private charter for up to 6 runs $500-1,200 for two hours on Calibogue Sound. For couples or groups of 4+, the private charter is almost always the better value; it feels like the Caribbean instead of a bus.',
-        },
-        {
-          q: 'Is Sea Pines Forest Preserve worth visiting?',
-          a: 'Yes, especially early morning. The preserve is 605 acres of maritime forest with sandy trails, the occasional alligator, and near-zero crowds before 9 a.m. Start at the Lawton Stables trailhead. Entry is included with a Sea Pines gate pass ($10/day).',
-        },
-        {
-          q: 'What are the best things to do on Hilton Head with kids?',
-          a: "Coastal Discovery Museum, the Gregg Russell concert at Harbour Town (free, nightly in summer), horseback rides at Lawton Stables for ages 8+, dolphin cruise with Captain Mark, beach days with boogie boards at Coligny or Folly Field, and the Pirate's Cove mini-golf course. See the <a href=\"/blog/hilton-head-with-kids\">Hilton Head with kids guide</a> for a full 7-day family plan.",
-        },
-        {
-          q: 'Can you swim in the ocean at Hilton Head?',
-          a: "Yes, from late May through October. Peak water temperature is 84\u00b0F in July-August. October is the sweet spot: water still 73\u00b0F, crowds gone, rates 30-40% below summer. For monthly water temperatures, see the <a href=\"/blog/best-time-to-visit-hilton-head\">Hilton Head weather guide</a>.",
-        },
-        {
-          q: 'What is the best thing to do when it rains on Hilton Head?',
-          a: 'Coastal Discovery Museum (butterfly garden, indoor exhibits, genuinely good for kids 8+), the Sandbox Interactive Children\u2019s Museum, the Arts Center of Coastal Carolina, or a pickleball clinic under a covered court. Summer afternoon thunderstorms typically clear in 30-60 minutes; plan beach time for morning and rainy-day backups for 3-5 p.m.',
-        },
-        {
-          q: 'Do I need to book Hilton Head activities in advance?',
-          a: 'For peak weeks (summer, Heritage, Thanksgiving): dolphin cruises 4-6 weeks out, fishing charters 4-6 weeks, private sunset sails 3-4 weeks, kayak tours 1-2 weeks. Off-season (November-March): most activities are walk-in or one-week lead time. Bikes, the lighthouse, and Pinckney never need a booking.',
-        },
-        {
-          q: 'Is the Harbour Town Lighthouse worth the climb?',
-          a: 'For the photo at the top, yes. For the museum exhibits, not really. Go early morning (no line, soft light) or right before sunset. Skip rainy afternoons; the stairwell is a bottleneck. Cost is $5 and takes 15 minutes.',
-        },
-      ],
-    },
-    {
-      kind: 'h2',
-      text: 'Plan your Hilton Head activity week around the right bookings',
     },
     {
       kind: 'p',
-      html: "A good Hilton Head week balances two or three booked activities with four or five open days. If you want us to lock Captain Mark, the 7 a.m. kayak slot, and the right fishing captain before you arrive, the <a href=\"/itinerary\">$450 itinerary service</a> includes activity bookings. For timing, the <a href=\"/blog/best-time-to-visit-hilton-head\">weather guide</a> maps each activity to its best month, and our <a href=\"/events\">Hilton Head events calendar</a> shows what's on while you're here.",
+      html: 'Month-by-month detail is in the <a href="/best-time-to-visit-hilton-head">best time to visit guide</a>, and the <a href="/events">events calendar</a> shows what is on while you are here — including the <a href="/blog/rbc-heritage-travel-guide">2027 RBC Heritage</a>.',
+    },
+    {
+      kind: 'faq',
+      label: 'Things to do in Hilton Head: quick answers',
+      items: [
+        {
+          q: 'What is the number one thing to do in Hilton Head?',
+          a: 'Ride a bike on the beach at low tide. The sand is wide and hard-packed, it costs only a bike rental, and it shows you the whole shape of the island. Check the tide chart and go early.',
+        },
+        {
+          q: 'What should you not miss on Hilton Head?',
+          a: 'Do not miss a low-tide beach ride, a dolphin cruise, the Sea Pines Forest Preserve and sunset at Harbour Town. Add the Coastal Discovery Museum or Mitchelville Freedom Park for the island’s history.',
+        },
+        {
+          q: 'What are the best free things to do in Hilton Head?',
+          a: 'The public beaches (Coligny has free parking), the Coastal Discovery Museum, Pinckney Island National Wildlife Refuge, Mitchelville Freedom Park and Audubon Newhall Preserve are all free. Sea Pines attractions need a $10-per-car gate pass.',
+        },
+        {
+          q: 'How much does it cost to get into Sea Pines?',
+          a: 'Non-guests pay $10 per car per day at the Sea Pines gate, cash only, valid 7 a.m. to 11 p.m. Guests staying in Sea Pines get in without the fee.',
+        },
+        {
+          q: 'What can you do in Hilton Head when it rains?',
+          a: 'The Coastal Discovery Museum, The Sandbox Children’s Museum, the Arts Center of Coastal Carolina, Shelter Cove Towne Centre, and a distillery or winery tasting. Summer storms usually pass in 30 to 60 minutes.',
+        },
+        {
+          q: 'What are good things to do in Hilton Head for adults?',
+          a: 'A private sunset sail, an offshore fishing charter, golf, a Daufuskie Island day trip by ferry, a distillery or winery tasting, and a long waterfront dinner. Book the sail and the dinner first.',
+        },
+        {
+          q: 'Is the Harbour Town Lighthouse worth it?',
+          a: 'For the view and the photo, yes. Admission is $8 (children 5 and under free), and it is open from 10 a.m. to sundown. Go early or just before sunset to avoid the line.',
+        },
+        {
+          q: 'Do I need to book Hilton Head activities in advance?',
+          a: 'In peak weeks (summer, Easter, RBC Heritage, Thanksgiving), book fishing charters 4-6 weeks out, private sunset sails 3-4 weeks out, and dolphin and kayak tours 1-2 weeks out. Off-season, most activities take same-week bookings.',
+        },
+      ],
+    },
+    {
+      kind: 'h2',
+      text: 'Can someone book Hilton Head activities for you?',
+    },
+    {
+      kind: 'p',
+      html: 'Yes — we book the activities, captains and dinners before you arrive, so the week balances two or three booked things with open days. If you would rather not run the logistics yourself, <a href="/itinerary">tell us about your trip</a>.',
     },
   ],
 };
@@ -7621,7 +7738,7 @@ const postWeatherMonthByMonth: Post = {
 export const posts: Post[] = [
   post2026Stays,
   postRestaurantsRanked,
-  postThingsToDoRanked,
+  postThingsToDo,
   postSeaPines,
   postPalmettoDunes,
   postForestBeach,
@@ -7698,10 +7815,10 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
     industries: ['vacation-rentals'],
   },
   'hilton-head-restaurants-ranked-2026': {
-    posts: ['hilton-head-romantic-restaurants', 'hilton-head-things-to-do-ranked-2026', 'best-time-to-visit-hilton-head'],
+    posts: ['hilton-head-romantic-restaurants', 'things-to-do-in-hilton-head', 'best-time-to-visit-hilton-head'],
     industries: ['restaurants'],
   },
-  'hilton-head-things-to-do-ranked-2026': {
+  'things-to-do-in-hilton-head': {
     posts: ['hilton-head-restaurants-ranked-2026', 'best-hilton-head-beaches', 'hilton-head-with-kids'],
     industries: ['water-activities', 'family-activities', 'golf'],
   },
@@ -7734,23 +7851,23 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
     industries: ['golf', 'vacation-rentals', 'restaurants'],
   },
   'hilton-head-with-kids': {
-    posts: ['best-hilton-head-beaches', 'hilton-head-things-to-do-ranked-2026', 'hilton-head-3-day-itinerary'],
+    posts: ['best-hilton-head-beaches', 'things-to-do-in-hilton-head', 'hilton-head-3-day-itinerary'],
     industries: ['family-activities', 'water-activities'],
   },
   'best-hilton-head-beaches': {
-    posts: ['hilton-head-with-kids', 'forest-beach-guide', 'hilton-head-things-to-do-ranked-2026'],
+    posts: ['hilton-head-with-kids', 'forest-beach-guide', 'things-to-do-in-hilton-head'],
     industries: ['water-activities', 'family-activities'],
   },
   'hilton-head-3-day-itinerary': {
-    posts: ['hilton-head-7-day-itinerary', 'hilton-head-things-to-do-ranked-2026', 'hilton-head-restaurants-ranked-2026'],
+    posts: ['hilton-head-7-day-itinerary', 'things-to-do-in-hilton-head', 'hilton-head-restaurants-ranked-2026'],
     industries: ['restaurants', 'water-activities'],
   },
   'hilton-head-7-day-itinerary': {
-    posts: ['hilton-head-3-day-itinerary', 'hilton-head-things-to-do-ranked-2026', 'hilton-head-restaurants-ranked-2026'],
+    posts: ['hilton-head-3-day-itinerary', 'things-to-do-in-hilton-head', 'hilton-head-restaurants-ranked-2026'],
     industries: ['restaurants', 'water-activities', 'golf'],
   },
   'hilton-head-vs-myrtle-beach': {
-    posts: ['2026-best-places-to-stay-hilton-head', 'best-time-to-visit-hilton-head', 'hilton-head-things-to-do-ranked-2026'],
+    posts: ['2026-best-places-to-stay-hilton-head', 'best-time-to-visit-hilton-head', 'things-to-do-in-hilton-head'],
     industries: ['vacation-rentals'],
   },
   'sea-pines-vs-palmetto-dunes': {

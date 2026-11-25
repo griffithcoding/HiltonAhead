@@ -33,6 +33,7 @@ export const nav: Nav = {
       href: '/blog',
       label: 'Local Guide',
       children: [
+        { href: '/blog/things-to-do-in-hilton-head', label: 'Things to Do' },
         { href: '/best-time-to-visit-hilton-head', label: 'Best Time to Visit' },
         { href: '/hilton-head-weather', label: 'Weather by Month' },
         { href: '/hilton-head-tides', label: 'Tide Charts' },

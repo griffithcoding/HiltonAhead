@@ -47,6 +47,14 @@ const nextConfig: NextConfig = {
         destination: '/blog/rbc-heritage-travel-guide',
         permanent: true,
       },
+      // Things-to-do pillar moved to an evergreen slug (Nov 2026) so its
+      // authority compounds year to year instead of resetting with a
+      // year-stamped URL.
+      {
+        source: '/blog/hilton-head-things-to-do-ranked-2026',
+        destination: '/blog/things-to-do-in-hilton-head',
+        permanent: true,
+      },
     ];
   },
 };

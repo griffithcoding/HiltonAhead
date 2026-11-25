@@ -49,6 +49,11 @@ const EVENT_POSTS: Record<string, string> = {
 
 type Params = { slug: string };
 
+/** Tier blurbs are authored HTML; schema text fields must be plain text. */
+function stripTags(html: string): string {
+  return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+}
+
 // Re-render daily: keeps embedded widgets (e.g. the Heritage countdown)
 // current and lets Event schema switch off once the event has ended.
 export const revalidate = 86400;
@@ -137,7 +142,7 @@ export default async function BlogPostPage({
     tierBlocks.length > 0
       ? getItemListSchema(
           post.title,
-          allTierItems.map((i) => ({ name: i.name, description: i.blurb })),
+          allTierItems.map((i) => ({ name: i.name, description: stripTags(i.blurb) })),
         )
       : null;
 
@@ -166,7 +171,7 @@ export default async function BlogPostPage({
       getReviewSchema({
         itemName: item.name,
         itemType: reviewItemType,
-        reviewBody: item.blurb,
+        reviewBody: stripTags(item.blurb),
         ratingValue: tierRating[tier.accent] ?? 4,
         authorName: post.author,
         datePublished: post.publishedAt,

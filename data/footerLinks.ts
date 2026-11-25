@@ -30,6 +30,7 @@ export const footerLinks = {
         { href: '/marriott-bonvoy-stays-hilton-head', label: 'Marriott Stays' },
         { href: '/hilton-honors-stays-hilton-head', label: 'Hilton Honors Stays' },
         { href: '/hilton-head-winter-rental', label: 'Winter Rental' },
+        { href: '/blog/things-to-do-in-hilton-head', label: 'Things to Do' },
         { href: '/hilton-head-weather', label: 'Weather by Month' },
         { href: '/hilton-head-tides', label: 'Tide Charts' },
         { href: '/hilton-head-beach-day-planner', label: 'Beach Day Planner' },

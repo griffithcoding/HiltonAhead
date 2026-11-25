@@ -25,10 +25,25 @@ export default function PostBody({ blocks }: { blocks: PostBlock[] }) {
   );
 }
 
+/** "What is there to do in Sea Pines?" -> "what-is-there-to-do-in-sea-pines" */
+export function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[’']/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function renderBlock(block: PostBlock, key: number | string): ReactNode {
   switch (block.kind) {
     case 'h2':
-      return <h2 key={key}>{block.text}</h2>;
+      // Stable anchor ids enable in-page jump links and Google "jump to"
+      // links. Keep slugifyHeading in sync with any hardcoded #anchors.
+      return (
+        <h2 key={key} id={slugifyHeading(block.text)}>
+          {block.text}
+        </h2>
+      );
     case 'h3':
       return <h3 key={key}>{block.text}</h3>;
     case 'p':
@@ -409,9 +424,12 @@ function TierBlock({
                     </span>
                   )}
                 </div>
-                <p className="mt-2 max-w-[620px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]">
-                  {item.blurb}
-                </p>
+                {/* Blurbs are authored HTML (inline links), same as 'p' blocks —
+                    rendering them as text showed raw <a href> markup. */}
+                <p
+                  className="mt-2 max-w-[620px] text-[14px] leading-[1.7] text-ink-soft md:text-[15px]"
+                  dangerouslySetInnerHTML={{ __html: item.blurb }}
+                />
               </div>
             </li>
           ))}
