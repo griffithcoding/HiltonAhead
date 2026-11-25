@@ -395,7 +395,7 @@ export const FACTS: ReadonlyArray<Fact> = [
     number: 'Every April since 1969',
     label: 'RBC Heritage Presented by Boeing at Harbour Town',
     context:
-      'Played the week after The Masters. The only PGA Tour event in South Carolina. 2026 dates: April 13–19.',
+      'Played the week after The Masters. The only PGA Tour event in South Carolina. 2027 dates: April 12–18.',
     source: 'PGA Tour',
     sourceUrl: 'https://www.pgatour.com/tournaments/2026/rbc-heritage',
   },

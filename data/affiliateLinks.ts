@@ -245,7 +245,7 @@ export const AFFILIATE_PROGRAMS: Record<AffiliateProgramId, AffiliateProgram> = 
     linkPattern: 'prebuilt-link',
     defaultDeeplink: 'https://swa.eyjo.net/yZ9j72',
     pitch:
-      'Southwest flies nonstop into Savannah/Hilton Head (SAV) — two free checked bags and no change fees. Short on points for an award flight? Buy or top up Rapid Rewards.',
+      'Southwest flies nonstop into Savannah/Hilton Head (SAV) from a rotating set of cities, with no change fees on any fare. Short on points for an award flight? Buy or top up Rapid Rewards.',
   },
   hilton: {
     id: 'hilton',

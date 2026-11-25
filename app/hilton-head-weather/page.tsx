@@ -17,9 +17,9 @@ import { months } from '@/data/months';
 export const revalidate = 3600;
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Weather by Month: All 12 Months in One Place',
+  title: 'Hilton Head Weather by Month (All 12 Months)',
   description:
-    "Hilton Head Island weather, by month. Average temps, water temps, crowds, and rates for every month of 2026. Pick the right window for your trip.",
+    "Hilton Head Island weather, by month. Average temps, water temps, crowds, and rates for every month of the year. Pick the right window for your trip.",
   path: '/hilton-head-weather',
   keywords: [
     'Hilton Head weather',
@@ -61,7 +61,7 @@ export default function WeatherIndexPage() {
         {/* Hero */}
         <header className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-14">
           <div>
-            <span className="eyebrow-coral eyebrow">All 12 months · 2026</span>
+            <span className="eyebrow-coral eyebrow">All 12 months · 2027</span>
             <h1 className="display mt-5 text-balance text-[44px] leading-[1.02] tracking-[-0.025em] text-ink md:text-[64px] lg:text-[72px]">
               Hilton Head weather,{' '}
               <span className="display-italic text-coral">month by month.</span>

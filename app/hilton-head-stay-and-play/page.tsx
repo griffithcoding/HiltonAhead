@@ -20,7 +20,7 @@ import { brand } from '@/data/brand';
 const PATH = '/hilton-head-stay-and-play';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Stay & Play: Golf Package Cost Estimator (2026)',
+  title: 'Hilton Head Stay & Play Golf Package Estimator',
   description:
     'Estimate a Hilton Head stay-and-play golf package — lodging plus tee times for your group, by nights, rounds, and season. See the package vs. retail savings, then have us book it to the dollar.',
   path: PATH,

@@ -11,11 +11,15 @@ import {
   getBreadcrumbSchema,
   getEventSchema,
 } from '@/app/lib/metadata';
+import { getTier } from '@/data/pricing';
+
+// Read from data/pricing.ts so this copy never drifts from the real price.
+const CHARTER_PRICE = getTier('charter')?.priceDisplay ?? '';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'The 2027 RBC Heritage Survival Kit (Free) — Hilton Ahead',
+  title: 'Free 2027 RBC Heritage Survival Kit',
   description:
-    'A local-built planning kit for the 2027 RBC Heritage tournament at Harbour Town. Tickets, hospitality, parking, dinner reservations, lodging strategy. Free, dropped to your inbox in February 2027.',
+    'A free, local-built planning kit for the 2027 RBC Heritage (Apr 12-18): tickets, parking, lodging and dinner reservations. Delivered February 2027.',
   path: '/guides/2027-rbc-heritage',
   keywords: [
     'RBC Heritage 2027',
@@ -81,9 +85,9 @@ export default function Heritage2027KitPage() {
     },
   ]);
 
-  // 2027 Heritage runs the week of April 12, similar to historical pattern
-  // (Mon practice, Thu–Sun tournament). Confirmed by tournament foundation
-  // calendar; we'll firm dates when 2027 schedule is officially posted.
+  // 2027 Heritage: tournament week Apr 12–18, rounds Thu Apr 15–Sun Apr 18.
+  // Verified Nov 2026 against the PGA Tour 2027 schedule release and the
+  // tournament's ticket on-sale announcement.
   const eventSchema = getEventSchema({
     name: 'RBC Heritage 2027',
     description:
@@ -92,6 +96,7 @@ export default function Heritage2027KitPage() {
     endDate: '2027-04-18',
     locationName: 'Harbour Town Golf Links',
     url: 'https://rbcheritage.com/',
+    organizer: { name: 'Heritage Classic Foundation', url: 'https://rbcheritage.com/' },
   });
 
   return (
@@ -280,7 +285,7 @@ export default function Heritage2027KitPage() {
                 not run the playbook yourself &mdash; if you want tickets,
                 lodging, dinner reservations, transportation, and tee times
                 all booked for you, with one local on call &mdash; that&rsquo;s
-                the concierge service. It runs $495 (Charter) or as a
+                the concierge service. It runs {CHARTER_PRICE} (Charter) or as a
                 custom Heritage-week build for groups of six or more.
               </p>
               <p className="mt-5 text-[16px] leading-[1.75] text-ink-soft md:text-[17px]">
@@ -312,21 +317,20 @@ export default function Heritage2027KitPage() {
             </div>
 
             <aside className="rounded-2xl border border-ink/10 bg-cream/60 p-7">
-              <div className="eyebrow text-sunset">FYI</div>
+              <div className="eyebrow text-sunset">Planning now?</div>
               <h3 className="display mt-3 text-[20px] leading-[1.2] text-ink md:text-[22px]">
-                Until then &mdash; the 2026 recap
+                The 2027 Heritage travel guide is live
               </h3>
               <p className="mt-3 text-[14px] leading-[1.7] text-ink-soft">
-                Matt Fitzpatrick won the 2026 RBC Heritage in a playoff
-                against Scottie Scheffler at Harbour Town on April 19. If
-                you missed it, our local-recap notes are folded into the
-                Heritage post on our blog.
+                Don&rsquo;t wait for February. Dates, 2027 ticket prices,
+                where to stay, parking and Heritage-week dinner reservations
+                are already in our free online guide.
               </p>
               <Link
-                href="/blog/rbc-heritage-2026-travel-guide"
+                href="/blog/rbc-heritage-travel-guide"
                 className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition hover:text-sunset"
               >
-                Read the 2026 recap &rarr;
+                Read the 2027 guide &rarr;
               </Link>
             </aside>
           </div>

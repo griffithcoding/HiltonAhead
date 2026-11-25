@@ -96,10 +96,12 @@ export function selectTopics({
   const upcomingEvents: TopicEvent[] = events
     .filter(
       (e) =>
+        // TBA entries carry placeholder sort dates — never quote them.
+        !e.datesTba &&
         // currently running (today within range), OR
         // starting within the horizon
-        (e.startDate <= todayIso && e.endDate >= todayIso) ||
-        (e.startDate >= todayIso && e.startDate <= horizonIso),
+        ((e.startDate <= todayIso && e.endDate >= todayIso) ||
+          (e.startDate >= todayIso && e.startDate <= horizonIso)),
     )
     .sort((a, b) => a.startDate.localeCompare(b.startDate))
     .slice(0, 4)

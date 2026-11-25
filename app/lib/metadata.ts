@@ -593,6 +593,12 @@ export function getEventSchema(event: {
   endDate: string
   locationName: string
   url?: string
+  /**
+   * The body that actually runs the event. Omit when unknown — never
+   * default to Hilton Ahead: we list other people's events, we don't
+   * organize them, and Google wants Event markup to be accurate.
+   */
+  organizer?: { name: string; url?: string }
 }) {
   return {
     '@context': 'https://schema.org',
@@ -613,7 +619,15 @@ export function getEventSchema(event: {
         addressCountry: 'US',
       },
     },
-    organizer: { '@type': 'Organization', name: brand.name, url: siteUrl },
+    ...(event.organizer
+      ? {
+          organizer: {
+            '@type': 'Organization',
+            name: event.organizer.name,
+            ...(event.organizer.url ? { url: event.organizer.url } : {}),
+          },
+        }
+      : {}),
     ...(event.url ? { url: event.url } : {}),
   }
 }

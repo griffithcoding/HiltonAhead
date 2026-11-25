@@ -435,7 +435,7 @@ const post2026Stays: Post = {
         },
         {
           q: 'How early should I book a Hilton Head villa?',
-          a: 'Summer weeks (June-August): 5-6 months out for oceanfront villas, 3-4 for resorts. RBC Heritage week (April 13-19, 2026): 9-10 months out. October (our favorite window): 3-4 months. Winter and early December: two weeks out is usually fine. Spring break: 4-5 months out.',
+          a: 'Summer weeks (June-August): 5-6 months out for oceanfront villas, 3-4 for resorts. RBC Heritage week (April 12-18, 2027): 9-10 months out. October (our favorite window): 3-4 months. Winter and early December: two weeks out is usually fine. Spring break: 4-5 months out.',
         },
         {
           q: 'Is VRBO or Airbnb safe to book on Hilton Head?',
@@ -718,7 +718,7 @@ const postRestaurantsRanked: Post = {
         },
         {
           q: 'What are the hardest dinner reservations to get on Hilton Head?',
-          a: "In order: Skull Creek Boathouse (30-day Resy drop, set an alarm), Michael Anthony's (2-3 weeks, call directly), Red Fish (2-3 weeks, call), FARM Bluffton (3 weeks for weekends). During RBC Heritage week (April 13-19, 2026), all four jump to 4+ weeks lead time.",
+          a: "In order: Skull Creek Boathouse (30-day Resy drop, set an alarm), Michael Anthony's (2-3 weeks, call directly), Red Fish (2-3 weeks, call), FARM Bluffton (3 weeks for weekends). During RBC Heritage week (April 12-18, 2027), all four jump to 4+ weeks lead time.",
         },
         {
           q: 'Do I need to book restaurants in advance on Hilton Head?',
@@ -987,7 +987,7 @@ const postThingsToDoRanked: Post = {
         ['Coastal Discovery Museum', 'Walk-in', 'Year-round (rainy-day fallback)', 'Free'],
         ['Pinckney Island Refuge', 'Walk-in (weekday morning)', 'October-March', 'Free'],
         ['Tennis or pickleball clinic', '1-2 weeks', 'Year-round', '$60-150/session'],
-        ['RBC Heritage grounds pass', '9-10 months', 'April 13-19, 2026', '$55-85/day'],
+        ['RBC Heritage grounds pass', '9-10 months', 'April 12-18, 2027', '$100/day ($25 practice days)'],
       ],
     },
     {
@@ -1955,7 +1955,7 @@ const postBestTime: Post = {
         },
         {
           kind: 'p',
-          html: "<strong>Weather:</strong> 62-78\u00b0F days, dropping to 49-60\u00b0F at night. Water still cold (58-68\u00b0F) through April, swimmable for most by mid-May. <strong>Crowds:</strong> Low until spring break hits mid-March, then heavy the week of the <a href=\"/blog/rbc-heritage-2026-travel-guide\">RBC Heritage (April 13-19, 2026)</a>. <strong>Rates:</strong> Moderate, except Heritage week doubles everything. <strong>Best for:</strong> golf trips, couples' getaways, serious cyclists, bird-watchers at the end of migration.",
+          html: "<strong>Weather:</strong> 62-78\u00b0F days, dropping to 49-60\u00b0F at night. Water still cold (58-68\u00b0F) through April, swimmable for most by mid-May. <strong>Crowds:</strong> Low until spring break hits mid-March, then heavy the week of the <a href=\"/blog/rbc-heritage-travel-guide\">RBC Heritage (April 12-18, 2027)</a>. <strong>Rates:</strong> Moderate, except Heritage week doubles everything. <strong>Best for:</strong> golf trips, couples' getaways, serious cyclists, bird-watchers at the end of migration.",
         },
         {
           kind: 'p',
@@ -2096,7 +2096,7 @@ const postBestTime: Post = {
         },
         {
           kind: 'p',
-          html: "<strong>Week of RBC Heritage (April 13-19, 2026)</strong>. Unless you're attending. Rates double, restaurants overwhelmed, villas booked a year out. If the tournament is the point, see our <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage travel guide</a>.",
+          html: "<strong>Week of RBC Heritage (April 12-18, 2027)</strong>. Unless you're attending. Rates double, restaurants overwhelmed, villas booked a year out. If the tournament is the point, see our <a href=\"/blog/rbc-heritage-travel-guide\">Heritage travel guide</a>.",
         },
         {
           kind: 'p',
@@ -2191,7 +2191,7 @@ const postBestTime: Post = {
         },
         {
           q: "What week should I absolutely avoid on Hilton Head?",
-          a: "Two: the week of RBC Heritage (April 13-19, 2026) and July 4th week. Heritage doubles lodging rates and fills every restaurant; July 4th stacks peak summer crowds on top of fireworks traffic. Every other week has a pocket that works.",
+          a: "Two: the week of RBC Heritage (April 12-18, 2027) and July 4th week. Heritage doubles lodging rates and fills every restaurant; July 4th stacks peak summer crowds on top of fireworks traffic. Every other week has a pocket that works.",
         },
         {
           q: "When does hurricane season end on Hilton Head?",
@@ -2541,149 +2541,243 @@ const postBridge2026Debunker: Post = {
 };
 
 // ---------------------------------------------------------------------------
-// 10) RBC Heritage 2026 travel guide
+// 10) RBC Heritage travel guide — 2027 edition (evergreen slug)
 // ---------------------------------------------------------------------------
+//
+// Evergreen slug on purpose: the 2026 edition lived at
+// /blog/rbc-heritage-2026-travel-guide, which forced a URL change (and a
+// reset of ranking history) every year. That URL now 301s here (see
+// next.config.ts). Next year, update the facts in place and bump
+// updatedAt — do NOT change the slug.
+//
+// 2027 facts verified Nov 2026 against: PGA Tour 2027 schedule release
+// (Aug 26, 2026), WSAV ticket on-sale report, HHI visitor-center Heritage
+// page. Ticket prices are face value at on-sale; re-check before April.
+
+const HERITAGE_SRC = {
+  schedule:
+    'https://www.pgatour.com/article/news/latest/2026/08/26/pga-tour-announces-2027-schedule-through-tour-championship',
+  tickets: 'https://www.wsav.com/sports/tickets-for-2027-rbc-heritage-on-sale-now/',
+  hhi: 'https://hhi.com/golf/rbc-heritage/',
+  official: 'https://rbcheritage.com/',
+  recap2026:
+    'https://www.pgatour.com/article/news/daily-wrapup/2026/04/19/matt-fitzpatrick-defeats-scottie-scheffler-playoff-wins-rbc-heritage-harbour-town-golf-links-results-final-scores-finale',
+} as const;
+
+const heritageExt = (href: string, text: string) =>
+  `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
 
 const postRbcHeritage: Post = {
-  slug: 'rbc-heritage-2026-travel-guide',
-  title: "RBC Heritage 2026: The Local's Travel Guide",
+  slug: 'rbc-heritage-travel-guide',
+  title: 'RBC Heritage 2027: Tickets, Dates & Lodging',
   excerpt:
-    "Tickets, hospitality, lodging, and the three things visitors always get wrong. Everything you need for Heritage week, April 13-19, 2026.",
+    'April 12-18, 2027 at Harbour Town. Which tickets to buy, where to stay, how to park, and the three things first-timers always get wrong — from a Hilton Head local.',
   description:
-    "Local travel guide to RBC Heritage 2026 at Harbour Town. Tickets, hospitality, lodging, parking strategy, and insider logistics for the tournament.",
+    'RBC Heritage 2027 runs April 12-18 at Harbour Town. A local’s guide to tickets ($100 grounds), parking, lodging and Heritage-week dinner reservations.',
   category: 'Golf',
   readTime: '9 min',
   publishedAt: '2026-02-28',
-  updatedAt: '2026-04-18',
+  updatedAt: '2026-11-25',
   author: 'Hilton Ahead',
   featuredOrder: 3.5,
   relatedNeighborhoods: ['sea-pines'],
   keywords: [
-    'RBC Heritage 2026',
+    'RBC Heritage 2027',
     'RBC Heritage tickets',
+    'RBC Heritage 2027 tickets',
+    'RBC Heritage 2027 dates',
+    'where is the RBC Heritage played',
     'Harbour Town Golf Links',
-    'RBC Heritage hospitality',
+    'RBC Heritage parking',
     'RBC Heritage lodging',
-    'Hilton Head PGA Tour',
   ],
   body: [
     {
       kind: 'p',
-      html: "RBC Heritage is the only full-field PGA Tour event south of Augusta and the single most important week of the year on Hilton Head Island. April 13-19, 2026. Here's what first-timers consistently get wrong and how locals actually do it.",
+      html: `The <strong>RBC Heritage 2027</strong> runs <strong>April 12-18, 2027</strong> at Harbour Town Golf Links in Sea Pines, with the four competition rounds Thursday, April 15 through Sunday, April 18 (${heritageExt(HERITAGE_SRC.hhi, 'HHI visitor center')}). It is the 59th edition and one of the PGA Tour’s eight Signature Events in 2027 (${heritageExt(HERITAGE_SRC.schedule, 'PGA Tour 2027 schedule')}), which means a $20 million purse and a field built around the best players in the world. Here is how locals actually do the week.`,
     },
     {
       kind: 'h2',
-      text: "The week at a glance",
+      text: 'When is the RBC Heritage 2027?',
+    },
+    {
+      kind: 'p',
+      html: `Tournament week is Monday, April 12 through Sunday, April 18, 2027, and the four scoring rounds are Thursday through Sunday. Monday is closed to spectators, Tuesday has the opening ceremonies, and Wednesday is the Pro-Am (${heritageExt(HERITAGE_SRC.hhi, 'HHI visitor center Heritage page')}).`,
     },
     {
       kind: 'ul',
       items: [
-        "<strong>Monday-Wednesday:</strong> Practice rounds. Cheaper tickets, smaller crowds, photograph freely.",
-        "<strong>Thursday-Sunday:</strong> Tournament rounds. Full PGA Tour field, packed grounds, leaderboard drama by Saturday back nine.",
-        "<strong>Sunday 5-7 p.m.:</strong> Winner dons the plaid jacket on 18. Stay for it.",
+        '<strong>Tuesday, April 13:</strong> Practice rounds and opening ceremonies. Cheapest day on the grounds.',
+        '<strong>Wednesday, April 14:</strong> Pro-Am. Relaxed crowds, easy photos, still cheap.',
+        '<strong>Thursday-Saturday, April 15-17:</strong> Tournament rounds. Saturday is the busiest and the most fun.',
+        '<strong>Sunday, April 18:</strong> Final round. The winner gets the tartan jacket on the 18th green — stay for it.',
       ],
     },
     {
       kind: 'h2',
-      text: "Tickets. Buy these, skip those",
+      text: 'Where is the RBC Heritage played?',
     },
     {
-      kind: 'ol',
-      items: [
-        "<strong>Grounds pass ($55-$85/day):</strong> Full access to the course. What most visitors should buy. Best value Wednesday or Thursday.",
-        "<strong>Weekly grounds ($295):</strong> All seven days. Only if you're actually going three or more times.",
-        "<strong>Hospitality ($900-1,800/day):</strong> Upgraded food/drink, shaded seating, usually hole 18 or 17. Worth it for Saturday or Sunday.",
-        "<strong>18th Hole Hospitality ($2,200+):</strong> The premium experience. Book 4+ months out. Corporate-entertaining tier.",
+      kind: 'p',
+      html: 'The RBC Heritage is played at Harbour Town Golf Links inside The Sea Pines Resort, on the south end of Hilton Head Island, South Carolina. The 18th hole finishes along Calibogue Sound beside the red-and-white Harbour Town lighthouse, which is the shot you have seen on TV.',
+    },
+    {
+      kind: 'p',
+      html: 'Sea Pines is a gated community, so tournament traffic funnels through a small number of gates. That single fact drives most of the parking and lodging advice below. If you are new to the island, our <a href="/hilton-head/sea-pines">Sea Pines guide</a> explains the layout.',
+    },
+    {
+      kind: 'h2',
+      text: 'How much are RBC Heritage 2027 tickets?',
+    },
+    {
+      kind: 'p',
+      html: `A daily grounds ticket for 2027 is $100 at face value, a practice-round ticket is $25, and a week-long grounds package is $400 (${heritageExt(HERITAGE_SRC.tickets, 'WSAV, 2027 on-sale report')}). Kids 15 and under get in free with a ticketed adult; buying through Ticketmaster adds fees, putting grounds tickets at about $108 and practice rounds at about $33 (${heritageExt(HERITAGE_SRC.hhi, 'HHI visitor center')}).`,
+    },
+    {
+      kind: 'table',
+      caption: 'RBC Heritage 2027 ticket options (face value at on-sale; confirm on the official site before buying)',
+      headers: ['Ticket', 'Price', 'Who it is for'],
+      rows: [
+        ['Practice round (Tue or Wed)', '$25 / day', 'First-timers, families, photographers. Best value of the week.'],
+        ['Grounds (Thu-Sun)', '$100 / day', 'Most visitors. One tournament day is enough for a first trip.'],
+        ['Grounds package (full week)', '$400', 'Only if you will genuinely go four or more days.'],
+        ['Ultimate Patron Pass', '$1,500 / day', 'Hospitality with food, drink and shaded seating. Corporate or once-in-a-lifetime.'],
+        ['Kids 15 and under', 'Free with a ticketed adult', 'Makes the Heritage one of the cheapest PGA Tour days for families.'],
       ],
     },
     {
       kind: 'callout',
-      label: "Our Heritage default",
-      html: "For first-timers who want one great day: <strong>Saturday grounds pass plus a morning spent at hole 17</strong>. The short par-3 with the water carry is the most photogenic hole on the Atlantic coast, and Saturday's leaderboard pressure makes it theater.",
-    },
-    {
-      kind: 'h2',
-      text: "Where to stay during Heritage week",
+      label: 'Our Heritage default',
+      html: 'For first-timers who want one great day: <strong>a Saturday grounds ticket plus a morning parked at the 17th hole</strong>. The short par-3 with the water carry is the most photogenic hole on the course, and Saturday’s leaderboard pressure turns it into theater. Add a $25 Tuesday or Wednesday ticket if you want to see the players up close without the crowds.',
     },
     {
       kind: 'p',
-      html: "Lodging doubles in price and books out 9-10 months ahead. Three strategies:",
+      html: `Buy from the ${heritageExt(HERITAGE_SRC.official, 'official RBC Heritage site')} first. Resale sites list the same days at their own prices, often above face value once fees are added.`,
+    },
+    {
+      kind: 'h2',
+      text: 'Where should you stay for the RBC Heritage?',
+    },
+    {
+      kind: 'p',
+      html: 'Stay inside Sea Pines if you can afford it and booked early, because walking to the course removes the gate traffic entirely. Otherwise stay mid-island (Palmetto Dunes or Shipyard) or in Bluffton and plan your arrival time around the traffic.',
     },
     {
       kind: 'ol',
       items: [
-        "<strong>Sea Pines (on-resort):</strong> Walk to the course. $800-1,500/night for a villa. Book by July 2025 for 2026.",
-        "<strong>Mid-island (Palmetto Dunes / Shipyard):</strong> 10-15 min drive. $500-900/night. More inventory, often your best bet if you're booking inside 6 months.",
-        "<strong>Bluffton / off-island:</strong> 20-30 min drive. $300-500/night. The stealth play. Traffic is manageable if you leave Bluffton by 8 a.m.",
+        '<strong>Sea Pines (walk to the course):</strong> what we typically see is $800-1,500 a night for a villa during Heritage week. Villas near Harbour Town book 9-10 months out, so for April 2027 most are already gone — ask us about cancellations.',
+        '<strong>Mid-island (<a href="/hilton-head/palmetto-dunes">Palmetto Dunes</a> / Shipyard):</strong> 10-15 minutes by car, roughly $500-900 a night. More inventory, and usually the best bet if you are booking inside six months.',
+        '<strong>Bluffton / off-island:</strong> 20-30 minutes, roughly $300-500 a night. The stealth play. Traffic is manageable if you leave Bluffton by 8 a.m.',
       ],
     },
     {
       kind: 'h2',
-      text: "Parking strategy. Don't skip this",
+      text: 'How do you park for the RBC Heritage?',
     },
     {
       kind: 'p',
-      html: "On-site Heritage parking is a multi-hour ordeal. The move: <strong>park at the Honey Horn / Coastal Discovery Museum lot on US-278</strong> and take the free shuttle in. Adds 25 min each way but cuts 90 min of traffic.",
+      html: 'Do not try to drive into Sea Pines on a tournament morning; use a shuttle lot or a car service instead. The move we use is parking at the Honey Horn / Coastal Discovery Museum lot on US-278 and taking the tournament shuttle, which adds about 25 minutes each way but avoids 90 minutes of gate traffic.',
     },
     {
       kind: 'p',
-      html: "Better: have us arrange a private car or rideshare from your lodging. Total spend is $60-80 round trip; we recover that in Heritage-week time.",
+      html: 'Better still for groups: a private car or rideshare from your lodging. It runs about $60-80 round trip, and you get Heritage-week hours back. Shuttle lots and operating times are published by the tournament each spring, so check the official site the week before.',
     },
     {
       kind: 'h2',
-      text: "Where to eat. Heritage-week adjusted",
+      text: 'Where should you eat during Heritage week?',
     },
     {
       kind: 'p',
-      html: "Every Hilton Head restaurant is at 130% capacity. Standard reservation rules change. Specifics:",
+      html: 'Book dinner three to four weeks ahead, because every serious restaurant on the island is full Thursday through Saturday. Bluffton is the reliable fallback when the island is sold out.',
     },
     {
       kind: 'ul',
       items: [
-        "<strong>Skull Creek Boathouse:</strong> Walk-ins dead. Book 3 weeks out.",
-        "<strong>Red Fish:</strong> 4 weeks out. Call directly. They hold Heritage tables for returning clients.",
-        "<strong>Michael Anthony's:</strong> 4 weeks out. Or the bar (5-10 p.m., walk-up).",
-        "<strong>FARM Bluffton:</strong> The stealth move. 20 min drive, 15% easier reservation.",
-        "<strong>On-course food at Heritage:</strong> Better than you think. The lobster roll at the 17th-hole tent is genuinely good.",
+        '<strong>Skull Creek Boathouse:</strong> walk-ins are effectively dead this week. Book three weeks out.',
+        '<strong>Red Fish:</strong> four weeks out. Call directly; they hold Heritage tables for returning guests.',
+        '<strong>Michael Anthony’s:</strong> four weeks out, or walk up to the bar (5-10 p.m.).',
+        '<strong>FARM Bluffton:</strong> 20 minutes off-island and noticeably easier to book.',
+        '<strong>On the course:</strong> better than you would expect. The lobster roll near the 17th hole is genuinely good.',
       ],
     },
     {
+      kind: 'p',
+      html: 'For the full list, see our <a href="/blog/hilton-head-restaurants-ranked-2026">ranked Hilton Head restaurants</a>.',
+    },
+    {
       kind: 'h2',
-      text: "Three things visitors always get wrong",
+      text: 'What do first-timers get wrong at the Heritage?',
+    },
+    {
+      kind: 'p',
+      html: 'Most first-timers skip the cheap practice days, arrive at the worst possible time on Saturday, and leave before the jacket ceremony. Fix those three and the week is far better.',
     },
     {
       kind: 'ol',
       items: [
-        "<strong>Not buying Wednesday tickets:</strong> Practice rounds are 60% cheaper and you can walk inside the ropes at holes 15-18. First-timers underrate this.",
-        "<strong>Driving onto the property Saturday morning:</strong> Grid-lock from 9-11 a.m. Arrive before 8 a.m. or after 11:30.",
-        "<strong>Not staying for the plaid jacket:</strong> The winner is crowned at the 18th green around 6 p.m. Sunday. Tradition matters. Stay.",
+        '<strong>Skipping Tuesday or Wednesday:</strong> at $25 these days are a quarter of the price of a tournament day, with a fraction of the crowd.',
+        '<strong>Driving in on Saturday morning:</strong> the gates gridlock between roughly 9 and 11 a.m. Arrive before 8 a.m. or after 11:30.',
+        '<strong>Leaving before the jacket:</strong> the winner is presented with the tartan jacket on the 18th green on Sunday evening. It is the tradition — stay.',
       ],
     },
     {
       kind: 'h2',
-      text: "The corporate / hospitality play",
+      text: 'What does a Heritage-week trip cost?',
     },
     {
       kind: 'p',
-      html: "Groups of 6-20 use Heritage as an entertaining week. Our corporate Heritage package includes: 18th-hole hospitality passes, a villa base, private transport, three reserved dinners, and a round at Atlantic Dunes on Friday. Runs $6k-9k per person. We book these 8-12 months out.",
+      html: 'A typical Heritage trip for four (a Sea Pines villa for three nights, two grounds days and four booked dinners) runs about $6,500-9,000 all in. The same trip the week after the tournament usually runs $3,800-4,600, which is why we steer non-golfers away from Heritage week.',
     },
     {
-      kind: 'callout',
-      label: "Price reality",
-      html: "A \"normal\" Heritage-week trip for 4. Sea Pines villa, 3 nights, Thursday+Saturday grounds, 4 reserved dinners. Runs $6,500-9,000 all in for the group. For context, the same trip the following week (week after Heritage) runs $3,800-4,600.",
+      kind: 'p',
+      html: 'Groups of 6-20 using the week for client entertaining should start planning 8-12 months out. Our corporate builds combine hospitality passes, a villa base, private transport, three reserved dinners and a round on another Sea Pines course. <a href="/itinerary">Tell us about your group</a> and we will price it.',
     },
     {
       kind: 'h2',
-      text: "If you've never been. Go once",
+      text: 'Who won the RBC Heritage in 2026?',
     },
     {
       kind: 'p',
-      html: "Heritage is one of the most walkable, well-run PGA Tour events. Course access is better than Augusta, the crowds more polite than Phoenix, the backdrop more photogenic than pretty much anywhere. Plaid jackets, lighthouse, Atlantic sunset on the 18th. Worth a bucket-list week.",
+      html: `Matt Fitzpatrick won the 2026 RBC Heritage, beating Scottie Scheffler on the first playoff hole after both finished at 18-under (${heritageExt(HERITAGE_SRC.recap2026, 'PGA Tour')}). It was Fitzpatrick’s second Heritage title after 2023, and he collected $3.6 million of the $20 million purse.`,
+    },
+    {
+      kind: 'faq',
+      label: 'RBC Heritage 2027: quick answers',
+      items: [
+        {
+          q: 'What are the dates of the 2027 RBC Heritage?',
+          a: 'April 12-18, 2027 at Harbour Town Golf Links on Hilton Head Island. The four tournament rounds are Thursday, April 15 through Sunday, April 18.',
+        },
+        {
+          q: 'How much is a ticket to the RBC Heritage 2027?',
+          a: 'A daily grounds ticket is $100 at face value, a practice-round ticket is $25, and a full-week grounds package is $400. Kids 15 and under are free with a ticketed adult.',
+        },
+        {
+          q: 'What does RBC stand for in RBC Heritage?',
+          a: 'RBC is Royal Bank of Canada, the tournament’s title sponsor. The full name is the RBC Heritage Presented by Boeing.',
+        },
+        {
+          q: 'Is the RBC Heritage a Signature Event in 2027?',
+          a: 'Yes. The RBC Heritage is one of the PGA Tour’s eight Signature Events in 2027, with a $20 million purse.',
+        },
+        {
+          q: 'How far ahead should I book lodging for the RBC Heritage?',
+          a: 'Nine to ten months for Sea Pines villas near Harbour Town. Mid-island and Bluffton options can usually still be found inside six months.',
+        },
+        {
+          q: 'Can kids go to the RBC Heritage?',
+          a: 'Yes. Kids 15 and under get in free with a ticketed adult, and the Tuesday and Wednesday practice days are the easiest days to bring them.',
+        },
+      ],
     },
     {
       kind: 'callout',
-      label: "Planning for 2027?",
-      html: "The 2027 RBC Heritage runs <strong>April 12-18, 2027</strong>. We're publishing a <a href=\"/guides/2027-rbc-heritage\">free 2027 Heritage Survival Kit</a> in February 2027 — tickets, parking, lodging, dinner reservations, the full week-by-week playbook. Reserve your copy now and we'll send it the moment it drops.",
+      label: 'Free 2027 Heritage kit',
+      html: 'Want the printable version? Our <a href="/guides/2027-rbc-heritage">free 2027 Heritage Survival Kit</a> goes out in February 2027 with the day-by-day schedule, shuttle lots and our restaurant booking order.',
+    },
+    {
+      kind: 'embed',
+      component: 'HeritageCountdown',
     },
   ],
 };
@@ -3932,7 +4026,7 @@ const postSeaPinesVsPalmettoDunes: Post = {
         },
         {
           q: 'Which is quieter, Sea Pines or Palmetto Dunes?',
-          a: "Sea Pines, in most weeks. Palmetto Dunes\u2019 family programming and tennis camps generate more energy in peak season. Outside Heritage week (April 13-19, 2026), Sea Pines is noticeably quieter, especially in the South Beach and Heritage Villa pockets.",
+          a: "Sea Pines, in most weeks. Palmetto Dunes\u2019 family programming and tennis camps generate more energy in peak season. Outside Heritage week (April 12-18, 2027), Sea Pines is noticeably quieter, especially in the South Beach and Heritage Villa pockets.",
         },
       ],
     },
@@ -4272,7 +4366,7 @@ const postGolfCoursesRanked: Post = {
             },
             {
               q: 'How much does a round at Harbour Town cost?',
-              a: "Peak-season green fees run $400-550 for non-guests and $325-450 for Sea Pines Resort guests. Stay-and-play packages effectively net the round to $200-275 per player when bundled with 4+ nights of lodging. Heritage week (April 13-19, 2026) the course is closed to public play.",
+              a: "Peak-season green fees run $400-550 for non-guests and $325-450 for Sea Pines Resort guests. Stay-and-play packages effectively net the round to $200-275 per player when bundled with 4+ nights of lodging. Heritage week (April 12-18, 2027) the course is closed to public play.",
             },
             {
               q: 'Is Robert Trent Jones Oceanfront really oceanfront?',
@@ -7112,7 +7206,7 @@ const postSpringBreakHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "If you are golf-curious or want to attend the Heritage as a spectator, that is a different post — the <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage tournament guide</a> covers that angle. This one is about families and couples trying to do a normal spring beach week.",
+      html: "If you are golf-curious or want to attend the Heritage as a spectator, that is a different post — the <a href=\"/blog/rbc-heritage-travel-guide\">Heritage tournament guide</a> covers that angle. This one is about families and couples trying to do a normal spring beach week.",
     },
     {
       kind: 'h2',
@@ -7182,7 +7276,7 @@ const postSpringBreakHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "Full Heritage logistics — where to stay as a spectator, ticketing, the daily-pass strategy — are on the <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage travel guide</a>. We also have the dedicated <a href=\"/hilton-head-golf-packages\">golf package page</a> if your trip is mostly about playing rather than spectating.",
+      html: "Full Heritage logistics — where to stay as a spectator, ticketing, the daily-pass strategy — are on the <a href=\"/blog/rbc-heritage-travel-guide\">Heritage travel guide</a>. We also have the dedicated <a href=\"/hilton-head-golf-packages\">golf package page</a> if your trip is mostly about playing rather than spectating.",
     },
     {
       kind: 'h2',
@@ -7633,14 +7727,14 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
     industries: ['restaurants', 'water-activities', 'shopping'],
   },
   'hilton-head-golf-trip': {
-    posts: ['hilton-head-golf-courses-ranked', 'rbc-heritage-2026-travel-guide', 'sea-pines-guide'],
+    posts: ['hilton-head-golf-courses-ranked', 'rbc-heritage-travel-guide', 'sea-pines-guide'],
     industries: ['golf', 'vacation-rentals'],
   },
   'best-time-to-visit-hilton-head': {
     posts: ['hilton-head-3-day-itinerary', 'hilton-head-winter-guide', 'best-hilton-head-beaches'],
     industries: ['water-activities', 'family-activities'],
   },
-  'rbc-heritage-2026-travel-guide': {
+  'rbc-heritage-travel-guide': {
     posts: ['hilton-head-golf-trip', 'hilton-head-golf-courses-ranked', 'sea-pines-guide'],
     industries: ['golf', 'vacation-rentals', 'restaurants'],
   },
@@ -7669,7 +7763,7 @@ export const POST_RELATIONS: Record<string, PostRelation> = {
     industries: ['vacation-rentals', 'golf'],
   },
   'hilton-head-golf-courses-ranked': {
-    posts: ['hilton-head-golf-trip', 'rbc-heritage-2026-travel-guide', 'sea-pines-guide'],
+    posts: ['hilton-head-golf-trip', 'rbc-heritage-travel-guide', 'sea-pines-guide'],
     industries: ['golf'],
   },
   'hilton-head-romantic-restaurants': {

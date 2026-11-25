@@ -19,9 +19,9 @@ import { brand } from '@/data/brand';
 const PATH = '/best-time-to-visit-hilton-head';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Best Time to Visit Hilton Head: Month-by-Month Guide (2026)',
+  title: 'Best Time to Visit Hilton Head in 2027',
   description:
-    "The best time to visit Hilton Head is mid-October — 73°F water, empty beaches, lodging 30-40% off summer peak. Rank all 12 months by what matters to you and read the honest season-by-season breakdown.",
+    "The best time to visit Hilton Head is mid-October: 73°F water, empty beaches and lodging 30-40% below summer. All 12 months of 2027 ranked by a local.",
   path: PATH,
   keywords: [
     'best time to visit hilton head',

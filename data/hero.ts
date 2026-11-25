@@ -3,7 +3,7 @@ export const hero = {
   masthead: {
     dispatch: 'Dispatch \u2116 12',
     place: 'Hilton Head Island',
-    cadence: 'Spring 2026',
+    cadence: 'Winter 2026–27',
   },
   /** Eyebrow shown just above the display headline. */
   eyebrow: 'Travel Consulting · Planned by a Local',

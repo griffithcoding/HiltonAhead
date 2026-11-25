@@ -65,7 +65,7 @@ export function pickSeasonalAngles(
   if ((monthNum >= 7 && monthNum <= 9) || (monthNum === 10 && day < 15)) {
     angles.push({
       headline: 'RBC Heritage 2026 lodging is filling now',
-      body: `Heritage week (April 13-19, 2026) needs 9-10 months of lead time for Sea Pines villas. Premium oceanfronts within walking distance of Harbour Town are already sold out. We have a few interior holds we're still releasing.`,
+      body: `Heritage week (April 12-18, 2027) needs 9-10 months of lead time for Sea Pines villas. Premium oceanfronts within walking distance of Harbour Town are already sold out. We have a few interior holds we're still releasing.`,
       ctaText: 'Lock in Heritage week →',
       ctaUrl: 'https://www.hiltonahead.com/itinerary',
     });

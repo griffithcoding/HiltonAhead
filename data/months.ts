@@ -135,9 +135,11 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Valentine’s couples weekends',
       'Whale-watching charters from Savannah',
       'Off-season golf with course conditioning improving',
+      'Gullah Celebration and Seafood Festival weekends',
     ],
     watchOut: [
       'Water still 55°F (no swimming)',
+      'Seafood Festival weekend (main day Sat Feb 27, 2027) tightens late-month lodging',
       'Valentine’s week books out 2-3 weeks ahead',
       'Pollen counts begin rising late month',
     ],
@@ -150,6 +152,8 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
     bestActivities: [
       "Valentine's dinner at Michael Anthony's, Red Fish, or May River Grill",
       'Whale-watching charter out of Savannah (late February)',
+      'Gullah Celebration events (all month in 2027)',
+      'Hilton Head Seafood Festival, Feb 22-28, 2027 (main festival Sat Feb 27 at Honey Horn)',
       'Course conditioning peaks for off-season golf',
       'Long bike rides on quiet paths',
       'Sea Pines Forest Preserve hike',
@@ -168,6 +172,10 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       {
         q: 'Can you golf on Hilton Head in February?',
         a: 'Yes. All 12+ courses are open, green fees run 30-40% below summer, and conditioning steadily improves through the month. Mornings can be cold (40s) so a 9 or 10 a.m. tee time is more comfortable than a sunrise round.',
+      },
+      {
+        q: 'What events are on Hilton Head in February 2027?',
+        a: 'Two big ones. The Hilton Head Island Gullah Celebration runs through February, with food, arts and history events across the island. The Hilton Head Island Seafood Festival runs Feb 22-28, 2027, building to the main festival day on Saturday, Feb 27 at the Coastal Discovery Museum at Honey Horn. See the full <a href=\"/events\">2027 events calendar</a>.',
       },
       {
         q: 'Are restaurants busy in February?',
@@ -198,6 +206,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Spring break crush mid-March through early April',
       'Oak pollen peaks in the second half of March',
       'Water still cool at 60°F (most adults won’t swim)',
+      'In 2027, Easter (March 28) and the Wine & Food Festival (March 25-April 4) stack into the last week',
     ],
     headline: 'The turn. Course conditioning peaks, weather warms fast, and spring break arrives in week 3.',
     intro: "March is the month Hilton Head turns. Average high climbs from 64°F at month-start to 70°F by month-end, the courses go from “winter slow” to peak conditioning, and the spring-break wave begins around mid-month. Weeks 1-2 are the last truly quiet days until October.",
@@ -212,8 +221,9 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       "<a href=\"/hilton-head-spring-break\">Spring break planning</a> at S-tier restaurants",
       'Sunset sails resume reliable schedules late month',
       'Sea Pines Forest Preserve walk to Dragon Tree',
+      'Hilton Head Island Wine & Food Festival (March 25-April 4, 2027)',
     ],
-    bookingNotes: "Spring break weeks (March 14-28 typically) require 4-5 months lead time for oceanfront villas. Heritage week is mid-April but its booking pressure starts now. S-tier restaurant reservations need 2 weeks for any Friday or Saturday by mid-March.",
+    bookingNotes: "Spring break weeks (March 14-28 typically) require 4-5 months lead time for oceanfront villas. In 2027 Easter falls on March 28, inside the Wine & Food Festival (March 25-April 4), so the last week of March is the tightest of the month — book it by January. Heritage week is mid-April but its booking pressure starts now. S-tier restaurant reservations need 2 weeks for any Friday or Saturday by mid-March.",
     faq: [
       {
         q: 'Is March a good time to visit Hilton Head?',
@@ -229,7 +239,11 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'When is the best week to visit Hilton Head in March?',
-        a: 'March 1-13 for quiet and value. March 14-28 for the family spring-break atmosphere with warmer afternoons. Avoid March 30-April 6 (overlap with the start of Heritage week pricing pressure).',
+        a: 'March 1-13 for quiet and value. March 14-24 for the family spring-break atmosphere with warmer afternoons. In 2027, March 25-April 4 is the busiest stretch: Easter weekend (March 28) lands inside the Wine & Food Festival.',
+      },
+      {
+        q: 'When is Easter 2027, and is Hilton Head busy?',
+        a: 'Easter is Sunday, March 28, 2027 — eight days earlier than in 2026 — and it falls during the Hilton Head Island Wine & Food Festival (March 25-April 4). Expect Easter-week villa demand plus festival crowds; book oceanfront villas 4-5 months ahead and Easter brunch 6+ weeks ahead.',
       },
     ],
   },
@@ -249,45 +263,45 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
     bestFor: [
       'RBC Heritage tournament attendees',
       'Golfers chasing peak conditions',
-      'Easter family trips',
+      'Spring-break family trips',
       'Couples on shoulder-season getaways',
     ],
     watchOut: [
-      'Heritage week (Apr 13-19, 2026) doubles villa rates',
+      'Heritage week (Apr 12-18, 2027) doubles villa rates',
       'Pollen peaks early month',
       'Ocean still cool at 67°F',
     ],
     headline: 'The shoulder-season sweet spot. Heritage week is the asterisk.',
-    intro: "April is one of the best months on Hilton Head, with one large caveat: the second week. The <a href=\"/blog/rbc-heritage-2026-travel-guide\">RBC Heritage tournament</a> April 13-19 doubles rates and packs the island. Outside that week, April delivers 74°F afternoons, blooming dogwoods, dry weather, and quiet beaches.",
+    intro: "April is one of the best months on Hilton Head, with one large caveat: the second week. The <a href=\"/blog/rbc-heritage-travel-guide\">RBC Heritage tournament</a> (April 12-18, 2027) doubles rates and packs the island. Outside that week, April delivers 74°F afternoons, blooming dogwoods, dry weather, and quiet beaches.",
     whatItFeelsLike: "By week 1, the island is genuinely warm. Sunscreen weather. Locals start eating dinner outside again. Late afternoons hit 75-78°F. By Heritage week, energy is at fever pitch — plaid jackets, corporate hospitality tents, scoreboard cheers from Harbour Town. The week after Heritage feels like the calm after a storm and is one of the best weeks to be on the island.",
     recommendation: "Yes for weeks 1, 3, and 4. Yes for Heritage week if you're attending the tournament; no otherwise (rates double, restaurants overwhelmed, traffic surges). For a golf trip, late April is course-conditioning peak. For Easter, book 4-5 months ahead.",
     whatsOpen: "Everything seasonal is now open: surf school, sunset sails, paddleboard rentals, all charters, all golf in peak condition. The full restaurant slate is back. Heritage week brings Harbour Town parking restrictions and shuttle services.",
     packing: "Shorts and tees by day, light layer for evenings. One dressier outfit. Pack swim shorts even though water is still 67°F — by Mother's Day weekend, kids will want to swim. Sunscreen.",
     bestActivities: [
-      "<a href=\"/blog/rbc-heritage-2026-travel-guide\">RBC Heritage tournament</a> if attending (April 13-19)",
+      "<a href=\"/blog/rbc-heritage-travel-guide\">RBC Heritage tournament</a> if attending (April 12-18, 2027)",
       'Golf the week before or after Heritage (peak conditioning, normal pricing)',
       'Bike rides through Sea Pines and the Forest Preserve',
       'Sunset sails resume reliable evening schedules',
-      'Easter brunch at Old Fort Pub or May River Grill',
+      'Wine & Food Festival closing weekend (through April 4, 2027)',
       'First swimmable beach days late month for kids',
     ],
-    bookingNotes: "Heritage week (April 13-19, 2026): book 9-10 months ahead. Easter week: 4-5 months ahead. The week after Heritage is genuinely available inside 4-6 weeks and is one of our favorite quiet pickups.",
+    bookingNotes: "Heritage week (April 12-18, 2027): book 9-10 months ahead. Wine & Food Festival closing weekend (April 1-4, 2027): 6-8 weeks ahead. The week after Heritage is genuinely available inside 4-6 weeks and is one of our favorite quiet pickups.",
     faq: [
       {
         q: 'Is April a good time to visit Hilton Head?',
-        a: 'Excellent, except Heritage week (April 13-19, 2026). Outside that week, April delivers 74°F afternoons, dry weather, course conditioning at peak, and rates 25% below summer. Heritage week itself doubles lodging and books out 9-10 months ahead.',
+        a: 'Excellent, except Heritage week (April 12-18, 2027). Outside that week, April delivers 74°F afternoons, dry weather, course conditioning at peak, and rates 25% below summer. Heritage week itself doubles lodging and books out 9-10 months ahead.',
       },
       {
         q: 'Should I visit during the RBC Heritage?',
-        a: "Yes if you're attending the tournament — it's one of the best PGA Tour weeks of the year. No if you want a normal Hilton Head trip; rates double, restaurants overwhelmed, and Harbour Town is restricted. See the <a href=\"/blog/rbc-heritage-2026-travel-guide\">Heritage travel guide</a>.",
+        a: "Yes if you're attending the tournament — it's one of the best PGA Tour weeks of the year. No if you want a normal Hilton Head trip; rates double, restaurants overwhelmed, and Harbour Town is restricted. See the <a href=\"/blog/rbc-heritage-travel-guide\">Heritage travel guide</a>.",
       },
       {
         q: 'Can you swim at Hilton Head in April?',
         a: 'Kids yes by mid-month, adults mostly no. Water averages 67°F in April, warming fast through the month. By late April early-season swimmers are in; by Mother’s Day weekend, it’s swimmable for nearly everyone.',
       },
       {
-        q: 'When is Easter on Hilton Head?',
-        a: 'Easter falls on April 5, 2026. Easter brunches at Old Fort Pub, May River Grill, and the Sea Pines Resort book out 6+ weeks ahead. Villa demand surges Easter week regardless of Heritage.',
+        q: 'Is Easter in April in 2027?',
+        a: 'No. Easter 2027 is Sunday, March 28, so Easter week falls at the end of March rather than in April. That frees up early April 2027: the first week of April is quieter than usual, apart from the Wine & Food Festival’s closing weekend (through April 4).',
       },
     ],
   },
@@ -317,8 +331,8 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
     ],
     headline: 'Last quiet month before summer. Bath-warm water by Mother’s Day.',
     intro: "May is the sleeper pick on the Hilton Head calendar. Water hits 74°F (swimmable for adults), afternoons reach the low 80s, but villa rates are still 20% below July peak and the bike paths are not yet stacked. Couples and families with elementary-age kids find their best week of the year here.",
-    whatItFeelsLike: "Real summer. Shorts and tees by 9 a.m., humidity bumps to 65-75% by afternoon, and the long daylight (sunset at 8:15) means pool hangs run until 8:30 p.m. The Atlantic crosses the swimming threshold by mid-month and feels comfortable by month-end. Memorial Day weekend (May 23-25, 2026) brings the year's first real summer crowd.",
-    recommendation: "Strongly yes for couples and families. May is the single most underrated week on the calendar. Book before mid-March for oceanfront villas; Memorial Day weekend specifically requires 4-5 months lead. The week before Memorial Day (May 17-22, 2026) is a hidden gem.",
+    whatItFeelsLike: "Real summer. Shorts and tees by 9 a.m., humidity bumps to 65-75% by afternoon, and the long daylight (sunset at 8:15) means pool hangs run until 8:30 p.m. The Atlantic crosses the swimming threshold by mid-month and feels comfortable by month-end. Memorial Day weekend (May 29-31, 2027) brings the year's first real summer crowd.",
+    recommendation: "Strongly yes for couples and families. May is the single most underrated week on the calendar. Book before mid-March for oceanfront villas; Memorial Day weekend specifically requires 4-5 months lead. The week before Memorial Day (May 22-28, 2027) is a hidden gem.",
     whatsOpen: "Everything. Full seasonal slate. Surf school, sunset sails, all charters, all golf, all activities. The Sea Pines trolley runs full schedule. Bike rentals back to summer staffing.",
     packing: "Summer wardrobe. Shorts, tees, swimsuits, sandals. One light layer for occasional cooler evenings. Sunscreen, sun shirts, hats. Swim trunks for ocean and pool.",
     bestActivities: [
@@ -341,7 +355,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'How busy is Memorial Day on Hilton Head?',
-        a: 'Very. Memorial Day weekend (May 23-25, 2026) is the year’s first peak summer weekend. Villa rates lift 30-40%, restaurants overwhelm, and traffic on US-278 bottlenecks Friday afternoon and Sunday morning. Book 4-5 months ahead or shift to the previous week.',
+        a: 'Very. Memorial Day weekend (May 29-31, 2027) is the year’s first peak summer weekend. Villa rates lift 30-40%, restaurants overwhelm, and traffic on US-278 bottlenecks Friday afternoon and Sunday morning. Book 4-5 months ahead or shift to the previous week.',
       },
       {
         q: 'Are mosquitoes bad on Hilton Head in May?',
@@ -493,7 +507,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
     intro: "August is July with more rain. Water stays at 84°F (still peak), afternoons stay above 88°F, but rainfall jumps and the first hurricane outlooks start to matter late month. The last two weeks see real rate softening as families return to school.",
     whatItFeelsLike: "Heaviest of the year for humidity. Pop-up storms run throughout the day, not just at 3-5 p.m. The Atlantic remains bath-warm. By mid-August, the late-summer melancholy creeps in — cicadas, longer evening shadows, and the first signs that the island is getting ready to exhale into September.",
     recommendation: "Yes if you are tied to the school calendar. Late August (Aug 17-31) softens noticeably as families head home; you can sometimes find resort discounts in the last week. Hurricane risk is still low this early but trip insurance is worth considering for stays after Aug 20.",
-    whatsOpen: "Everything still at peak. Full staffing through Labor Day weekend (Sept 5-7, 2026). After Labor Day, the seasonal scale-back begins.",
+    whatsOpen: "Everything still at peak. Full staffing through Labor Day weekend (Sept 4-6, 2027). After Labor Day, the seasonal scale-back begins.",
     packing: "Same as July. Multiple swimsuits, sun shirts, sunscreen, water shoes, light rain shell. The shell is more useful than in July because rain is more frequent. Pack DEET; mosquitoes are at their worst.",
     bestActivities: [
       'Peak ocean conditions for swimming and boogie boarding',
@@ -549,7 +563,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
     ],
     headline: 'After Labor Day, the island empties. Water is still 80°F.',
     intro: "September is the most underrated month on the Hilton Head calendar. The first week is still peak (Labor Day weekend caps the summer crush), but from week 2 onward, families are back at school, the beaches go quiet, and the water stays at 80°F well into October. We book this window heavily for couples and empty-nesters.",
-    whatItFeelsLike: "Late summer with the lid coming off. Mornings begin to cool slightly. Beaches become genuinely empty after Labor Day (Sept 7, 2026). Locals come out of their air conditioning. The long-season businesses start to relax. Hurricane forecasts dominate the local news but actual storm impacts on the island are rare.",
+    whatItFeelsLike: "Late summer with the lid coming off. Mornings begin to cool slightly. Beaches become genuinely empty after Labor Day (Sept 6, 2027). Locals come out of their air conditioning. The long-season businesses start to relax. Hurricane forecasts dominate the local news but actual storm impacts on the island are rare.",
     recommendation: "Strongly yes for couples and adults-only trips after Sept 8. The combination of warm water, empty beaches, and 30% off summer pricing is genuinely the best deal on the calendar before October. Hurricane risk is real but historically low; trip insurance is worth the 5-7% premium.",
     whatsOpen: "Everything year-round operations. Surf school and a couple of sunset-sail operators reduce schedule mid-month. Restaurants stay full. Golf shifts to peak shoulder-season conditions; conditioning improves week over week through the month.",
     packing: "Late summer wardrobe. Swimsuits still essential, light layers for slightly cooler evenings, sun shirts and hats. One nicer outfit for dinner. Pack DEET for the late-summer mosquito tail end.",
@@ -577,7 +591,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'How crowded is Hilton Head after Labor Day?',
-        a: 'Light. Labor Day weekend (Sept 5-7, 2026) is the last surge; from Sept 8 onward, beaches feel near-empty by summer standards. Coligny is walkable. Restaurants take same-week reservations again.',
+        a: 'Light. Labor Day weekend (Sept 4-6, 2027) is the last surge; from Sept 7 onward, beaches feel near-empty by summer standards. Coligny is walkable. Restaurants take same-week reservations again.',
       },
     ],
   },
@@ -608,7 +622,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
     headline: 'The single best month to visit Hilton Head Island.',
     intro: "October is our default recommendation for almost every trip type. Average high 77°F, water still swimmable at 73°F, six rainy days max, hurricane risk past by mid-month, and rates 30-40% below summer. The light is golden, the beaches are empty, and dinner reservations become walk-in-able at 70% of restaurants.",
     whatItFeelsLike: "Genuinely perfect. Sunny days, dry air, mid-70s afternoons, mid-50s nights. The Lowcountry shifts into its photogenic golden-hour mode — the marsh grass turns a deeper bronze, the live oaks throw long shadows, and the sunset over Calibogue Sound runs 30 minutes longer than summer felt. Locals come out of summer hibernation.",
-    recommendation: "Yes, with no caveats. October is the answer to almost every “when should we go” question. Book 3-4 months ahead; the word is getting around. The Concours d’Elegance & Motoring Festival (Oct 29-Nov 1, 2026) creates a small late-month surge; outside that, every week is a green light.",
+    recommendation: "Yes, with no caveats. October is the answer to almost every “when should we go” question. Book 3-4 months ahead; the word is getting around. The Concours d’Elegance & Motoring Festival (late October or early November; 2027 dates not yet announced) creates a small late-month surge; outside that, every week is a green light.",
     whatsOpen: "Everything year-round operations. Most seasonal operators run through mid-October at least. Surf school closes mid-month. Sunset-sail operators run reduced but reliable schedules. Golf is at its second peak (after March-April).",
     packing: "Layers. Mornings 59°F, afternoons 75-78°F. Quarter-zip + tee + light jacket. Swimsuit still functional. One dinner-out outfit. The overall pack is lighter than summer (no need for multiple swimsuits) but more layered.",
     bestActivities: [
@@ -619,7 +633,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Bike rides at low tide on cool dry afternoons',
       'Wedding weekends (peak photogenic light)',
     ],
-    bookingNotes: "3-4 months ahead for villas. Resort rooms 6-8 weeks. S-tier restaurants 1-2 weeks. Concours weekend (Oct 29-Nov 1, 2026): book 4-5 months ahead. Most other October weeks have inventory available inside 6-8 weeks.",
+    bookingNotes: "3-4 months ahead for villas. Resort rooms 6-8 weeks. S-tier restaurants 1-2 weeks. Concours weekend (2027 dates TBA, usually the last weekend of October): book 4-5 months ahead. Most other October weeks have inventory available inside 6-8 weeks.",
     faq: [
       {
         q: 'Is October the best time to visit Hilton Head?',
@@ -677,7 +691,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Holiday lights preview at Harbour Town (last week of November)',
       'Long beach walks at sunrise',
     ],
-    bookingNotes: "First two weeks: 4-6 weeks lead time for villas. Thanksgiving week (Nov 22-29, 2026): 6-8 weeks ahead. Restaurants serving Thanksgiving dinner: book by Nov 1. Post-Thanksgiving week (Nov 30 onward): essentially walk-in-able.",
+    bookingNotes: "First two weeks: 4-6 weeks lead time for villas. Thanksgiving week (Nov 20-28, 2027): 6-8 weeks ahead. Restaurants serving Thanksgiving dinner: book by Nov 1. Post-Thanksgiving week (Nov 29 onward): essentially walk-in-able.",
     faq: [
       {
         q: 'Is November a good time to visit Hilton Head?',
@@ -693,7 +707,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'When does the Hilton Head holiday season start?',
-        a: 'Holiday lights at Harbour Town go up the weekend after Thanksgiving (around Nov 28-29, 2026) and run through New Year’s. Hilton Head Christmas events are concentrated at Harbour Town and the Sea Pines Resort.',
+        a: 'Holiday lights at Harbour Town go up the weekend after Thanksgiving (around Nov 27-28 in 2027) and run through New Year’s. Hilton Head Christmas events are concentrated at Harbour Town and the Sea Pines Resort.',
       },
     ],
   },
@@ -735,7 +749,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Course conditioning for off-season golf',
       "New Year's Eve fireworks over Calibogue Sound",
     ],
-    bookingNotes: "Christmas week (Dec 20-27, 2026): 2-3 months ahead. New Year’s Eve: 2 months ahead minimum. First three weeks of December and the Dec 27-30 window: 2-3 weeks ahead is fine. Restaurants serving Christmas Day: book by early December.",
+    bookingNotes: "Christmas week (Dec 20-27 in 2026; Dec 19-26 in 2027): 2-3 months ahead. New Year’s Eve: 2 months ahead minimum. First three weeks of December and the Dec 27-30 window: 2-3 weeks ahead is fine. Restaurants serving Christmas Day: book by early December.",
     faq: [
       {
         q: 'Is December a good time to visit Hilton Head?',

@@ -12,7 +12,7 @@ import {
 } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Founder: William Griffith — Hilton Ahead Travel Co.',
+  title: 'William Griffith, Founder',
   description:
     'Hilton Ahead is run by William Griffith, a Hilton Head Island local who plans every trip himself. No call centers, no franchise, no scripts.',
   path: '/founder',

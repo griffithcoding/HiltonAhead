@@ -14,7 +14,7 @@ import {
 } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Contact Hilton Ahead Travel',
+  title: 'Contact Us',
   description:
     'Get in touch with Hilton Ahead. Based on Hilton Head Island, SC. We respond within one business day.',
   path: '/contact',

@@ -15,9 +15,9 @@ import { posts } from '@/data/posts';
 export const revalidate = 3600;
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Local Guide: Hilton Head Island Travel Tips for 2026',
+  title: 'Hilton Head Travel Tips & Local Guides (2027)',
   description:
-    'Local guides to Hilton Head neighborhoods, restaurants, golf, beaches, and 2026 travel tips. Ranked tier lists and honest reviews from someone who actually lives here.',
+    'Local guides to Hilton Head neighborhoods, restaurants, golf and beaches, plus 2027 travel tips. Ranked lists and honest reviews from an island local.',
   path: '/blog',
   keywords: [
     'Hilton Head travel guide',
@@ -93,7 +93,7 @@ export default function BlogIndexPage() {
                 priority
               />
               <span className="absolute left-4 top-4 bg-cream px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">
-                Featured · 2026
+                Featured
               </span>
             </figure>
             <div className="flex flex-col justify-center">

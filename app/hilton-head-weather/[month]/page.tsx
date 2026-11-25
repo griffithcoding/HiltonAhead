@@ -78,7 +78,7 @@ export default async function MonthPage({
     headline: `Hilton Head Weather in ${m.name}`,
     description: `Hilton Head Island weather in ${m.name}: averages, crowds, and travel tips.`,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-24',
+    dateModified: '2026-11-25',
     author: { '@type': 'Organization', name: 'Hilton Ahead' },
     about: {
       '@type': 'Place',

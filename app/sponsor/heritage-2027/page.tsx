@@ -15,7 +15,7 @@ import {
 } from '@/data/heritageSponsors';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: '2027 RBC Heritage Partner SKU — Hilton Ahead',
+  title: '2027 RBC Heritage Partner Sponsorship',
   description:
     'A category-exclusive sponsor SKU tied to the 2027 RBC Heritage. $5,000 · 4 slots · April 2027. Featured in the free Heritage Kit, the guide page, and the Heritage-week newsletter.',
   path: '/sponsor/heritage-2027',

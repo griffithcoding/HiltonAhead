@@ -7,7 +7,7 @@ import { generatePageMetadata, getBreadcrumbSchema } from '@/app/lib/metadata';
 import BusinessApplyForm from '@/components/business/BusinessApplyForm';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Apply: Add Your Business to the Hilton Ahead Directory',
+  title: 'Add Your Business to Our Directory',
   description:
     'Get your Hilton Head or Bluffton business listed in our curated directory. Free baseline listing; optional Featured upgrade later.',
   path: '/business/apply',

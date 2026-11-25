@@ -39,6 +39,14 @@ const nextConfig: NextConfig = {
         destination: '/best-time-to-visit-hilton-head',
         permanent: true,
       },
+      // The Heritage guide moved to an evergreen slug so it keeps its
+      // ranking history from year to year (2027 edition, Nov 2026).
+      // Update facts in place each year; never re-add a year to the slug.
+      {
+        source: '/blog/rbc-heritage-2026-travel-guide',
+        destination: '/blog/rbc-heritage-travel-guide',
+        permanent: true,
+      },
     ];
   },
 };

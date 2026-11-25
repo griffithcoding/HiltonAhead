@@ -24,12 +24,12 @@ export const SOUTHWEST_HHI = {
 
 export const SOUTHWEST_PERKS: ReadonlyArray<{ title: string; body: string }> = [
   {
-    title: 'Two bags fly free',
-    body: "Southwest is the only major US airline that still checks two bags per passenger at no charge. For a beach week — beach chairs, a pack-and-play, a cooler of low-country provisions — that alone can save a family of four $140–$280 round-trip versus a bag-fee carrier.",
+    title: 'Free bags now depend on your card or status',
+    body: "Southwest ended its “bags fly free” policy in May 2025. On most fares the first checked bag is now $45 and the second $55 (fees raised April 2026). Rapid Rewards credit card holders and A-List members still check their first bag free, and A-List Preferred members and Choice Extra fares get two. For a family beach week with chairs and a pack-and-play, the co-branded card can pay for itself on one trip.",
   },
   {
-    title: 'No change or cancellation fees',
-    body: 'Plans shift. Southwest lets you change or cancel and keep the difference as travel funds — useful when a hurricane-season forecast wobbles or a wedding date moves. Pair it with travel insurance for non-refundable lodging.',
+    title: 'No change fees (fare difference applies)',
+    body: 'Southwest still charges no change fee on any fare; you only pay a fare difference. The catch is Basic: those fares can only be changed by upgrading them, and Basic travel credits expire after six months. If a hurricane-season forecast or a wedding date could move your plans, book Choice or higher, and pair it with travel insurance for non-refundable lodging.',
   },
   {
     title: 'Nonstop into SAV from major hubs',
@@ -56,7 +56,7 @@ export const SOUTHWEST_FAQS: ReadonlyArray<{ question: string; answer: string }>
   {
     question: 'Can I use Rapid Rewards points to fly to Hilton Head?',
     answer:
-      "Yes. Southwest award flights to SAV book through Rapid Rewards like any other route, with no blackout dates and the same two-free-bags benefit. If you're a little short on points for the award you want, you can buy, gift, or transfer Rapid Rewards points to top off your balance.",
+      "Yes. Southwest award flights to SAV book through Rapid Rewards like any other route, with no blackout dates. Bag fees apply as on paid fares unless your Rapid Rewards card or A-List status covers them. If you're a little short on points for the award you want, you can buy, gift, or transfer Rapid Rewards points to top off your balance.",
   },
   {
     question: 'Is it cheaper to fly or drive to Hilton Head?',

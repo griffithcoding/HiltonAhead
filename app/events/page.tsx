@@ -12,21 +12,26 @@ import {
   getEventSchema,
 } from '@/app/lib/metadata';
 import {
-  events,
-  getHighlightEvents,
+  getUpcomingEvents,
+  hasConfirmedDates,
   type EventEntry,
 } from '@/data/events';
 
+// Re-render daily so finished events drop off and their Event schema stops
+// being emitted without needing a deploy.
+export const revalidate = 86400;
+
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Events 2026: The Local Calendar',
+  title: 'Hilton Head Events 2027: The Local Calendar',
   description:
-    "A local's calendar of Hilton Head Island events for 2026. RBC Heritage, Wine & Food Festival, Concours d'Elegance, holiday lights, and the recurring weekly programs.",
+    "A local's 2027 Hilton Head event calendar: RBC Heritage (Apr 12-18), Wine & Food Festival, Seafood Festival, Gullah Celebration and holiday lights.",
   path: '/events',
   keywords: [
-    'Hilton Head events 2026',
+    'Hilton Head events 2027',
+    'Hilton Head events this month',
     'Hilton Head event calendar',
     'Hilton Head festivals',
-    'RBC Heritage 2026',
+    'RBC Heritage 2027',
     'Hilton Head Wine and Food Festival',
     'Concours d’Elegance Hilton Head',
     'Harbour Town holiday lights',
@@ -63,11 +68,15 @@ function formatDate(iso: string): string {
   });
 }
 
+function eventDateLabel(e: EventEntry): string {
+  return e.datesTba ?? formatRange(e.startDate, e.endDate);
+}
+
 function formatRange(start: string, end: string): string {
   if (start === end) return formatDate(start);
   const startD = new Date(start + 'T12:00:00');
   const endD = new Date(end + 'T12:00:00');
-  // Same month and year? "Apr 13-19, 2026"
+  // Same month and year? "Apr 12-18, 2027"
   if (
     startD.getFullYear() === endD.getFullYear() &&
     startD.getMonth() === endD.getMonth()
@@ -83,8 +92,10 @@ export default function EventsPage() {
     { name: 'Events', path: '/events' },
   ]);
 
-  // One Event JSON-LD per event for rich result eligibility.
-  const eventSchemas = events.map((e) =>
+  // Only current/upcoming events are shown. Event JSON-LD is emitted only
+  // for those with confirmed dates — never for past events or TBA entries.
+  const upcoming = getUpcomingEvents();
+  const eventSchemas = upcoming.filter(hasConfirmedDates).map((e) =>
     getEventSchema({
       name: e.name,
       description: e.description,
@@ -92,16 +103,17 @@ export default function EventsPage() {
       endDate: e.endDate,
       locationName: e.venue || e.location,
       url: e.url,
+      organizer: e.organizer,
     }),
   );
 
-  const highlights = getHighlightEvents();
+  const highlights = upcoming.filter((e) => e.isHighlight);
 
   // Group by category in our preferred display order, dropping empty groups.
   const grouped = CATEGORY_ORDER.map((cat) => ({
     cat,
     label: CATEGORY_LABELS[cat],
-    items: events
+    items: upcoming
       .filter((e) => e.category === cat)
       .sort((a, b) => a.startDate.localeCompare(b.startDate)),
   })).filter((g) => g.items.length > 0);
@@ -138,7 +150,7 @@ export default function EventsPage() {
         {/* Hero */}
         <header className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-14">
           <div>
-            <span className="eyebrow-coral eyebrow">2026 calendar</span>
+            <span className="eyebrow-coral eyebrow">2027 calendar</span>
             <h1 className="display mt-5 text-balance text-[44px] leading-[1.02] tracking-[-0.025em] text-ink md:text-[64px] lg:text-[72px]">
               Hilton Head Events,{' '}
               <span className="display-italic text-coral">all year long.</span>
@@ -168,7 +180,7 @@ export default function EventsPage() {
           <SectionHead
             number="№ 01"
             eyebrow="Headline weeks"
-            plain="The four events that"
+            plain="The weeks that"
             italic="define the calendar."
           />
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
@@ -235,7 +247,7 @@ function HighlightCard({ event }: { event: EventEntry }) {
   return (
     <article className="flex flex-col border-t border-coral/40 pt-6">
       <div className="eyebrow text-coral">
-        {formatRange(event.startDate, event.endDate)}
+        {eventDateLabel(event)}
       </div>
       <h3 className="display mt-3 text-[26px] leading-[1.12] text-ink md:text-[30px]">
         {event.name}
@@ -263,7 +275,7 @@ function EventRow({ event }: { event: EventEntry }) {
     <li className="grid grid-cols-1 gap-4 py-6 md:grid-cols-[200px_minmax(0,1fr)_auto] md:gap-8 md:py-7">
       <div>
         <div className="eyebrow text-coral">
-          {formatRange(event.startDate, event.endDate)}
+          {eventDateLabel(event)}
         </div>
         <div className="mt-1 text-[12px] text-ink-soft">{event.location}</div>
       </div>

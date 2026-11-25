@@ -20,7 +20,7 @@ import { brand } from '@/data/brand';
 const PATH = '/hilton-head-hurricane-season';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Hurricane Season: Dates, Risk & Trip Tips (2026)',
+  title: 'Hilton Head Hurricane Season: Dates & Real Risk',
   description:
     'When is hurricane season on Hilton Head Island, how real is the risk, and how to protect a trip booked June–November. Live Atlantic storm status, plus refundable-booking and travel-insurance guidance.',
   path: PATH,

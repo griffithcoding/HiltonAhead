@@ -35,6 +35,17 @@ import {
 import { golfCourses } from '@/data/golfCourses';
 import { getNeighborhoodBySlug } from '@/data/neighborhoods';
 import { getIndustryBySlug } from '@/data/localBusinesses';
+import { getEventBySlug } from '@/data/events';
+
+/**
+ * Posts that are *about* a specific event, mapped to that event's slug in
+ * data/events.ts. Only these posts emit Event schema — Google requires
+ * Event markup to describe the event the page is actually about, so
+ * generic golf posts must not carry it.
+ */
+const EVENT_POSTS: Record<string, string> = {
+  'rbc-heritage-travel-guide': 'rbc-heritage-2027',
+};
 
 type Params = { slug: string };
 
@@ -195,19 +206,21 @@ export default async function BlogPostPage({
           })
         : null;
 
-  // Event schema for Golf / RBC Heritage post
-  const eventSchema =
-    post.slug.includes('golf') || post.slug.includes('heritage')
-      ? getEventSchema({
-          name: 'RBC Heritage 2026',
-          description:
-            'PGA Tour event at Harbour Town Golf Links, Hilton Head Island.',
-          startDate: '2026-04-13',
-          endDate: '2026-04-19',
-          locationName: 'Harbour Town Golf Links',
-          url: 'https://rbcheritage.com/',
-        })
-      : null;
+  // Event schema only for posts about a specific event (see EVENT_POSTS).
+  const linkedEvent = EVENT_POSTS[post.slug]
+    ? getEventBySlug(EVENT_POSTS[post.slug])
+    : undefined;
+  const eventSchema = linkedEvent
+    ? getEventSchema({
+        name: linkedEvent.name,
+        description: linkedEvent.description,
+        startDate: linkedEvent.startDate,
+        endDate: linkedEvent.endDate,
+        locationName: linkedEvent.venue ?? linkedEvent.location,
+        url: linkedEvent.url,
+        organizer: linkedEvent.organizer,
+      })
+    : null;
 
   // FAQPage schema — aggregates every faq block in the post. Google can
   // award FAQ rich results and "People Also Ask" placements from this.

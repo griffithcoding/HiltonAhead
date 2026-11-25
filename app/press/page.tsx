@@ -10,7 +10,7 @@ import {
 } from '@/app/lib/metadata';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Press & Media — Hilton Ahead Travel Co.',
+  title: 'Press & Media',
   description:
     'Hilton Ahead in the press. Editor inquiries, source requests, and partnership opportunities welcome.',
   path: '/press',

@@ -59,7 +59,7 @@ export default function LatestPosts() {
                 className="object-cover photo-warm"
               />
               <span className="absolute left-4 top-4 bg-cream px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">
-                Featured · 2026
+                Featured
               </span>
             </figure>
             <div>

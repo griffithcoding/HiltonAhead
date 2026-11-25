@@ -9,7 +9,7 @@ import {
 } from '@/data/heritageSponsors';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Heritage 2027 Partner Deck — Hilton Ahead',
+  title: 'Heritage 2027 Partner Deck',
   description: 'Six-slide pitch deck for the 2027 RBC Heritage Partner SKU.',
   path: '/sponsor/heritage-2027/deck',
   noindex: true,

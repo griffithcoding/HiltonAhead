@@ -1077,7 +1077,7 @@ export const PLACEHOLDER_SEEDS: PlaceholderSeed[] = [
       'Family-friendly Heritage day plan',
     ],
     bullets: [
-      'Heritage week falls April 13-19, 2026; spring break families overlap heavily April 5-12.',
+      'Heritage week falls April 12-18, 2027; spring break families overlap heavily April 5-12.',
       'Palmetto Dunes and Shelter Cove avoid the worst Heritage-week traffic; Sea Pines does not.',
       'Tee times at Harbour Town Golf Links during Heritage week are pro-only — go to Atlantic Dunes.',
       'Skull Creek Boathouse books out at lunch; ELA\'s holds same-day bar seating until 6pm.',

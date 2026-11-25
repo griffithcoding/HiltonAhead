@@ -18,9 +18,9 @@ import {
 } from '@/data/southwestToHiltonHead';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Flying Southwest to Hilton Head (via Savannah/SAV) — 2026 Guide',
+  title: 'Southwest Airlines to Hilton Head (via SAV)',
   description:
-    'How to fly Southwest Airlines to Hilton Head Island: SAV is the gateway (45 minutes from the island), two free checked bags, no change fees, and how to use Rapid Rewards points for an award flight.',
+    'How to fly Southwest to Hilton Head: land at Savannah (SAV), 45 minutes from the island. Current bag fees, change rules and using Rapid Rewards points.',
   path: '/southwest-airlines-to-hilton-head',
   keywords: [
     'Southwest to Hilton Head',
@@ -81,7 +81,9 @@ export default function SouthwestToHiltonHeadPage() {
               </strong>
               , about <strong>{SOUTHWEST_HHI.driveMinutesToHhi} minutes</strong>{' '}
               and {SOUTHWEST_HHI.driveMilesToHhi} miles from the island. You get
-              two free checked bags, no change fees, and a quick drive up US-278.
+              no change fees on any fare (a fare difference may apply), and a
+              quick drive up US-278. Rapid Rewards cardholders still check their
+              first bag free.
               Booking on points? You can top up Rapid Rewards if you&rsquo;re
               short for the award.
             </p>

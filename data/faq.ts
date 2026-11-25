@@ -108,7 +108,7 @@ export const faqClusters: ReadonlyArray<FaqCluster> = [
       {
         question: 'When is the RBC Heritage golf tournament?',
         answer:
-          "RBC Heritage Presented by Boeing runs the week after The Masters every April at Harbour Town Golf Links in Sea Pines. The 2026 event is April 13–19. Plan lodging and tickets six months out — accommodations within Sea Pines book first.",
+          "RBC Heritage Presented by Boeing runs the week after The Masters every April at Harbour Town Golf Links in Sea Pines. The 2027 event is April 12–18. Plan lodging and tickets six months out — accommodations within Sea Pines book first.",
       },
       {
         question: 'Is Hilton Head busy during spring break?',

@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = generatePageMetadata({
   title: 'Cost of a Hilton Head Trip: Real Numbers',
   description:
-    'A complete cost breakdown for a Hilton Head Island trip in 2026. Lodging tiers, food, activities, transport — by party size, by season, by trip length. Plus a free calculator.',
+    'What a Hilton Head trip really costs: lodging tiers, food, activities and transport by party size, season and trip length. Plus a free cost calculator.',
   path: '/cost-of-hilton-head-trip',
   keywords: [
     'cost of Hilton Head vacation',

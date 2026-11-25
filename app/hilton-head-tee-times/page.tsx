@@ -19,7 +19,7 @@ import { brand } from '@/data/brand';
 const PATH = '/hilton-head-tee-times';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Hilton Head Tee Times: Book Golf at Every Course (2026)',
+  title: 'Hilton Head Tee Times: Book Every Course',
   description:
     "Book tee times at every Hilton Head Island golf course — Harbour Town, Palmetto Dunes, Sea Pines and more. Jump straight to each course's booking page or compare live tee times on GolfNow.",
   path: PATH,
