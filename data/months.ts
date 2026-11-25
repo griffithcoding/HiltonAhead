@@ -274,7 +274,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
     headline: 'The shoulder-season sweet spot. Heritage week is the asterisk.',
     intro: "April is one of the best months on Hilton Head, with one large caveat: the second week. The <a href=\"/blog/rbc-heritage-travel-guide\">RBC Heritage tournament</a> (April 12-18, 2027) doubles rates and packs the island. Outside that week, April delivers 74°F afternoons, blooming dogwoods, dry weather, and quiet beaches.",
     whatItFeelsLike: "By week 1, the island is genuinely warm. Sunscreen weather. Locals start eating dinner outside again. Late afternoons hit 75-78°F. By Heritage week, energy is at fever pitch — plaid jackets, corporate hospitality tents, scoreboard cheers from Harbour Town. The week after Heritage feels like the calm after a storm and is one of the best weeks to be on the island.",
-    recommendation: "Yes for weeks 1, 3, and 4. Yes for Heritage week if you're attending the tournament; no otherwise (rates double, restaurants overwhelmed, traffic surges). For a golf trip, late April is course-conditioning peak. For Easter, book 4-5 months ahead.",
+    recommendation: "Yes for weeks 1, 3, and 4. Yes for Heritage week if you're attending the tournament; no otherwise (rates double, restaurants overwhelmed, traffic surges). For a golf trip, late April is course-conditioning peak. For Easter (March 28 in 2027), book 4-5 months ahead.",
     whatsOpen: "Everything seasonal is now open: surf school, sunset sails, paddleboard rentals, all charters, all golf in peak condition. The full restaurant slate is back. Heritage week brings Harbour Town parking restrictions and shuttle services.",
     packing: "Shorts and tees by day, light layer for evenings. One dressier outfit. Pack swim shorts even though water is still 67°F — by Mother's Day weekend, kids will want to swim. Sunscreen.",
     bestActivities: [
@@ -301,7 +301,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'Is Easter in April in 2027?',
-        a: 'No. Easter 2027 is Sunday, March 28, so Easter week falls at the end of March rather than in April. That frees up early April 2027: the first week of April is quieter than usual, apart from the Wine & Food Festival’s closing weekend (through April 4).',
+        a: 'No. Easter 2027 is Sunday, March 28, so Easter week falls at the end of March rather than in April. Easter-week demand lands in late March instead, overlapping the Wine & Food Festival (through April 4). Many school spring breaks still fall in early April, so book that week early too.',
       },
     ],
   },
@@ -691,7 +691,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       'Holiday lights preview at Harbour Town (last week of November)',
       'Long beach walks at sunrise',
     ],
-    bookingNotes: "First two weeks: 4-6 weeks lead time for villas. Thanksgiving week (Nov 20-28, 2027): 6-8 weeks ahead. Restaurants serving Thanksgiving dinner: book by Nov 1. Post-Thanksgiving week (Nov 29 onward): essentially walk-in-able.",
+    bookingNotes: "First two weeks: 4-6 weeks lead time for villas. Thanksgiving week (Nov 21-28 in 2027; Thanksgiving Day is Nov 25): 6-8 weeks ahead. Restaurants serving Thanksgiving dinner: book by Nov 1. Post-Thanksgiving week (Nov 29 onward): essentially walk-in-able.",
     faq: [
       {
         q: 'Is November a good time to visit Hilton Head?',
@@ -707,7 +707,7 @@ const raw: Omit<MonthData, 'prev' | 'next'>[] = [
       },
       {
         q: 'When does the Hilton Head holiday season start?',
-        a: 'Holiday lights at Harbour Town go up the weekend after Thanksgiving (around Nov 27-28 in 2027) and run through New Year’s. Hilton Head Christmas events are concentrated at Harbour Town and the Sea Pines Resort.',
+        a: 'Holiday lights at Harbour Town go up the weekend after Thanksgiving (around Nov 28 in 2026 and Nov 27 in 2027) and run through New Year’s. Hilton Head Christmas events are concentrated at Harbour Town and the Sea Pines Resort.',
       },
     ],
   },

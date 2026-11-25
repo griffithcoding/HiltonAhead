@@ -55,10 +55,12 @@ export type EventEntry = {
 // marked datesTba had no published 2027 dates at time of writing — swap in
 // real dates (and drop datesTba) as organizers announce them.
 
+// Slugs are STABLE across years (no year suffix) — other code looks events
+// up by slug (blog EVENT_POSTS, newsletter angles). Roll dates in place.
 export const events: EventEntry[] = [
   // ——— MARQUEE EVENTS ——————————————————————————————————————————————
   {
-    slug: 'rbc-heritage-2027',
+    slug: 'rbc-heritage',
     name: 'RBC Heritage Presented by Boeing',
     startDate: '2027-04-12',
     endDate: '2027-04-18',
@@ -73,7 +75,7 @@ export const events: EventEntry[] = [
     isHighlight: true,
   },
   {
-    slug: 'wine-and-food-festival-2027',
+    slug: 'wine-and-food-festival',
     name: 'Hilton Head Island Wine & Food Festival',
     startDate: '2027-03-25',
     endDate: '2027-04-04',
@@ -86,7 +88,7 @@ export const events: EventEntry[] = [
     isHighlight: true,
   },
   {
-    slug: 'concours-delegance-2027',
+    slug: 'concours-delegance',
     name: 'Hilton Head Island Concours d’Elegance & Motoring Festival',
     startDate: '2027-10-28',
     endDate: '2027-10-31',
@@ -102,10 +104,11 @@ export const events: EventEntry[] = [
 
   // ——— SEASONAL FESTIVALS ——————————————————————————————————————————
   {
-    slug: 'gullah-celebration-2027',
+    slug: 'gullah-celebration',
     name: 'Hilton Head Island Gullah Celebration',
     startDate: '2027-02-01',
     endDate: '2027-02-28',
+    datesTba: 'February 2027 (event schedule TBA)',
     location: 'Multiple venues, Hilton Head Island',
     category: 'seasonal',
     description:
@@ -114,7 +117,7 @@ export const events: EventEntry[] = [
     recurring: true,
   },
   {
-    slug: 'hilton-head-seafood-festival-2027',
+    slug: 'hilton-head-seafood-festival',
     name: 'Hilton Head Island Seafood Festival',
     startDate: '2027-02-22',
     endDate: '2027-02-28',
@@ -127,7 +130,7 @@ export const events: EventEntry[] = [
     recurring: true,
   },
   {
-    slug: 'wingfest-2027',
+    slug: 'wingfest',
     name: 'Hilton Head Wingfest',
     startDate: '2027-03-01',
     endDate: '2027-03-31',
@@ -139,7 +142,7 @@ export const events: EventEntry[] = [
     recurring: true,
   },
   {
-    slug: 'pat-conroy-literary-festival-2027',
+    slug: 'pat-conroy-literary-festival',
     name: 'Pat Conroy Literary Festival',
     startDate: '2027-10-01',
     endDate: '2027-10-31',
@@ -154,7 +157,7 @@ export const events: EventEntry[] = [
 
   // ——— HOLIDAY / SEASONAL —————————————————————————————————————————
   {
-    slug: 'harbour-town-holiday-lights-2026',
+    slug: 'harbour-town-holiday-lights',
     name: 'Harbour Town Holiday Lights',
     startDate: '2026-11-28',
     endDate: '2027-01-05',
@@ -166,7 +169,7 @@ export const events: EventEntry[] = [
     isHighlight: true,
   },
   {
-    slug: 'new-years-eve-fireworks-2026',
+    slug: 'new-years-eve-fireworks',
     name: "New Year's Eve Fireworks",
     startDate: '2026-12-31',
     endDate: '2026-12-31',

@@ -11,6 +11,14 @@
  */
 
 import type { MonthData } from '@/data/months';
+import { getEventBySlug, hasConfirmedDates, type EventEntry } from '@/data/events';
+
+/** "Mar 25–Apr 4" style range for newsletter copy. */
+function shortRange(e: EventEntry): string {
+  const fmt = (iso: string) =>
+    new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  return e.startDate === e.endDate ? fmt(e.startDate) : `${fmt(e.startDate)}–${fmt(e.endDate)}`;
+}
 
 export interface SeasonalAngle {
   headline: string;
@@ -28,6 +36,7 @@ export function pickSeasonalAngles(
   const angles: SeasonalAngle[] = [];
   const monthNum = month.monthNumber;
   const day = now.getDate();
+  const year = now.getFullYear();
 
   // ——— Water temp thresholds (the question every traveler asks) ———
   if (month.waterTemp >= 75 && month.waterTemp < 80) {
@@ -64,8 +73,17 @@ export function pickSeasonalAngles(
   // Heritage: 2nd or 3rd week of April. Lodging tightens 9-10 months out.
   if ((monthNum >= 7 && monthNum <= 9) || (monthNum === 10 && day < 15)) {
     angles.push({
-      headline: 'RBC Heritage 2026 lodging is filling now',
-      body: `Heritage week (April 12-18, 2027) needs 9-10 months of lead time for Sea Pines villas. Premium oceanfronts within walking distance of Harbour Town are already sold out. We have a few interior holds we're still releasing.`,
+      // Always about NEXT April's tournament; exact dates come from
+      // data/events.ts when that year's entry exists, never hardcoded.
+      headline: `RBC Heritage ${year + 1} lodging is filling now`,
+      body: (() => {
+        const h = getEventBySlug('rbc-heritage');
+        const when =
+          h && hasConfirmedDates(h) && h.startDate.startsWith(String(year + 1))
+            ? `Heritage week (${shortRange(h)}, ${year + 1})`
+            : `Heritage week (mid-April ${year + 1})`;
+        return `${when} needs 9-10 months of lead time for Sea Pines villas. Premium oceanfronts within walking distance of Harbour Town go first. We have a few interior holds we're still releasing.`;
+      })(),
       ctaText: 'Lock in Heritage week →',
       ctaUrl: 'https://www.hiltonahead.com/itinerary',
     });
@@ -75,15 +93,22 @@ export function pickSeasonalAngles(
   if (monthNum === 2 || (monthNum === 3 && day < 15)) {
     angles.push({
       headline: 'Wine & Food Festival tickets — book 4-6 weeks out',
-      body: `The Public Tasting at Honey Horn always sells out. The winemaker dinners go faster. If March 22-28 is on your radar, lock the lodging this week and the dinner reservations next week.`,
+      body: (() => {
+        const w = getEventBySlug('wine-and-food-festival');
+        const when =
+          w && hasConfirmedDates(w) && w.startDate.startsWith(String(year))
+            ? `this year's festival (${shortRange(w)})`
+            : 'the festival';
+        return `The public tasting at Honey Horn always sells out, and the winemaker dinners go faster. If ${when} is on your radar, lock the lodging this week and the dinner reservations next week.`;
+      })(),
     });
   }
 
   // ——— Concours season (late Oct / early Nov) ———
   if (monthNum === 8 || monthNum === 9) {
     angles.push({
-      headline: 'Concours d’Elegance — Oct 29–Nov 1',
-      body: `The four-day automotive showcase tightens lodging the prior week. Book by mid-October for the lawn gala at Honey Horn. Pair with Heritage-week-style coordination if you want the full motoring weekend.`,
+      headline: 'Concours d’Elegance — late October',
+      body: `The multi-day automotive showcase (Motoring Festival at Honey Horn, concours at Port Royal) tightens lodging the prior week. Check the organizer for this year's dates and book by mid-September.`,
     });
   }
 

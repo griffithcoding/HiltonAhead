@@ -10,7 +10,7 @@ import { sponsorshipTiers, partnersMeta } from '@/data/partners';
 import { brand } from '@/data/brand';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Sponsorships & Partnerships',
+  title: 'Sponsor a Hilton Head Travel Guide',
   description:
     'Sponsorship tiers for Hilton Head businesses. Curated at $400/mo and Signature at $1,000/mo. Limited slots per year.',
   path: '/sponsorships',

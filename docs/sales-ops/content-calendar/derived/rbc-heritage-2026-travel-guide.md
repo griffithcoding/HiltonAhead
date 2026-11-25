@@ -7,7 +7,7 @@ asset_count: 16
 
 # RBC Heritage 2026: The Local's Travel Guide
 
-Derived content pack for the blog post at `/blog/rbc-heritage-2026-travel-guide`. Generated 2026-05-21T06:40:03.965Z. Edit any section before publishing — these are starting drafts, not final copy.
+Derived content pack for the blog post at `/blog/rbc-heritage-travel-guide`. Generated 2026-05-21T06:40:03.965Z. Edit any section before publishing — these are starting drafts, not final copy.
 
 ## Newsletter — Teaser
 
@@ -26,9 +26,9 @@ Full guide on the site — link below.
 - **subject_3**: What we tell clients about golf on Hilton Head
 - **preview_text**: Tickets, hospitality, lodging, and the three things visitors always get wrong. Everyt…
 - **word_count**: 36
-- **link_url**: https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+- **link_url**: https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ## LinkedIn — Post
 
@@ -45,7 +45,7 @@ What I've learned from running Hilton Ahead Travel Co:
 
 If you book one trip a year and want it to land, the difference is who picks up the phone when the villa key fob is wrong. That's what we do.
 
-Full breakdown: https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+Full breakdown: https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 ```
 
 **Meta**
@@ -56,7 +56,7 @@ Full breakdown: https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
 - **audience**: professionals planning Lowcountry trips, hospitality peers
 - **cta_strategy**: single soft URL at the end
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ## Twitter / X — Thread
 
@@ -87,18 +87,18 @@ RBC Heritage 2026: The Local's Travel Guide — a 🧵 from a Hilton Head local.
 
 ---
 
-(7/7) Full breakdown with the receipts → https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+(7/7) Full breakdown with the receipts → https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 ```
 
 **Meta**
 
 - **tweet_count**: 7
 - **hook_tweet**: RBC Heritage 2026: The Local's Travel Guide — a 🧵 from a Hilton Head local. (1/8)
-- **cta_tweet**: (7/7) Full breakdown with the receipts → https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+- **cta_tweet**: (7/7) Full breakdown with the receipts → https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 - **hashtags**: #HiltonHead #LowCountry
 - **char_counts**: 82,91,118,70,124,94,104
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ## Facebook — Group Post
 
@@ -125,9 +125,9 @@ Happy to share specifics if you're planning — comment "info" and I'll DM the v
 - **word_count**: 152
 - **tone**: story-led, value-first, group-friendly
 - **cta_style**: soft — 'comment info', no link push in body
-- **backup_link**: https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+- **backup_link**: https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ## Instagram — Carousel
 
@@ -156,7 +156,7 @@ Slide 7
 Hospitality ($900-1,800/day): Upgraded food/drink, shaded seating, usually hole 18 or 17. Worth it for Saturday or Sunday.
 
 Slide 8 — CTA
-Full guide at https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide (link in bio).
+Full guide at https://www.hiltonahead.com/blog/rbc-heritage-travel-guide (link in bio).
 ```
 
 **Meta**
@@ -170,11 +170,11 @@ Full guide at https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide (l
 - **image_brief_5**: Two surfers crossing the boardwalk at Folly Field, low golden sun behind them, no logos.
 - **image_brief_6**: Tee box at Atlantic Dunes with morning dew, no players, framed by live oak Spanish moss.
 - **image_brief_7**: Hand-held shot of a paper itinerary on a porch table beside iced sweet tea and a key fob.
-- **image_brief_8**: Final CTA card: 'Full guide → hiltonahead.com/blog/rbc-heritage-2026-travel-guide'. Cream background, palm green accent.
+- **image_brief_8**: Final CTA card: 'Full guide → hiltonahead.com/blog/rbc-heritage-travel-guide'. Cream background, palm green accent.
 - **caption_hint**: Open with the hook from slide 1 as the post caption, then the CTA URL, then hashtags.
 - **char_count**: 820
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ### Instagram — Carousel — Variant 2
 
@@ -201,7 +201,7 @@ Slide 7
 Sea Pines (on-resort): Walk to the course. $800-1,500/night for a villa. Book by July 2025 for 2026.
 
 Slide 8 — CTA
-Full guide at https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide (link in bio).
+Full guide at https://www.hiltonahead.com/blog/rbc-heritage-travel-guide (link in bio).
 ```
 
 **Meta**
@@ -215,11 +215,11 @@ Full guide at https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide (l
 - **image_brief_5**: Two surfers crossing the boardwalk at Folly Field, low golden sun behind them, no logos.
 - **image_brief_6**: Tee box at Atlantic Dunes with morning dew, no players, framed by live oak Spanish moss.
 - **image_brief_7**: Hand-held shot of a paper itinerary on a porch table beside iced sweet tea and a key fob.
-- **image_brief_8**: Final CTA card: 'Full guide → hiltonahead.com/blog/rbc-heritage-2026-travel-guide'. Cream background, palm green accent.
+- **image_brief_8**: Final CTA card: 'Full guide → hiltonahead.com/blog/rbc-heritage-travel-guide'. Cream background, palm green accent.
 - **caption_hint**: Open with the hook from slide 1 as the post caption, then the CTA URL, then hashtags.
 - **char_count**: 803
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ### Instagram — Carousel — Variant 3
 
@@ -246,7 +246,7 @@ Slide 7
 Bluffton / off-island: 20-30 min drive. $300-500/night. The stealth play. Traffic is manageable if you leave Bluffton by 8 a.m.
 
 Slide 8 — CTA
-Full guide at https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide (link in bio).
+Full guide at https://www.hiltonahead.com/blog/rbc-heritage-travel-guide (link in bio).
 ```
 
 **Meta**
@@ -260,11 +260,11 @@ Full guide at https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide (l
 - **image_brief_5**: Two surfers crossing the boardwalk at Folly Field, low golden sun behind them, no logos.
 - **image_brief_6**: Tee box at Atlantic Dunes with morning dew, no players, framed by live oak Spanish moss.
 - **image_brief_7**: Hand-held shot of a paper itinerary on a porch table beside iced sweet tea and a key fob.
-- **image_brief_8**: Final CTA card: 'Full guide → hiltonahead.com/blog/rbc-heritage-2026-travel-guide'. Cream background, palm green accent.
+- **image_brief_8**: Final CTA card: 'Full guide → hiltonahead.com/blog/rbc-heritage-travel-guide'. Cream background, palm green accent.
 - **caption_hint**: Open with the hook from slide 1 as the post caption, then the CTA URL, then hashtags.
 - **char_count**: 934
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ## Instagram — Reel
 
@@ -292,7 +292,7 @@ Full guide at https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide (l
   ON-SCREEN: Bonus.
 
 0:26–0:30
-  VO: Full breakdown at hiltonahead.com/blog/rbc-heritage-2026-travel-guide. Link in bio.
+  VO: Full breakdown at hiltonahead.com/blog/rbc-heritage-travel-guide. Link in bio.
   ON-SCREEN: Full guide → link in bio.
 ```
 
@@ -305,7 +305,7 @@ Full guide at https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide (l
 - **audio_suggestion**: Soft acoustic / lo-fi guitar at 80–90 BPM. No lyrics over voiceover.
 - **char_count**: 516
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ## Pinterest — Pin
 
@@ -323,7 +323,7 @@ RBC Heritage 2026: The Local's Travel Guide
 - **board**: Hilton Head Golf
 - **alt_text**: RBC Heritage 2026: The Local's Travel Guide — Pinterest pin 1
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ### Pinterest — Pin — Variant 2
 
@@ -339,7 +339,7 @@ Sea Pines on Hilton Head — what locals actually book
 - **board**: Hilton Head Golf
 - **alt_text**: RBC Heritage 2026: The Local's Travel Guide — Pinterest pin 2
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ### Pinterest — Pin — Variant 3
 
@@ -355,7 +355,7 @@ Tickets, hospitality, lodging, and the three things visitors always get wrong
 - **board**: Hilton Head Golf
 - **alt_text**: RBC Heritage 2026: The Local's Travel Guide — Pinterest pin 3
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ### Pinterest — Pin — Variant 4
 
@@ -371,7 +371,7 @@ The week at a glance
 - **board**: Hilton Head Golf
 - **alt_text**: RBC Heritage 2026: The Local's Travel Guide — Pinterest pin 4
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ### Pinterest — Pin — Variant 5
 
@@ -387,7 +387,7 @@ Hilton Head Golf planning guide — 2026
 - **board**: Hilton Head Golf
 - **alt_text**: RBC Heritage 2026: The Local's Travel Guide — Pinterest pin 5
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ## Reddit — Comment
 
@@ -414,7 +414,7 @@ Disclosure: I run hiltonahead.com, a local Hilton Head travel consulting site. H
 - **tone**: value-first, no link unless asked
 - **char_count**: 723
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ### Reddit — Comment — Variant 2
 
@@ -438,7 +438,7 @@ Disclosure: I run hiltonahead.com, a local Hilton Head travel consulting site. H
 - **tone**: value-first, no link unless asked
 - **char_count**: 694
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide
 
 ### Reddit — Comment — Variant 3
 
@@ -461,4 +461,4 @@ Disclosure: I run hiltonahead.com, a local Hilton Head travel consulting site. H
 - **tone**: value-first, no link unless asked
 - **char_count**: 847
 
-**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-2026-travel-guide
+**CTA URL:** https://www.hiltonahead.com/blog/rbc-heritage-travel-guide

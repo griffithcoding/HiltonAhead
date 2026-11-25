@@ -10,6 +10,10 @@
  * a single honest Rapid Rewards points callout (the earning element). Keep any
  * factual claims here durable and verifiable — do not list specific seasonal
  * routes that churn.
+ *
+ * Bag fees and change rules are volatile: last verified Nov 2026 ($45 first /
+ * $55 second bag since Apr 9, 2026; no change fees, Basic must be upgraded
+ * to change). Re-check southwest.com before relying on them.
  */
 
 export const SOUTHWEST_HHI = {
@@ -61,6 +65,6 @@ export const SOUTHWEST_FAQS: ReadonlyArray<{ question: string; answer: string }>
   {
     question: 'Is it cheaper to fly or drive to Hilton Head?',
     answer:
-      'It depends on origin. From within the Southeast (Atlanta, Charlotte, Raleigh), driving usually wins on cost. From farther out, a Southwest fare into SAV plus a rental car is often competitive once you factor in two free checked bags and no change fees. See our full cost breakdown to model your trip.',
+      'It depends on origin. From within the Southeast (Atlanta, Charlotte, Raleigh), driving usually wins on cost. From farther out, a Southwest fare into SAV plus a rental car is often competitive, especially if a Rapid Rewards card covers your first checked bag. See our full cost breakdown to model your trip.',
   },
 ];

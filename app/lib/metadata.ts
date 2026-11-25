@@ -42,6 +42,8 @@ export function generatePageMetadata({
   noindex = false,
 }: PageMetadataOptions): Metadata {
   const url = `${siteUrl}${path}`
+  const socialTitle =
+    ogTitle || (title.includes(brand.name) ? title : `${title} | ${brand.name}`)
   const images = [
     { url: ogImage, width: 1200, height: 630, alt: ogImageAlt },
   ]
@@ -53,7 +55,7 @@ export function generatePageMetadata({
       ? { robots: { index: false, follow: false } }
       : { alternates: { canonical: url } }),
     openGraph: {
-      title: ogTitle || title,
+      title: socialTitle,
       description: ogDescription || description,
       url,
       siteName: brand.name,
@@ -62,7 +64,7 @@ export function generatePageMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: ogTitle || title,
+      title: socialTitle,
       description: ogDescription || description,
       images: [ogImage],
     },
@@ -599,10 +601,17 @@ export function getEventSchema(event: {
    * organize them, and Google wants Event markup to be accurate.
    */
   organizer?: { name: string; url?: string }
+  /**
+   * Stable data/events.ts slug. Becomes a shared `@id` so the same event
+   * emitted on several pages (/events, a guide, a blog post) is understood
+   * as ONE entity rather than conflicting duplicates.
+   */
+  slug?: string
 }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Event',
+    ...(event.slug ? { '@id': `${siteUrl}/events#${event.slug}` } : {}),
     name: event.name,
     description: event.description,
     startDate: event.startDate,

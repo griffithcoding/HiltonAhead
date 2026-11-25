@@ -397,7 +397,7 @@ export const FACTS: ReadonlyArray<Fact> = [
     context:
       'Played the week after The Masters. The only PGA Tour event in South Carolina. 2027 dates: April 12–18.',
     source: 'PGA Tour',
-    sourceUrl: 'https://www.pgatour.com/tournaments/2026/rbc-heritage',
+    sourceUrl: 'https://www.pgatour.com/tournaments/2027/rbc-heritage/R2027012',
   },
   {
     id: 'golf-harbour-yards',

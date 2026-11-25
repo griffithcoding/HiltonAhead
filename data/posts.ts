@@ -1841,7 +1841,7 @@ const postGolfTrip: Post = {
     },
     {
       kind: 'p',
-      html: "Second week of April, every year. The only full-field PGA Tour event in the Lowcountry. If you've never been: go once. Grounds pass $55, hospitality $1,800. Tournament village is genuinely well-run; course is walkable in a 2-hour loop. We plan Heritage-week trips every year and they're always the easiest sell.",
+      html: "Second week of April, every year. The Lowcountry's only PGA Tour event, and a Signature Event in 2027. If you've never been: go once. Grounds tickets are $100 a day ($25 on practice days), hospitality from $1,500. Tournament village is genuinely well-run; course is walkable in a 2-hour loop. We plan Heritage-week trips every year and they're always the easiest sell.",
     },
   ],
 };
@@ -2551,13 +2551,15 @@ const postBridge2026Debunker: Post = {
 // updatedAt — do NOT change the slug.
 //
 // 2027 facts verified Nov 2026 against: PGA Tour 2027 schedule release
-// (Aug 26, 2026), WSAV ticket on-sale report, HHI visitor-center Heritage
-// page. Ticket prices are face value at on-sale; re-check before April.
+// (Aug 26, 2026), the official tickets page and WTOC's on-sale report
+// (Oct 5, 2026), cross-checked in an independent review. Ticket prices are
+// face value at on-sale; re-check on rbcheritage.com before April.
 
 const HERITAGE_SRC = {
   schedule:
     'https://www.pgatour.com/article/news/latest/2026/08/26/pga-tour-announces-2027-schedule-through-tour-championship',
-  tickets: 'https://www.wsav.com/sports/tickets-for-2027-rbc-heritage-on-sale-now/',
+  tickets: 'https://rbcheritage.com/tickets',
+  onSale: 'https://www.wtoc.com/2026/10/05/tickets-sale-59th-rbc-heritage-hilton-head-island/',
   hhi: 'https://hhi.com/golf/rbc-heritage/',
   official: 'https://rbcheritage.com/',
   recap2026:
@@ -2565,7 +2567,7 @@ const HERITAGE_SRC = {
 } as const;
 
 const heritageExt = (href: string, text: string) =>
-  `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
+  `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
 
 const postRbcHeritage: Post = {
   slug: 'rbc-heritage-travel-guide',
@@ -2575,7 +2577,7 @@ const postRbcHeritage: Post = {
   description:
     'RBC Heritage 2027 runs April 12-18 at Harbour Town. A local’s guide to tickets ($100 grounds), parking, lodging and Heritage-week dinner reservations.',
   category: 'Golf',
-  readTime: '9 min',
+  readTime: '11 min',
   publishedAt: '2026-02-28',
   updatedAt: '2026-11-25',
   author: 'Hilton Ahead',
@@ -2595,6 +2597,10 @@ const postRbcHeritage: Post = {
     {
       kind: 'p',
       html: `The <strong>RBC Heritage 2027</strong> runs <strong>April 12-18, 2027</strong> at Harbour Town Golf Links in Sea Pines, with the four competition rounds Thursday, April 15 through Sunday, April 18 (${heritageExt(HERITAGE_SRC.hhi, 'HHI visitor center')}). It is the 59th edition and one of the PGA Tour’s eight Signature Events in 2027 (${heritageExt(HERITAGE_SRC.schedule, 'PGA Tour 2027 schedule')}), which means a $20 million purse and a field built around the best players in the world. Here is how locals actually do the week.`,
+    },
+    {
+      kind: 'embed',
+      component: 'HeritageCountdown',
     },
     {
       kind: 'h2',
@@ -2631,7 +2637,7 @@ const postRbcHeritage: Post = {
     },
     {
       kind: 'p',
-      html: `A daily grounds ticket for 2027 is $100 at face value, a practice-round ticket is $25, and a week-long grounds package is $400 (${heritageExt(HERITAGE_SRC.tickets, 'WSAV, 2027 on-sale report')}). Kids 15 and under get in free with a ticketed adult; buying through Ticketmaster adds fees, putting grounds tickets at about $108 and practice rounds at about $33 (${heritageExt(HERITAGE_SRC.hhi, 'HHI visitor center')}).`,
+      html: `A daily grounds ticket for 2027 is $100 at face value, a practice-round ticket is $25, and a week-long grounds package is $400 (${heritageExt(HERITAGE_SRC.onSale, 'WTOC, 2027 on-sale report')}). Kids 15 and under get in free with a ticketed adult, and service fees are added at checkout (${heritageExt(HERITAGE_SRC.tickets, 'official ticket page')}).`,
     },
     {
       kind: 'table',
@@ -2774,10 +2780,6 @@ const postRbcHeritage: Post = {
       kind: 'callout',
       label: 'Free 2027 Heritage kit',
       html: 'Want the printable version? Our <a href="/guides/2027-rbc-heritage">free 2027 Heritage Survival Kit</a> goes out in February 2027 with the day-by-day schedule, shuttle lots and our restaurant booking order.',
-    },
-    {
-      kind: 'embed',
-      component: 'HeritageCountdown',
     },
   ],
 };
@@ -7184,10 +7186,11 @@ const postSpringBreakHeritage: Post = {
   excerpt:
     "Hilton Head spring break has one week to avoid and three weeks to book. Heritage Tournament logistics, family-week timing, and the smart pivot.",
   description:
-    "When to book Hilton Head spring break in 2026 and 2027 — the Heritage Tournament week to avoid for family trips, and the three weeks that work.",
+    "When to book Hilton Head spring break in 2027: the RBC Heritage week to avoid for family trips (April 12-18) and the three weeks that work instead.",
   category: 'Activities',
   readTime: '9 min',
   publishedAt: '2026-06-05',
+  updatedAt: '2026-11-25',
   author: 'Will Griffith',
   featuredOrder: 104,
   relatedNeighborhoods: ['sea-pines', 'palmetto-dunes', 'forest-beach'],
@@ -7202,7 +7205,7 @@ const postSpringBreakHeritage: Post = {
   body: [
     {
       kind: 'p',
-      html: "Spring break on Hilton Head is one of the best moves on the southeastern calendar — water is warm enough by mid-April, dinner reservations open up, and rates have not yet hit summer peak. But one week ruins the math for family trips: the week of the RBC Heritage tournament. Below is the week to avoid, the three weeks to book instead, and the planning logic for booking 2027 from where we are now.",
+      html: "Spring break on Hilton Head is one of the best moves on the southeastern calendar — afternoons are warm, the beaches are walkable, dinner reservations open up, and rates have not yet hit summer peak. But one week ruins the math for family trips: the week of the RBC Heritage tournament. Below is the week to avoid, the three weeks to book instead, and the planning logic for booking 2027 from where we are now.",
     },
     {
       kind: 'p',
@@ -7240,23 +7243,23 @@ const postSpringBreakHeritage: Post = {
     },
     {
       kind: 'h3',
-      text: 'Window 1: Mid-March (March 14–21, 2026 / March 13–20, 2027)',
+      text: 'Window 1: Mid-March (March 13–20, 2027)',
     },
     {
       kind: 'p',
-      html: "The earliest week the water is genuinely swimmable for kids (mid-70s by late afternoon). Air temperatures are 72 to 78°F. Villa rates are at their lowest of the spring — roughly 25 to 35% below Heritage Week prices. The tradeoff: dolphin sightings drop, some restaurants are still on shoulder hours, and the wind can pick up.",
+      html: "The quietest of the three. Afternoons run in the upper 60s to low 70s, and the ocean is still cool (around 60°F) — kids wade and boogie-board, few adults swim. Villa rates are at their lowest of the spring — roughly 25 to 35% below Heritage Week prices. The tradeoff: dolphin sightings drop, some restaurants are still on shoulder hours, and the wind can pick up.",
     },
     {
       kind: 'h3',
-      text: 'Window 2: Late March / early April (March 28 – April 4, 2026)',
+      text: 'Window 2: Late March / early April (March 27 – April 3, 2027)',
     },
     {
       kind: 'p',
-      html: "Peak spring-break sweet spot. Water is 74 to 76°F, air is 76 to 82°F, all restaurants are running their full menus and full reservation books, and dolphin sightings are reliable. Rates are 12 to 20% over the mid-March price but the experience is dialed in. This is the week we book most family trips.",
+      html: "Peak spring-break sweet spot. Afternoons reach the low to mid 70s, the water climbs into the mid 60s, all restaurants are running their full menus, and dolphin sightings are reliable. Rates are 12 to 20% over the mid-March price but the experience is dialed in. This is the week we book most family trips. <strong>In 2027 it is also the busiest of the three:</strong> Easter falls on March 28, inside the Wine & Food Festival (March 25 – April 4), so book this one first.",
     },
     {
       kind: 'h3',
-      text: 'Window 3: The week after Heritage (April 19–26, 2026 / April 18–25, 2027)',
+      text: 'Window 3: The week after Heritage (April 19–25, 2027)',
     },
     {
       kind: 'p',
@@ -7280,19 +7283,11 @@ const postSpringBreakHeritage: Post = {
     },
     {
       kind: 'h2',
-      text: 'Booking 2027 from May 2026',
+      text: 'Booking spring break 2027 now',
     },
     {
       kind: 'p',
-      html: "If you read this in May or June of 2026 and want a 2027 spring break trip, here is what is already booked, what is still open, and the right move.",
-    },
-    {
-      kind: 'h3',
-      text: 'Already filling',
-    },
-    {
-      kind: 'p',
-      html: "Sea Pines oceanfront row for the week of March 28 – April 4, 2027 is already 60% booked. Palmetto Dunes oceanfront for the same week is 40% booked. The April 19–26, 2027 post-Heritage week is roughly 30% booked across the island. Inventory will tighten quickly from here — by September, the prime weeks will be 80%+ committed.",
+      html: "Spring-break inventory goes early. When we checked in May 2026, Sea Pines oceanfront row for the late-March 2027 week was already 60% booked, Palmetto Dunes oceanfront 40%, and the post-Heritage week about 30% across the island. Prime weeks are usually 80%+ committed by September, so by late fall the oceanfront rows for the best weeks are scarce.",
     },
     {
       kind: 'h3',
@@ -7300,7 +7295,7 @@ const postSpringBreakHeritage: Post = {
     },
     {
       kind: 'p',
-      html: "Book by end of June 2026 if you want oceanfront row in Sea Pines or Palmetto Dunes. Off-beach interior pockets can wait until October. Forest Beach 2BRs are the most flexible — we have booked them as late as January for that April. The closer to the beach you want, the earlier you book.",
+      html: "Book as soon as you have dates. If you want oceanfront row in Sea Pines or Palmetto Dunes for late March, ask about cancellations — they do come up. Off-beach interior pockets stay flexible longer, and Forest Beach 2BRs are the most flexible of all — we have booked them as late as January for an April trip. The closer to the beach you want, the earlier you book.",
     },
     {
       kind: 'callout',
@@ -7313,11 +7308,11 @@ const postSpringBreakHeritage: Post = {
       items: [
         {
           q: 'When is the best week for spring break on Hilton Head?',
-          a: "Late March through the first week of April, avoiding the week of the RBC Heritage golf tournament. In 2027 that means March 28 – April 4 or April 19–25 are the two top picks. Both have warm-enough water, full restaurant operations, and rates 25 to 30% below Heritage Week.",
+          a: "Late March through the first week of April, or the week right after the RBC Heritage golf tournament. In 2027 that means March 27 – April 3 (the busiest, because Easter on March 28 overlaps the Wine & Food Festival) or April 19–25 (the quiet pick). Both have full restaurant operations and rates 25 to 30% below Heritage Week.",
         },
         {
           q: 'Is the water warm enough to swim in March on Hilton Head?',
-          a: "By the last week of March, yes — the water hits 70°F most days, and the air sits around 74 to 78°F. Kids who would happily swim in a hotel pool will swim in the ocean. Adults sometimes find March water too cold for full swimming but fine for wading.",
+          a: "Not really. The ocean averages around 60°F in March and reaches the high 60s by late April, so kids wade and boogie-board while most adults wait until May for real swimming. Afternoon air is comfortable, in the upper 60s to low 70s. See the <a href=\"/hilton-head-weather/march\">March weather page</a> for the averages.",
         },
         {
           q: 'How crowded is Hilton Head during Heritage Week?',
@@ -7325,11 +7320,11 @@ const postSpringBreakHeritage: Post = {
         },
         {
           q: 'Should I book spring break 2027 right now?',
-          a: "If you want Sea Pines or Palmetto Dunes oceanfront row, yes — book by end of June 2026. Interior pockets and Forest Beach are still flexible into the fall. After September, the rate-plus-availability math gets noticeably worse.",
+          a: "Yes. The prime weeks were already 60% booked by May 2026 and are usually 80%+ committed by September, so book as soon as you have dates and ask about cancellations for oceanfront rows. Interior pockets and Forest Beach stay flexible into January.",
         },
         {
           q: 'What about Easter weekend specifically?',
-          a: "Easter 2026 was April 5; Easter 2027 is March 28. Both fall outside Heritage Week and inside our recommended windows. Easter weekend itself sees a 10 to 15% spike on Saturday and Sunday rates but the surrounding week is normal spring-break pricing.",
+          a: "Easter 2027 is March 28, well clear of Heritage Week but inside the Wine & Food Festival (March 25 – April 4). Easter weekend itself sees a 10 to 15% spike on Saturday and Sunday rates, and the festival adds pressure on dinner reservations, so lock that week before the others.",
         },
         {
           q: 'Where should we stay for spring break with kids 5 to 10?',

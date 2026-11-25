@@ -44,7 +44,7 @@ const INTRO =
 const SEASONS = [
   {
     title: 'Spring (March–May) — the sweet spot',
-    body: "Warming air, blooming Lowcountry, and rates that haven't hit summer peak. April and May are arguably the best all-around window: comfortable temperatures, fewer crowds than summer, and good golf conditions. The exceptions are Easter week and RBC Heritage week (mid-April), when Sea Pines specifically books out and prices spike.",
+    body: "Warming air, blooming Lowcountry, and rates that haven't hit summer peak. April and May are arguably the best all-around window: comfortable temperatures, fewer crowds than summer, and good golf conditions. The exceptions are Easter week (late March in 2027, overlapping the Wine & Food Festival) and RBC Heritage week (April 12-18, 2027), when Sea Pines specifically books out and prices spike.",
   },
   {
     title: 'Summer (June–August) — peak everything',
@@ -84,7 +84,7 @@ const FAQS = [
   {
     question: 'When should I avoid visiting Hilton Head?',
     answer:
-      "It depends on what you're avoiding. For crowds and high prices, skip the first three weeks of July and Easter/RBC Heritage week in April. For cold water, skip December–March. For hurricane peace of mind, the lowest-risk months are the winter and early summer; September carries the highest storm odds.",
+      "It depends on what you're avoiding. For crowds and high prices, skip the first three weeks of July, Easter week (March 28, 2027) and RBC Heritage week (April 12-18, 2027). For cold water, skip December–March. For hurricane peace of mind, the lowest-risk months are the winter and early summer; September carries the highest storm odds.",
   },
   {
     question: 'When is the best time to visit Hilton Head with kids?',
@@ -104,7 +104,7 @@ const FAQS = [
   {
     question: 'Is Hilton Head crowded in October?',
     answer:
-      "No. Crowds drop noticeably after Labor Day and again after Columbus Day weekend. By mid-October, beach access is easy, you can get same-week dinner reservations at most A-tier restaurants, and the Cross Island Parkway moves freely. The only October crowd spike is Columbus Day weekend (Oct 12, 2026) for families using the long weekend.",
+      "No. Crowds drop noticeably after Labor Day and again after Columbus Day weekend. By mid-October, beach access is easy, you can get same-week dinner reservations at most A-tier restaurants, and the Cross Island Parkway moves freely. The only October crowd spike is Columbus Day weekend (Oct 9-11, 2027) for families using the long weekend.",
   },
 ];
 

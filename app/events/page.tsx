@@ -104,6 +104,7 @@ export default function EventsPage() {
       locationName: e.venue || e.location,
       url: e.url,
       organizer: e.organizer,
+      slug: e.slug,
     }),
   );
 
@@ -150,7 +151,7 @@ export default function EventsPage() {
         {/* Hero */}
         <header className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-14">
           <div>
-            <span className="eyebrow-coral eyebrow">2027 calendar</span>
+            <span className="eyebrow-coral eyebrow">2026–27 calendar</span>
             <h1 className="display mt-5 text-balance text-[44px] leading-[1.02] tracking-[-0.025em] text-ink md:text-[64px] lg:text-[72px]">
               Hilton Head Events,{' '}
               <span className="display-italic text-coral">all year long.</span>

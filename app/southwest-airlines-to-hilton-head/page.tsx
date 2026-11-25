@@ -81,8 +81,8 @@ export default function SouthwestToHiltonHeadPage() {
               </strong>
               , about <strong>{SOUTHWEST_HHI.driveMinutesToHhi} minutes</strong>{' '}
               and {SOUTHWEST_HHI.driveMilesToHhi} miles from the island. You get
-              no change fees on any fare (a fare difference may apply), and a
-              quick drive up US-278. Rapid Rewards cardholders still check their
+              no change fees on any fare (a fare difference may apply; Basic
+              fares must be upgraded to change), and a quick drive up US-278. Rapid Rewards cardholders still check their
               first bag free.
               Booking on points? You can top up Rapid Rewards if you&rsquo;re
               short for the award.

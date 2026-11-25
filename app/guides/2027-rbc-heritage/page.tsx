@@ -12,6 +12,7 @@ import {
   getEventSchema,
 } from '@/app/lib/metadata';
 import { getTier } from '@/data/pricing';
+import { getEventBySlug } from '@/data/events';
 
 // Read from data/pricing.ts so this copy never drifts from the real price.
 const CHARTER_PRICE = getTier('charter')?.priceDisplay ?? '';
@@ -71,7 +72,7 @@ const KIT_INCLUDES: Array<{ title: string; blurb: string }> = [
   {
     title: 'Day-by-day Heritage Week schedule',
     blurb:
-      'A printable Mon–Sun grid: practice rounds, pro-am, tournament play, the Quail Hollow events, dinner blocks, and family-friendly mornings off-course.',
+      'A printable Mon–Sun grid: practice rounds, the Wednesday pro-am, tournament play, dinner blocks, and family-friendly mornings off-course.',
   },
 ];
 
@@ -85,19 +86,21 @@ export default function Heritage2027KitPage() {
     },
   ]);
 
-  // 2027 Heritage: tournament week Apr 12–18, rounds Thu Apr 15–Sun Apr 18.
-  // Verified Nov 2026 against the PGA Tour 2027 schedule release and the
-  // tournament's ticket on-sale announcement.
-  const eventSchema = getEventSchema({
-    name: 'RBC Heritage 2027',
-    description:
-      'PGA Tour event at Harbour Town Golf Links, Hilton Head Island.',
-    startDate: '2027-04-12',
-    endDate: '2027-04-18',
-    locationName: 'Harbour Town Golf Links',
-    url: 'https://rbcheritage.com/',
-    organizer: { name: 'Heritage Classic Foundation', url: 'https://rbcheritage.com/' },
-  });
+  // Single source of truth: data/events.ts (verified dates + organizer).
+  const heritage = getEventBySlug('rbc-heritage');
+  const eventSchema =
+    heritage && !heritage.datesTba
+      ? getEventSchema({
+          name: heritage.name,
+          description: heritage.description,
+          startDate: heritage.startDate,
+          endDate: heritage.endDate,
+          locationName: heritage.venue ?? heritage.location,
+          url: heritage.url,
+          organizer: heritage.organizer,
+          slug: heritage.slug,
+        })
+      : null;
 
   return (
     <>
@@ -105,10 +108,12 @@ export default function Heritage2027KitPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
-      />
+      {eventSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
 
       <div className="mx-auto max-w-[1280px] px-5">
         <Header />

@@ -44,10 +44,14 @@ import { getEventBySlug } from '@/data/events';
  * generic golf posts must not carry it.
  */
 const EVENT_POSTS: Record<string, string> = {
-  'rbc-heritage-travel-guide': 'rbc-heritage-2027',
+  'rbc-heritage-travel-guide': 'rbc-heritage',
 };
 
 type Params = { slug: string };
+
+// Re-render daily: keeps embedded widgets (e.g. the Heritage countdown)
+// current and lets Event schema switch off once the event has ended.
+export const revalidate = 86400;
 
 // Category → hero photograph mapping. Choose an image that matches the
 // post's category so each article gets a contextual editorial plate.
@@ -207,9 +211,16 @@ export default async function BlogPostPage({
         : null;
 
   // Event schema only for posts about a specific event (see EVENT_POSTS).
-  const linkedEvent = EVENT_POSTS[post.slug]
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const mappedEvent = EVENT_POSTS[post.slug]
     ? getEventBySlug(EVENT_POSTS[post.slug])
     : undefined;
+  // Only for confirmed, not-yet-finished events — never mark a past
+  // tournament as scheduled.
+  const linkedEvent =
+    mappedEvent && !mappedEvent.datesTba && mappedEvent.endDate >= todayIso
+      ? mappedEvent
+      : undefined;
   const eventSchema = linkedEvent
     ? getEventSchema({
         name: linkedEvent.name,
@@ -219,6 +230,7 @@ export default async function BlogPostPage({
         locationName: linkedEvent.venue ?? linkedEvent.location,
         url: linkedEvent.url,
         organizer: linkedEvent.organizer,
+        slug: linkedEvent.slug,
       })
     : null;
 
